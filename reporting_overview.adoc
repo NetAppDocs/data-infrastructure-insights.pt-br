@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: reporting_overview.html 
+summary: Relatórios personalizados e predefinidos de seus dados com o Data Infrastructure Insights. 
+keywords: reporting, cognos, data warehouse, dwh 
+---
+= Visão geral do Relatório de Insights da infraestrutura de dados
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Os relatórios do Data Infrastructure Insights são uma ferramenta de business intelligence que permite visualizar relatórios predefinidos ou criar relatórios personalizados.
+
+
+NOTE: O recurso relatórios está disponível no Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html["Edição Premium"].
+
+Com os relatórios do Data Infrastructure Insights, você pode executar as seguintes tarefas:
+
+* Execute um relatório predefinido
+* Crie um relatório personalizado
+* Personalizar o formato e o método de entrega de um relatório
+* Programe relatórios para serem executados automaticamente
+* Relatórios por e-mail
+* Use cores para representar limites nos dados
+
+
+O Data Infrastructure Insights Reporting pode gerar relatórios personalizados para áreas como chargeback, análise de consumo e previsão, e pode ajudar a responder a perguntas como:
+
+* Que inventário tenho?
+* Onde está o meu inventário?
+* Quem está usando nossos ativos?
+* Qual é o chargeback para storage alocado para uma unidade de negócios?
+* Por quanto tempo até que eu precise adquirir capacidade de armazenamento adicional?
+* As unidades de negócios estão alinhadas ao longo das camadas de storage adequadas?
+* Como a alocação de storage muda ao longo de um mês, trimestre ou ano?
+
+
+
+
+== Acessando o Data Infrastructure Insights Reporting
+
+Você pode acessar o Data Infrastructure Insights Reporting clicando no link *relatórios* no menu.
+
+Você será levado para a interface de relatórios. O Data Infrastructure Insights usa o IBM Cognos Analytics para seu mecanismo de relatórios.
+
+
+
+== O que é ETL?
+
+Ao trabalhar com relatórios, você ouvirá os termos "Data Warehouse" e "ETL". ETL significa "Extract, Transform and Load" (extrair, transformar e carregar). O processo ETL recupera os dados coletados no Data Infrastructure Insights e transforma os dados em um formato para uso no Reporting. "Armazém de dados" refere-se aos dados recolhidos disponíveis para relatórios.
+
+O processo ETL inclui estes processos individuais:
+
+* *Extract*: Obtém dados do Data Infrastructure Insights.
+* *Transform*: Aplica regras ou funções de lógica de negócios aos dados à medida que são extraídos do Data Infrastructure Insights.
+* *Load*: Salva os dados transformados no data warehouse para uso no Reporting.
+

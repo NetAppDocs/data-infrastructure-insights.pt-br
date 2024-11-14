@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: task_query_copy_table_values.html 
+summary: Você pode copiar valores de uma tabela para a área de transferência para uso em outros aplicativos. 
+keywords: query, queries, copy, values, clipboard 
+---
+= Copiando valores de tabela
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Você pode copiar valores em tabelas para a área de transferência para uso em caixas de pesquisa ou outros aplicativos.
+
+.Sobre esta tarefa
+Existem dois métodos que você pode usar para copiar valores de tabelas ou resultados de consulta para a área de transferência.
+
+.Passos
+. Método 1: Realce o texto desejado com o Mouse, copie-o e cole-o em campos de pesquisa ou outros aplicativos.
+. Método 2: Para campos de valor único, passe o Mouse sobre o campo e clique no ícone da área de transferência que aparece. O valor é copiado para a área de transferência para uso em campos de pesquisa ou outros aplicativos.
++
+Observe que somente valores que são links para ativos podem ser copiados usando esse método. Apenas os campos que incluem valores únicos (ou seja, não listas) têm o ícone de cópia.
+
+

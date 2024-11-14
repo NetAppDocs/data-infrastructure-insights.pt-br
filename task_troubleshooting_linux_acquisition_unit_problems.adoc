@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: task_troubleshooting_linux_acquisition_unit_problems.html 
+summary: Dicas de solução de problemas para problemas da Unidade de aquisição. 
+keywords: AU, acquisition unit, trioubleshooting 
+---
+= Solução de problemas da Unidade de aquisição no Linux
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Aqui você encontrará sugestões para solucionar problemas com unidades de aquisição em um servidor Linux.
+
+|===
+
+
+| *Problema:* | *Tente isto:* 
+
+
+| O status da AU na página *observabilidade > coletores* na guia *unidades de aquisição* exibe "certificado expirado" ou "certificado revogado" . | Clique no menu à direita da AU e selecione *Restaurar conexão*. Siga as instruções para restaurar a sua Unidade de aquisição: 1. Pare o serviço da unidade de aquisição (AU). Você pode clicar no botão _Copy Stop Command_ para copiar rapidamente o comando para a área de transferência e, em seguida, colar esse comando em um prompt de comando na máquina da unidade de aquisição. 2. Crie um arquivo chamado "token" na pasta _/var/lib/NetApp/cloudinsights/acq/conf_ na AU. 3. Clique no botão _Copy Token_ e cole esse token no arquivo que você criou. 4. Reinicie o serviço AU. Clique no botão _Copy Restart Command_ e cole o comando em um prompt de comando na AU. 
+
+
+| Permissão negada ao iniciar o Serviço de servidor da Unidade de aquisição | Quando a AU é instalada no SELINUX, se deve ser definido para o modo _permissivo_. O modo _imforing_ não é suportado. Depois de definir O SELINUX para o modo permissivo, reinicie o serviço AU. link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/Permission_denied_when_starting_the_Cloud_Insight_Acquisition_Unit_Server_Service["Saiba mais"]. 
+
+
+| Requisitos de servidor não atendidos | Certifique-se de que o servidor da Unidade de aquisição ou VM atende link:concept_acquisition_unit_requirements.html["requisitos"] 
+
+
+| Requisitos de rede não atendidos | Verifique se o servidor/VM da Unidade de aquisição pode acessar seu ambiente de Insights de infraestrutura de dados (<environment-name>.C01.cloudinsights.NetApp.com) por meio de conexão SSL pela porta 443. Tente os seguintes comandos: _Ping <environment-name>.C01.cloudinsights.NetApp.com_ _traceroute <environment-name>.C01.cloudinsights.NetApp.com_ _curl://<environment-name>.C01.cloudinsights.NetApp.com_ _wget://<environment-name>.C01.cloudinsights.NetApp.com_ Note que a porta 443 precisa ser aberta para "a infra-estrutura de saída". 
+
+
+| Servidor proxy não configurado corretamente | Verifique suas configurações de proxy e desinstale/reinstale o software da Unidade de aquisição, se necessário, para inserir as configurações de proxy corretas. 1. Tente "curl". Consulte a informação/documentação "man curl" sobre proxies: --preproxy, --proxy-* (isso é um curinga "*" porque o curl suporta muitas configurações de proxy). 2. Tente "wget". Verifique a documentação para opções de proxy. 
+
+
+| A instalação da unidade de aquisição falhou no Data Infrastructure Insights com erros de credenciais ao iniciar o serviço de aquisição (e visível no acq.log). | Isso pode ser causado pela inclusão de carateres especiais nas credenciais do proxy. Desinstale o AU (_sudo cloudinsights-uninstall.sh_) e reinstale sem usar carateres especiais. 
+
+
+| Linux: Biblioteca / arquivo ausente não encontrado | Certifique-se de que o servidor/VM da Unidade de aquisição do Linux tenha todas as bibliotecas necessárias. Por exemplo, você deve ter a biblioteca _unzip_ instalada no servidor. Para instalar a biblioteca _unzip_, execute o comando _*sudo yum install unzip*_ antes de executar o script de instalação da Unidade de aquisição 
+
+
+| Problemas de permissão | Certifique-se de que você está conetado como um usuário com permissões _sudo_ 
+
+
+| Aquisição não em execução: | Reunir o acq.log de /opt/NetApp/cloudsights/acq/logs (Linux) reinicie o Serviço de aquisição: Sudo cloudinsights-service.sh restart acquisition 
+
+
+| Problemas de coleta de dados: | Envie um relatório de erro da página inicial do Data Collector clicando no botão "Enviar relatório de erro" 
+
+
+| Status: Heartbeat falhou | A unidade de aquisição (AU) envia um batimento cardíaco ao Data Infrastructure Insights a cada 60 segundos para renovar sua concessão. Se a chamada de heartbeat falhar devido a problemas de rede ou Insights de infraestrutura de dados não responsivos, o tempo de concessão da AU não será atualizado. Quando o tempo de concessão da UA expira, o Data Infrastructure Insights mostra um status de "Heartbeat Failed". Etapas de solução de problemas: Verifique a conexão de rede entre o servidor de Unidade de aquisição e o CloudInsights. Verifique se o serviço Unidade de aquisição está em execução. Se o serviço não estiver em execução, inicie o serviço. Verifique o registo da unidade de aquisição (/var/log/NetApp/cloudinsights/acq/acq.log) para ver se existem erros. 
+
+
+| Estou vendo uma mensagem "Heartbeat Error:" | Esse erro pode ocorrer se houver uma interrupção da rede que faça com que a comunicação entre a Unidade de aquisição e o ambiente Data Infrastructure Insights seja interrompida por mais de um minuto. Verifique se a conexão entre a AU e o Data Infrastructure Insights está estável e ativa. 
+
+
+| Ao reinstalar a Unidade de aquisição, estou vendo "ValueError: Contexto de arquivo para /opt/NetApp/cloudinsights(/.*)? Já definido". | Em um sistema com SELinux, essa mensagem de erro pode aparecer depois de `cloudinsights-uninstall.sh -p` ter sido executada e a Unidade de aquisição deve ser reinstalada. Executar o comando `semanage fcontext -d -t usr_t "/opt/netapp/cloudinsights(/.*)?"` deve corrigir o problema e remover a mensagem. 
+|===
+
+
+== Considerações sobre Proxies e firewalls
+
+Se a sua organização exigir o uso de proxy para acesso à Internet, talvez seja necessário entender o comportamento de proxy da sua organização e buscar certas exceções para que o Data Infrastructure Insights funcione. Tenha em mente o seguinte:
+
+* Primeiro, sua organização bloqueia o acesso por padrão e só permite o acesso a sites/domínios específicos por exceção? Em caso afirmativo, você precisará adicionar o seguinte domínio à lista de exceções:
++
+ *.cloudinsights.netapp.com
++
+Sua Unidade de aquisição do Data Infrastructure Insights, bem como suas interações em um navegador da Web com o Data Infrastructure Insights, serão todos enviados para hosts com esse nome de domínio.
+
+* Em segundo lugar, alguns proxies tentam executar a inspeção TLS/SSL, personificando sites da Web Insights de infraestrutura de dados com certificados digitais não gerados pelo NetApp. O modelo de segurança da Unidade de aquisição do Data Infrastructure Insights é fundamentalmente incompatível com essas tecnologias. Você também precisaria do nome de domínio acima excetuado dessa funcionalidade para que a Unidade de aquisição do Data Infrastructure Insights faça login com sucesso no Data Infrastructure Insights e facilite a descoberta de dados.
+
+
+Caso o proxy esteja configurado para inspeção de tráfego, o ambiente Data Infrastructure Insights deve ser adicionado a uma lista de exceções na configuração do proxy. O formato e a configuração dessa lista de exceções variam de acordo com o ambiente proxy e as ferramentas, mas, em geral, você deve adicionar os URLs dos servidores Data Infrastructure Insights a essa lista de exceções para permitir que a AU se comunique adequadamente com esses servidores.
+
+A maneira mais simples de fazer isso é adicionar o próprio domínio Data Infrastructure Insights à lista de exceções:
+
+ *.cloudinsights.netapp.com
+No caso em que o proxy não está configurado para inspeção de tráfego, uma lista de exceções pode ou não ser necessária. Se você não tiver certeza se precisa adicionar o Data Infrastructure Insights a uma lista de exceções, ou se tiver dificuldades em instalar ou executar o Data Infrastructure Insights devido à configuração de proxy e/ou firewall, fale com sua equipe de administração de proxy para configurar o gerenciamento do proxy de intercetação SSL.
+
+
+
+=== Visualização de endpoints Proxy
+
+Você pode visualizar seus endpoints proxy clicando no link *Configurações de proxy* ao escolher um coletor de dados durante a integração ou no link em _Configurações de proxy_ na página *Ajuda > suporte*. Uma tabela como a seguinte é exibida. Se você tiver o Workload Security no seu ambiente, os URLs de endpoint configurados também serão exibidos nesta lista.
+
+image:ProxyEndpoints_NewTable.png["Tabela de pontos finais do proxy"]
+
+
+
+== Recursos
+
+Dicas adicionais de solução de problemas podem ser encontradas no link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights["Base de conhecimento da NetApp"] (login de suporte necessário).
+
+Informações adicionais de suporte podem ser encontradas na página Insights de infraestrutura de dadoslink:concept_requesting_support.html["Suporte"].

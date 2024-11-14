@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: task_defining_annotations.html 
+keywords: annotations, monitor, notes, tags 
+summary: Rastreie dados usando anotações. 
+---
+= Definir anotações
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Ao personalizar o Data Infrastructure Insights para rastrear dados para seus requisitos corporativos, você pode definir notas especializadas, chamadas de anotações e atribuí-las aos seus ativos.
+
+Você pode atribuir anotações a ativos com informações como fim de vida útil do ativo, data center, local de criação, camada de storage ou nível de serviço de volume.
+
+O uso de anotações para ajudar a monitorar seu ambiente inclui as seguintes tarefas de alto nível:
+
+* Criar ou editar definições para todos os tipos de anotação.
+* Exibindo páginas de ativos e associando cada ativo com uma ou mais anotações.
++
+Por exemplo, se um ativo estiver sendo alugado e o leasing expirar dentro de dois meses, você pode querer aplicar uma anotação de fim de vida útil ao ativo. Isso ajuda a evitar que outros usem esse ativo por um tempo prolongado.
+
+* Criando regras para aplicar automaticamente anotações a vários ativos do mesmo tipo.
+* Filtrar ativos por suas anotações.
+
+
+
+
+== Tipos de anotação predefinidos
+
+O Data Infrastructure Insights fornece alguns tipos de anotação padrão. Essas anotações podem ser usadas para filtrar ou agrupar dados.
+
+Você pode associar ativos a tipos de anotação padrão, como os seguintes:
+
+* Ciclo de vida do ativo, como aniversário, pôr do sol ou fim da vida
+* Informações de localização sobre um dispositivo, como data center, prédio ou piso
+* Classificação de ativos, como por qualidade (níveis), por dispositivos conetados (nível de switch) ou por nível de serviço
+* Status, como quente (alta utilização)
+
+
+A tabela a seguir lista os tipos de anotação fornecidos pelo Data Infrastructure Insights.
+
+[cols="30,53, 16"]
+|===
+
+
+| Tipos de anotação | Descrição | Tipo 
+
+
+| Alias | Nome amigável para um recurso | Texto 
+
+
+| Grupo de recursos de computação | Atribuição de grupo usada pelo coletor de dados de sistemas de arquivos Host e VM | Lista 
+
+
+| Data center | Localização física | Lista 
+
+
+| Quente | Dispositivos em uso intensivo regularmente ou no limite da capacidade | Booleano 
+
+
+| Nota | Comentários associados a um recurso | Teste 
+
+
+| Nível de serviço | Um conjunto de níveis de serviço compatíveis que você pode atribuir a recursos. Fornece uma lista de opções ordenadas para volumes internos, qtree e volumes. Edite níveis de serviço para definir políticas de desempenho para diferentes níveis. | Lista 
+
+
+| Pôr do sol | Limiar definido após o qual não é possível efetuar novas alocações para esse dispositivo. Útil para migrações planejadas e outras alterações de rede pendentes. | Data 
+
+
+| Nível do interrutor | Opções predefinidas para configurar categorias para switches. Normalmente, essas designações permanecem durante a vida útil do dispositivo, embora você possa editá-las. Disponível apenas para interrutores. | Lista 
+
+
+| Nível | Pode ser usado para definir diferentes níveis de serviço em seu ambiente. As camadas podem definir o tipo de nível, como a velocidade necessária (por exemplo, ouro ou prata). Esse recurso está disponível somente em volumes internos, qtrees, matrizes de armazenamento, pools de armazenamento e volumes. | Lista 
+
+
+| Gravidade da violação | Classificação (por exemplo, maior) de uma violação (por exemplo, portas de host ausentes ou redundância ausente), em uma hierarquia de maior a menor importância. | Lista 
+|===
+
+NOTE: Alias, Data Center, Hot, Service Level, Sunset, Switch Level, Tier, and violation severity são anotações no nível do sistema, que você não pode excluir ou renomear; você pode alterar apenas os valores atribuídos.
+
+
+
+== Criar anotações personalizadas
+
+Usando anotações, você pode adicionar dados personalizados específicos de negócios que correspondem às necessidades da sua empresa aos ativos. Embora o Data Infrastructure Insights forneça um conjunto de anotações padrão, você pode descobrir que deseja exibir dados de outras maneiras. Os dados em anotações personalizadas complementam os dados do dispositivo já coletados, como fabricante de armazenamento, volumes de número e estatísticas de desempenho. Os dados que você adiciona usando anotações não são descobertos pelo Data Infrastructure Insights.
+
+.Passos
+. No menu Data Infrastructure Insights, clique em *Manage > Annotations*.
++
+A página Anotações apresenta a lista de anotações.
+
+. Clique em * Adicionar*
+. Introduza um *Nome* e *Descrição* da anotação.
++
+Pode introduzir até 255 carateres nestes campos.
+
+. Clique em *Type* e, em seguida, selecione uma das seguintes opções que representa o tipo de dados permitidos nesta anotação:
+
+
+.Tipos de anotação
+Booleano:: Cria uma lista suspensa com as opções de sim e não. Por exemplo, a anotação "Direct Attached" é booleana.
+Data:: Isso cria um campo que contém uma data. Por exemplo, se a anotação for uma data, selecione esta.
+Lista:: Cria uma das seguintes opções:
++
+--
+* Uma lista fixa suspensa
++
+Quando outros estão atribuindo esse tipo de anotação em um dispositivo, eles não podem adicionar mais valores à lista.
+
+* Uma lista suspensa flexível
++
+Se selecionar a opção Adicionar novos valores em tempo real ao criar esta lista, quando outros estiverem a atribuir este tipo de anotação num dispositivo, poderão adicionar mais valores à lista.
+
+
+
+--
+Número:: Cria um campo onde o utilizador que atribui a anotação pode introduzir um número. Por exemplo, se o tipo de anotação for "Floor" (Piso), o utilizador pode selecionar o valor Type (tipo de valor) de "Number" (número) e introduzir o número do piso.
+Texto:: Cria um campo que permite texto de forma livre. Por exemplo, pode introduzir "Idioma" como tipo de anotação, selecionar "texto" como tipo de valor e introduzir um idioma como valor.
+
+
+
+NOTE: Depois de definir o tipo e guardar as alterações, não pode alterar o tipo da anotação. Se você precisar alterar o tipo, você terá que excluir a anotação e criar uma nova.
+
+. Se selecionar List (Lista) como tipo de anotação, faça o seguinte:
++
+.. Selecione *Adicionar novos valores em tempo real* se quiser a capacidade de adicionar mais valores à anotação quando estiver em uma página de ativo, o que cria uma lista flexível.
++
+Por exemplo, suponha que você esteja em uma página de ativo e o ativo tenha a anotação Cidade com os valores Detroit, tampa e Boston. Se você selecionou a opção *Adicionar novos valores em tempo real*, você pode adicionar valores adicionais a Cidade como são Francisco e Chicago diretamente na página do ativo em vez de ter que ir para a página Anotações para adicioná-los. Se não selecionar esta opção, não pode adicionar novos valores de anotação ao aplicar a anotação; isto cria uma lista fixa.
+
+.. Insira um valor e uma descrição nos campos *valor* e *Descrição*.
+.. Clique em * Adicionar * para adicionar valores adicionais.
+.. Clique no ícone Lixeira para excluir um valor.
+
+
+. Clique em *Salvar*
++
+As suas anotações aparecem na lista na página Anotações.
+
+
+
+.Depois de terminar
+Na IU, a anotação está disponível imediatamente para utilização.

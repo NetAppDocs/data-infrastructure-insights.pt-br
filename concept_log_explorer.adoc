@@ -1,0 +1,155 @@
+---
+sidebar: sidebar 
+permalink: concept_log_explorer.html 
+keywords: logs, monitors, alerts, EMS, 
+summary: O Log Explorer é uma ferramenta poderosa para investigar problemas através de diferentes logs do sistema. 
+---
+= Explorador de registos
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights Log Explorer é uma ferramenta poderosa para consultar logs do sistema. Além de ajudar com investigações, você também pode salvar uma consulta de log em um Monitor para fornecer alertas quando esses gatilhos de log específicos são ativados.
+
+Para começar a explorar os logs, clique em *consultas de log > Nova consulta de log*.
+
+Selecione um registo disponível na lista.
+
+image:LogExplorer_2022.png["Escolha o seu registo"]
+
+
+NOTE: Os tipos de logs disponíveis para consulta podem variar de acordo com o seu ambiente. Tipos de log adicionais podem ser adicionados ao longo do tempo.
+
+Você pode definir filtros para refinar ainda mais os resultados da consulta. Por exemplo, para localizar todas as mensagens de log mostrando uma falha, defina um filtro para _messages_ contendo a palavra "failed".
+
+
+TIP: Você pode começar a digitar o texto desejado no campo de filtro; o Data Infrastructure Insights solicitará que você crie uma pesquisa curinga contendo a cadeia de carateres à medida que você digita.
+
+Os resultados são exibidos em um gráfico mostrando o número de instâncias de log em cada período de tempo mostrado. Abaixo do gráfico estão as entradas de log. O gráfico e as entradas são atualizados automaticamente com base no intervalo de tempo selecionado.
+
+image:LogExplorer_QueryForFailed.png["Exemplo de consulta mostrando filtro"]
+
+
+
+== Filtragem
+
+
+
+=== Incluir / excluir
+
+Ao filtrar os logs, você pode optar por *incluir* (ou seja, "Filtrar para") ou *excluir* as strings que você digita. Strings excluídas são exibidas no filtro concluído como "Not <string>".
+
+image:Log_Advanced_Query_Filter_Exclude.png["Filtro de log que mostra a opção Excluir"]
+
+Os filtros baseados em carateres universais ou expressões (por exemplo, NÃO, OU, "nenhum", etc.) são exibidos em azul escuro no campo de filtro. Os itens que você selecionar diretamente da lista são exibidos em azul claro.
+
+
+NOTE: Em qualquer ponto, você pode clicar em _Create a Log Monitor_ para criar um novo monitor com base no filtro atual.
+
+
+
+=== Filtragem avançada
+
+Quando você está filtrando valores de texto ou lista em consultas ou widgets de painel, à medida que você começa a digitar, você recebe a opção de criar um filtro * curinga* com base no texto atual. Selecionar esta opção irá retornar todos os resultados que correspondem à expressão curinga. Você também pode criar expressões usando NOT, E, ou OU, ou, ou você pode selecionar a opção "nenhum" para filtrar os valores nulos.
+
+
+NOTE: Certifique-se de salvar sua consulta com antecedência e muitas vezes enquanto você cria sua filtragem. A consulta avançada é uma entrada de string "livre-forma", e a análise de erros pode ocorrer à medida que você constrói.
+
+Dê uma olhada nesta imagem de tela mostrando resultados filtrados para uma consulta avançada do log _logs.kureau.event_. Há muita coisa acontecendo nesta página, o que é explicado abaixo da imagem:
+
+image:Log_Advanced_Query_ScreenExplained.png["Explicação do ecrã consulta avançada"]
+
+. Esta cadeia de carateres de consulta avançada filtra para o seguinte:
++
+** Filtro para entradas de log com um _reason_ que inclui a palavra "failed", mas não qualquer coisa com a razão específica de "FailedMount".
+** Inclua qualquer uma dessas entradas que também inclua um _metadata.namespace_ incluindo a palavra "monitoramento", mas exclua os espaços de nomes específicos de "monitoramento cm" ou "monitoramento por exemplo".
++
+Note que no caso acima, uma vez que ambos "cm-monitoring" e "eg-monitoring" contêm um traço ("-"), as strings devem ser incluídas em aspas duplas ou um erro de análise será exibido. Strings que não incluem traços, espaços, etc. não precisam ser incluídas em aspas. Em caso de dúvida, tente colocar a string em aspas.
+
+
+
+. Os resultados do filtro atual, incluindo quaisquer valores "Filtrar por" E o filtro consulta Avançada, são exibidos na lista de resultados. A lista pode ser ordenada por qualquer coluna exibida. Para apresentar colunas adicionais, selecione o ícone de "engrenagem".
+. O gráfico foi ampliado para mostrar apenas os resultados do log que ocorreram dentro de um período de tempo específico. O intervalo de tempo aqui apresentado reflete o nível de zoom atual. Selecione o botão _Reset Zoom_ para definir o nível de zoom de volta para o intervalo de tempo atual do Data Infrastructure Insights.
+. Os resultados do gráfico foram agrupados pelo campo _source_. O gráfico mostra os resultados em cada coluna agrupada em cores. Passar o Mouse sobre uma coluna no gráfico exibirá alguns detalhes sobre as entradas específicas.
++
+image:Log_Advanced_Query_Group_Detail.png["Detalhes do passe agrupado"]
+
+
+
+
+
+==== Refinando filtros
+
+Você pode usar o seguinte para refinar seu filtro:
+
+|===
+
+
+| Filtro | O que faz 
+
+
+| * (Asterisco) | permite-lhe procurar tudo 
+
+
+| ? (ponto de interrogação) | permite-lhe procurar um número específico de carateres 
+
+
+| OU | permite especificar várias entidades 
+
+
+| NÃO | permite excluir texto dos resultados da pesquisa 
+
+
+| _Nenhum_ | Procura valores NULL em todos os campos 
+
+
+| Não * | Procura valores NULL em campos _text-only_ 
+|===
+Se você incluir uma string de filtro em aspas duplas, o Insight trata tudo entre a primeira e a última citação como uma correspondência exata. Quaisquer carateres especiais ou operadores dentro das aspas serão tratados como literais. Por exemplo, a filtragem para "*" retornará resultados que são um asterisco literal; o asterisco não será Tratado como um curinga neste caso. Os operadores OU E NÃO também serão tratados como strings literais quando incluídos em aspas duplas.
+
+Você pode combinar um filtro simples com um filtro de consulta avançado; o filtro resultante é um "E" dos dois.
+
+
+
+=== A Legenda do Gráfico
+
+O _Legend_ abaixo do gráfico também tem algumas surpresas. Para cada resultado (com base no filtro atual) mostrado na Legenda, você tem uma opção para exibir apenas resultados para essa linha (Adicionar filtro) ou para exibir quaisquer resultados NÃO para essa linha (Adicionar filtro de exclusão). O gráfico e a lista de entradas de Registro são atualizados para mostrar resultados com base na sua seleção. Para remover essa filtragem, abra a Legenda novamente e selecione [X] para limpar o filtro baseado em Legenda.
+
+image:Log_Advanced_Query_Legend.png["Consulta avançada legen mostrando \"Adicionar filtro\" para o primeiro resultado"]
+
+
+
+== Detalhes do log
+
+Clicar em qualquer lugar de uma entrada de log na lista abrirá um painel de detalhes para essa entrada. Aqui você pode explorar mais informações sobre o evento.
+
+Clique em "Adicionar filtro" para adicionar o campo selecionado ao filtro atual. A lista de entrada de registo será atualizada com base no novo filtro.
+
+Observe que alguns campos não podem ser adicionados como filtros; nesses casos, o ícone _Adicionar filtro_ não está disponível.
+
+image:LogExplorer_DetailPane.png["Painel Detalhe Entrada Registo"]
+
+
+
+== Solução de problemas
+
+Aqui você encontrará sugestões para solucionar problemas com consultas de Log.
+
+|===
+
+
+| *Problema:* | *Tente isto:* 
+
+
+| Não vejo mensagens "depurar" na minha consulta de log | Mensagens de log de depuração não são coletadas. Para capturar mensagens que você deseja, altere a gravidade da mensagem relevante para o nível _informacional, erro, alerta, emergência,_ ou _aviso_. 
+|===

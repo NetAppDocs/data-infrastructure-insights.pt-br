@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: kubernetes_cluster_detail.html 
+keywords: kubernetes, pods, clusters, nodes. troubleshooting, planning 
+summary: A página de detalhes do Kubernetes fornece informações e detalhes para ajudar na solução de problemas e no Planejamento. 
+---
+= Página de detalhes do cluster do Kubernetes
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+A página de detalhes do cluster do Kubernetes exibe uma visão geral detalhada do cluster do Kubernetes.
+
+image:Kubernetes_Detail_Page_new.png["Página de detalhes do cluster"]
+
+
+
+== Contagens de namespace, nó e Pod
+
+As contagens na parte superior da página mostram o número total de namespaces, nós e pods no cluster, bem como o número de popds que estão atualmente alertando e pendentes.
+
+
+
+== Recursos compartilhados e saturação
+
+No canto superior direito da página de detalhes está a saturação do cluster como uma porcentagem atual, bem como um gráfico mostrando a tendência recente ao longo do tempo. A saturação de cluster é a mais alta da CPU, memória ou saturação de armazenamento em cada ponto do tempo.
+
+Abaixo disso, a página mostra por padrão o uso de *recursos compartilhados*, com guias para CPU, memória e armazenamento. Cada guia mostra a porcentagem de saturação e a tendência ao longo do tempo, com detalhes de uso adicionais. Para armazenamento, o valor mostrado é o maior da saturação de backend e sistema de arquivos, que são calculados independentemente.
+
+Os dispositivos com a maior utilização são apresentados numa tabela na parte inferior. Clique em qualquer link para explorar esses dispositivos.
+
+
+
+== Namespaces
+
+A guia namespaces exibe uma lista de todos os namespaces em seu ambiente Kubernetes, mostrando o uso de CPU e memória, bem como uma contagem de cargas de trabalho em cada namespace. Clique nos links Nome para explorar cada namespace.
+
+image:Kubernetes_Namespace_tab_new.png["Lista de namespaces atuais em seu ambiente K8s"]
+
+
+
+== Workloads
+
+Da mesma forma, a guia cargas de trabalho exibe uma lista das cargas de trabalho em cada namespace, mostrando novamente o uso da CPU e da memória. Clicar nos links de namespace faz drill em cada um.
+
+image:Kubernetes_Workloads_tab_new.png["Lista de namespaces atuais em seu ambiente K8s"]
+
+
+
+== A "roda" do grupo
+
+image:Kubernetes_Wheel_Section.png["Roda do cluster"]
+
+A seção "roda" do cluster fornece o estado do nó e do pod em um relance, que você pode detalhar para obter mais informações. Se o cluster contiver mais nós do que podem ser exibidos nesta área da página, você poderá girar a roda usando os botões disponíveis.
+
+Os pods ou nós de alerta são exibidos em vermelho. As áreas de "aviso" são apresentadas a laranja. Os pods não programados (ou seja, não anexados) serão exibidos no canto inferior da "roda" do cluster.
+
+Passar o Mouse sobre um pod (círculo) ou Node (barra) estenderá a visão do nó.
+
+image:Kubernetes_Node_Expand.png["Nó expandido"]
+
+Clicar no pod ou nó nessa exibição aumentará o zoom para a exibição nó expandido.
+
+image:Kubernetes_Critical_Pod_Zoom.png["Vista expandida do nó"]
+
+A partir daqui, você pode passar o Mouse sobre um elemento para exibir detalhes sobre esse elemento. Por exemplo, passar o Mouse sobre o pod crítico neste exemplo exibe detalhes sobre esse pod.
+
+image:Kubernetes_Pod_Red.png["Informações críticas do Pod"]
+
+Você pode visualizar informações de sistema de arquivos, memória e CPU passando o Mouse sobre os elementos Node.
+
+image:Kubernetes_Capacity_Info.png["Capacidade e alocação do nó"]
+
+
+
+== Uma nota sobre os medidores
+
+Os medidores de memória e CPU mostram três cores, uma vez que mostram _used_ em relação à capacidade_allocatable_ e _total Capacity_.

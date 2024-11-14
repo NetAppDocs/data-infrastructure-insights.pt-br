@@ -1,0 +1,124 @@
+---
+sidebar: sidebar 
+permalink: task_view_configured_data_collectors.html 
+keywords: acquisition, AU, data collector, collector, bulk edit, postpone polling, resume polling 
+summary: Um resumo. 
+---
+= Gerenciamento de coletores de dados configurados
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+A página Installed Data Collectors (coletores de dados instalados) fornece acesso aos coletores de dados que foram configurados para Data Infrastructure Insights. Você pode usar esta página para modificar coletores de dados existentes.
+
+.Passos
+. No menu Data Infrastructure Insights, clique em *observabilidade > coletores*
++
+É apresentado o ecrã Available Data Collectors (coletores de dados disponíveis).
+
+. Clique em *Installed Data Collectors*
++
+É apresentada uma lista de todos os coletores de dados instalados. A lista fornece o nome do coletor, o status, o endereço IP que o coletor está acessando e quando os dados foram adquiridos pela última vez a partir do dispositivo A. A ação que pode ser executada nesta tela inclui:
+
++
+** Controlar a polling
+** Alterar credenciais do coletor de dados
+** Clonar coletores de dados
+
+
+
+
+
+
+== Controlando a polling do coletor de dados
+
+Depois de fazer uma alteração em um coletor de dados, você pode querer que ele pesquise imediatamente para verificar suas alterações, ou você pode querer adiar a coleta de dados em um coletor de dados por um, três ou cinco dias enquanto você trabalha em um problema.
+
+.Passos
+. No menu Data Infrastructure Insights, clique em *observabilidade > coletores*
+. Clique em *Installed Data Collectors*
+. Marque a caixa de seleção à esquerda do Coletor de dados que deseja alterar
+. Clique em *ações em massa* e selecione a ação de polling que deseja executar.
++
+As ações em massa podem ser executadas simultaneamente em múltiplos coletores de dados. Selecione os coletores de dados e escolha a ação a ser executada no menu *Bulk Action*.
+
+
+
+
+
+== Editando informações do coletor de dados
+
+Você pode editar as informações de configuração do coletor de dados existentes.
+
+.Para editar um único coletor de dados:
+. No menu Data Infrastructure Insights, clique em *observabilidade > coletores* para abrir a lista de coletores de dados instalados.
+. No menu de opções à direita do coletor de dados que você deseja modificar, clique em *Editar*.
++
+A caixa de diálogo Editar Coletor é aberta.
+
+. Digite as alterações e clique em *Configuração de teste* para testar a nova configuração ou clique em *Salvar* para salvar a configuração.
+
+
+Você também pode editar vários coletores de dados:
+
+. Selecione a caixa de verificação à esquerda de cada coletor de dados que pretende alterar.
+. Clique no botão *ações em massa* e escolha *Editar* para abrir a caixa de diálogo Editar coletor de dados.
+. Modifique os campos como acima.
++
+
+NOTE: Os coletores de dados selecionados devem ser do mesmo fornecedor e modelo e residir na mesma Unidade de aquisição.
+
++
+Ao editar vários coletores de dados, o campo Nome do Coletor de dados mostra "Misto" e não pode ser editado. Outros campos, como nome de usuário e senha, mostram "Misto" e podem ser editados. Os campos que compartilham o mesmo valor entre os coletores de dados selecionados mostram os valores atuais e podem ser editados.
+
++
+Ao editar vários coletores de dados, o botão *Configuração de teste* não está disponível.
+
+
+
+
+
+== Clonar coletores de dados
+
+Usando a instalação de clone, você pode adicionar rapidamente uma fonte de dados com as mesmas credenciais e atributos de outra fonte de dados. A clonagem permite configurar facilmente várias instâncias do mesmo tipo de dispositivo.
+
+.Passos
+. No menu Data Infrastructure Insights, clique em *observabilidade > coletores*.
+. Clique em *Installed Data Collectors*.
+. Clique na caixa de verificação à esquerda do coletor de dados que pretende copiar.
+. No menu de opções à direita do coletor de dados selecionado, clique em *Clone*.
++
+A caixa de diálogo Clone Data Collector é exibida.
+
+. Introduza novas informações nos campos obrigatórios.
+. Clique em *Salvar*.
+
+
+.Depois de terminar
+A operação clone copia todos os outros atributos e configurações para criar o novo coletor de dados.
+
+
+
+== Realizar ações em massa em coletores de dados
+
+Você pode editar simultaneamente algumas informações para vários coletores de dados. Esse recurso permite que você inicie uma enquete, adie a polling e retome a polling em vários coletores de dados. Além disso, você pode excluir vários coletores de dados.
+
+.Passos
+. No menu Data Infrastructure Insights, clique em *observabilidade > coletores*
+. Clique em *Installed Data Collectors*
+. Clique na caixa de verificação à esquerda dos coletores de dados que pretende modificar.
+. No menu de opções à direita, clique na opção que deseja executar.
+
+
+.Depois de terminar
+A operação selecionada é realizada nos coletores de dados. Quando você escolheu excluir coletores de dados, uma caixa de diálogo é exibida exigindo que você ajuste a ação.

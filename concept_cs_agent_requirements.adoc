@@ -1,0 +1,127 @@
+---
+sidebar: sidebar 
+permalink: concept_cs_agent_requirements.html 
+summary: O servidor ou VM que você usa como agente deve atender aos requisitos mínimos 
+keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cloud Secure 
+---
+= Requisitos do Agente de Segurança de carga de trabalho
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Você develink:task_cs_add_agent.html["Instale um agente"], a fim de adquirir informações de seus coletores de dados. Antes de instalar o agente, você deve garantir que seu ambiente atenda aos requisitos do sistema operacional, CPU, memória e espaço em disco.
+
+[cols="36,60"]
+|===
+| Componente | Requisito Linux 
+
+
+| Sistema operacional | Um computador executando uma versão licenciada de um dos seguintes: * CentOS 64 64 64 24,04 11 9,4 Stream (9,2 15 SP3 20,04 64 64 64-bit), CentOS 9 9,4 15 SP5 22,04 10 9,3 Stream, SELinux * OpenSUSE Leap 8,8 a 15,5 (64-bit) * Oracle Linux 8,6 - 64, 9,1 a 9,4 (8,8-bit) * Red Hat Enterprise Linux 8,6 a 15,3, 9,1 a 9,4 (8-bit), SELinux * Rocky 64 Recomenda-se um servidor dedicado. 
+
+
+| Comandos | 'unzip' é necessário para a instalação. Além disso, o comando 'sudo su –' é necessário para instalação, execução de scripts e desinstalação. 
+
+
+| CPU | 4 núcleos de CPU 
+
+
+| Memória | 16 GB DE RAM 
+
+
+| Espaço disponível em disco | O espaço em disco deve ser alocado desta maneira: /Opt/NetApp 36 GB (mínimo de 35 GB de espaço livre após a criação do sistema de arquivos) Nota: Recomenda-se alocar um pouco de espaço em disco extra para permitir a criação do sistema de arquivos. Certifique-se de que haja pelo menos 35 GB de espaço livre no sistema de arquivos. Se /opt for uma pasta montada a partir de um armazenamento nas, certifique-se de que os utilizadores locais têm acesso a esta pasta. O Agent ou Data Collector pode falhar na instalação se os usuários locais não tiverem permissão para essa pasta. Consulte link:task_cs_add_agent.html#troubleshooting-agent-errors["solução de problemas"]a seção para obter mais detalhes. 
+
+
+| Rede | Conexão Ethernet de 100 Mbps a 1 Gbps, endereço IP estático, conetividade IP a todos os dispositivos e uma porta necessária para a instância de segurança de carga de trabalho (80 ou 443). 
+|===
+Observação: O agente Workload Security pode ser instalado na mesma máquina que uma unidade de aquisição e/ou agente do Data Infrastructure Insights. No entanto, é uma prática recomendada instalá-los em máquinas separadas. No caso de estes estarem instalados na mesma máquina, atribua espaço em disco, conforme ilustrado abaixo:
+
+|===
+
+
+| Espaço disponível em disco | 50-55 GB para Linux, o espaço em disco deve ser alocado desta maneira: /Opt/NetApp 25-30 GB /var/log/NetApp 25 GB 
+|===
+
+
+== Recomendações adicionais
+
+* É altamente recomendável sincronizar a hora no sistema ONTAP e na máquina do agente usando *Protocolo de tempo de rede (NTP)* ou *Protocolo de tempo de rede simples (SNTP)*.
+
+
+
+
+== Regras de acesso à rede na nuvem
+
+Para ambientes de segurança de carga de trabalho *baseados nos EUA*:
+
+[cols="5*"]
+|===
+| Protocolo | Porta | Fonte | Destino | Descrição 
+
+
+| TCP | 443 | Agente de segurança de carga de trabalho | <site_name>.cs01.cloudinsights.NetApp.com <site_name>.c01.cloudinsights.NetApp.com <site_name>.c02.cloudinsights.NetApp.com | Acesso ao Data Infrastructure Insights 
+
+
+| TCP | 443 | Agente de segurança de carga de trabalho | gateway.c01.cloudinsights.netapp.com agentlogin.cs01.cloudinsights.netapp.com | Acesso aos serviços de autenticação 
+|===
+Para ambientes de segurança de carga de trabalho *baseados na Europa*:
+
+[cols="5*"]
+|===
+| Protocolo | Porta | Fonte | Destino | Descrição 
+
+
+| TCP | 443 | Agente de segurança de carga de trabalho | <site_name>.cs01-eu-1.cloudinsights.NetApp.com <site_name>.c01-eu-1.cloudinsights.NetApp.com <site_name>.c02-eu-1.cloudinsights.NetApp.com | Acesso ao Data Infrastructure Insights 
+
+
+| TCP | 443 | Agente de segurança de carga de trabalho | gateway.c01.cloudinsights.NetApp.com agentlogin.cs01-eu-1.cloudinsights.NetApp.com | Acesso aos serviços de autenticação 
+|===
+Para ambientes de segurança de workload *baseados na APAC*:
+
+[cols="5*"]
+|===
+| Protocolo | Porta | Fonte | Destino | Descrição 
+
+
+| TCP | 443 | Agente de segurança de carga de trabalho | <site_name>.cs01-ap-1.cloudinsights.NetApp.com <site_name>.c01-ap-1.cloudinsights.NetApp.com <site_name>.c02-ap-1.cloudinsights.NetApp.com | Acesso ao Data Infrastructure Insights 
+
+
+| TCP | 443 | Agente de segurança de carga de trabalho | gateway.c01.cloudinsights.NetApp.com agentlogin.cs01-ap-1.cloudinsights.NetApp.com | Acesso aos serviços de autenticação 
+|===
+
+
+== Regras na rede
+
+[cols="5*"]
+|===
+| Protocolo | Porta | Fonte | Destino | Descrição 
+
+
+| TCP | 389 (LDAP) 636 (LDAPS/start-tls) | Agente de segurança de carga de trabalho | URL do servidor LDAP | Ligar ao LDAP 
+
+
+| TCP | 443 | Agente de segurança de carga de trabalho | Endereço IP do gerenciamento do cluster ou SVM (dependendo da configuração do coletor do SVM) | Comunicação de API com o ONTAP 
+
+
+| TCP | 35000 - 55000 | Endereços IP de LIF de dados SVM | Agente de segurança de carga de trabalho | Comunicação do ONTAP para o agente de segurança de carga de trabalho para eventos Fpolicy. Essas portas devem ser abertas para o Agente de Segurança de carga de trabalho para que o ONTAP envie eventos para ele, incluindo qualquer firewall no próprio Agente de Segurança de carga de trabalho (se presente). OBSERVE que você não precisa reservar *todos* dessas portas, mas as portas que você reserva para isso devem estar dentro desse intervalo. Recomenda-se começar reservando cerca de 100 portas e aumentando, se necessário. 
+
+
+| TCP | 7 | Agente de segurança de carga de trabalho | Endereços IP de LIF de dados SVM | ECHO de LIFs de dados de agente para SVM 
+
+
+| SSH | 22 | Agente de segurança de carga de trabalho | Gerenciamento de clusters | Necessário para bloqueio de usuários CIFS/SMB. 
+|===
+
+
+== Dimensionamento do sistema
+
+Consulte link:concept_cs_event_rate_checker.html["Verificador de taxa de eventos"]a documentação para obter informações sobre dimensionamento.

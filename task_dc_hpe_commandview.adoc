@@ -1,0 +1,217 @@
+---
+sidebar: sidebar 
+permalink: task_dc_hpe_commandview.html 
+keywords: data collector, HP Command View, HP, CVAE 
+summary: Configurando o coletor de dados HP Enterprise Command View. 
+---
+= Coletor de dados HP Enterprise Command View
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de dados HP Enterprise Command View Advanced Edition suporta a descoberta de matrizes XP e P9500 através do servidor CVAE (Command View Advanced Edition). O Data Infrastructure Insights se comunica com o CVAE usando a API Command View padrão para coletar dados de inventário e desempenho.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados HP Enterprise Command View. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| PDEV | Disco 
+
+
+| Pool Diário | Grupo de discos 
+
+
+| Storage array | Armazenamento 
+
+
+| Controlador de porta | Nó de storage 
+
+
+| Grupo de array, DP Pool | Pool de storage 
+
+
+| Unidade lógica, LDEV | Volume 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos de inventário
+
+Você deve ter o seguinte para coletar dados de inventário:
+
+* Endereço IP do servidor CVAE
+* Nome de usuário e senha somente leitura para o software CVAE e Privileges peer
+* Exigência do porto: 2001
+
+
+
+
+== Requisitos de desempenho
+
+Os seguintes requisitos devem ser atendidos para coletar dados de desempenho:
+
+* Desempenho do HDS USP, USP V e VSP
++
+** O Monitor de desempenho deve ser licenciado.
+** O interrutor de monitorização tem de estar ativado.
+** A ferramenta de exportação (Export.exe) deve ser copiada para a AU Data Infrastructure Insights e extraída para um local. No CI Linux AUS, certifique-se de que "cisys" tenha permissões de leitura e execução.
+** A versão da ferramenta de exportação deve corresponder à versão do microcódigo da matriz de destino.
+
+
+* Desempenho AMS:
++
+** O Monitor de desempenho deve ser licenciado.
+** O utilitário CLI do Storage Navigator Modular 2 (SNM2) deve ser instalado no Data Infrastructure Insights AU.
+
+
+* Requisitos de rede
++
+** As Ferramentas de exportação são baseadas em Java e usam RMI para falar com o array. Essas ferramentas podem não ser compatíveis com firewall, pois podem negociar dinamicamente as portas TCP de origem e destino em cada invocação. Além disso, as ferramentas de exportação de diferentes matrizes de modelos podem se comportar de forma diferente em toda a rede - consulte a HPE para obter os requisitos do seu modelo
+
+
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Servidor de visualização de comandos | Endereço IP ou nome de domínio totalmente qualificado do servidor Command View 
+
+
+| Nome de utilizador | Nome de usuário do servidor Command View. 
+
+
+| Palavra-passe | Senha usada para o servidor Command View. 
+
+
+| DISPOSITIVOS - VSP G1000 (R800), VSP (R700), HUS VM (HM700) E ARMAZENAMENTOS USP | Lista de dispositivos para armazenamentos VSP G1000 (R800), VSP (R700), HUS VM (HM700) e USP. Cada armazenamento requer: * IP da matriz: Endereço IP do armazenamento * Nome do utilizador: Nome do utilizador para o armazenamento * Palavra-passe: Palavra-passe para o armazenamento * pasta que contém ficheiros JAR do utilitário de exportação 
+
+
+| SNM2Devices - armazenamentos WMS/SMS/AMS | Lista de dispositivos para armazenamentos WMS/SMS/AMS. Cada armazenamento requer: * IP da matriz: Endereço IP do armazenamento * caminho CLI do Navegador de armazenamento: SNM2 caminho CLI * Autenticação de conta válida: Selecione para escolher autenticação de conta válida * Nome de utilizador: Nome de utilizador para o armazenamento * Palavra-passe: Palavra-passe para o armazenamento 
+
+
+| Escolha o Tuning Manager para desempenho | Substituir outras opções de desempenho 
+
+
+| Host do Tuning Manager | Endereço IP ou nome de domínio totalmente qualificado do gerenciador de ajuste 
+
+
+| Porta do Gestor de sintonização | Porta usada para Tuning Manager 
+
+
+| Nome de utilizador do Gestor de sintonização | Nome de usuário para Tuning Manager 
+
+
+| Palavra-passe do Gestor de sintonização | Senha para Tuning Manager 
+|===
+Nota: No HDS USP, USP V e VSP, qualquer disco pode pertencer a mais de um grupo de matrizes.
+
+
+
+== Configuração avançada
+
+|===
+
+
+| Campo | Descrição 
+
+
+| Porta do servidor de visualização de comandos | Porta usada para o Command View Server 
+
+
+| HTTPS ativado | Selecione para ativar HTTPS 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. A predefinição é 40. 
+
+
+| Escolha 'Excluir' ou 'incluir' para especificar uma lista | Especifique se deve incluir ou excluir a lista de matrizes abaixo ao coletar dados. 
+
+
+| Excluir ou incluir dispositivos | Lista separada por vírgulas de ID de dispositivo ou nomes de matriz para incluir ou excluir 
+
+
+| Consultar Gestor anfitrião | Selecione para consultar o gestor de anfitrião 
+
+
+| Intervalo de polling de desempenho (seg) | Intervalo entre sondagens de desempenho. A predefinição é 300. 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Erro: O usuário não tem permissão suficiente | Use uma conta de usuário diferente que tenha mais privilégios ou aumente o privilégio de conta de usuário configurada no coletor de dados 
+
+
+| Erro: A lista de armazenamentos está vazia. Os dispositivos não estão configurados ou o usuário não tem permissão suficiente | * Use DeviceManager para verificar se os dispositivos estão configurados. * Use uma conta de usuário diferente que tenha mais privilégios ou aumente o privilégio da conta de usuário 
+
+
+| Erro: A matriz de armazenamento HDS não foi atualizada durante alguns dias | Investigue por que esse array não está sendo atualizado no HP CommandView AE. 
+|===
+
+
+=== Desempenho
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Erro: * Erro ao executar o utilitário de exportação * erro ao executar comando externo | * Confirme se Export Utility está instalado na Unidade de aquisição do Data Infrastructure Insights * Confirme se a localização do Utilitário de exportação está correta na configuração do coletor de dados * Confirme se o IP do array USP/R600 está correto na configuração do coletor de dados * Confirme se o nome do usuário e a senha estão corretos na configuração do coletor de dados * Confirme se runWin.bat 
+
+
+| Erro: O login da ferramenta de exportação falhou para o IP de destino | * Confirmar que o nome de utilizador/palavra-passe está correto * criar uma ID de utilizador principalmente para este coletor de dados HDS * confirmar que nenhum outro coletor de dados está configurado para adquirir esta matriz 
+
+
+| Erro: Ferramentas de exportação registradas "não é possível obter intervalo de tempo para monitoramento". | * Confirmar que o monitoramento de desempenho está habilitado no array. * Tente invocar as ferramentas de exportação fora do Data Infrastructure Insights para confirmar que o problema está fora do Data Infrastructure Insights. 
+
+
+| Erro: * Erro de configuração: Matriz de armazenamento não suportada pelo Utilitário de exportação * erro de configuração: Matriz de armazenamento não suportada pela CLI Modular do Storage Navigator | * Configurar apenas matrizes de armazenamento suportadas. * Use "Filtrar lista de dispositivos" para excluir matrizes de armazenamento não suportadas. 
+
+
+| Erro: * Erro ao executar comando externo * erro de configuração: Matriz de armazenamento não reportada pelo Inventário * erro de configuração:pasta de exportação não contém arquivos jar | * Verifique a localização do utilitário de exportação. * Verifique se a matriz de armazenamento em questão está configurada no servidor Command View * defina o intervalo de enquete de desempenho como múltiplo de 60 segundos. 
+
+
+| Erro: * Error Storage Navigator CLI * erro ao executar o comando auperform * erro ao executar comando externo | * Confirme que a CLI Modular do Storage Navigator está instalada na Unidade de aquisição de dados Insights da infraestrutura de dados * Confirme que a localização da CLI Modular do Storage Navigator está correta na configuração do coletor de dados * Confirme que a versão da CLI Modular do Storage Navigator é compatível com a versão de micro-código da matriz de armazenamento configurada no coletor de dados * da Unidade de aquisição de dados Insights da infraestrutura de dados, abra um diretório de dados, abra o seguinte para fazer uma conexão de cliente configurada para executar uma conexão do storage auteref.exe. 
+
+
+| Erro: Erro de configuração: Storage Array não reportado pelo Inventário | Verifique se a matriz de armazenamento em questão está configurada no servidor Command View 
+
+
+| Erro: * Nenhuma matriz é registrada com o Storage Navigator Modular 2 CLI * a matriz não está registrada com o Storage Navigator Modular 2 CLI * erro de configuração: Matriz de armazenamento não registrada com o StorageNavigator Modular CLI | * Abra o prompt de comando e mude o diretório para o caminho configurado * execute o comando * Executar o comando "auunitref" * confirmar que a saída do comando contém detalhes da matriz com IP * se a saída não contém os detalhes da matriz, em seguida, Registrar a matriz com Storage Navigator CLI: - Abrir prompt de comando e alterar diretório para o caminho configurado - execute o comando "set - Execute o comando "auunitaddauto -ip". Substitua o ip por IP real 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

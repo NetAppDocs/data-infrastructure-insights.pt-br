@@ -1,0 +1,122 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_ecs.html 
+keywords: data collector, ecs, EMC 
+summary: Configurar o coletor de dados ECS. 
+---
+= Configurar o coletor de dados EMC ECS
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Este coletor de dados adquire dados de inventário e desempenho dos sistemas de armazenamento EMC ECS. Para a configuração, o coletor de dados requer um endereço IP ou nome de host do cluster ECS e um nome de usuário e senha.
+
+
+NOTE: O Dell EMC ECS é medido a uma taxa bruta de TB para Unidade gerenciada diferente. Cada 40 TB de capacidade ECS não formatada é cobrada como 1 link:concept_subscribing_to_cloud_insights.html#pricing["Unidade gerenciada (MU)"].
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados ECS. Para cada tipo de ativo adquirido, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Cluster | Armazenamento 
+
+
+| Locatário | Pool de storage 
+
+
+| Balde | Volume interno 
+
+
+| Disco | Disco 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* Um endereço IP ou nome de host do cluster ECS
+* Um nome de utilizador e uma palavra-passe para o sistema ECS
+* Porta 4443 (HTTPS). Requer conetividade de saída à porta TCP 4443 no sistema ECS.
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Anfitrião ECS | Endereço IP ou nome de domínio totalmente qualificado do sistema ECS 
+
+
+| Porta de host ECS | Porta utilizada para comunicação com o ECS Host 
+
+
+| ID de utilizador ECS | ID de utilizador para ECS 
+
+
+| Palavra-passe | Palavra-passe utilizada para ECS 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | O padrão é 360 minutos. 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+==== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Erro: Falha na autenticação do utilizador. | Certifique-se de que as suas credenciais para este dispositivo estão corretas. 
+|===
+
+
+==== Desempenho
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Erro: Não foram recolhidos dados suficientes. | • Verifique o carimbo de data/hora da coleção no arquivo de log e modifique o intervalo de polling em conformidade • aguarde mais tempo 
+
+
+| Erro: O intervalo de polling de desempenho é muito grande. | Verifique o timestamp da coleção no arquivo de log e modifique o intervalo de polling em conformidade 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

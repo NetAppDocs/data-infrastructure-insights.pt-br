@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: reporting_managing_reports.html 
+summary: 'Personalização da saída e entrega de relatórios, cópia de relatórios para a área de transferência, abertura de relatórios (XML).' 
+keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying 
+---
+= Gerenciando relatórios
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Você pode personalizar o formato de saída e a entrega de um relatório, definir propriedades ou horários do relatório e relatórios de e-mail.
+
+
+NOTE: O recurso relatórios está disponível no Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html["Edição Premium"].
+
+
+IMPORTANT: Antes de fazer alterações nas permissões de relatórios ou na segurança, você deve copiar os relatórios "meu conteúdo" para a pasta "conteúdo da equipe" para garantir que os relatórios sejam salvos.
+
+
+
+== Personalizar o formato de saída e a entrega de um relatório
+
+Você pode personalizar o formato e o método de entrega dos relatórios.
+
+. No Portal de relatórios do Data Infrastructure Insights, vá para *Menu > conteúdo > meu conteúdo/conteúdo da equipe*. Passe o Mouse sobre o relatório que você deseja personalizar e abra o menu "três pontos".
+
+
+image:Reporting_Output_and_Delivery.png["Relatório de saída e entrega"]
+
+. Clique em *Propriedades > Programação*
+
+
+. Pode definir as seguintes opções:
++
+** *Agendar* quando quiser que os relatórios sejam executados.
+** Escolha *Opções* para o formato e entrega do relatório (Salvar, Imprimir, e-mail) e idiomas para o relatório.
+
+
+. Clique em *Salvar* para produzir o relatório usando as seleções feitas.
+
+
+
+
+== Copiar um relatório para a área de transferência
+
+Use este processo para copiar um relatório para a área de transferência.
+
+. Selecione um relatório para copiar de (*Menu > conteúdo > meu conteúdo ou conteúdo da equipe*)
+. Escolha _Editar relatório_ no menu suspenso do relatório
++
+image:Reporting_Edit_Report.png["Editar um relatório"]
+
+. No canto superior direito da tela, abra o menu "três pontos" ao lado de "Propriedades".
+. Selecione *Copiar relatório para a área de transferência*.
++
+image:Reporting_Copy_To_Clipboard.png["Copiar um relatório para a área de transferência"]
+
+
+
+
+
+== Abrindo relatórios da área de transferência
+
+Você pode abrir uma especificação de relatório que foi copiada anteriormente para a área de transferência.
+
+Sobre esta tarefa Comece criando um novo relatório ou abrindo um relatório existente que você deseja substituir pelo relatório copiado. As etapas abaixo são para um novo relatório.
+
+. Selecione *Menu > novo > Relatório* e crie um relatório em branco.
+. No canto superior direito da tela, abra o menu "três pontos" ao lado de "Propriedades".
+. Selecione *Open Report from Clipboard* (abrir relatório da área de transferência).
+
+
+image:Reporting_Open_From_Clipboard.png["Abrir um relatório a partir da área de transferência"]
+
+. Cole o código copiado na janela e selecione *OK*.
+. Selecione o ícone de disquete para salvar o relatório.
+. Escolha onde salvar o relatório (_My Content_, _Team Content_, ou crie uma nova pasta).
+. Dê ao novo relatório um nome significativo e selecione *Salvar*.
+
+
+
+
+== Editar um relatório existente
+
+Esteja ciente de que a edição de arquivos em seu local padrão corre o risco de esses relatórios serem substituídos na próxima atualização do catálogo de relatórios. Recomenda-se salvar o relatório editado com um novo nome ou armazená-lo em um local não padrão.
+
+
+
+== Solução de problemas
+
+Aqui você encontrará sugestões para solucionar problemas com relatórios.
+
+|===
+
+
+| *Problema:* | *Tente isto:* 
+
+
+| Ao agendar um relatório para ser enviado por e-mail, o nome do usuário conetado é preenchido previamente para o campo "para" do e-mail. No entanto, o nome está na forma de "nome próprio lastname" (nome próprio, espaço, sobrenome). Como esse não é um endereço de e-mail válido, o e-mail não será enviado quando o relatório programado for executado. | Ao agendar o relatório para ser enviado por e-mail, limpe o nome pré-preenchido e insira um endereço de e-mail válido e formatado corretamente no campo "para". 
+|===

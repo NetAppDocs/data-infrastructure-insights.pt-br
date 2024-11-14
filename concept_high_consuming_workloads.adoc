@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: concept_high_consuming_workloads.html 
+keywords: insight, greedy, degraded, bully, victim, impacted, impacting, impactful, impact, resources, consuming, workload 
+summary: Insights dão uma visão de como os recursos afetam outros recursos em seu ambiente. 
+---
+= Insights: Workloads de alto consumo
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Workloads de alto impacto podem reduzir o desempenho de outros workloads em um recurso compartilhado. O Data Infrastructure Insights fornece ferramentas para ajudar você a investigar a saturação e o impactos dos recursos em seu ambiente.
+
+
+
+=== Terminologia
+
+Ao falar sobre carga de trabalho ou impactos de recursos, as seguintes definições são úteis.
+
+Um recurso *impactante* ou _ganancioso_ é aquele que causa um impactos negativo em outro recurso. Por exemplo, um volume com IOPS muito alto pode causar maior latência em outros volumes (ou seja, recursos _impactados_ ou _degradados_). Os recursos impactantes e afetados são "colegas" que utilizam o mesmo recurso compartilhado, por exemplo, um pool de storage ou volume.
+
+*Carga de trabalho de alto consumo* é uma carga de trabalho que atualmente é identificada como impactando outros recursos no pool de armazenamento compartilhado. Esses workloads geram IOPS mais altos, reduzindo o IOPS nos workloads afetados. No Data Infrastructure Insights, eles são identificados como *cargas de trabalho exigentes*.
+
+Uma carga de trabalho *impactada* é uma carga de trabalho afetada por uma carga de trabalho de alto consumo no pool de armazenamento compartilhado. Esses workloads apresentam IOPS reduzidos e/ou latência mais alta, causados por workloads exigentes.
+
+*A saturação de recursos compartilhados* é a taxa de impactos do IOPS para _linha de base_.
+
+*Baseline* é definido como o ponto de dados máximo relatado para cada carga de trabalho na hora imediatamente anterior à saturação detetada.
+
+Uma *contenção* ocorre quando o IOPS está afetando outros recursos ou cargas de trabalho no pool de armazenamento compartilhado.
+
+
+
+=== Workloads de alto consumo
+
+Todas as cargas de trabalho de alto consumo detetadas pelo Data Infrastructure Insights são mostradas no _Shared Resources sob estresse_ Insight. Navegue até *observabilidade > Insights de infraestrutura* para visualizar esses Insights.
+
+image:Impacts_Workloads_Menu.png["Compartilha recursos"]
+
+Clique em uma carga de trabalho para exibir a página de detalhes para ela. O gráfico superior mostra a atividade no recurso compartilhado (por exemplo, um pool de armazenamento) no qual a contenção está ocorrendo.
+
+image:Insights_Shared_Resource_Contention_Chart.png["Gráfico mostrando atividade no recurso compartilhado"]
+
+Veja a seguir dois gráficos que mostram os workloads exigentes e os workloads afetados por esses workloads exigentes.
+
+image:Insights_Demanding_Workload_Chart.png["Gráfico de workload exigente"] image:Insights_Impacted_Workload_Chart.png["Gráfico de workload impactado"]
+
+
+
+=== O que faço para resolver a saturação?
+
+Existem várias etapas que você pode tomar para reduzir ou eliminar a chance de saturação em seu ambiente. Aqui estão algumas coisas que você pode tentar.
+
+* Mova os consumidores de IOPS alto
++
+Mova as cargas de trabalho "exigentes" para pools de storage menos saturados. Recomenda-se avaliar o nível e a capacidade desses pools antes de mover as cargas de trabalho, a fim de evitar custos desnecessários ou contenções adicionais.
+
+* Implementar uma política de qualidade de serviço (QoS)
++
+A implementação de uma política de QoS por workload para garantir recursos livres suficientes disponíveis aliviará a saturação no pool de storage. Esta é uma solução a longo prazo.
+
+* Adicione recursos adicionais
++
+Se o recurso compartilhado (por exemplo, pool de armazenamento) atingir o ponto de saturação de IOPS, adicionar mais ou mais discos mais rápidos ao pool garantirá recursos livres suficientes disponíveis para aliviar a saturação.
+
+

@@ -1,0 +1,141 @@
+---
+sidebar: sidebar 
+permalink: concept_kubernetes_network_monitoring_and_map.html 
+keywords: service map, workloads, 
+summary: Apresenta fluxos e dependências de workload do Kubernetes e destaca problemas de rede e desempenho 
+---
+= Monitoramento e mapa de desempenho de rede do Kubernetes
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O recurso Kubernetes Network Performance Monitoring and Map simplifica a solução de problemas mapeando dependências entre serviços (também chamadas de cargas de trabalho) e oferece visibilidade em tempo real das latências de desempenho e anomalias de rede para identificar problemas de desempenho antes que eles afetem os usuários. Essa funcionalidade ajuda as organizações a reduzir os custos gerais analisando e auditando os fluxos de tráfego do Kubernetes.
+
+Principais recursos: • O mapa de carga de trabalho apresenta dependências e fluxos de carga de trabalho do Kubernetes e destaca problemas de rede e desempenho. • Monitore o tráfego de rede entre pods, cargas de trabalho e nós do Kubernetes; identifique a origem dos problemas de latência e tráfego. • Reduzir os custos gerais analisando o tráfego de rede de entrada, saída, cross-region e cross-zone.
+
+image:workload-map-animated.gif["Exemplo de mapa de workload"]
+
+
+
+== Pré-requisitos
+
+Para poder usar o monitoramento e o mapa de desempenho de rede do Kubernetes, você deve ter configurado o link:task_config_telegraf_agent_k8s.html["Operador de monitoramento do Kubernetes do NetApp"] para ativar essa opção. Durante a implementação do Operador, selecione a caixa de verificação "Network Performance and Map" (desempenho da rede e mapa) para ativar. Você também pode habilitar essa opção navegando para uma página inicial do Kubernetes e selecionando "Modificar implantação".
+
+image:ServiceMap_NKMO_Deployment_Options.png["Selecionar a opção mapa durante o NKMO stup"]
+
+
+
+== Monitores
+
+O mapa de carga de trabalho utiliza link:task_create_monitor.html["monitores"] para obter informações. O Data Infrastructure Insights fornece uma série de monitores padrão do Kubernetes (observe que eles podem ser _Pausado_ por padrão. Você pode _Resume_ (ou seja, ativar) os monitores que você deseja), ou você pode criar monitores personalizados para objetos kujuntos, que o mapa de carga de trabalho também usará.
+
+Você pode criar alertas de métricas do Data Infrastructure Insights em qualquer um dos tipos de objeto abaixo. Certifique-se de que os dados estão agrupados pelo tipo de objeto padrão.
+
+* kuseurea.workflow
+* kuasse.daemonset
+* kubernetes.deployment
+* kuseurs.cronjob
+* kuasse.job
+* kuseixos.replicaset
+* kuasse.statefulset
+* kuasse.pod
+* kubernetes.network_traffic_l4
+
+
+
+
+== O mapa
+
+O mapa mostra os serviços/cargas de trabalho e seus relacionamentos entre si. Setas mostram direções de tráfego. Passar o Mouse sobre uma carga de trabalho exibe informações resumidas para essa carga de trabalho, como você pode ver neste exemplo:
+
+image:ServiceMap_Simple_Example.png["Exemplo de um workload de mapa de workload"]
+
+Os ícones dentro dos círculos representam diferentes tipos de serviço. Observe que os ícones só serão visíveis se os objetos subjacentes tiverem <<workload-labels,etiquetas>>.
+
+image:ServiceMap_Icons.png["Explicação dos ícones de serviço"]
+
+O tamanho de cada círculo indica o tamanho do nó. Observe que esses tamanhos são relativos, o nível de zoom do navegador ou o tamanho da tela podem afetar os tamanhos reais dos círculos. Da mesma forma, o estilo de linha de tráfego oferece uma visão rápida do tamanho da conexão; linhas sólidas arrojadas são tráfego alto, enquanto linhas pontilhadas de luz são tráfego mais baixo.
+
+Os números dentro dos círculos são o número de conexões externas que estão sendo processadas pelo serviço.
+
+image:ServiceMap_Node_and_Connection_Legend.png["legenda mostrando o círculo relativo (nó) e tamanhos de conexão"]
+
+
+
+== Detalhes e alertas do workload
+
+Os círculos exibidos em cores indicam um alerta de nível crítico ou de aviso para a carga de trabalho. Passe o Mouse sobre o círculo para obter um resumo do problema ou clique no círculo para abrir um painel de deslizamento com mais detalhes.
+
+image:Workload_Map_Slideout_with_Alert.png["Detalhes do Slideout da carga de trabalho com alertas"]
+
+
+
+== Encontrando e filtrando
+
+Como acontece com outros recursos do Data Infrastructure Insights, você pode facilmente definir filtros para se concentrar nos objetos específicos ou atributos de carga de trabalho desejados.
+
+image:Workload_Map_Filtering.png["Filtragem de mapa de workload"]
+
+Da mesma forma, digitar uma string no campo _find_ destacará as cargas de trabalho correspondentes.
+
+image:Workload_Map_Find_Highlighting.png["digitar na caixa localizar destaca as cargas de trabalho"]
+
+
+
+== Etiquetas de workload
+
+As etiquetas de carga de trabalho são necessárias se pretender que o mapa identifique os tipos de cargas de trabalho apresentadas (ou seja, os ícones de círculo). As etiquetas são derivadas da seguinte forma:
+
+* Nome do serviço/aplicativo em execução em termos genéricos
+* Se a fonte for um pod:
++
+** A etiqueta é derivada da etiqueta da carga de trabalho do pod
+** Etiqueta esperada na carga de trabalho: App.kureau.io/component
+** Referência do nome da etiqueta: https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/[]
+** Etiquetas recomendadas:
++
+*** frontend
+*** back-end
+*** banco de dados
+*** cache
+*** fila de espera
+*** kafka
+
+
+
+
+* Se a fonte for externa ao cluster kualves:
++
+** O Data Infrastructure Insights tentará analisar o nome DNS resolvido para extrair o tipo de serviço.
++
+Por exemplo, com um nome DNS resolvido de _s3.eu-north-1.amazonaws.com_, o nome resolvido é analisado para obter _S3_ como o tipo de serviço.
+
+
+
+
+
+
+
+== Mergulhe fundo
+
+Clicar com o botão direito do Mouse em uma carga de trabalho apresenta opções adicionais para explorar ainda mais. Por exemplo, a partir daqui, você pode aumentar o zoom para ver as conexões para essa carga de trabalho.
+
+image:Workload_Map_Zoom_Into_Connections.png["Clique com o botão direito do Mouse em Zoom para mostrar as conexões da carga de trabalho"]
+
+Ou você pode abrir o painel deslizante de detalhes para visualizar diretamente a guia _Summary_, _Network_ ou _Pod & Storage_.
+
+image:Workload_Map_Detail_Network_Slideout.png["Exemplo da guia rede Slideout detalhada"]
+
+Finalmente, selecionar _Go to Asset Page_ abrirá a página de destino detalhada do ativo para a carga de trabalho.
+
+image:Workload_Map_Asset_Page.png["Página de ativos de carga de trabalho"]

@@ -1,0 +1,160 @@
+---
+sidebar: sidebar 
+permalink: task_create_query.html 
+summary: As consultas permitem que você identifique de forma rápida e fácil os ativos e as métricas de interesse. 
+keywords: query, queries 
+---
+= Criando consultas
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+As consultas permitem que você pesquise os ativos em seu ambiente em um nível granular, permitindo filtrar os dados que você deseja e classificar os resultados de acordo com o seu gosto.
+
+Por exemplo, você pode criar uma consulta para _volumes_, adicionar um filtro para localizar _storages_ específicos associados aos volumes selecionados, adicionar outro filtro para encontrar uma _anotação_ específica, como "Tier 1" nos armazenamentos selecionados e, finalmente, adicionar outro filtro para localizar todos os armazenamentos com _IOPS - leitura (IO/s)_ maior que 25. Quando os resultados são exibidos, você pode classificar as colunas de informações associadas à consulta em ordem crescente ou decrescente.
+
+Observação: Quando um novo coletor de dados é adicionado que adquire ativos, ou qualquer anotação ou atribuição de aplicativo é feita, você pode consultar esses novos ativos, anotações ou aplicativos somente depois que as consultas forem indexadas. A indexação ocorre em um intervalo programado regularmente ou durante determinados eventos, como regras de anotação em execução.
+
+.Criar uma consulta é muito simples:
+. Navegue até *consultas > * Nova consulta*.
+. Na lista 'Selecionar...', selecione o tipo de objeto que deseja consultar. Pode percorrer a lista ou começar a escrever para encontrar mais rapidamente o que está a procurar.
+
+
+.Lista de deslocamento:
+image:QueryDrop-DownList.png["Lista pendente consulta"]
+
+.Tipo de pesquisa:
+image:QueryPageFilter.png["Digitando para encontrar"]
+
+Você pode adicionar filtros para restringir ainda mais sua consulta clicando no botão * no campo *Filtrar por*. Agrupar linhas por objeto ou atributo. Ao trabalhar com dados de integração (Kubernetes, métricas avançadas do ONTAP, etc.), você pode agrupar por vários atributos, se desejado.
+
+image:QueryFilterExample.png["Filtragem e agrupamento de consultas"]
+
+A lista de resultados da consulta mostra um número de colunas padrão, dependendo do tipo de objeto pesquisado. Para adicionar, remover ou alterar as colunas, clique no ícone de engrenagem à direita da tabela. As colunas disponíveis variam com base no tipo ativo/métrico.
+
+image:QuerySelectColumns.png["Selecione colunas"]
+
+
+
+== Escolhendo agregação, unidades, formatação condicional
+
+
+
+=== Agregação e unidades
+
+Para colunas "valor", você pode refinar ainda mais os resultados da consulta escolhendo como os valores exibidos são agregados, bem como selecionar as unidades em que esses valores são exibidos. Essas opções são encontradas selecionando o menu "três pontos" no canto superior de uma coluna.
+
+image:Query_Page_Aggregation_etc.png["Resultados da página de consulta que mostram agregação, formatação condicional, Exibição da unidade e Renomear coluna"]
+
+
+
+==== Unidades
+
+Pode selecionar as unidades em que pretende visualizar os valores. Por exemplo, se a coluna selecionada mostrar capacidade bruta e os valores forem mostrados no GiB, mas você preferir exibi-los como TIB, basta selecionar TIB na lista suspensa Exibição da unidade.
+
+
+
+==== Agregação
+
+Pelo mesmo token, se os valores mostrados forem agregados a partir dos dados subjacentes como "média", mas você preferir mostrar a soma de todos os valores, selecione "soma" na lista suspensa _Group by_ (se você quiser que quaisquer valores agrupados mostrem as somas) ou na lista suspensa _time Aggregate by_ (se quiser que os valores de linha mostrem somas de dados subjacentes).
+
+Você pode optar por agregar pontos de dados agrupados por _média, Máx, Mín ou soma_.
+
+Você pode agregar dados de linha individuais por _média, último ponto de dados adquirido, máximo, mínimo ou soma_.
+
+
+
+==== Formatação condicional
+
+A formatação condicional permite destacar os limites de nível de aviso e nível crítico na lista de resultados da consulta, trazendo visibilidade instantânea para outliers e pontos de dados excecionais.
+
+image:Query_Page_Conditional_Formatting.png["Formatação condicional na página de consulta"]
+
+A formatação condicional é definida separadamente para cada coluna. Por exemplo, você pode escolher um conjunto de limites para uma coluna de capacidade e outro conjunto para uma coluna de taxa de transferência.
+
+
+
+==== Mudar o nome da coluna
+
+Renomear uma coluna altera o nome exibido na lista resultados da consulta. O novo nome da coluna também é mostrado no arquivo resultante se você exportar a lista de consulta para .CSV.
+
+
+
+=== Guardar
+
+Depois de configurar sua consulta para mostrar os resultados desejados, você pode clicar no botão *Salvar* para salvar a consulta para uso futuro. Dê-lhe um nome significativo e único.
+
+
+
+== Mais sobre filtragem
+
+
+
+=== Curingas e expressões
+
+Quando você está filtrando valores de texto ou lista em consultas ou widgets de painel, à medida que você começa a digitar, você recebe a opção de criar um filtro * curinga* com base no texto atual. Selecionar esta opção irá retornar todos os resultados que correspondem à expressão curinga. Você também pode criar *expressões* usando NOT OU OU, ou pode selecionar a opção "nenhum" para filtrar valores nulos no campo.
+
+image:Type-Ahead-Example-ingest.png["Filtro Wildcard"]
+
+Os filtros baseados em carateres universais ou expressões (por exemplo, NÃO, OU, "nenhum", etc.) são exibidos em azul escuro no campo de filtro. Os itens que você selecionar diretamente da lista são exibidos em azul claro.
+
+image:Type-Ahead-Example-Wildcard-DirectSelect.png["Resultados do filtro Wildcard"]
+
+Observe que a filtragem de carateres curinga e expressão funciona com texto ou listas, mas não com valores numéricos, datas ou booleanos.
+
+
+
+=== Refinando filtros
+
+Você pode usar o seguinte para refinar seu filtro:
+
+|===
+
+
+| Filtro | O que faz | Exemplo | Resultado 
+
+
+| * (Asterisco) | permite-lhe procurar tudo | vol*rhel | retorna todos os recursos que começam com "vol" e terminam com "rhel" 
+
+
+| ? (ponto de interrogação) | permite-lhe procurar um número específico de carateres | BOS-PRD??-S12 | Retorna BOS-PRD**__12_**-S12, BOS-PRD**__23_**-S12, e assim por diante 
+
+
+| OU | permite especificar várias entidades | FAS2240 OU CX600 OU FAS3270 | Retorna qualquer um de FAS2440, CX600 ou FAS3270 
+
+
+| NÃO | permite excluir texto dos resultados da pesquisa | NÃO EMC* | Retorna tudo o que não começa com "EMC" 
+
+
+| _Nenhum_ | Procura valores NULL em todos os campos | _Nenhum_ | retorna resultados onde o campo de destino está vazio 
+
+
+| Não * | Procura valores NULL em campos _text-only_ | Não * | retorna resultados onde o campo de destino está vazio 
+|===
+Se você incluir uma string de filtro em aspas duplas, o Insight trata tudo entre a primeira e a última citação como uma correspondência exata. Quaisquer carateres especiais ou operadores dentro das aspas serão tratados como literais. Por exemplo, a filtragem para "*" retornará resultados que são um asterisco literal; o asterisco não será Tratado como um curinga neste caso. Os operadores OU E NÃO também serão tratados como strings literais quando incluídos em aspas duplas.
+
+
+
+== O que faço agora que tenho resultados de consultas?
+
+A consulta fornece um local simples para adicionar anotações ou atribuir aplicativos a ativos. Note que só pode atribuir aplicações ou anotações aos seus ativos de inventário (disco, armazenamento, etc.). As métricas de integração não podem assumir atribuições de anotações ou aplicativos.
+
+Para atribuir uma anotação ou aplicação aos ativos resultantes da sua consulta, selecione sinply o(s) ativo(s) utilizando a coluna da caixa de verificação à esquerda da tabela de resultados e, em seguida, clique no botão *ações em massa* à direita. Escolha a ação desejada para aplicar aos ativos selecionados.
+
+image:QueryVolumeBulkActions.png["Consultar exemplo de ações em massa"]
+
+
+
+== As regras de anotação requerem consulta
+
+Se você estiver configurando link:task_create_annotation_rules.html["Regras de anotação"], cada regra deve ter uma consulta subjacente para trabalhar. Mas, como você viu acima, as consultas podem ser feitas tão amplas ou estreitas quanto você precisa.

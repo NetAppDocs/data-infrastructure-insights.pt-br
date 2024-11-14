@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: concept_telegraf_display_options.html 
+keywords: telegraf, data, display, 
+summary: Opções de visualização de dados do Telegraf 
+---
+= Métricas transformadoras
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Insights de infraestrutura de dados fornece diferentes opções *Transform* para determinadas métricas em widgets (especificamente, aquelas métricas chamadas "personalizadas" ou métricas de integração, como do Kubernetes, dados avançados do ONTAP, plugins do Telegraf, etc.), permitindo que você exiba os dados de várias maneiras. Ao adicionar métricas transformáveis a um widget, você é apresentado com uma lista suspensa fornecendo as seguintes opções de transformação:
+
+Nenhum:: Os dados são apresentados como estão, sem manipulação.
+Taxa:: Valor atual dividido pelo intervalo de tempo desde a observação anterior.
+Cumulativo:: A acumulação da soma dos valores anteriores e do valor atual.
+Delta:: A diferença entre o valor de observação anterior e o valor atual.
+Taxa Delta:: Valor Delta dividido pelo intervalo de tempo desde a observação anterior.
+Taxa acumulada:: Valor cumulativo dividido pelo intervalo de tempo desde a observação anterior.
+
+
+Observe que transformar métricas não altera os dados subjacentes em si, mas apenas a maneira como os dados são exibidos.

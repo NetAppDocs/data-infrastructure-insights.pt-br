@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: task_cs_getting_started.html 
+keywords: collectors, data collectors, configure, introduction, browsers , Cloud Secure 
+summary: Alguns passos simples vão ajudá-lo a começar a usar o Workload Security 
+---
+= Introdução ao Workload Security
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Há tarefas de configuração que precisam ser concluídas antes de começar a usar o Workload Security para monitorar a atividade do usuário.
+
+O sistema de segurança de carga de trabalho usa um agente para coletar dados de acesso de sistemas de armazenamento e informações de usuários de servidores de Serviços de diretório.
+
+Você precisa configurar o seguinte antes de começar a coletar dados:
+
+[cols="2*"]
+|===
+
+
+| Tarefa | Informações relacionadas 
+
+
+| Configurar um agente  a| 
+link:concept_cs_agent_requirements.html["Requisitos do agente"]
+
+link:task_cs_add_agent.html["Adicionar agente"]
+
+link:https://netapp.hubs.vidyard.com/watch/Lce7EaGg7NZfvCUw4Jwy5P?["*Vídeo*: Implantação de agentes"]
+
+
+
+| Configure um conetor do diretório de usuários | link:task_config_user_dir_connect.html["Adicionar conetor do diretório do utilizador"] link:https://netapp.hubs.vidyard.com/watch/NEmbmYrFjCHvPps7QMy8me?["*Vídeo*: Conexão do ative Directory"] 
+
+
+| Configurar coletores de dados | Clique em *Workload Security > Collectors* clique no coletor de dados que deseja configurar. Consulte a seção Referência do fornecedor do coletor de dados da documentação. link:https://netapp.hubs.vidyard.com/watch/YSQrcYA7DKXbj1UGeLYnSF?["*Vídeo*: Conexão ONTAP SVM"] 
+
+
+| Crie contas de usuários | link:concept_user_roles.html["Gerir contas de utilizador"] 
+
+
+| Solução de problemas | link:https://netapp.hubs.vidyard.com/watch/Fs8N2w9wBtsFGrhRH9X85U?["*Vídeo*: Resolução de problemas"] 
+|===
+O Workload Security também pode ser integrado a outras ferramentas. Por exemplo, link:http://docs.netapp.com/us-en/cloudinsights/CloudInsights_CloudSecure_Splunk_integration_guide.pdf["consulte este guia"] na integração com o Splunk.

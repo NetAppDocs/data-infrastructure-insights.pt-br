@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: insights_overview.html 
+keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload, ttf, time to full, k8s, kubernetes, namespace 
+summary: Os insights fornecem uma visão do uso e das tendências dos recursos. 
+---
+= Insights
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Insights permitem que você analise coisas como o uso de recursos e como isso afeta outros recursos ou análises completas.
+
+Vários Insights estão disponíveis. Navegue até *Dashboards > Insights* para começar a mergulhar. Você pode exibir Insights ativos (Insights que estão ocorrendo atualmente) na guia principal ou Insights inativos na guia _Inactive Insights_. Insights inativos são aqueles que estavam ativos anteriormente, mas não estão mais ocorrendo.
+
+
+
+== Tipos de insight
+
+
+
+=== Recursos compartilhados sob estresse
+
+Workloads de alto impacto podem reduzir o desempenho de outros workloads em um recurso compartilhado. Isso coloca o recurso compartilhado sob estresse. O Data Infrastructure Insights fornece ferramentas para ajudar você a investigar a saturação e o impactos dos recursos em seu ambiente. link:insights_shared_resources_under_stress.html["Saiba mais"]
+
+
+
+=== Namespaces do Kubernetes estão ficando sem espaço
+
+Os namespaces do Kubernetes que estão fora do espaço Insight oferecem uma visão das cargas de trabalho nos namespaces do Kubernetes que correm o risco de ficar sem espaço, com uma estimativa do número de dias restantes antes que cada espaço fique cheio. link:insights_k8s_namespaces_running_out_of_space.html["Saiba mais"]
+
+
+
+=== Recupere o storage frio da ONTAP
+
+O Insight _Reclaim ONTAP Cold Storage_ fornece dados sobre capacidade inativa, potencial economia de custo/energia e itens de ação recomendados para volumes em sistemas ONTAP. link:insights_reclaim_ontap_cold_storage.html["Saiba mais"]
+
+
+NOTE: Este é um recurso _Preview_ e pode mudar com o tempo à medida que as melhorias são feitas. link:/concept_preview_features.html["Saiba mais"] Sobre os recursos do Data Infrastructure Insights Preview.

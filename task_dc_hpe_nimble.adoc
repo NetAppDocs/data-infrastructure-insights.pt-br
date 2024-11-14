@@ -1,0 +1,107 @@
+---
+sidebar: sidebar 
+permalink: task_dc_hpe_nimble.html 
+keywords: data collector, HP Nimble, HP, HPE, Alletra 6000 
+summary: 'Configurando o coletor de dados HP Enterprise Alletra 6000 (anteriormente Nimble).' 
+---
+= Coletor de dados HPE Alletra 6000
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de dados HP Enterprise Alletra 6000 (anteriormente ágil) suporta dados de inventário e desempenho para matrizes de armazenamento Alletra 6000.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário desse coletor. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Array | Armazenamento 
+
+
+| Disco | Disco 
+
+
+| Volume | Volume 
+
+
+| Piscina | Pool de storage 
+
+
+| Iniciador | Alias do host de storage 
+
+
+| Controlador | Nó de storage 
+
+
+| Interface Fibre Channel | Controlador 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+Você deve ter o seguinte para coletar dados de inventário e configuração da matriz de armazenamento:
+
+* A matriz deve ser instalada e configurada e acessível a partir do cliente através do seu nome de domínio totalmente qualificado (FQDN) ou endereço IP de gerenciamento de matriz.
+* O array deve estar executando NimbleOS 2,3.x ou posterior.
+* Você deve ter um nome de usuário e senha válidos para o array com pelo menos função de nível "Operador". A função "convidado" não tem acesso suficiente para compreender as configurações do iniciador.
+* A porta 5392 deve estar aberta no array.
+
+
+Você deve ter o seguinte para coletar dados de desempenho da matriz de armazenamento:
+
+* O array deve estar executando NimbleOS 4.0.0 ou posterior
+* O array deve ter volumes configurados. A única API de performance que o NimbleOS tem é para volumes, e quaisquer estatísticas de relatórios Data Infrastructure Insights são derivados das estatísticas sobre volumes
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP de gerenciamento de matriz | Nome de domínio totalmente qualificado (FQDN) ou endereço IP de gerenciamento de matriz. 
+
+
+| Nome de utilizador | Nome de usuário para o array 
+
+
+| Palavra-passe | Senha para o array 
+|===
+
+
+== Configuração avançada
+
+|===
+
+
+| Campo | Descrição 
+
+
+| Porta | Porta usada pela API REST do Nimble. A predefinição é 5392. 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 60 minutos. 
+|===
+Observação: O intervalo padrão de enquete de desempenho é de 300 segundos e não pode ser alterado. Este é o único intervalo suportado pelo HPE Alletra 6000.

@@ -1,0 +1,113 @@
+---
+sidebar: sidebar 
+permalink: task_dc_ms_hyperv.html 
+keywords: data collector, Microsoft, Hyper-V 
+summary: Configurando o coletor de dados Microsoft Hyper-V. 
+---
+= Coletor de dados Microsoft Hyper-V.
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de dados Microsoft Hyper-V adquire dados de inventário e desempenho do ambiente de computação de servidor virtualizado. Este coletor de dados pode descobrir um host Hyper-V autônomo ou um cluster inteiro - criar um coletor por host ou cluster autônomo.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário do Microsoft Hyper-V (WMI). Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Disco rígido virtual | Disco virtual 
+
+
+| Host | Host 
+
+
+| Máquina virtual | Máquina virtual 
+
+
+| Volumes compartilhados de cluster (CSV), volume da partição | Armazenamento de dados 
+
+
+| Internet SCSI Device, Multi Path SCSI LUN | LUN 
+
+
+| Porta Fibre Channel | Porta 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+Para configurar este coletor de dados, são necessários os seguintes itens:
+
+* O Hyper-V requer a porta 5985 aberta para coleta de dados e acesso/gerenciamento remoto.
+* Endereço IP ou FQDN do cluster ou hipervisor autônomo. Usar o nome de host ou IP do cluster flutuante é provavelmente a abordagem mais confiável em comparação com apontar o coletor em apenas um nó específico em um cluster.
+* Conta de usuário de nível administrativo que funciona em todos os hipervisores no cluster.
+* O WinRM precisa ser ativado e ouvir em todos os hipervisores
+* Requisitos de porta: Porta 135 via WMI e portas TCP dinâmicas atribuídas 1024-65535 para Windows 2003 e anterior e 49152-65535 para Windows 2008.
+* A resolução DNS deve ser bem-sucedida, mesmo que o coletor de dados seja apontado apenas para um endereço IP
+* Cada hypervisor do Hyper-V deve ter a "Monitoração de recursos" ativada para cada VM, em cada host. Isso permite que cada hipervisor tenha mais dados disponíveis para o Data Infrastructure Insights em cada convidado. Se isso não for definido, menos métricas de desempenho serão adquiridas para cada convidado. Mais informações sobre a medição de recursos podem ser encontradas na documentação da Microsoft:
++
+link:https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831661(v=ws.11)["Visão geral da Monitoração de recursos do Hyper-V"]
+
++
+link:https://docs.microsoft.com/en-us/powershell/module/hyper-v/enable-vmresourcemetering?view=win10-ps["Enable-VMResourceMetering (Ativar-VMResourceMetering)"]
+
+
+
+
+NOTE: O coletor de dados Hyper-V requer uma Unidade de aquisição do Windows.
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP do cluster ou FQDN do cluster flutuante | O endereço IP ou o nome de domínio totalmente qualificado para o cluster ou um hypervisor autônomo não agrupado 
+
+
+| Nome de utilizador | Nome de usuário do administrador para o hypervisor 
+
+
+| Palavra-passe | Palavra-passe para o hipervisor 
+
+
+| Sufixo de domínio DNS | O sufixo hostname que combina com o hostname simples para renderizar o FQDN de um hypervisor 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | O padrão é 20 minutos. 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

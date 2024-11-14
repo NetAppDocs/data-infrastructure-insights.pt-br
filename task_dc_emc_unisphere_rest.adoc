@@ -1,0 +1,102 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_unisphere_rest.html 
+keywords: data collector, Unisphere, EMC 
+summary: Configurando o coletor de DADOS REST do Dell EMC Unisphere. 
+---
+= Configurando o coletor de DADOS REST do Dell EMC Unisphere
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Este coletor de dados adquire dados de inventário e desempenho da Dell EMC Unisphere para sistemas de gerenciamento Powermax / Vmax 3.
+
+Tenha em atenção que a Dell/EMC não introduziu estatísticas por volume até o Unisphere 10,0 - este coletor de dados suporta 9,2.0, mas não poderá recolher estatísticas de volume, uma vez que não existem.
+
+Uma instância do Unisphere para Vmax/Powermax pode estar gerenciando um ou mais arrays de armazenamento Symmetrix Vmax 3 ou mais - esse coletor irá tentar descobrir todos eles que são "locais" para essa instância do Unisphere. Se uma instância do Unisphere vir arrays "remotos" (ou seja, aqueles conetados via replicação SRDF), eles serão ignorados e, para descobri-los, você deve criar um coletor adicional do Unisphere no Data Infrastructure Insights apontado para qualquer instância do Unisphere nesse site os vê como local.
+
+Para configuração, o coletor de dados requer um endereço IP/FQDN do servidor Unisphere, conetividade TCP à porta 8443 e um nome de usuário e senha.
+
+
+
+== Requisitos
+
+* Um endereço IP/nome de domínio totalmente qualificado do servidor Unisphere
+* Nome de utilizador e palavra-passe
+* Porta 8443.
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP do servidor Unisphere | Endereço IP ou nome de domínio totalmente qualificado do servidor Unisphere 
+
+
+| Porta Unisphere | A predefinição é 8443 
+
+
+| Nome de utilizador | Nome de usuário para o servidor Unisphere 
+
+
+| Palavra-passe | Senha usada para o servidor Unisphere 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | O padrão é 40 minutos. 
+
+
+| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. 
+
+
+| Escolha 'Excluir' ou 'incluir' para especificar uma lista | Especifique se deseja incluir ou excluir VMs 
+
+
+| Lista de dispositivos de filtro de inventário | Lista de VMs a filtrar (separadas por vírgulas ou ponto e vírgula separadas se a vírgula for usada no valor) para filtragem 
+
+
+| Intervalo de enquete de desempenho Unisphere (seg) | O padrão é 300 segundos 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Erro: Falha na autenticação do utilizador. | Certifique-se de que as suas credenciais para este dispositivo estão corretas. 
+
+
+| Status recente do inventário: Dados inesperados recuperados - Array relatou volume 0 | Normalmente indica um problema de autorização (não autenticação). Certifique-se de que suas credenciais estão corretas e que o nome de usuário tem o poder de listar todos os volumes e ver seus atributos. 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: task_create_webhook.html 
+keywords: webhook, notification, slack, integration 
+summary: Crie monitores para alertar sobre limites de desempenho ou inventário 
+---
+= Notificação usando Webhooks
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Webhooks permitem que os usuários enviem notificações de alerta para vários aplicativos usando um canal de webhook personalizado.
+
+Muitos aplicativos comerciais suportam webhooks como uma interface de entrada padrão, por exemplo: Slack, PagerDuty, Teams e discord todos suportam webhooks. Ao suportar um canal de webhook genérico e personalizável, o Data Infrastructure Insights pode suportar muitos desses canais de entrega. Informações sobre webhooks podem ser encontradas nesses sites de aplicativos. Por exemplo, o Slack fornece link:https://api.slack.com/messaging/webhooks["este guia útil"]o .
+
+Você pode criar vários canais de webhook, cada canal direcionado para um propósito diferente; aplicativos separados, destinatários diferentes, etc.
+
+A instância do canal webhook é composta pelos seguintes elementos:
+
+|===
+
+
+| Nome | Nome único 
+
+
+| URL | URL de destino do webhook, incluindo o prefixo _http://_ ou _https://_ junto com os parâmetros de url 
+
+
+| Método | GET, POST - o padrão é POST 
+
+
+| Cabeçalho personalizado | Especifique aqui quaisquer linhas de cabeçalho personalizadas 
+
+
+| Corpo da mensagem | Coloque o corpo da sua mensagem aqui 
+
+
+| Parâmetros de alerta predefinidos | Lista os parâmetros padrão para o webhook 
+
+
+| Parâmetros e segredos personalizados | Parâmetros e segredos personalizados permitem que você adicione parâmetros exclusivos e elementos seguros, como senhas 
+|===
+
+
+== Criando um Webhook
+
+Para criar um webhook do Data Infrastructure Insights, vá para *Admin > notificações* e selecione a guia *Webhooks*.
+
+A imagem a seguir mostra um exemplo de webhook configurado para o Slack:
+
+image:Webhook_Example_Slack.png["Exemplo de webhook"]
+
+Introduza as informações adequadas para cada um dos campos e clique em "Guardar" quando terminar.
+
+Você também pode clicar no botão "testar Webhook" para testar a conexão. Observe que isso enviará o "corpo da mensagem" (sem substituições) para a URL definida de acordo com o método selecionado.
+
+Os webhooks do Data Infrastructure Insights incluem vários parâmetros padrão. Além disso, você pode criar seus próprios parâmetros personalizados ou segredos.
+
+image:Webhook_Default_Parameters.png["Parâmetros padrão do Webhook do Insights de infraestrutura de dados"]
+
+
+
+=== Parâmetros: O que são e como os utilizo?
+
+Os parâmetros de alerta são valores dinâmicos preenchidos por alerta. Por exemplo, o parâmetro _%%TriggeredOn%%_ será substituído pelo objeto no qual o alerta foi acionado.
+
+Note que nesta seção, as substituições são _não_ executadas ao clicar no botão "testar Webhook"; o botão envia uma carga útil que mostra as substituições _%_, mas não as substitui por dados.
+
+
+
+=== Parâmetros e segredos personalizados
+
+Nesta seção, você pode adicionar quaisquer parâmetros personalizados e / ou segredos que desejar. Por razões de segurança, se um segredo é definido, apenas o criador do webhook pode modificar este canal do webhook. É somente leitura para os outros. Você pode usar segredos em URL/cabeçalhos como _%%<secret_name>%%_.
+
+
+
+=== Página de Lista de webhooks
+
+Na página da lista Webhooks, são exibidos os campos Nome, criado por, criado em, Status, seguro e último relatório.
+
+
+
+== Escolhendo a notificação do Webhook em um monitor
+
+Para escolher a notificação do webhook em um link:task_create_monitor.html["monitorar"], vá para *Alertas > Gerenciar monitores* e selecione o monitor desejado ou adicione um novo monitor. Na seção _Configurar notificações da equipe_, escolha _Webhook_ como o método de entrega. Selecione os níveis de alerta (crítico, Aviso, resolvido) e, em seguida, escolha o webhook desejado.
+
+image:Webhook_Monitor_Notify.png["Notificação do monitor webhook"]
+
+
+
+== Exemplos de webhook:
+
+Webhooks link:task_webhook_example_slack.html["Folga"]para Webhooks para Webhooks link:task_webhook_example_pagerduty.html["PagerDuty"] link:task_webhook_example_teams.html["Equipas"] para link:task_webhook_example_discord.html["Discórdia"]

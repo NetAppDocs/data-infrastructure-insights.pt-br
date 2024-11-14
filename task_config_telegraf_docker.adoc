@@ -1,0 +1,127 @@
+---
+sidebar: sidebar 
+permalink: task_config_telegraf_docker.html 
+keywords: telegraf, installation, install, docker 
+summary: Configuração do coletor de dados do Docker 
+---
+= Docker Data Collector
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do Docker.
+
+
+
+== Instalação
+
+. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha Docker.
++
+Se você não tiver configurado um agente para coleta, será solicitado link:task_config_telegraf_agent.html["instale um agente"]no seu ambiente.
+
++
+Se você já tiver um agente configurado, selecione o sistema operacional ou a Plataforma apropriada e clique em *continuar*.
+
+. Siga as instruções na tela Configuração do Docker para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+
+
+image:DockerDCConfigLinux.png["Configuração do Docker"]
+
+
+
+== Configuração
+
+O plugin de entrada Telegraf para Docker coleta métricas por meio de um soquete UNIX especificado ou um endpoint TCP.
+
+
+
+=== Compatibilidade
+
+A configuração foi desenvolvida em relação ao Docker versão 1.12.6.
+
+
+
+=== Configuração
+
+
+
+=== Acessando o Docker através de um soquete UNIX
+
+Se o agente Telegraf estiver sendo executado no baremetal, adicione o usuário Unix telegraf ao grupo Unix docker executando o seguinte:
+
+ sudo usermod -aG docker telegraf
+Se o agente Telegraf estiver sendo executado em um pod Kubernetes, exponha o soquete Unix do Docker mapeando o soquete no pod como um volume e, em seguida, montando esse volume em /var/run/Docker.Sock. Por exemplo, adicione o seguinte ao PodSpec:
+
+[listing]
+----
+volumes:
+...
+- name: docker-sock
+hostPath:
+path: /var/run/docker.sock
+type: File
+----
+Em seguida, adicione o seguinte ao recipiente:
+
+[listing]
+----
+volumeMounts:
+...
+- name: docker-sock
+mountPath: /var/run/docker.sock
+----
+Observe que o instalador do Data Infrastructure Insights fornecido para a plataforma Kubernetes cuida desse mapeamento automaticamente.
+
+
+
+=== Acesse o Docker por meio de um endpoint TCP
+
+Por padrão, o Docker usa a porta 2375 para acesso não criptografado e a porta 2376 para acesso criptografado.
+
+
+
+== Objetos e contadores
+
+Os seguintes objetos e seus contadores são coletados:
+
+[cols="<.<,<.<,<.<,<.<"]
+|===
+| Objeto: | Identificadores: | Atributos: | Pontos de dados: 
+
+
+| Docker Engine | Motor Docker de namespace | Nó Nome nó nó IP UUUID Node os Kubernetes Cluster Docker Version Unit | Contentores de memória Containers usados Containers em execução Containers parados CPUs Go Routines imagens Listener Eventos usado descritores de Arquivo dados disponíveis dados totais dados usados metadados disponíveis metadados Total metadados metadados metadados Total metadados usado Pool blocksize 
+
+
+| Contêiner do Docker | Nome do contêiner do namespace Docker Engine | Kubernetes Container Hash Kubernetes Container Ports Kubernetes Container Restart Count Kubernetes Container Termination Message Path Kubernetes Container Termination Message Policy Kubernetes Pod Termination Quote Container Image Container Status Container Status Container Version Node Name Kubernetes Container Log Path | Memória ativa memória anônima memória ativa memória Cache memória limite hierárquico memória inativa memória inativa Arquivo inativo memória memória memória memória mapeada memória máxima utilização memória Página Falha memória memória Principal memória pagada memória pagada na memória memória 
+
+
+| Docker Container Block io | Nome do contentor Nome do dispositivo Docker Engine | Kubernetes Container Hash Kubernetes Container Ports Kubernetes Container Restart Count Kubernetes Container Termination Message Path Kubernetes Container Termination Message Policy Kubernetes Pod Termination Grace Period Container Image Container Status Container Status Container Version Node Name Kubernetes Container Log Path | Io Service bytes recursive Async io Service bytes recursive Read io Service bytes recursive Sync io Service bytes recursive Total io Service bytes recursive Write io recursive IO Serviced recursive Read IO Serviced Sync io recursive resposta recursiva IO de resposta recursiva Total io Write recursive 
+
+
+| Docker Container Network | Nome do contentor do namespace Network Docker Engine | Container Image Container Status Container Version Node Name Node IP Node UUUID Node os K8s Cluster Docker Version Container ID | RX dropped RX bytes RX erros RX pacotes RX TX dropped TX bytes TX erros TX pacotes TX 
+
+
+| CPU de contêiner do Docker | Nome do contêiner do namespace CPU Docker Engine | Kubernetes Container Hash Kubernetes Container Ports Kubernetes Container Restart Count Kubernetes Container Termination Message Path Kubernetes Container Termination Message Policy Kubernetes Pod Termination Quote Form Grace Period Kubernetes Config seen Kubernetes Config | Estrangulamento períodos estrangulados estrangulados períodos estrangulados utilização do tempo estrangulado no modo Kernel utilização no modo Utilizador percentagem utilização do sistema Total de utilização 
+|===
+
+
+== Solução de problemas
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Não vejo minhas métricas do Docker no Data Infrastructure Insights depois de seguir as instruções na página de configuração. | Verifique os logs do agente do Telegraf para ver se ele relata o seguinte erro: E! Erro no plugin [inputs.Docker]: Obteve permissão negada ao tentar se conetar ao socket do daemon do Docker, se isso acontecer, siga as etapas necessárias para fornecer ao agente Telegraf acesso ao socket Unix do Docker, conforme especificado acima. 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.

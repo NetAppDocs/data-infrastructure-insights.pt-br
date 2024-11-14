@@ -1,0 +1,495 @@
+---
+sidebar: sidebar 
+permalink: telegraf_agent_k8s_config_options.html 
+keywords: telegraf, installation, install, agent, telegraf agent, kubernetes, eks, operator, k8s, options, configuration 
+summary: O Operador de Monitoramento do Kubernetes do NetApp tem várias opções configuráveis. 
+---
+= Opções de configuração do operador de monitoramento Kubernetes
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:toclevels: 2
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+A link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator["Operador de monitoramento do Kubernetes"] configuração pode ser personalizada.
+
+A tabela abaixo lista as opções possíveis para o arquivo _AgentConfiguration_:
+
+[cols="1,1,2"]
+|===
+| Componente | Opção | Descrição 
+
+
+| agente |  | Opções de configuração comuns a todos os componentes que o operador pode instalar. Estes podem ser considerados como opções "globais". 
+
+
+|  | DockerRepo | Uma substituição dockerRepo para extrair imagens de repositórios docker privados de clientes em comparação com o repositório docker Data Infrastructure Insights. O padrão é repositório docker do Data Infrastructure Insights 
+
+
+|  | DockerImagePullSecret | Opcional: Um segredo para o repositório privado dos clientes 
+
+
+|  | Nome exclusivo | Campo de texto livre que identifica exclusivamente um cluster em todos os clusters de clientes. Isso deve ser exclusivo para um locatário do Data Infrastructure Insights. O padrão é o que o cliente insere na IU para o campo "Nome do cluster" 
+
+
+|  | Proxy Format: Proxy: Server: Port: Username: Password: NoProxy: IsTelegrafProxyEnabled: IsAuProxyEnabled: IsFluentbitProxyEnabled: IsCollectorProxyEnabled: | Opcional para definir proxy. Este é geralmente o proxy corporativo do cliente. 
+
+
+| telegraf |  | Opções de configuração que podem personalizar a instalação do telegraf do Operador 
+
+
+|  | ColeçãoInterval | Intervalo de coleta de métricas, em segundos (máx. 60s) 
+
+
+|  | DsCpuLimit | Limite de CPU para telegraf ds 
+
+
+|  | DsMemLimit | Limite de memória para telegraf ds 
+
+
+|  | DsCpuRequest | Pedido de CPU para telegraf ds 
+
+
+|  | DsMemRequest | Pedido de memória para telegraf ds 
+
+
+|  | RsCpuLimit | Limite de CPU para telegraf rs 
+
+
+|  | RsMemLimit | Limite de memória para telegraf rs 
+
+
+|  | RsCpuRequest | Pedido de CPU para telegraf rs 
+
+
+|  | RsMemRequest | Pedido de memória para telegraf rs 
+
+
+|  | Privilégios em execução | Execute o recipiente _telegraf-monstats-poller_ do DaemonSet no modo privilegiado. Defina isso como verdadeiro se o SELinux estiver habilitado em seus nós do Kubernetes. 
+
+
+|  | RunDsPrivileged | Defina runDsPrivileged como true para executar o contentor telegraf DaemonSet no modo privilegiado. 
+
+
+|  | BatchSize | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentação de configuração do Telegraf"] 
+
+
+|  | BufferLimit | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentação de configuração do Telegraf"] 
+
+
+|  | RoundInterval | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentação de configuração do Telegraf"] 
+
+
+|  | ColeçãoJitter | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentação de configuração do Telegraf"] 
+
+
+|  | precisão | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentação de configuração do Telegraf"] 
+
+
+|  | FlushInterval | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentação de configuração do Telegraf"] 
+
+
+|  | FlushJitter | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentação de configuração do Telegraf"] 
+
+
+|  | OutputTimeout (tempo limite de saída) | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentação de configuração do Telegraf"] 
+
+
+|  | DsTolerations | tolerâncias adicionais do telegraf-ds. 
+
+
+|  | RsTolerations | tolerâncias adicionais telegraf-rs. 
+
+
+|  | SkipProcessorsAfterAgregadores | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentação de configuração do Telegraf"] 
+
+
+|  | não protegido | Consulte este link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376["Problema de Telegraf conhecido"]. A configuração _desprotegido_ instruirá o Operador de Monitoramento do Kubernetes a executar o Telegraf com o `--unprotected` sinalizador. 
+
+
+| kube-state-metrics |  | Opções de configuração que podem personalizar a instalação de métricas de estado kube do Operador 
+
+
+|  | CpuLimit | Limite de CPU para implantação de métricas de estado do kube 
+
+
+|  | MemLimit | Limite de MEM para implantação de métricas de estado do kube 
+
+
+|  | CpuRequest | Solicitação de CPU para implantação de métricas de estado do kube 
+
+
+|  | MemRequest | Solicitação de MEM para implantação de métricas de estado do kube 
+
+
+|  | recursos | uma lista separada por vírgulas de recursos a serem capturados. exemplo: cronjobs,daemonsets,deployments,ingresses,jobs,namespaces,nodos,persisttentvolumeclaims, persistentvolumes,pods,replicasets,resourcequotas,serviços,statfulsets 
+
+
+|  | tolerâncias | tolerações adicionais de métricas de estado do kube. 
+
+
+|  | etiquetas | uma lista separada por vírgulas de recursos que kube-state-metrics deve capturar 
+
+
+| registos |  | Opções de configuração que podem personalizar a coleta de logs e a instalação do Operador 
+
+
+|  | ReadFromHead | verdadeiro/falso, deve o bit fluente ler o log da cabeça 
+
+
+|  | tempo limite | tempo limite, em segundos 
+
+
+|  | Modo dnsMode | TCP/UDP, modo para DNS 
+
+
+|  | tolerações de bits fluentes | tolerações adicionais fluent-bit-ds. 
+
+
+|  | tolerância de evento-exportador | tolerância adicional ao exportador de eventos. 
+
+
+|  | Evento-exportador-maxEventAgeSeconds | idade máxima do evento exportador de eventos. Consulte https://github.com/jkroepke/resmoio-kubernetes-event-exporter[] 
+
+
+| mapa de workload |  | Opções de configuração que podem personalizar a coleta e instalação do mapa de carga de trabalho do Operador. 
+
+
+|  | CpuLimit | Limite de CPU para NET Observer ds 
+
+
+|  | MemLimit | limite mem para o observador líquido ds 
+
+
+|  | CpuRequest | Pedido de CPU para NET Observer ds 
+
+
+|  | MemRequest | pedido de mem para net observer ds 
+
+
+|  | MetricAggregationInterval | intervalo de agregação métrica, em segundos 
+
+
+|  | BpfPollInterval | Intervalo de enquete BPF, em segundos 
+
+
+|  | EnableDNSLookup | Verdadeiro/falso, ative a pesquisa de DNS 
+
+
+|  | l4-tolerâncias | net-observer-l4-ds tolerâncias adicionais. 
+
+
+|  | Privilégios em execução | True/FALSE - defina Privileged como true se o SELinux estiver habilitado em seus nós do Kubernetes. 
+
+
+| gerenciamento de alterações |  | Opções de configuração para o Gerenciamento e análise de alterações do Kubernetes 
+
+
+|  | CpuLimit | Limite de CPU para change-observer-Watch-rs 
+
+
+|  | MemLimit | Limite MEM para mudança-observador-server-rs 
+
+
+|  | CpuRequest | Pedido de CPU para change-observer-Watch-rs 
+
+
+|  | MemRequest | pedido de mem para mudança-observador-watch-rs 
+
+
+|  | FailureDeclaraçãoIntervalMins | Intervalo em minutos após o qual uma implantação não-bem-sucedida de uma carga de trabalho será marcada como falhou 
+
+
+|  | DeployAggrIntervalSeconds | Frequência na qual os eventos em andamento de implantação da carga de trabalho são enviados 
+
+
+|  | NonWorkloadAggrIntervalSeconds | Frequência na qual implantações que não são de carga de trabalho são combinadas e enviadas 
+
+
+|  | TermsToRedact | Um conjunto de expressões regulares usadas em nomes env e mapas de dados cujo valor será editado termos de exemplo:"pwd", "password", "token", "apikey", "api-key", "jwt" 
+
+
+|  | AdicionalKindsToWatch | Uma lista separada por vírgulas de tipos adicionais para assistir do conjunto padrão de tipos observados pelo coletor 
+
+
+|  | KindsToIgnoreFromWatch | Uma lista separada por vírgulas de tipos a ignorar da observação do conjunto padrão de tipos observados pelo coletor 
+
+
+|  | LogRecordAggrIntervalSeconds | Frequência com a qual os Registros de log são enviados para IC do coletor 
+
+
+|  | tolerâncias de relógio | tolerâncias adicionais do change-observer-watch-ds. Apenas formato de linha única abreviada. Exemplo: Tecla: taint1, operador: Existe, efeito: NoSchedule, tecla: taint2, operador: Existe, efeito: NoExecute' 
+|===
+
+
+== Exemplo de arquivo AgentConfiguration
+
+Abaixo está um exemplo de arquivo _AgentConfiguration_.
+
+[listing]
+----
+apiVersion: monitoring.netapp.com/v1alpha1
+kind: AgentConfiguration
+metadata:
+  name: netapp-ci-monitoring-configuration
+  namespace: "netapp-monitoring"
+  labels:
+    installed-by: nkmo-netapp-monitoring
+
+spec:
+  # # You can modify the following fields to configure the operator.
+  # # Optional settings are commented out and include default values for reference
+  # #   To update them, uncomment the line, change the value, and apply the updated AgentConfiguration.
+  agent:
+    # # [Required Field] A uniquely identifiable user-friendly clustername.
+    # # clusterName must be unique across all clusters in your Data Infrastructure Insights environment.
+    clusterName: "my_cluster"
+
+    # # Proxy settings. The proxy that the operator should use to send metrics to Data Infrastructure Insights.
+    # # Please see documentation here: https://docs.netapp.com/us-en/cloudinsights/task_config_telegraf_agent_k8s.html#configuring-proxy-support
+    # proxy:
+    #   server:
+    #   port:
+    #   noproxy:
+    #   username:
+    #   password:
+    #   isTelegrafProxyEnabled:
+    #   isFluentbitProxyEnabled:
+    #   isCollectorsProxyEnabled:
+
+    # # [Required Field] By default, the operator uses the CI repository.
+    # # To use a private repository, change this field to your repository name.
+    # # Please see documentation here: https://docs.netapp.com/us-en/cloudinsights/task_config_telegraf_agent_k8s.html#using-a-custom-or-private-docker-repository
+    dockerRepo: 'docker.c01.cloudinsights.netapp.com'
+    # # [Required Field] The name of the imagePullSecret for dockerRepo.
+    # # If you are using a private repository, change this field from 'netapp-ci-docker' to the name of your secret.
+    dockerImagePullSecret: 'netapp-ci-docker'
+
+    # # Allow the operator to automatically rotate its ApiKey before expiration.
+    # tokenRotationEnabled: 'true'
+    # # Number of days before expiration that the ApiKey should be rotated. This must be less than the total ApiKey duration.
+    # tokenRotationThresholdDays: '30'
+
+  telegraf:
+    # # Settings to fine-tune metrics data collection. Telegraf config names are included in parenthesis.
+    # # See https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent
+
+    # # The default time telegraf will wait between inputs for all plugins (interval). Max=60
+    # collectionInterval: '60s'
+    # # Maximum number of records per output that telegraf will write in one batch (metric_batch_size).
+    # batchSize: '10000'
+    # # Maximum number of records per output that telegraf will cache pending a successful write (metric_buffer_limit).
+    # bufferLimit: '150000'
+    # # Collect metrics on multiples of interval (round_interval).
+    # roundInterval: 'true'
+    # # Each plugin waits a random amount of time between the scheduled collection time and that time + collection_jitter before collecting inputs (collection_jitter).
+    # collectionJitter: '0s'
+    # # Collected metrics are rounded to the precision specified. When set to "0s" precision will be set by the units specified by interval (precision).
+    # precision: '0s'
+    # # Time telegraf will wait between writing outputs (flush_interval). Max=collectionInterval
+    # flushInterval: '60s'
+    # # Each output waits a random amount of time between the scheduled write time and that time + flush_jitter before writing outputs (flush_jitter).
+    # flushJitter: '0s'
+    # # Timeout for writing to outputs (timeout).
+    # outputTimeout: '5s'
+
+    # # telegraf-ds CPU/Mem limits and requests.
+    # # See https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+    # dsCpuLimit: '750m'
+    # dsMemLimit: '800Mi'
+    # dsCpuRequest: '100m'
+    # dsMemRequest: '500Mi'
+
+    # # telegraf-rs CPU/Mem limits and requests.
+    # rsCpuLimit: '3'
+    # rsMemLimit: '4Gi'
+    # rsCpuRequest: '100m'
+    # rsMemRequest: '500Mi'
+
+    # # Skip second run of processors after aggregators
+    # skipProcessorsAfterAggregators: 'true'
+
+    # # telegraf additional tolerations. Use the following abbreviated single line format only.
+    # # Inspect telegraf-rs/-ds to view tolerations which are always present.
+    # # Example: '{key: taint1, operator: Exists, effect: NoSchedule},{key: taint2, operator: Exists, effect: NoExecute}'
+    # dsTolerations: ''
+    # rsTolerations: ''
+
+
+    # If telegraf warns of insufficient lockable memory, try increasing the limit of lockable memory for Telegraf in the underlying operating system/node.  If increasing the limit is not an option, set this to true to instruct Telegraf to not attempt to reserve locked memory pages.  While this might pose a security risk as decrypted secrets might be swapped out to disk, it allows for execution in environments where reserving locked memory is not possible.
+    # unprotected: 'false'
+
+    # # Run the telegraf DaemonSet's telegraf-mountstats-poller container in privileged mode.  Set runPrivileged to true if SELinux is enabled on your Kubernetes nodes.
+    # runPrivileged: '{{ .Values.telegraf_installer.kubernetes.privileged_mode }}'
+
+    # # Set runDsPrivileged to true to run the telegraf DaemonSet's telegraf container in privileged mode
+    # runDsPrivileged: '{{ .Values.telegraf_installer.kubernetes.ds.privileged_mode }}'
+
+    # # Collect container Block IO metrics.
+    # dsBlockIOEnabled: 'true'
+
+    # # Collect NFS IO metrics.
+    # dsNfsIOEnabled: 'true'
+
+    # # Collect kubernetes.system_container metrics and objects in the kube-system|cattle-system namespaces for managed kubernetes clusters (EKS, AKS, GKE, managed Rancher).  Set this to true if you want collect these metrics.
+    # managedK8sSystemMetricCollectionEnabled: 'false'
+
+    # # Collect kubernetes.pod_volume (pod ephemeral storage) metrics.  Set this to true if you want to collect these metrics.
+    # podVolumeMetricCollectionEnabled: 'false'
+
+    # # Declare Rancher cluster as managed.  Set this to true if your Rancher cluster is managed as opposed to on-premise.
+    # isManagedRancher: 'false'
+
+    # # If telegraf-rs fails to start due to being unable to find the etcd crt and key, manually specify the appropriate path here.
+    # rsHostEtcdCrt: ''
+    # rsHostEtcdKey: ''
+
+  # kube-state-metrics:
+    # # kube-state-metrics CPU/Mem limits and requests.
+    # cpuLimit: '500m'
+    # memLimit: '1Gi'
+    # cpuRequest: '100m'
+    # memRequest: '500Mi'
+
+    # # Comma-separated list of resources to enable.
+    # # See resources in https://github.com/kubernetes/kube-state-metrics/blob/main/docs/cli-arguments.md
+    # resources: 'cronjobs,daemonsets,deployments,ingresses,jobs,namespaces,nodes,persistentvolumeclaims,persistentvolumes,pods,replicasets,resourcequotas,services,statefulsets'
+
+    # # Comma-separated list of metrics to enable.
+    # # See metric-allowlist in https://github.com/kubernetes/kube-state-metrics/blob/main/docs/cli-arguments.md
+    # metrics: 'kube_cronjob_created,kube_cronjob_status_active,kube_cronjob_labels,kube_daemonset_created,kube_daemonset_status_current_number_scheduled,kube_daemonset_status_desired_number_scheduled,kube_daemonset_status_number_available,kube_daemonset_status_number_misscheduled,kube_daemonset_status_number_ready,kube_daemonset_status_number_unavailable,kube_daemonset_status_observed_generation,kube_daemonset_status_updated_number_scheduled,kube_daemonset_metadata_generation,kube_daemonset_labels,kube_deployment_status_replicas,kube_deployment_status_replicas_available,kube_deployment_status_replicas_unavailable,kube_deployment_status_replicas_updated,kube_deployment_status_observed_generation,kube_deployment_spec_replicas,kube_deployment_spec_paused,kube_deployment_spec_strategy_rollingupdate_max_unavailable,kube_deployment_spec_strategy_rollingupdate_max_surge,kube_deployment_metadata_generation,kube_deployment_labels,kube_deployment_created,kube_job_created,kube_job_owner,kube_job_status_active,kube_job_status_succeeded,kube_job_status_failed,kube_job_labels,kube_job_status_start_time,kube_job_status_completion_time,kube_namespace_created,kube_namespace_labels,kube_namespace_status_phase,kube_node_info,kube_node_labels,kube_node_role,kube_node_spec_unschedulable,kube_node_created,kube_persistentvolume_capacity_bytes,kube_persistentvolume_status_phase,kube_persistentvolume_labels,kube_persistentvolume_info,kube_persistentvolume_claim_ref,kube_persistentvolumeclaim_access_mode,kube_persistentvolumeclaim_info,kube_persistentvolumeclaim_labels,kube_persistentvolumeclaim_resource_requests_storage_bytes,kube_persistentvolumeclaim_status_phase,kube_pod_info,kube_pod_start_time,kube_pod_completion_time,kube_pod_owner,kube_pod_labels,kube_pod_status_phase,kube_pod_status_ready,kube_pod_status_scheduled,kube_pod_container_info,kube_pod_container_status_waiting,kube_pod_container_status_waiting_reason,kube_pod_container_status_running,kube_pod_container_state_started,kube_pod_container_status_terminated,kube_pod_container_status_terminated_reason,kube_pod_container_status_last_terminated_reason,kube_pod_container_status_ready,kube_pod_container_status_restarts_total,kube_pod_overhead_cpu_cores,kube_pod_overhead_memory_bytes,kube_pod_created,kube_pod_deletion_timestamp,kube_pod_init_container_info,kube_pod_init_container_status_waiting,kube_pod_init_container_status_waiting_reason,kube_pod_init_container_status_running,kube_pod_init_container_status_terminated,kube_pod_init_container_status_terminated_reason,kube_pod_init_container_status_last_terminated_reason,kube_pod_init_container_status_ready,kube_pod_init_container_status_restarts_total,kube_pod_status_scheduled_time,kube_pod_status_unschedulable,kube_pod_spec_volumes_persistentvolumeclaims_readonly,kube_pod_container_resource_requests_cpu_cores,kube_pod_container_resource_requests_memory_bytes,kube_pod_container_resource_requests_storage_bytes,kube_pod_container_resource_requests_ephemeral_storage_bytes,kube_pod_container_resource_limits_cpu_cores,kube_pod_container_resource_limits_memory_bytes,kube_pod_container_resource_limits_storage_bytes,kube_pod_container_resource_limits_ephemeral_storage_bytes,kube_pod_init_container_resource_limits_cpu_cores,kube_pod_init_container_resource_limits_memory_bytes,kube_pod_init_container_resource_limits_storage_bytes,kube_pod_init_container_resource_limits_ephemeral_storage_bytes,kube_pod_init_container_resource_requests_cpu_cores,kube_pod_init_container_resource_requests_memory_bytes,kube_pod_init_container_resource_requests_storage_bytes,kube_pod_init_container_resource_requests_ephemeral_storage_bytes,kube_replicaset_status_replicas,kube_replicaset_status_ready_replicas,kube_replicaset_status_observed_generation,kube_replicaset_spec_replicas,kube_replicaset_metadata_generation,kube_replicaset_labels,kube_replicaset_created,kube_replicaset_owner,kube_resourcequota,kube_resourcequota_created,kube_service_info,kube_service_labels,kube_service_created,kube_service_spec_type,kube_statefulset_status_replicas,kube_statefulset_status_replicas_current,kube_statefulset_status_replicas_ready,kube_statefulset_status_replicas_updated,kube_statefulset_status_observed_generation,kube_statefulset_replicas,kube_statefulset_metadata_generation,kube_statefulset_created,kube_statefulset_labels,kube_statefulset_status_current_revision,kube_statefulset_status_update_revision,kube_node_status_capacity,kube_node_status_allocatable,kube_node_status_condition,kube_pod_container_resource_requests,kube_pod_container_resource_limits,kube_pod_init_container_resource_limits,kube_pod_init_container_resource_requests'
+
+    # # Comma-separated list of Kubernetes label keys that will be used in the resources' labels metric.
+    # # See metric-labels-allowlist in https://github.com/kubernetes/kube-state-metrics/blob/main/docs/cli-arguments.md
+    # labels: 'cronjobs=[*],daemonsets=[*],deployments=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*],persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resourcequotas=[*],services=[*],statefulsets=[*]'
+
+    # # kube-state-metrics additional tolerations. Use the following abbreviated single line format only.
+    # # No tolerations are applied by default
+    # # Example: '{key: taint1, operator: Exists, effect: NoSchedule},{key: taint2, operator: Exists, effect: NoExecute}'
+    # tolerations: ''
+
+    # # kube-state-metrics shards.  Increase the number of shards for larger clusters if telegraf RS pod(s) experience collection timeouts
+    # shards: '2'
+
+  # # Settings for the Events Log feature.
+  # logs:
+    # # Set runPrivileged to true if Fluent Bit fails to start, trying to open/create its database.
+    # runPrivileged: 'false'
+
+    # # If Fluent Bit should read new files from the head, not tail.
+    # # See Read_from_Head in https://docs.fluentbit.io/manual/pipeline/inputs/tail
+    # readFromHead: "true"
+
+    # # Network protocol that Fluent Bit should use for DNS: "UDP" or "TCP".
+    # dnsMode: "UDP"
+
+    # # DNS resolver that Fluent Bit should use: "LEGACY" or "ASYNC"
+    # fluentBitDNSResolver: "LEGACY"
+
+    # # Logs additional tolerations. Use the following abbreviated single line format only.
+    # # Inspect fluent-bit-ds to view tolerations which are always present. No tolerations are applied by default for event-exporter.
+    # # Example: '{key: taint1, operator: Exists, effect: NoSchedule},{key: taint2, operator: Exists, effect: NoExecute}'
+    # fluent-bit-tolerations: ''
+    # event-exporter-tolerations: ''
+
+    # # event-exporter CPU/Mem limits and requests.
+    # # See https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+    # event-exporter-cpuLimit: '500m'
+    # event-exporter-memLimit: '1Gi'
+    # event-exporter-cpuRequest: '50m'
+    # event-exporter-memRequest: '100Mi'
+
+    # # event-exporter max event age.
+    # # See https://github.com/jkroepke/resmoio-kubernetes-event-exporter
+    # event-exporter-maxEventAgeSeconds: '10'
+
+    # # event-exporter client-side throttling
+    # # Set kubeBurst to roughly match your events per minute and kubeQPS=kubeBurst/5
+    # # See https://github.com/resmoio/kubernetes-event-exporter#troubleshoot-events-discarded-warning
+    # event-exporter-kubeQPS: 20
+    # event-exporter-kubeBurst: 100
+
+    # # fluent-bit CPU/Mem limits and requests.
+    # # See https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+    # fluent-bit-cpuLimit: '500m'
+    # fluent-bit-memLimit: '1Gi'
+    # fluent-bit-cpuRequest: '50m'
+    # fluent-bit-memRequest: '100Mi'
+
+  # # Settings for the Network Performance and Map feature.
+  # workload-map:
+    # # netapp-ci-net-observer-l4-ds CPU/Mem limits and requests.
+    # # See https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+    # cpuLimit: '500m'
+    # memLimit: '500Mi'
+    # cpuRequest: '100m'
+    # memRequest: '500Mi'
+
+    # # Metric aggregation interval in seconds. Min=30, Max=120
+    # metricAggregationInterval: '60'
+
+    # # Interval for bpf polling. Min=3, Max=15
+    # bpfPollInterval: '8'
+
+    # # Enable performing reverse DNS lookups on observed IPs.
+    # enableDNSLookup: 'true'
+
+    # # netapp-ci-net-observer-l4-ds additional tolerations. Use the following abbreviated single line format only.
+    # # Inspect netapp-ci-net-observer-l4-ds to view tolerations which are always present.
+    # # Example: '{key: taint1, operator: Exists, effect: NoSchedule},{key: taint2, operator: Exists, effect: NoExecute}'
+    # l4-tolerations: ''
+
+    # # Set runPrivileged to true if SELinux is enabled on your Kubernetes nodes.
+    # # Note: In OpenShift environments, this is set to true automatically.
+    # runPrivileged: 'false'
+
+  # change-management:
+    # # change-observer-watch-rs CPU/Mem limits and requests.
+    # # See https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+    # cpuLimit: '1'
+    # memLimit: '1Gi'
+    # cpuRequest: '500m'
+    # memRequest: '500Mi'
+
+    # # Interval in minutes after which a non-successful deployment of a workload will be marked as failed
+    # failureDeclarationIntervalMins: '30'
+
+    # # Frequency at which workload deployment in-progress events are sent
+    # deployAggrIntervalSeconds: '300'
+
+    # # Frequency at which non-workload deployments are combined and sent
+    # nonWorkloadAggrIntervalSeconds: '15'
+
+    # # A set of regular expressions used in env names and data maps whose value will be redacted
+    # termsToRedact: '"pwd", "password", "token", "apikey", "api-key", "api_key", "jwt", "accesskey", "access_key", "access-key", "ca-file", "key-file", "cert", "cafile", "keyfile", "tls", "crt", "salt", ".dockerconfigjson", "auth", "secret"'
+
+    # # A comma separated list of additional kinds to watch from the default set of kinds watched by the collector
+    # # Each kind will have to be prefixed by its apigroup
+    # # Example: '"authorization.k8s.io.subjectaccessreviews"'
+    # additionalKindsToWatch: ''
+
+    # # A comma separated list of additional field paths whose diff is ignored as part of change analytics. This list in addition to the default set of field paths ignored by the collector.
+    # # Example: '"metadata.specTime", "data.status"'
+    # additionalFieldsDiffToIgnore: ''
+
+    # # A comma separated list of kinds to ignore from watching from the default set of kinds watched by the collector
+    # # Each kind will have to be prefixed by its apigroup
+    # # Example: '"networking.k8s.io.networkpolicies,batch.jobs", "authorization.k8s.io.subjectaccessreviews"'
+    # kindsToIgnoreFromWatch: ''
+
+    # # Frequency with which log records are sent to CI from the collector
+    # logRecordAggrIntervalSeconds: '20'
+
+    # # change-observer-watch-ds additional tolerations. Use the following abbreviated single line format only.
+    # # Inspect change-observer-watch-ds to view tolerations which are always present.
+    # # Example: '{key: taint1, operator: Exists, effect: NoSchedule},{key: taint2, operator: Exists, effect: NoExecute}'
+    # watch-tolerations: ''
+----

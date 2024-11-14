@@ -1,0 +1,265 @@
+---
+sidebar: sidebar 
+permalink: task_dc_hds_commandsuite.html 
+keywords: data collector, Hitachi Vantara Command Suite, Hitachi 
+summary: Configurar o coletor de dados do Gestor de dispositivos do HDS Command Suite. 
+---
+= Coletor de dados Hitachi Vantara Command Suite
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de dados Hitachi Vantara Command Suite suporta o servidor HiCommand Device Manager. O Data Infrastructure Insights se comunica com o servidor HiCommand Device Manager usando a API padrão HiCommand.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do Hitachi Vantara Command Suite. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| PDEV | Disco 
+
+
+| Pool Diário | Grupo de discos 
+
+
+| Storage array | Armazenamento 
+
+
+| Controlador de porta | Nó de storage 
+
+
+| Grupo de array, HDS Pool | Pool de storage 
+
+
+| Unidade lógica, LDEV | Volume 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+=== Armazenamento
+
+Os termos a seguir se aplicam a objetos ou referências que você pode encontrar nas páginas iniciais de ativos de armazenamento HDS. Muitos desses termos também se aplicam a outros coletores de dados.
+
+* Nome – vem diretamente do atributo "nome" do HDS HiCommand Device Manager através da chamada API XML GetStorageArray
+* Modelo - vem diretamente do atributo arrayType do HDS HiCommand Device Manager através da chamada API XML GetStorageArray
+* Fornecedor – HDS
+* Família - vem diretamente do atributo "arrayFamily" do HDS HiCommand Device Manager através da chamada API XML GetStorageArray
+* IP – este é o endereço IP de gerenciamento da matriz, não uma lista exaustiva de todos os endereços IP da matriz
+* Capacidade bruta – um valor de base2 que representa a soma da capacidade total de todos os discos neste sistema, independentemente da função de disco.
+
+
+
+
+=== Pool de storage
+
+Os termos a seguir se aplicam a objetos ou referências que você pode encontrar nas páginas iniciais de ativos do pool de armazenamento HDS. Muitos desses termos também se aplicam a outros coletores de dados.
+
+* Tipo: O valor aqui será um dos seguintes:
++
+** Reservado – se esse pool for dedicado para outros fins que não volumes de dados, ou seja, journaling, instantâneos
+** Provisionamento de thin – se este for um pool HDP
+** RAID Group – você provavelmente não verá isso por alguns motivos:
++
+O Data Infrastructure Insights adota uma postura forte para evitar a dupla capacidade de contagem a todo custo. No HDS, normalmente é necessário construir grupos RAID a partir de discos, criar volumes de pool nesses grupos RAID e construir pools (muitas vezes HDP, mas poderia ser um propósito especial) a partir desses volumes de pool. Se o Data Infrastructure Insights reportasse tanto os grupos RAID subjacentes como os estão, como os pools, a soma de sua capacidade bruta excederia consideravelmente a soma dos discos.
+
++
+Em vez disso, o coletor de dados HDS Command Suite do Data Infrastructure Insights reduz arbitrariamente o tamanho dos grupos RAID pela capacidade dos volumes de pool. Isso pode fazer com que os Insights de infraestrutura de dados não relatem o RAID Group. Além disso, quaisquer grupos RAID resultantes são sinalizados de forma a que não sejam visíveis na WebUI do Data Infrastructure Insights, mas fluem para a DWH (Data Infrastructure Insights Data Warehouse). O objetivo dessas decisões é evitar a confusão da interface do usuário para coisas que a maioria dos usuários não se importa – se seu array HDS tiver grupos RAID com 50MB livre, você provavelmente não pode usar esse espaço livre para qualquer resultado significativo.
+
+
+
+* Nó - N/A, pois os pools do HDS não estão vinculados a nenhum nó específico
+* Redundância - o nível RAID do pool. Possivelmente vários valores para um pool HDP composto por vários tipos de RAID
+* % De capacidade - a percentagem utilizada do conjunto para utilização de dados, com o GB utilizado e o tamanho de GB lógico total do conjunto
+* Capacidade sobre-comprometida - um valor derivado, afirmando "a capacidade lógica deste pool é supersubscrita por esta porcentagem em virtude da soma dos volumes lógicos que excedem a capacidade lógica do pool por esta porcentagem"
+* Instantâneo - mostra a capacidade reservada para uso de snapshot neste pool
+
+
+
+
+=== Nó de storage
+
+Os termos a seguir se aplicam a objetos ou referências que você pode encontrar nas páginas iniciais de ativos de nó de armazenamento HDS. Muitos desses termos também se aplicam a outros coletores de dados.
+
+* Nome – o nome do diretor de front-end (FED) ou do adaptador de canal em matrizes monolíticas, ou o nome do controlador em uma matriz modular. Um determinado array do HDS terá 2 ou mais nós de storage
+* Volumes – a tabela volume mostrará qualquer volume mapeado para qualquer porta pertencente a esse nó de armazenamento
+
+
+
+
+== Requisitos de inventário
+
+Você deve ter o seguinte para coletar dados de inventário:
+
+* Endereço IP do servidor HiCommand Device Manager
+* Nome de usuário e senha somente leitura para o software Gerenciador de dispositivos HiCommand e Privileges peer
+* Requisitos de porta: 2001 (http) ou 2443 (https)
+* Faça login no software HiCommand Device Manager usando nome de usuário e senha
+* Verifique o acesso ao Gerenciador de dispositivos HiCommand http://<HiCommand_Device_Manager_IP>:2001/Service/StorageManager
+
+
+
+
+== Requisitos de desempenho
+
+Os seguintes requisitos devem ser atendidos para coletar dados de desempenho:
+
+* Desempenho do HDS USP, USP V e VSP
++
+** O Monitor de desempenho deve ser licenciado.
+** O interrutor de monitorização tem de estar ativado.
+** A ferramenta de exportação (Export.exe) deve ser copiada para a AU Data Infrastructure Insights.
+** A versão da ferramenta de exportação deve corresponder à versão do microcódigo da matriz de destino.
+
+
+* Desempenho AMS:
++
+** A NetApp recomenda fortemente a criação de uma conta de serviço dedicada nos storages AMS para Insights de infraestrutura de dados a serem usados para recuperar dados de desempenho. O Navegador de armazenamento permite apenas uma conta de usuário um login simultâneo na matriz. Ter o Data Infrastructure Insights usar a mesma conta de usuário que os scripts de gerenciamento ou o HiCommand pode fazer com que o Data Infrastructure Insights, scripts de gerenciamento ou o HiCommand não consigam se comunicar com o array devido ao limite de login de uma conta de usuário concorrente
+** O Monitor de desempenho deve ser licenciado.
+** O utilitário CLI do Storage Navigator Modular 2 (SNM2) precisa ser instalado no Data Infrastructure Insights AU.
+
+
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Servidor HiCommand | Endereço IP ou nome de domínio totalmente qualificado do servidor HiCommand Device Manager 
+
+
+| Nome de utilizador | Nome de usuário do servidor HiCommand Device Manager. 
+
+
+| Palavra-passe | Senha usada para o servidor HiCommand Device Manager. 
+
+
+| DISPOSITIVOS - VSP G1000 (R800), VSP (R700), HUS VM (HM700) E ARMAZENAMENTOS USP | Lista de dispositivos para armazenamentos VSP G1000 (R800), VSP (R700), HUS VM (HM700) e USP. Cada armazenamento requer: * IP da matriz: Endereço IP do armazenamento * Nome do utilizador: Nome do utilizador para o armazenamento * Palavra-passe: Palavra-passe para o armazenamento * pasta que contém ficheiros JAR do utilitário de exportação 
+
+
+| SNM2Devices - armazenamentos WMS/SMS/AMS | Lista de dispositivos para armazenamentos WMS/SMS/AMS. Cada armazenamento requer: * IP da matriz: Endereço IP do armazenamento * caminho CLI do Navegador de armazenamento: SNM2 caminho CLI * Autenticação de conta válida: Selecione para escolher autenticação de conta válida * Nome de utilizador: Nome de utilizador para o armazenamento * Palavra-passe: Palavra-passe para o armazenamento 
+
+
+| Escolha o Tuning Manager para desempenho | Substituir outras opções de desempenho 
+
+
+| Host do Tuning Manager | Endereço IP ou nome de domínio totalmente qualificado do gerenciador de ajuste 
+
+
+| Substituir a porta do Gestor de sintonização | Se estiver em branco, use a porta padrão no campo Choose Tuning Manager for Performance (escolher Gerenciador de sintonização para desempenho). Caso contrário, insira a porta a ser usada 
+
+
+| Nome de utilizador do Gestor de sintonização | Nome de usuário para Tuning Manager 
+
+
+| Palavra-passe do Gestor de sintonização | Senha para Tuning Manager 
+|===
+Nota: No HDS USP, USP V e VSP, qualquer disco pode pertencer a mais de um grupo de matrizes.
+
+
+
+== Configuração avançada
+
+|===
+
+
+| Campo | Descrição 
+
+
+| Tipo de ligação | HTTPS ou HTTP, também exibe a porta padrão 
+
+
+| Porta do servidor HiCommand | Porta usada para o Gerenciador de dispositivos HiCommand 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. A predefinição é 40. 
+
+
+| Escolha 'Excluir' ou 'incluir' para especificar uma lista | Especifique se deve incluir ou excluir a lista de matrizes abaixo ao coletar dados. 
+
+
+| Filtrar lista de dispositivos | Lista separada por vírgulas de números de série do dispositivo para incluir ou excluir 
+
+
+| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. A predefinição é 300. 
+
+
+| Tempo limite de exportação em segundos | Tempo limite do utilitário de exportação. A predefinição é 300. 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Erro: O usuário não tem permissão suficiente | Use uma conta de usuário diferente que tenha mais privilégios ou aumente o privilégio de conta de usuário configurada no coletor de dados 
+
+
+| Erro: A lista de armazenamentos está vazia. Os dispositivos não estão configurados ou o usuário não tem permissão suficiente | * Use DeviceManager para verificar se os dispositivos estão configurados. * Use uma conta de usuário diferente que tenha mais privilégios ou aumente o privilégio da conta de usuário 
+
+
+| Erro: A matriz de armazenamento HDS não foi atualizada durante alguns dias | Investigue por que razão esta matriz não está a ser atualizada no HDS HiCommand. 
+|===
+
+
+=== Desempenho
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Erro: * Erro ao executar o utilitário de exportação * erro ao executar comando externo | * Confirme se Export Utility está instalado na Unidade de aquisição do Data Infrastructure Insights * Confirme se a localização do Utilitário de exportação está correta na configuração do coletor de dados * Confirme se o IP do array USP/R600 está correto na configuração do coletor de dados * Confirme se o nome do usuário e a senha estão corretos na configuração do coletor de dados * Confirme se runWin.bat 
+
+
+| Erro: O login da ferramenta de exportação falhou para o IP de destino | * Confirmar que o nome de utilizador/palavra-passe está correto * criar uma ID de utilizador principalmente para este coletor de dados HDS * confirmar que nenhum outro coletor de dados está configurado para adquirir esta matriz 
+
+
+| Erro: Ferramentas de exportação registradas "não é possível obter intervalo de tempo para monitoramento". | * Confirmar que o monitoramento de desempenho está habilitado no array. * Tente invocar as ferramentas de exportação fora do Data Infrastructure Insights para confirmar que o problema está fora do Data Infrastructure Insights. 
+
+
+| Erro: * Erro de configuração: Matriz de armazenamento não suportada pelo Utilitário de exportação * erro de configuração: Matriz de armazenamento não suportada pela CLI Modular do Storage Navigator | * Configurar apenas matrizes de armazenamento suportadas. * Use "Filtrar lista de dispositivos" para excluir matrizes de armazenamento não suportadas. 
+
+
+| Erro: * Erro ao executar comando externo * erro de configuração: Matriz de armazenamento não reportada pelo Inventário * erro de configuração:pasta de exportação não contém arquivos jar | * Verifique a localização do utilitário de exportação. * Verifique se a matriz de armazenamento em questão está configurada no servidor HiCommand * defina o intervalo de enquete de desempenho como múltiplo de 60 segundos. 
+
+
+| Erro: * Error Storage Navigator CLI * erro ao executar o comando auperform * erro ao executar comando externo | * Confirme que a CLI Modular do Storage Navigator está instalada na Unidade de aquisição de dados Insights da infraestrutura de dados * Confirme que a localização da CLI Modular do Storage Navigator está correta na configuração do coletor de dados * Confirme que a versão da CLI Modular do Storage Navigator é compatível com a versão de micro-código da matriz de armazenamento configurada no coletor de dados * da Unidade de aquisição de dados Insights da infraestrutura de dados, abra um diretório de dados, abra o seguinte para fazer uma conexão de cliente configurada para executar uma conexão do storage auteref.exe. 
+
+
+| Erro: Erro de configuração: Storage Array não reportado pelo Inventário | Verifique se o Storage Array em questão está configurado no servidor HiCommand 
+
+
+| Erro: * Nenhuma matriz é registrada com o Storage Navigator Modular 2 CLI * a matriz não está registrada com o Storage Navigator Modular 2 CLI * erro de configuração: Matriz de armazenamento não registrada com o StorageNavigator Modular CLI | * Abra o prompt de comando e mude o diretório para o caminho configurado * execute o comando * Executar o comando "auunitref" * confirmar que a saída do comando contém detalhes da matriz com IP * se a saída não contém os detalhes da matriz, em seguida, Registrar a matriz com Storage Navigator CLI: - Abrir prompt de comando e alterar diretório para o caminho configurado - execute o comando "set - Executar comando "auunitaddauto -IP <ip>". Substitua o <ip> pelo IP correto. 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

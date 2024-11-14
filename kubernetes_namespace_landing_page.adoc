@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: kubernetes_namespace_landing_page.html 
+keywords: telegraf, installation, install, kubernetes, pods, clusters, filters, filtering, k8s, namespace 
+summary: Explicação da página inicial do namespace do Kubernetes 
+---
+= Página de detalhes do namespace do Kubernetes
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+A página de detalhes do namespace do Kubernetes fornece um resumo de todos os ativos usados por um namespace, incluindo todos os recursos de storage no back-end e suas utilizações de capacidade.
+
+Clicar em um link de namespace em qualquer página do Kubernetes Explorer abrirá uma página de detalhes para esse namespace.
+
+image:Kubernetes_Namespace_Detail_Example_2.png["Página de detalhes do namespace"]
+
+Assim como outras páginas do Excplorer do Kubernetes, você pode definir um filtro para focar em nós específicos ou outros objetos. Além disso, você pode ver uma visão geral da integridade do pod e do status do namespace, além de gráficos mostrando demanda de CPU e memória, bem como capacidade de volume persistente, se aplicável.
+
+Por fim, a página exibe uma tabela de cargas de trabalho associadas ao namespace.
+
+Clique em qualquer link na página para explorar ou solucionar problemas do seu ambiente Kubernetes.

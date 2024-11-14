@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: task_create_application.html 
+summary: Você define aplicativos que você aplica a ativos em seu ambiente conforme necessário. 
+keywords: application, create application, 
+---
+= Criando aplicativos
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Para rastrear dados associados a aplicativos específicos em execução no seu ambiente, é possível definir os aplicativos no Data Infrastructure Insights.
+
+.Antes de começar
+Se você quiser associar o aplicativo a uma entidade de negócios, você deve criar a entidade de negócios antes de definir o aplicativo.
+
+.Sobre esta tarefa
+O Data Infrastructure Insights permite rastrear dados de ativos associados a aplicativos para coisas como relatórios de uso ou custos.
+
+.Passos
+. No menu Data Infrastructure Insights, clique em *observabilidade > Enrich > Applications*. Selecione
++
+A caixa de diálogo Adicionar aplicativo é exibida.
+
+. Introduza um nome exclusivo para a aplicação.
+. Selecione uma prioridade para a aplicação.
+. Clique em *Salvar*.
+
+
+Depois de definir um aplicativo, ele pode ser atribuído aos ativos.
+
+
+
+== Atribuindo aplicativos aos ativos
+
+Este procedimento atribui o aplicativo a um host como um exemplo. Você pode atribuir host, máquina virtual, volume ou volumes internos a um aplicativo.
+
+.Passos
+. Localize o ativo ao qual você deseja atribuir ao aplicativo:
+. Clique em *consultas > Nova consulta* e procure por Host.
+. Clique na caixa de verificação à esquerda do anfitrião que pretende associar à aplicação.
+. Clique em *ações em massa > Adicionar aplicativo*.
+. Selecione a aplicação à qual está a atribuir o ativo.
+
+
+Quaisquer novos aplicativos que você atribuir substituem quaisquer aplicativos no ativo que foram derivados de outro ativo. Por exemplo, os volumes herdam aplicativos de hosts e, quando novos aplicativos são atribuídos a um volume, o novo aplicativo tem precedência sobre o aplicativo derivado.
+
+
+NOTE: Para ambientes com grandes quantidades de ativos relacionados, a herança de atribuições de aplicativos para esses ativos pode levar vários minutos. Por favor, aguarde mais tempo para que a herança ocorra se você tiver muitos ativos relacionados.
+
+.Depois de terminar
+Depois de atribuir o host ao aplicativo, você pode atribuir os ativos restantes ao aplicativo. Para acessar a página de destino do aplicativo, clique em *Gerenciar > aplicativo* e selecione o aplicativo que você criou.

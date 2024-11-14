@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: concept_import_from_dashboard_gallery.html 
+summary: Você pode importar painéis recomendados para ajudar a responder a perguntas sobre insights de negócios. 
+keywords: dashboard, gallery, import 
+---
+= Importar a partir da Galeria do Dashboard
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights fornece uma série de painéis recomendados para fornecer insights de negócios sobre seus dados. Cada painel contém widgets projetados para ajudar a responder a uma pergunta específica ou resolver um problema específico relevante para os dados que estão sendo coletados no seu ambiente.
+
+Para importar um painel da galeria, faça o seguinte:
+
+. Selecione *painéis > painéis*
+. Clique em * na Galeria*
++
+Uma lista de *painéis recomendados* é exibida. Cada painel é nomeado com uma pergunta específica que o painel pode ajudá-lo a resolver. Os painéis estão disponíveis para ajudar a responder perguntas sobre diferentes tipos de objetos, incluindo AWS, NetApp, storage, VMware e outros
+
+. Selecione um ou mais painéis da lista e clique em *Adicionar painéis*. Esses painéis agora são exibidos na lista de painéis.
+
+
+Além dos painéis recomendados, você também pode optar por importar *painéis adicionais* que não sejam relevantes para seus dados atuais. Por exemplo, se você não tiver coletores de dados de armazenamento atualmente instalados, mas estiver planejando configurar alguns no futuro, ainda poderá optar por importar os painéis relevantes para o armazenamento. Esses painéis estarão disponíveis para exibição, mas podem não mostrar nenhum dado relevante até que pelo menos um coletor de dados de armazenamento esteja configurado.
+
+A importação a partir da galeria do painel está disponível para usuários com função Administrador ou proprietário da conta.

@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: task_cs_user_management.html 
+keywords: Workload Security, User, Login, account, cloud secure 
+summary: As contas de usuário são gerenciadas por meio do Data Infrastructure Insights User Management 
+---
+= Gerenciamento de usuários
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+As contas de usuário do Workload Security são gerenciadas por meio do Data Infrastructure Insights.
+
+O Data Infrastructure Insights oferece quatro níveis de conta de usuário: Proprietário da conta, Administrador, Usuário e convidado. Cada conta recebe níveis de permissão específicos. Uma conta de usuário que tenha Privileges de administrador pode criar ou modificar usuários e atribuir a cada usuário uma das seguintes funções de segurança de carga de trabalho:
+
+|===
+
+
+| Função | Acesso à segurança do workload 
+
+
+| Administrador | Pode executar todas as funções de Segurança de carga de trabalho, incluindo as de Alertas, Forensics, coletores de dados, políticas de resposta automatizadas e APIs para Segurança de carga de trabalho. Um administrador também pode convidar outros usuários, mas só pode atribuir funções de Segurança de carga de trabalho. 
+
+
+| Utilizador | Pode visualizar e gerir Alertas e visualizar Forensics. A função de usuário pode alterar o status de alerta, adicionar uma nota, tirar snapshots manualmente e restringir o acesso do usuário. 
+
+
+| Convidado | Pode visualizar Alertas e Forensics. A função convidado não pode alterar o status de alerta, adicionar uma nota, tirar snapshots manualmente ou restringir o acesso do usuário. 
+|===
+.Passos
+. Faça login no Workload Security
+. No menu, clique em *Admin > User Management*
++
+Você será encaminhado para a página Gerenciamento de usuários do Data Infrastructure Insights.
+
+. Selecione a função pretendida para cada utilizador.
+
+
+Ao adicionar um novo usuário, basta selecionar a função desejada (geralmente Usuário ou convidado).
+
+Mais informações sobre contas de usuário e funções podem ser encontradas na documentação do Data Infrastructure Insightslink:https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html["Função de utilizador"].

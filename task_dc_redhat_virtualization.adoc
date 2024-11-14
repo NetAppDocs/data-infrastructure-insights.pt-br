@@ -1,0 +1,95 @@
+---
+sidebar: sidebar 
+permalink: task_dc_redhat_virtualization.html 
+keywords: data collector, Red Hat Virtualization 
+summary: Configurando o coletor de dados do Red Hat Virtualization. 
+---
+= Coletor de dados Red Hat Virtualization
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa o coletor de dados Red Hat Virtualization para coletar dados de inventário de cargas de trabalho virtualizadas do Linux e do Microsoft Windows.
+
+
+
+== Terminologia
+
+Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Disco | Disco virtual 
+
+
+| Host | Host 
+
+
+| Máquina virtual | Máquina virtual 
+
+
+| Domínio de armazenamento | Armazenamento de dados 
+
+
+| Unidade lógica | LUN 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* Endereço IP do servidor RHEV na porta 443 via API REST
+* Nome de utilizador e palavra-passe só de leitura
+* RHEV versão mais recente 3,0
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP do servidor RHEV | Endereço IP do sistema de armazenamento 
+
+
+| Nome de utilizador | Nome de usuário com admin Privileges 
+
+
+| Senha para a conta privilegiada do administrador | Palavra-passe 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Porta de comunicação HTTPS | Porta usada para comunicação HTTPS com o RHEV 
+
+
+| Intervalo de pesquisa de inventário (min) | O padrão é 20 minutos. 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

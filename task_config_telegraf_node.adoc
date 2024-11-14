@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: task_config_telegraf_node.html 
+keywords: telegraf, installation, install, node, host 
+summary: Configuração do coletor de dados Flink 
+---
+= Coleta de dados de nó
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights reúne métricas do nó no qual você instala um agente.
+
+
+
+== Instalação
+
+. A partir de *Observability > Collectors*, escolha um sistema operacional/plataforma. Observe que a instalação de qualquer coletor de dados de integração (Kubernetes, Docker, Apache, etc.) também configurará a coleta de dados de nós.
+. Siga as instruções para configurar o agente. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+
+
+
+
+== Objetos e contadores
+
+Os seguintes objetos e seus contadores são coletados como métricas do Node:
+
+[cols="<.<,<.<,<.<,<.<"]
+|===
+| Objeto: | Identificadores: | Atributos: | Pontos de dados: 
+
+
+| Sistema de ficheiros do nó | Tipo caminho dispositivo UUUID nó | Nome do nó IP do nó modo de SO do nó | Livres inodes livres inodes totais usados Total usado Total usado usado 
+
+
+| Disco do nó | Disco UUUID nó | Nome do nó IP do nó os do nó | Tempo de e/S Total IOPS em andamento ler bytes (por seg) tempo de leitura Total leituras (por seg) tempo de e/S ponderado Total de bytes de gravação (por seg) tempo de gravação Total de gravações (por seg) tempo de gravação tempo de leitura tempo de e/S 
+
+
+| CPU de nó | CPU UUUID nó | Nome do nó IP do nó os do nó | Uso da CPU do usuário uso da CPU ocioso uso da CPU processador CPU interrupção uso da CPU uso da CPU DPC CPU uso 
+
+
+| Nó | UUID de nó | Nome do nó IP do nó os do nó | Kernel tempo de inicialização Kernel Context switches (por seg) Kernel Entropy available Kernel interrupts (por seg) Kernel processes forked (por seg) memória ativa disponível memória Total memória disponível memória Buffered 
+
+
+| Rede de nós | UUID do nó de interface de rede | Nó Nome nó IP nó os | Bytes recebidos bytes recebidos Pacotes enviados Outboud Pacotes descartados erros Outboud Pacotes recebidos Pacotes descartados Pacotes recebidos erros recebidos Pacotes recebidos pacotes recebidos pacotes enviados 
+|===
+
+
+== Configuração
+
+As informações de configuração e resolução de problemas podem ser encontradas link:task_config_telegraf_agent.html["Configurando um Agente"]na página.

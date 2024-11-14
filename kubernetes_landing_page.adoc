@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: kubernetes_landing_page.html 
+keywords: telegraf, installation, install, kubernetes, pods, clusters, filters, filtering, k8s 
+summary: Explicação da página inicial do Kubernetes 
+---
+= Visão geral do cluster do Kubernetes
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights Kubernetes Explorer é uma ferramenta poderosa para exibir a integridade geral e o uso dos clusters do Kubernetes, além de permitir que você analise facilmente as áreas de investigação.
+
+Clicar em *painéis > Kubernetes Explorer* abre a página de lista de clusters do Kubernetes. Esta página de visão geral contém uma tabela dos clusters do Kubernetes no seu ambiente.
+
+image:Kubernetes_List_Page_new.png["Página de lista do Kubernetes"]
+
+
+
+=== Lista de cluster
+
+A lista de clusters exibe as seguintes informações para cada cluster no seu ambiente:
+
+* Cluster *Nome*. Clicar num nome de cluster abrirá o link:kubernetes_cluster_detail.html["*página de detalhes*"] para esse cluster.
+* *Percentagens de saturação*. A saturação geral é a mais alta da CPU, memória ou saturação de armazenamento.
+* Número de * nós* no cluster. Clicar neste número abrirá a página da lista nó.
+* Número de *pods* no cluster. Clicar neste número abrirá a página da lista Pod.
+* Número de * namespaces* no cluster. Clicar nesse número abrirá a página de lista de namespace.
+* Número de *cargas de trabalho* no cluster. Clicar neste número abrirá a página da lista carga de trabalho.
+
+
+
+
+== Refinando o filtro
+
+Quando você está filtrando, à medida que você começa a digitar, você recebe a opção de criar um filtro * curinga* com base no texto atual. Selecionar esta opção irá retornar todos os resultados que correspondem à expressão curinga. Você também pode criar *expressões* usando NOT ou E, ou você pode selecionar a opção "nenhum" para filtrar valores nulos no campo.
+
+image:Filter_Kubernetes_Explorer.png["Filtragem com curinga no K8S Explorer"]
+
+Os filtros baseados em carateres universais ou expressões (por exemplo, NÃO, E, "nenhum", etc.) são exibidos em azul escuro no campo de filtro. Os itens que você selecionar diretamente da lista são exibidos em azul claro.
+
+image:Filter_Kubernetes_Explorer_2.png["Filtro mostrando curinga e itens selecionados"]
+
+Os filtros do Kubernetes são contextuais, o que significa, por exemplo, que se você estiver em uma página de nó específica, o filtro pod_name listará apenas os pods relacionados a esse nó. Além disso, se você aplicar um filtro para um namespace específico, o filtro pod_name listará apenas pods nesse nó _e_ nesse namespace.
+
+Observe que a filtragem de carateres curinga e expressão funciona com texto ou listas, mas não com valores numéricos, datas ou booleanos.

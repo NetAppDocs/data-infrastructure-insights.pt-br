@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: concept_ws_integration_with_ontap_access_denied.html 
+summary: A segurança do workload se integra ao ONTAP para receber eventos de acesso negado e fornecer uma camada adicional de análise e respostas automáticas. 
+keywords: ransomware, ARP, Protection, Security, access 
+---
+= Integração com o ONTAP Access negada
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O recurso Acesso negado do ONTAP usa análise de workload em ambientes nas (NFS e SMB) para detectar e avisar proativamente sobre operações de arquivos com falha (ou seja, um usuário tentando executar uma operação para a qual não tenha permissão). Essas notificações falhadas de operação de arquivos - especialmente em casos de falhas relacionadas à segurança - ajudarão a bloquear ataques internos nos estágios iniciais.
+
+A segurança de workload se integra ao ONTAP para receber eventos de acesso negado e fornecer uma camada de resposta automática e analítica adicional.
+
+Pré-requisitos
+
+* Versão mínima do ONTAP: 9.13.0.
+* Um administrador de Segurança de carga de trabalho deve habilitar o recurso Acesso negado ao adicionar um novo coletor ou editar um coletor existente, selecionando a caixa de seleção _Monitor Access Neged Events_ em Configuração Avançada.
+
+
+image:WS_Access_Denied_Enable_in_Collector.png["Ativar acesso negado na Configuração Avançada do ONTAP Collector"]
+
+
+
+== Permissões de usuário necessárias
+
+Se o Data Collector for adicionado usando credenciais de administração de cluster, nenhuma nova permissão será necessária.
+
+Se o Coletor for adicionado usando um usuário personalizado (por exemplo, _csuser_) com permissões dadas ao usuário, siga as etapas abaixo para dar à Segurança da carga de trabalho a permissão necessária para se Registrar para eventos de acesso negado com o ONTAP.
+
+Para csuser com credenciais _cluster_, execute os seguintes comandos a partir da linha de comando ONTAP. Observe que _csrestrole_ é função personalizada e _csuser_ é usuário personalizado do ONTAP.
+
+[listing]
+----
+ security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <cluster_name>
+ security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole
+----
+Para csuser com credenciais _SVM_, execute os seguintes comandos da linha de comando ONTAP:
+
+[listing]
+----
+ security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <svm_name>
+ security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole -vserver <svm_name>
+----
+Leia mais sobre como configurar outro link:task_add_collector_svm.html["Permissões da ONTAP"].
+
+
+
+== Acesso negado eventos
+
+Uma vez que os eventos tenham sido adquiridos do sistema ONTAP, a página Forensics de Segurança de carga de trabalho mostrará eventos de Acesso negado. Além das informações exibidas, você pode visualizar as permissões de usuário ausentes para uma determinada operação adicionando a coluna _atividade desejada_ à tabela a partir do ícone de engrenagem.
+
+image:WS_Access_Denied_Example_Event_1.png["Exemplo Acesso negado evento"]

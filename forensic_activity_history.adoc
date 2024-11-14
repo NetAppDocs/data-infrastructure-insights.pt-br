@@ -1,0 +1,293 @@
+---
+sidebar: sidebar 
+permalink: forensic_activity_history.html 
+keywords: Forensic, activity history, activity data, history 
+summary: dados do histórico de atividades forenses 
+---
+= Forensics - todas as atividades
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+A página All Activity ajuda você a entender as ações executadas em entidades no ambiente Workload Security.
+
+
+
+== Examinando todos os dados de atividade
+
+Clique em *Forensics > Activity Forensics* e clique na guia *All Activity* para acessar a página All Activity. Esta página fornece uma visão geral das atividades no seu ambiente, destacando as seguintes informações:
+
+* Um gráfico mostrando _Histórico de atividades_ (acessado por minuto/por 5 minutos/por 10 minutos com base no intervalo de tempo global selecionado)
++
+Você pode ampliar o gráfico arrastando um retângulo no gráfico. A página inteira será carregada para exibir o intervalo de tempo ampliado. Quando ampliada, é apresentado um botão que permite ao utilizador reduzir o zoom.
+
+* Um gráfico de _tipos de atividade_. Para obter dados do histórico de atividades por tipo de atividade, clique no link correspondente da etiqueta do eixo x.
+* Um gráfico de atividade em _tipos de entidade_. Para obter dados do histórico de atividades por tipo de entidade, clique no link correspondente do rótulo do eixo x.
+* Uma lista dos dados _All Activity_
+
+
+A tabela _*All Activity*_ mostra as seguintes informações. Observe que nem todas essas colunas são exibidas por padrão. Você pode selecionar colunas a serem exibidas clicando no ícone "engrenagem".
+
+* A *hora* que uma entidade foi acessada incluindo o ano, mês, dia e hora do último acesso.
+* O *usuário* que acessou a entidade com um link para o link:forensic_user_overview.html["Informações do utilizador"].
+
+
+* A *atividade* realizada pelo usuário. Os tipos suportados são:
++
+** *Alterar propriedade do grupo* - a propriedade do grupo é de arquivo ou pasta é alterada. Para obter mais detalhes sobre a propriedade do grupo, consulte link:https://docs.microsoft.com/en-us/previous-versions/orphan-topics/ws.11/dn789205(v=ws.11)?redirectedfrom=MSDN["este link."]
+** *Alterar proprietário* - a propriedade do arquivo ou pasta é alterada para outro usuário.
+** *Alterar permissão* - a permissão de arquivo ou pasta é alterada.
+** * Criar* - criar arquivo ou pasta.
+** *Excluir* - Excluir arquivo ou pasta. Se uma pasta for excluída, os eventos _delete_ serão obtidos para todos os arquivos dessa pasta e subpastas.
+** *Leia* - o ficheiro é lido.
+** *Leia metadados* - somente na opção de monitoramento de pastas ativada. Será gerado ao abrir uma pasta no Windows ou executando "ls" dentro de uma pasta no Linux.
+** *Renomear* - Renomear arquivo ou pasta.
+** *Write* - os dados são gravados em um arquivo.
+** *Write Metadata* - os metadados do arquivo são escritos, por exemplo, permissão alterada.
+** *Outra alteração* - qualquer outro evento que não esteja descrito acima. Todos os eventos não mapeados são mapeados para o tipo de atividade "outra mudança". Aplicável a ficheiros e pastas.
+
+
+* O *caminho* para a entidade com um link para o. link:forensic_entity_detail.html["Dados Detalhe entidade"]
+* A extensão *Entity Type*, incluindo entidade (ou seja, arquivo) (.doc, .docx, .tmp, etc.)
+* O *dispositivo* onde as entidades residem
+* O *Protocolo* usado para buscar eventos.
+* O *caminho original* usado para renomear eventos quando o arquivo original foi renomeado. Esta coluna não está visível na tabela por padrão. Use o seletor de coluna para adicionar essa coluna à tabela.
+* O *volume* onde as entidades residem. Esta coluna não está visível na tabela por padrão. Use o seletor de coluna para adicionar essa coluna à tabela.
+
+
+
+
+== Filtragem de dados do histórico de atividades forenses
+
+Existem dois métodos que você pode usar para filtrar dados.
+
+. Passe o Mouse sobre o campo na tabela e clique no ícone de filtro exibido. O valor é adicionado aos filtros apropriados na lista acima _Filtrar por_.
+. Filtre dados digitando no campo _Filtrar por_:
++
+Selecione o filtro apropriado no topo do widget 'Filtrar por' clicando no botão *[
+
++
+image:Forensic_Activity_Filter.png["Tipo de entidade: 500"]
+
++
+Introduza o texto de pesquisa
+
++
+Pressione Enter ou clique fora da caixa de filtro para aplicar o filtro.
+
+
+
+Você pode filtrar os dados de atividade Forense pelos seguintes campos:
+
+* O tipo *Activity*.
+* *IP de origem* a partir do qual a entidade foi acessada. Você deve fornecer um endereço IP de origem válido em aspas duplas, por exemplo "10,1.1,1". IPs incompletos, como "10,1.1.*", "10,1.*.*", etc., não funcionarão.
+* *Protocolo* para buscar atividades específicas do protocolo.
+* *Nome de usuário* do usuário que realiza a atividade. Você precisa fornecer o nome de usuário exato para filtrar. A pesquisa com nome de usuário parcial ou nome de usuário parcial pré-fixado ou sufixo com '*' não funcionará.
+* *Redução de ruído* para filtrar arquivos criados nas últimas 2 horas pelo usuário. Ele também é usado para filtrar arquivos temporários (por exemplo, arquivos .tmp) acessados pelo usuário.
+* *Domínio* do usuário que realiza a atividade. Você precisa fornecer o *domínio exato* para filtrar. Procurar domínio parcial, ou domínio parcial prefixado ou sufixo com curinga ('*'), não funcionará. _None_ pode ser especificado para procurar domínio ausente.
+
+
+Os seguintes campos estão sujeitos a regras especiais de filtragem:
+
+* *Entity Type*, usando a extensão entity (file) - é preferível especificar o tipo exato de entidade dentro de aspas. Por exemplo _"txt"_.
+* *Path* da entidade - filtros de caminho de diretório (string de caminho que termina com /) até 4 diretórios profundos são recomendados para resultados mais rápidos. Por exemplo, _/home/userX/nested1/nested2/_ OU _"/home/userX/nested1/nested2/"_. Consulte a tabela abaixo para obter mais detalhes.
+* *Usuário* realizando a atividade - é preferível especificar o usuário exato dentro de aspas. Por exemplo, _"Administrador"_.
+* *Dispositivo* (SVM) onde as entidades residem
+* *Volume* onde as entidades residem
+* O *caminho original* usado para renomear eventos quando o arquivo original foi renomeado.
+
+
+Os campos anteriores estão sujeitos ao seguinte ao filtrar:
+
+* O valor exato deve estar entre aspas: Exemplo: "Searchtext"
+* Strings curinga não devem conter aspas: Exemplo: Searchtext, * searchtext*, irá filtrar para quaisquer strings contendo 'searchtext'.
+* String com um prefixo, exemplo: Searchtext* , pesquisará quaisquer strings que começam com 'searchtext'.
+
+
+
+
+== Exemplos de filtro de atividade Forensics:
+
+|===
+| Expressão de filtro aplicada pelo usuário | Resultado esperado | Avaliação de desempenho | Comentário 
+
+
+| Caminho: /Home/userX/nested1/nested2/ ou /home/userX/nested1/nested2/* ou "/home/userX/nested1/nested2/" | Pesquisa recursiva de todos os arquivos e pastas sob determinado diretório | Rápido | Pesquisas de diretório até 4 diretórios serão rápidas. 
+
+
+| Caminho: /Home/userX/nested1/ ou /home/userX/nested1/* ou "/home/userX/nested1/" | Pesquisa recursiva de todos os arquivos e pastas sob determinado diretório | Rápido | Pesquisas de diretório até 4 diretórios serão rápidas. 
+
+
+| /Home/userX/nested1/test* ou /home/userX/nested1/test | Pesquisa recursiva de todos os arquivos e pastas sob determinado caminho regex(test* pode significar ARQUIVO OU diretório OU ambos) | Mais lento | A pesquisa de regex será mais lenta em comparação com as pesquisas de diretório. 
+
+
+| Caminho: /Home/userX/nested1/nested2/nested3/ ou /home/userX/nested1/nested2/nested3/* ou "/home/userX/nested1/nested2/nested3/" | Pesquisa recursiva de todos os arquivos e pastas sob determinado diretório | Mais lento | Mais de 4 buscas de diretórios são mais lentas para pesquisar. 
+
+
+| Caminho * userX/nested1/test* | Pesquisa recursiva de todos os arquivos e pastas sob determinada string de caminho curinga (teste* pode significar ARQUIVO OU diretório OU ambos) | Mais lento | A pesquisa de curinga líder são pesquisas mais lentas. 
+
+
+| Quaisquer outros filtros não baseados em caminho. Filtros de tipo de usuário e entidade recomendados para estar entre aspas, por exemplo, |  | Rápido |  
+|===
+NOTA:
+
+. A contagem de atividades exibida ao lado do ícone todas as atividades é arredondada para 30 minutos quando o intervalo de tempo selecionado se estende por mais de 3 dias. Por exemplo, um intervalo de tempo de _Set 1st 10:15 am a Set 7th 10:15 am_ mostrará contagens de atividades de Set 1st 10:00 am a Sept 7th 10:30 am.
+. Da mesma forma, as métricas de contagem mostradas nos gráficos tipos de atividade, atividade em tipos de entidade e Histórico de atividade são arredondadas para 30 minutos quando o intervalo de tempo selecionado se estende por mais de 3 dias.
+
+
+
+
+== Ordenar dados do histórico de atividades forenses
+
+Você pode classificar os dados do histórico de atividades por _hora, Usuário, IP de origem, atividade,_ e _tipo de entidade_. Por padrão, a tabela é ordenada por ordem decrescente _time_, o que significa que os dados mais recentes serão exibidos primeiro. A ordenação está desativada para os campos _Device_ e _Protocol_.
+
+
+
+== Guia do usuário para exportações assíncronas
+
+
+
+=== Visão geral
+
+O recurso de exportações assíncronas no Storage Workload Security foi projetado para lidar com grandes exportações de dados.
+
+
+
+=== Guia passo a passo: Exportando dados com exportações assíncronas
+
+. *Iniciar exportação*: Selecione a duração e os filtros desejados para a exportação e clique no botão Exportar.
+. *Aguarde a conclusão da exportação*: O tempo de processamento pode variar de alguns minutos a algumas horas. Talvez seja necessário atualizar a página forense algumas vezes. Quando o trabalho de exportação estiver concluído, o botão "Transferir último ficheiro CSV de exportação" será ativado.
+. * Download*: Clique no botão "Download último arquivo de exportação criado" para obter os dados exportados em um formato .zip. Esses dados estarão disponíveis para download até que o usuário inicie outra exportação assíncrona ou decorram 3 dias, o que ocorrer primeiro. O botão permanecerá ativado até que outra exportação assíncrona seja iniciada.
+. *Limitações*:
++
+** O número de downloads assíncronos está atualmente limitado a 1 por usuário e 3 por locatário.
+** Os dados exportados estão limitados a um máximo de 1 milhões de Registros.
+
+
+
+
+Um script de exemplo para extrair dados forenses via API está presente em _/opt/NetApp/cloudsecure/Agent/export-script/_ no agente. Consulte o readme neste local para obter mais detalhes sobre o script.
+
+
+
+== Seleção de coluna para todas as atividades
+
+A tabela _all activity_ mostra as colunas selecionadas por padrão. Para adicionar, remover ou alterar as colunas, clique no ícone de engrenagem à direita da tabela e selecione na lista de colunas disponíveis.
+
+image:CloudSecure_ActivitySelection.png["Seletor de atividade, largura de 30%"]
+
+
+
+== Retenção do histórico da atividade
+
+O histórico de atividades é retido por 13 meses para ambientes ativos de segurança de workload.
+
+
+
+== Aplicabilidade dos filtros na Página Forensics
+
+|===
+| Filtro | O que faz | Exemplo | Aplicável a estes filtros | Não aplicável a estes filtros | Resultado 
+
+
+| * (Asterisco) | permite-lhe procurar tudo | Auto*03172022 se o texto de pesquisa contiver hífen ou sublinhado, dê expressão entre parênteses. Por exemplo, (svm*) para pesquisar svm-123 | Usuário, CAMINHO, tipo de entidade, dispositivo, volume, caminho original |  | Retorna todos os recursos que começam com "Auto" e terminam com "03172022" 
+
+
+| ? (ponto de interrogação) | permite-lhe procurar um número específico de carateres | AutoSabotageUser1_03172022? | Usuário, tipo de entidade, dispositivo, volume |  | Retorna AutoSabotageUser1_03172022A, AutoSabotageUser1_03172022B, AutoSabotageUser1_031720225 e assim por diante 
+
+
+| OU | permite especificar várias entidades | AutoSabotageUser1_03172022 OR AutoRansomUser4_03162022 | Usuário, domínio, CAMINHO, tipo de entidade, caminho original |  | Retorna qualquer um de AutoSabotageUser1_03172022 OU AutoRansomUser4_03162022 
+
+
+| NÃO | permite excluir texto dos resultados da pesquisa | NOT AutoRansomUser4_03162022 | Usuário, domínio, CAMINHO, tipo de entidade, CAMINHO original | Dispositivo | Retorna tudo o que não começa com"AutoRansomUser4_03162022" 
+
+
+| Nenhum | Procura valores NULL em todos os campos | Nenhum | Domínio |  | retorna resultados onde o campo de destino está vazio 
+|===
+
+
+== Pesquisa de caminho / caminho original
+
+Os resultados da pesquisa com e sem / serão diferentes
+
+|===
+
+
+| /AutoDir1/AutoFile | Obras 
+
+
+| AutoDir1/AutoFile | Não funciona 
+
+
+| /AutoDir1/AutoFile (Dir1) | Dir1 a subcadeia parcial não funciona 
+
+
+| "/AutoDir1/AutoFile03242022" | A busca exata funciona 
+
+
+| Auto*03242022 | Não funciona 
+
+
+| AutoSabotageUser1_03172022? | Não funciona 
+
+
+| /AutoDir1/AutoFile03242022 OU /AutoDir1/AutoFile03242022 | Obras 
+
+
+| NÃO /AutoDir1/AutoFile03242022 | Obras 
+
+
+| NÃO /AutoDir1 | Obras 
+
+
+| NÃO /AutoFile03242022 | Não funciona 
+
+
+| * | Mostra todas as entradas 
+|===
+
+
+== Alterações na atividade do usuário do SVM raiz local
+
+Se um usuário local root SVM estiver executando qualquer atividade, o IP do cliente no qual o compartilhamento NFS é montado agora é considerado no nome de usuário, que será mostrado como root at <ip-address-of-the-client> em ambas as páginas de atividade forense e atividade do usuário.
+
+Por exemplo:
+
+* Se o SVM-1 for monitorado pelo Workload Security e o usuário raiz desse SVM montar o compartilhamento em um cliente com endereço IP 10.197.12.40, o nome de usuário exibido na página de atividade forense será _root@10.197.12.40_.
+* Se o mesmo SVM-1 estiver montado em outro cliente com endereço IP 10.197.12.41, o nome de usuário mostrado na página de atividade forense será _root@10.197.12.41_.
+
+
+*• isso é feito para segregar a atividade do usuário raiz NFS pelo endereço IP. Anteriormente, toda a atividade foi considerada feita apenas pelo usuário _root_, sem distinção de IP.
+
+
+
+== Solução de problemas
+
+|===
+
+
+| Problema | Tente isto 
+
+
+| Na tabela "todas as atividades", sob a coluna "Usuário", o nome de usuário é mostrado como: "ldap:HQ.COMPANYNAME.COM:S-1-5-21-3577637-1906459482-1437260136-1831817” ou "LDAP:default:80038003" | Possíveis razões podem ser: 1. Ainda não foram configurados coletores de diretório de utilizadores. Para adicionar um, vá para *Workload Security > Collectors > User Directory Collectors* e clique em * User Directory Collector*. Escolha _ative Directory_ ou _LDAP Directory Server_. 2. Um Coletor de diretório de usuários foi configurado, no entanto ele parou ou está em estado de erro. Aceda a *Collectors > User Directory Collectors* e verifique o estado. Consulte link:http://docs.netapp.com/us-en/cloudinsights/task_config_user_dir_connect.html#troubleshooting-user-directory-collector-configuration-errors["Solução de problemas do User Directory Collector"]a seção da documentação para obter dicas de solução de problemas. Depois de configurar corretamente, o nome será resolvido automaticamente dentro de 24 horas. Se ele ainda não for resolvido, verifique se você adicionou o coletor de dados de usuário correto. Certifique-se de que o usuário faz parte do ative Directory/LDAP Directory Server adicionado. 
+
+
+| Alguns eventos NFS não são vistos na IU. | Verifique o seguinte: 1. Um coletor de diretório de usuário para servidor AD com conjunto de atributos POSIX deve ser executado com o atributo unixid habilitado a partir da UI. 2. Qualquer usuário que fizer acesso NFS deve ser visto quando pesquisado na página de usuário da IU 3. Eventos brutos (Eventos para os quais o usuário ainda não foi descoberto) não são compatíveis com NFS 4. O acesso anônimo à exportação NFS não será monitorado. 5. Certifique-se de que a versão NFS usada em menos de NFS4,1. 
+
+
+| Depois de digitar algumas letras contendo um caractere curinga como asterisco (*) nos filtros nas páginas Forensics _All Activity_ ou _entities_, as páginas são carregadas muito lentamente. | Um asterisco (*) na cadeia de pesquisa procura tudo. No entanto, as cadeias de carateres curinga principais como _*<searchTerm>_ ou _*<searchTerm>*_ resultarão em uma consulta lenta. Para obter um melhor desempenho, use strings de prefixo no formato _<searchTerm>*_ (em outras palavras, anexe o asterisco (*) _after_ um termo de pesquisa). Exemplo: Use a string _testvolume*_, em vez de _*testvolume_ ou _*test*volume_. Use uma pesquisa de diretório para ver todas as atividades abaixo de uma determinada pasta recursivamente (pesquisa hierárquica). Por exemplo, /path1/path2/path3/ ou "/path1/path2/path3/" listará todas as atividades recursivamente em /path1/path2/path3. Alternativamente, use a opção "Adicionar ao filtro" na guia todas as atividades." 
+
+
+| Estou encontrando um erro "solicitação falhou com o código de status 500/503" ao usar um filtro Path. | Tente usar um intervalo de datas menor para filtrar Registros. 
+
+
+| A IU forense está carregando dados lentamente ao usar o filtro _path_. | Filtros de caminho de diretório (string de caminho terminando com /) até 4 diretórios profundos são recomendados para resultados mais rápidos. Por exemplo, se o caminho de diretório for /AAA/BBB/CCC/DDD, tente pesquisar por /AAA/BBB/CCC/DDD/ ou "/AAA/BBB/CCC/DDD/" para carregar dados mais rápido. 
+|===

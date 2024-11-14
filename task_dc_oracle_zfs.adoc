@@ -1,0 +1,164 @@
+---
+sidebar: sidebar 
+permalink: task_dc_oracle_zfs.html 
+keywords: data collector, Oracle, ZFS, storage applicance 
+summary: Configurando o coletor de dados Oracle ZFS. 
+---
+= Coletor de dados Oracle ZFS Storage Appliance
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa o coletor de dados do Oracle ZFS Storage Appliance para coletar dados de inventário e desempenho.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire informações de inventário com o coletor de dados Oracle ZFS. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Disco (SSD) | Disco 
+
+
+| Cluster | Armazenamento 
+
+
+| Controlador | Nó de storage 
+
+
+| LUN | Volume 
+
+
+| Mapa LUN | Mapa de volume 
+
+
+| Iniciador, alvo | Máscara de volume 
+
+
+| Partilhar | Volume interno 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para esta fonte de dados.
+
+
+
+== Requisitos
+
+* Nomes de host para o controlador ZFS-1 e o controlador ZFS-2
+* Nome de usuário e senha do administrador
+* Requisito de porta: 215 HTTP/HTTPS
+
+
+
+
+== Métricas de performance necessárias
+
+Os dispositivos Oracle ZFS oferecem aos administradores de armazenamento grandes quantidades de flexibilidade para capturar estatísticas de desempenho. O Data Infrastructure Insights espera que você tenha _cada_ controlador em um par de alta disponibilidade configurado para capturar as seguintes métricas:
+
+* smb2.ops[compartilhar]
+* nfs3.ops[compartilhar]
+* nfs4.ops[compartilhar]
+* nfs4-1.ops[compartilhar]
+
+
+A falha em fazer com que o controlador capture um ou todos eles provavelmente resultará em o Data Infrastructure Insights não ter, ou subreportar, a carga de trabalho nos "volumes internos".
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Nome do host ZFS Controller-1 | Nome de host para controlador de storage 1 
+
+
+| Nome do host ZFS Controller-2 | Nome de host para controlador de storage 2 
+
+
+| Nome de utilizador | Nome de utilizador da conta de utilizador do administrador do sistema de armazenamento 
+
+
+| Palavra-passe | Palavra-passe para a conta de utilizador administrador 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Tipo de ligação | HTTPS ou HTTP, também exibe a porta padrão 
+
+
+| Substituir porta de ligação | Se estiver em branco, use a porta padrão no campo tipo de conexão; caso contrário, insira a porta de conexão a ser usada 
+
+
+| Intervalo de pesquisa de inventário | O padrão é 60 segundos 
+
+
+| Intervalo de enquete de desempenho (seg) | A predefinição é 300. 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2a, 2a"]
+|===
+| Problema: | Tente isto: 
+
+
+ a| 
+"Credenciais de início de sessão inválidas"
+ a| 
+Valide a conta de usuário e a senha do ZFS
+
+
+
+ a| 
+"Erro de configuração" com mensagem de erro "o serviço DE REPOUSO está desativado"
+ a| 
+Verifique se o serviço REST está ativado neste dispositivo.
+
+
+
+ a| 
+"Erro de configuração " com mensagem de erro "Usuário não autorizado para comando"
+ a| 
+Esse erro provavelmente deve-se a certas funções (por exemplo, 'Advanced_analytics') não serem incluídas para o usuário configurado.
+
+A aplicação do escopo do Analytics para o usuário com função somente leitura pode remover o erro. Siga estes passos:
+
+. No sistema ZFS, a partir do ecrã Configuration -> Users (Configuração -> utilizadores), mova o rato sobre a função e faça duplo clique para permitir a edição
+. Selecione "Analytics" (análise) no menu pendente Scope (Escopo). É apresentada uma lista das propriedades possíveis.
+. Clique na caixa de seleção mais alta e ela selecionará todas as três propriedades.
+. Clique no botão Adicionar no lado direito.
+. Clique no botão aplicar no canto superior direito da janela pop-up. A janela pop-up será fechada.
+
+
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

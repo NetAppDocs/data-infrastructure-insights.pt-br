@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: task_modify_delete_query.html 
+summary: Modificar ou excluir uma consulta 
+keywords: query, queries, modify, edit, delete, remove 
+---
+= Modificar ou excluir uma consulta
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Você pode alterar os critérios associados a uma consulta quando quiser alterar os critérios de pesquisa dos ativos que você está consultando.
+
+
+
+== Modificando uma consulta
+
+.Passos
+. Clique em *explorar* e selecione *todas as consultas métricas*.
++
+A página consultas é exibida.
+
+. Clique no nome da consulta
+. Para adicionar um critério à consulta, clique no ícone colunas e selecione uma métrica ou atributo na lista.
+
+
+Quando tiver efetuado todas as alterações necessárias, proceda de uma das seguintes formas:
+
+* Clique no botão *Salvar* para salvar a consulta com o nome que foi usado inicialmente.
+* Clique na lista suspensa ao lado do botão *Salvar* e selecione *Salvar como* para salvar a consulta com outro nome. Isso não substitui a consulta original.
+* Clique na lista suspensa ao lado do botão *Salvar* e selecione *Renomear* para alterar o nome da consulta que você usou inicialmente. Isso substitui a consulta original.
+* Clique na lista suspensa ao lado do botão *Salvar* e selecione *descartar alterações* para reverter a consulta para as últimas alterações salvas.
+
+
+
+
+== Excluindo uma consulta
+
+Para excluir uma consulta, clique em *consultas* e selecione *Mostrar todas as consultas* e siga um destes procedimentos:
+
+. Clique no menu "três pontos" à direita da consulta e clique em *Excluir*.
+. Clique no nome da consulta e selecione *Excluir* no menu suspenso *Salvar*.
+

@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: task_dc_na_cloud_connection.html 
+summary: Configure a conexão de nuvem do NetApp para o coletor de dados ONTAP 9.9 
+keywords: data collector, NetApp, Cloud agent, ONTAP 
+---
+= Conexão de nuvem NetApp para coletor de dados ONTAP 9.9
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Esse coletor de dados cria uma conexão na nuvem para dar suporte à coleta de dados de sistemas ONTAP 9.9 CVO, AFF e FAS.
+
+
+NOTE: Esse coletor de dados não está mais disponível para instalação no Data Infrastructure Insights a partir de 4 de abril de 2023 e será removido de todas as instalações do Data Infrastructure Insights em julho de 2023. Para obter informações sobre a transição para a coleta de dados baseada na UA, consulte link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/How_to_transition_from_NetApp_Cloud_Connection_to_AU_based_data_collector["Base de conhecimento"^].

@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: concept_querying_assets.html 
+summary: Consultar Visão geral 
+keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, Host, Internal Volume, iSCSI, Network, Portal, Path, Port, Qtree, Quota, Share, Storage, Node, Pool, SVM, Switch, Tape, VMDK, Virtual Machine, VM, Volume, Zone, Member 
+---
+= Ativos usados em consultas
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+As consultas permitem que você monitore e solucione problemas de sua rede pesquisando os ativos e as métricas em seu ambiente em um nível granular com base em critérios selecionados pelo usuário (por exemplo, anotações).
+
+Observe que as regras de anotação, que atribuem automaticamente anotações a ativos, _require_ uma consulta.
+
+Você pode consultar os ativos de inventário físico ou virtual (e suas métricas associadas) em seu ambiente ou as métricas fornecidas com integração, como Kubernetes ou dados avançados do ONTAP.
+
+
+
+== Ativos de inventário
+
+Os seguintes tipos de ativos podem ser usados em consultas, widgets de painel e Landing pages de ativos personalizados. Os campos e contadores disponíveis para filtros, expressões e exibição variam entre os tipos de ativos. Nem todos os ativos podem ser usados em todos os tipos de widget.
+
+* Aplicação
+* Armazenamento de dados
+* Disco
+* Malha
+* Dispositivo genérico
+* Host
+* Volume interno
+* Sessão iSCSI
+* Portal de rede iSCSI
+* Caminho
+* Porta
+* Qtree
+* Cota
+* Partilhar
+* Armazenamento
+* Nó de storage
+* Pool de storage
+* Máquina de Storage Virtual (SVM)
+* Interrutor
+* Fita
+* VMDK
+* Máquina virtual
+* Volume
+* Zona
+* Membro da zona
+
+
+
+
+== Métricas de integração
+
+Além de consultar ativos de inventário e suas métricas de desempenho associadas, você também pode consultar métricas de *dados de integração*, como as geradas pelo Kubernetes ou Docker, ou fornecidas com métricas avançadas do ONTAP.
+
+image:QueryPageFilter.png["Exemplo de filtro de consulta de integração"]

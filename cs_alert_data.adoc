@@ -1,0 +1,154 @@
+---
+sidebar: sidebar 
+permalink: cs_alert_data.html 
+keywords: alert, attack, ransomware, activity, security, abnormal 
+summary: O Workload Security cria alertas em caso de atividade anormal do usuário ou possível ataque. A página Alertas lista essas atividades para uma investigação rápida e fácil. 
+---
+= Alertas
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media
+
+
+[role="lead"]
+A página Alertas de Segurança de carga de trabalho mostra uma linha do tempo de ataques e/ou avisos recentes e permite visualizar detalhes de cada problema.
+
+image:CloudSecureAlertsListPage.png["Lista de alertas"]
+
+
+
+== Alerta
+
+A lista Alerta apresenta um gráfico que mostra o número total de potenciais ataques e/ou Avisos que foram levantados no intervalo de tempo selecionado, seguido de uma lista dos ataques e/ou avisos que ocorreram nesse intervalo de tempo. Você pode alterar o intervalo de tempo ajustando os controles deslizantes de hora de início e hora de fim no gráfico.
+
+É apresentado o seguinte para cada alerta:
+
+*Potenciais ataques:*
+
+* O tipo _potential Attack_ (por exemplo, ransomware ou Sabotage)
+* A data e a hora em que o ataque potencial foi _detetado_
+* O _Status_ do alerta:
++
+** *Novo*: Este é o padrão para novos alertas.
+** *Em andamento*: O alerta está sob investigação por um membro da equipe ou membros.
+** *Resolvido*: O alerta foi marcado como resolvido por um membro da equipe.
+** *Demitido*: O alerta foi rejeitado como comportamento falso positivo ou esperado.
++
+Um administrador pode alterar o status do alerta e adicionar uma nota para ajudar na investigação.
+
++
+image:CloudSecureChangeAlertStatus.png["Alterar Estado de alerta"]
+
+
+
+* O _User_ cujo comportamento acionou o alerta
+* _Evidência_ do ataque (por exemplo, um grande número de arquivos foi criptografado)
+* A _Ação tomada_ (por exemplo, um instantâneo foi tirado)
+
+
+*Avisos:*
+
+* O _comportamento anormal_ que acionou o aviso
+* A data e a hora em que o comportamento foi _detetado_
+* O _Status_ do alerta (novo, em andamento, etc.)
+* O _User_ cujo comportamento acionou o alerta
+* Uma descrição do _change_ (por exemplo, um aumento anormal no acesso ao arquivo)
+* A _Ação tomada_
+
+
+
+
+== Opções de filtro
+
+Você pode filtrar os alertas pelo seguinte:
+
+* O _Status_ do alerta
+* Texto específico na _Nota_
+* O tipo de _ataques/Avisos_
+* O _User_ cujas ações desencadearam o alerta/aviso
+
+
+
+
+== A página Detalhes do alerta
+
+Você pode clicar em um link de alerta na página da lista Alertas para abrir uma página de detalhes para o alerta. Os detalhes do alerta podem variar de acordo com o tipo de ataque ou alerta. Por exemplo, uma página de detalhes do ataque do ransomware pode mostrar as seguintes informações:
+
+
+
+=== Secção de resumo:
+
+* Tipo de ataque (ransomware, sabotagem) e ID de alerta (atribuído pela Workload Security)
+* Data e hora em que o ataque foi detetado
+* Ação tomada (por exemplo, um instantâneo automático foi feito. A hora do instantâneo é mostrada imediatamente abaixo da seção de resumo))
+* Estado (novo, em curso, etc.)
+
+
+
+
+=== Seção de resultados do ataque:
+
+* Contagens de volumes e arquivos afetados
+* Um resumo que acompanha a deteção
+* Um gráfico mostrando a atividade do arquivo durante o ataque
+
+
+
+
+=== Secção utilizadores relacionados:
+
+Esta seção mostra detalhes sobre o usuário envolvido no ataque potencial, incluindo um gráfico de atividade superior para o usuário.
+
+Página de alertas (este exemplo mostra um possível ataque de ransomware): image:RansomwareAlertExample.png["Exemplo de alerta de ransomware"]
+
+Página de detalhes (este exemplo mostra um possível ataque de ransomware): image:RansomwareDetailPageExample.png["Exemplo de página de detalhes do ransomware"]
+
+
+
+== _Faça um instantâneo_ Ação
+
+O Workload Security protege seus dados tirando automaticamente um snapshot quando uma atividade maliciosa é detetada, garantindo que seus dados sejam copiados com segurança.
+
+Você pode definir link:cs_automated_response_policies.html["políticas de resposta automatizadas"] essa captura instantânea quando um ataque de ransomware ou outra atividade anormal do usuário é detetada. Também pode tirar um instantâneo manualmente a partir da página de alerta.
+
+Instantâneo automático captado: image:AlertActionsAutomaticExample.png["Ecrã de ação de alerta,1000"]
+
+Instantâneo manual: image:AlertActionsExample.png["Ecrã de ação de alerta,1000"]
+
+
+
+== Notificações de alerta
+
+As notificações por e-mail de alertas são enviadas para uma lista de destinatários de alerta para cada ação no alerta. Para configurar destinatários de alerta, clique em *Admin > notificações* e insira um endereço de e-mail para cada destinatário.
+
+
+
+== Política de retenção
+
+Os alertas e avisos são mantidos por 13 meses. Os alertas e avisos com mais de 13 meses serão eliminados. Se o ambiente de Segurança de workload for excluído, todos os dados associados ao ambiente também serão excluídos.
+
+
+
+== Solução de problemas
+
+|===
+| Problema: | Tente isto: 
+
+
+| Há uma situação em que o ONTAP tira snapshots por hora por dia. Os snapshots do Workload Security (WS) afetarão isso? O instantâneo WS fará o instantâneo por hora local? O instantâneo por hora padrão será interrompido? | Os snapshots de segurança da carga de trabalho não afetarão os instantâneos por hora. Os instantâneos WS não tirarão o espaço instantâneo por hora e isso deverá continuar como antes. O instantâneo por hora padrão não será interrompido. 
+
+
+| O que acontecerá se a contagem máxima de instantâneos for atingida no ONTAP? | Se a contagem máxima de instantâneos for atingida, a captura subsequente de instantâneos falhará e o Workload Security mostrará uma mensagem de erro observando que o instantâneo está cheio. O usuário precisa definir políticas de snapshot para excluir os snapshots mais antigos, caso contrário, os snapshots não serão tirados. No ONTAP 9.3 e versões anteriores, um volume pode conter até 255 cópias Snapshot. No ONTAP 9.4 e posterior, um volume pode conter até 1023 cópias snapshot. Consulte a documentação do ONTAP para obter informações link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-960%2Fvolume__snapshot__autodelete__modify.html["Definição da política de eliminação de instantâneos"]sobre . 
+
+
+| A segurança do workload não consegue tirar snapshots. | Certifique-se de que a função que está sendo usada para criar snapshots tenha o link: https://docs.NetApp.com/US-en/cloudinsights/task_add_Collector_svm.html. Certifique-se de que _csrole_ é criado com direitos de acesso adequados para tirar snapshots: Função de login de segurança criar -vserver <vservername> -role csrole -cmddirname "volume snapshot" -acessar tudo 
+
+
+| Os snapshots estão falhando em alertas mais antigos em SVMs que foram removidos do Workload Security e posteriormente adicionados novamente. Para novos alertas que ocorrem após a adição da SVM novamente, snapshots são feitos. | Este é um cenário raro. Caso isso ocorra, faça login no ONTAP e tire os snapshots manualmente para os alertas mais antigos. 
+
+
+| Na página _Detalhes do alerta_, a mensagem erro "Falha na última tentativa" é vista abaixo do botão _tirar instantâneo_. Passar o Mouse sobre o erro exibe "Invoke API comando excedeu o tempo limite para o coletor de dados com id". | Isso pode acontecer quando um coletor de dados é adicionado à segurança de carga de trabalho por meio do IP de gerenciamento de SVM, se o LIF da SVM estiver no estado _disabled_ no ONTAP. Ative o LIF em particular no ONTAP e acione _tirar instantâneo manualmente_ da Segurança da carga de trabalho. A ação Snapshot será então bem-sucedida. 
+|===

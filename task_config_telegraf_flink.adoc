@@ -1,0 +1,112 @@
+---
+sidebar: sidebar 
+permalink: task_config_telegraf_flink.html 
+keywords: telegraf, installation, install, flink 
+summary: Configuração do coletor de dados Flink 
+---
+= Flink Data Collector
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do Flink.
+
+
+
+== Instalação
+
+. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha Flink.
++
+Selecione o sistema operacional ou a plataforma na qual o agente Telegraf está instalado.
+
+. Se você ainda não instalou um Agente para coleção ou deseja instalar um Agente para um sistema operacional ou plataforma diferente, clique em _Mostrar instruções_ para expandir as link:task_config_telegraf_agent.html["Instalação do agente"] instruções.
+. Selecione a chave de acesso do agente para uso com este coletor de dados. Você pode adicionar uma nova chave de acesso ao agente clicando no botão * chave de acesso ao agente*. Prática recomendada: Use uma chave de acesso de agente diferente somente quando você quiser agrupar coletores de dados, por exemplo, por SO/Plataforma.
+. Siga as etapas de configuração para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+
+
+image:FlinkDCConfigWindows.png["Configuração Flink"]
+
+
+
+== Configuração
+
+Uma implantação completa do Flink envolve os seguintes componentes:
+
+JobManager: O sistema primário Flink. Coordena uma série de TaskManagers. Em uma configuração de alta disponibilidade, o sistema terá mais de um JobManager. TaskManager: É aqui que os operadores Flink são executados. O plugin Flink é baseado no plugin Jolokia da telegraf. Como um requisito para reunir informações de todos os componentes do Flink, o JMX precisa ser configurado e exposto via Jolokia em todos os componentes.
+
+
+
+=== Compatibilidade
+
+A configuração foi desenvolvida em relação ao Flink versão 1,7.0.
+
+
+
+=== Configuração
+
+
+
+==== Jolokia Agent JAR
+
+Para todos os componentes individuais, uma versão do arquivo jar do agente Jolokia deve ser baixada. A versão testada contra foi link:https://jolokia.org/download.html["Agente Jolokia 1.6.0"].
+
+As instruções abaixo supõem que o arquivo jar baixado (jolokia-jvm-1,6.0-Agent.jar) é colocado sob a localização '/opt/flink/lib/'.
+
+
+
+==== JobManager
+
+Para configurar o JobManager para expor a API Jolokia, você pode configurar a seguinte variável de ambiente em seus nós e reiniciar o JobManager:
+
+ export FLINK_ENV_JAVA_OPTS="-javaagent:/opt/flink/lib/jolokia-jvm-1.6.0-agent.jar=port=8778,host=0.0.0.0"
+Você pode escolher um porto diferente para Jolokia (8778). Se você tem um IP interno para bloquear Jolokia, você pode substituir o "Catch All" 0.0.0.0 pelo seu próprio IP. Observe que esse IP precisa ser acessível a partir do plugin telegraf.
+
+
+
+==== TaskManager
+
+Para configurar o(s) TaskManager(s) para expor a API Jolokia, você pode configurar a seguinte variável de ambiente nos nós e reiniciar o TaskManager:
+
+ export FLINK_ENV_JAVA_OPTS="-javaagent:/opt/flink/lib/jolokia-jvm-1.6.0-agent.jar=port=8778,host=0.0.0.0"
+Você pode escolher um porto diferente para Jolokia (8778). Se você tem um IP interno para bloquear Jolokia, você pode substituir o "Catch All" 0.0.0.0 pelo seu próprio IP. Observe que esse IP precisa ser acessível a partir do plugin telegraf.
+
+
+
+== Objetos e contadores
+
+Os seguintes objetos e seus contadores são coletados:
+
+[cols="<.<,<.<,<.<,<.<"]
+|===
+| Objeto: | Identificadores: | Atributos: | Pontos de dados: 
+
+
+| Flink Task Manager | Servidor de namespace de cluster | Nome do nó IP do nó de ID do Gestor de tarefas | Rede disponível segmentos de memória rede Total segmentos de memória coleção de lixo PS MarkSweep contagem de lixo PS MarkSweep tempo coleta de lixo contagem de scavenge contagem de lixo contagem de lixo PS scavenge tempo Heap memória comprometida memória de Heap memória de Heap máximo memória de heap usada contagem de threads Daemon contagem de threads contagem de threads contagem de threads contagem de threads Total de threads iniciado 
+
+
+| Trabalho Flink | ID do trabalho do servidor de namespace do cluster | Nome do nó Nome do trabalho Nome do nó IP último Checkpoint caminho Externo tempo de reinício | Tempo de inatividade reinicializações completas último alinhamento do Checkpoint Buffered Last Checkpoint duração último tamanho do Checkpoint número de Checkpoints concluídos número de Checkpoints falhados número de Checkpoints em curso número de Checkpoints uptime 
+
+
+| Flink Job Manager | Servidor de namespace de cluster | IP do nó de nome do nó | Coleção de lixo PS MarkSweep contagem de lixo PS MarkSweep tempo coleta de lixo contagem de scavenge contagem de lixo PS scavenge tempo Heap memória comprometida memória de heap memória de Heap máximo memória de heap usada número registrado Gerenciadores de tarefas em execução Slots de tarefa disponíveis contagem de 
+
+
+| Tarefa Flink | ID da tarefa do ID da tarefa do namespace do cluster | Nome do nó do servidor Nome do trabalho Sub-tarefa Indice tentativa da tarefa número da tentativa da tarefa Nome da tarefa Gestor de tarefas ID nó IP atual marca de água da entrada | Buffers em uso do pool Buffers em comprimento da fila Buffers out uso do pool Buffers out comprimento da fila número Buffers em número local Buffers em número local por segundo número número Buffers em número local por segundo número de taxa Buffers em número remoto por segundo número de contagem de Registros por segundo número local por segundo número de Registros por segundo número remoto por segundo número de Registros por segundo número 
+
+
+| Operador tarefa Flink | ID da tarefa ID do operador do namespace do cluster | Nome do nó do servidor Nome do trabalho Nome do Operador Sub-tarefa ID tentativa da tarefa número tentativa da tarefa Nome da tarefa Nome da tarefa Gestor de tarefas ID Node IP | Entrada atual marca de água saída atual número de marca de água Registos em número Registos em por segundo número de contagem Registos em por segundo número de registo para fora número de contagem número de registos para fora por segundo número de taxa de registo 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.

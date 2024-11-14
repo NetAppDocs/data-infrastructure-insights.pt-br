@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: task_config_telegraf_zookeeper.html 
+keywords: telegraf, installation, install, apache, zookeeper 
+summary: Configuração do coletor de dados do Apache Zookeeper 
+---
+= Zookeeper Data Collector
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do Apache Zookeeper.
+
+
+
+== Instalação
+
+. A partir de *Admin > coletores de dados*, clique em * Coletor de dados*. Escolha Apache Zookeeper.
++
+Selecione o sistema operacional ou a plataforma na qual o agente Telegraf está instalado.
+
+. Se você ainda não instalou um Agente para coleção ou deseja instalar um Agente para um sistema operacional ou plataforma diferente, clique em _Mostrar instruções_ para expandir as link:task_config_telegraf_agent.html["Instalação do agente"] instruções.
+. Selecione a chave de acesso do agente para uso com este coletor de dados. Você pode adicionar uma nova chave de acesso ao agente clicando no botão * chave de acesso ao agente*. Prática recomendada: Use uma chave de acesso de agente diferente somente quando você quiser agrupar coletores de dados, por exemplo, por SO/Plataforma.
+. Siga as etapas de configuração para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+
+
+image:ZookeeperDCConfigLinux.png["Configuração do Zookeeper"]
+
+
+
+== Configuração
+
+No mínimo, você precisa permitir ao Zookeeper quatro comandos de servidor de letras _mntr_, _srvr_ e _stat_. Você pode ativar esses comandos usando o seguinte formato: _4lw.commands.whitelist=mntr, srvr, stat_ no arquivo _Zoo.cfg_. Pode haver outros comandos de quatro letras que são necessários em sua configuração. Consulte link:https://zookeeper.apache.org/["Zookeeper"]a documentação para obter mais informações.
+
+
+
+== Objetos e contadores
+
+Os seguintes objetos e seus contadores são coletados:
+
+[cols="<.<,<.<,<.<,<.<"]
+|===
+| Objeto: | Identificadores: | Atributos: | Pontos de dados: 
+
+
+| Zookeeper | Servidor de namespace | Porta de nome do nó IP do nó de estado | Tamanho aproximado de dados latência média Ephemerals Count Max File Descriptor Count Max Latency min Latency Number of Alive Connections Open File Descriptor Count Outstanding Requests Watch Count Znode Count 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.

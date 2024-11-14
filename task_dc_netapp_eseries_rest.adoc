@@ -1,0 +1,149 @@
+---
+sidebar: sidebar 
+permalink: task_dc_netapp_eseries_rest.html 
+keywords: data collector, ontap, clustered ontap, REST 
+summary: Configuração do coletor de DADOS REST do NetApp e-Series. 
+---
+= Coletor de DADOS REST do NetApp e-Series
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de DADOS REST do NetApp e-Series coleta dados de inventário e desempenho. O coletor suporta firmware 7.x usando as mesmas configurações e relatando os mesmos dados. O coletor REST monitora o status de criptografia de pools de storage, bem como o status de criptografia de discos e volumes relacionados, além de fornecer a utilização de CPU de nó de storage como contadores de desempenho - funcionalidade não fornecida no coletor legado do SANtricity e-Series.
+
+
+
+== Terminologia
+
+O Cloud Insight adquire as seguintes informações de inventário do NetApp e-Series, usando REST. Para cada tipo de ativo adquirido, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Disco | Disco 
+
+
+| Grupo de volume | Grupo de discos 
+
+
+| Storage array | Armazenamento 
+
+
+| Controlador | Nó de storage 
+
+
+| Grupo de volume | Pool de storage 
+
+
+| Volume | Volume 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* O endereço IP de cada controlador na matriz
+* Este coletor suporta apenas matrizes de modelos e-Series com *capacidades de API REST nativas*. A organização e-Series envia uma distribuição de API REST instalável fora do array para arrays e-Series mais antigos: Este coletor não suporta esse cenário. Os usuários com arrays mais antigos devem continuar usando o coletor do Data Infrastructure Insightslink:task_dc_na_eseries.html["API SANtricity do e-Series"].
+* O campo "endereços IP do controlador e-Series" suporta uma cadeia delimitada por vírgulas de 2 nomes IP/host; o coletor tentará inteligentemente o segundo IP/nome do host se o primeiro estiver inacessível.
+* Porta HTTPS: A predefinição é 8443.
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereços IP do controlador e-Series | Endereços IP separados por vírgulas e/ou nomes de domínio totalmente qualificados para os controladores de matriz 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | O padrão é de 30 minutos 
+
+
+| Intervalo de enquete de desempenho até 3600 segundos | O padrão é de 300 segundos 
+|===
+
+
+== Terminologia e-Series (Landing Page)
+
+Os termos a seguir se aplicam a objetos ou referências que você pode encontrar nas páginas iniciais de ativos do NetApp e-Series. Muitos desses termos também se aplicam a outros coletores de dados.
+
+
+
+=== Armazenamento
+
+* Modelo – nome do modelo do dispositivo.
+* Vendedor – mesmo nome do fornecedor que você veria se você estivesse configurando uma nova fonte de dados
+* Número de série – o número de série da matriz. Em sistemas de storage de arquitetura de cluster, como o NetApp Clustered Data ONTAP, esse número de série pode ser menos útil do que os números de série individuais "nós de storage"
+* IP – geralmente serão os IP (s) ou nome de host (s) conforme configurado na fonte de dados
+* Versão de microcódigo – firmware
+* Capacidade bruta – soma de base 2 de todos os discos físicos no sistema, independentemente da sua função
+* Latência – uma representação do que o host enfrenta cargas de trabalho, tanto na leitura quanto na gravação. Idealmente, o Data Infrastructure Insights está fornecendo esse valor diretamente, mas isso geralmente não é o caso. Em vez do array que oferece isso, o Data Infrastructure Insights geralmente executa um cálculo ponderado por IOPs derivado das estatísticas de volumes individuais.
+* Taxa de transferência – o host total do array voltado para a taxa de transferência. Idealmente obtido diretamente do array, se não estiver disponível, o Data Infrastructure Insights está somando a taxa de transferência dos volumes para obter esse valor
+* Gerenciamento – isso pode conter um hiperlink para a interface de gerenciamento do dispositivo. Criado programaticamente pela fonte de dados Data Infrastructure Insights como parte dos relatórios de inventário  
+
+
+
+
+=== Pool de storage
+
+* Armazenamento – em que storage esse pool vive. Obrigatório
+* Tipo – um valor descritivo de uma lista de uma lista enumerada de possibilidades. Mais comumente será "thin Provisioning" ou "RAID Group"
+* Nó – se a arquitetura desse storage array for tal que os pools pertençam a um nó de armazenamento específico, seu nome será visto aqui como um hiperlink para sua própria página inicial
+* Usa Flash Pool – valor Sim/não
+* Redundância – nível RAID ou esquema de proteção. Os relatórios do e-Series "RAID 7" para pools DDP
+* Capacidade – os valores aqui são a capacidade lógica usada, utilizável e a capacidade total lógica, e a porcentagem usada entre eles. Esses valores incluem a capacidade de "preservação" do e-Series, o que resulta em números e na porcentagem mais alta do que a própria interface de usuário do e-Series pode mostrar
+* Capacidade sobrecomprometida – se, por meio de tecnologias de eficiência, você tiver alocado uma soma total de capacidades de volume ou volume interno maior do que a capacidade lógica do pool de armazenamento, o valor percentual aqui será superior a 0%.
+* Snapshot – capacidades de snapshot usadas e totais, se a arquitetura do seu pool de armazenamento dedicar parte da sua capacidade a segmentos de áreas exclusivamente para snapshots
+* Utilização – um valor percentual que mostra a maior porcentagem de ocupado em disco de qualquer disco que contribui com a capacidade para esse pool de armazenamento. A utilização de disco não tem necessariamente uma forte correlação com o desempenho do array – a utilização pode ser alta devido a recompilações de disco, atividades de deduplicação, etc., na ausência de cargas de trabalho orientadas pelo host. Além disso, as implementações de replicação de muitos arrays podem impulsionar a utilização de disco, sem ser mostradas como workload de volume.
+* IOPS – a soma de IOPs de todos os discos que contribuem com capacidade para esse pool de storage. Se as IOPs de disco não estiverem disponíveis em uma determinada plataforma, esse valor será obtido da soma de IOPs de volume para todos os volumes que estiverem nesse pool de armazenamento
+* Taxa de transferência – a taxa de transferência soma de todos os discos que contribuem para a capacidade deste pool de armazenamento. Se a taxa de transferência do disco não estiver disponível em uma determinada plataforma, esse valor será obtido a partir da soma de volume para todos os volumes instalados neste pool de armazenamento
+
+
+
+
+=== Nó de storage
+
+* Armazenamento – em que storage array esse nó faz parte. Obrigatório
+* Parceiro HA – em plataformas onde um nó fará failover para um e apenas um outro nó, ele geralmente será visto aqui
+* Estado – saúde do nó. Disponível apenas quando o array estiver saudável o suficiente para ser inventariado por uma fonte de dados
+* Modelo – nome do modelo do nó
+* Versão – nome da versão do dispositivo.
+* Número de série – o número de série do nó
+* Memória – memória base 2, se disponível
+* Utilização – geralmente um número de utilização da CPU ou, no caso do NetApp ONTAP, um índice de tensão do controlador. No momento, a utilização não está disponível para o NetApp e-Series
+* IOPS – um número que representa os IOPs orientados pelo host neste controlador. Idealmente obtido diretamente do array, se não estiver disponível, ele será calculado somando todas as IOPs para volumes que pertencem exclusivamente a esse nó.
+* Latência – um número que representa a latência típica do host ou o tempo de resposta neste controlador. Idealmente obtido diretamente do array, se não estiver disponível, ele será calculado executando um cálculo ponderado de IOPs a partir de volumes que pertencem exclusivamente a esse nó.
+* Taxa de transferência – um número que representa a taxa de transferência orientada pelo host neste controlador. Idealmente obtido diretamente do array, se não estiver disponível, ele será calculado somando toda a taxa de transferência para volumes que pertencem exclusivamente a esse nó.
+* Processadores – contagem de CPU
+
+
+
+
+== Solução de problemas
+
+Informações adicionais sobre este coletor de dados podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

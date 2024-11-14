@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: concept_dashboards_overview.html 
+summary: Visão geral dos dashboards no Data Infrastructure Insights. 
+keywords: dashboard, widget, custom, view, data 
+---
+= Visão geral dos painéis
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O Data Infrastructure Insights oferece aos usuários a flexibilidade para criar visualizações operacionais de dados de infraestrutura, permitindo que você crie painéis personalizados com uma variedade de widgets, cada um dos quais oferece ampla flexibilidade na exibição e criação de gráficos de seus dados.
+
+
+IMPORTANT: Os exemplos nestas seções são apenas para fins de explicação e não cobrem todos os cenários possíveis. Os conceitos e etapas aqui podem ser usados para criar seus próprios painéis para destacar os dados específicos para suas necessidades específicas.
+
+
+toc::[]
+
+
+== Criando um Dashboard
+
+Você cria um novo dashboard em um de dois lugares:
+
+* *Dashboards > novo painel]*
+* *Painéis > Mostrar todos os painéis >* clique no botão *[-Painel]*
+
+
+
+
+== Controlos do tablier
+
+O ecrã Painel de instrumentos tem vários controlos:
+
+* * Time seletor*: Permite visualizar os dados do painel durante um intervalo de tempo, desde os últimos 15 minutos até os últimos 30 dias, ou um intervalo de tempo personalizado de até 31 dias. Você pode optar por substituir esse intervalo de tempo global em widgets individuais.
+* *Botão Editar*: Selecionar este irá ativar o modo Editar, que permite fazer alterações no painel de instrumentos. Novos painéis abrem no modo Editar por padrão.
+* Botão *Salvar*: Permite salvar ou excluir o painel.
++
+Você pode renomear o painel atual digitando um novo nome antes de clicar em *Salvar*.
+
+
+
+* *Botão Adicionar Widget*, que permite adicionar qualquer número de tabelas, gráficos ou outros widgets ao painel.
++
+Os widgets podem ser redimensionados e realocados para diferentes posições dentro do painel de controle, para lhe dar a melhor visualização de seus dados de acordo com suas necessidades atuais.
+
+
+
+
+
+== Tipos de widget
+
+Você pode escolher entre os seguintes tipos de widget:
+
+* * Widget de tabela*: Uma tabela exibindo dados de acordo com filtros e colunas que você escolher. Os dados da tabela podem ser combinados em grupos que podem ser colapsados e expandidos.
++
+image:TableWidgetPerformanceData.png["Widget de tabela"]
+
+* *Gráficos de linha, spline, Area, Stacked Area*: São widgets de gráficos de séries temporais nos quais você pode exibir desempenho e outros dados ao longo do tempo.
++
+image:Time-SeriesCharts.png["Área, Área empilhada, linha, gráficos de estrias"]
+
+* * Widget de valor único*: Um widget que permite exibir um único valor que pode ser derivado diretamente de um contador ou calculado usando uma consulta ou expressão. Você pode definir limites de formatação de cores para mostrar se o valor está no intervalo esperado, aviso ou crítico.
++
+image:Single-ValueWidgets.png["Widgets de valor único com e sem formatação"]
+
+* * Widget de calibre*: Exibe dados de valor único em um medidor tradicional (sólido) ou calibre de bala, com cores baseadas em valores "Aviso" ou "crítico" você link:concept_dashboard_features.html#formatting-gauge-widgets["personalizar"].
++
+image:GaugeWidgets.png["Único-valor com formatação, calibre tradicional, calibre de bala"]
+
+* *Bar, gráficos de colunas*: Exibe valores N superiores ou inferiores, por exemplo, armazenamentos Top 10 por capacidade ou volumes 5 inferiores por IOPS.
++
+image:BarandColumnCharts.png["Gráficos de barras e colunas"]
+
+* * Gráfico de Gráfico de caixa*: Um gráfico do mínimo, máximo, mediana e o intervalo entre quartil inferior e superior de dados em um único gráfico.
++
+image:BoxPlot.png["Gráfico de caixa"]
+
+* *Gráfico de plotagem de dispersão*: Gráficos de dados relacionados como pontos, por exemplo, IOPS e latência. Neste exemplo, você pode localizar rapidamente ativos com alta taxa de transferência e IOPS baixo.
++
+image:ScatterPlot.png["Gráfico de dispersão"]
+
+* *Gráfico de pizza*: Um gráfico de pizza tradicional para exibir dados como um pedaço do total.
++
+image:PieChart.png["Gráfico de pizza"]
+
+* * Observação widget*: Até 1000 carateres de texto livre.
++
+image:NoteWidget.png["Widget de nota"]
+
+* *Tabela de alertas*: Exibe até os últimos 1.000 alertas.
+
+
+Para obter explicações mais detalhadas sobre esses e outros recursos do Dashboardlink:concept_dashboard_features.html["clique aqui"], .
+
+
+
+== Configurando um Dashboard como sua Home Page
+
+Você pode escolher qual painel definir como a *home page* do seu ambiente usando um dos seguintes métodos:
+
+* Vá para *painéis > Mostrar todos os painéis* para exibir a lista de painéis em seu ambiente. Clique no menu de opções à direita do painel desejado e selecione *Definir como Página Inicial*.
+* Clique em um painel na lista para abrir o painel. Clique no menu suspenso no canto superior e selecione *Definir como Página Inicial*.
+

@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: cs_automated_response_policies.html 
+keywords: alert, snapshot, ransomware, attack 
+summary: 'Você pode definir políticas de resposta automatizadas para possíveis ataques (como ransomware) e/ou avisos de atividades' 
+---
+= Políticas de resposta automatizadas
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media
+
+
+[role="lead"]
+As políticas de resposta acionam ações como tirar um instantâneo ou restringir o acesso do usuário em caso de ataque ou comportamento anormal do usuário.
+
+Pode definir políticas em dispositivos específicos ou em todos os dispositivos. Para definir uma política de resposta, selecione *Admin > Automated Response Policies* e clique no botão apropriado. Você pode criar políticas para ataques ou avisos.
+
+image:Automated_Response_Screenshot.png["Criar política de ataque"]
+
+Você deve salvar a política com um nome exclusivo.
+
+Para desativar uma ação de resposta automatizada (por exemplo, tirar Snapshot), basta desmarcar a ação e salvar a política.
+
+Quando um alerta é acionado contra os dispositivos especificados (ou todos os dispositivos, se selecionados), a política de resposta automática tira um instantâneo dos seus dados. Pode ver o estado do instantâneo no link:cs_alert_data.html#the-alert-details-page["Página de detalhes do alerta"].
+
+Consulte a link:cs_restrict_user_access.html["Restringir o acesso do usuário"] página para obter mais detalhes sobre como restringir o acesso do usuário por IP.
+
+Você pode modificar ou pausar uma Política de resposta automatizada escolhendo a opção no menu suspenso da política.
+
+O Workload Security excluirá automaticamente os instantâneos uma vez por dia com base nas configurações de eliminação de instantâneos.
+
+image:CloudSecure_SnapshotPurgeSettings.png["Definições de purga de instantâneos"]

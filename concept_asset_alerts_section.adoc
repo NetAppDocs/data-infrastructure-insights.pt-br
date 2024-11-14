@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: concept_asset_alerts_section.html 
+summary: Visão geral da seção Alertas relacionados à página de ativos em Insights de infraestrutura de dados. 
+keywords: asset, landing page, violations, Alerts, 
+---
+= Seção Alertas relacionados à Página de ativos
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Você pode usar a seção Alertas relacionados de uma página de ativos para ver quaisquer alertas que ocorram em seu ambiente como resultado de um monitor atribuído a um ativo. Os monitores geram alertas com base nas condições definidas e permitem identificar a implicação e analisar o impactos e a causa raiz do problema de uma forma que permita uma correção rápida e eficaz.
+
+O exemplo a seguir mostra uma seção típica de Alertas relacionados que é exibida em uma página de ativos:
+
+image:Alerts_on_Landing_Page.png["Tabela de alertas relacionados"]
+
+A seção Alertas relacionados permite visualizar e gerenciar os alertas que ocorrem em sua rede como resultado das condições de monitoramento atribuídas a um ativo.
+
+.Passos
+* Localize uma página de ativo fazendo qualquer um dos seguintes procedimentos:
++
+** Digite o nome do ativo na área pesquisar e, em seguida, selecione o ativo na lista.
+** Em um widget de painel, clique no nome de um ativo.
+** Consulte um conjunto de ativos e selecione ligado na lista de resultados.
+
+
+
+
+A página de ativos é exibida. A seção Alertas relacionados exibe a hora em que o alerta foi acionado, bem como o status atual do alerta e do monitor que o acionou. Você pode clicar no ID de alerta para abrir a página de destino do alerta para mais investigação.

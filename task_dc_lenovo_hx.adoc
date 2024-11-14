@@ -1,0 +1,93 @@
+---
+sidebar: sidebar 
+permalink: task_dc_lenovo_hx.html 
+keywords: data collector, Lenovo, HX 
+summary: Configurando o coletor de dados Lenovo HX. 
+---
+= Coletor de dados Lenovo HX
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de dados Lenovo HX adquire informações de inventário e desempenho dos sistemas de armazenamento Lenovo HX.
+
+
+
+== Requisitos
+
+As seguintes informações são necessárias para configurar este coletor de dados:
+
+* Um nome exclusivo para o coletor de dados
+* A unidade de aquisição associada ao coletor de dados
+* Requisito de porta TCP 9440
+
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário e desempenho do coletor de dados Lenovo HX. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Pool de storage | Pool de storage 
+
+
+| Recipiente | Volume interno 
+
+
+| Nó | Controlador 
+
+
+| Partilhar | Partilha de ficheiros 
+
+
+| Nutanix Distributed File System (NDFS) | Partilhar 
+
+
+| Grupo de volume | LUN de back-end 
+|===
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP externo do prisma | Endereço IP utilizado para ligar ao sistema de armazenamento 
+
+
+| Nome de utilizador | Nome do usuário para fazer login no sistema de armazenamento. O padrão é admin. 
+
+
+| Palavra-passe | Palavra-passe para o sistema de armazenamento Lenovo HX 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Porta TCP | Porta TCP utilizada para ligar ao Lenovo HX. A predefinição é 9440. 
+
+
+| Intervalo Poll Stock | Intervalo entre sondagens de inventário. O padrão é 60 minutos. 
+|===

@@ -1,0 +1,191 @@
+---
+sidebar: sidebar 
+permalink: task_dc_cisco_fc_switch.html 
+keywords: data collector, cisco, FC, cisco FC 
+summary: Configurando o coletor de dados do Cisco MDS Fablic Switch. 
+---
+= Coletor de dados dos switches Cisco MDS Fabric
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa o coletor de dados dos switches Cisco MDS Fabric para descobrir o inventário dos switches Cisco MDS Fabric e uma variedade de switches FCoE Cisco Nexus nos quais o serviço FC está ativado.
+
+Além disso, você pode descobrir muitos modelos de dispositivos Cisco rodando no modo NPV com este coletor de dados.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do switch Cisco FC. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Interrutor | Interrutor 
+
+
+| Porta | Porta 
+
+
+| VSAN | Malha 
+
+
+| Zona | Zona 
+
+
+| Comutador lógico | Comutador lógico 
+
+
+| Entrada do servidor de nomes | Entrada do servidor de nomes 
+
+
+| Zona de Roteamento Inter-VSAN (IVR) | Zona IVR 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* Um endereço IP de um switch na malha ou switches individuais
+* Detecção de chassis, para permitir a descoberta de malha
+* Se estiver usando SNMP V2, string de comunidade somente leitura
+* A porta 161 é utilizada para aceder ao dispositivo
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| IP do comutador Cisco | Endereço IP ou nome de domínio totalmente qualificado do switch 
+
+
+| Versão SNMP | Selecione V1, V2 ou V3. V2 ou posterior é necessário para a aquisição de desempenho. 
+
+
+| SNMP Community String | String de comunidade SNMP somente leitura usada para acessar o switch (não aplicável para SNMP v3) 
+
+
+| Nome de utilizador | Nome de utilizador do comutador (apenas SNMP v3) 
+
+
+| Palavra-passe | Palavra-passe utilizada para o interrutor (apenas SNMPv3) 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre pesquisas de inventário (padrão de 40 minutos) 
+
+
+| Protocolo Auth SNMP | Protocolo de autenticação SNMP (apenas SNMPv3) 
+
+
+| Protocolo de privacidade SNMP | Protocolo de privacidade SNMP (apenas SNMPv3) 
+
+
+| Palavra-passe de privacidade SNMP | Palavra-passe de privacidade SNMP 
+
+
+| Geometrias SNMP | Número de tentativas de tentativa SNMP 
+
+
+| Tempo limite SNMP (ms) | Tempo limite SNMP (padrão de 5000 ms) 
+
+
+| Ativar trapping | Selecione para ativar o trapping. Se você ativar o trapping, você também deve ativar notificações SNMP. 
+
+
+| Tempo mínimo entre armadilhas (seg) | Tempo mínimo entre tentativas de aquisição acionadas por armadilhas (padrão de 10 segundos) 
+
+
+| Descubra todos os switches de malha | Selecione para descobrir todos os switches na malha 
+
+
+| Dispositivos excluídos | Lista separada por vírgulas de IPs de dispositivos a excluir da sondagem 
+
+
+| Dispositivos incluídos | Lista separada por vírgulas de IPs de dispositivos a incluir na sondagem 
+
+
+| Verifique o tipo de dispositivo | Selecione para aceitar apenas os dispositivos que se anunciam explicitamente como dispositivos Cisco 
+
+
+| Primeiro tipo de Alias | Forneça uma primeira preferência para a resolução do alias. Escolha a partir do seguinte: *Device Alais* este é um nome amigável para uma porta WWN (pWWN) que pode ser usado em todos os comandos de configuração, conforme necessário. Todos os switches da família Cisco MDS 9000 suportam Serviços de Alias de dispositivos distribuídos (aliases de dispositivos). *Nenhum* não relate nenhum alias. *Descrição da porta* Uma descrição para ajudar a identificar a porta em uma lista de portas. *Alias de zona (todos)* Um nome amigável para uma porta que pode ser usado apenas para a configuração ativa. Este é o padrão. 
+
+
+| Segundo tipo Alias | Forneça uma segunda preferência para a resolução do alias 
+
+
+| Terceiro tipo de Alias | Forneça uma terceira preferência para a resolução do alias 
+
+
+| Ative o suporte do modo Proxy SANTAP | Selecione se o switch Cisco está usando SANTAP no modo proxy. Se você estiver usando o EMC RecoverPoint, você provavelmente está usando o SANTAP. 
+
+
+| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho (padrão 300 segundos) 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Erro: Falha ao descobrir chassis - não foram detetados interrutores | • Faça ping no dispositivo com o IP configurado • Faça login no dispositivo usando o Gerenciador de dispositivos Cisco GUI • Faça login no dispositivo usando CLI • Tente executar o SNMP Walk 
+
+
+| Erro: O dispositivo não é um switch Cisco MDS | • Certifique-se de que o IP de origem de dados configurado para o dispositivo está correto • Faça login no dispositivo usando a GUI do Gerenciador de dispositivos Cisco • Faça login no dispositivo usando a CLI 
+
+
+| Erro: O Data Infrastructure Insights não consegue obter o WWN do switch. | Este pode não ser um switch FC ou FCoE e, como tal, pode não ser suportado. Certifique-se de que o IP/FQDN configurado na fonte de dados seja realmente um switch FC/FCoE. 
+
+
+| Erro: Foram encontrados mais de um nós conetados à porta do switch NPV | Desativar a aquisição direta do interrutor NPV 
+
+
+| Erro: Não foi possível ligar ao interrutor | • Certifique-se de que o dispositivo ESTÁ LIGADO • Verifique o endereço IP e a porta de escuta • Ping o dispositivo • Faça login no dispositivo usando a GUI do Gerenciador de dispositivos Cisco • Faça login no dispositivo usando a CLI • Executar caminhada SNMP 
+|===
+
+
+=== Desempenho
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Erro: Aquisição de desempenho não suportada pelo SNMP v1 | • Editar origem de dados e desativar o desempenho do comutador • Modificar a origem de dados e configuração do comutador para usar SNMP v2 ou superior 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

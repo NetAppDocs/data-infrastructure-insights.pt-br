@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_scaleio.html 
+keywords: data collector, scaleIO, PowerFlex EMC, DELL 
+summary: Configurando o coletor de dados Dell EMC ScaleIO/PowerFlex. 
+---
+= Coletor de dados Dell EMC ScaleIO / PowerFlex
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de dados ScaleIO/PowerFlex coleta informações de inventário do armazenamento ScaleIO e PowerFlex. Para configuração, esse coletor de dados requer o endereço de gateway ScaleIO/PowerFlex e um nome de usuário e senha de administrador.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados ScaleIO/PowerFlex. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Cluster MDM (Meta Data Manager) | Armazenamento 
+
+
+| SDS (servidor de dados ScaleIO/PowerFlex) | Nó de storage 
+
+
+| Pool de storage | Pool de storage 
+
+
+| Volume | Volume 
+
+
+| Dispositivo | Disco 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* Acesso somente leitura à conta de usuário Admin
+* Requisito de porta: Porta HTTPS 443
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Gateway(s) ScaleIO/PowerFlex | Endereços IP ou FQDNs de gateways ScaleIO/PowerFlex, separados por vírgula (,) ou ponto e vírgula (;) 
+
+
+| Nome de utilizador | Nome de usuário Admin usado para fazer login no dispositivo ScaleIO/PowerFlex 
+
+
+| Palavra-passe | Palavra-passe utilizada para iniciar sessão no dispositivo ScaleIO/PowerFlex 
+|===
+
+
+== Configuração avançada
+
+Clique na caixa de verificação Inventário para ativar a recolha de inventário.
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Porta de HTTPS | 443 
+
+
+| Intervalo de pesquisa de inventário (min) | A predefinição é 60. 
+
+
+| Tempo limite da ligação (seg.) | A predefinição é 60. 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

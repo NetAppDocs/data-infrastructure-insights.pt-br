@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: forensic_entity_detail.html 
+keywords: Forensic, entity, entity overview, entity behavior, entities 
+summary: Página de entidades forenses 
+---
+= Página de entidades forenses
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+A página entidades Forensics fornece informações detalhadas sobre a atividade da entidade em seu ambiente.
+
+
+
+== Examinando informações da entidade
+
+Clique em *Forensics > Activity Forensics* e clique na guia _entities_ para acessar a página entidades.
+
+Esta página fornece uma visão geral da atividade da entidade em seu ambiente, destacando as seguintes informações: * Um gráfico que mostra _entidades únicas_ acessadas por minuto * Um gráfico de _tipos de entidade acessados_ * um detalhamento dos _caminhos comuns_ * Uma lista das _Top 50 entidades_ do número total de entidades
+
+image:CS-Entities-Page.png["Página entidades"]
+
+Clicar em uma entidade na lista abre uma página de visão geral para a entidade, mostrando um perfil da entidade com detalhes como nome, tipo, nome do dispositivo, IP de localização mais acessada e caminho, bem como o comportamento da entidade, como o usuário, IP e hora em que a entidade foi acessada pela última vez.
+
+image:CS-entity-detail-page.png["Página de Visão Geral da entidade"]

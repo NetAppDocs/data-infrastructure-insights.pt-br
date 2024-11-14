@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: ws_allowed_file_types.html 
+keywords: workload security, cloud secure, include list, allowed, file types, ransomware 
+summary: Adicione extensões de arquivo a uma lista de tipos de arquivo permitidos para reduzir o alerta. 
+---
+= Políticas de tipos de ficheiros permitidos
+:allow-uri-read: 
+
+
+[role="lead"]
+Se um ataque de ransomware for detetado para uma extensão de arquivo conhecida e alertas estiverem sendo gerados na tela Alertas, essa extensão de arquivo pode ser adicionada a uma lista _allowed file types_ para evitar alertas desnecessários.
+
+Navegue até *Workload Security > Policies* e vá para a guia _allowed File Type Policies_.
+
+image:WS_Allowed_File_Type_Policies.png["Políticas de tipos de ficheiros permitidos"]
+
+Uma vez adicionado à lista _allowed file types_, nenhum alerta de ataque de ransomware será gerado para esse tipo de arquivo permitido. Observe que a política _allowed File Types_ só é aplicável para deteção de ransomware.
+
+Por exemplo, se um arquivo chamado _test.txt_ for renomeado para _test.txt.abc_ e o Workload Security estiver detetando um ataque de ransomware por causa da extensão _.abc_, a extensão _.abc_ pode ser adicionada à lista _allowed file types_. Depois de serem adicionados à lista, os ataques de ransomware não serão mais gerados contra arquivos com a extensão _.abc_.
+
+Os tipos de ficheiro permitidos podem ser correspondências exatas (por exemplo, ".abc") ou expressões (por exemplo, ".*type", ".type*" ou "*type*"). Expressões dos tipos ".a*c", ".p*f" não são suportadas.

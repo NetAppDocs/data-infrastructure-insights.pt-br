@@ -1,0 +1,157 @@
+---
+sidebar: sidebar 
+permalink: task_dc_na_amazon_fsx.html 
+keywords: 'data collector, stout, fsx, fsx-netapp, Amazon, AWS, cluster, volume, share, LUN"' 
+summary: Amazon FSX para NetApp ONTAP Data Collector 
+---
+= Coletor de dados do Amazon FSX para NetApp ONTAP
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Esse coletor de dados adquire dados de inventário e desempenho do Amazon FSX for NetApp ONTAP. Esse coletor de dados será disponibilizado de forma incremental em todas as regiões de serviço Data Infrastructure Insights. Entre em Contato com seu representante de vendas se você não vir o ícone deste coletor no ambiente Data Infrastructure Insights.
+
+
+NOTE: Esse coletor de Insights de infraestrutura de dados requer um usuário ONTAP com uma função _filesystem-scoped_. Consulte a documentação da AWS link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/roles-and-users.html["Papéis e regras"]para obter as opções disponíveis. Neste momento, a AWS suporta apenas um tipo de função de usuário com escopo de sistema de arquivos, que é _fsxadmin_. Esta é a função apropriada a ser usada para o coletor Data Infrastructure Insights. O usuário também deve ter todas as três aplicações atribuídas a ele: HTTP, ontapi, ssh.
+
+
+
+== Terminologia
+
+O Insights de infraestrutura de dados adquire dados de inventário e desempenho do coletor de dados do FSX-NetApp. Para cada tipo de ativo adquirido, a terminologia mais comum usada para o ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Cluster | Armazenamento 
+
+
+| LUN | Volume 
+
+
+| Volume | Volume interno 
+|===
+
+
+== Terminologia do FSX-NetApp
+
+Os termos a seguir se aplicam a objetos ou referências que você pode encontrar nas Landing pages de ativos de armazenamento do FSX-NetApp. Muitos desses termos também se aplicam a outros coletores de dados.
+
+
+
+=== Armazenamento
+
+* Modelo – Uma lista delimitada por vírgulas dos nomes de modelo únicos e discretos dentro deste cluster.
+* Fornecedor – AWS
+* Número de série – o número de série da matriz.
+* IP – geralmente serão os IP (s) ou nome de host (s) conforme configurado na fonte de dados.
+* Capacidade bruta – soma de base 2 de todo o armazenamento SSD atribuído ao sistema de arquivos FSX.
+* Latência – uma representação do que o host enfrenta cargas de trabalho, tanto na leitura quanto na gravação. Idealmente, o Data Infrastructure Insights está fornecendo esse valor diretamente, mas isso geralmente não é o caso. Em vez do array que oferece isso, o Data Infrastructure Insights geralmente está executando um cálculo ponderado por IOPs derivado das estatísticas individuais de volumes internos.
+* Taxa de transferência – agregada a partir de volumes internos. Gerenciamento – isso pode conter um hiperlink para a interface de gerenciamento do dispositivo. Criado programaticamente pela fonte de dados Data Infrastructure Insights como parte dos relatórios de inventário.
+
+
+
+
+=== Pool de storage
+
+* Armazenamento – em que storage esse pool vive. Obrigatório.
+* Tipo – um valor descritivo de uma lista de uma lista enumerada de possibilidades. Mais comumente será "agregado" ou "RAID Group".
+* Capacidade – os valores aqui são a capacidade lógica usada, utilizável e a capacidade total lógica, e a porcentagem usada entre eles.
+* IOPS – a soma de IOPs de todos os volumes alocados nesse pool de armazenamento.
+* Taxa de transferência – a taxa de transferência soma de todos os volumes alocados neste pool de armazenamento.
+
+
+
+
+== Requisitos
+
+A seguir estão os requisitos para configurar e usar este coletor de dados:
+
+* Você deve ter acesso a uma conta com a função "fsxadmin", com três aplicativos atribuídos a ela - ssh, ontapi, http
+* Os detalhes da conta incluem nome de usuário e senha.
+* Requisitos do porto: 443
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| IP de gerenciamento de NetApp | Endereço IP ou nome de domínio totalmente qualificado do cluster NetApp 
+
+
+| Nome de utilizador | Nome de usuário para cluster NetApp 
+
+
+| Palavra-passe | Palavra-passe para cluster NetApp 
+|===
+
+
+== Métricas avançadas
+
+Esse coletor de dados coleta as seguintes métricas avançadas do armazenamento FSX for NetApp ONTAP:
+
+* fpolicy
+* nfsv3
+* nfsv3:nó
+* nfsv4
+* nfsv4_1
+* nfsv4_1:nó
+* nfsv4:nó
+* policy_group
+* qtree
+* volume
+* workload_volume
+
+
+Observe que os comandos da CLI e API do FSX recuperam alguns valores de capacidade que o Data Infrastructure Insights ZAPI não coleta, portanto, certos valores de capacidade (como aqueles para pools de armazenamento) podem ser diferentes no Data Infrastructure Insights do que no FSX em si.
+
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Receber 401 resposta HTTP ou 13003 código de erro ZAPI e ZAPI retorna "insuficiente Privileges" ou "não autorizado para este comando" | Verifique o nome de usuário e a senha e o Privileges/permissões do usuário. 
+
+
+| ZAPI retorna "a função de cluster não é cluster_mgmt LIF" | A UA precisa falar com o IP de gerenciamento de cluster. Verifique o IP e mude para um IP diferente, se necessário 
+
+
+| O comando ZAPI falha após a tentativa | A AU tem problema de comunicação com o cluster. Verifique a rede, o número da porta e o endereço IP. O usuário também deve tentar executar um comando da linha de comando da máquina AU. 
+
+
+| Falha ao conetar-se ao ZAPI via HTTP | Verifique se a porta ZAPI aceita texto simples. Se AU tentar enviar texto simples para um soquete SSL, a comunicação falha. 
+
+
+| A comunicação falha com SSLException | Au está tentando enviar SSL para uma porta de texto simples em um arquivador. Verifique se a porta ZAPI aceita SSL ou se usa uma porta diferente. 
+
+
+| Erro de conexão adicional: A resposta ZAPI tem o código de erro 13001, "banco de dados não está aberto" o código de erro ZAPI é 60 e a resposta contém "API não terminou no tempo" resposta ZAPI contém "inicializar_sessão() ambiente NULL retornado o código de erro ZAPI é 14007 e a resposta contém "nó não está saudável" | Verifique a rede, o número da porta e o endereço IP. O usuário também deve tentar executar um comando da linha de comando da máquina AU. 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

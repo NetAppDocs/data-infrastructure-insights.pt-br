@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: task_dc_hds_nas.html 
+keywords: data collector, HDS HNAS, HDS NAS 
+summary: 'Configurar o coletor de dados do HDS nas (HNAS).' 
+---
+= Configurar o coletor de dados Hitachi Vantara nas
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de dados Hitachi Vantara nas é um coletor de dados de inventário e configuração que suporta a descoberta de clusters HDS nas. O Data Infrastructure Insights é compatível com a descoberta de compartilhamentos NFS e CIFS, sistemas de arquivos (volumes internos) e vãos (pools de storage).
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados HNAS. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Nível | Grupo de discos 
+
+
+| Cluster | Armazenamento 
+
+
+| Nó | Nó de storage 
+
+
+| Extensão | Pool de storage 
+
+
+| Unidade do sistema | LUN de back-end 
+
+
+| Sistema de ficheiros | Volume interno 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* Endereço IP do dispositivo
+* Porta 22, protocolo SSH
+* Nome de utilizador e palavra-passe - nível de privilégio: Supervisor
+* Nota: Este coletor de dados é baseado em SSH, então a AU que o hospeda deve ser capaz de iniciar sessões SSH para TCP 22 no próprio HNAS, ou a Unidade de Gerenciamento de sistemas (SMU) à qual o cluster está conetado.
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Host HNAS | Endereço IP ou nome de domínio totalmente qualificado do HNAS Management Host 
+
+
+| Nome de utilizador | Nome de usuário para HNAS CLI 
+
+
+| Palavra-passe | Senha usada para HNAS CLI 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 30 minutos. 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| "Erro ao conetar-se" com mensagens de erro "erro ao configurar canal de shell:" ou "erro ao abrir canal de shell" | Provavelmente causado por problemas de conetividade de rede ou SSH está mal configurado. Confirme a conexão com o cliente SSH alternativo 
+
+
+| "Timeout" ou "erro ao recuperar dados" com mensagens de erro "Command: XXX expirou." | * Tente o comando com o cliente SSH alternativo * aumente o tempo limite 
+
+
+| "Erro ao conetar " ou "credenciais de login inválidas" com mensagens de erro "não foi possível se comunicar com o dispositivo:" | * Verificar endereço IP * verificar nome de usuário e senha * confirmar conexão com cliente SSH alternativo 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

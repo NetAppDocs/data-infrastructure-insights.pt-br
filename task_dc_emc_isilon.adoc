@@ -1,0 +1,113 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_isilon.html 
+keywords: data collector, isilon, EMC, DELL, PowerScale 
+summary: 'Configurar o coletor de dados Dell EMC PowerScale (anteriormente Isilon).' 
+---
+= Coletor de dados Dell EMC PowerScale
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa o coletor de dados SSH PowerScale (anteriormente Isilon) da Dell EMC para adquirir dados de inventário e desempenho do armazenamento nas com escalabilidade horizontal do PowerScale.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário desse coletor de dados. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Condução | Disco 
+
+
+| Cluster | Armazenamento 
+
+
+| Nó | Nó de storage 
+
+
+| Sistema de ficheiros | Volume interno 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+Você precisa das seguintes informações para configurar este coletor de dados:
+
+* Permissões de administrador para o armazenamento PowerScale
+* Endereço IP do cluster PowerScale
+* Acesso SSH à porta 22
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP | O endereço IP ou o nome de domínio totalmente qualificado do cluster PowerScale 
+
+
+| Nome de utilizador | Nome de utilizador para o cluster PowerScale 
+
+
+| Palavra-passe | Palavra-passe utilizada para o cluster PowerScale 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. A predefinição é 20. 
+
+
+| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. A predefinição é 300. 
+
+
+| Porta SSH | Porta de serviço SSH. A predefinição é 22. 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| "Credenciais de login inválidas" com mensagens de erro "comandos não habilitados para administração baseada em funções exigem acesso de usuário raiz" | * Verifique se o usuário tem permissões para executar os seguintes comandos no dispositivo: > versão isi osrelease > isi status -q > isi status -n > isi devices -d %s > isi license * Verifique se as credenciais usadas no assistente correspondem às credenciais do dispositivo 
+
+
+| "Erro interno" com mensagens de erro "a execução do Command <Your command> falhou com permissão: Problema de permissão de execução do comando sudo" | Verifique se o usuário tem permissões sudo para executar o seguinte comando no dispositivo 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

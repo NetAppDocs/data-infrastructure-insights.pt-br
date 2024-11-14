@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: kubernetes_change_analytics.html 
+keywords: changes, management, analysis 
+summary: Acompanhar as alterações do Kubernetes está mais fácil do que nunca. 
+---
+= Kubernetes Change Analytics
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Kubernetes Change Analytics oferece uma visão completa das mudanças recentes no seu ambiente K8s. Alertas e status de implantação estão ao seu alcance. Com o Change Analytics, você pode controlar todas as alterações de implantação e configuração e correlacioná-las com a integridade e a performance dos serviços, da infraestrutura e dos clusters do K8s.
+
+Como a análise de mudanças ajuda?
+
+* Em ambientes Kubernetes de vários locatários, as interrupções podem ocorrer devido a alterações mal configuradas. O Change Analytics ajuda com isso, fornecendo um único painel para visualizar e correlacionar a integridade dos workloads e as alterações de configuração. Isso pode ajudar na solução de problemas de ambientes dinâmicos do Kubernetes.
+
+
+Para exibir o Kubernetes Change Analytics, navegue até *Kubernetes > Change Analysis*.
+
+image:ChangeAnalytitcs_Main_Screen.png["Tela principal do Kubernetes Change Analytics, mostrando alertas críticos e de aviso, implantações bem-sucedidas e com falha e as 3 principais cargas de trabalho que acionam alertas"].
+
+A página é atualizada automaticamente com base no intervalo de tempo selecionado no momento. Intervalos de tempo menores significam uma atualização mais frequente do ecrã.
+
+
+
+== Filtragem
+
+Assim como todos os recursos do Data Infrastructure Insights, filtrar a lista de alterações é intuitivo: Na parte superior da página, insira ou selecione valores para seu cluster, namespace ou workload do Kubernetes.
+
+Ao filtrar para um cluster, namespace e workload específicos (juntamente com quaisquer outros filtros definidos), você verá uma linha do tempo das implantações e alertas para essa carga de trabalho nesse namespace no cluster. Aumente ainda mais o zoom clicando e arrastando no gráfico para focar em um intervalo de tempo mais específico.
+
+image:ChangeAnalytitcs_Filtered_Timeline.png["Exemplo de linha de tempo de workload"]
+
+
+
+== Estado rápido
+
+Abaixo da área de filtragem estão vários indicadores de alto nível. À esquerda está o número de alertas (Aviso e crítico). Este número inclui alertas _ative_, bem como _resolved_. Para ver apenas alertas _ative_, defina um filtro para "Status" e escolha "Ativo".
+
+image:ChangeAnalytitcs_Alerts.png["Alterar alertas de análise"]
+
+O status de implantação também é mostrado aqui. Novamente, o padrão é mostrar a contagem de implantações _Started_, _Complete_ e _Failed_. Para ver apenas implementações _Failed_, defina um filtro para "Status" e selecione "Failed".
+
+image:ChangeAnalytitcs_Deploys.png["Altere as DSeploys do Analytics"]
+
+Os 3 principais workloads com mais alertas são os próximos. O número em vermelho ao lado de cada carga de trabalho indica o número de alertas relacionados a essa carga de trabalho. Clique no link carga de trabalho para explorar a infraestrutura (Kubernetes Explorer), dependências (mapa de carga de trabalho) ou análise de log (logs de eventos).
+
+image:ChangeAnalytitcs_ExploreWorkloadAlerts.png["Altere as opções de exploração do workload do Analytics"]
+
+
+
+== Painel de detalhes
+
+Selecionar uma alteração na lista abre um painel descrevendo a alteração com mais detalhes. Por exemplo, selecionar uma implantação com falha mostra um resumo da implantação, com tempos de início e fim, duração e onde a implantação foi acionada, com links para explorar esses recursos. Ele também exibe o motivo da falha, quaisquer alterações relacionadas e quaisquer eventos associados.
+
+image:ChangeAnalytitcs_DeployDetailPanel.png["Implantar Painel de detalhes de falha"]
+
+A seleção de um Alerta fornece detalhes sobre o alerta, incluindo o monitor que acionou o alerta, bem como um gráfico que mostra uma linha do tempo visual para o alerta.

@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: concept_acquisition_unit_requirements.html 
+summary: O servidor ou VM que você usa como sua Unidade de aquisição deve atender aos requisitos mínimos. 
+keywords: AU, acquisition unit, requirements, sizing 
+---
+= Requisitos da Unidade de aquisição
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Você deve instalar uma Unidade de aquisição (AU) para adquirir informações de seus coletores de dados de infraestrutura (storage, VM, porta, EC2, etc.). Antes de instalar a Unidade de aquisição, você deve garantir que seu ambiente atenda aos requisitos de sistema operacional, CPU, memória e espaço em disco.
+
+
+
+== Requisitos
+
+|===
+
+
+| Componente | Requisito Linux | Requisitos do Windows 
+
+
+| Sistema operacional | Um computador executando uma versão licenciada de um dos seguintes: * CentOS (64 7,9 9,1 9,4 15 SP5 22,04-bit): 64 8,1 9,4 15 18,04 a 8,1 7,2 8,10 9,0 15 SP2 20,04, 7,5 a 8,4, Stream 64, Stream 15,1 * AlmaLinux 15,5 e 9,4 * Debian (64-bit): 9 e 10 * OpenSUSE Leap 9 a 9,3 * Oracle Enterprise Linux (8-bit): 8,1 a 7,9, 7,9 a 8,8 * Red Hat Enterprise Linux (7,2 Recomenda-se um servidor dedicado. Se você estiver executando com o SELinux, é recomendável executar os seguintes comandos no sistema de unidade de aquisição: Sudo semanage fcontext -a -t usr_t "/opt/NetApp/cloudinsights(/.*)?" sudo restorecon -R /opt/NetApp/cloudsights | Um computador com uma versão licenciada de um dos seguintes: * Microsoft Windows 10 64-bit * Microsoft Windows Server 2012 * Microsoft Windows Server 2012 R2 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows 11 este computador não deve estar executando nenhum outro software de nível de aplicativo. Recomenda-se um servidor dedicado. 
+
+
+| CPU | 2 núcleos de CPU | O mesmo 
+
+
+| Memória | 8 GB DE RAM | O mesmo 
+
+
+| Espaço disponível em disco | 50 GB (100 GB recomendados) para Linux, o espaço em disco deve ser alocado desta maneira: /Opt/NetApp 10 GB (20 GB para ambientes grandes) /var/log/NetApp 40 GB (80 GB para ambientes grandes) /tmp pelo menos 1 GB disponíveis durante a instalação | 50 GB 
+
+
+| Rede | É necessária uma ligação Ethernet de 100 Mbps/1 Gbps, endereço IP estático e conetividade de porta 80 ou 443 (saída) da Unidade de aquisição para *.cloudinsights.NetApp.com ou o ambiente de informações de infra-estrutura de dados (ou seja, https://<environment_id>.C01.cloudsights.NetApp.com). Para obter os requisitos entre a Unidade de aquisição e cada Coletor de dados, consulte as instruções para a link:data_collector_list.html["Coletor de dados"]. Se a sua organização exigir o uso de proxy para acesso à Internet, talvez seja necessário entender o comportamento de proxy da sua organização e buscar certas exceções para que o Data Infrastructure Insights funcione. Por exemplo, sua organização bloqueia o acesso por padrão e só permite o acesso a sites/domínios específicos por exceção? Se assim for, você precisará adicionar o seguinte domínio à lista de exceções: *.cloudinsights.NetApp.com para obter mais informações, leia sobre Proxies link:task_troubleshooting_linux_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["Aqui (Linux)"] ou link:task_troubleshooting_windows_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["Aqui (Windows)"]. | O mesmo 
+
+
+| Permissões | Permissões sudo no servidor da Unidade de aquisição. /tmp deve ser montado com recursos exec. | Permissões de administrador no servidor da Unidade de aquisição 
+
+
+| Verificação de vírus |  | Durante a instalação, você deve desativar completamente todos os scanners de vírus. Após a instalação, os caminhos utilizados pelo software da Unidade de aquisição têm de ser excluídos da verificação de vírus. 
+|===
+
+
+== Recomendações adicionais
+
+* Para uma auditoria precisa e relatórios de dados, é altamente recomendável sincronizar o tempo na máquina da unidade de aquisição usando *Network Time Protocol (NTP)* ou *Simple Network Time Protocol (SNTP)*.
+
+
+
+
+== Em relação ao dimensionamento
+
+Você pode começar a usar uma Unidade de aquisição de dados Infrastructure Insights com apenas 8GB GB de memória e 50GB GB de espaço em disco. No entanto, para ambientes maiores, você deve fazer as seguintes perguntas:
+
+Você espera:
+
+* Descubra mais de 2500 máquinas virtuais ou 10 clusters ONTAP grandes (> 2 nós), Symmetrix ou matrizes HDS/HPE VSP/XP nesta Unidade de aquisição?
+* Implantar 75 ou mais coletores de dados totais nesta Unidade de aquisição?
+
+
+Para cada resposta "Sim" acima, recomenda-se adicionar 8 GB de memória e 50 GB de espaço em disco à AU. Então, por exemplo, se você respondeu "Sim" para ambos, você deve implantar um sistema de memória 24GB com 150GBMB ou mais de espaço em disco. No Linux, o espaço em disco a ser adicionado ao local do log.
+
+Para perguntas adicionais sobre o dimensionamento, entre em Contato com o suporte da NetApp.
+
+
+
+== Requisito adicional da edição federal
+
+* Para instalações de unidades de aquisição em clusters Data Infrastructure Insights Federal Edition, o sistema operacional subjacente deve ter uma boa fonte de entropia. Em sistemas Linux, isso geralmente é feito instalando _rng-tools_ ou usando hardware random number generation (RNG). É da responsabilidade do cliente garantir que este requisito é cumprido na máquina da unidade de aquisição.
+

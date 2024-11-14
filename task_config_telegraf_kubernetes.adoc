@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: task_config_telegraf_kubernetes.html 
+keywords: telegraf 
+summary: Coletor de dados para Kubernetes 
+---
+= Coletor de dados: Kubernetes
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O Data Infrastructure Insights usa esse coletor de dados para coletar métricas de volume, nó e Pod do Kubernetes.
+
+
+
+== Instalação
+
+Para obter instruções de instalação do Kubernetes, consulte a link:task_config_telegraf_agent_k8s.html["Operador de monitoramento do Kubernetes"]página.
+
+
+
+== Sobre o Kube-State-metrics
+
+O Operador de Monitoramento do Kubernetes instala as métricas de estado do kube automaticamente; nenhuma interação com o usuário é necessária.
+
+
+
+=== Contadores de métricas de estado-Kube
+
+O Operador de Monitoramento do Kubernetes do NetApp extrai os contadores de métricas de estado do kube listados abaixo. Mais detalhes sobre cada contador podem ser encontrados em: https://github.com/kubernetes/kube-state-metrics/tree/main/docs#exposed-metrics[].
+
+. Métricas DaemonSet
+. Métricas de implantação
+. Métricas de namespace
+. Métricas do nó
+. Métricas de volume persistente
+. Métricas do pedido de volume persistente
+. Métricas do pod
+. Métricas do ReplicaSet
+. Métricas de serviço
+. Métricas StatefulSet
+

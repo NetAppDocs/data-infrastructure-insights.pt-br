@@ -1,0 +1,112 @@
+---
+sidebar: sidebar 
+permalink: task_create_annotation_rules.html 
+summary: Você cria regras de anotação para aplicar automaticamente anotações a vários ativos. 
+keywords: annotate, annotation, rules 
+---
+= Criando regras de anotação
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Pode utilizar regras de anotação para aplicar automaticamente anotações a vários ativos com base nos critérios definidos. O Data Infrastructure Insights atribui as anotações aos ativos com base nessas regras. Anotações definidas manualmente em páginas de ativos individuais têm precedência sobre anotações baseadas em regras quando o Cloud Insight avalia as regras de anotação.
+
+.Antes de começar
+Você deve ter criado uma consulta para a regra de anotação.
+
+.Passos
+. No menu Data Infrastructure Insights, clique em *Manage > Annotation rules*.
+. Clique em * regra* para adicionar uma nova regra de anotação.
++
+A caixa de diálogo Adicionar regra é exibida.
+
+. Faça o seguinte:
++
+.. Na caixa *Nome*, insira um nome exclusivo que descreva a regra.
++
+O nome aparece na página regras de anotação.
+
+.. Clique em *consulta* e selecione a consulta que o Data Infrastructure Insights usa para identificar os ativos aos quais a anotação se aplica.
+.. Clique em *Annotation* e selecione a anotação que pretende aplicar.
+.. Clique em *value* e selecione um valor para a anotação.
++
+Por exemplo, se você escolher aniversário como anotação, especifique uma data para o valor.
+
+.. Clique em *Salvar*
+.. Clique em *Executar todas as regras* se quiser executar todas as regras imediatamente; caso contrário, as regras são executadas em um intervalo programado regularmente.
++
+
+NOTE: Em um ambiente de Insights de infraestrutura de dados grande, você pode notar que a execução de regras de anotação parece demorar um pouco para ser concluída. Isso ocorre porque o indexador é executado primeiro e deve ser concluído antes de executar as regras. O indexador é o que dá ao Data Infrastructure Insights a capacidade de pesquisar ou filtrar por objetos e contadores novos ou atualizados nos dados. O mecanismo de regras aguarda até que o indexador conclua sua atualização antes de aplicar as regras.
+
+
+
+
+
+
+
+== Modificar regras de anotação
+
+É possível modificar uma regra de anotação para alterar o nome da regra, sua anotação, o valor da anotação ou a consulta associada à regra.
+
+.Passos
+. No menu Data Infrastructure Insights, clique em *Manage > Annotation rules*.
++
+A página regras de anotação exibe a lista de regras de anotação existentes.
+
+. Localize a regra de anotação que deseja modificar.
++
+Pode filtrar as regras de anotação introduzindo um valor na caixa de filtro ou clicar num número de página para navegar pelas regras de anotação por página.
+
+. Clique no ícone de menu da regra que você deseja modificar.
+. Clique em *Editar*
++
+A caixa de diálogo Editar regra é exibida.
+
+. Modifique o nome, anotação, valor ou consulta da regra de anotação.
+
+
+
+
+== Alterar a ordem das regras
+
+As regras de anotação são processadas a partir da parte superior da lista de regras para a parte inferior. Para alterar a ordem em que uma regra é processada, faça o seguinte:
+
+.Passos
+. Clique no ícone do menu da regra que deseja mover.
+. Clique em *mover para cima* ou *mover para baixo* conforme necessário até que a regra apareça no local desejado.
+
+
+Observe que ao executar várias regras que atualizam a mesma anotação em um ativo, a primeira regra (como executada de cima para baixo) aplica a anotação e atualiza o ativo, então a segunda regra se aplica, mas não altera nenhuma anotação que já foi definida pela regra anterior.
+
+
+
+== Eliminar regras de anotação
+
+Pode pretender eliminar regras de anotação que já não são utilizadas.
+
+.Passos
+. No menu Data Infrastructure Insights, clique em *Manage > Annotation rules*.
++
+A página regras de anotação exibe a lista de regras de anotação existentes.
+
+. Localize a regra de anotação que deseja excluir.
++
+Pode filtrar as regras de anotação introduzindo um valor na caixa de filtro ou clicar num número de página para navegar pelas regras de anotação por página.
+
+. Clique no ícone de menu da regra que você deseja excluir.
+. Clique em *Excluir*
++
+Uma mensagem de confirmação é exibida, solicitando se deseja excluir a regra.
+
+. Clique em *OK*
+

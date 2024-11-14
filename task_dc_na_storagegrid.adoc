@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: task_dc_na_storagegrid.html 
+summary: Configurar o coletor de dados NetApp StorageGRID 
+keywords: data collector, queries, create, storagegrid 
+---
+= Coletor de dados NetApp StorageGRID
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de dados NetApp StorageGRID suporta a coleta de inventário e desempenho de configurações do StorageGRID.
+
+
+NOTE: O StorageGRID é medido a uma taxa bruta diferente de TB para Unidade gerenciada. Cada 40 TB de capacidade StorageGRID não formatada é cobrado como 1 link:concept_subscribing_to_cloud_insights.html#pricing["Unidade gerenciada (MU)"].
+
+
+
+== Terminologia
+
+Insights de infraestrutura de dados adquire as seguintes informações de inventário do coletor NetApp StorageGRID. Para cada tipo de ativo adquirido, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| StorageGRID | Armazenamento 
+
+
+| Nó | Nó 
+
+
+| Locatário | Pool de storage 
+
+
+| Balde | Volume interno 
+|===
+
+
+== Requisitos
+
+A seguir estão os requisitos para configurar esta fonte de dados:
+
+* Endereço IP do host StorageGRID
+* Um nome de usuário e senha para um usuário que teve as funções de consulta métrica e Acesso ao locatário atribuídas
+* Porta 443
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP do host StorageGRID | Endereço IP virtual de gerenciamento do dispositivo StorageGRID 
+
+
+| Nome de utilizador | Nome utilizado para iniciar sessão no dispositivo StorageGRID 
+
+
+| Palavra-passe | Palavra-passe utilizada para iniciar sessão no dispositivo StorageGRID 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | O padrão é de 60 minutos 
+
+
+| Intervalo de enquete de desempenho (seg) | O padrão é de 900 segundos 
+|===
+
+
+== Logon único (SSO)
+
+As link:https://docs.netapp.com/sgws-112/index.jsp["StorageGRID"]versões de firmware têm versões de API correspondentes; a API 3,0 e as versões mais recentes suportam login de logon único (SSO).
+
+|===
+
+
+| Versão do firmware | Versão da API | Suporte single sign on (SSO) 
+
+
+| 11,1 | 2 | Não 
+
+
+| 11,2 | 3,0 | Sim 
+
+
+| 11,5 | 3,3 | Sim 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

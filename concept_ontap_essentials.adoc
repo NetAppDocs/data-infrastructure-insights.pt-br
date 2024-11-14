@@ -1,0 +1,191 @@
+---
+sidebar: sidebar 
+permalink: concept_ontap_essentials.html 
+summary: O ONTAP Essentials é um conjunto de dashboards e fluxos de trabalho para fornecer visões gerais detalhadas do seu ambiente. 
+keywords: dashboard, widget, ontap, overview, insight 
+---
+= Essenciais de ONTAP
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O ONTAP Essentials é um conjunto de painéis e fluxos de trabalho que fornece visões gerais detalhadas dos seus inventários e workloads do ONTAP. Você pode ver os seguintes termos usados ao trabalhar no ONTAP Essentials:
+
+* Infraestrutura/Inventário: Objetos que fornecem serviços de storage/rede para dados do usuário
+* Cargas de trabalho: Objetos que fornecem interface aos usuários para ler/gravar dados.
+* Proteção de dados: Objetos que podem ser protegidos com as tecnologias de proteção de dados da NetApp
+
+
+Para obter termos e definições adicionais relacionados ao ONTAP, consulte a link:task_dc_na_cdot.html["Coletor de dados ONTAP"] documentação.
+
+O ONTAP Essentials requer pelo menos um coletor de dados ONTAP funcional com dados coletados nos últimos sete dias.
+
+
+
+== Visão geral
+
+Para começar a explorar, selecione *ONTAP Essentials* no menu principal de informações sobre infraestrutura de dados.
+
+image:OE_Overview.png["Painel de visão geral do ONTAP Essentials"]
+
+O painel *Visão geral* exibe informações úteis, como o número de clusters em seu ambiente, com suas porcentagens gerais de capacidade e desempenho. Você também verá dados preditivos sobre o número de dias esperados até que a capacidade de storage ou a capacidade de performance fiquem sem espaço. Além disso, se quaisquer controladores em sua infraestrutura estiverem sendo executados com sua CPU em mais de 65% - potencialmente colocando seu cluster em risco em caso de failover - o ONTAP Essentials mostra esses controladores como controladores "quentes".
+
+Gráficos informativos dão-lhe uma olhada no desempenho ao longo do tempo, bem como avarias de uso de capacidade. Cada um desses gráficos ou pontos de dados pode ser usado como ponto de partida para exploração ou investigação.
+
+Nota: Um número de "dias para cheio" de "0" (zero) indica que dias para cheio é estimado em mais de 90 dias. Em outras palavras, seus sistemas não correm o risco de ficar sem espaço em breve.
+
+
+
+== Proteção de dados
+
+A página *proteção de dados* mostra o status dos volumes protegidos por *cópias Snapshot* ou *políticas SnapMirror*.
+
+Na seção _Visão geral da proteção local_, os gráficos fornecem as seguintes informações para volumes protegidos por cópias Snapshot:
+
+* O número de volumes protegidos pelas cópias Snapshot e os não protegidos.
+* O número de volumes que estão usando ou excedendo o espaço de reserva para as cópias Snapshot.
+* O número de volumes em intervalos específicos de contagem de cópias Snapshot (ou seja, menos de 10 cópias, 10 a 200, etc.).
+
+
+Na seção _Visão geral da proteção remota_, os gráficos fornecem informações relacionadas a volumes protegidos pelas políticas do SnapMirror:
+
+* O número de relacionamentos saudáveis e insalubres do SnapMirror.
+* O número de relacionamentos do SnapMirror que apresentam atraso no objetivo do ponto de restauração (RPO) com base no status de atraso.
+* O número de relacionamentos protegidos por tipos de proteção de volume SnapMirror, como volume SnapMirror, relacionamentos SVMDR, relacionamentos FlexGroup SnapMirror, relacionamentos de grupo de consistência de continuidade de negócios (SMBC) da SnapMirror, bem como volumes desprotegidos.
+* O número de relacionamentos protegidos pelos tipos de relacionamento do SnapMirror, como espelhamento assíncrono, cofre assíncrono, espelhamento assíncrono, StrictSync e sincronização.
+
+
+image:DataProtectionDashboard_OverviewWidgets_.png["Widgets do painel de proteção de dados que mostram visões gerais locais e remotas"]
+
+A grade _clusters_ na parte inferior da página fornece detalhes relacionados ao seguinte:
+
+* Volumes não protegidos por snapshots.
+* Volumes que invadem o espaço de reserva do snapshot.
+* Volumes não protegidos pelas políticas do SnapMirror e pelas relações do SnapMirror com atraso.
+* Relacionamentos de SnapMirror pouco saudáveis.
+
+
+image:DataProtectionDashboard_ClusterList.png["Lista de cluster de proteção de dados"]
+
+
+
+== Segurança
+
+O Painel de Segurança oferece uma visão instantânea da situação de segurança atual, mostrando gráficos para criptografia de volume de hardware e software, status anti-ransomware e métodos de autenticação de cluster. Os critérios de segurança são avaliados com base nas recomendações definidas no link:https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf["*Guia de endurecimento de Segurança da NetApp para ONTAP 9*"].
+
+Selecione qualquer uma das contagens de criptografia ou anti-ransomware para mergulhar no seu ambiente.
+
+image:OE_SecurityDashboard.png["Painel de segurança do ONTAP Essentials"]
+
+O painel de segurança do ONTAP Essentials monitora seu ambiente para determinar o status de conformidade do cluster. Consulte link:https://docs.netapp.com/us-en/active-iq-unified-manager/health-checker/reference_cluster_compliance_categories.html["Categorias de conformidade de cluster"] para saber mais. O ONTAP Essentials usa os seguintes monitores para determinar a conformidade:
+
+|===
+| Nome do monitor | Nome do atributo (exibido em Detalhes do cluster) | Valor em conformidade com o atributo 
+
+
+| Modo FIPS desativado | Modo FIPS | Ativado 
+
+
+| Cifras inseguras de cluster para SSH | Configurações de SSH seguras | Sim 
+
+
+| Protocolo Telnet ativado | Telnet | Desativado 
+
+
+| Shell remoto ativado | Shell remoto | Desativado 
+
+
+| Utilizador Admin local predefinido ativado | Usuário Administrador padrão | Desativado 
+
+
+| MD5 Palavra-passe com hash | MD5 em uso | Não 
+
+
+| Comunicação por pares de cluster não encriptada | Peering de clusters | Encriptado/sem Peer 
+
+
+| Transporte HTTPS AutoSupport desativado | AutoSupport usando HTTPS | Sim 
+
+
+| Nenhum servidor NTP está configurado | Protocolo de hora de rede | Configurado 
+
+
+| Contagem de servidor NTP baixa | Protocolo de hora de rede | Configurado 
+
+
+| Banner de login de cluster desativado | Banner de login | Ativado 
+
+
+| Encaminhamento de registo não encriptado | Encaminhamento de registos encriptado | Sim 
+|===
+Observe que se um monitor acima estiver desativado, os detalhes do cluster mostrarão o valor como "não verificado" para o atributo de conformidade de segurança correspondente.
+
+image:OE_Cluster_Compliance_Example.png["Status de conformidade do cluster"]
+
+Para SVMs, o painel Segurança analisa os seguintes monitores:
+
+|===
+| Nome do monitor | Nome do atributo (exibido nas Configurações da VM de armazenamento) | Valor em conformidade com o atributo 
+
+
+| Armazenamento VM cifras inseguras para SSH | Configurações de SSH seguras | Sim 
+
+
+| Banner de login da VM de armazenamento desativado | Banner de login | Ativado 
+
+
+| Registo de auditoria da VM de armazenamento desativado | Registo de auditoria | Ativado 
+|===
+Na lista de cluster, selecione _Ver Detalhes_ para cada cluster para abrir um painel "slideout" mostrando as configurações atuais de _Cluster, Storage VM,_ ou _Anti-ransomware_.
+
+Os detalhes do cluster incluem status da conexão, informações do certificado e muito mais: image:OE_Cluster_Slideout.png["Painel deslizante de detalhes do cluster"]
+
+Os detalhes da VM de armazenamento mostram informações de auditoria e SSH: image:OE_Storage_Slideout.png["Separador armazenamento"]
+
+Os detalhes do Anti-ransomware mostram se uma VM de storage está protegida pela proteção contra ransomware da ONTAP ou pela segurança de carga de trabalho dos Insights da infraestrutura de dados. Observe que a coluna ARP do ONTAP exibe o status atual da proteção contra ransomware integrada do ONTAP, que é configurada no sistema ONTAP. O Data Infrastructure Insights Workload Security pode ser habilitado selecionando "proteger" nessa coluna. image:OE_Anti-Ransomware_Slideout.png["Guia Anti-ransomware"]
+
+
+
+== Alertas
+
+Aqui você pode visualizar os alertas ativos em seu ambiente e detalhar rapidamente possíveis problemas. Selecione a guia _resolvido_ para exibir alertas que foram resolvidos.
+
+image:OE_Alerts.png["Lista de alertas do ONTAP Essentials"]
+
+
+
+== Infraestrutura
+
+A página ONTAP Essentials *infraestrutura* oferece uma visualização da integridade e desempenho do cluster, usando consultas pré-criadas (ainda mais personalizáveis) em todos os objetos ONTAP básicos. Selecione o tipo de objeto que deseja explorar (cluster, pool de armazenamento, etc.) e escolha se deseja exibir informações de integridade ou desempenho. Defina filtros para mergulhar mais fundo em sistemas individuais.
+
+image:ONTAP_Essentials_Health_Performance.png["Seleções de infraestrutura para pools de storage"]
+
+Página de infraestrutura mostrando a integridade do cluster: image:ONTAP_Essentials_Infrastructure_A.png["Objetos de infraestrutura para explorar"]
+
+
+
+== Rede
+
+A rede essencial do ONTAP oferece visualizações para sua infraestrutura FC, NVMe FC, Ethernet e iSCSI. Nessas páginas, você pode explorar coisas como portas nos clusters e nos nós deles.
+
+image:ONTAP_Essentials_Alerts_Menu.png["Menu de rede do ONTAP Essentials"] image:ONTAP_Essentials_Alerts_Page.png["Página FC de rede do ONTAP Essentials mostrando portas em nós de cluster"]
+
+
+
+== Workloads
+
+Visualize e explore workloads em LUNs/volumes, compartilhamentos NFS ou SMB ou Qtrees no seu ambiente.
+
+image:ONTAP_Essentials_Workloads_Menu.png["Menu workloads"]
+
+image:ONTAP_Essentials_Workloads_Page.png["Página de lista de workloads"]

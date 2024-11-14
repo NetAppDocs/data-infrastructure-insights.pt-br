@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: concept_preview_features.html 
+summary: Os recursos de visualização estão disponíveis em capacidade limitada e a funcionalidade de destaque ainda não está pronta para o horário nobre. 
+keywords: coming soon, preview, 
+---
+= Recursos e funcionalidades de visualização
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights destaca novos recursos e funcionalidades de maneira _Preview_. Os recursos de visualização são disponibilizados em ambientes limitados ou com capacidade limitada.
+
+Se você estiver interessado em visualizar um ou mais desses recursos, entre em Contato com o link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Equipe de vendas da NetApp"] para obter mais informações.
+
+|===
+
+
+| *Recurso* | *Descrição* 
+
+
+| Recupere o storage frio da ONTAP | Fornece visualizações de workloads de volume do ONTAP com capacidade baixa, bem como outras métricas relacionadas. 
+|===

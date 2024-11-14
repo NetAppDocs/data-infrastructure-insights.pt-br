@@ -1,0 +1,169 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_vplex.html 
+keywords: data collector, VPLEX, EMC 
+summary: Configurando o coletor de dados VPLEX. 
+---
+= Configurando o coletor de dados EMC VPLEX
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Este coletor de dados adquire dados de inventário e desempenho dos sistemas de armazenamento EMC VPLEX. Para a configuração, o coletor de dados requer um endereço IP do servidor VPLEX e uma conta de domínio de nível administrativo.
+
+
+NOTE: A coleta de desempenho do Data Infrastructure Insights de clusters Vplex exige que o serviço de arquivamento de performance esteja operacional, a fim de preencher os arquivos .CSV e os logs que o Data Infrastructure Insights recupera por meio de cópias de arquivos baseadas em SCP. A NetApp observou que muitas atualizações da estação de gerenciamento/atualização de firmware da Vplex deixarão essa funcionalidade não operacional. Os clientes que planejam essas atualizações podem querer perguntar proativamente à Dell/EMC se sua atualização planejada deixará essa funcionalidade inoperável e, em caso afirmativo, como podem rehabilitá-la para minimizar as lacunas na visibilidade do desempenho? O código de desempenho Vplex do Cloud Insight avaliará em cada enquete se todos os arquivos esperados existem e se eles estão sendo atualizados corretamente. Se estiverem ausentes ou obsoletos, o Data Infrastructure Insights registrará falhas na coleta de performance.
+
+
+
+== Terminologia
+
+A Insightst adquire as seguintes informações de inventário do coletor de dados VPLEX. Para cada tipo de ativo adquirido, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Cluster | Armazenamento 
+
+
+| Motor | Nó de storage 
+
+
+| Dispositivo, extensão do sistema | Pool de storage de back-end 
+
+
+| Volume virtual | Volume 
+
+
+| Porta Front-end, porta back-end | Porta 
+
+
+| Dispositivo distribuído | Sincronização de armazenamento 
+
+
+| Vista de armazenamento | Mapa de volume, Máscara de volume 
+
+
+| Volume de armazenamento | LUN de back-end 
+
+
+| ITLs | Caminho de back-end 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* Um endereço IP da consola de gestão VPLEX
+* Conta de domínio de nível administrativo para o servidor VPLEX
+* Porta 443 (HTTPS). Requer conetividade de saída à porta TCP 443 na estação de gerenciamento VPLEX.
+* Para desempenho, nome de usuário e senha somente leitura para acesso ssh/scp.
+* Para o desempenho, a porta 22 é necessária.
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP da consola de gestão VPLEX | Endereço IP ou nome de domínio totalmente qualificado do Console de Gerenciamento VPLEX 
+
+
+| Nome de utilizador | Nome de usuário para VPLEX CLI 
+
+
+| Palavra-passe | Palavra-passe utilizada para VPLEX CLI 
+
+
+| Endereço IP remoto de desempenho | Endereço IP remoto de desempenho da consola de gestão VPLEX 
+
+
+| Nome de utilizador remoto do desempenho | Desempenho Nome de usuário remoto do VPLEX Management Console 
+
+
+| Palavra-passe remota de desempenho | Palavra-passe remota de desempenho do VPLEX Management Console 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Porta de comunicação | Porta usada para VPLEX CLI. A predefinição é 443. 
+
+
+| Intervalo de enquete de inventário (min) | O padrão é 20 minutos. 
+
+
+| Número de tentativas de conexão | A predefinição é 3. 
+
+
+| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. O padrão é 600 segundos. 
+
+
+| Número de geometrias | A predefinição é 2. 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Erro: Falha na autenticação do utilizador. | Certifique-se de que as suas credenciais para este dispositivo estão corretas. 
+|===
+
+
+=== Desempenho
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Erro: O desempenho VPLEX para a versão abaixo de 5,3 não é suportado. | Atualize VPLEX para 5,3 ou superior 
+
+
+| Erro: Não foram recolhidos dados suficientes. | • Verifique o carimbo de data/hora da coleção no arquivo de log e modifique o intervalo de polling em conformidade • aguarde mais tempo 
+
+
+| Erro: Arquivos de log perpétuos não estão sendo atualizados. | Entre em Contato com o suporte da EMC para ativar a atualização dos arquivos de log perpétuos 
+
+
+| Erro: O intervalo de polling de desempenho é muito grande. | Verifique o timestamp da coleção no arquivo de log e modifique o intervalo de polling em conformidade 
+
+
+| Erro: O endereço IP remoto do Console de Gerenciamento VPLEX não está configurado. | Edite a fonte de dados para definir o endereço IP remoto de desempenho do VPLEX Management Console. 
+
+
+| Erro: Nenhum dado de desempenho relatado pelo diretor | • Verifique se os monitores de desempenho do sistema estão sendo executados corretamente • entre em Contato com o suporte da EMC para habilitar a atualização dos arquivos de log do monitor de desempenho do sistema 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

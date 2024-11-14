@@ -1,0 +1,113 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_vnx_unified.html 
+keywords: data collector, VNX, EMC, Dell 
+summary: Configurando o coletor de dados VNX. 
+---
+= Configurando o coletor de dados unificado VNX da Dell EMC
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Para configuração, o coletor de dados Dell EMC VNX Unified (SSH) requer o endereço IP da Estação de Controle e um nome de usuário e senha somente leitura.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário desse coletor de dados. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Disco | Disco 
+
+
+| Pasta de disco | Grupo de discos 
+
+
+| Sistema de arquivos | Volume interno 
+
+
+| Armazenamento | Armazenamento 
+
+
+| Processador de armazenamento | Nó de storage 
+
+
+| Pool de armazenamento, grupo RAID | Pool de storage 
+
+
+| LUN | Volume 
+
+
+| Transferência de dados | Controlador 
+
+
+| Sistema de arquivos montado em um controlador de dados | Partilha de ficheiros 
+
+
+| Exportações de CIFS e NFS | Partilhar 
+
+
+| Volume do disco | LUN de back-end 
+|===
+
+
+== Requisitos
+
+Você precisa do seguinte para configurar o coletor de dados VNX (SSH):
+
+* Endereço IP VNX e credenciais para a Estação de Controle Celerra.
+* Nome de utilizador e palavra-passe só de leitura.
+* O coletor de dados é capaz de executar comandos Navicli/NaviSecCLI contra o array backend utilizando as cabeças nas DART os
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP VNX | Endereço IP ou nome de domínio totalmente qualificado da Estação de Controle VNX 
+
+
+| Nome de utilizador | Nome de utilizador para a Estação de controlo VNX 
+
+
+| Palavra-passe | Palavra-passe para a Estação de controlo VNX 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 40 minutos. 
+
+
+| Intervalo de enquete de desempenho (seg). | Intervalo entre sondagens de desempenho. O padrão é 300 segundos. 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

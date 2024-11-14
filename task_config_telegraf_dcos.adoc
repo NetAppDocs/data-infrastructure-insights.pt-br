@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: task_config_telegraf_dcos.html 
+keywords: telegraf, installation, install, dcos 
+summary: configuração de dcos 
+---
+= Coletor de dados DC/os
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do DC/os.
+
+
+
+== Instalação
+
+. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha *DC/os*.
++
+Se você não tiver configurado um agente para coleta, será solicitado link:task_config_telegraf_agent.html["instale um agente"]no seu ambiente.
+
++
+Se você já tiver um agente configurado, selecione o sistema operacional ou a Plataforma apropriada e clique em *continuar*.
+
+. Siga as instruções na tela Configuração DC/os para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+
+
+
+
+== Configuração
+
+As informações de configuração podem ser encontradas no https://docs.mesosphere.com["Documentação do DC/os"].
+
+
+
+== Objetos e contadores
+
+Os seguintes objetos e seus contadores são coletados:
+
+[cols="<.<,<.<,<.<,<.<"]
+|===
+| Objeto | Identificadores | Atributos | Pontos de dados 
+
+
+| dcos_node | dcos_container dcos_app | interface do caminho do nome do host do cluster (somente campos de sistema de arquivos) (somente campos de rede) container_id task_name | system_uptime (float) cpu_core (float) cpu_total (float) cpu_user (float) cpu_system (float) cpu_idle (float) cpu_wait (float) load_1min (float) load_5min (float) load_15min 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.

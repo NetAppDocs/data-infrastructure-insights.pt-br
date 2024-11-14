@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: task_dc_amazon_s3_as_storage.html 
+keywords: data collector, S3, Storage 
+summary: Configurando o AWS S3 como coletor de dados de armazenamento. 
+---
+= Configurando o AWS S3 como coletor de dados de armazenamento
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa o AWS S3 como coletor de dados de armazenamento para adquirir dados de inventário e desempenho de instâncias do AWS S3.
+
+
+
+== Requisitos
+
+Para coletar dados do AWS S3 como dispositivos de armazenamento, você deve ter as seguintes informações:
+
+* Você deve ter um dos seguintes:
++
+** A função *IAM* da sua conta na nuvem da AWS, se estiver usando a Autenticação de função do IAM. A função IAM só se aplica se a sua unidade de aquisição estiver instalada em uma instância da AWS.
+** O ID *IAM Access Key* e a chave de acesso secreta para sua conta na nuvem da AWS, se estiver usando a autenticação IAM Access Key.
+
+
+* Tem de ter o privilégio "List Organization" (organização de lista)
+* Porta 443 HTTPS
+* As instâncias do AWS S3 podem ser reportadas como uma máquina virtual ou (menos naturalmente) como um host. Os volumes do EBS podem ser reportados como um VirtualDisk usado pela VM, bem como um datastore que fornece a capacidade para o VirtualDisk.
+
+
+As chaves de acesso consistem em uma ID de chave de acesso (por exemplo, AKIAIOSFODNN7EXAMPLE) e uma chave de acesso secreta (por exemplo, wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY). Use as chaves de acesso para assinar solicitações programáticas que você faz à AWS se você usar as operações AWS SDKs, REST ou Query API. Essas chaves são fornecidas com seu contrato da Amazon.
+
+
+
+== Configuração
+
+Insira os dados nos campos do coletor de dados de acordo com a tabela abaixo:
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Região da AWS | Escolha a região da AWS 
+
+
+| Função IAM | Para uso somente quando adquirido em uma AU na AWS. Consulte abaixo para obter mais informações <<iam-role,Função IAM>>sobre . 
+
+
+| ID da chave de acesso do AWS IAM | Insira o ID da chave de acesso do AWS IAM. Necessário se você não usar a função IAM. 
+
+
+| Chave de acesso secreta do AWS IAM | Insira a chave de acesso secreta do AWS IAM. Necessário se você não usar a função IAM. 
+
+
+| Eu entendo que a AWS me cobra por solicitações de API | Verifique isso para verificar se a AWS cobra por solicitações de API feitas pela sondagem Data Infrastructure Insights. 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Função de conta cruzada | Função para acessar recursos em diferentes contas da AWS. 
+
+
+| Intervalo de enquete de inventário (min) | A predefinição é 60 
+
+
+| Escolha 'Excluir' ou 'incluir' para aplicar ao filtro de VMs por Tags | Especifique se deve incluir ou excluir VM por Tags ao coletar dados. Se a opção "incluir" estiver selecionada, o campo chave da etiqueta não pode estar vazio. 
+
+
+| Intervalo de enquete de desempenho (seg) | A predefinição é 1800 
+|===
+
+
+== Chave de Acesso IAM
+
+As chaves de acesso são credenciais de longo prazo para um usuário do IAM ou para o usuário raiz da conta da AWS. As chaves de acesso são usadas para assinar solicitações programáticas para a AWS CLI ou API da AWS (diretamente ou usando o AWS SDK).
+
+As chaves de acesso consistem em duas partes: Uma ID de chave de acesso e uma chave de acesso secreta. Quando você usa a autenticação _IAM Access Key_ (em vez da autenticação _IAM role_), você deve usar o ID da chave de acesso e a chave de acesso secreta juntos para autenticação de solicitações. Para obter mais informações, consulte a documentação da Amazon no link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html["Teclas de acesso"].
+
+
+
+== Função IAM
+
+Ao usar a autenticação _função_ do IAM (em vez da autenticação da chave de acesso do IAM), você deve garantir que a função criada ou especificada tenha as permissões apropriadas necessárias para acessar seus recursos.
+
+Por exemplo, se você criar uma função do IAM chamada _InstanceS3ReadOnly_, deverá configurar a política para conceder permissão de acesso à lista somente leitura do S3 a todos os recursos do S3 para essa função do IAM. Além disso, você deve conceder acesso ao STS (Security Token Service) para que essa função possa assumir funções entre contas.
+
+Depois de criar uma função do IAM, você pode anexá-la ao criar uma nova instância do S3 ou qualquer instância existente do S3.
+
+Depois de anexar a função IAM _InstanceS3ReadOnly_ a uma instância do S3, você poderá recuperar a credencial temporária por meio de metadados de instância pelo nome da função IAM e usá-la para acessar recursos da AWS por qualquer aplicativo executado nessa instância do S3.
+
+Para obter mais informações, consulte a documentação da Amazon no link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html["Funções do IAM"].
+
+Observação: A função IAM só pode ser usada quando a Unidade de aquisição estiver sendo executada em uma instância da AWS.
+
+
+
+== Mapeamento de tags da Amazon para anotações do Data Infrastructure Insights
+
+O coletor de dados do AWS S3 como Storage inclui uma opção que permite preencher anotações do Data Infrastructure Insights com tags configuradas no S3. As anotações devem ser nomeadas exatamente como as tags da AWS. O Data Infrastructure Insights sempre preencherá anotações de tipo texto com o mesmo nome e fará uma "melhor tentativa" para preencher anotações de outros tipos (número, boolean, etc.). Se a anotação for de um tipo diferente e o coletor de dados não a preencher, pode ser necessário remover a anotação e recriá-la como um tipo de texto.
+
+Observe que a AWS diferencia maiúsculas de minúsculas, enquanto o Data Infrastructure Insights diferencia maiúsculas de minúsculas. Então, se você criar uma anotação chamada "PROPRIETÁRIO" no Data Infrastructure Insights e tags chamadas "PROPRIETÁRIO", "proprietário" e "proprietário" em S3, todas as S3 variações de "proprietário" serão mapeadas para a anotação "PROPRIETÁRIO" do Cloud Insight.
+
+
+
+== Incluir Regiões extra
+
+Na seção AWS Data Collector *Configuração avançada*, você pode definir o campo *incluir regiões extras* para incluir regiões adicionais, separadas por vírgula ou ponto e vírgula. Por padrão, esse campo é definido como *_US-.*_*, que é coletado em todas as regiões da AWS dos EUA. Para coletar em _todas_ regiões, defina este campo como *_.*_*. Se o campo *incluir regiões extras* estiver vazio, o coletor de dados coletará os ativos especificados no campo *região AWS* conforme especificado na seção *Configuração*.
+
+
+
+== Coleta de contas AWS Child
+
+O Data Infrastructure Insights dá suporte à coleta de contas filhas para a AWS em um único coletor de dados da AWS. A configuração para essa coleção é executada no ambiente AWS:
+
+* Você deve configurar cada conta filho para ter uma função da AWS que permita que o ID da conta principal acesse os detalhes do S3 da conta crianças.
+* Cada conta filho deve ter o nome da função configurado como a mesma cadeia de carateres.
+* Insira esta cadeia de carateres de nome de função na seção Data Infrastructure Insights AWS Data Collector *Configuração avançada*, no campo *função de conta cruzada*.
+* A conta em que o coletor está instalado precisa ter _delegar acesso administrador_ Privileges. Consulte link:https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-delegated-admin.html["Documentação do AWS"] para obter mais informações.
+
+
+Prática recomendada: É altamente recomendável atribuir a política predefinida da AWS _AmazonS3ReadOnlyAccess_ à conta principal do S3. Além disso, o usuário configurado na fonte de dados deve ter pelo menos a política predefinida _AWSOrganizationsReadOnlyAccess_ atribuída, a fim de consultar a AWS.
+
+Consulte o seguinte para obter informações sobre como configurar seu ambiente para permitir que o Data Infrastructure Insights colete de contas filhas da AWS:
+
+link:https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html["Tutorial: Delegar acesso em contas da AWS usando funções do IAM"]
+
+link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_aws-accounts.html["Configuração da AWS: Fornecendo acesso a um usuário do IAM em outra conta da AWS que você possui"]
+
+link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["Criando uma função para delegar permissões a um usuário do IAM"]
+
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

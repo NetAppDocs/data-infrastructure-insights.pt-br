@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: concept_anomaly_detection.html 
+keywords: Anomalies, anomaly, patterns, monitor, alert 
+summary: Monitore métricas para anomalias 
+---
+= Monitores de deteção de anomalias
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:toclevels: 1
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+A detecção de anomalias fornece informações sobre alterações inesperadas nos padrões de dados no seu ambiente. Uma anomalia ocorre quando o padrão de comportamento de um objeto muda em seu ambiente, por exemplo, se um objeto experimenta um certo nível de latência em um determinado momento às quartas-feiras, mas picos de latência acima desse nível naquela época na quarta-feira seguinte, esse pico seria considerado uma anomalia. O Data Infrastructure Insights permite a criação de monitores para alertar quando ocorrem anomalias como essa.
+
+A detecção de anomalias é adequada para métricas de objetos que exibem um padrão recorrente e previsível. Quando essas métricas de objeto aumentam acima ou caem abaixo de seus níveis esperados, o Data Infrastructure Insights pode gerar um alerta para uma investigação imediata.
+
+image:anomaly_detection_expert_view.png["gráfico mostrando anomalia detetada"]
+
+
+
+== O que é detecção de anomalias?
+
+Uma anomalia ocorre quando o valor médio de uma métrica é um número de desvios padrão longe da média ponderada dessa métrica para as semanas anteriores, com semanas recentes tendo mais peso do que as semanas anteriores. O Data Infrastructure Insights permite monitorar dados e alertas quando anomalias são detetadas. Você tem a opção de definir os níveis de "sensibilidade" de deteção. Por exemplo, uma sensibilidade maior seria quando o valor médio é menos desvios padrão da média, causando mais alertas a serem gerados. Por outro lado, menor sensibilidade: Mais desvios padrão da média: Menos alertas.
+
+
+
+=== A monitorização da deteção de anomalias difere da monitorização de limites.
+
+* *O monitoramento baseado em limites* funciona quando você tem limites predefinidos para métricas específicas. Em outras palavras, quando você tem uma compreensão clara do que é esperado (ou seja, dentro de um intervalo normal).
+
+
+image:MetricMonitor_blurb.png["Os monitores métricos são para quando você sabe o intervalo de operação"]
+
+* *O monitoramento de deteção de anomalias* usa algoritmos de aprendizado de máquina para identificar outliers que se desviam da norma, para quando a definição de "normal" não está clara.
+
+
+image:ADMonitor_blurb.png["Os monitores de deteção de anomalias são para quando você quer saber picos ou quedas"]
+
+
+
+== Quando eu precisaria de deteção de anomalias?
+
+O monitoramento de detecção de anomalias pode fornecer alertas úteis para muitas situações, incluindo:
+
+* Quando a definição de _normal_ não está clara. Por exemplo, as taxas de erro SAN podem ser esperadas em quantidades variáveis, dependendo da porta. Alertar sobre um erro é barulhento e desnecessário, mas um aumento súbito ou significativo pode indicar um problema generalizado.
+* Onde há mudanças ao longo do tempo. Cargas de trabalho que exibem sazonalidade (ou seja, estão ocupadas ou silenciadas em determinados momentos). Isso pode incluir períodos de silêncio inesperados que podem indicar uma parada de lote.
+* Trabalhar com grandes quantidades de dados onde definir e ajustar manualmente os limiares é impraticável. Por exemplo, um ambiente com um grande número de hosts e/ou volumes com workloads diferentes. Cada um pode ter SLAs diferentes, então entender os que excedem a norma é importante.
+
+
+
+
+== Criando um monitor de deteção de anomalias
+
+Para alertar sobre anomalias, crie um monitor navegando até *observabilidade > Alertas > Monitor*. Selecione _Anomaly Detection Monitor_ como o tipo de monitor.
+
+image:AnomalyDetectionMonitorChoice.png["Selecionando detecção de anomalias ao criar um monitor, largura de 480 mm"]
+
+Escolha o objeto e a métrica que você deseja monitorar. Você pode definir filtros e agrupamento como com outros tipos de monitores.
+
+Em seguida, defina as condições para o monitor.
+
+* Acione um alerta quando a métrica selecionada for _Spikes acima dos limites previstos, _drops abaixo desses limites, ou ambos.
+* Defina a sensibilidade para _Medium_, _Low_ (menos anomalias são detetadas) ou _High_ (mais anomalias são detetadas).
+* Determine se o nível de alerta é _Critical_ ou _Warning_.
+* Opcionalmente, defina um valor abaixo do qual anomalias são _ignoradas_. Isto pode ajudar a reduzir o ruído. Este valor é mostrado como uma linha tracejada no gráfico de amostra.
+
+
+image:AnomalyDetectionMonitorConditions.png["Definir condições para o monitor de deteção de anomalias"]
+
+Finalmente, você pode configurar um método de entrega para os alertas (e-mail, webhook ou ambos), dar ao monitor uma descrição opcional ou ações corretivas e adicionar o monitor a um grupo personalizado, se desejado.
+
+Salve o monitor com um nome significativo e pronto.
+
+Após a criação, o monitor analisa dados da semana anterior para estabelecer uma linha de base inicial. A deteção de anomalias torna-se mais precisa à medida que o tempo passa e mais histórico ocorre.
+
+
+
+== Visualização das anomalias
+
+Em uma Landing page de alerta, os alertas acionados quando as anomalias são detetadas mostrarão uma banda destacada no gráfico, desde o momento em que a métrica subiu fora dos limites previstos até quando ela foi movida de volta para dentro desses limites.
+
+image:Anomaly_Detection_Chart_Example_Expert_View.png["Gráfico mostrando a hora em que ocorreu uma anomalia"]
+
+Ao visualizar um gráfico de anomalias em uma página inicial de alerta, você pode escolher as seguintes opções:
+
+* Tendência semanal: Compare valores com a mesma hora, mesmo dia nas semanas anteriores, por até 5 semanas anteriores.
+* Limites completos de anomalias: Por padrão, o gráfico se concentra no valor da métrica para que você possa analisar melhor o comportamento da métrica. Selecione para mostrar limites de anomalia completos (valor máximo, etc.)
+
+
+Você também pode visualizar objetos que contribuíram para a anomalia selecionando-os na visualização especializada da página de destino. O gráfico mostrará o comportamento dos objetos selecionados.
+
+image:Anomaly_Detection_Contributing_Objects.png["gráficos de objetos que contribuem para a anomalia"]

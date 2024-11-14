@@ -1,0 +1,478 @@
+---
+sidebar: sidebar 
+permalink: task_config_telegraf_agent.html 
+keywords: telegraf, agent, telegraf agent 
+summary: O Data Infrastructure Insights oferece suporte à Telegraf como seu agente para coleta de dados de integração e pode ser configurado no Windows ou Linux. 
+---
+= Configurando um agente para coletar dados (Windows/Linux)
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa link:https://docs.influxdata.com/telegraf["Telegraf"] como seu agente para a coleta de dados de integração. Telegraf é um agente de servidor baseado em plugins que pode ser usado para coletar e relatar métricas, eventos e logs. Plugins de entrada são usados para coletar as informações desejadas no agente acessando o sistema/os diretamente, chamando APIs de terceiros ou ouvindo fluxos configurados (ou seja, Kafka, statsD, etc). Os plugins de saída são usados para enviar as métricas, eventos e logs coletados do agente para o Data Infrastructure Insights.
+
+A versão atual do Telegraf para Data Infrastructure Insights é *1.24.0*.
+
+Para obter informações sobre como instalar no Kubernetes, consulte a link:task_config_telegraf_agent_k8s.html["Operador de monitoramento do Kubernetes do NetApp"]página.
+
+
+NOTE: Para uma auditoria precisa e relatórios de dados, é altamente recomendável sincronizar a hora na máquina do agente usando *Network Time Protocol (NTP)* ou *Simple Network Time Protocol (SNTP)*.
+
+
+NOTE: Se você quiser verificar os arquivos de instalação antes de instalar o Agente, consulte a seção abaixo em <<Verificando somas de verificação>>.
+
+
+
+== Instalando um agente
+
+Se você estiver instalando um coletor de dados de serviço e ainda não tiver configurado um agente, será solicitado que você instale primeiro um agente para o sistema operacional apropriado. Este tópico fornece instruções para instalar o agente Telegraf nos seguintes sistemas operacionais:
+
+* <<Windows>>
+* <<RHEL e CentOS>>
+* <<Ubuntu e Debian>>
+
+
+Para instalar um agente, independentemente da plataforma que você estiver usando, primeiro faça o seguinte:
+
+. Faça login no host que você usará para seu agente.
+. Faça login no seu ambiente Data Infrastructure Insights e navegue até *Observability > Collectors*.
+. Clique em * Data Collector* e escolha um coletor de dados para instalar.
+. Escolha a plataforma apropriada para o seu host (Windows, Linux)
+. Siga as etapas restantes para cada plataforma.
+
+
+
+NOTE: Depois de instalar um agente em um host, você não precisa instalar um agente novamente nesse host.
+
+
+TIP: Depois de instalar um agente em um servidor/VM, o Data Infrastructure Insights coleta métricas desse sistema, além de coletar de qualquer coletor de dados que você configurar. Essas métricas são reunidas como link:task_config_telegraf_node.html["Métricas de "nó""].
+
+
+NOTE: Se você estiver usando um proxy, leia as instruções de proxy da sua plataforma antes de instalar o agente Telegraf.
+
+
+
+=== Locais de registo
+
+As mensagens de log do Telegraf são redirecionadas do stdout para os seguintes arquivos de log são padrão:
+
+* RHEL/CentOS: /Var/log/telegraf/telegraf.log
+* Ubuntu/Debian: /Var/log/telegraf/telegraf.log
+* Windows: C: Arquivos de programas / telegraf / telegraf.log
+
+
+
+
+=== Windows
+
+
+
+==== Pré-requisitos:
+
+* O PowerShell deve ser instalado
+* Se você estiver atrás de um proxy, siga as instruções na seção *Configurando o suporte Proxy para Windows*.
+
+
+
+
+==== Configurando o suporte Proxy para Windows
+
+
+NOTE: Se o seu ambiente usar um proxy, leia esta seção antes de instalar.
+
+
+NOTE: As etapas abaixo descrevem as ações necessárias para definir as variáveis de ambiente _http_proxy/https_proxy_. Para alguns ambientes proxy, os usuários também podem precisar definir a variável _no_proxy environment_.
+
+Para sistemas que residem atrás de um proxy, execute o seguinte para definir a(s) variável(s) de ambiente _https_proxy_ e/ou _http_proxy_ *ANTES* para instalar o agente Telegraf:
+
+ [System.Environment]::SetEnvironmentVariable(“https_proxy”, “<proxy_server>:<proxy_port>”, [System.EnvironmentVariableTarget]::Machine)
+
+
+==== Instalando o agente
+
+image:AgentInstallWindows.png["Instalação do Windows Agent"]
+
+.Etapas para instalar o agente no Windows:
+. Escolha uma chave de acesso ao agente.
+. Copie o bloco de comandos da caixa de diálogo de instalação do agente. Você pode clicar no ícone da área de transferência para copiar rapidamente o comando para a área de transferência.
+. Abra uma janela do PowerShell
+. Cole o comando na janela do PowerShell e pressione Enter.
+. O comando fará o download do instalador do agente apropriado, instalá-lo e definirá uma configuração padrão. Quando terminar, ele reiniciará o serviço do agente. O comando tem uma chave única e é válido por 24 horas.
+. Clique em *Finish* ou *Continue*
+
+
+Depois que o agente estiver instalado, você poderá usar os seguintes comandos para iniciar/parar o serviço:
+
+....
+Start-Service telegraf
+Stop-Service telegraf
+....
+
+
+==== Desinstalar o agente
+
+Para desinstalar o agente no Windows, faça o seguinte em uma janela do PowerShell:
+
+. Parar e eliminar o serviço Telegraf:
++
+....
+Stop-Service telegraf
+sc.exe delete telegraf
+....
+. Remova o certificado da trustore:
++
+....
+cd Cert:\CurrentUser\Root
+//rm E5FB7B68C08B1CA902708584C274F8EFC7BE8ABC
+rm 1A918038E8E127BB5C87A202DF173B97A05B4996
+....
+. Exclua a pasta _C: /Program Files/telegraf_ para remover os arquivos binários, logs e configurações
+. Remova a chave _SYSTEM_CurrentControlSet/Services/EventLog/Application/telegraf_ do Registro
+
+
+
+
+==== Atualizando o agente
+
+Para atualizar o agente telegraf, faça o seguinte:
+
+. Parar e eliminar o serviço telegraf:
++
+....
+Stop-Service telegraf
+sc.exe delete telegraf
+....
+. Exclua a chave _SYSTEM_CurrentControlSet/Services/EventLog/Application/telegraf_ do Registro
+. Excluir arquivos _C
+. Excluir arquivos _C
+. link:#windows["Instale o novo agente"].
+
+
+
+
+=== RHEL e CentOS
+
+
+
+==== Pré-requisitos:
+
+* Os seguintes comandos devem estar disponíveis: Curl, sudo, ping, sha256sum, openssl e dmidecode
+* Se você estiver atrás de um proxy, siga as instruções na seção *Configurando o suporte Proxy para RHEL/CentOS*.
+
+
+
+
+==== Configurando o suporte de proxy para RHEL/CentOS
+
+
+NOTE: Se o seu ambiente usar um proxy, leia esta seção antes de instalar.
+
+
+NOTE: As etapas abaixo descrevem as ações necessárias para definir as variáveis de ambiente _http_proxy/https_proxy_. Para alguns ambientes proxy, os usuários também podem precisar definir a variável _no_proxy environment_.
+
+Para sistemas que residem atrás de um proxy, execute as seguintes etapas *ANTES* para instalar o agente Telegraf:
+
+. Defina a(s) variável(s) de ambiente _https_proxy_ e/ou _http_proxy_ para o usuário atual:
++
+ export https_proxy=<proxy_server>:<proxy_port>
+. Crie _/etc/default/telegraf_ e insira definições para as variáveis _https_proxy_ e/ou _http_proxy_:
++
+ https_proxy=<proxy_server>:<proxy_port>
+
+
+
+
+==== Instalando o agente
+
+image:Agent_Requirements_Rhel.png["Instalação do agente RHEL/CentOS"]
+
+.Etapas para instalar o agente no RHEL/CentOS:
+. Escolha uma chave de acesso ao agente.
+. Copie o bloco de comandos da caixa de diálogo de instalação do agente. Você pode clicar no ícone da área de transferência para copiar rapidamente o comando para a área de transferência.
+. Abra uma janela Bash
+. Cole o comando na janela Bash e pressione Enter.
+. O comando fará o download do instalador do agente apropriado, instalá-lo e definirá uma configuração padrão. Quando terminar, ele reiniciará o serviço do agente. O comando tem uma chave única e é válido por 24 horas.
+. Clique em *Finish* ou *Continue*
+
+
+Depois que o agente estiver instalado, você poderá usar os seguintes comandos para iniciar/parar o serviço:
+
+Se o sistema operacional estiver usando systemd (CentOS 7 e RHEL 7):
+
+....
+sudo systemctl start telegraf
+sudo systemctl stop telegraf
+....
+Se o sistema operacional não estiver usando systemd (CentOS 7 e RHEL 7):
+
+....
+sudo service telegraf start
+sudo service telegraf stop
+....
+
+
+==== Desinstalar o agente
+
+Para desinstalar o agente no RHEL/CentOS, em um terminal Bash, faça o seguinte:
+
+. Pare o serviço Telegraf:
++
+....
+systemctl stop telegraf (If your operating system is using systemd (CentOS 7+ and RHEL 7+)
+/etc/init.d/telegraf stop (for systems without systemd support)
+....
+. Remova o agente Telegraf:
++
+ yum remove telegraf
+. Remova qualquer configuração ou arquivos de log que possam ser deixados para trás:
++
+....
+rm -rf /etc/telegraf*
+rm -rf /var/log/telegraf*
+....
+
+
+
+
+==== Atualizando o agente
+
+Para atualizar o agente telegraf, faça o seguinte:
+
+. Pare o serviço telegraf:
++
+....
+systemctl stop telegraf (If your operating system is using systemd (CentOS 7+ and RHEL 7+)
+/etc/init.d/telegraf stop (for systems without systemd support)
+....
+. Remova o agente telegraf anterior:
++
+ yum remove telegraf
+. link:#rhel-and-centos["Instale o novo agente"].
+
+
+
+
+=== Ubuntu e Debian
+
+
+
+==== Pré-requisitos:
+
+* Os seguintes comandos devem estar disponíveis: Curl, sudo, ping, sha256sum, openssl e dmidecode
+* Se você está atrás de um proxy, você deve seguir as instruções na seção *Configurando o suporte Proxy para Ubuntu/Debian*.
+
+
+
+
+==== Configurando o suporte Proxy para Ubuntu/Debian
+
+
+NOTE: Se o seu ambiente usar um proxy, leia esta seção antes de instalar.
+
+
+NOTE: As etapas abaixo descrevem as ações necessárias para definir as variáveis de ambiente _http_proxy/https_proxy_. Para alguns ambientes proxy, os usuários também podem precisar definir a variável _no_proxy environment_.
+
+Para sistemas que residem atrás de um proxy, execute as seguintes etapas *ANTES* para instalar o agente Telegraf:
+
+. Defina a(s) variável(s) de ambiente _https_proxy_ e/ou _http_proxy_ para o usuário atual:
++
+ export https_proxy=<proxy_server>:<proxy_port>
+. Crie /etc/default/telegraf e insira definições para as variáveis _https_proxy_ e/ou _http_proxy_:
++
+ https_proxy=<proxy_server>:<proxy_port>
+
+
+
+
+==== Instalando o agente
+
+image:Agent_Requirements_Ubuntu.png["Instalação do Agente Ubuntu/Debian"]
+
+.Passos para instalar o agente no Debian ou Ubuntu:
+. Escolha uma chave de acesso ao agente.
+. Copie o bloco de comandos da caixa de diálogo de instalação do agente. Você pode clicar no ícone da área de transferência para copiar rapidamente o comando para a área de transferência.
+. Abra uma janela Bash
+. Cole o comando na janela Bash e pressione Enter.
+. O comando fará o download do instalador do agente apropriado, instalá-lo e definirá uma configuração padrão. Quando terminar, ele reiniciará o serviço do agente. O comando tem uma chave única e é válido por 24 horas.
+. Clique em *Finish* ou *Continue*
+
+
+Depois que o agente estiver instalado, você poderá usar os seguintes comandos para iniciar/parar o serviço:
+
+Se o seu sistema operacional estiver usando systemd:
+
+....
+sudo systemctl start telegraf
+sudo systemctl stop telegraf
+....
+Se o seu sistema operacional não estiver usando systemd:
+
+....
+sudo service telegraf start
+sudo service telegraf stop
+....
+
+
+==== Desinstalar o agente
+
+Para desinstalar o agente no Ubuntu/Debian, em um terminal Bash, execute o seguinte:
+
+. Pare o serviço Telegraf:
++
+....
+systemctl stop telegraf (If your operating system is using systemd)
+/etc/init.d/telegraf stop (for systems without systemd support)
+....
+. Remova o agente Telegraf:
++
+ dpkg -r telegraf
+. Remova qualquer configuração ou arquivos de log que possam ser deixados para trás:
++
+....
+rm -rf /etc/telegraf*
+rm -rf /var/log/telegraf*
+....
+
+
+
+
+==== Atualizando o agente
+
+Para atualizar o agente telegraf, faça o seguinte:
+
+. Pare o serviço telegraf:
++
+....
+systemctl stop telegraf (If your operating system is using systemd)
+/etc/init.d/telegraf stop (for systems without systemd support)
+....
+. Remova o agente telegraf anterior:
++
+ dpkg -r telegraf
+. link:#ubuntu-and-debian["Instale o novo agente"].
+
+
+
+
+== Verificando somas de verificação
+
+O instalador do agente Data Infrastructure Insights executa verificações de integridade, mas alguns usuários podem querer executar suas próprias verificações antes de instalar ou aplicar artefatos baixados. Isso pode ser feito baixando o instalador e gerando uma soma de verificação para o pacote baixado e comparando a soma de verificação com o valor mostrado nas instruções de instalação.
+
+
+
+=== Baixe o pacote de instalação sem instalar
+
+Para executar uma operação somente de download (em oposição ao download-e-install padrão), os usuários podem editar o comando de instalação do agente obtido a partir da interface do usuário e remover a opção "install".
+
+Siga estes passos:
+
+. Copie o snippet do Agent Installer como indicado.
+. Em vez de colar o snippet em uma janela de comando, cole-o em um editor de texto.
+. Remova o comando "--install" (Linux) ou "-install" (Windows).
+. Copie o comando inteiro do editor de texto.
+. Agora cole-o em sua janela de comando (em um diretório de trabalho) e execute-o.
+
+
+Não Windows (estes exemplos são para o Kubernetes; os nomes de script reais podem variar):
+
+* Transferir e instalar (predefinição):
++
+ installerName=cloudinsights-kubernetes.sh … && sudo -E -H ./$installerName --download –-install
+* Apenas transferência:
++
+ installerName=cloudinsights-kubernetes.sh … && sudo -E -H ./$installerName --download
+
+
+Windows:
+
+* Transferir e instalar (predefinição):
++
+ !$($installerName=".\cloudinsights-windows.ps1") … -and $(&$installerName -download -install)
+* Apenas transferência:
++
+ !$($installerName=".\cloudinsights-windows.ps1") … -and $(&$installerName -download)
+
+
+O comando somente download fará o download de todos os artefatos necessários do Data Infrastructure Insights para o diretório de trabalho. Os artefactos incluem, mas podem não estar limitados a:
+
+* um script de instalação
+* um arquivo de ambiente
+* Ficheiros YAML
+* um arquivo de checksum (terminando em sha256.signed ou sha256.ps1)
+
+
+O script de instalação, o arquivo de ambiente e os arquivos YAML podem ser verificados usando a inspeção visual.
+
+
+
+=== Gerar valor de soma de verificação
+
+Para gerar o valor da soma de verificação, execute o seguinte comando para sua plataforma apropriada:
+
+* RHEL/Ubuntu:
++
+ sha256sum <package_name>
+* Windows:
++
+ Get-FileHash telegraf.zip -Algorithm SHA256 | Format-List
+
+
+
+
+=== Verifique a soma de verificação
+
+Extraia o checksum esperado do arquivo checksum
+
+* Não janelas:
++
+ openssl smime -verify -in telegraf*.sha256.signed -CAfile netapp_cert.pem -purpose any -nosigs -noverify
+* Windows:
++
+ (Get-Content telegraf.zip.sha256.ps1 -First 1).toUpper()
+
+
+
+
+=== Instale o pacote transferido
+
+Uma vez que todos os artefatos tenham sido verificados satisfatoriamente, a instalação do agente pode ser iniciada executando:
+
+Não janelas:
+
+ sudo -E -H ./<installation_script_name> --install
+Windows:
+
+ .\cloudinsights-windows.ps1 -install
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas para configurar um agente:
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Depois de configurar um novo plugin e reiniciar o Telegraf, o Telegraf não consegue iniciar. Os logs indicam que um erro semelhante ao seguinte: "[telegraf] erro ao executar agente: Erro ao carregar arquivo de configuração /etc/telegraf/telegraf.d/cloudinsights-default.conf: Plugin outputs.http: Line <linenumber>: Configuration especificou os campos ["use_system_proxy"], mas eles não foram usados" | A versão instalada do Telegraf está desatualizada. Siga as etapas nesta página para *Atualizar o Agente* para sua plataforma apropriada. 
+
+
+| Eu executei o script do instalador em uma instalação antiga e agora o agente não está enviando dados | Desinstale o agente telegraf e execute novamente o script de instalação. Siga as etapas *Upgrade the Agent* nesta página para sua plataforma apropriada. 
+
+
+| Já instalei um agente usando o Data Infrastructure Insights | Se você já tiver instalado um agente em seu host/VM, não será necessário instalar o agente novamente. Nesse caso, basta escolher a Plataforma e chave apropriadas na tela Instalação do Agente e clicar em *continuar* ou *concluir*. 
+
+
+| Já tenho um agente instalado, mas não usando o instalador Data Infrastructure Insights | Remova o agente anterior e execute a instalação do Data Infrastructure Insights Agent para garantir as configurações padrão adequadas do arquivo de configuração. Quando terminar, clique em *continuar* ou *concluir*. 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

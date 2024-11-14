@@ -1,0 +1,173 @@
+---
+sidebar: sidebar 
+permalink: task_dc_brocade_fc_switch.html 
+keywords: data collector, Brocade, FC switch, 
+summary: Configurando o coletor de dados dos switches Brocade FC. 
+---
+= Coletor de dados do switch Brocade FC
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Insights de infraestrutura de dados usa a fonte de dados do switch FC Brocade (SSH) para descobrir o inventário de dispositivos de switch Brocade ou rebranded que executam o firmware do sistema operacional fatorado (FOS) 4,2 e posterior. Os dispositivos nos modos de switch FC e Gateway de acesso são suportados.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do switch Brocade FC. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Interrutor | Interrutor 
+
+
+| Porta | Porta 
+
+
+| Malha virtual, malha física | Malha 
+
+
+| Zona | Zona 
+
+
+| Comutador lógico | Comutador lógico 
+
+
+| Volume virtual | Volume 
+
+
+| Zona LSAN | Zona IVR 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* A Unidade de aquisição de informações de infraestrutura de dados (AU) iniciará conexões com a porta TCP 22 nos switches Brocade para coletar dados de inventário. A AU também iniciará conexões com a porta UDP 161 para coleta de dados de desempenho.
+* Deve haver conectividade IP para todos os switches na malha. Se você selecionar a caixa de seleção descobrir todos os switches na malha, o Data Infrastructure Insights identificará todos os switches da malha. No entanto, ela precisará de conectividade IP com esses switches adicionais para detectá-los.
+* Globalmente, a mesma conta é necessária em todos os switches da malha. Você pode usar PuTTY (emulador de terminal de código aberto) para confirmar o acesso.
+* As portas 161 e 162 devem estar abertas para todos os switches na malha para polling de desempenho SNMP.
+* Cadeia de Comunidade somente leitura SNMP
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| IP do switch | Endereço IP ou nome de domínio totalmente qualificado do servidor EFC 
+
+
+| Nome de utilizador | Nome de utilizador do comutador 
+
+
+| Palavra-passe | Palavra-passe para o interrutor 
+
+
+| SNMP | Versão SNMP 
+
+
+| SNMP Community String | String de comunidade SNMP somente leitura usada para acessar o switch 
+
+
+| Nome de utilizador SNMP | Nome de utilizador SNMP 
+
+
+| Palavra-passe SNMP | Palavra-passe SNMP 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Nome da malha | Nome do tecido a ser informado pelo coletor de dados. Deixe em branco para relatar o nome da tela como WWN. 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. A predefinição é 15. 
+
+
+| Dispositivos excluídos | Lista separada por vírgulas de IDs de dispositivo a excluir da sondagem 
+
+
+| Domínios Admin ativos | Selecione se estiver usando domínios Admin 
+
+
+| Recuperar dados MPR | Selecione para adquirir dados de roteamento do roteador multiprotocolo. 
+
+
+| Ativar trapping | Selecione para ativar a aquisição ao receber uma trap SNMP do dispositivo. Se você selecionar Ativar trapping, você também deve ativar o SNMP. 
+
+
+| Tempo mínimo entre armadilhas (seg) | Tempo mínimo entre tentativas de aquisição desencadeadas por armadilhas. A predefinição é 10. 
+
+
+| Descubra todos os switches na malha | Selecione para descobrir todos os switches na malha 
+
+
+| Escolha favorecendo HBA vs. Aliases de zona | Escolha se prefere HBA ou aliases de zona 
+
+
+| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. A predefinição é 300. 
+
+
+| Protocolo Auth SNMP | Protocolo de autenticação SNMP (apenas SNMP v3) 
+
+
+| Palavra-passe de privacidade SNMP | Palavra-passe de privacidade SNMP (apenas SNMP v3) 
+
+
+| Geometrias SNMP | Número de tentativas de tentativa SNMP 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| A aquisição de inventário da fonte de dados Brocade falha com o erro: <date> <time> ERROR [com.onaro.SANscreen.acquisition.framework.datasource.BaseDataSource] erro 2 de 2: <datasource name> [erro interno] - não é possível gerar o modelo para <IP> de dispositivo. Erro ao detetar prompt ([Nome do dispositivo <name>]: Não é possível gerar o modelo para o <IP> do dispositivo. Aviso de deteção de erro) | O problema pode ser causado quando o switch Brocade leva muito tempo para retornar com um prompt, excedendo o tempo limite padrão de 5 segundos. Nas configurações de Configuração Avançada do coletor de dados em Insights de infraestrutura de dados, tente aumentar o tempo limite de espera da faixa _SSH (seg)_ para um valor mais alto. 
+
+
+| Erro: "Dados Infrastructure Insights receberam função de chassi inválida" | Verifique se o usuário configurado nesta fonte de dados recebeu a permissão de função de chassi. 
+
+
+| Erro: "Endereço IP do chassis incorreto" | Altere a configuração da fonte de dados para usar o endereço IP do chassi. 
+
+
+| Receba uma mensagem informando que mais de 1 nó está conetado à porta do Gateway de acesso | Verifique se o dispositivo NPV está funcionando corretamente e se todas as WWNs conetadas são esperadas. Não adquira diretamente o dispositivo NPV. Em vez disso, a aquisição do switch de malha central coletará os dados do dispositivo NPV. 
+
+
+| A coleção de desempenho falha com "tempo limite durante o envio de solicitação SNMP". | Dependendo das variáveis de consulta e da configuração do switch, algumas consultas podem exceder o tempo limite padrão. link:https://kb.netapp.com/Cloud/BlueXP/Cloud_Insights/Cloud_Insight_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["Saiba mais"]. 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

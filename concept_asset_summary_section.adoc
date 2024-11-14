@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: concept_asset_summary_section.html 
+summary: Visão geral da seção Resumo da página de ativos em Insights de infraestrutura de dados. 
+keywords: asset, summary, landing page, topology, auto, refresh 
+---
+= Seção Resumo da página de ativos
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+A seção Resumo de uma página de ativo exibe informações gerais sobre um ativo, incluindo se alguma métrica ou políticas de desempenho são motivo de preocupação. As áreas problemáticas potenciais são indicadas por um círculo vermelho.
+
+As informações na seção de resumo, bem como em quaisquer tabelas ou widgets personalizados na página de ativos, são atualizadas automaticamente com base no intervalo de tempo selecionado. Você pode ver a taxa de atualização atual no canto superior direito da seção Resumo, as tabelas e quaisquer widgets personalizados.
+
+image:Summary_Section_Example.png["Exemplo de uma seção de resumo da página de destino"]
+
+Observação: As informações exibidas na seção Resumo variam, dependendo do tipo de ativo que você está visualizando.
+
+Você pode clicar em qualquer um dos links de ativos para exibir suas páginas de ativos. Por exemplo, se você estiver exibindo um nó de armazenamento, poderá clicar em um link para exibir a página de ativos do armazenamento ao qual está associado.
+
+Você pode visualizar as métricas associadas ao ativo. Um círculo vermelho ao lado de uma métrica indica que você pode precisar diagnosticar e resolver possíveis problemas.
+
+
+NOTE: Você pode notar que a capacidade de volume pode mostrar mais de 100% em alguns ativos de storage. Isso se deve aos metadados relacionados à capacidade do volume fazer parte dos dados de capacidade consumida reportados pelo ativo.
+
+Se aplicável, você pode clicar em um link de alerta para exibir o alerta e o monitor associados ao ativo.
+
+
+
+== Topologia
+
+Em determinadas páginas de ativos, a seção de resumo contém um link para visualizar a topologia do ativo e suas conexões.
+
+A topologia está disponível para os seguintes tipos de ativos:
+
+* Aplicação
+* Disco
+* Malha
+* Host
+* Volume interno
+* Porta
+* Interrutor
+* Máquina virtual
+* VMDK
+* Volume
+
+
+image:TopologyExample.png["Exemplo de uma seção de topologia de página de destino"]

@@ -1,0 +1,184 @@
+---
+sidebar: sidebar 
+permalink: reporting_predefined_reports.html 
+summary: Visão geral dos relatórios predefinidos 
+keywords: reporting, cognos, data warehouse, dwh, pre-defined 
+---
+= Relatórios predefinidos facilitados
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights Reporting inclui relatórios predefinidos que atendem a vários requisitos comuns de relatórios, fornecendo insights críticos de que as partes interessadas precisam para tomar decisões informadas sobre sua infraestrutura de storage.
+
+
+NOTE: O recurso relatórios está disponível no Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html["Edição Premium"].
+
+Você pode gerar relatórios predefinidos a partir do Data Infrastructure Insights Reporting Portal, enviá-los por e-mail para outros usuários e até modificá-los. Vários relatórios permitem que você filtre por dispositivo, entidade de negócios ou nível. As ferramentas de relatórios usam o IBM Cognos como base e oferecem muitas opções de apresentação de dados.
+
+Os relatórios predefinidos mostram seus dados de inventário, capacidade de storage, chargeback, performance, eficiência de storage e custos de nuvem. Você pode modificar esses relatórios predefinidos e salvar suas modificações.
+
+Você pode gerar relatórios em vários formatos, incluindo HTML, PDF, CSV, XML e Excel.
+
+
+
+== Navegar para relatórios predefinidos
+
+Quando você abre o Portal de relatórios, a pasta _conteúdo da equipe_ é o ponto de partida para selecionar o tipo de informação que você precisa nos relatórios Insights da infraestrutura de dados.
+
+. No painel de navegação à esquerda, selecione *Content > Team Content*.
+. Selecione *relatórios* para acessar os relatórios predefinidos.
+
+
+image:Reporting_Menu.png["Menu de relatórios"] image:Reporting_Team_Content.png["Conteúdo da equipe mostrando relatórios destacados"]
+
+
+
+== Usando relatórios predefinidos para responder perguntas comuns
+
+Os seguintes relatórios predefinidos estão disponíveis em *conteúdo da equipe > relatórios*.
+
+
+
+=== Capacidade e desempenho do nível de serviço de aplicações
+
+O relatório capacidade e desempenho do nível de Serviço do aplicativo fornece uma visão geral de alto nível de seus aplicativos. Você pode usar essas informações para Planejamento de capacidade ou para um plano de migração.
+
+
+
+=== Chargeback
+
+O relatório Chargeback fornece informações de chargeback de capacidade de storage e responsabilidade por hosts, aplicações e entidades empresariais, além de incluir dados atuais e históricos.
+
+Para evitar a contagem dupla não inclua servidores ESX, monitore apenas as VMs.
+
+
+
+=== Fontes de dados
+
+O relatório fontes de dados mostra todas as fontes de dados que estão instaladas no seu site, o status da fonte de dados (sucesso/falha) e as mensagens de status. O relatório fornece informações sobre onde começar a solucionar problemas de fontes de dados. As fontes de dados falhadas afetam a precisão do relatório e a usabilidade geral do produto.
+
+
+
+=== Desempenho do ESX vs VM
+
+O relatório de desempenho do ESX vs VM fornece uma comparação entre servidores ESX e VMs, mostrando IOPs médios e de pico, taxa de transferência e latência e utilizações para servidores e VMs ESX. Para evitar a contagem dupla, exclua os servidores ESX; inclua somente as VMs. Uma versão atualizada deste relatório está disponível no repositório de automação do storage da NetApp.
+
+
+
+=== Resumo da malha
+
+O relatório Resumo da malha identifica informações de switches e switches, incluindo contagens de portas, versões de firmware e status da licença. O relatório não inclui portas de comutação NPV.
+
+
+
+=== HBAs de host
+
+O relatório HBAs do host fornece uma visão geral dos hosts no ambiente e fornece a versão do fornecedor, modelo e firmware dos HBAs e o nível de firmware dos switches aos quais estão conetados. Este relatório pode ser usado para analisar a compatibilidade do firmware ao Planejar uma atualização de firmware para um switch ou HBA.
+
+
+
+=== Capacidade e desempenho do nível de serviço de host
+
+O relatório capacidade e desempenho de nível de serviço do host fornece uma visão geral da utilização do storage por host para aplicativos somente de bloco.
+
+
+
+=== Resumo do host
+
+O relatório Resumo do host fornece uma visão geral da utilização do storage por cada host selecionado com informações para hosts Fibre Channel e iSCSI. O relatório permite comparar portas e caminhos, a capacidade de Fibre Channel e ISCSI e contagens de violações.
+
+
+
+=== Detalhes da licença
+
+O relatório Detalhes da licença mostra a quantidade de recursos para os quais você está licenciado em todos os sites com licenças ativas. O relatório também mostra uma soma da quantidade real em todos os sites com licenças ativas. A soma pode incluir sobreposições de matrizes de armazenamento geridas por vários servidores.
+
+
+
+=== Volumes mapeados, mas não mascarados
+
+O relatório volumes mapeados, mas não mascarados, lista os volumes cujo número de unidade lógica (LUN) foi mapeado para uso por um host específico, mas não está mascarado para esse host. Em alguns casos, esses LUNs podem ser desativados que foram desmascarados. Volumes desmascarados podem ser acessados por qualquer host, tornando-os vulneráveis à corrupção de dados.
+
+
+
+=== Capacidade e performance do NetApp
+
+O relatório capacidade e desempenho do NetApp fornece dados globais para capacidade alocada, utilizada e comprometida com dados de tendências e desempenho para a capacidade do NetApp.
+
+
+
+=== Cartão de pontuação
+
+O relatório do Scorecard fornece um resumo e o status geral de todos os ativos adquiridos pelo Data Infrastructure Insights. O estado é indicado com sinalizadores verde, amarelo e vermelho:
+
+* Verde indica a condição normal
+* Amarelo indica um problema potencial no ambiente
+* Vermelho indica um problema que requer atenção
+
+
+Todos os campos do relatório são descritos no Dicionário de dados fornecido com o relatório.
+
+
+
+=== Resumo de armazenamento
+
+O relatório Resumo do storage fornece um resumo global dos dados de capacidade usados e não utilizados para volumes e pools de storage brutos, alocados. Este relatório fornece uma visão geral de todo o armazenamento descoberto.
+
+
+
+=== Capacidade e performance de VM
+
+Descreve o ambiente de máquina virtual (VM) e seu uso de capacidade. As ferramentas de VM devem estar habilitadas para visualizar alguns dados, como quando as VMs foram desativadas.
+
+
+
+=== Caminhos de VM
+
+O relatório de caminhos de VM fornece dados de capacidade de armazenamento de dados e métricas de desempenho para as quais a máquina virtual está sendo executada em qual host, quais hosts estão acessando quais volumes compartilhados, qual é o caminho de acesso ativo e o que compreende alocação e uso de capacidade.
+
+
+
+=== Capacidade do HDS por thin Pool
+
+O relatório capacidade do HDS por thin Pool mostra a quantidade de capacidade utilizável em um pool de storage que é thin Provisioning.
+
+
+
+=== Capacidade de NetApp por agregado
+
+O relatório capacidade por agregado do NetApp mostra o total bruto, total, usado, disponível e comprometido dos agregados.
+
+
+
+=== Symmetrix capacidade por thick Array
+
+O relatório Symmetrix Capacity by Thick Array mostra capacidade bruta, capacidade utilizável, capacidade livre, mapeada, mascarada e capacidade livre total.
+
+
+
+=== Symmetrix capacidade por Thin Pool
+
+O relatório Symmetrix Capacity by Thin Pool mostra a capacidade bruta, a capacidade utilizável, a capacidade usada, a capacidade livre, a porcentagem usada, a capacidade subscrita e a taxa de assinatura.
+
+
+
+=== XIV capacidade por Array
+
+O relatório XIV Capacity by Array mostra a capacidade usada e não utilizada para o array.
+
+
+
+=== XIV capacidade por Piscina
+
+O relatório XIV capacidade por pool mostra a capacidade usada e não utilizada para pools de armazenamento.

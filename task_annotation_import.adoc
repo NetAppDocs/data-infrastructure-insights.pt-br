@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: task_annotation_import.html 
+keywords: annotations, import, api 
+summary: Você pode importar anotações e aplicativos usando a API Data Infrastructure Insights. 
+---
+= Importar anotações
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O Data Infrastructure Insights inclui uma API para importar anotações ou aplicativos de um arquivo CSV e atribuí-los a objetos especificados.
+
+
+NOTE: A API Data Infrastructure Insights está disponível em *Data Infrastructure Insights Premium Edition*.
+
+
+
+== A importar
+
+Os links *Admin > API Access* contêm link:API_Overview.html["documentação"] para a API *Assets/Import*. Esta documentação contém informações sobre o formato de arquivo .CSV.
+
+image:api_assets_import.png["Importar API"]
+
+
+
+== Formato de arquivo .CSV
+
+O formato geral do arquivo CSV é o seguinte. A primeira linha do arquivo define os campos de importação e especifica a ordem dos campos. Isto é seguido por linhas separadas para cada anotação ou aplicação. Não é necessário definir todos os campos. No entanto, as linhas de anotação subsequentes devem seguir a mesma ordem que a linha de definição.
+
+ [Object Type] , [Object Name or ID] , Annotation Type [, Annotation Type,  ...] [, Application] [, Tenant] [, Line_Of_Business] [, Business_Unit] [, Project]
+Consulte a Documentação da API para obter exemplos de arquivos .CSV.
+
+Você pode importar e atribuir anotações de um arquivo .CSV de dentro do próprio Swagger da API. Basta escolher o arquivo a ser usado e clicar no botão _execute_:
+
+image:api_assets_import_assign.png["Importar e atribuir"]
+
+
+
+== Comportamento de importação
+
+Durante a operação de importação, os dados são adicionados, mesclados ou substituídos, dependendo dos objetos e tipos de objetos que estão sendo importados. Durante a importação, tenha em mente os seguintes comportamentos.
+
+* Adiciona uma anotação ou aplicação se não existir nenhuma com o mesmo nome no sistema de destino.
+* Mescla uma anotação se o tipo de anotação for uma lista e existir uma anotação com o mesmo nome no sistema de destino.
+* Substitui uma anotação se o tipo de anotação for diferente de uma lista e existir uma anotação com o mesmo nome no sistema de destino.
++
+Nota: Se existir uma anotação com o mesmo nome, mas com um tipo diferente no sistema de destino, a importação falhará. Se os objetos dependerem da anotação com falha, esses objetos podem mostrar informações incorretas ou indesejadas. Você deve verificar todas as dependências de anotação depois que a operação de importação estiver concluída.
+
+* Se um valor de anotação estiver vazio, essa anotação será removida do objeto. Anotações herdadas não são afetadas.
+* Os valores de anotação do tipo de data devem ser passados como tempo unix em milissegundos.
+* Ao anotar volumes ou volumes internos, o nome do objeto é uma combinação de nome de armazenamento e nome do volume usando o separador "->". Por exemplo: _<Storage Name>-><Volume Name>_
+* Se um nome de objeto contiver uma vírgula, o nome inteiro deve estar em aspas duplas. Por exemplo: _"NetApp1,NetApp2"->023F_
+* Ao anexar anotações a storages, switches e portas, a coluna 'Application' será ignorada.
+* O locatário, Line_of_Business, Business_Unit e/ou Project faz uma entidade de negócio. Tal como acontece com todas as entidades empresariais, qualquer um dos valores pode estar vazio.
+
+
+Os seguintes tipos de objeto podem ser anotados.
+
+|===
+
+
+| TIPO DE OBJETO | NOME OU CHAVE 
+
+
+| Host | id --><id> ou <Name> ou <IP> 
+
+
+| VM | id -><id> ou <Name> 
+
+
+| StoragePool | id --><id> ou <Storage Name> -> Nome do conjunto de armazenamento de dados> 
+
+
+| Internalvolume | id --><id> ou <Storage Name> -> Nome do volume Interno do cliente> 
+
+
+| Volume | id --><id> ou <Storage Name> --><Volume Name> 
+
+
+| Armazenamento | id --><id> ou <Name> ou <IP> 
+
+
+| Interrutor | id --><id> ou <Name> ou <IP> 
+
+
+| Porta | id -><id> ou <WWN> 
+
+
+| Qtree | id --><id> ou <Storage Name> -> Nome do volume interno>> -><Qtree Name> 
+
+
+| Partilhar | id --><id> ou <Storage Name> -> Nome do volume interno do cliente> --><Share Name> --><Protocol>[-> Nome do cliente (opcional no caso de Qtree predefinido)>] 
+|===

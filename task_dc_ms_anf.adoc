@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: task_dc_ms_anf.html 
+keywords: data collector, azure, Netapp files, anf 
+summary: Configurando o coletor de dados Azure NetApp Files. 
+---
+= Configurar o coletor de dados Azure NetApp Files
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa o coletor de dados Azure NetApp Files para adquirir dados de inventário e performance.
+
+
+
+== Requisitos
+
+Você precisa das seguintes informações para configurar este coletor de dados.
+
+* Requisito de porta: 443 HTTPS
+* IP REST do Gerenciamento do Azure (management.azure.com)
+* ID de cliente principal do serviço Azure (conta de utilizador)
+* Chave de autenticação principal do serviço Azure (senha do usuário)
+* Você precisa configurar uma conta do Azure para a descoberta do Data Infrastructure Insights.
++
+Depois que a conta estiver configurada corretamente e você Registrar o aplicativo no Azure, você terá as credenciais necessárias para descobrir a instância do Azure com o Data Infrastructure Insights. O link a seguir descreve como configurar a conta para descoberta:
+
+
+
+https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal[]
+
+
+
+== Configuração
+
+Insira os dados nos campos do coletor de dados de acordo com a tabela abaixo:
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| ID Cliente Principal do Serviço Azure | ID de início de sessão no Azure 
+
+
+| ID do Locatário do Azure | ID do Locatário do Azure 
+
+
+| Chave de autenticação principal do serviço Azure | Chave de autenticação de login 
+
+
+| Eu entendo que a Microsoft me cobra por solicitações de API | Verifique isso para verificar se a Microsoft cobra solicitações de API feitas pela polling do Insight. 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | A predefinição é 60 
+|===
+
+
+== Solução de problemas
+
+* As credenciais usadas pelo coletor de dados do ANF precisam ter acesso a todas as assinaturas do Azure que contenham volumes do ANF.
+* Se o acesso ao Reader causar falha na coleção de desempenho, tente conceder acesso ao colaborador em um nível de grupo de recursos.
+
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

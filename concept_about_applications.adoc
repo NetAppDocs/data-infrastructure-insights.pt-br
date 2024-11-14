@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: concept_about_applications.html 
+keywords: applications, asset, cost 
+summary: Compreender as aplicações utilizadas no ambiente da sua empresa ajuda-o a controlar a utilização e os custos dos ativos. 
+---
+= Rastreamento do uso de ativos por aplicativo
+:allow-uri-read: 
+:firstname: [.lead]
+:author: [.lead]
+:authorinitials: [
+:authors: [.lead]
+:revdate: Understanding the applications used in your company's environment helps you to keep track of asset usage and cost.
+
+
+Antes de controlar os dados associados aos aplicativos em execução no ambiente, primeiro é necessário definir esses aplicativos e associá-los aos ativos apropriados. Você pode associar aplicativos aos seguintes ativos: Hosts, máquinas virtuais, volumes, volumes internos, qtrees, compartilhamentos e hipervisores.
+
+Este tópico fornece um exemplo de rastreamento do uso de máquinas virtuais que a equipe de marketing usa para seu e-mail do Exchange.
+
+Talvez você queira criar uma tabela semelhante à seguinte para identificar aplicativos usados em seu ambiente e observar o grupo ou a unidade de negócios usando cada aplicativo.
+
+[cols="5*"]
+|===
+
+
+| Locatário | Linha de negócio | Unidade de negócio | Projeto | Aplicações 
+
+
+| NetApp | Storage de dados | Legal | Patentes | Oracle Identity Manager, Oracle On Demand, PatentWiz 
+
+
+| NetApp | Storage de dados | Marketing | Eventos de vendas | Exchange, Oracle Shared Database, Blastoff Event Planner 
+|===
+A tabela mostra que a equipe de marketing usa o aplicativo Exchange. Queremos acompanhar a utilização da máquina virtual para o Exchange, para que possamos prever quando precisaremos adicionar mais armazenamento. Podemos associar o aplicativo Exchange a todas as máquinas virtuais de Marketing:
+
+. Crie um aplicativo chamado _Exchange_
+. Vá para *consultas > Nova consulta* para criar uma nova consulta para máquinas virtuais (ou selecione uma consulta de VM existente, se aplicável).
++
+Supondo que as VMs da equipe de Marketing tenham um nome contendo a string "*mkt*", crie sua consulta para filtrar o nome da VM para "mkt".
+
+. Selecione as VMs.
+. Associe as VMs ao aplicativo _Exchange_ usando *ações em massa > Adicionar aplicativos*.
+. Selecione o aplicativo desejado e clique em *Salvar*.
+. Quando terminar, *Salvar* a consulta.
+

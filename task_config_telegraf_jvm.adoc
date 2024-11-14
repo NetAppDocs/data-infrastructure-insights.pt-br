@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: task_config_telegraf_jvm.html 
+keywords: telegraf, installation, install, jvm 
+summary: Configuração do coletor de dados JVM 
+---
+= Coletor de dados JVM
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa esse coletor de dados para coletar métricas da JVM.
+
+
+
+== Instalação
+
+. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha JVM.
++
+Selecione o sistema operacional ou a plataforma na qual o agente Telegraf está instalado.
+
+. Se você ainda não instalou um Agente para coleção ou deseja instalar um Agente para um sistema operacional ou plataforma diferente, clique em _Mostrar instruções_ para expandir as link:task_config_telegraf_agent.html["Instalação do agente"] instruções.
+. Selecione a chave de acesso do agente para uso com este coletor de dados. Você pode adicionar uma nova chave de acesso ao agente clicando no botão * chave de acesso ao agente*. Prática recomendada: Use uma chave de acesso de agente diferente somente quando você quiser agrupar coletores de dados, por exemplo, por SO/Plataforma.
+. Siga as etapas de configuração para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+
+
+image:JVMDCConfigLinux.png["Configuração JVM"]
+
+
+
+== Configuração
+
+As informações podem ser encontradas em link:https://docs.oracle.com/javase/specs/jvms/se12/html/index.html["Documentação do JVM"].
+
+
+
+== Objetos e contadores
+
+Os seguintes objetos e seus contadores são coletados:
+
+[cols="<.<,<.<,<.<,<.<"]
+|===
+| Objeto: | Identificadores: | Atributos: | Pontos de dados: 
+
+
+| JVM | JVM do namespace | Arquitetura OS Nome do SO versão Runtime especificação Runtime especificação Runtime do fornecedor Runtime especificação versão tempo de execução VM Nome tempo de execução VM Nome tempo de execução VM Vendor Runtime versão VM Nome nó IP | Classe carregada Classe carregada Total Class Unloaded Memory Heap Consolidated Memory Heap Init Memory Heap used Max Memory Heap used Memory Non Heap Consolidated Memory Non Heap Init Memory Non Heap Max Memory Non Heap used Memory Objects Pending G1 Sequence os Processors Available G1 G1 G1 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.

@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: concept_asset_page_overview.html 
+summary: As páginas de ativos podem ser exibidas para a maioria dos tipos de objetos. 
+keywords: asset page, objects, landing page, Virtual machine, VM, Storage Virtual Machine, SVM, Volume, Internal volume, Host, Hypervisor, pool, Storage, Datastore, Application, node, Qtree, Disk, VMDK, Port, Switch, Fabric, refresh 
+---
+= Visão geral da página de ativos
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+As páginas de ativos resumem o status atual de um ativo e contêm links para informações adicionais sobre o ativo e seus ativos relacionados.
+
+
+
+== Tipos de páginas de ativos
+
+O Data Infrastructure Insights fornece páginas de ativos para os seguintes ativos:
+
+* Máquina virtual
+* Máquina de Storage Virtual (SVM)
+* Volume
+* Volume interno
+* Host (incluindo hipervisor)
+* Pool de storage
+* Armazenamento
+* Armazenamento de dados
+* Aplicação
+* Nó de storage
+* Qtree
+* Disco
+* VMDK
+* Porta
+* Interrutor
+* Malha
+
+
+
+
+== Alterar o intervalo de tempo dos dados apresentados
+
+Por padrão, uma página de ativo exibe as últimas 24 horas de dados; no entanto, você pode alterar o segmento de dados exibido selecionando outro intervalo de tempo fixo ou um intervalo de tempo personalizado para exibir menos ou mais dados.
+
+Você pode alterar o segmento de tempo dos dados exibidos usando uma opção localizada em cada página de ativo, independentemente do tipo de ativo. Para alterar o intervalo de tempo, clique no intervalo de tempo exibido na barra superior e escolha entre os seguintes segmentos de tempo:
+
+* Durar 15 minutos
+* Durar 30 minutos
+* Durar 60 minutos
+* Últimas 2 horas
+* Últimas 3 horas (este é o padrão)
+* Últimas 6 horas
+* Últimas 12 horas
+* Últimas 24 horas
+* Últimos 2 dias
+* Últimos 3 dias
+* Últimos 7 dias
+* Últimos 30 dias
+* Intervalo de tempo personalizado
+
+
+O intervalo de tempo personalizado permite-lhe selecionar até 31 dias consecutivos. Também pode definir a hora de início e a hora de fim do dia para este intervalo. A hora de Início padrão é 12:00 AM no primeiro dia selecionado e a hora de término padrão é 11:59 PM no último dia selecionado. Clicar em aplicar aplicará o intervalo de tempo personalizado à página de ativos.
+
+As informações em uma seção de resumo da página de ativos, bem como em quaisquer tabelas ou widgets personalizados na página, são atualizadas automaticamente com base no intervalo de tempo selecionado. A taxa de atualização atual é exibida no canto superior direito da seção Resumo, bem como em quaisquer tabelas ou widgets relevantes na página.
+
+
+
+== Adicionar widgets personalizados
+
+Você pode adicionar seus próprios widgets a qualquer página de ativos. Os widgets que você adicionar aparecerão nas páginas de ativos para todos os objetos desse tipo. Por exemplo, adicionar um widget personalizado a uma página de ativos de armazenamento exibirá esse widget nas páginas de ativos para todos os ativos de armazenamento.

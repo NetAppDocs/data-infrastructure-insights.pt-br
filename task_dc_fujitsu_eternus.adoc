@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: task_dc_fujitsu_eternus.html 
+keywords: data collector, Fujitsu, Eternus 
+summary: Configurar o coletor de dados Fujitsu ETERNUS. 
+---
+= Fujitsu ETERNUS Data Collector
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de dados ETERNUS da Fujitsu adquire dados de inventário utilizando acesso de nível de administração ao sistema de armazenamento.
+
+
+
+== Terminologia
+
+A Data Infrastructure Insights adquire as seguintes informações de inventário do armazenamento Fujitsu ETERNUS. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Disco | Disco 
+
+
+| Armazenamento | Armazenamento 
+
+
+| Thin Pool, pool de camadas flexível, grupo RAID | Pool de storage 
+
+
+| Volume padrão, volume de dados Snap (SDV), volume de pool de dados Snap (SDPV), volume de provisionamento fino (TPV), volume de nível flexível (FTV), volume de distribuição ampla (WSV) | Volume 
+
+
+| Adaptador de canal | Controlador 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletivismo de dados.
+
+
+
+== Requisitos
+
+Para configurar este coletor de dados, são necessários os seguintes itens:
+
+* Um endereço IP do armazenamento ETERNUS, que não pode ser delimitado por vírgulas
+* Nome de usuário e senha no nível de administração SSH
+* Porta 22
+* Certifique-se de que a rolagem da página está desativada (clienv-show-more-scroll disable)
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP do armazenamento ETERNUS | Endereço IP do armazenamento ETERNUS 
+
+
+| Nome de utilizador | Nome de utilizador para armazenamento ETERNUS 
+
+
+| Palavra-passe | Palavra-passe para o armazenamento ETERNUS 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | O padrão é 20 minutos. 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| "Erro ao recuperar dados" com mensagens de erro "Error finding prompt CLI" ou "Error finding prompt no final dos resultados do shell" | Provavelmente causado por: O sistema de armazenamento tem rolagem de página ativada. Solução possível: * Tente desativar a rolagem de página executando o seguinte comando: Set clienv-show-more -scroll disable 
+
+
+| "Erro de conexão" com mensagens de erro "Falha ao instanciar uma conexão SSH ao armazenamento" ou "Falha ao instanciar uma conexão ao VirtualCenter" | Causas prováveis: * Credenciais incorretas. * Endereço IP incorreto. * Problema de rede. * O armazenamento pode estar inativo ou não responder. Soluções possíveis: * Verifique as credenciais e o endereço IP inseridos. * Tente se comunicar com o armazenamento usando SSH Client. 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

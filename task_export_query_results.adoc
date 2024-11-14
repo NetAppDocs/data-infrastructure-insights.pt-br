@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: task_export_query_results.html 
+summary: Como exportar os resultados de uma consulta para um arquivo .csv 
+keywords: query, queries, export, csv 
+---
+= Exportar resultados da consulta para um arquivo .CSV
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Você pode exportar os resultados de qualquer consulta para um arquivo .CSV, que permitirá analisar os dados ou importá-los para outro aplicativo.
+
+.Passos
+. Faça login no Data Infrastructure Insights.
+. Clique em *consultas* e selecione *Mostrar todas as consultas*.
++
+A página consultas é exibida.
+
+. Clique em uma consulta.
+. Clique image:ExportButton.png["Botão Export (Exportar)"] para exportar os resultados da consulta para um arquivo .CSV.
+
+
+
+NOTE: Exportar para .CSV também está disponível no menu "três pontos" nos widgets da tabela do painel, bem como na maioria das tabelas da página de destino.
+
+Os dados exportados refletirão os nomes atuais de filtragem, colunas e colunas exibidos.
+
+Observação: Quando uma vírgula aparece em um nome de ativo, a exportação encerra o nome em aspas, preservando o nome do ativo e o formato .csv adequado.
+
+Ao abrir um arquivo .CSV exportado com o Excel, se você tiver um nome de objeto ou outro campo que esteja no formato NN:NN (dois dígitos seguidos por dois pontos seguidos por mais dois dígitos), o Excel às vezes interpretará esse nome como um formato de hora, em vez de formato de texto. Isso pode resultar na exibição de valores incorretos no Excel nessas colunas. Por exemplo, um objeto chamado "81:45" seria exibido no Excel como "81:45:00".
+
+Para contornar isso, importe o .CSV para o Excel usando as seguintes etapas:
+
+. Abra uma nova folha no Excel.
+. Na guia "dados", escolha "de texto".
+. Localize o arquivo .CSV desejado e clique em "Importar".
+. No assistente Importar, escolha "delimitado" e clique em Avançar.
+. Escolha "vírgula" para o delimitador e clique em Avançar.
+. Selecione as colunas desejadas e escolha "texto" para o formato de dados da coluna.
+. Clique em concluir.
++
+Seus objetos devem ser exibidos no Excel no formato adequado.
+
+

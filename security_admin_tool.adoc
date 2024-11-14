@@ -1,0 +1,262 @@
+---
+sidebar: sidebar 
+permalink: security_admin_tool.html 
+summary: O Data Infrastructure Insights segue as práticas recomendadas de segurança ao longo do ciclo de vida da versão. 
+keywords: security, risk, protection 
+---
+= Ferramenta SecurityAdmin
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights inclui recursos de segurança que permitem que seu ambiente opere com segurança aprimorada. Os recursos incluem melhorias na criptografia, hash de senha e a capacidade de alterar senhas internas de usuário, bem como pares de chaves que criptografam e descriptografam senhas.
+
+Para proteger dados confidenciais, o NetApp recomenda que você altere as chaves padrão e a senha do usuário _Acquisition_ após uma instalação ou atualização.
+
+As senhas criptografadas de origem de dados são armazenadas no Data Infrastructure Insights, que usa uma chave pública para criptografar senhas quando um usuário as insere em uma página de configuração de coletor de dados. O Data Infrastructure Insights não tem as chaves privadas necessárias para descriptografar as senhas do coletor de dados; somente as unidades de aquisição (AUS) têm a chave privada do coletor de dados necessária para descriptografar as senhas do coletor de dados.
+
+
+
+== Considerações sobre atualização e instalação
+
+Quando o sistema Insight contiver configurações de segurança não predefinidas (ou seja, se tiver palavras-passe recodificadas), tem de efetuar uma cópia de segurança das suas configurações de segurança. Instalar um novo software ou, em alguns casos, atualizar o software, reverte o sistema para uma configuração de segurança padrão. Quando o sistema voltar para a configuração padrão, você deve restaurar a configuração não padrão para que o sistema funcione corretamente.
+
+
+
+== Gestão da segurança na unidade de aquisição
+
+A ferramenta SecurityAdmin permite gerenciar opções de segurança para o Data Infrastructure Insights e é executada no sistema da unidade de aquisição. O gerenciamento de segurança inclui o gerenciamento de chaves e senhas, salvar e restaurar configurações de segurança que você cria ou restaura as configurações padrão.
+
+
+
+== Antes de começar
+
+* Tem de ter admin Privileges no sistema AU para instalar o software da Unidade de aquisição (que inclui a ferramenta SecurityAdmin).
+* Se você tiver usuários não administradores que posteriormente precisarão acessar a ferramenta SecurityAdmin, eles devem ser adicionados ao grupo _cisys_. O grupo _cisys_ é criado durante a instalação da AU.
+
+
+Após a instalação da AU, a ferramenta SecurityAdmin encontra-se no sistema da unidade de aquisição em qualquer uma destas localizações:
+
+....
+Windows - C:\Program Files\SANscreen\securityadmin\bin\securityadmin.bat
+Linux - /bin/oci-securityadmin.sh
+....
+
+
+== Usando a ferramenta SecurityAdmin
+
+Inicie a ferramenta SecurityAdmin no modo interativo (-i).
+
+
+NOTE: Recomenda-se usar a ferramenta SecurityAdmin no modo interativo, para evitar passar segredos na linha de comando, que pode ser capturada em logs.
+
+São apresentadas as seguintes opções:
+
+image:SecurityAdminMenuChoices.png["Opções para SecurityAdmin Tool (Linux)"]
+
+. *Backup*
++
+Cria um arquivo zip de backup do Vault contendo todas as senhas e chaves e coloca o arquivo em um local especificado pelo usuário ou nos seguintes locais padrão:
+
++
+....
+Windows - C:\Program Files\SANscreen\backup\vault
+Linux - /var/log/netapp/oci/backup/vault
+....
++
+Recomenda-se que os backups do Vault sejam mantidos seguros, pois incluem informações confidenciais.
+
+. *Restaurar*
++
+Restaura o backup zip do Vault que foi criado. Uma vez restaurado, todas as senhas e chaves são revertidas para valores existentes no momento da criação do backup.
+
++
+A restauração pode ser usada para sincronizar senhas e chaves em vários servidores, por exemplo, usando estas etapas: 1) alterar chaves de criptografia na AU. 2) criar um backup do cofre. 3) Restaurar o backup do Vault para cada um dos AUS.
+
+. *Register / Update External Key Retrieval Script*
++
+Use um script externo para Registrar ou alterar as chaves de criptografia da AU usadas para criptografar ou descriptografar senhas de dispositivos.
+
++
+Ao alterar as chaves de criptografia, você deve fazer backup da nova configuração de segurança para que possa restaurá-la após uma atualização ou instalação.
+
++
+Nota esta opção só está disponível no Linux.
+
++
+Ao usar seu próprio script de recuperação de chave com a ferramenta SecurityAdmin, tenha em mente o seguinte:
+
++
+** O algoritmo suportado atual é RSA com um mínimo de 2048 bits.
+** O script deve retornar as chaves privadas e públicas em texto simples. O script não deve retornar chaves privadas e públicas criptografadas.
+** O script deve retornar conteúdo codificado em bruto (somente formato PEM).
+** O script externo deve ter permissões _execute_.
+
+
+. *Rotate Encryption Keys* (rodar chaves de encriptação)
++
+Gire suas chaves de criptografia (desRegistra chaves atuais e Registra novas chaves). Para usar uma chave de um sistema de gerenciamento de chaves externo, você deve especificar o ID da chave pública e o ID da chave privada.
+
+
+
+. * Redefinir para as chaves padrão*
++
+Repõe a palavra-passe do utilizador de aquisição e as chaves de encriptação do utilizador de aquisição para valores predefinidos; os valores predefinidos são os fornecidos durante a instalação.
+
+. * Alterar senha de armazenamento de confiança*
++
+Altere a senha do armazenamento de confiança.
+
+. *Altere a senha do Keystore*
++
+Altere a senha do keystore.
+
+. *Encrypt Collector Password*
++
+Encripte a palavra-passe do coletor de dados.
+
+. *Saída*
++
+Saia da ferramenta SecurityAdmin.
+
+
+
+Escolha a opção que deseja configurar e siga as instruções.
+
+
+
+== Especificando um usuário para executar a ferramenta
+
+Se você estiver em um ambiente controlado e com consciência de segurança, talvez você não tenha o grupo _cisys_, mas ainda queira que usuários específicos executem a ferramenta SecurityAdmin.
+
+Você pode conseguir isso instalando manualmente o software AU e especificando o usuário/grupo para quem deseja acessar.
+
+* Usando a API, baixe o Instalador de CI para o sistema AU e descompacte-o.
++
+** Você precisará de um token de autorização única. Consulte a documentação do Swagger da API (_Admin > API Access_ e selecione o link _API Documentation_) e localize a seção _GET /au/oneTimeToken_ API.
+** Depois de ter o token, use a API _GET /au/instaladores/ Você precisará fornecer a plataforma (Linux ou Windows), bem como a versão do instalador.
+
+
+* Copie o arquivo do instalador baixado para o sistema AU e descompacte-o.
+* Navegue até a pasta que contém os arquivos e execute o instalador como root, especificando o usuário e o grupo:
++
+ ./cloudinsights-install.sh <User> <Group>
+
+
+Se o usuário e/ou grupo especificado não existir, eles serão criados. O usuário terá acesso à ferramenta SecurityAdmin.
+
+
+
+== Atualizando ou removendo proxy
+
+A ferramenta SecurityAdmin pode ser usada para definir ou remover informações de proxy para a Unidade de aquisição executando a ferramenta com o parâmetro _-pr_:
+
+[listing]
+----
+[root@ci-eng-linau bin]# ./securityadmin -pr
+usage: securityadmin -pr -ap <arg> | -h | -rp | -upr <arg>
+
+The purpose of this tool is to enable reconfiguration of security aspects
+of the Acquisition Unit such as encryption keys, and proxy configuration,
+etc. For more information about this tool, please check the Data Infrastructure Insights
+Documentation.
+
+-ap,--add-proxy <arg>       add a proxy server.  Arguments: ip=ip
+                             port=port user=user password=password
+                             domain=domain
+                             (Note: Always use double quote(") or single
+                             quote(') around user and password to escape
+                             any special characters, e.g., <, >, ~, `, ^,
+                             !
+                             For example: user="test" password="t'!<@1"
+                             Note: domain is required if the proxy auth
+                             scheme is NTLM.)
+-h,--help
+-rp,--remove-proxy          remove proxy server
+-upr,--update-proxy <arg>   update a proxy.  Arguments: ip=ip port=port
+                             user=user password=password domain=domain
+                             (Note: Always use double quote(") or single
+                             quote(') around user and password to escape
+                             any special characters, e.g., <, >, ~, `, ^,
+                             !
+                             For example: user="test" password="t'!<@1"
+                             Note: domain is required if the proxy auth
+                             scheme is NTLM.)
+----
+Por exemplo, para remover o proxy, execute este comando:
+
+ [root@ci-eng-linau bin]# ./securityadmin -pr -rp
+Tem de reiniciar a Unidade de aquisição depois de executar o comando.
+
+Para atualizar um proxy, o comando é
+
+ ./securityadmin -pr -upr <arg>
+
+
+== Recuperação de chave externa
+
+Se você fornecer um script de shell UNIX, ele pode ser executado pela unidade de aquisição para recuperar a *chave privada* e a *chave pública* do seu sistema de gerenciamento de chaves.
+
+Para recuperar a chave, o Data Infrastructure Insights executará o script, passando dois parâmetros: _Key id_ e _key type_. _Key id_ pode ser usado para identificar a chave em seu sistema de gerenciamento de chaves. _Tipo de chave_ é "pública" ou "privada". Quando o tipo de chave é "pública", o script deve retornar a chave pública. Quando o tipo de chave é "privado", a chave privada deve ser retornada.
+
+Para enviar a chave de volta para a unidade de aquisição, o script deve imprimir a chave para a saída padrão. O script deve imprimir _only_ a chave para a saída padrão; nenhum outro texto deve ser impresso na saída padrão. Uma vez que a chave solicitada é impressa na saída padrão, o script deve sair com um código de saída de 0; qualquer outro código de retorno é considerado um erro.
+
+O script deve ser registrado na unidade de aquisição usando a ferramenta SecurityAdmin, que executará o script juntamente com a unidade de aquisição. O script deve ter permissão _read_ e _execute_ para o usuário root e "cisys". Se o script shell for modificado após o Registro, o script shell modificado deve ser re-registrado na unidade de aquisição.
+
+|===
+
+
+| parâmetro de entrada: id da chave | Identificador de chave usado para identificar a chave no sistema de gerenciamento de chaves dos clientes. 
+
+
+| parâmetro de entrada: tipo de chave | público ou privado. 
+
+
+| saída | A chave solicitada deve ser impressa na saída padrão. A chave RSA de 2048 bits é atualmente suportada. As chaves devem ser codificadas e impressas no seguinte formato - formato de chave privada - PEM, PKCS8 PrivateKeyInfo RFC 5958 formato de chave pública - PEM, X,509 subjectPublicKeyInfo RFC 5280 codificado POR DER 
+
+
+| código de saída | Código de saída de zero para o sucesso. Todos os outros valores de saída são considerados falha. 
+
+
+| permissões de script | O script deve ter permissão de leitura e execução para o usuário root e "cisys". 
+
+
+| registos | As execuções de script são registradas. Os logs podem ser encontrados em - /var/log/NetApp/cloudinsights/securityadmin/securityadmin.log /var/log/NetApp/cloudinsights/acq/acq.log 
+|===
+
+
+== Encriptar uma palavra-passe para utilização na API
+
+A opção 8 permite criptografar uma senha, que você pode passar para um coletor de dados via API.
+
+Inicie a ferramenta SecurityAdmin no modo interativo e selecione a opção 8: _Encrypt Password_.
+
+ securityadmin.sh -i
+É-lhe pedido que introduza a palavra-passe que pretende encriptar. Observe que os carateres digitados não são exibidos na tela. Digite novamente a senha quando solicitado.
+
+Alternativamente, se você usar o comando em um script, em uma linha de comando use _securityadmin.sh_ com o parâmetro "-enc", passando sua senha não criptografada:
+
+ securityadmin -enc mypassword
+image:SecurityAdmin_Encrypt_Key_API_CLI_Example.png["Exemplo CLI"]
+
+A palavra-passe encriptada é apresentada no ecrã. Copie toda a cadeia, incluindo quaisquer símbolos à esquerda ou à direita.
+
+image:SecurityAdmin_Encrypt_Key_1.png["Senha de criptografia de modo interativo, largura de 640 mm"]
+
+Para enviar a senha criptografada para um coletor de dados, você pode usar a API de coleta de dados. O Swagger para esta API pode ser encontrado em *Admin > API Access* e clique no link "API Documentation". Selecione o tipo de API "coleta de dados". No título _data_Collection.data_Collector_, escolha a API _/Collector/datasources_ POST para este exemplo.
+
+image:SecurityAdmin_Encrypt_Key_Swagger_API.png["API para coleta de dados"]
+
+Se você definir a opção _preEncrypted_ como _true_, qualquer senha que você passar pelo comando API será tratada como *já criptografada*; a API não irá criptografar novamente a(s) senha(s). Ao criar sua API, basta colar a senha criptografada anteriormente no local apropriado.
+
+image:SecurityAdmin_Encrypt_Key_API_Example.png["Exemplo de API, largura 600"]

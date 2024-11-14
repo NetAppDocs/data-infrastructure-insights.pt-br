@@ -1,0 +1,73 @@
+---
+sidebar: sidebar 
+permalink: task_dc_lenovo.html 
+keywords: data collector,Lenovo, HX Series 
+summary: Configurando o coletor de dados Lenovo. 
+---
+= Coletor de dados Lenovo
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa o coletor de dados Lenovo para descobrir dados de inventário e desempenho para sistemas de armazenamento Lenovo HX.
+
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* Endereço IP externo do prisma
+* Nome de usuário e senha do administrador
+* Requisito de porta TCP: 9440
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP externo do prisma | O endereço IP dos serviços de dados externos para o cluster 
+
+
+| Nome de utilizador | Nome de usuário para a conta de administrador 
+
+
+| Palavra-passe | Palavra-passe para a conta de administrador 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Porta de TCP | Porta TCP usada para conetar ao array. A predefinição é 9440. 
+
+
+| Intervalo de pesquisa de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 60 minutos. 
+
+
+| Intervalo de pesquisa de desempenho (seg) | Intervalo entre sondagens de desempenho. O padrão é 300 segundos. 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

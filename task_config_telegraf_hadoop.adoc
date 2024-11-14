@@ -1,0 +1,171 @@
+---
+sidebar: sidebar 
+permalink: task_config_telegraf_hadoop.html 
+keywords: telegraf, installation, install, Hadoop 
+summary: Configuração do coletor de dados Hadoop 
+---
+= Coletor de dados Hadoop
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do Hadoop.
+
+
+
+== Instalação
+
+. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha Hadoop.
++
+Selecione o sistema operacional ou a plataforma na qual o agente Telegraf está instalado.
+
+. Se você ainda não instalou um Agente para coleção ou deseja instalar um Agente para um sistema operacional ou plataforma diferente, clique em _Mostrar instruções_ para expandir as link:task_config_telegraf_agent.html["Instalação do agente"] instruções.
+. Selecione a chave de acesso do agente para uso com este coletor de dados. Você pode adicionar uma nova chave de acesso ao agente clicando no botão * chave de acesso ao agente*. Prática recomendada: Use uma chave de acesso de agente diferente somente quando você quiser agrupar coletores de dados, por exemplo, por SO/Plataforma.
+. Siga as etapas de configuração para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+
+
+image:HadoopDCConfigLinux-1.png["Configuração do Hadoop"] image:HadoopDCConfigLinux-2.png["Configuração do Hadoop"]
+
+
+
+== Configuração
+
+Uma implantação completa do Hadoop envolve os seguintes componentes:
+
+* NameNode: O sistema principal do Hadoop Distributed File System (HDFS). Coordena uma série de DataNodes.
+* NameNode secundário: Um failover morno para o NameNode principal. No Hadoop, a promoção para NameNode não ocorre automaticamente. NameNode secundário reúne informações do NameNode para estar pronto para ser promovido quando necessário.
+* DataNode: Proprietário real dos dados.
+* ResourceManager: O sistema primário de computação (yarn). Coordena uma série de NodeManagers.
+* NodeManager: O recurso para computação. Local real para execução de aplicativos.
+* JobHistoryServer: Responsável por atender todas as solicitações relacionadas ao histórico de tarefas.
+
+
+O plugin Hadoop é baseado no plugin Jolokia da telegraf. Como um requisito para reunir informações de todos os componentes do Hadoop, o JMX precisa ser configurado e exposto via Jolokia em todos os componentes.
+
+
+
+=== Compatibilidade
+
+A configuração foi desenvolvida em relação ao Hadoop versão 2,9.2.
+
+
+
+=== Configuração
+
+
+
+==== Jolokia Agent JAR
+
+Para todos os componentes individuais, uma versão do arquivo jar do agente Jolokia deve ser baixada. A versão testada contra foi link:https://jolokia.org/download.html["Agente Jolokia 1.6.0"].
+
+As instruções abaixo supõem que o arquivo jar baixado (jolokia-jvm-1,6.0-Agent.jar) é colocado sob o local '/opt/hadoop/lib/'.
+
+
+
+==== NameNode
+
+Para configurar o NameNode para expor a API Jolokia, você pode configurar o seguinte em <HADOOP_HOME>/etc/Hadoop/Hadoop-env.sh:
+
+[listing]
+----
+export HADOOP_NAMENODE_OPTS="$HADOOP_NAMENODE_OPTS -javaagent:/opt/hadoop/lib/jolokia-jvm-1.6.0-agent.jar=port=7800,host=0.0.0.0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8000 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.password.file=$HADOOP_HOME/conf/jmxremote.password"
+You can choose a different port for JMX (8000 above) and Jolokia (7800). If you have an internal IP to lock Jolokia onto you can replace the "catch all" 0.0.0.0 by your own IP. Notice this IP needs to be accessible from the telegraf plugin. You can use the option '-Dcom.sun.management.jmxremote.authenticate=false' if you don't want to authenticate. Use at your own risk.
+----
+
+
+==== NameNode secundário
+
+Para configurar o NameNode secundário para expor a API Jolokia, você pode configurar o seguinte em <HADOOP_HOME>/etc/Hadoop/Hadoop-env.sh:
+
+[listing]
+----
+export HADOOP_SECONDARYNAMENODE_OPTS="$HADOOP_SECONDARYNAMENODE_OPTS -javaagent:/opt/hadoop/lib/jolokia-jvm-1.6.0-agent.jar=port=7802,host=0.0.0.0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8002 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.password.file=$HADOOP_HOME/conf/jmxremote.password"
+You can choose a different port for JMX (8002 above) and Jolokia (7802). If you have an internal IP to lock Jolokia onto you can replace the "catch all" 0.0.0.0 by your own IP. Notice this IP needs to be accessible from the telegraf plugin. You can use the option '-Dcom.sun.management.jmxremote.authenticate=false' if you don't want to authenticate. Use at your own risk.
+----
+
+
+==== DataNode
+
+Para configurar os DataNodes para expor a API Jolokia, você pode configurar o seguinte em <HADOOP_HOME>/etc/Hadoop/Hadoop-env.sh:
+
+[listing]
+----
+export HADOOP_DATANODE_OPTS="$HADOOP_DATANODE_OPTS -javaagent:/opt/hadoop/lib/jolokia-jvm-1.6.0-agent.jar=port=7801,host=0.0.0.0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8001 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.password.file=$HADOOP_HOME/conf/jmxremote.password"
+You can choose a different port for JMX (8001 above) and Jolokia (7801). If you have an internal IP to lock Jolokia onto you can replace the "catch all" 0.0.0.0 by your own IP. Notice this IP needs to be accessible from the telegraf plugin. You can use the option '-Dcom.sun.management.jmxremote.authenticate=false' if you don't want to authenticate. Use at your own risk.
+----
+
+
+==== ResourceManager
+
+Para configurar o ResourceManager para expor a API Jolokia, você pode configurar o seguinte em <HADOOP_HOME>/etc/hadoop/Hadoop-env.sh:
+
+[listing]
+----
+export YARN_RESOURCEMANAGER_OPTS="$YARN_RESOURCEMANAGER_OPTS -javaagent:/opt/hadoop/lib/jolokia-jvm-1.6.0-agent.jar=port=7803,host=0.0.0.0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8003 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.password.file=$HADOOP_HOME/conf/jmxremote.password"
+You can choose a different port for JMX (8003 above) and Jolokia (7803). If you have an internal IP to lock Jolokia onto you can replace the "catch all" 0.0.0.0 by your own IP. Notice this IP needs to be accessible from the telegraf plugin. You can use the option '-Dcom.sun.management.jmxremote.authenticate=false' if you don't want to authenticate. Use at your own risk.
+----
+
+
+==== NodeManager
+
+Para configurar o NodeManagers para expor a API Jolokia, você pode configurar o seguinte em <HADOOP_HOME>/etc/Hadoop/Hadoop-env.sh:
+
+[listing]
+----
+export YARN_NODEMANAGER_OPTS="$YARN_NODEMANAGER_OPTS -javaagent:/opt/hadoop/lib/jolokia-jvm-1.6.0-agent.jar=port=7804,host=0.0.0.0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8004 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.password.file=$HADOOP_HOME/conf/jmxremote.password"
+You can choose a different port for JMX (8004 above) and Jolokia (7804). If you have an internal IP to lock Jolokia onto you can replace the "catch all" 0.0.0.0 by your own IP. Notice this IP needs to be accessible from the telegraf plugin. You can use the option '-Dcom.sun.management.jmxremote.authenticate=false' if you don't want to authenticate. Use at your own risk.
+----
+
+
+==== JobHistoryServer
+
+Para configurar o JobHistoryServer para expor a API Jolokia, você pode configurar o seguinte em <HADOOP_HOME>/etc/Hadoop/Hadoop-env.sh:
+
+[listing]
+----
+export HADOOP_JOB_HISTORYSERVER_OPTS="$HADOOP_JOB_HISTORYSERVER_OPTS -javaagent:/opt/hadoop/lib/jolokia-jvm-1.6.0-agent.jar=port=7805,host=0.0.0.0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=8005 -Dcom.sun.management.jmxremote.password.file=$HADOOP_HOME/conf/jmxremote.password"
+You can choose a different port for JMX (8005 above) and Jolokia (7805). If you have an internal IP to lock Jolokia onto you can replace the "catch all" 0.0.0.0 by your own IP. Notice this IP needs to be accessible from the telegraf plugin. You can use the option '-Dcom.sun.management.jmxremote.authenticate=false' if you don't want to authenticate. Use at your own risk.
+----
+
+
+== Objetos e contadores
+
+Os seguintes objetos e seus contadores são coletados:
+
+[cols="<.<,<.<,<.<"]
+|===
+| Objeto: | Identificadores: | Atributos: 
+
+
+| NameNode secundário Hadoop | Servidor de namespace de cluster | Node Name Node IP Compile Info versão 
+
+
+| Hadoop NodeManager | Servidor de namespace de cluster | IP do nó de nome do nó 
+
+
+| Hadoop ResourceManager | Servidor de namespace de cluster | IP do nó de nome do nó 
+
+
+| DataNode do Hadoop | Servidor de namespace de cluster | Versão do ID do cluster IP do nó de nome do nó 
+
+
+| NameNode Hadoop | Servidor de namespace de cluster | ID da transação IP do nó Nome do nó último tempo escrito desde a última versão carregada Edits HA State File System State Block Pool ID Cluster Info compilação versão contagem de versão distinta 
+
+
+| Hadoop JobHistoryServer | Servidor de namespace de cluster | IP do nó de nome do nó 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.

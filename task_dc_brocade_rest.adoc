@@ -1,0 +1,144 @@
+---
+sidebar: sidebar 
+permalink: task_dc_brocade_rest.html 
+keywords: data collector, Brocade, FC switch, FOS, Rest 
+summary: Configurando o coletor de DADOS REST do Brocade FOS. 
+---
+= Coletor de DADOS REST do Brocade FOS
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Insights de infraestrutura de dados usa o coletor REST do Brocade FOS para descobrir o inventário e o desempenho dos dispositivos de switch Brocade que executam o firmware 8,2 e posterior do FabricOS.
+
+Observação: O nível padrão DE "usuário" DO FOS não é suficientemente poderoso para que o Data Infrastructure Insights visualize todos os aspetos lógicos de um dispositivo - precisamos de uma conta de usuário com a "função de chassi" ativada, bem como permissões em todas as estruturas virtuais configuradas em um switch.
+
+Aqui está um exemplo de como você pode criar uma conta de usuário "menos privilégio" para uso do Data Infrastructure Insights em uma sessão SSH para um dispositivo FOS:
+
+UserConfig --add NetAppCIUser -r user -l 1-128 -c user -p Qwerty!
+
+Isso criará um usuário "NetAppCIUser" com uma senha de "Qwerty!". Esse usuário tem a função "usuário" (-r) em todas as 128 malhas virtuais possíveis ( -l ). Esse usuário também tem a função "chassis" necessária ( -c) com acesso ao nível do usuário atribuído.
+
+Por padrão, este coletor tentará descobrir todos os dispositivos FOS que fazem parte de todas as malhas das quais o switch faz parte.
+
+
+
+== Terminologia
+
+O Insights de infraestrutura de dados adquire as seguintes informações de inventário do coletor de DADOS REST do Brocade FOS. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Interrutor | Interrutor 
+
+
+| Porta | Porta 
+
+
+| Malha virtual, malha física | Malha 
+
+
+| Zona | Zona 
+
+
+| Comutador lógico | Comutador lógico 
+
+
+| Zona LSAN | Zona IVR 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* Deve haver conectividade TCP para todos os switches na malha. Esse tipo de coletor de dados experimentará perfeitamente HTTP e HTTPS para cada dispositivo na malha. Se você selecionar a caixa de seleção _descobrir todos os switches na estrutura_, o Data Infrastructure Insights identificará todos os switches na malha; no entanto, ele precisará de conectividade TCP a esses switches adicionais para detectá-los.
+* Globalmente, a mesma conta é necessária em todos os switches da malha. Pode utilizar a interface Web do dispositivo para confirmar o acesso.
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| IP do switch | Endereço IP ou nome de domínio totalmente qualificado do switch FOS 
+
+
+| Nome de utilizador | Nome de utilizador do comutador 
+
+
+| Palavra-passe | Palavra-passe para o interrutor 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Dispositivos excluídos | Lista separada por vírgulas dos endereços do dispositivo IPv4 a excluir da sondagem. 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. A predefinição é 60. 
+
+
+| Descubra todos os switches na malha | Selecione para descobrir todos os switches na malha. 
+
+
+| Escolha favorecendo HBA vs. Aliases de zona | Escolha se prefere HBA ou aliases de zona. 
+
+
+| Tipo de ligação | HTTP ou HTTPS. 
+
+
+| Observe que essa configuração somente altera o IC de protocolo que tenta usar primeiro por dispositivo - IC tentará o protocolo oposto automaticamente se o padrão falhar | Substituir a porta TCP 
+
+
+| Especifique uma porta se não estiver usando o padrão. | Intervalo de enquete de desempenho (seg) 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| O recurso Teste me avisa que um protocolo está inacessível | Um determinado dispositivo Brocade FOS 8,2 só vai querer falar em HTTP ou HTTPS - se um switch tiver um certificado digital instalado, o switch irá lançar erros HTTP se alguém tentar se comunicar com ele com HTTP não criptografado versus HTTPS. O recurso de teste tenta a comunicação com HTTP e HTTPS - se o Teste disser que um protocolo passa, você pode salvar o coletor com segurança e não se preocupar que o outro protocolo não foi bem-sucedido - o coletor tentará ambos os protocolos durante a coleta, e só falhará se nenhum deles funcionar. 
+
+
+| Erro: "Dados Infrastructure Insights receberam função de chassi inválida" | Verifique se o usuário configurado nesta fonte de dados recebeu a permissão de função de chassi. 
+
+
+| Erro: "Endereço IP do chassis incorreto" | Altere a configuração da fonte de dados para usar o endereço IP do chassi. 
+
+
+| Inventário falha com um 403 proibido | Isso pode ser simplesmente credenciais ruins, ou pode ser indicativo de que você está tentando usar uma função insuficientemente poderosa - lembre-se de que os usuários de nível "usuário" NÃO têm o direito de "função de chassi" necessário, ou visualizar o acesso a telas virtuais não padrão. 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

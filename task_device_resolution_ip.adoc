@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: task_device_resolution_ip.html 
+keywords: Automatic, AR, AHR, Host, automatic device resolution, FC, Identify 
+summary:  
+---
+= Resolução do dispositivo IP
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O ecrã IP Identify (identificação de IP) apresenta quaisquer compartilhamentos iSCSI e CIFS ou NFS identificados pela resolução automática do dispositivo ou pela resolução manual do dispositivo. Dispositivos não identificados também são exibidos. O ecrã inclui o endereço IP, Nome, Estado, nó iSCSI e nome de partilha para dispositivos. Também é apresentada a percentagem de dispositivos que foram identificados com sucesso.
+
+image:Device_Resolution_IP.png["Resolução do dispositivo IP"]
+
+
+
+== Adicionar dispositivos IP manualmente
+
+Você pode adicionar manualmente um dispositivo IP ao Data Infrastructure Insights usando o recurso de adição manual disponível na tela identificação IP.
+
+.Procedimento
+. Faça login na IU da Web do Data Infrastructure Insights.
+. Clique em *Manage > Device resolution* (gerir > Resolução do dispositivo)
+. Clique no separador *IP Address Identify* (identificação do endereço IP).
+. Clique no botão *Add*.
++
+É apresentada a caixa de diálogo Adicionar dispositivo
+
+. Introduza o endereço, o endereço IP e um nome de dispositivo exclusivo.
+
+
+.Resultado
+O dispositivo inserido é adicionado à lista de dispositivos na guia identificação de endereço IP.
+
+
+
+== Importando a identificação do dispositivo IP de um arquivo .CSV
+
+Você pode importar manualmente identificações de dispositivo IP para o recurso Resolução de dispositivo usando uma lista de identificações de dispositivo em um arquivo .CSV.
+
+. Antes de começar
+
+
+Você deve ter um arquivo .CSV formatado corretamente para importar as identificações do dispositivo diretamente para o recurso Resolução do dispositivo. O arquivo .CSV para dispositivos IP requer as seguintes informações:
+
+|===
+
+
+| Endereço | IP | Nome 
+|===
+Os campos de dados devem estar entre aspas, como mostrado no exemplo abaixo.
+
+....
+"Address","IP","Name"
+"ADDRESS6447","IP6447","NAME-6447"
+"ADDRESS3211","IP3211","NAME-3211"
+"ADDRESS593","IP593","NAME-593"
+....
+
+NOTE: Como prática recomendada, é recomendável primeiro exportar as informações de identificação de endereço IP para um arquivo .CSV, fazer as alterações desejadas nesse arquivo e, em seguida, importar o arquivo de volta para identificação de endereço IP. Isso garante que as colunas esperadas estejam presentes e na ordem correta.
+
+
+
+== Exportando a identificação do dispositivo IP para um arquivo .CSV
+
+Você pode exportar identificações de dispositivo IP existentes para um arquivo .CSV a partir do recurso de resolução de dispositivo Data Infrastructure Insights. Você pode querer exportar uma identificação de dispositivo para que você possa modificá-la e depois importá-la de volta para o Data Infrastructure Insights, onde ela é usada para identificar dispositivos que são semelhantes aos que correspondem originalmente à identificação exportada.
+
+.Sobre esta tarefa
+. Esse cenário pode ser usado quando os dispositivos têm atributos semelhantes que podem ser facilmente editados no arquivo .CSV e, em seguida, importados de volta para o sistema.
+
+Quando você exporta uma identificação de dispositivo IP para um arquivo .CSV, o arquivo contém as seguintes informações na ordem mostrada:
+
+|===
+
+
+| Endereço | IP | Nome 
+|===
+.Procedimento
+. Faça login na IU da Web do Data Infrastructure Insights.
+. Clique em *Manage > Device Resolution* (gerir > Resolução do dispositivo)
+. Selecione a guia *IP Address Identify* (identificação do endereço IP).
+. Selecione o dispositivo IP ou os dispositivos cuja identificação pretende exportar.
+. Clique no botão *Exportar*image:ExportButton.png["Botão Export (Exportar)"].
++
+Selecione se deseja abrir o arquivo .CSV ou salvar o arquivo.
+
+
+
+Relacionado: link:task_device_resolution_fibre_channel.html["Resolução do dispositivo Fibre Channel"] link:task_device_resolution_rules.html["Criando regras de resolução de dispositivo"] link:task_device_resolution_preferences.html["Definir preferências de resolução do dispositivo"]

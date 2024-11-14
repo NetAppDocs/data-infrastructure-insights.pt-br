@@ -1,0 +1,227 @@
+---
+sidebar: sidebar 
+permalink: task_install_manual_au.html 
+keywords: Acquisition Unit, AU, install, configure, Linux, add, remove, uninstall, delete, deleting, move, moving, manual, AU, Patch 
+summary: O Data Infrastructure Insights pode ser configurado para que o software AU seja atualizado manualmente, fornecendo mais controle sobre o software instalado em seu ambiente. 
+---
+= Instalar manualmente o software da unidade de aquisição
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Por padrão, o Data Infrastructure Insights atualiza automaticamente o software da Unidade de aquisição (AU) à medida que as atualizações são implantadas. No entanto, em ambientes controlados seguros, a atualização automática pode não ser possível ou desejada. Nesses casos, o Data Infrastructure Insights pode ser configurado para que o software AU seja atualizado manualmente, fornecendo mais controle sobre o software instalado em seu ambiente.
+
+Para transferir e instalar manualmente o software AU, execute as seguintes etapas. O Data Infrastructure Insights fornece uma página útil de documentação do Swagger que pode ser usada para muitas dessas etapas ou pode usar seu próprio script/comandos de API. Vá para Admin > API Access e clique no link "API Documentation".
+
+O processo é semelhante para Linux e Windows.
+
+
+
+== Executando uma NOVA instalação AU no Linux:
+
+. Em Data Infrastructure Insights, crie um token de API.
++
+.. Navegue até *Admin > API Access* e selecione * API Access Token*.
++
+... Defina um *Nome* e *Descrição* que sejam fáceis de identificar
+... Tipo: Escolha *Unidade de aquisição* e *coleta de dados*
+... Permissões: *Leitura/escrita*
+... Selecione os valores *Expiry* e *Auto-Renew* desejados
+
+
+.. Clique em *Salvar*
+.. Copie o token de acesso à API gerado. Este passo deve ser executado antes de poder fechar a janela.
+
+
+
+
+image:Manual_AU_Create_API_Token.png["Criar API Token"]
+
+. Em Swagger (Admin > API Access > API Documentation), use o token para autorizar APIs do Data Infrastructure Insights
++
+.. Clique em _autorizar_ no canto superior direito da tela Swagger
+.. Cole o token copiado de cima para o campo Customer APIKey
+.. Clique em *autorizar*
+.. Feche a janela
+
+
+
+
+image:Manual_AU_Authorization.png["Autorize o token da API"]
+
+. Faça o download do AU Installer usando a API _/au/instaladores/
++
+.. Plataforma: *linux*
+.. Versão: *<version>* (mais recente ou especificada)
+
+
+
+
+image:Manual_AU_API_Retrieve_latest.png["API para recuperar a última versão AU"]
+
+
+NOTE: Se você não estiver baixando a versão mais recente, confirme com o NetApp a versão AU a ser especificada para download.
+
+. Clique em *Download File*. Se estiver a executar estes passos num sistema diferente do sistema AU, copie o ficheiro transferido para o sistema AU.
+. Alternativamente, você pode executar o CURL Command resultante no sistema AU:
++
+ curl -X GET "<tenant>/rest/v1/au/installers/linux/<AU version>" -H "accept: application/octet-stream" -H "X-CloudInsights-ApiKey: <token>"
+. Neste ponto, o arquivo de instalação deve estar presente no sistema AU.
+
+
+
+IMPORTANT: As próximas etapas exigem o uso de um token temporário. Não use o token de acesso à API que você criou acima.
+
+. No Swagger da API Data Infrastructure Insights, crie um token único usando a API _/au/oneTimeToken_.
++
+.. Copie o token de uso único resultante.
+
+
+
+
+image:Manual_AU_one_time_token.png["Crie um token de API de uso único"] image:Manual_AU_one_time_token_response.png["Resposta para um exemplo de token de API de uso único"]
+
+. Na máquina em que a AU vai ser instalada, navegue até a pasta que contém o ficheiro de instalação transferido. Os comandos abaixo exigem que o usuário tenha permissões de root.
++
+.. Descompacte o arquivo do instalador
+.. Mude o diretório para a pasta do instalador resultante
+.. Exporte o token único e a versão do instalador para variáveis de ambiente executando o seguinte:
++
+ export TOKEN=<One-Time Token>
+.. Execute o seguinte para instalar o IC com um usuário e grupo personalizados:
++
+ ./cloudinsights-install.sh <custom user> <custom group>
++
+Observação: Se você não deseja usar um usuário e um grupo personalizados, você pode usar o usuário e o grupo "cisys" padrão. Nesse caso, execute o comando install acima, mas não especifique o usuário e o grupo.
+
+
+
+
+
+Neste ponto, o software AU é instalado no sistema e é acessível pelo usuário e grupo personalizados. No entanto, você não tem a capacidade de adicionar coletores de dados. Para fazer isso manualmente, leia as instruções a seguir. Se você quiser instalar apenas um patch, consulte a <<downloading-a-patch,Patch>> seção abaixo.
+
+
+
+== Instalar manualmente os coletores de dados
+
+Faça o download dos mais recentes datasources.war usando a API /Collector/patch/datasourceswar/latest:
+
+image:API_Manual_Download_datasources.png["API para recuperar as últimas datasources.war"]
+
+Nota: Se você não estiver baixando a versão mais recente, confirme com o NetApp a versão a ser especificada para download.
+
+Clique em Transferir ficheiro. Se você estiver executando estas etapas em um sistema diferente do sistema AU, copie o pacote zip datasources.war baixado para o sistema AU.
+
+Certifique-se de que o pacote zip datasources.war seja copiado para o seguinte diretório : /var/lib/NetApp/cloudinsights/acq/download
+
+Navegue até o diretório /var/lib/NetApp/cloudinsights/acq/download para datasources.war e verifique o arquivo zip lá:
+
+. Você deve alternar para (ou logoff root e login com) o usuário personalizado para as próximas etapas.
++
+ su <custom user>
++
+Observação: Se você estiver usando o usuário e o grupo padrão "cisys", não será necessário executar esta etapa.
+
++
+Observação: O usuário personalizado pode ser qualquer usuário que seja membro de um grupo personalizado que você forneceu ao cloudinsights-install.sh durante a instalação do AU, e pode ser o mesmo ou diferente do usuário personalizado que você forneceu durante a instalação do AU.
+
+. Execute o seguinte:
++
+....
+chmod 770 /var/lib/netapp/cloudinsights/acq/download/datasources-war-<version>.zip
+ls -al /var/lib/netapp/cloudinsights/acq/download
+…
+drwxrwx--- 2 test-user2 test-group-1  4096 Feb 16 10:10 datasources-war-<version>.zip
+…
+....
++
+Nota: Se estiver usando o usuário e o grupo "cisys", eles serão exibidos na saída acima.
+
++
+Observação: Se você planeja instalar usando diferentes usuários personalizados, verifique se as permissões de grupo estão definidas para ler e escrever para o proprietário e o grupo (chmod 660...)
+
+. Reinicie a AU. Em Data Infrastructure Insights, navegue até Observability > Collectors e selecione a guia Acquisition Units (unidades de aquisição). Escolha Reiniciar no menu "três pontos" à direita da AU.
+
+
+
+
+== Baixando um Patch
+
+Faça o download do patch usando a API /Collector/patch/file/
+
+image:API_Manual_Download_patch.png["API para recuperar patch"]
+
+Nota: Confirme com o NetApp a versão a ser especificada para download.
+
+Clique em Transferir ficheiro. Se você estiver executando estas etapas em um sistema diferente do sistema AU, copie o pacote zip de patch baixado para o sistema AU.
+
+Certifique-se de que o pacote zip patch seja copiado para o seguinte diretório : /var/lib/NetApp/cloudinsights/acq/download
+
+Navegue até o diretório /var/lib/NetApp/cloudsights/acq/download para o patch e verifique o arquivo .zip lá:
+
+. Você deve alternar para (ou logoff root e login com) o usuário personalizado para as próximas etapas.
++
+ su <custom user>
++
+Observação: Se você estiver usando o usuário e o grupo padrão "cisys", não será necessário executar esta etapa.
+
++
+Observação: O usuário personalizado pode ser qualquer usuário que seja membro de um grupo personalizado que você forneceu ao cloudinsights-install.sh durante a instalação do AU, e pode ser o mesmo ou diferente do usuário personalizado que você forneceu durante a instalação do AU.
+
+. Execute o seguinte:
++
+....
+chmod 770 /var/lib/netapp/cloudinsights/acq/download/<patch_file_name>.zip
+ls -al /var/lib/netapp/cloudinsights/acq/download
+…
+drwxrwx--- 2 test-user2 test-group-1  4096 Feb 16 10:10 <patch_file_name>.zip
+…
+....
++
+Nota: Se estiver usando o usuário e o grupo "cisys", eles serão exibidos na saída acima.
+
++
+Observação: Se você planeja instalar usando diferentes usuários personalizados, verifique se as permissões de grupo estão definidas para ler e escrever para o proprietário e o grupo (chmod 660...)
+
+. Reinicie a AU. Em Data Infrastructure Insights, navegue até Observability > Collectors e selecione a guia Acquisition Units (unidades de aquisição). Escolha Reiniciar no menu "três pontos" à direita da AU.
+
+
+
+
+== Recuperação de chave externa
+
+Se você fornecer um script de shell UNIX, ele pode ser executado pela unidade de aquisição para recuperar a *chave privada* e a *chave pública* do seu sistema de gerenciamento de chaves.
+
+Para recuperar a chave, o Data Infrastructure Insights executará o script, passando dois parâmetros: _Key id_ e _key type_. _Key id_ pode ser usado para identificar a chave em seu sistema de gerenciamento de chaves. _Tipo de chave_ é "pública" ou "privada". Quando o tipo de chave é "pública", o script deve retornar a chave pública. Quando o tipo de chave é "privado", a chave privada deve ser retornada.
+
+Para enviar a chave de volta para a unidade de aquisição, o script deve imprimir a chave para a saída padrão. O script deve imprimir _only_ a chave para a saída padrão; nenhum outro texto deve ser impresso na saída padrão. Uma vez que a chave solicitada é impressa na saída padrão, o script deve sair com um código de saída de 0; qualquer outro código de retorno é considerado um erro.
+
+O script deve ser registrado na unidade de aquisição usando a ferramenta SecurityAdmin, que executará o script juntamente com a unidade de aquisição. O script deve ter permissão _read_ e _execute_ para o usuário root e "cisys". Se o script shell for modificado após o Registro, o script shell modificado deve ser re-registrado na unidade de aquisição.
+
+|===
+
+
+| parâmetro de entrada: id da chave | Identificador de chave usado para identificar a chave no sistema de gerenciamento de chaves dos clientes. 
+
+
+| parâmetro de entrada: tipo de chave | público ou privado. 
+
+
+| saída | A chave solicitada deve ser impressa na saída padrão. A chave RSA de 2048 bits é atualmente suportada. As chaves devem ser codificadas e impressas no seguinte formato - formato de chave privada - PEM, PKCS8 PrivateKeyInfo RFC 5958 formato de chave pública - PEM, X,509 subjectPublicKeyInfo RFC 5280 codificado POR DER 
+
+
+| código de saída | Código de saída de zero para o sucesso. Todos os outros valores de saída são considerados falha. 
+
+
+| permissões de script | O script deve ter permissão de leitura e execução para o usuário root e "cisys". 
+
+
+| registos | As execuções de script são registradas. Os logs podem ser encontrados em - /var/log/NetApp/cloudinsights/securityadmin/securityadmin.log /var/log/NetApp/cloudinsights/acq/acq.log 
+|===

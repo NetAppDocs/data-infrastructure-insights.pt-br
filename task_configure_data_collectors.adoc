@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: task_configure_data_collectors.html 
+keywords: acquisition, AU, data collector, collector, notification, notify, 
+summary: Instruções gerais do coletor de dados 
+---
+= Configurando coletores de dados
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Você configura os coletores de dados em seu ambiente Data Infrastructure Insights para coletar dados de dispositivos no data center.
+
+.Antes de começar
+* Tem de ter configurado uma Unidade de aquisição antes de poder começar a recolher dados.
+* Você precisa de credenciais para os dispositivos a partir dos quais você está coletando dados.
+* Endereços de rede do dispositivo, informações de conta e senhas são necessários para todos os dispositivos dos quais você está coletando dados.
+
+
+.Passos
+. No menu Data Infrastructure Insights, clique em *observabilidade > coletores*
++
+O sistema exibe os coletores de dados disponíveis organizados pelo fornecedor.
+
+. Clique em * Coletor* e selecione o coletor de dados a configurar.
++
+Na caixa de diálogo, pode configurar o coletor de dados e adicionar uma unidade de aquisição.
+
+. Introduza um nome para o coletor de dados.
+. Clique em *Configuração avançada* para adicionar campos de configuração adicionais. (Nem todos os coletores de dados exigem configuração avançada.)
+. Clique em *Configuração de teste* para verificar se o coletor de dados está configurado corretamente.
+. Clique em *Add Collector* para salvar a configuração e adicionar o coletor de dados ao seu locatário do Data Infrastructure Insights.
+
+
+Pode levar até dois períodos de enquete antes que os dados do serviço sejam exibidos em painéis ou disponíveis para consulta.
+
+* 1st pesquisa de inventário: imediatamente
+* pesquisa de dados de desempenho 1st para estabelecer uma linha de base: imediatamente após a pesquisa de inventário
+* enquete de desempenho 2nd: dentro de 15 segundos após a conclusão da enquete de desempenho 1st
+
+
+A polling então prossegue de acordo com os intervalos de enquete de inventário e desempenho configurados.

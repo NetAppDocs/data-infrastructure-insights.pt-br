@@ -1,0 +1,117 @@
+---
+sidebar: sidebar 
+permalink: task_dc_pure_flasharray.html 
+keywords: data collector, Pure Storage, pure 
+summary: Configuração do coletor de dados Pure Storage. 
+---
+= Coletor de dados Pure Storage FlashArray
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa o coletor de dados Pure Storage FlashArray para coletar dados de inventário e performance.
+
+
+
+== Terminologia
+
+Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Unidade (SSD) | Disco 
+
+
+| Array | Armazenamento 
+
+
+| Controlador | Nó de storage 
+
+
+| Volume | Volume 
+
+
+| Mapa LUN | Mapa de volume 
+
+
+| Iniciador, alvo | Máscara de volume 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* Endereço IP do sistema de armazenamento
+* Nome de utilizador e palavra-passe da conta de administrador do sistema de armazenamento Pure.
+* Requisito de porta: HTTP/HTTPS 80/443
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP do host FlashArray | Endereço IP do sistema de armazenamento 
+
+
+| Nome de utilizador | Nome de usuário com admin Privileges 
+
+
+| Senha para a conta privilegiada do administrador | Palavra-passe 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Tipo de ligação | Escolha HTTP ou HTTPS. Também exibe a porta padrão. 
+
+
+| Substituir a porta TCP | Se estiver em branco, use a porta padrão no campo tipo de conexão; caso contrário, insira a porta de conexão a ser usada 
+
+
+| Intervalo de pesquisa de inventário (min) | O padrão é 60 minutos 
+
+
+| Intervalo de enquete de desempenho (seg) | A predefinição é 300 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| "Credenciais de login inválidas" com mensagens de erro "a política não permite" ou "você não está autorizado" | Valide a conta de usuário e a senha da Pure através da interface http da Pure 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

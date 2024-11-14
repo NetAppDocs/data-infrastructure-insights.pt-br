@@ -1,0 +1,129 @@
+---
+sidebar: sidebar 
+permalink: task_dc_openstack.html 
+keywords: data collector, openstack, OpenStack 
+summary: Coletor de dados OpenStack. 
+---
+= Coletor de dados OpenStack
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de dados OpenStack (REST API / KVM) adquire dados de inventário para todas as instâncias OpenStack e, opcionalmente, dados de desempenho de VM.
+
+
+
+== Requisitos
+
+* Endereço IP do controlador OpenStack
+* Credencial de função de administrador do OpenStack e acesso sudo ao hipervisor Linux KVM. Se você não estiver usando a conta de administrador ou o administrador equivalente Privileges, você precisará usar o teste e o erro para identificar as políticas padrão para relaxar para o seu ID de usuário do coletor de dados.
+* O módulo OpenStack Gnocchi deve ser instalado e configurado para coleta de desempenho. A configuração do Gnocchi é feita editando o arquivo nova.conf para cada hypervisor e, em seguida, reiniciando o serviço Nova Compute em cada hypervisor. O nome da opção muda para diferentes versões do OpenStack:
++
+** Icehouse
+** Juno
+** Quilo
+** Liberdade
+** Mitaka
+** Newton
+** Ocata
+
+
+* Para estatísticas de CPU, "ComputeDriverCPUMonitor" precisa ser ativado em /etc/nova/nova.conf em nós de computação.
+* Requisitos do porto:
++
+** 5000 para http e 13000 para https, para o serviço Keystone
+** 22 para KVM SSH
+** 8774 para Nova Compute Service
+** 8776 para o serviço do bloco do Cinder
+** 8777 para Gnocchi Performance Service
+** 9292 for Glance Image Service *Observação* a porta se liga ao serviço específico e o serviço pode ser executado no controlador ou em outro host em ambientes maiores.
+
+
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP do controlador OpenStack | Endereço IP ou nome de domínio totalmente qualificado do controlador OpenStack 
+
+
+| Administrador do OpenStack | Nome de usuário para um administrador OpenStack 
+
+
+| Senha do OpenStack | Senha usada para o administrador do OpenStack 
+
+
+| Locatário do administrador do OpenStack | Nome do locatário do Administrador do OpenStack 
+
+
+| KVM sudo usuário | Nome de usuário do sudo KVM 
+
+
+| Escolha 'Senha' ou 'Arquivo de chave OpenSSH' para especificar o tipo de credencial | Tipo de credencial usado para se conetar ao dispositivo via SSH 
+
+
+| Caminho completo para chave privada de inventário | Caminho completo para chave privada de inventário 
+
+
+| KVM sudo Password | KVM sudo Password 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Habilite a descoberta de inventário do hipervisor por meio de SSH | Verifique isto para ativar a descoberta de inventário do hipervisor através de SSH 
+
+
+| Porta de URL do OpenStack Admin | Porta de URL do OpenStack Admin 
+
+
+| Use HTTPS | Verifique para usar HTTP seguro 
+
+
+| Porta SSH | Porta usada para SSH 
+
+
+| Geometrias de processo SSH | Número de tentativas de tentativa de inventário 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 20 minutos. 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| "Erro de configuração" com mensagens de erro começam com "a política não permite" ou "você não está autorizado" | * Verificar endereço ip * verificar nome de usuário e senha 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

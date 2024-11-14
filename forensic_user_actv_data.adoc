@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: forensic_user_actv_data.html 
+keywords: Forensic, user activity, user activity data, 
+summary: dados de atividade do utilizador forense 
+---
+= Dados de atividade do utilizador forense
+:toc: macro
+:hardbreaks:
+:toclevels: 
+:allow-uri-read: 
+:toc: 
+:toclevels: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+A página atividade do usuário ajuda você a entender as ações executadas pelos usuários em entidades.
+
+Os dados disponíveis nesta página descrevem:
+
+* O tempo de acesso da entidade, incluindo mês, dia, ano e hora.
+* O usuário que acessou a entidade com um link para o link:forensic_user_overview.html["Dados Detalhes Utilizador"].
+* A atividade realizada pelo utilizador:
++
+** Escreva
+** Leia
+** Aceder aos metadados
+
+
+* O caminho para a entidade com um link para o. link:forensic_entity_detail.html["Dados Detalhe entidade"]
+* O tipo de entidade:
++
+** Ficheiro
+** Caminho
+
+
+* O endereço IP a partir do qual a operação foi realizada.
+

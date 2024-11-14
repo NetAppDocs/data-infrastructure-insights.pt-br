@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: task_config_telegraf_consul.html 
+keywords: telegraf, installation, install, consul 
+summary: Configuração do coletor de dados do cônsul 
+---
+= Consul Data Collector
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa esse coletor de dados para coletar métricas da Cônsul.
+
+
+
+== Instalação
+
+. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha Cônsul.
++
+Se você não tiver configurado um agente para coleta, será solicitado link:task_config_telegraf_agent.html["instale um agente"]no seu ambiente.
+
++
+Se você já tiver um agente configurado, selecione o sistema operacional ou a Plataforma apropriada e clique em *continuar*.
+
+. Siga as instruções na tela Consul Configuration (Configuração do cônsul) para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+
+
+
+
+== Configuração
+
+As informações podem ser encontradas no link:https://www.consul.io/docs/index.html["Documentação do cônsul"].
+
+
+
+== Objetos e contadores para cônsul
+
+Os seguintes objetos e seus contadores são coletados:
+
+[cols="<.<,<.<,<.<,<.<"]
+|===
+| Objeto: | Identificadores: | Atributos: | Pontos de dados: 
+
+
+| Cônsul | Nó de serviço de ID de verificação de namespace | Nó IP nó os nó UUUID Nome do nó Serviço Nome verificar Nome ID do serviço Status | Aviso de aprovação crítica 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.

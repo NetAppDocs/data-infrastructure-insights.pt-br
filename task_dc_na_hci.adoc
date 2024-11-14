@@ -1,0 +1,165 @@
+---
+sidebar: sidebar 
+permalink: task_dc_na_hci.html 
+keywords: data collector, VMware, hci 
+summary: Configurando o coletor de dados do servidor de gerenciamento NetApp HCI. 
+---
+= Configurando o coletor de dados do servidor de gerenciamento NetApp HCI
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de dados do servidor de gerenciamento do NetApp HCI coleta informações do host do NetApp HCI e requer Privileges somente leitura em todos os objetos dentro do servidor de gerenciamento.
+
+Este coletor de dados adquire apenas a partir do *servidor de Gestão NetApp HCI*. Para coletar dados do sistema de armazenamento, você também deve configurar o link:task_dc_na_solidfire.html["NetApp SolidFire"]coletor de dados.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário desse coletor de dados. Para cada tipo de ativo adquirido, a terminologia mais comum usada para o ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Disco virtual | Disco 
+
+
+| Host | Host 
+
+
+| Máquina virtual | Máquina virtual 
+
+
+| Armazenamento de dados | Armazenamento de dados 
+
+
+| LUN | Volume 
+
+
+| Porta Fibre Channel | Porta 
+|===
+Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+As seguintes informações são necessárias para configurar este coletor de dados:
+
+* Endereço IP do servidor de gerenciamento NetApp HCI
+* Nome de usuário e senha somente leitura para o servidor de Gerenciamento NetApp HCI
+* Leia somente Privileges em todos os objetos no servidor de gerenciamento do NetApp HCI.
+* Acesso ao SDK no servidor de gerenciamento do NetApp HCI – normalmente já configurado.
+* Requisitos de porta: HTTP-80 https-443
+* Validar acesso:
++
+** Faça login no servidor de gerenciamento do NetApp HCI usando o nome de usuário e a senha acima
+** Verificar SDK habilitado: telnet <vc_ip> 443
+
+
+
+
+
+
+== Configuração e conexão
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Nome | Nome exclusivo para o coletor de dados 
+
+
+| Unidade de aquisição | Nome da unidade de aquisição 
+|===
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| MVIP do cluster de storage do NetApp HCI | Endereço IP virtual de gerenciamento 
+
+
+| Nó de gerenciamento de SolidFire (mNode) | Endereço IP do nó de gerenciamento 
+
+
+| Nome de utilizador | Nome de utilizador utilizado para aceder ao servidor de gestão NetApp HCI 
+
+
+| Palavra-passe | Palavra-passe utilizada para aceder ao servidor de gestão NetApp HCI 
+
+
+| Nome de usuário do vCenter | Nome de usuário do vCenter 
+
+
+| Senha do vCenter | Senha do vCenter 
+|===
+
+
+== Configuração avançada
+
+Na tela de configuração avançada, marque a caixa *desempenho da VM* para coletar dados de desempenho. A coleção de inventário está ativada por predefinição. Os seguintes campos podem ser configurados:
+
+[cols="2*"]
+|===
+
+
+| Campo | Descrição 
+
+
+| Intervalo de pesquisa de inventário (min) | Deafult é 20 
+
+
+| Filtrar VMs por | Selecione CLUSTER, DATA CENTER ou HOST ESX 
+
+
+| Escolha 'Excluir' ou 'incluir' para especificar uma lista | Especifique se deseja incluir ou excluir VMs 
+
+
+| Filtrar Lista de dispositivos | Lista de VMs a filtrar (separadas por vírgulas ou ponto e vírgula separadas se a vírgula for usada no valor) para filtragem somente por ESX_HOST, CLUSTER e DATA CENTER 
+
+
+| Intervalo de pesquisa de desempenho (seg) | A predefinição é 300 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Erro: Incluir lista para filtrar VMs não pode estar vazia | Se a opção incluir lista estiver selecionada, liste nomes válidos de data center, cluster ou host para filtrar VMs 
+
+
+| Erro: Falha ao instanciar uma conexão com o VirtualCenter no IP | Soluções possíveis: * Verifique as credenciais e o endereço IP inseridos. * Tente se comunicar com o Virtual Center usando o Infrastructure Client. * Tente se comunicar com o Virtual Center usando o Navegador de objetos gerenciados (por exemplo, MOB). 
+
+
+| Erro: O VirtualCenter at IP tem certificado não conforme exigido pela JVM | Soluções possíveis: * Recomendado: Re-gerar certificado para o Virtual Center usando uma chave RSA mais forte (por exemplo, 1024 bits). * Não recomendado: Modifique a configuração JVM java.security para aproveitar a restrição jdk.certpath.disabledAlgorithms para permitir a chave RSA de 512 bits. Consulte as notas de versão da atualização 40 do JDK 7 em "http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html"[] 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

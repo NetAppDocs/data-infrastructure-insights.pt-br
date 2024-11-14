@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: cs_notifications_email.html 
+summary: Adicionar endereços de e-mail para notificações de Alertas de Segurança de carga de trabalho. 
+keywords: email, notifications, alerts, warnings, attacks 
+---
+= Configurar notificações de e-mail para alertas, avisos e integridade do coletor de agente/fonte de dados
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Para configurar os destinatários do alerta de segurança do Workload, clique em *Admin > notificações* e insira um endereço de e-mail na(s) seção(s) apropriada(s) para cada destinatário.
+
+
+
+== Alertas e avisos de ataque potenciais
+
+Para enviar notificações de alerta _potencial ataque_, insira os endereços de e-mail dos destinatários na seção _Enviar alertas de ataque potencial_. As notificações por e-mail são enviadas para a lista de destinatários de alerta para cada ação no alerta.
+
+Para enviar notificações _Aviso_, insira os endereços de e-mail dos destinatários na seção _Enviar alertas de aviso_.
+
+
+
+== Monitoramento de integridade do agente e coletor de dados
+
+Você pode monitorar a integridade de agentes e fontes de dados por meio de notificações.
+
+Para receber notificações no caso de um agente ou coletor de fonte de dados não funcionar, insira os endereços de e-mail dos destinatários na seção _Alertas de integridade da coleta de dados_.
+
+Tenha em mente o seguinte:
+
+* Os alertas de integridade serão enviados somente depois que o agente/coletor parar de informar por pelo menos uma hora.
+* Somente uma notificação por e-mail é enviada aos destinatários pretendidos em um determinado período de 24 horas, mesmo que o Agente ou coletor de dados esteja desconetado por uma duração maior.
+* Em caso de falha do Agente, um alerta será enviado (não um por coletor). O e-mail incluirá uma lista de todos os SVMs impactados.
+* A falha de coleta de diretório ativo é relatada como um aviso; ela não afeta a deteção de ransomware.
+* A lista de configuração Introdução agora inclui uma nova fase _Configurar notificações por e-mail_.
+
+
+
+
+== Recebendo notificações de atualização de Agente e Coletor de dados
+
+* Insira o(s) ID(s) de e-mail nos "Alertas de integridade da coleta de dados".
+* A caixa de verificação "Ativar notificações de atualização" torna-se ativada.
+* As notificações de e-mail de atualização do agente e do coletor de dados são enviadas para os IDs de e-mail um dia antes da atualização planejada.
+
+
+
+
+== Solução de problemas
+
+|===
+| *Problema:* | *Tente isto:* 
+
+
+| Os IDs de e-mail estão presentes nos "Alertas de integridade do coletor de dados", no entanto, não estou recebendo notificações. | Os e-mails de notificação são enviados a partir do domínio de informações de infraestrutura de dados da NetApp, ou seja, a partir de [[cloudinsights.NetApp.com_]. Algumas empresas bloqueiam e-mails recebidos se forem de um domínio externo. Certifique-se de que as notificações externas dos domínios do Insights da infraestrutura de dados do NetApp estejam na lista branca. 
+|===

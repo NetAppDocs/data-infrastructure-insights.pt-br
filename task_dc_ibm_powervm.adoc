@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: task_dc_ibm_powervm.html 
+keywords: IBM, powerVM, 
+summary: Configurando o coletor de dados IBM PowerVM. 
+---
+= Configurando o coletor de dados IBM PowerVM
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de dados IBM PowerVM (SSH) é usado para coletar informações sobre partições virtuais executadas em instâncias de hardware IBM POWER gerenciadas por um console de gerenciamento de hardware (HMC).
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire informações de inventário das partições virtuais executadas em instâncias de hardware IBM POWER. Para cada tipo de ativo adquirido, a terminologia mais comum usada para o ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| hdisk | Disco virtual 
+
+
+| Sistema gerenciado | Host 
+
+
+| LPAR, servidor VIO | Máquina virtual 
+
+
+| Grupo de volume | Armazenamento de dados 
+
+
+| Volume físico | LUN 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+Os seguintes requisitos devem ser atendidos para configurar e usar este coletor de dados:
+
+* Endereço IP do Console de Gerenciamento de hardware (HMC)
+* Nome de usuário e senha que fornecem acesso ao hardware Management Console (HMC) por meio de SSH
+* Requisito de porta SSH-22
+* Visualize a permissão em todos os sistemas de gerenciamento e domínios de segurança de partição lógica
++
+O usuário também deve ter permissão View em configurações HMC e a capacidade de coletar informações VPD para o agrupamento de segurança do console HMC. O usuário também deve ter permissão de acesso ao comando Virtual IO Server sob o agrupamento de segurança de partição lógica. É uma prática recomendada começar a partir de uma função de operador e depois remover todas as funções. Usuários somente leitura no HMC não têm Privileges para executar comandos proxied em hosts AIX.
+
+* A prática recomendada da IBM é ter os dispositivos monitorados por dois ou mais HMCs. Esteja ciente de que isso pode fazer com que o OnCommand Insight relate dispositivos duplicados, portanto, é altamente recomendável adicionar dispositivos redundantes à lista "Excluir dispositivos" na Configuração Avançada para este coletor de dados.
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP do console de gerenciamento de hardware (HMC) | Endereço IP ou nome de domínio totalmente qualificado do PowerVM hardware Management Console 
+
+
+| Utilizador HMC | Nome de usuário do Console de Gerenciamento de hardware 
+
+
+| Palavra-passe | Senha usada para o Console de Gerenciamento de hardware 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 20 minutos. 
+
+
+| Porta SSH | Porta usada para SSH para o PowerVM 
+
+
+| Palavra-passe | Senha usada para o Console de Gerenciamento de hardware 
+
+
+| Número de geometrias | Número de tentativas de tentativa de inventário 
+
+
+| Excluir dispositivos | Lista separada por vírgulas de IDs de dispositivos ou nomes de exibição a serem excluídos 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

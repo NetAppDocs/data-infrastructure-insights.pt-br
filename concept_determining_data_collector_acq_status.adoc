@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: concept_determining_data_collector_acq_status.html 
+summary: Status de aquisição do Data Collector 
+keywords: collector, acquisition, status 
+---
+= Determinando o status de aquisição do coletor de dados
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Como os coletores de dados são a principal fonte de informações do Data Infrastructure Insights, é imperativo garantir que eles permaneçam em um estado em execução.
+
+O status do coletor de dados é exibido no canto superior direito de qualquer página de ativo como a mensagem "adquirido N minutos atrás", onde N indica o tempo de aquisição mais recente do(s) coletor(es) de dados do ativo. A hora/data de aquisição também é apresentada.
+
+Ao clicar na mensagem, é apresentada uma tabela com o nome do coletor de dados, o estado e o último tempo de aquisição bem-sucedido. Se você estiver conetado como Administrador, clicar no link do nome do coletor de dados na tabela o levará à página de detalhes desse coletor de dados.

@@ -1,0 +1,122 @@
+---
+sidebar: sidebar 
+permalink: task_dc_ibm_xiv.html 
+keywords: IBM, XIV, SAN, A9000 
+summary: Configurando o coletor de dados IBM XIV/A9000. 
+---
+= Configurando o coletor de dados IBM XIV/A9000
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de dados IBM XIV e A9000 (CLI) usa a interface de linha de comando XIV para coletar dados de inventário enquanto a coleta de desempenho é realizada fazendo chamadas SMI-S para o array XIV/A9000, que executa um provedor SMI-S na porta 7778.
+
+
+
+== Terminologia
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Disco | Disco 
+
+
+| Sistema de storage | Armazenamento 
+
+
+| Pool de storage | Pool de storage 
+
+
+| Volume | Volume 
+|===
+
+
+== Requisitos
+
+Os seguintes requisitos devem ser atendidos para configurar e usar este coletor de dados:
+
+* Requisito de porta: Porta TCP 7778
+* Nome de utilizador e palavra-passe só de leitura
+* A XIV CLI tem de ser instalada na AU
+
+
+
+
+== Requisitos de desempenho
+
+Os seguintes são requisitos para a coleta de desempenho:
+
+* Agente SMI-S 1,4 ou superior
+* CIMService compatível com SMI-S rodando em array. A maioria dos arrays XIV tem um CIMServer instalado por padrão.
+* O login de usuário deve ser fornecido para o CIMServer. O login deve ter acesso completo de leitura à configuração e propriedades do array.
+* Namespace SMI-S. O padrão é root/ibm. Isso é configurável no CIMServer.
+* Requisitos de porta: 5988 para HTTP, 5989 para HTTPS.
+* Consulte o seguinte link sobre como criar uma conta para a coleção de desempenho SMI-S: https://www.ibm.com/docs/en/products?topic=/com.ibm.tpc_V41.doc/fqz0_t_adding_cim_agent.html[]
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP XIV | Endereço IP ou nome de domínio totalmente qualificado do armazenamento XIV 
+
+
+| Nome de utilizador | Nome de utilizador para o armazenamento XIV 
+
+
+| Palavra-passe | Palavra-passe para o armazenamento XIV 
+
+
+| Caminho completo para XIV diretório CLI | Caminho completo para a pasta que contém a XIV CLI 
+
+
+| Endereço IP do host SMI-S | Endereço IP do host SMI-S. 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 40 minutos. 
+
+
+| Protocolo SMI-S. | Protocolo utilizado para ligar ao fornecedor SMI-S. Também exibe a porta padrão. 
+
+
+| Substituir a porta SMI-S. | Se estiver em branco, use a porta padrão no campo tipo de conexão; caso contrário, insira a porta de conexão a ser usada 
+
+
+| Nome de utilizador | Nome de utilizador para o anfitrião do fornecedor SMI-S. 
+
+
+| Palavra-passe | Palavra-passe para o anfitrião do fornecedor SMI-S. 
+
+
+| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. O padrão é 300 segundos. 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

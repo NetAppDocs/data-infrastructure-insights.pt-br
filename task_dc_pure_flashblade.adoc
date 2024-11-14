@@ -1,0 +1,117 @@
+---
+sidebar: sidebar 
+permalink: task_dc_pure_flashblade.html 
+keywords: data collector, Pure Storage, pure, FlashBlade 
+summary: Configuração do coletor de dados Pure Storage. 
+---
+= Coletor de dados Pure Storage FlashBlade
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa o coletor de dados Pure Storage FlashBlade para coletar dados de inventário e desempenho de clusters FlashBlade que expõem a versão 2 da API REST
+
+
+
+== Terminologia
+
+Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Unidade (SSD) | Disco 
+
+
+| Array | Armazenamento 
+
+
+| Lâmina | Nó de storage 
+
+
+| Sistema de ficheiros | Volume interno 
+
+
+| Balde de armazenamento de objetos | Qtree 
+
+
+| Iniciador, alvo | Máscara de volume 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* Endereço IP do sistema de armazenamento ou nome de domínio totalmente qualificado
+* Token de API, idealmente com uma vida útil infinita. Um usuário de nível readonly deve ser suficiente.
+* Requisito de porta: HTTPS 443
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP do host FlashBlade | Endereço IP do sistema de armazenamento 
+
+
+| Nome de utilizador | Nome de usuário para ajudar os administradores do Data Infrastructure Insights a lembrar para qual usuário seu token de API pertence 
+
+
+| Token de API | Token de API 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Tipo de ligação | Escolha HTTP ou HTTPS. Também exibe a porta padrão. 
+
+
+| Substituir a porta TCP | Se estiver em branco, use a porta padrão no campo tipo de conexão; caso contrário, insira a porta de conexão a ser usada 
+
+
+| Intervalo de pesquisa de inventário (min) | O padrão é 60 minutos 
+
+
+| Intervalo de enquete de desempenho (seg) | A predefinição é 300 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| "Credenciais de login inválidas" com mensagens de erro "a política não permite" ou "você não está autorizado" | Valide a conta de usuário e a senha da Pure através da interface http da Pure 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

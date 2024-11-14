@@ -1,0 +1,85 @@
+---
+sidebar: sidebar 
+permalink: reporting_data_retention.html 
+summary: Retenção de dados do Data Infrastructure Insights para relatórios 
+keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying, retention 
+---
+= Como os dados históricos são retidos para relatórios
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights retém os dados históricos para uso no relatório com base nos marts de dados e na granularidade dos dados, como mostrado na tabela a seguir.
+
+|===
+
+
+| Data mart | Objeto medido | Granularidade | Período de retenção 
+
+
+| Desempenho marts | Volumes e volumes internos | Por hora | 14 dias 
+
+
+| Desempenho marts | Volumes e volumes internos | Diariamente | 13 meses 
+
+
+| Desempenho marts | Aplicação | Por hora | 13 meses 
+
+
+| Desempenho marts | Host | Por hora | 13 meses 
+
+
+| Desempenho marts | Desempenho do switch para a porta | Por hora | 35 dias 
+
+
+| Desempenho marts | Alterne o desempenho para host, armazenamento e fita | Por hora | 13 meses 
+
+
+| Desempenho marts | Nó de storage | Por hora | 14 dias 
+
+
+| Desempenho marts | Nó de storage | Diariamente | 13 meses 
+
+
+| Desempenho marts | Desempenho da VM | Por hora | 14 dias 
+
+
+| Desempenho marts | Desempenho da VM | Diariamente | 13 meses 
+
+
+| Desempenho marts | Desempenho de hipervisor | Por hora | 35 dias 
+
+
+| Desempenho marts | Desempenho de hipervisor | Diariamente | 13 meses 
+
+
+| Desempenho marts | Desempenho da VMDK | Por hora | 35 dias 
+
+
+| Desempenho marts | Desempenho da VMDK | Diariamente | 13 meses 
+
+
+| Desempenho marts | Desempenho de disco | Por hora | 14 dias 
+
+
+| Desempenho marts | Desempenho de disco | Diariamente | 13 meses 
+
+
+| Capacidade marts | Todos (exceto volumes individuais) | Diariamente | 13 meses 
+
+
+| Capacidade marts | Todos (exceto volumes individuais) | Representante mensal | 14 meses e mais além 
+
+
+| Marts de inventário | Volumes individuais | Estado atual | 1 dia (ou até o próximo ETL) 
+|===

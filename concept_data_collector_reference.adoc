@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: concept_data_collector_reference.html 
+summary: Informações de referência de coletor de dados específicos do fornecedor. 
+keywords: data collector, vendor, AWS, BROADCOM, Cisco, Dell, EMC, Hitachi, IBM, NetApp, OceanStor, OpenStack, Oracle, Pure Storage, Red Hat, redhat, VMware 
+---
+= Referência específica do fornecedor
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Os tópicos nesta seção fornecem informações de referência específicas do fornecedor. Na maioria dos casos, configurar um coletor de dados é simples. Em alguns casos, você pode precisar de informações ou comandos adicionais para configurar corretamente o coletor de dados.
+
+Clique em um *vendor* no menu à esquerda para ver as informações de seus coletores de dados.

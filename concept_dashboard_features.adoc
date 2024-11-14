@@ -1,0 +1,895 @@
+---
+sidebar: sidebar 
+permalink: concept_dashboard_features.html 
+summary: Funcionalidades e conceitos do painel de instrumentos. 
+keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand 
+---
+= Funcionalidades do painel de instrumentos
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:toclevels: 1
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Painéis e widgets permitem uma grande flexibilidade na forma como os dados são exibidos. Aqui estão alguns conceitos para ajudar você a aproveitar ao máximo seus painéis personalizados.
+
+
+toc::[]
+
+
+== Nome do widget
+
+Os widgets são nomeados automaticamente com base no objeto, métrica ou atributo selecionado para a primeira consulta de widget. Se você também escolher um agrupamento para o widget, os atributos "Agrupar por" serão incluídos na nomenclatura automática (método de agregação e métrica).
+
+image:WidgetNamingExample-C.png["Exemplo de nome de widget"]
+
+Selecionar um novo objeto ou atributo de agrupamento atualiza o nome automático.
+
+Se você não quiser usar o nome automático do widget, você pode simplesmente digitar um novo nome.
+
+
+
+== Posicionamento e tamanho do widget
+
+Todos os widgets do painel podem ser posicionados e dimensionados de acordo com suas necessidades para cada painel específico.
+
+
+
+== Duplicando um Widget
+
+No modo de edição do dashboard, clique no menu no widget e selecione *duplicar*. O editor de widget é iniciado, pré-preenchido com a configuração original do widget e com um sufixo "copy" no nome do widget. Você pode facilmente fazer todas as alterações necessárias e salvar o novo widget. O widget será colocado na parte inferior do seu painel de controle, e você pode posicioná-lo conforme necessário. Lembre-se de salvar seu painel quando todas as alterações estiverem concluídas.
+
+
+
+== Exibindo legendas do widget
+
+A maioria dos widgets em painéis pode ser exibida com ou sem legendas. Legendas em widgets podem ser ativadas ou desativadas em um painel por um dos seguintes métodos:
+
+* Ao exibir o painel, clique no botão *Opções* no widget e selecione *Mostrar Lendas* no menu.
+
+
+À medida que os dados exibidos no widget mudam, a legenda desse widget é atualizada dinamicamente.
+
+Quando legendas são exibidas, se a página de destino do ativo indicado pela legenda puder ser navegada, a legenda será exibida como um link para essa página de ativo. Se a legenda exibir "todos", clicar no link exibirá uma página de consulta correspondente à primeira consulta no widget.
+
+
+
+== Métricas transformadoras
+
+O Insights de infraestrutura de dados fornece diferentes opções *Transform* para determinadas métricas em widgets (especificamente, aquelas métricas chamadas "personalizadas" ou métricas de integração, como do Kubernetes, dados avançados do ONTAP, plugins do Telegraf, etc.), permitindo que você exiba os dados de várias maneiras. Ao adicionar métricas transformáveis a um widget, você é apresentado com uma lista suspensa fornecendo as seguintes opções de transformação:
+
+Nenhum:: Os dados são apresentados como estão, sem manipulação.
+Taxa:: Valor atual dividido pelo intervalo de tempo desde a observação anterior.
+Cumulativo:: A acumulação da soma dos valores anteriores e do valor atual.
+Delta:: A diferença entre o valor de observação anterior e o valor atual.
+Taxa Delta:: Valor Delta dividido pelo intervalo de tempo desde a observação anterior.
+Taxa acumulada:: Valor cumulativo dividido pelo intervalo de tempo desde a observação anterior.
+
+
+Observe que transformar métricas não altera os dados subjacentes em si, mas apenas a maneira como os dados são exibidos.
+
+
+
+== Consultas e filtros de widgets do painel
+
+
+
+=== Consultas
+
+A consulta em um widget de painel é uma ferramenta poderosa para gerenciar a exibição de seus dados. Aqui estão algumas coisas a observar sobre consultas de widget.
+
+Alguns widgets podem ter até cinco consultas. Cada consulta plotará seu próprio conjunto de linhas ou gráficos no widget. A configuração de rollup, agrupamento, resultados de cima/baixo, etc. em uma consulta não afeta nenhuma outra consulta para o widget.
+
+Você pode clicar no ícone de olho para ocultar temporariamente uma consulta. O widget exibe atualizações automaticamente quando você oculta ou mostra uma consulta. Isso permite que você verifique seus dados exibidos para consultas individuais à medida que você cria seu widget.
+
+Os seguintes tipos de widget podem ter várias consultas:
+
+* Gráfico de área
+* Gráfico de área empilhada
+* Gráfico de linhas
+* Gráfico de estrias
+* Widget de valor único
+
+
+Os restantes tipos de widget podem ter apenas uma única consulta:
+
+* Tabela
+* Gráfico de barras
+* Gráfico de caixa
+* Gráfico de dispersão
+
+
+
+
+=== Filtragem em consultas de widget de painel
+
+Aqui estão algumas coisas que você pode fazer para tirar o máximo proveito de seus filtros.
+
+
+
+==== Filtragem de correspondência exata
+
+Se você incluir uma string de filtro em aspas duplas, o Insight trata tudo entre a primeira e a última citação como uma correspondência exata. Quaisquer carateres especiais ou operadores dentro das aspas serão tratados como literais. Por exemplo, a filtragem para "*" retornará resultados que são um asterisco literal; o asterisco não será Tratado como um curinga neste caso. Os operadores E, OU, e NÃO também serão tratados como strings literais quando incluídos em aspas duplas.
+
+Você pode usar filtros de correspondência exata para encontrar recursos específicos, por exemplo, nome de host. Se você quiser encontrar apenas o nome de host 'marqueting', mas excluir 'arketing01', 'marketing-boston', etc., simplesmente inclua o nome "marketing" em aspas duplas.
+
+
+
+==== Curingas e expressões
+
+Quando você está filtrando valores de texto ou lista em consultas ou widgets de painel, à medida que você começa a digitar, você recebe a opção de criar um filtro * curinga* com base no texto atual. Selecionar esta opção irá retornar todos os resultados que correspondem à expressão curinga. Você também pode criar *expressões* usando NOT OU OU, ou pode selecionar a opção "nenhum" para filtrar valores nulos no campo.
+
+image:Type-Ahead-Example-ingest.png["Filtro Wildcard"]
+
+Os filtros baseados em carateres universais ou expressões (por exemplo, NÃO, OU, "nenhum", etc.) são exibidos em azul escuro no campo de filtro. Os itens que você selecionar diretamente da lista são exibidos em azul claro.
+
+image:Type-Ahead-Example-Wildcard-DirectSelect.png["Resultados do filtro Wildcard"]
+
+Observe que a filtragem de carateres curinga e expressão funciona com texto ou listas, mas não com valores numéricos, datas ou booleanos.
+
+
+
+==== Filtragem de texto avançada com sugestões contextuais de tipo à frente
+
+A filtragem em consultas de widget é _contextual_; quando você seleciona um valor de filtro ou valores para um campo, os outros filtros dessa consulta mostrarão valores relevantes para esse filtro. Por exemplo, ao definir um filtro para um objeto específico _Name_, o campo a filtrar para _Model_ mostrará apenas valores relevantes para esse nome de objeto.
+
+A filtragem contextual também se aplica a variáveis de página do painel (atributos de tipo de texto ou anotações somente). Quando você seleciona um valor de filer para uma variável, quaisquer outras variáveis que usam objetos relacionados só mostrarão possíveis valores de filtro com base no contexto dessas variáveis relacionadas.
+
+Observe que somente filtros de texto mostrarão sugestões contextuais de tipo à frente. Data, Enum (lista), etc. não mostrará sugestões de tipo antecipada. Dito isto, você _pode_ definir um filtro em um campo Enum (ou seja, lista) e ter outros campos de texto ser filtrados em contexto. Por exemplo, selecionar um valor em um campo Enum como o Data Center, em seguida, outros filtros mostrarão apenas os modelos/nomes nesse data center), mas não vice-versa.
+
+O intervalo de tempo selecionado também fornecerá contexto para os dados mostrados nos filtros.
+
+
+
+==== Escolher as unidades de filtro
+
+Ao digitar um valor em um campo de filtro, você pode selecionar as unidades nas quais exibir os valores no gráfico. Por exemplo, você pode filtrar a capacidade bruta e optar por exibir no GiB surdez ou selecionar outro formato, como TIB. Isso é útil se você tiver vários gráficos no painel mostrando valores no TIB e quiser que todos os gráficos mostrem valores consistentes.
+
+image:Filter_Unit_Format.png["selecionar unidades num filtro"]
+
+
+
+==== Refinamentos adicionais de filtragem
+
+O seguinte pode ser usado para refinar ainda mais seus filtros.
+
+* Um asterisco permite que você procure por tudo. Por exemplo,
++
+[listing]
+----
+vol*rhel
+----
++
+exibe todos os recursos que começam com "vol" e terminam com "rhel".
+
+* O ponto de interrogação permite procurar um número específico de carateres. Por exemplo,
++
+[listing]
+----
+BOS-PRD??-S12
+----
++
+Exibe _BOS-PRD12-S12_, _BOS-PRD13-S12_ e assim por diante.
+
+* O OPERADOR OU permite especificar várias entidades. Por exemplo,
++
+[listing]
+----
+FAS2240 OR CX600 OR FAS3270
+----
++
+encontra vários modelos de armazenamento.
+
+* O operador NOT permite excluir texto dos resultados da pesquisa. Por exemplo,
++
+[listing]
+----
+NOT EMC*
+----
++
+Encontra tudo o que não começa com "EMC". Você pode usar
+
++
+[listing]
+----
+NOT *
+----
++
+para exibir campos que não contêm nenhum valor.
+
+
+
+
+
+=== Identificar objetos retornados por consultas e filtros
+
+Os objetos retornados por consultas e filtros são semelhantes aos mostrados na ilustração a seguir. Objetos com 'tags' atribuídos a eles são anotações enquanto os objetos sem tags são contadores de desempenho ou atributos de objeto.
+
+image:ObjectsReturnedByFilters.png["Objetos retornados por filtros"]
+
+
+
+== Agrupamento e agregação
+
+
+
+=== Agrupamento (rolando para cima)
+
+Os dados exibidos em um widget são agrupados (às vezes chamados de rolados) a partir dos pontos de dados subjacentes coletados durante a aquisição. Por exemplo, se você tiver um widget de gráfico de linha mostrando Storage IOPS ao longo do tempo, talvez queira ver uma linha separada para cada um dos seus data centers, para uma comparação rápida. Você pode optar por agrupar esses dados de várias maneiras:
+
+* *Média*: Exibe cada linha como a _média_ dos dados subjacentes.
+* *Maximum*: Exibe cada linha como _maximum_ dos dados subjacentes.
+* *Minimum*: Exibe cada linha como _minimum_ dos dados subjacentes.
+* *Soma*: Exibe cada linha como _soma_ dos dados subjacentes.
+* *Count*: Exibe uma _count_ de objetos que relataram dados dentro do período de tempo especificado. Você pode escolher a janela de tempo _inteiro_ conforme determinado pelo intervalo de tempo do painel.
+
+
+.Passos
+Para definir o método de agrupamento, faça o seguinte.
+
+. Na consulta do seu widget, escolha um tipo de ativo e uma métrica (por exemplo, _Storage_) e métrica (como _Performance IOPS Total_).
+. Para *Group*, escolha um método de implementação (como _Average_) e selecione os atributos ou métricas pelos quais os dados serão gerados (por exemplo, _Data Center_).
++
+O widget é atualizado automaticamente e mostra os dados para cada um dos seus data centers.
+
+
+
+Você também pode optar por agrupar _all_ dos dados subjacentes no gráfico ou tabela. Nesse caso, você obterá uma única linha para cada consulta no widget, que mostrará a média, min, Max, soma ou contagem da métrica ou métricas escolhidas para todos os ativos subjacentes.
+
+Clicar na legenda de qualquer widget cujos dados estão agrupados por "todos" abre uma página de consulta mostrando os resultados da primeira consulta usada no widget.
+
+Se você tiver definido um filtro para a consulta, os dados serão agrupados com base nos dados filtrados.
+
+Observe que quando você optar por agrupar um widget por qualquer campo (por exemplo, _Model_), você ainda precisará filtrar por esse campo para exibir adequadamente os dados desse campo no gráfico ou tabela.
+
+
+
+=== Agregando dados
+
+Você pode alinhar ainda mais seus gráficos de séries temporais (linha, área, etc.) agregando pontos de dados em intervalos de minuto, hora ou dia antes que esses dados sejam posteriormente agrupados por atributo (se escolhido). Você pode optar por agregar pontos de dados de acordo com sua _média, máxima, mínima, soma_ ou _contagem_.
+
+Um pequeno intervalo combinado com um longo intervalo de tempo pode resultar em um aviso de "intervalo de agregação resultou em muitos pontos de dados." Você pode ver isso se tiver um intervalo pequeno e aumentar o período de tempo do painel para 7 dias. Neste caso, o Insight aumentará temporariamente o intervalo de agregação até selecionar um período de tempo menor.
+
+Você também pode agregar dados no widget de gráfico de barras e no widget de valor único.
+
+A maioria dos contadores de ativos se agrega a _medium_ por padrão. Alguns contadores se agregam a _Max, min_ ou _sum_ por padrão. Por exemplo, erros de porta se agregam a _sum_ por padrão, onde as IOPS de armazenamento se agregam a _medium_.
+
+
+
+== Mostrando resultados superiores/inferiores
+
+Em um widget de gráfico, você pode mostrar os resultados *Top* ou *Bottom* para dados acumulados e escolher o número de resultados mostrados na lista suspensa fornecida. Em um widget de tabela, você pode classificar por qualquer coluna.
+
+
+
+=== Widget Gráfico superior/inferior
+
+Em um widget de gráfico, quando você escolhe agrupar dados por um atributo específico, você tem a opção de exibir os resultados N superior ou N inferior. Observe que você não pode escolher os resultados superiores ou inferiores quando optar por rollup por atributos _all_.
+
+Você pode escolher os resultados a serem exibidos escolhendo *Top* ou *Bottom* no campo *Show* da consulta e selecionando um valor na lista fornecida.
+
+
+
+=== Widget de tabela mostra entradas
+
+Em um widget de tabela, você pode selecionar o número de resultados mostrados nos resultados da tabela. Não é dada a opção de escolher resultados superiores ou inferiores porque a tabela permite classificar ascendente ou descendente por qualquer coluna sob demanda.
+
+Você pode escolher o número de resultados a serem exibidos na tabela no painel selecionando um valor no campo *Mostrar entradas* da consulta.
+
+
+
+== Agrupando no Widget Tabela
+
+Os dados em um widget de tabela podem ser agrupados por qualquer atributo disponível, permitindo que você veja uma visão geral de seus dados e detalhe-os para mais detalhes. As métricas na tabela são agrupadas para facilitar a visualização em cada linha colapsada.
+
+Os widgets da tabela permitem agrupar os dados com base nos atributos definidos. Por exemplo, você pode querer que sua tabela mostre o total de IOPS de armazenamento agrupado pelos data centers em que esses armazenamentos estão ativos. Ou você pode querer exibir uma tabela de máquinas virtuais agrupadas de acordo com o hipervisor que as hospeda. Na lista, você pode expandir cada grupo para exibir os ativos nesse grupo.
+
+O agrupamento só está disponível no tipo de widget Tabela.
+
+
+
+=== Exemplo de agrupamento (com rollup explicado)
+
+Os widgets da tabela permitem agrupar dados para facilitar a exibição.
+
+Neste exemplo, criaremos um widget de tabela mostrando todas as VMs agrupadas por Data Center.
+
+.Passos
+. Crie ou abra um dashboard e adicione um widget *Tabela*.
+. Selecione _Virtual Machine_ como o tipo de ativo para este widget.
+. Clique no Seletor de coluna e escolha _Nome do hipervisor_ e _IOPS - Total_.
++
+Essas colunas são agora exibidas na tabela.
+
+. Vamos ignorar qualquer VM sem IOPS e incluir apenas VMs com IOPS total superior a 1. Clique no botão *Filtrar por* e selecione _IOPS - Total_. Clique em _any_, e no campo *de*, digite *1*. Deixe o campo *to* vazio. Clique no campo de filtro para aplicar o filtro.
++
+A tabela agora mostra todas as VMs com IOPS total maior ou igual a 1. Observe que não há agrupamento na tabela. Todas as VMs são mostradas.
+
+. Clique no botão *Agrupar por [*].
++
+Você pode agrupar por qualquer atributo ou anotação mostrada. Escolha _all_ para exibir todas as VMs em um único grupo.
+
++
+Qualquer cabeçalho de coluna para uma métrica de desempenho exibe um menu "três pontos" contendo uma opção *Roll up*. O método de rolagem padrão é _Average_. Isso significa que o número mostrado para o grupo é a média de todo o total de IOPS relatado para cada VM dentro do grupo. Você pode optar por rolar essa coluna por _média, soma, mínimo_ ou _máximo_. Qualquer coluna exibida que contenha métricas de desempenho pode ser agrupada individualmente.
+
++
+image:TableRollUp.png["Role para cima"]
+
+. Clique em _All_ e selecione _Hypervisor name_.
++
+A lista de VM agora é agrupada por Hypervisor. É possível expandir cada hipervisor para visualizar as VMs hospedadas por ele.
+
+. Clique em *Salvar* para salvar a tabela no painel. Você pode redimensionar ou mover o widget conforme desejado.
+. Clique em *Salvar* para salvar o painel.
+
+
+
+
+=== Implementação de dados de desempenho
+
+Se você incluir uma coluna para dados de desempenho (por exemplo, _IOPS - Total_) em um widget de tabela, quando você optar por agrupar os dados, poderá escolher um método de rolagem para essa coluna. O método de rolagem padrão é exibir a média (_avg_) dos dados subjacentes na linha do grupo. Você também pode optar por exibir a soma, o mínimo ou o máximo dos dados.
+
+
+
+== Seletor de gama de tempo do tablier
+
+Você pode selecionar o intervalo de tempo para os dados do painel. Apenas os dados relevantes para o intervalo de tempo selecionado serão apresentados nos widgets no painel de instrumentos. Pode selecionar entre os seguintes intervalos de tempo:
+
+* Durar 15 minutos
+* Durar 30 minutos
+* Durar 60 minutos
+* Últimas 2 horas
+* Últimas 3 horas (este é o padrão)
+* Últimas 6 horas
+* Últimas 12 horas
+* Últimas 24 horas
+* Últimos 2 dias
+* Últimos 3 dias
+* Últimos 7 dias
+* Últimos 30 dias
+* Intervalo de tempo personalizado
++
+O intervalo de tempo personalizado permite-lhe selecionar até 31 dias consecutivos. Também pode definir a hora de início e a hora de fim do dia para este intervalo. A hora de Início padrão é 12:00 AM no primeiro dia selecionado e a hora de término padrão é 11:59 PM no último dia selecionado. Clicar em *Apply* aplicará o intervalo de tempo personalizado ao painel.
+
+
+
+
+
+== Substituindo o tempo do Painel em widgets individuais
+
+Você pode substituir a configuração de intervalo de tempo do painel principal em widgets individuais. Esses widgets exibirão dados com base no período de tempo definido, não no período de tempo do painel.
+
+Para substituir o tempo do painel e forçar um widget a usar seu próprio período de tempo, no modo de edição do widget, escolha o intervalo de tempo deisired e salve o widget no painel.
+
+O widget exibirá seus dados de acordo com o cronograma definido para ele, independentemente do período de tempo selecionado no próprio painel.
+
+O período de tempo definido para um widget não afetará nenhum outro widget no painel.
+
+image:OverrideTimeOnWidget.png["substituindo o intervalo de tempo do painel para um widget"]
+
+
+
+== Eixo primário e secundário
+
+Diferentes métricas usam diferentes unidades de medidas para os dados que relatam em um gráfico. Por exemplo, quando se olha para IOPS, a unidade de medida é o número de operações de e/S por segundo de tempo (e/S), enquanto a latência é puramente uma medida de tempo (milissegundos, microssegundos, segundos, etc.). Ao mapear ambas as métricas em um gráfico de linha única usando um único conjunto de valores a para o eixo Y, os números de latência (normalmente um punhado de milissegundos) são mapeados na mesma escala com o IOPS (normalmente numerando nos milhares), e a linha de latência se perde nessa escala.
+
+Mas é possível traçar ambos os conjuntos de dados em um único gráfico significativo, definindo uma unidade de medida no eixo Y primário (lado esquerdo) e a outra unidade de medida no eixo Y secundário (lado direito). Cada métrica é mapeada em sua própria escala.
+
+.Passos
+Este exemplo ilustra o conceito de eixos primários e secundários em um widget de gráfico.
+
+. Crie ou abra um painel. Adicione um gráfico de linha, gráfico de spline, gráfico de área ou widget de gráfico de área empilhada ao painel.
+. Selecione um tipo de ativo (por exemplo _Storage_) e escolha _IOPS - Total_ para sua primeira métrica. Defina os filtros que você quiser e escolha um método de roll-up, se desejado.
++
+A linha IOPS é exibida no gráfico, com sua escala mostrada à esquerda.
+
+. Clique em *[-Query]* para adicionar uma segunda linha ao gráfico. Para esta linha, escolha _latência - total_ para a métrica.
++
+Observe que a linha é exibida na parte inferior do gráfico. Isso ocorre porque está sendo desenhado _na mesma escala_ da linha IOPS.
+
+. Na consulta de latência, selecione *eixo Y: Secundário*.
++
+A linha de latência agora é desenhada em sua própria escala, que é exibida no lado direito do gráfico.
+
+
+
+image::SecondaryAxisExplained.png[Exemplo de eixo secundário]
+
+
+
+== Expressões em widgets
+
+Em um painel, qualquer widget de séries temporais (linha, spline, área, área empilhada) gráfico de barras, gráfico de colunas, gráfico de pizza ou widget de tabela permite criar expressões a partir de métricas que você escolher e mostrar o resultado dessas expressões em um único gráfico (ou coluna no caso do <<expressions-in-a-table-widget,widget da tabela>>). Os exemplos a seguir usam expressões para resolver problemas específicos. No primeiro exemplo, queremos mostrar IOPS de leitura como uma porcentagem do total de IOPS para todos os ativos de storage em nosso ambiente. O segundo exemplo dá visibilidade ao IOPS "do sistema" ou "sobrecarga" que ocorrem no seu ambiente - aqueles IOPS que não são diretamente da leitura ou da gravação de dados.
+
+Você pode usar variáveis em expressões (por exemplo, _ Var1 * 100_)
+
+
+
+=== Exemplo de expressões: Ler porcentagem de IOPS
+
+Neste exemplo, queremos mostrar IOPS de leitura como uma porcentagem do total de IOPS. Você pode pensar nisso como a seguinte fórmula:
+
+ Read Percentage = (Read IOPS / Total IOPS) x 100
+Esses dados podem ser exibidos em um gráfico de linhas no painel. Para fazer isso, siga estas etapas:
+
+.Passos
+. Crie um novo painel ou abra um painel existente no modo de edição.
+. Adicione um widget ao painel. Escolha *Gráfico de área*.
++
+O widget abre no modo de edição. Por padrão, uma consulta é exibida mostrando _IOPS - Total_ para ativos _Storage_. Se desejar, selecione um tipo de ativo diferente.
+
+. Clique no link *Converter para expressão* à direita.
++
+A consulta atual é convertida em modo de expressão. Observe que você não pode alterar o tipo de ativo enquanto estiver no modo expressão. Enquanto você estiver no modo expressão, o link muda para *Revert to Query*. Clique aqui se desejar voltar ao modo consulta a qualquer momento. Esteja ciente de que alternar entre modos irá redefinir os campos para seus padrões.
+
++
+Por enquanto, permaneça no modo de expressão.
+
+. A métrica *IOPS - total* está agora no campo variável alfabética "*a*". No campo variável "*b*", clique em *Select* e escolha *IOPS - Read*.
++
+Você pode adicionar até um total de cinco variáveis alfabéticas para a sua expressão clicando no botão mais seguindo os campos variáveis. Para nosso exemplo de porcentagem de leitura, precisamos apenas de IOPS total ("*a*") e IOPS de leitura ("*b*").
+
+. No campo *expression*, você usa as letras correspondentes a cada variável para construir sua expressão. Sabemos que a porcentagem de leitura (ler IOPS/IOPS total) x 100, então escreveríamos esta expressão como:
++
+ (b / a) * 100
+. O campo *Label* identifica a expressão. Altere o rótulo para "porcentagem de leitura", ou algo igualmente significativo para você.
+. Altere o campo *Units* para "%" ou "Percent".
++
+O gráfico exibe a porcentagem de leitura de IOPS ao longo do tempo para os dispositivos de armazenamento escolhidos. Se desejar, você pode definir um filtro ou escolher um método de rollup diferente. Esteja ciente de que, se você selecionar soma como o método rollup, todos os valores percentuais serão adicionados juntos, o que pode potencialmente ir mais alto que 100%.
+
+. Clique em *Salvar* para salvar o gráfico em seu painel.
+
+
+
+
+=== Expressões exemplo: I/o "System"
+
+Exemplo 2: Entre as métricas coletadas de fontes de dados estão leitura, gravação e IOPS total. No entanto, o número total de IOPS relatado por uma fonte de dados às vezes inclui IOPS "do sistema", que são as operações de e/S que não são parte direta da leitura ou gravação de dados. Esta e/S do sistema também pode ser considerada como e/S "overhead", necessária para uma operação adequada do sistema, mas não diretamente relacionada com as operações de dados.
+
+Para mostrar essas I/os do sistema, você pode subtrair IOPS de leitura e gravação do total de IOPS relatado da aquisição. A fórmula pode ser assim:
+
+ System IOPS = Total IOPS - (Read IOPS + Write IOPS)
+Esses dados podem ser exibidos em um gráfico de linha no painel. Para fazer isso, siga estas etapas:
+
+.Passos
+. Crie um novo painel ou abra um painel existente no modo de edição.
+. Adicione um widget ao painel. Escolha *Gráfico de linha*.
++
+O widget abre no modo de edição. Por padrão, uma consulta é exibida mostrando _IOPS - Total_ para ativos _Storage_. Se desejar, selecione um tipo de ativo diferente.
+
+. No campo *Roll Up*, escolha _sum_ por _all_.
++
+O gráfico exibe uma linha mostrando a soma do total de IOPS.
+
+. Clique no ícone _duplicar esta consulta_ para criar uma cópia da consulta.
++
+Uma cópia da consulta é adicionada abaixo do original.
+
+. Na segunda consulta, clique no botão *Converter para expressão*.
++
+A consulta atual é convertida em modo de expressão. Clique em *Revert to Query* se desejar voltar para o modo Query a qualquer momento. Esteja ciente de que alternar entre modos irá redefinir os campos para seus padrões.
+
++
+Por enquanto, permaneça no modo de expressão.
+
+. A métrica _IOPS - total_ está agora no campo variável alfabética "*a*". Clique em _IOPS - Total_ e mude-o para _IOPS - Read_.
+. No campo variável "*b*", clique em *Select* e escolha _IOPS - Write_.
+. No campo *expression*, você usa as letras correspondentes a cada variável para construir sua expressão. Nós escreveríamos nossa expressão simplesmente como:
++
+ a + b
++
+Na seção Exibir, escolha *Gráfico de área* para essa expressão.
+
+. O campo *Label* identifica a expressão. Altere o rótulo para "System IOPS" ou algo igualmente significativo para você.
++
+O gráfico exibe o total de IOPS como um gráfico de linha, com um gráfico de área mostrando a combinação de IOPS de leitura e gravação abaixo disso. A lacuna entre os dois mostra as IOPS que não estão diretamente relacionadas às operações de leitura ou gravação de dados. Estas são as suas IOPS do "sistema".
+
+. Clique em *Salvar* para salvar o gráfico em seu painel.
+
+
+Para usar uma variável em uma expressão, basta digitar o nome da variável, por exemplo, _ var1 * 100_. Somente variáveis numéricas podem ser usadas em expressões.
+
+
+
+=== Expressões em um widget de tabela
+
+Widgets de tabela manipulam expressões um pouco diferente. Você pode ter até cinco expressões em um único widget de tabela, cada uma das quais é adicionada como uma nova coluna à tabela. Cada expressão pode incluir até cinco valores nos quais realizar seu cálculo. Você pode facilmente nomear a coluna algo significativo.
+
+image:ExpressionExample.png["Expressão em um widget de tabela"]
+
+
+
+== Variáveis
+
+Variáveis permitem alterar os dados exibidos em alguns ou todos os widgets em um painel de uma vez. Ao definir um ou mais widgets para usar uma variável comum, as alterações feitas em um só lugar fazem com que os dados exibidos em cada widget sejam atualizados automaticamente.
+
+As variáveis do dashboard vêm em vários tipos, podem ser usadas em diferentes campos e devem seguir regras para nomear. Estes conceitos são explicados aqui.
+
+
+
+=== Tipos de variáveis
+
+Uma variável pode ser um dos seguintes tipos:
+
+* *Atributo*: Use atributos ou métricas de um objeto para filtrar
+* *Anotação*: Use uma pré-definida link:task_defining_annotations.html["Anotação"] para filtrar dados do widget.
+* *Texto*: Uma cadeia alfanumérica.
+* *Numérico*: Um valor numérico. Use por si só, ou como um valor "de" ou "para", dependendo do campo do widget.
+* *Boolean*: Use para campos com valores de True/False, Yes/no, etc. para a variável booleana, as opções são Sim, não, nenhum, qualquer.
+* *Data*: Um valor de data. Use como um valor "de" ou "para", dependendo da configuração do seu widget.
+
+
+image:Variables_Drop_Down_Showing_Annotations.png["Tipos de variáveis"]
+
+
+
+==== Variáveis de atributo
+
+Selecionar uma variável tipo Atributo permite filtrar dados de widget contendo o valor ou valores de atributo especificado. O exemplo abaixo mostra um widget de linha exibindo tendências de memória livre para nós de Agente. Criamos uma variável para IPs de nó de agente, atualmente definida para mostrar todos os IPs:
+
+image:Variables_Node_Example_Before_Variable_Applied.png["Nós de agente antes do filtro variável"]
+
+Mas se você quiser ver temporariamente apenas nós em sub-redes individuais em seu ambiente, você pode definir ou alterar a variável para um IP ou IPs específicos do nó de agente. Aqui estamos vendo apenas os nós na sub-rede "123":
+
+image:Variables_Node_Example_After_Variable_Applied.png["Nós de agente após filtro variável"]
+
+Você também pode definir uma variável para filtrar em objetos _all_ com um atributo específico, independentemente do tipo de objeto, por exemplo, objetos com um atributo de "vendor", especificando _*.vendor_ no campo variável. Você não precisa digitar "*."; o Data Infrastructure Insights fornecerá isso se você selecionar a opção curinga.
+
+image:Variables_Attribute_Vendor_Example.png["Variável de atributo para o fornecedor"]
+
+Quando você lista suspensa a lista de opções para o valor da variável, os resultados são filtrados, portanto, mostre apenas os fornecedores disponíveis com base nos objetos do seu painel.
+
+image:Variables_Attribute_Vendor_Filtered_List.png["Atributo variável mostrando apenas fornecedores disponíveis"]
+
+Se você editar um widget em seu painel onde o filtro de atributo é relevante (ou seja, os objetos do widget contêm qualquer atributo _*.vendor_), ele mostrará que o filtro de atributo é aplicado automaticamente.
+
+image:Variables_Attribute_inWidgetQuery.png["Variável de atributo aplicada automaticamente"]
+
+Aplicar variáveis é tão fácil quanto alterar os dados de atributos de sua escolha.
+
+
+
+==== Variáveis de anotação
+
+Escolher uma variável Annotation permite filtrar objetos associados a essa anotação, por exemplo, aqueles pertencentes ao mesmo Data Center.
+
+image:Variables_Annotation_Filtering.png["Filtragem de Anotação com variável"]
+
+
+
+==== Texto, número, Data ou variável booleana
+
+Você pode criar variáveis genéricas que não estão associadas a um atributo específico selecionando um tipo de variável de _Text_, _number_, _boolean_ ou _Date_. Uma vez criada a variável, você pode selecioná-la em um campo de filtro de widget. Ao definir um filtro em um widget, além de valores específicos que você pode selecionar para o filtro, todas as variáveis que foram criadas para o painel são exibidas na lista - estas são agrupadas na seção "variáveis" na lista suspensa e têm nomes começando com " Escolher uma variável neste filtro permitirá que você pesquise valores que você insira no campo variável no próprio painel. Todos os widgets que usam essa variável em um filtro serão atualizados dinamicamente.
+
+image:Variables_in_a_Widget_Filter.png["Selecionar uma variável em um widget"]
+
+
+
+==== Escopo do filtro variável
+
+Quando você adiciona uma variável Annotation ou Attribute ao seu painel, a variável pode ser aplicada a _all_ widgets no painel, o que significa que todos os widgets no painel exibirão resultados filtrados de acordo com o valor definido na variável.
+
+image:Variables_Automatic_Filter_Button.png["Filtro automático"]
+
+Observe que somente as variáveis Atributo e Anotação podem ser filtradas automaticamente assim. As variáveis non-Annotation ou -Attribute não podem ser filtradas automaticamente. Widgets individuais devem ser configurados para usar variáveis desses tipos.
+
+Para desativar a filtragem automática para que a variável se aplique apenas aos widgets onde você a definiu especificamente, clique no controle deslizante "Filtrar automaticamente" para desativá-la.
+
+Para definir uma variável em um widget individual, abra o widget no modo de edição e selecione a anotação ou atributo específico no campo _Filtrar por_. Com uma variável Annotation, você pode selecionar um ou mais valores específicos, ou selecionar o nome da variável (indicado pela entrada "") para permitir digitar a variável no nível do painel. O mesmo se aplica às variáveis Atributo. Apenas os widgets para os quais você definiu a variável mostrará os resultados filtrados.
+
+A filtragem em variáveis é _contextual_; quando você seleciona um valor de filtro ou valores para uma variável, as outras variáveis em sua página mostrarão apenas valores relevantes para esse filtro. Por exemplo, ao definir um filtro de variável para um armazenamento específico _Model_, quaisquer variáveis definidas como filtro para armazenamento _Name_ apenas mostrarão valores relevantes para esse modelo.
+
+Para usar uma variável em uma expressão, basta digitar o nome da variável como parte da expressão, por exemplo, _ var1 * 100_. Somente variáveis numéricas podem ser usadas em expressões. Não é possível usar as variáveis Anotação numérica ou Atributo em expressões.
+
+A filtragem em variáveis é _contextual_; quando você seleciona um valor de filtro ou valores para uma variável, as outras variáveis em sua página mostrarão apenas valores relevantes para esse filtro. Por exemplo, ao definir um filtro de variável para um armazenamento específico _Model_, quaisquer variáveis definidas como filtro para armazenamento _Name_ apenas mostrarão valores relevantes para esse modelo.
+
+
+
+==== Nomenclatura variável
+
+Nomes das variáveis:
+
+* Deve incluir apenas as letras a-z, os dígitos 0-9, ponto (.), sublinhado (_) e espaço ( ).
+* Não pode ter mais de 20 carateres.
+* São sensíveis a maiúsculas e minúsculas: O CityName e o cityname são variáveis diferentes.
+* Não pode ser o mesmo que um nome de variável existente.
+* Não pode estar vazio.
+
+
+
+
+== Widgets do indicador de formatação
+
+Os widgets Solid e Bullet Gauge permitem definir limites para os níveis _Warning_ e/ou _Critical_, fornecendo uma representação clara dos dados que você especificar.
+
+image:GaugeWidgetFormatting.png["Definições de formato para o widget de indicadores"]
+
+Para definir a formatação desses widgets, siga estas etapas:
+
+. Escolha se deseja destacar valores maiores que (>) ou menores que (>) seus limites. Neste exemplo, destacaremos valores superiores a (>) os níveis de limiar.
+. Escolha um valor para o limite "Aviso". Quando o widget apresenta valores superiores a este nível, apresenta o indicador a laranja.
+. Escolha um valor para o limite "crítico". Valores superiores a este nível farão com que o indicador seja apresentado a vermelho.
+
+
+Opcionalmente, você pode escolher um valor mínimo e máximo para o medidor. Os valores abaixo do mínimo não apresentam o indicador. Os valores acima do máximo irão apresentar um indicador completo. Se você não escolher valores mínimos ou máximos, o widget seleciona os valores mínimos e máximos ideais com base no valor do widget.
+
+image:Gauge-Solid.png["Calibre sólido/tradicional, largura de 374mm"] image:Gauge-Bullet.png["Calibre de bala, largura de 374mm"]
+
+
+
+== Formatação Widget de valor único
+
+No widget de valor único, além de definir limites de aviso (laranja) e crítico (vermelho), você pode optar por ter valores "em intervalo" (aqueles abaixo do nível de aviso) exibidos com fundo verde ou branco.
+
+image:Single-ValueWidgets.png["Widget de valor único com e sem formatação"]
+
+Clicar no link em um widget de valor único ou em um widget de indicador exibirá uma página de consulta correspondente à primeira consulta no widget.
+
+
+
+== Formatar Widgets de tabela
+
+Como widgets de valor único e de indicador, você pode definir a formatação condicional em widgets de tabela, permitindo destacar dados com cores e/ou ícones especiais.
+
+
+NOTE: No momento, a formatação condicional não está disponível no Data Infrastructure Insights Federal Edition.
+
+A formatação condicional permite que você defina e realce limiares de nível de aviso e nível crítico em widgets de tabela, trazendo visibilidade instantânea para outliers e pontos de dados excecionais.
+
+image:ConditionalFormattingExample.png["Exemplo de formatação condicional"]
+
+A formatação condicional é definida separadamente para cada coluna de uma tabela. Por exemplo, você pode escolher um conjunto de limites para uma coluna de capacidade e outro conjunto para uma coluna de taxa de transferência.
+
+Se você alterar a exibição de unidade de uma coluna, a formatação condicional permanecerá e refletirá a alteração de valores. As imagens abaixo mostram a mesma formatação condicional, embora a unidade de visualização seja diferente.
+
+image:ConditionalFormatting_GiB.png["Formatação condicional - GiB"] image:ConditionalFormatting_TiB.png["Formatação condicional - TIB"]
+
+Você pode escolher se deseja exibir a formatação da condição como cor, ícones ou ambos.
+
+
+
+== Escolhendo a unidade para exibir dados
+
+A maioria dos widgets em um painel permite que você especifique as unidades nas quais exibir valores, por exemplo _megabytes_, _milhares_, _porcentagem_, _milissegundos (ms)_, etc. em muitos casos, o Data Infrastructure Insights sabe o melhor formato para os dados que estão sendo adquiridos. Nos casos em que o melhor formato não é conhecido, você pode definir o formato desejado.
+
+No exemplo de gráfico de linhas abaixo, os dados selecionados para o widget são conhecidos por estarem em _bytes_ (a unidade de dados IEC base: Consulte a tabela abaixo), de modo que a Unidade base é selecionada automaticamente como 'byte (B)'. No entanto, os valores de dados são grandes o suficiente para serem apresentados como gibibibytes (GiB), então o Data Infrastructure Insights por padrão formata automaticamente os valores como GiB. O eixo Y no gráfico mostra "GiB" como unidade de visualização e todos os valores são apresentados em termos dessa unidade.
+
+image:used_memory_in_bytes.png["Byte da unidade base mostrado em Gigabytes, largura 640"]
+
+Se pretender apresentar o gráfico numa unidade diferente, pode escolher outro formato para apresentar os valores. Como a unidade base neste exemplo é _byte_, você pode escolher entre os formatos suportados "baseados em bytes": Bit (b), byte (B), kibibibyte (KiB), mebibyte (MIB), gibibibibyte (GiB). O rótulo e os valores do eixo Y mudam de acordo com o formato que você escolher.
+
+image:used_memory_in_bytes_gb.png["Escolhendo uma unidade de exibição, largura de 640mm"]
+
+Nos casos em que a unidade base não é conhecida, pode atribuir uma unidade entre a link:#available-units["unidades disponíveis"], ou escrever a sua própria. Depois de atribuir uma unidade base, pode selecionar para apresentar os dados num dos formatos suportados adequados.
+
+image:bits_per_second.png["Escolha sua própria unidade de base, largura de 320mm"]
+
+Para limpar as configurações e começar de novo, clique em *Redefinir padrões*.
+
+
+
+=== Uma palavra sobre o formato automático
+
+A maioria das métricas são reportadas por coletores de dados na menor unidade, por exemplo, como um número inteiro, como 1.234.567.890 bytes. Por padrão, o Data Infrastructure Insights formata automaticamente o valor para a exibição mais legível. Por exemplo, um valor de dados de 1.234.567.890 bytes seria formatado automaticamente para 1,23 _Gibibytes_. Você pode optar por exibi-lo em outro formato, como _Mebibytes_. O valor será exibido em conformidade.
+
+
+NOTE: O Data Infrastructure Insights usa padrões de nomenclatura de números em inglês americano. O "billion" americano equivale a "mil milhões".
+
+
+
+=== Widgets com várias consultas
+
+Se você tiver um widget de série temporal (ou seja, linha, spline, área, área empilhada) que tenha duas consultas onde ambas são plotadas o eixo Y primário, a unidade base não é mostrada na parte superior do eixo Y. No entanto, se seu widget tiver uma consulta no eixo Y primário e uma consulta no eixo Y secundário, as unidades base para cada um serão mostradas.
+
+image:UnitsOnPrimaryAndSecondaryYAxis.png["Unidades em ambos os eixos Y."]
+
+Se o widget tiver três ou mais consultas, as unidades base não serão mostradas no eixo Y.
+
+
+
+=== Unidades disponíveis
+
+A tabela a seguir mostra todas as unidades disponíveis por categoria.
+
+|===
+
+
+| *Categoria* | *Unidades* 
+
+
+| Moeda | dólar 
+
+
+| Dados (IEC) | byte de bit kibibibibibyte mebibibbyte de byte de byte de byte de byte de byte de byte de byte 
+
+
+| DataRate (IEC) | bit/sec byte/sec kibibibyte/sec mebibyte/sec gibibibibibibibibyte/sec 
+
+
+| Dados (métrico) | gigabyte terabyte de petabyte 
+
+
+| DataRate (métrica) | megabyte/seg. gigabyte/seg. terabyte/seg. petabyte/seg. exabyte/seg 
+
+
+| IEC | kibi mebi gibi tebi pebi exbi 
+
+
+| Decimal | número inteiro milhares de milhões de bilião de bilião de biliões 
+
+
+| Percentagem | percentagem 
+
+
+| Tempo | nanossegundos microssegundos milissegundo segundo segundo segundo segundo minuto hora 
+
+
+| Temperatura | celsius fahrenheit 
+
+
+| Frequência | hertz kilohertz megahertz gigahertz megahertz 
+
+
+| CPU | nanonúcleos micronúcleos millicors quilocores megacores gigacores teracores petacores exacores 
+
+
+| Taxa de transferência | Operações de e/S/seg. Operações/seg. Solicitações/seg. Leituras/seg. Gravações/seg. Operações/min. Leituras/min. Gravações/min 
+|===
+
+
+== Modo de TV e Atualização automática
+
+Os dados nos widgets nos painéis e nas páginas de destino do ativo são atualizados automaticamente de acordo com um intervalo de atualização determinado pelo intervalo de tempo do painel selecionado. O intervalo de atualização baseia-se no facto de o widget ser série temporal (linha, spline, área, gráfico de área empilhada) ou não série temporal (todos os outros gráficos).
+
+|===
+
+
+| Intervalo de tempo do tablier | Intervalo de atualização de séries temporais | Intervalo de atualização não-série temporal 
+
+
+| Durar 15 minutos | 10 segundos | 1 minuto 
+
+
+| Durar 30 minutos | 15 segundos | 1 minuto 
+
+
+| Durar 60 minutos | 15 segundos | 1 minuto 
+
+
+| Últimas 2 horas | 30 segundos | 5 minutos 
+
+
+| Últimas 3 horas | 30 segundos | 5 minutos 
+
+
+| Últimas 6 horas | 1 minuto | 5 minutos 
+
+
+| Últimas 12 horas | 5 minutos | 10 minutos 
+
+
+| Últimas 24 horas | 5 minutos | 10 minutos 
+
+
+| Últimos 2 dias | 10 minutos | 10 minutos 
+
+
+| Últimos 3 dias | 15 minutos | 15 minutos 
+
+
+| Últimos 7 dias | 1 hora | 1 hora 
+
+
+| Últimos 30 dias | 2 horas | 2 horas 
+|===
+Cada widget exibe seu intervalo de atualização automática no canto superior direito do widget.
+
+A atualização automática não está disponível para o intervalo de tempo personalizado do painel de instrumentos.
+
+Quando combinado com o *modo de TV*, a atualização automática permite a exibição de dados quase em tempo real em um painel ou página de ativos. O modo de TV oferece uma exibição organizada; o menu de navegação está oculto, proporcionando mais espaço real para a exibição de dados, assim como o botão Editar. O modo de TV ignora os tempos limite típicos do Data Infrastructure Insights, deixando o visor em direto até terminar sessão manual ou automaticamente por protocolos de segurança de autorização.
+
+
+NOTE: Como o NetApp BlueXP  tem seu próprio tempo limite de login de usuário de 7 dias, o Insights de infraestrutura de dados também deve fazer logout nesse evento. Você pode simplesmente fazer login novamente e seu painel continuará sendo exibido.
+
+* Para ativar o modo de TV, clique no botão modo de TV.
+* Para desativar o modo de TV, clique no botão *Exit* (Sair) no canto superior esquerdo do ecrã.
+
+
+Você pode suspender temporariamente a atualização automática clicando no botão Pausa no canto superior direito. Durante a pausa, o campo de intervalo de tempo do tablier apresenta o intervalo de tempo ativo dos dados em pausa. Os seus dados ainda estão a ser adquiridos e atualizados enquanto a atualização automática está em pausa. Clique no botão continuar para continuar a atualização automática dos dados.
+
+image:AutoRefreshPaused.png["Atualização automática em pausa"]
+
+
+
+== Grupos do painel de instrumentos
+
+O agrupamento permite visualizar e gerenciar painéis relacionados. Por exemplo, você pode ter um grupo de dashboard dedicado ao storage em seu ambiente. Os grupos de painéis são gerenciados na página *painéis > Mostrar todos os painéis*.
+
+image:DashboardGroupNoPin.png["Agrupamento do tablier"]
+
+Dois grupos são mostrados por padrão:
+
+* *Todos os painéis* lista todos os painéis que foram criados, independentemente do proprietário.
+* *Meus painéis* lista somente os painéis criados pelo usuário atual.
+
+
+O número de painéis contidos em cada grupo é mostrado ao lado do nome do grupo.
+
+Para criar um novo grupo, clique no botão criar novo grupo de painel*. Digite um nome para o grupo e clique em *criar grupo*. Um grupo vazio é criado com esse nome.
+
+Para adicionar painéis ao grupo, clique no grupo _todos os painéis_ para mostrar todos os painéis em seu ambiente, clique em _Meus painéis_ se você quiser ver apenas os painéis que possui e execute um dos seguintes procedimentos:
+
+* Para adicionar um único painel, clique no menu à direita do painel e selecione _Adicionar ao grupo_.
+* Para adicionar vários painéis a um grupo, selecione-os clicando na caixa de seleção ao lado de cada painel, depois clique no botão *ações em massa* e selecione _Adicionar ao grupo_.
+
+
+Remova os painéis do grupo atual da mesma maneira selecionando _Remover do grupo_. Não é possível remover painéis do grupo _todos os painéis_ ou _Meus painéis_.
+
+
+NOTE: A remoção de um painel de um grupo não exclui o painel do Data Infrastructure Insights. Para remover completamente um painel, selecione o painel e clique em _Delete_. Isso remove-o de qualquer grupo a que pertencia e não está mais disponível para nenhum usuário.
+
+
+
+== Fixe seus painéis favoritos
+
+Você pode gerenciar ainda mais seus painéis fixando os favoritos no topo da lista de painéis. Para fixar um painel, basta clicar no botão de atalho exibido quando você passar o Mouse sobre um painel em qualquer lista.
+
+O pino/desbloqueio do tablier é uma preferência de utilizador individual e independente do grupo (ou grupos) ao qual o tablier pertence.
+
+image:DashboardPin.png["Painéis fixados"]
+
+
+
+== Tema escuro
+
+Você pode optar por exibir Insights de infraestrutura de dados usando um tema claro (o padrão), que exibe a maioria das telas usando um fundo claro com texto escuro, ou um tema escuro que exibe a maioria das telas usando um fundo escuro com texto claro.
+
+Para alternar entre temas claros e escuros, clique no botão de nome de usuário no canto superior direito da tela e escolha o tema desejado.
+
+image:DarkThemeSwitch.png["Alterne entre temas claros e escuros"]
+
+Vista do painel do tema escuro: image:DarkThemeDashboardExample.png["Exemplo do painel de tema escuro"]
+
+Visualização do painel de tema claro: image:LightThemeDashboardExample.png["Exemplo de Painel de tema leve"]
+
+
+NOTE: Algumas áreas de tela, como certos gráficos de widgets, ainda mostram fundos claros, mesmo quando vistos em tema escuro.
+
+
+
+== Interpolação do Gráfico de linhas
+
+Diferentes coletores de dados frequentemente pesquisam seus dados em intervalos diferentes. Por exemplo, o coletor de dados A pode pesquisar a cada 15 minutos, enquanto o coletor de dados B faz pesquisas a cada cinco minutos. Quando um widget de gráfico de linha (também gráficos de spline, área e área empilhada) está agregando esses dados de vários coletores de dados em uma única linha (por exemplo, quando o widget está agrupando por "todos"), e atualizando a linha a cada cinco minutos, os dados do coletor B podem ser mostrados com precisão enquanto os dados do Coletor A podem ter lacunas, afetando o agregado até que o Coletor Um polls novamente.
+
+Para aliviar isso, o Data Infrastructure Insights interpola os dados ao agregar, usando os pontos de dados adjacentes para ter uma "melhor suposição" nos dados até que os coletores de dados pesquisem novamente. Você sempre pode visualizar os dados de objeto de cada coletor de dados individualmente ajustando o agrupamento do widget.
+
+
+
+=== Métodos de interpolação
+
+Ao criar ou modificar um gráfico de linhas (ou gráfico de spline, área ou área empilhada), você pode definir o método de interpolação para um de três tipos. Na seção "Agrupar por", escolha a interpolação desejada.
+
+image:Interpolation_Methods.png["Seção de agrupamento do editor de widgets mostrando os três métodos de interpolação"]
+
+* *Nenhum*: Não faça nada, ou seja, não gere pontos entre eles.
+
+
+image:Interpolation_None.png["Linha reta simples em ângulo mostrando nenhuma interpolação entre pontos de dados"]
+
+* *Stair*: Um ponto é gerado a partir do valor do ponto anterior. Em uma linha reta, isso seria exibido como um layout típico de "escada".
+
+
+image:Interpolation_Stair.png["Linha reta simples mostrando interpolação de escada"]
+
+* *Linear*: Um ponto é gerado como o valor entre a conexão dos dois pontos. Gera uma linha que se parece com a linha conetando os dois pontos, mas com pontos de dados adicionais (interpolados).
+
+
+image:Interpolation_Linear.png["Linha reta simples mostrando interpolação linear com pontos de dados adicionais entre cada ponto original"]

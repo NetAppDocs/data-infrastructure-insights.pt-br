@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_datadomain.html 
+keywords: data collector, Data Domain, EMC, DELL 
+summary: Configurar o coletor de dados do Dell EMC Data Domain. 
+---
+= Coletor de dados DELL EMC Data Domain
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Este coletor de dados reúne informações de inventário e desempenho dos sistemas de armazenamento de dados de deduplicação Dell EMC Data Domain. Para configurar esse coletor de dados, há instruções de configuração específicas e recomendações de uso que você deve seguir.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do Data Domain. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Disco | Disco 
+
+
+| Array | Armazenamento 
+
+
+| Porta FC | Porta 
+
+
+| Sistema de ficheiros | Volume interno 
+
+
+| Cota | Cota 
+
+
+| Compartilhamento NFS e CIFS | Partilha de ficheiros 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+Você precisa das seguintes informações para configurar este coletor de dados:
+
+* Endereço IP do dispositivo domínio de dados
+* Nome de usuário somente leitura e senha para o armazenamento do domínio de dados
+* Porta SSH 22
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP | O endereço IP ou o nome de domínio totalmente qualificado da matriz de armazenamento Data Domain 
+
+
+| Nome de utilizador | O nome de usuário para a matriz de armazenamento Data Domain 
+
+
+| Palavra-passe | A palavra-passe para a matriz de armazenamento Data Domain 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. A predefinição é 20. 
+
+
+| Porta SSH | Porta de serviço SSH 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

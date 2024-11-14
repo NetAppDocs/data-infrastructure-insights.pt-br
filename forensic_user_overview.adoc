@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: forensic_user_overview.html 
+keywords: Forensic, user, user, activity 
+summary: detalhe do utilizador forense 
+---
+= Visão geral do utilizador forense
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+As informações para cada usuário são fornecidas na Visão geral do usuário. Use essas visualizações para entender as caraterísticas do usuário, entidades associadas e atividades recentes.
+
+
+
+== Perfil de utilizador
+
+As informações do perfil de usuário incluem informações de Contato e localização do usuário. O perfil fornece as seguintes informações:
+
+* Nome do utilizador
+* Endereço de e-mail do usuário
+* Gestor do utilizador
+* Contacto telefónico para o utilizador
+* Localização do utilizador
+
+
+
+
+== Comportamento do usuário
+
+As informações de comportamento do usuário identificam atividades e operações recentes realizadas pelo usuário. Esta informação inclui:
+
+* Atividade recente
++
+** Localização do último acesso
+** Gráfico de atividade
+** Alertas
+
+
+
+
+* Operações nos últimos sete dias
++
+** Número de operações
+
+
+
+
+
+
+== Intervalo de atualização
+
+A lista de utilizadores é atualizada a cada 12 horas.
+
+
+
+== Política de retenção
+
+Se não for atualizada novamente, a lista de utilizadores é mantida durante 13 meses. Após 13 meses, os dados serão apagados. Se o ambiente do Workload Security for excluído, todos os dados associados ao ambiente serão excluídos.

@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: task_dc_ms_azure.html 
+keywords: data collector, azure, 
+summary: Configurando o coletor de dados de computação do Azure. 
+---
+= Configurando o coletor de dados de computação do Azure
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa o coletor de dados de computação do Azure para adquirir dados de inventário e desempenho de instâncias de computação do Azure.
+
+
+
+== Requisitos
+
+Você precisa das seguintes informações para configurar este coletor de dados.
+
+* Requisito de porta: 443 HTTPS
+* URI de redirecionamento do Azure OAuth 2,0 (login.microsoftonline.com)
+* IP REST do Gerenciamento do Azure (management.azure.com)
+* IP do Azure Resource Manager (management.core.windows.net)
+* ID da aplicação principal do serviço do Azure (Cliente) (função de leitor necessária)
+* Chave de autenticação principal do serviço Azure (senha do usuário)
+* Você precisa configurar uma conta do Azure para a descoberta do Data Infrastructure Insights.
++
+Depois que a conta estiver configurada corretamente e você Registrar o aplicativo no Azure, você terá as credenciais necessárias para descobrir a instância do Azure com o Data Infrastructure Insights. O link a seguir descreve como configurar a conta para descoberta. https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal[]
+
+
+
+
+
+== Configuração
+
+Insira os dados nos campos do coletor de dados de acordo com a tabela abaixo:
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| ID da aplicação principal do serviço do Azure (Cliente) (função de leitor necessária) | ID de início de sessão no Azure. Requer acesso à função Reader. 
+
+
+| ID de locatário do Azure | ID de locatário da Microsoft 
+
+
+| Chave de autenticação principal do serviço Azure | Chave de autenticação de login 
+
+
+| Eu entendo que a Microsoft me cobra por solicitações de API | Verifique isso para verificar se a Microsoft cobra solicitações de API feitas pela polling do Insight. 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | A predefinição é 60 
+
+
+| Escolha 'Excluir' ou 'incluir' para aplicar ao filtro de VMs por Tags | Especifique se deve incluir ou excluir VM por Tags ao coletar dados. Se a opção "incluir" estiver selecionada, o campo chave da etiqueta não pode estar vazio. 
+
+
+| Marque chaves e valores nos quais filtrar VMs | Clique em * Tag de filtro* para escolher quais VMs (e discos associados) incluir/excluir filtrando chaves e valores que correspondem a chaves e valores de tags na VM. A chave da etiqueta é necessária, o valor da etiqueta é opcional. Quando o valor Tag está vazio, a VM é filtrada desde que corresponda à chave Tag. 
+
+
+| Intervalo de enquete de desempenho (seg) | A predefinição é 300 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

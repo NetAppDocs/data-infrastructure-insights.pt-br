@@ -1,0 +1,124 @@
+---
+sidebar: sidebar 
+permalink: task_dashboard_example_VM_performance.html 
+summary: Exemplo de dashboard destacando o desempenho da máquina virtual. 
+keywords: dashboard, widget, custom, example, virtual machine, vm, performance 
+---
+= Exemplo de dashboard: Desempenho da máquina virtual
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Atualmente, existem muitos desafios que as operações DE TI enfrentam. Os administradores precisam fazer mais com menos, e é preciso ter visibilidade total dos data centers dinâmicos. Neste exemplo, mostraremos como criar um painel com widgets que fornecem informações operacionais sobre o desempenho da máquina virtual (VM) em seu ambiente. Ao seguir este exemplo e criar widgets para atender às suas próprias necessidades específicas, você pode fazer coisas como visualizar o desempenho do armazenamento de back-end em comparação com o desempenho da máquina virtual frontend ou visualizar a latência da VM versus a demanda de e/S.
+
+.Sobre esta tarefa
+Aqui vamos criar um painel de desempenho de máquina virtual contendo o seguinte:
+
+* Uma tabela que lista nomes de VMs e dados de performance
+* Um gráfico comparando a latência da VM com a latência do storage
+* Um gráfico mostrando leitura, gravação e IOPS total para VMs
+* Um gráfico mostrando a taxa máxima de transferência para suas VMs
+
+
+Este é apenas um exemplo básico. Você pode personalizar seu painel para destacar e comparar os dados de desempenho que escolher, a fim de se direcionar para suas próprias práticas recomendadas operacionais.
+
+.Passos
+. Faça login no Insight como um usuário com permissões administrativas.
+. No menu *Dashboards*, selecione *[-New dashboard]*.
++
+Abre-se a página *novo painel*.
+
+. Na parte superior da página, insira um nome exclusivo para o painel, por exemplo, "desempenho da VM por aplicativo".
+. Clique em *Salvar* para salvar o painel com o novo nome.
+. Vamos começar a adicionar nossos widgets. Se necessário, clique no ícone *Editar* para ativar o modo Editar.
+. Clique no ícone *Adicionar widget* e selecione *Tabela* para adicionar um novo widget de tabela ao painel.
++
+A caixa de diálogo Editar widget é aberta. Os dados padrão exibidos são para todos os armazenamentos em seu ambiente.
+
+
+
+image:VMDashboard-TableWidget1.png["Caixa de diálogo Edit Table Widget"]
+
+. Podemos personalizar este widget. No campo Nome na parte superior, exclua "Widget 1" e digite "Tabela de desempenho da Máquina Virtual".
+. Clique no menu suspenso tipo de ativo e altere _Storage_ para _Virtual Machine_.
++
+Os dados da tabela são alterados para mostrar todas as máquinas virtuais em seu ambiente.
+
+. Vamos adicionar algumas colunas à tabela. Clique no ícone de engrenagem à direita e selecione _Hypervisor name_, _IOPS - total_ e _latência - total_. Você também pode tentar digitar o nome na pesquisa para exibir rapidamente o campo desejado.
++
+Estas colunas são agora apresentadas na tabela. Você pode classificar a tabela por qualquer uma dessas colunas. Observe que as colunas são exibidas na ordem em que foram adicionadas ao widget.
+
+. Para este exercício, excluiremos VMs que não estão ativamente em uso, então vamos filtrar qualquer coisa com menos de 10 IOPS totais. Clique no botão *[]* ao lado de *Filtrar por* e selecione _IOPS - Total_. Clique em *any* e digite "10" no campo *de*. Deixe o campo *to* vazio. Clique em sair do campo de filtro ou pressione Enter para definir o filtro.
++
+A tabela agora mostra apenas VMs com 10 ou mais IOPS total.
+
+. Podemos recolher ainda mais a tabela agrupando os resultados. Clique no botão *[]* ao lado de *Group by* e selecione um campo para agrupar, como _Application_ ou _Hypervisor name_. O agrupamento é aplicado automaticamente.
++
+As linhas da tabela são agora agrupadas de acordo com sua configuração. Você pode expandir e recolher os grupos conforme necessário. As linhas agrupadas mostram dados agrupados para cada uma das colunas. Algumas colunas permitem que você escolha o método de rolagem para essa coluna.
+
+
+
+image:VMDashboard-TableWidgetGroup.png["Exemplo de agrupamento de widget de tabela"]
+
+. Quando tiver personalizado o widget da tabela para sua satisfação, clique no botão *[Save]*.
++
+O widget da tabela é salvo no painel.
+
+
+
+Você pode redimensionar o widget no painel arrastando o canto inferior direito. Torne o widget mais amplo para mostrar todas as colunas claramente. Clique em *Salvar* para salvar o painel atual.
+
+Em seguida, vamos adicionar alguns gráficos para mostrar nosso desempenho de VM. Vamos criar um gráfico de linha comparando a latência da VM com a latência do VMDK.
+
+. Se necessário, clique no ícone *Editar* no painel para ativar o modo Editar.
+. Clique no ícone *[Add widget]* e selecione _Line Chart_ para adicionar um novo widget de gráfico de linha ao painel.
+. A caixa de diálogo *Edit Widget* é aberta. Nomeie este widget "VM / VMDK Max latência"
+. Selecione *Virtual Machine* e escolha _latency - Max_. Defina os filtros que desejar ou deixe *Filtrar por* vazio. Para *Roll up*, escolha _sum_ por _all_. Exiba esses dados como um _Gráfico de linha_ e deixe _eixo Y_ como _primário_.
+. Clique no botão *[-Query]* para adicionar uma segunda linha de dados. Para esta linha, selecione _VMDK_ e _latência - Max_. Defina os filtros que desejar ou deixe *Filtrar por* vazio. Para *Roll up*, escolha _sum_ por _all_. Exiba esses dados como um _Gráfico de linha_ e deixe _eixo Y_ como _primário_.
+. Clique em *[Save]* para adicionar este widget ao painel.
+
+
+image:VMDashboard-LineChartVMLatency.png["Gráfico de linha mostrando dados de latência"]
+
+Em seguida, vamos adicionar um gráfico mostrando VM Read, Write e Total IOPS em um único gráfico.
+
+. Clique no ícone *[Add widget]* e selecione _Area Chart_ para adicionar um novo widget de gráfico de área ao painel.
+. A caixa de diálogo Editar widget é aberta. Nomeie este widget "VM IOPS"
+. Selecione *Virtual Machine* e escolha _IOPS - Total_. Defina os filtros que desejar ou deixe *Filtrar por* vazio. Para *Roll up*, escolha _sum_ por _all_. Exiba esses dados como um _Gráfico de Área_ e deixe o _eixo Y_ como _primário_.
+. Clique no botão *[-Query]* para adicionar uma segunda linha de dados. Para esta linha, selecione *Virtual Machine* e escolha _IOPS - Read_.
+. Clique no botão *[-Query]* para adicionar uma terceira linha de dados. Para esta linha, selecione *Virtual Machine* e escolha _IOPS - Write_.
+. Clique em *Mostrar legenda* para exibir uma legenda desse widget no painel.
+
+
+image:VMDashboard-AreaChartVMIOPS.png["Gráfico de área mostrando IOPS da VM"]
+
+. Clique em *[Save]* para adicionar este widget ao painel.
+
+
+Em seguida, vamos adicionar um gráfico mostrando a taxa de transferência de VM para cada aplicativo associado à VM. Vamos usar o recurso Roll Up para isso.
+
+. Clique no ícone *[Add widget]* e selecione _Line Chart_ para adicionar um novo widget de gráfico de linha ao painel.
+. A caixa de diálogo Editar widget é aberta. Nomeie este widget "taxa de transferência de VM por aplicativo"
+. Selecione Máquina Virtual e escolha throughput - Total. Defina os filtros que desejar ou deixe o filtro vazio. Para rolar, escolha "Max" e selecione por "Application" ou "Name". Mostre as 10 principais aplicações. Exiba esses dados como um Gráfico de linha e deixe o eixo Y como primário.
+. Clique em *[Save]* para adicionar este widget ao painel.
+
+
+Você pode mover widgets no painel segurando o botão do Mouse em qualquer lugar na parte superior do widget e arrastando-o para um novo local.
+
+Você pode redimensionar widgets arrastando o canto inferior direito.
+
+Certifique-se de *[Save]* o painel depois de fazer as alterações.
+
+Seu painel final de desempenho da VM será parecido com isso:
+
+image:VMDashExample1.png["Exemplo completo mostrando todos os widgets no lugar"]

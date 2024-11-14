@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: task_business_entity_annotations.html 
+keywords: annotations, business entity 
+summary: As anotações de entidade de negócio podem ser usadas para monitorar e relatar ativos na hierarquia de negócios 
+---
+= Anotações de entidade de negócio
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Crie e gerencie entidades de negócios para seu ambiente corporativo usando o tipo de anotação *entidade de negócio*.
+
+
+
+== Criando uma entidade de negócio
+
+Para criar uma entidade de negócios, faça o seguinte:
+
+. Clique em *Manage > Annotations* e clique no link _Business Entity_.
++
+É apresentada a lista de entidades de negócio atualmente definidas.
+
+. Clique em * entidade de negócio*.
+. Insira valores para os campos *Tenant*, *Line of Business*, *Business Unit* e *Project*.
++
+Você pode deixar qualquer campo vazio se ele não se aplicar à sua entidade de negócios.
+
+. Se tiver introduzido anteriormente um valor para um campo, pode selecionar esse valor na lista pendente. Você não precisa digitá-lo novamente.
+
+
+
+NOTE: Os valores selecionados devem compor uma entidade de negócio total única. Por exemplo, se você já tem uma entidade de negócio com os valores _A / B / C / D_ nessa ordem, você não pode criar outra entidade de negócio com esses valores nessa ordem. Você pode, no entanto, criar uma entidade de negócios com esses valores em uma ordem diferente.
+
+
+
+== Aplicando uma entidade de negócio a um objeto
+
+A maneira mais fácil de aplicar uma entidade de negócio a um objeto ou objetos é através de uma consulta.
+
+. Clique em *consultas > Nova consulta* e selecione o tipo de objeto desejado. Você pode aplicar filtros para restringir ainda mais os resultados.
+. Clique na caixa de verificação para selecionar o(s) objeto(s) para o qual pretende aplicar a entidade de negócio.
+. Clique em *ações em massa* e selecione *Adicionar anotação*.
+. Escolha a anotação _Business Entity_ e selecione o valor de entidade de negócio desejado na lista.
+. Clique em *Salvar* para aplicar a entidade de negócio ao(s) objeto(s).
+
+
+Você também pode aplicar uma entidade de negócios a um objeto individual navegando até a página de destino do ativo do objeto e clicando em * Annotation) na seção dados do usuário.
+
+Você também pode configurar um link:task_create_annotation_rules.html["Regra de anotação"] para aplicar entidades de negócios a objetos.
+
+
+NOTE: Um objeto pode ter apenas uma entidade de negócio associada a ele.
+
+
+
+== Removendo uma entidade de negócio de um objeto
+
+Para remover uma entidade de negócios de um objeto ou objetos, consulte e selecione o(s) objeto(s), clique em *ações em massa* e selecione _Remover anotação_. Selecione a anotação entidade de negócio e clique em *Delete*.

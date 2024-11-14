@@ -1,0 +1,94 @@
+---
+sidebar: sidebar 
+permalink: forensic_alert_detail.html 
+keywords: alert, Critical, Warning, Low, alert detail Synopsis, Time range, Start time, End time, user 
+summary: detalhes do alerta 
+---
+= Detalhes do alerta
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Clicar na sinopse para um alerta abre a página fornecendo informações detalhadas para o usuário e o alerta que ele levantou.
+
+
+
+== A página Detalhes do alerta exibe o usuário
+
+Detalhes do alerta fornece informações para o alerta selecionado na página Alertas.
+
+* A gravidade do alerta
+* O utilizador que levantou o alerta e o tipo de alerta:
++
+** Acesso anormal pelo utilizador
+** Acesso anormal pela Comunidade
+** Acesso anormal por Usuário na Comunidade
+** Usuário juntou-se a muitas comunidades
+
+
+* Data e hora em que o alerta foi detetado
+* A ação tomada
++
+** Em quarentena
+** Outros
+** Outros
+
+
+* O estado do alerta
++
+** Novo
+** Em curso
+** Demitido
+** Resolvido
+
+
+* Alteração da taxa de atividade do utilizador
++
+** Atividades típicas por hora
+** Atividades por hora em que o alerta foi levantado.
+** Percentagem de alteração da taxa que causou o alerta.
+
+
+* Um gráfico que mostra a taxa de atividade média histórica e a taxa de atividade que resultou no alerta.
+
+
+
+
+=== Utilizador relacionado
+
+* Nome de usuário e título
+* Departamento
+* E-mail com um link para o endereço de e-mail
+* Gerente
+* Telefone
+* Localização
+
+
+
+
+=== Atividade
+
+Mostra a atividade do utilizador nos últimos 7 dias e a última localização a partir da qual o utilizador acedeu.
+
+* Atividades:
++
+** Leia
+** Outros
+** Criar
+
+
+* Número total de alertas nos últimos sete dias.
+* Número total de atividades nos últimos 7 dias.
+
+
+Clique em *Exibir Detalhe da atividade* para acessar link:forensic_activity_history["Histórico da atividade"]o do usuário que está sendo examinado.

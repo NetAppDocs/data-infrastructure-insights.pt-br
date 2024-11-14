@@ -1,0 +1,79 @@
+---
+sidebar: sidebar 
+permalink: concept_feature_tutorials.html 
+summary: O Data Infrastructure Insights tem tutoriais para mostrar como executar muitas tarefas. 
+keywords: onboarding, getting started, video, tutorial, resolution, dashboard, query, troubleshooting 
+---
+= Tutoriais de recursos
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights é carregado com recursos úteis que permitem localizar dados de forma rápida e fácil, solucionar problemas e fornecer insights sobre seu ambiente corporativo. Encontre dados facilmente com consultas avançadas, visualize dados em painéis e envie alertas por e-mail para os limites de dados definidos.
+
+O Data Infrastructure Insights inclui vários tutoriais em vídeo para ajudá-lo a entender esses recursos e implementar melhor suas estratégias de insights de negócios. Todos os usuários que têm acesso ao seu ambiente Data Infrastructure Insights podem aproveitar esses tutoriais.
+
+
+
+== Introdução
+
+Assista a um breve tutorial explicando como o Data Infrastructure Insights funciona.
+
+video::howTo.mp4[]
+
+
+== Lista de verificação e tutoriais em vídeo
+
+A *Lista de verificação de arranque* apresentada no seu site Data Infrastructure Insights contém uma lista de várias tarefas e conceitos úteis. A seleção de um item na lista de verificação leva você à página de Insights de infraestrutura de dados apropriada para esse conceito. Por exemplo, clicar no item _criar um Dashboard_ abre a página Data Infrastructure Insights *Dashboards*.
+
+image:OnboardingChecklist.png["Progresso da lista de verificação do tutorial"]
+
+Na parte superior da página há um link para um tutorial em vídeo mostrando como criar um painel. Você pode ver o vídeo quantas vezes quiser até clicar no botão _Get It! Não mostrar novamente este link_ para esse vídeo. O vídeo estará disponível toda vez que você for para a página Dashboards, até que você o rejeite.
+
+image:Startup-DashboardWatchVideo.png["Assista ao link de vídeo"]
+
+Depois de assistir ao vídeo pelo menos uma vez, o item _Create a Dashboard_ na lista de verificação é desmarcado, indicando que você concluiu o tutorial. Você pode então prosseguir para o próximo tutorial.
+
+
+NOTE: Você pode ver os tutoriais em qualquer ordem que você gosta, quantas vezes quiser até ser demitido.
+
+
+
+=== A lista de verificação está em falta
+
+A lista de verificação de arranque é apresentada no seu site até clicar no link _não mostrar novamente_ na parte inferior da lista de verificação. Mesmo depois de descartar a lista de verificação, os tutoriais ainda estão disponíveis em cada página apropriada do Data Infrastructure Insights até que você ignore cada um da barra de cabeçalho da mensagem.
+
+
+
+== Veja os tutoriais
+
+
+
+=== A consultar dados
+
+video::Queries.mp4[]
+
+
+=== Criando um Dashboard
+
+video::Dashboards.mp4[]
+
+
+=== Solução de problemas
+
+video::Troubleshooting.mp4[]
+
+
+=== Resolver dispositivos
+
+video::AHR_small.mp4[]

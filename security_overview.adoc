@@ -1,0 +1,116 @@
+---
+sidebar: sidebar 
+permalink: security_overview.html 
+summary: O Data Infrastructure Insights segue as práticas recomendadas de segurança ao longo do ciclo de vida da versão. 
+keywords: security, risk, protection 
+---
+= Segurança do Insights da infraestrutura de dados
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+A segurança de dados de produtos e clientes é de extrema importância na NetApp. O Data Infrastructure Insights segue as práticas recomendadas de segurança ao longo do ciclo de vida da versão para garantir que as informações e os dados do cliente estejam protegidos da melhor maneira possível.
+
+
+
+== Visão geral de segurança
+
+
+
+=== Segurança física
+
+A infraestrutura de produção do Data Infrastructure Insights é hospedada na Amazon Web Services (AWS). Os controles físicos e ambientais relacionados à segurança dos servidores de produção do Data Infrastructure Insights, que incluem edifícios, bem como fechaduras ou chaves usadas nas portas, são gerenciados pela AWS. De acordo com a AWS: "O acesso físico é controlado tanto no perímetro quanto no estabelecimento de pontos de entrada pela equipe de segurança profissional que utiliza vigilância por vídeo, sistemas de deteção de intrusão e outros meios eletrônicos. A equipe autorizada utiliza mecanismos de autenticação multifator para acessar andares do data center."
+
+O Data Infrastructure Insights segue as práticas recomendadas do link:https://aws.amazon.com/compliance/shared-responsibility-model/["Modelo de responsabilidade compartilhada"] descrito pela AWS.
+
+
+
+=== Segurança do produto
+
+O Data Infrastructure Insights segue um ciclo de vida de desenvolvimento em linha com os princípios ágeis, permitindo-nos, assim, abordar quaisquer defeitos de software orientados para a segurança mais rapidamente, em comparação com metodologias de desenvolvimento de ciclo de lançamento mais longo. Usando metodologias de integração contínua, somos capazes de responder rapidamente às mudanças funcionais e de segurança. Os procedimentos e políticas de gerenciamento de mudanças definem quando e como as mudanças ocorrem e ajudam a manter a estabilidade do ambiente de produção. Quaisquer alterações com impactos são formalmente comunicadas, coordenadas, adequadamente revisadas e aprovadas antes de sua liberação no ambiente de produção.
+
+
+
+=== Segurança da rede
+
+O acesso à rede a recursos no ambiente Data Infrastructure Insights é controlado por firewalls baseados em host. Cada recurso (como um balanceador de carga ou instância de máquina virtual) tem um firewall baseado em host que restringe o tráfego de entrada apenas às portas necessárias para que esse recurso execute sua função.
+
+O Data Infrastructure Insights usa vários mecanismos, incluindo serviços de deteção de intrusão para monitorar o ambiente de produção em busca de anomalias de segurança.
+
+
+
+=== Avaliação de risco
+
+A equipe Data Infrastructure Insights segue um processo formalizado de avaliação de risco para fornecer uma maneira sistemática e repetível de identificar e avaliar os riscos para que eles possam ser gerenciados adequadamente por meio de um Plano de tratamento de riscos.
+
+
+
+=== Proteção de dados
+
+O ambiente de produção Data Infrastructure Insights é configurado em uma infraestrutura altamente redundante, utilizando várias zonas de disponibilidade para todos os serviços e componentes. Além da utilização de uma infraestrutura de computação redundante e altamente disponível, o backup de dados críticos em intervalos regulares e as restaurações são testadas periodicamente. Políticas e procedimentos formais de backup minimizam o impactos das interrupções das atividades de negócios e protegem os processos de negócios contra os efeitos de falhas de sistemas de informação ou desastres e garantem sua retomada oportuna e adequada.
+
+
+
+=== Autenticação e gerenciamento de acesso
+
+Todo o acesso do cliente ao Data Infrastructure Insights é feito por meio de interações da interface do usuário do navegador por https. A autenticação é realizada através do serviço de terceiros 3rd, Auth0. A NetApp centralizou-se nisso como a camada de autenticação para todos os serviços de dados de nuvem.
+
+O Data Infrastructure Insights segue as práticas recomendadas do setor, incluindo "menos privilégio" e "controle de acesso baseado em função", sobre o acesso lógico ao ambiente de produção do Data Infrastructure Insights. O acesso é controlado com base em necessidade estrita e só é concedido para pessoal autorizado selecionado usando mecanismos de autenticação multifator.
+
+
+
+=== Coleta e proteção de dados do cliente
+
+Todos os dados do cliente são criptografados em trânsito em redes públicas e criptografados em repouso. O Data Infrastructure Insights utiliza criptografia em vários pontos do sistema para proteger os dados dos clientes usando tecnologias que incluem Transport Layer Security (TLS) e o algoritmo AES-256 padrão do setor.
+
+
+
+=== Desprovisionamento do cliente
+
+As notificações por e-mail são enviadas em vários intervalos para informar o cliente que sua assinatura está expirando. Uma vez que a assinatura expirou, a IU é restrita e um período de carência começa para a coleta de dados. O cliente é então notificado por e-mail. As assinaturas de teste têm um período de carência de 14 dias e as contas de assinatura pagas têm um período de carência de 28 dias. Após o término do período de carência, o cliente é notificado por e-mail de que a conta será excluída em 2 dias. Um cliente pago também pode solicitar diretamente para estar fora do serviço.
+
+Os locatários expirados e todos os dados associados do cliente são excluídos pela equipe de operações do Data Infrastructure Insights Operations (SRE) no final do período de carência ou mediante confirmação da solicitação do cliente para encerrar sua conta. Em ambos os casos, a equipe SRE executa uma chamada de API para excluir a conta. A chamada API exclui a instância do locatário e todos os dados do cliente. A exclusão do cliente é verificada chamando a mesma API e verificando se o status do locatário do cliente é "EXCLUÍDO".
+
+
+
+=== Gerenciamento de incidentes de segurança
+
+O Insights de infraestrutura de dados é integrado ao processo da equipe de resposta a incidentes de Segurança de Produtos (PSIRT) da NetApp para localizar, avaliar e resolver vulnerabilidades conhecidas. O PSIRT coleta informações de vulnerabilidades de vários canais, incluindo relatórios de clientes, engenharia interna e fontes amplamente reconhecidas, como o banco de dados CVE.
+
+Se um problema for detetado pela equipe de engenharia do Data Infrastructure Insights, a equipe iniciará o processo PSIRT, avaliará e potencialmente corrigirá o problema.
+
+Também é possível que um cliente ou pesquisador do Insights de infraestrutura de dados possa identificar um problema de segurança com o produto Insights de infraestrutura de dados e relatar o problema ao suporte técnico ou diretamente à equipe de resposta a incidentes da NetApp. Nesses casos, a equipe de Data Infrastructure Insights iniciará o processo PSIRT, avaliará e potencialmente corrigirá o problema.
+
+
+
+=== Teste de vulnerabilidade e penetração
+
+O Data Infrastructure Insights segue as melhores práticas do setor e executa testes regulares de vulnerabilidade e penetração usando profissionais e empresas de segurança internas e externas.
+
+
+
+=== Treinamento de conscientização sobre segurança
+
+Todos os funcionários do Data Infrastructure Insights passam por treinamento de segurança, desenvolvido para funções individuais, para garantir que cada funcionário esteja equipado para lidar com os desafios específicos voltados à segurança de suas funções.
+
+
+
+=== Conformidade
+
+O Data Infrastructure Insights realiza auditorias e validações independentes de terceiros de sua segurança, processos e serviços, incluindo a conclusão da Auditoria SOC 2.
+
+
+
+=== Consultores de Segurança da NetApp
+
+Pode visualizar os avisos de segurança disponíveis do NetApp link:https://security.netapp.com/advisory/["aqui"].

@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: task_dc_cohesity_smartfiles.html 
+keywords: data collector, cohesity 
+summary: Configurando o coletor de dados Cohesity SmartFiles. 
+---
+= Coletor de dados Cohesity SmartFiles
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Esse coletor baseado em API REST adquirirá um cluster Cohesity, descobrindo as "visualizações" (como volumes internos do Data Infrastructure Insights), os vários nós, além de coletar métricas de performance.
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Cohesity Cluster IP | Endereço IP do cluster Cohesity 
+
+
+| Nome de utilizador | Nome de utilizador para o cluster Cohesity 
+
+
+| Palavra-passe | Senha usada para o cluster Cohesity 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Porta TCP | Porta usada para comunicação TCP com o cluster Cohesity 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 60 minutos. 
+
+
+| Intervalo de enquete de desempenho (min) | Intervalo entre sondagens de desempenho. O padrão é 900 segundos. 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

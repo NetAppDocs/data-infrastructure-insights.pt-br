@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: concept_notifications_email.html 
+summary: Adicionar endereços de e-mail para notificações. 
+keywords: email, notifications, signature, recipient, list, subscription 
+---
+= Configurar notificações por e-mail
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Você pode configurar uma lista de e-mail para notificações relacionadas a assinatura, bem como uma lista global de destinatários para notificação de violações de limite de política de desempenho.
+
+Para configurar as configurações do destinatário de e-mail de notificação, vá para a página *Admin > notificações* e selecione a guia _e-mail_.
+
+[role="thumb"]
+image:Notifications_email_list.png["Notificações por e-mail"]
+
+
+
+== Destinatários da notificação de assinatura
+
+Para configurar os destinatários para notificações de eventos relacionadas à assinatura, vá para a seção "destinatários de notificação de assinatura". Você pode optar por enviar notificações por e-mail para eventos relacionados à assinatura para qualquer um ou todos os seguintes destinatários:
+
+* Todos os proprietários de contas
+* Todos os administradores _Monitor & Otimize_
+* Endereços de e-mail adicionais que você especificar
+
+
+A seguir estão exemplos dos tipos de notificações que podem ser enviadas e as ações do usuário que você pode executar.
+
+|===
+
+
+| *Notificação:* | *Ação do Usuário:* 
+
+
+| A versão de avaliação ou subscrição foi atualizada | Reveja os detalhes da subscrição link:concept_subscribing_to_cloud_insights.html["Subscrição"]na página 
+
+
+| A assinatura expirará em 90 dias. A assinatura expirará em 30 dias | Nenhuma ação necessária se a "renovação automática" estiver ativada, o Contato link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Vendas da NetApp"] para renovar a assinatura 
+
+
+| O teste termina em 2 dias | Renove o teste a partir link:concept_subscribing_to_cloud_insights.html["Subscrição"]da página. Você pode renovar um teste uma vez. link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Vendas da NetApp"]Contacte para adquirir uma subscrição 
+
+
+| A conta de teste ou assinatura expirou deixará de coletar dados em 48 horas a conta será excluída após 48 horas | link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Vendas da NetApp"]Contacte para adquirir uma subscrição 
+|===
+
+
+== Lista de destinatários globais para alertas
+
+As notificações por e-mail de alertas são enviadas para a lista de destinatários de alerta para cada ação no alerta. Você pode optar por enviar notificações de alerta para uma lista global de destinatários.
+
+Para configurar destinatários de alerta global, escolha os destinatários desejados na seção *destinatários de notificação do Monitor Global*.
+
+Você sempre pode substituir a lista de destinatários globais de um monitor individual ao criar ou modificar o monitor.
+
+
+NOTE: As notificações do ONTAP Data Collector têm precedência sobre quaisquer notificações específicas do Monitor que sejam relevantes para o cluster/coletor de dados. A lista de destinatários definida para o coletor de dados receberá os alertas do coletor de dados. Se não houver alertas ativos do coletor de dados, os alertas gerados pelo monitor serão enviados para destinatários específicos do monitor.
+
+
+
+== Editando notificações para ONTAP
+
+Você pode modificar notificações para clusters do ONTAP selecionando _Editar notificações_ na lista suspensa superior direita em uma página inicial do armazenamento.
+
+image:EditONTAPNotifications.png["Notificações de edição do ONTAP"]
+
+A partir daqui, você pode definir notificações para alertas críticos, de aviso, informativos e/ou resolvidos. Cada cenário pode notificar a lista de destinatários globais ou outros destinatários que você escolher.
+
+image:EditONTAPNotifications_MultipleScenarios.png["Notificações do ONTAP para diferentes cenários"]

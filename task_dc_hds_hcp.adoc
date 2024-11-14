@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: task_dc_hds_hcp.html 
+keywords: data collector, Hitachi HDS, HCP 
+summary: Configurar o coletor de dados do HDS. 
+---
+= Coletor de dados Hitachi HCP
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Este coletor de dados suporta a Plataforma de conteúdo Hitachi (HCP) usando a API de Gerenciamento HCP.
+
+
+NOTE: A Hitachi Content Platform é mensurada a uma taxa bruta diferente de TB para Unidade gerenciada. Cada 40 TB de capacidade HCP não formatada é cobrada como 1 link:concept_subscribing_to_cloud_insights.html#pricing["Unidade gerenciada (MU)"].
+
+
+
+== Terminologia
+
+A Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados Hitachi HCP. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Cluster HCP | Armazenamento 
+
+
+| Locatário | Pool de storage 
+
+
+|  | Namespace 
+
+
+| Volume interno | Nó 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos de inventário
+
+Você deve ter o seguinte para coletar dados de inventário:
+
+* Endereço IP do servidor HCP
+* Nome de usuário e senha somente leitura para o software HCP e Privileges peer
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Host HCP | Endereço IP ou nome de domínio totalmente qualificado do host HCP 
+
+
+| Porta HCP | A predefinição é 9090 
+
+
+| ID de utilizador HCP | Nome de usuário para o host HCP. 
+
+
+| Palavra-passe HCP | Senha usada para o host HCP. 
+
+
+| Tipo de autenticação HCP | Escolha HCP_local ou ATIVE_DIRECTORY 
+|===
+
+
+== Configuração avançada
+
+|===
+
+
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. A predefinição é 60. 
+
+
+| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. A predefinição é 900. 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

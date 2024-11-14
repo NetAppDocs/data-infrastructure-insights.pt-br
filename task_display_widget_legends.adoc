@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: task_display_widget_legends.html 
+summary: Exibindo legendas em widgets do painel. 
+keywords: dashboard, widget, legends 
+---
+= Exibindo legendas do widget
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Widgets em painéis podem ser exibidos com ou sem legendas.
+
+Ao exibir o painel, legendas em widgets podem ser ativadas ou desativadas clicando no botão *Opções* no widget e selecionando *Mostrar legendas* no menu.
+
+À medida que os dados exibidos no widget mudam, a legenda desse widget é atualizada dinamicamente.
+
+Quando legendas são exibidas, se a página de destino do ativo indicado pela legenda puder ser navegada, a legenda será exibida como um link para essa página de ativo.

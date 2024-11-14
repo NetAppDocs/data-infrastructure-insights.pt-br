@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: concept_storage_virtualization.html 
+summary: O Data Infrastructure Insights pode fornecer visualizações de storage virtualizado de front-end e back-end. 
+keywords: storage, virtual, virtualized, virtualization, 
+---
+= Virtualização de storage
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights pode diferenciar um storage array com storage local ou virtualização de outros storage arrays. Isso possibilita relacionar os custos e diferenciar a performance do front-end todo o caminho até o back-end da sua infraestrutura.
+
+
+
+=== Virtualização em um widget de tabela
+
+Uma das maneiras mais fáceis de começar a olhar para a virtualização de armazenamento é criar um widget de tabela de painel mostrando o tipo virtualizado. Ao criar a consulta para o widget, basta adicionar "virtualizedType" ao seu agrupamento ou filtro.
+
+image:StorageVirtualization_TableWidgetSettings.png["Consulta básica para mostrar o armazenamento virtualizedTypes"]
+
+O widget de tabela resultante mostra os armazenamentos _Standard_, _backend_ e _Virtual_ em seu ambiente.
+
+image:StorageVirtualization_TableWidgetShowingVirtualizedTypes.png["Tabela mostrando tipos virtualizados"]
+
+
+
+=== As páginas iniciais mostram informações virtualizadas
+
+Em uma página inicial de armazenamento, volume, volume interno ou disco, você pode ver informações relevantes de virtualização. Por exemplo, olhando para a página inicial de armazenamento abaixo, você pode ver que este é um armazenamento virtual e que sistema de armazenamento de back-end se aplica. Quaisquer tabelas relevantes em páginas de destino também mostrarão informações de virtualização, conforme aplicável.
+
+image:StorageVirtualization_StorageSummary.png["Página de destino de armazenamento que mostra informações de armazenamento virtuais e suportadas"]
+
+
+
+=== Landing pages e dashboards existentes
+
+Esteja ciente de que, se você tiver páginas de destino ou painéis personalizados no seu ambiente, elas não mostrarão automaticamente todas as informações de virtualização por padrão. No entanto, você pode _reverter para o padrão_ qualquer painel personalizado ou página de destino (você terá que reimplementar suas personalizações) ou modificar os widgets relevantes para incluir os atributos ou métricas de virtualização desejados.
+
+_Revert to Default_ está disponível no canto superior direito de um painel personalizado ou tela de página inicial.
+
+image:RevertToDefault.png["Reverter para o botão padrão"]

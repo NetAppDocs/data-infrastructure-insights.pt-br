@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: kubernetes_node_detail.html 
+keywords: k8s, pods, clusters, nodes. troubleshooting, planning 
+summary: A página de detalhes do nó do Kubernetes fornece insights sobre o storage de back-end PV e Pod. 
+---
+= Página de detalhes do nó do Kubernetes
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+No explorador do Kubernetes, você pode clicar em um ícone nó para abrir uma página de informações detalhadas para esse nó. Nesta página, você pode exibir informações sobre o nó, bem como explorar informações de VM, Pod e contentor.
+
+image:KubernetesNodeFiltering.png["Página de detalhes do nó do Kubernetes mostrando a filtragem"]
+
+
+
+== Explorando os pods e os volumes persistentes do Node
+
+O Data Infrastructure Insights oferece visibilidade do storage de back-end para seus ambientes Kubernetes com insights sobre pods do Kubernetes e volumes persistentes (PVS). Você pode rastrear contadores PV, como IOPS, latência e taxa de transferência, desde o uso de um único Pod por meio de um contador PV até um PV e até o dispositivo de armazenamento back-end.
+
+No nível PV, o Data Infrastructure Insights coleta informações de capacidade de back-end (volume interno ou volume dependendo do tipo PV) (total, usado, porcentagem usada), bem como contagem de instantâneos de volume interno. No nível do Pod para storage, ele coleta a capacidade de back-end e a contagem de snapshot de volume interno.
+
+Em uma página inicial volume ou volume interno, duas tabelas são exibidas:
+
+image:Kubernetes_PV_Table.png["Tabela PV do Kubernetes"] image:Kubernetes_Pod_Table.png["Tabela de pods do Kubernetes"]
+
+
+NOTE: Se você personalizou sua página inicial volume ou volume interno, talvez não veja automaticamente as tabelas PV e Pod. Para ver essas tabelas, você deve reverter a página para o padrão, em que ponto você verá as tabelas PV e Pod. Você pode então prosseguir para repersonalizar a página conforme desejado.
+
+Observe que para aproveitar essas novas tabelas, é recomendável desinstalar o agente do Kubernetes atual e instalá-lo novamente. Você também deve instalar o Kube-State-Metrics versão 2.1.0 ou posterior.
+
+
+
+== Nó do Kubernetes para links da VM
+
+Em uma página do nó Kubernetes, você pode clicar para abrir a página da VM do nó. A página da VM também inclui um link de volta para o próprio nó.
+
+image:Kubernetes_Node_Page_with_VM_Link.png["Página do nó Kubernetes mostrando o link da VM"] image:Kubernetes_VM_Page_with_Node_Link.png["Página da VM do Kubernetes mostrando o link do nó"]

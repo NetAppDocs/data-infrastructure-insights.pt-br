@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: task_webhook_example_pagerduty.html 
+keywords: webhook, notification, PagerDuty, integration 
+summary: Crie um webhook para alertar sobre os limites de desempenho ou inventário do Pagerduty 
+---
+= Exemplo de webhook para PagerDuty
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Webhooks permitem que os usuários enviem notificações de alerta para vários aplicativos usando um canal de webhook personalizado. Esta página fornece um exemplo para configurar webhooks para o PagerDuty.
+
+
+NOTE: Esta página refere-se a instruções de terceiros, que podem estar sujeitas a alterações. Consulte a link:https://support.pagerduty.com/docs/services-and-integrations["PagerDuty documentação"]para obter as informações mais atualizadas.
+
+
+
+== Configuração PagerDuty:
+
+. No PagerDuty, navegue até *Serviços > diretório de Serviços* e clique no button​ novo Serviço*
+. Digite um _Name_ e selecione _Use nossa API diretamente_. Clique em _Adicionar serviço_.
++
+image:Webhooks_PagerDutyScreen1.png["Ecrã Pagerduty"]
+
+. Clique na guia _integrações_ para ver a *chave de integração*. Você precisará dessa chave quando criar o webhook do Data Infrastructure Insights abaixo.
+
+
+. Vá para *incidents* ou *Services* para ver Alertas.
++
+image:Webhooks_PagerDutyScreen2.png["Ecrã Pagerduty"]
+
+
+
+
+
+== Crie o Webhook do Data Infrastructure Insights:
+
+. Em Data Infrastructure Insights, navegue até *Admin > notificações* e selecione a guia *Webhooks*. Clique em * Webhook* para criar um novo webhook.
+. Dê ao webhook um Nome significativo, como "PagerDuty Trigger". Você usará este webhook para eventos críticos e de nível de aviso.
+. Na lista suspensa _Template Type_, selecione *PagerDuty*.
+
+
+. Crie um segredo de parâmetro personalizado chamado _routingKey_ e defina o valor para o valor PagerDuty _Integration Key_ de cima.
++
+image:Webhooks_Custom_Secret_Routing_Key.png["Definir a chave de encaminhamento"]
+
+
+
+Repita estas etapas para criar um webhook "PagerDuty resolve" para eventos resolvidos.
+
+
+
+== PagerDuty to Data Infrastructure Insights Field Mapping
+
+A tabela e a imagem a seguir mostram o mapeamento de campos entre PagerDuty e Data Infrastructure Insights:
+
+[cols="<,<"]
+|===
+| PagerDuty | Insights da infraestrutura de dados 
+
+
+| Tecla de alerta | ID de alerta 
+
+
+| Fonte | Ativado 
+
+
+| Componente | Nome da métrica 
+
+
+| Grupo | Tipo Objeto 
+
+
+| Classe | Nome do monitor 
+|===
+image:Webhooks-PagerDuty_Fields.png["PagerDuty Fields in Rio de Janeiro"]
+
+
+
+== Notificações via Webhook
+
+Para notificar eventos via webhook, em Data Infrastructure Insights navegue até *Alertas > monitores* e clique em * Monitor* para criar um novo link:task_create_monitor.html["monitorar"].
+
+* Selecione uma métrica e defina as condições do monitor.
+* Em _Configurar notificação(s) da equipe, escolha o método *Webhook* Delivery.
+* Escolha o webhook "PagerDuty Trigger" para eventos de nível crítico e de Aviso.
+* Escolha "PagerDuty resolve" para eventos resolvidos.
++
+image:Webhooks_Notifications.png["Notificações do webhook"]
+
+
+
+
+NOTE: Definir notificações separadas para eventos de gatilho versus eventos resolvidos é uma prática recomendada, já que o PagerDuty lida com eventos de gatilho de forma diferente dos eventos resolvidos.

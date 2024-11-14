@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: task_cs_add_collector_ontap.html 
+keywords: data collector, ONTAP, SVM 
+summary: Adicionando coletores de dados 
+---
+= Configurando o Coletor de dados do NetApp ONTAP
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Workload Security usa coletores de dados para coletar dados de acesso de arquivos e usuários de dispositivos. Os dados são fornecidos ao Workload Security para análise.
+
+.Antes de começar
+Você precisa das seguintes informações para configurar este coletor de dados:
+
+* Um agente deve ser configurado para coletar dados
+* O endereço IP do gerenciamento do SVM
+* Um nome de usuário para acessar o SVM
+* A senha para acessar o SVM
+
+
+.Passos para a configuração
+. Inicie sessão como Administrador ou proprietário de conta no ambiente de Segurança de carga de trabalho.
+. Clique em *Observability > Collectors >> Data Collectors*
++
+O sistema exibe os coletores de dados disponíveis.
+
+. Clique em * Monitor* no bloco NetApp ONTAP.
++
+O sistema exibe a página de configuração Adicionar coletor de dados: ONTAP SVM.
+
+. Introduza um nome exclusivo para o coletor
+. Selecione o agente que coletará os dados
+. Insira o endereço IP de gerenciamento do SVM
+. Insira o nome de usuário para acessar o SVM
+. Insira a senha para acessar o SVM
+. Clique em * Adicionar Coletor*
+
+
+.Depois de terminar
+* Clique em *Workload Security > Collectors* para verificar o status do coletor que você configurou.
++
+Normalmente, existe um atraso antes de o estado do coletor ser apresentado.
+
+

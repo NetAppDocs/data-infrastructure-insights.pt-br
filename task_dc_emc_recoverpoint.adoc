@@ -1,0 +1,77 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_recoverpoint.html 
+keywords: data collector, RecoverPoint, EMC, DELL 
+summary: Configurar o coletor de dados Dell EMC RecoverPoint. 
+---
+= Coletor de dados Dell EMC RecoverPoint
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O principal caso de uso do coletor de dados EMC RecoverPoint é descobrir relações de replicação de volume para volume que o dispositivo de armazenamento RecoverPoint facilita. Este coletor também irá descobrir o próprio aparelho RecoverPoint. Observe que a Dell/EMC vende uma solução de backup VMware para VMs--"RecoverPoint for VMs"--que não é suportada por este coletor
+
+Para a configuração, o coletor de dados requer o endereço IP dos processadores de armazenamento e um nome de usuário e senha somente leitura.
+
+O coletor de dados EMC RecoverPoint reúne as relações de replicação de volume para volume que o RecoverPoint coordena entre outros arrays de armazenamento. O Data Infrastructure Insights mostra um storage array para cada cluster do RecoverPoint e coleta dados de inventário de nós e portas de storage nesse cluster. Nenhum pool de armazenamento ou dados de volume são coletados.
+
+
+
+== Requisitos
+
+As seguintes informações são necessárias para configurar este coletor de dados:
+
+* Endereço IP ou nome de domínio totalmente qualificado do processador de armazenamento
+* Nome de utilizador e palavra-passe só de leitura
+* Acesso à API REST via porta 443
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço do RecoverPoint | Endereço IP ou nome de domínio totalmente qualificado do cluster RecoverPoint 
+
+
+| Nome de utilizador | Nome de utilizador para o cluster RecoverPoint 
+
+
+| Palavra-passe | Palavra-passe utilizada para o cluster RecoverPoint 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Porta TCP | Porta TCP utilizada para ligar ao cluster RecoverPoint 
+
+
+| Intervalo de enquete de inventário (minutos) | Intervalo entre sondagens de inventário. O padrão é 20 minutos. 
+
+
+| Clusters excluídos | Lista separada por vírgulas de IDs ou nomes de cluster a excluir ao fazer polling. 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

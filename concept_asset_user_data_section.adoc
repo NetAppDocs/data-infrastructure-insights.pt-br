@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: concept_asset_user_data_section.html 
+summary: A seção dados do usuário de uma página de ativo permite que você atribua anotações ou aplicativos ao ativo atual. 
+keywords: asset page, user data, applications, annotations 
+---
+= Seção de dados do usuário
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+A seção dados do usuário de uma página de ativo exibe e permite que você altere quaisquer dados definidos pelo usuário, como aplicativos e anotações.
+
+
+
+== Usando a seção dados do usuário para atribuir ou modificar aplicativos
+
+É possível atribuir aplicativos em execução no ambiente a determinados ativos (host, máquinas virtuais, volumes, volumes internos, qtrees e hipervisores). A seção dados do usuário permite adicionar, alterar ou remover os aplicativos atribuídos a um ativo. Para todos esses tipos de ativos, exceto volumes, você pode atribuir mais de um aplicativo.
+
+.Passos
+. Localize uma página de ativo fazendo qualquer um dos seguintes procedimentos:
++
+.. Consulte uma lista de ativos e, em seguida, selecione um da lista.
+.. Em um Dashboard, localize um nome de ativo e clique nele.
+.. Faça uma pesquisa e escolha um ativo dos resultados.
++
+A página de ativos é exibida. A secção dados do utilizador da página apresenta aplicações ou anotações atualmente atribuídas.
+
+
+
+
+
+Para alterar o aplicativo atribuído ou atribuir um aplicativo ou aplicativos adicionais, solte a lista *aplicativo* e selecione o(s) aplicativo(s) que deseja atribuir ao ativo. Você pode digitar para pesquisar um aplicativo ou selecionar um na lista.
+
+Para remover uma aplicação, desça a lista de aplicações e desmarque a aplicação.
+
+
+
+== Utilizar a secção dados do utilizador para atribuir ou modificar anotações
+
+Ao personalizar o Data Infrastructure Insights para rastrear dados para seus requisitos corporativos, você pode definir notas especializadas chamadas anotações e atribuí-las aos seus ativos. A seção dados do usuário de uma página de ativo exibe anotações atribuídas a um ativo e também permite que você altere as anotações atribuídas a esse ativo.
+
+.Passos
+. Para adicionar uma anotação ao ativo, na seção dados do usuário da página de ativo, clique em * Annotation*.
+. Selecione uma anotação na lista.
+. Clique em valor e efetue uma das seguintes ações, dependendo do tipo de anotação selecionado:
++
+.. Se o tipo de anotação for lista, data ou Booleano, selecione um valor na lista.
+.. Se o tipo de anotação for texto, introduza um valor.
+
+
+. Clique em Guardar.
+
+
+A anotação é atribuída ao ativo. Você pode filtrar ativos posteriormente por anotação usando uma consulta.
+
+Se pretender alterar o valor da anotação depois de a atribuir, largue a lista de anotações e introduza um valor diferente.
+
+Se a anotação for do tipo de lista para o qual a opção _Add new values on the fly_ está selecionada, você pode digitar para adicionar um novo valor além de selecionar um valor existente.

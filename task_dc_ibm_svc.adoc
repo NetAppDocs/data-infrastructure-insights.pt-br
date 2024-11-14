@@ -1,0 +1,133 @@
+---
+sidebar: sidebar 
+permalink: task_dc_ibm_svc.html 
+keywords: IBM, SVC,SAN 
+summary: Configurando o coletor de dados do IBM SAN volume Controller. 
+---
+= Configurando o coletor de dados do IBM SAN volume Controller
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O coletor de dados IBM SAN volume Controller (SVC) coleta dados de inventário e desempenho usando SSH, suportando uma variedade de dispositivos que executam o sistema operacional SVC.
+
+A lista de dispositivos suportados inclui modelos como o SVC, o v7000, o V5000 e o v3700. Consulte a matriz de suporte do Data Infrastructure Insights para ver os modelos e versões de firmware compatíveis.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do IBM SVC. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Condução | Disco 
+
+
+| Cluster | Armazenamento 
+
+
+| Nó | Nó de storage 
+
+
+| Grupo Mdisk | Pool de storage 
+
+
+| VDisk | Volume 
+
+
+| Mdisk | LUNs e caminhos de back-end 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+=== Requisitos de inventário
+
+* Endereço IP de cada cluster SVC
+* Porta 22 disponível
+* Nome de utilizador e palavra-passe só de leitura
+
+
+
+
+=== Requisitos de desempenho
+
+* Console SVC, que é obrigatório para qualquer cluster SVC e necessário para o pacote de fundação de descoberta SVC.
+* As credenciais exigirão nível de acesso administrativo apenas para copiar arquivos de desempenho de nós de cluster para o nó de configuração.
+* Ative a coleta de dados conetando-se ao cluster SVC por SSH e executando: _Svctask startstats -interval 1_
++
+Observação: Alternativamente, habilite a coleta de dados usando a interface do usuário de gerenciamento SVC.
+
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereços IP do cluster | Endereços IP ou nomes de domínio totalmente qualificados do armazenamento SVC 
+
+
+| Nome Utilizador Stock | Nome de usuário para a CLI SVC 
+
+
+| Palavra-passe de inventário | Senha para a CLI SVC 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 40 minutos. 
+
+
+| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. O padrão é 300 segundos. 
+
+
+| Para limpar os arquivos de estatísticas despejados | Marque esta caixa de seleção para limpar os arquivos de estatísticas despejados 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Erro: "O comando não pode ser iniciado porque não foi executado no nó de configuração." | O comando deve ser executado no nó de configuração. 
+|===
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Erro: "O comando não pode ser iniciado porque não foi executado no nó de configuração." | O comando deve ser executado no nó de configuração. 
+|===
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

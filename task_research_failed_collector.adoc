@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: task_research_failed_collector.html 
+keywords: data collector, changes, failures 
+summary: Erros do coletor de dados 
+---
+= Pesquisando um coletor de dados com falha
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Se um coletor de dados tiver uma mensagem de falha e um impacto Alto ou Médio, você precisará pesquisar esse problema usando a página de resumo do coletor de dados com suas informações vinculadas.
+
+Siga as etapas a seguir para determinar a causa dos coletores de dados com falha. As mensagens de falha do coletor de dados são exibidas no menu *Admin* e na página *Installed Data Collectors*.
+
+.Passos
+. Clique em *Admin* > *coletores de dados* > *coletores de dados instalados*.
+. Clique no Nome vinculado do coletor de dados com falha para abrir a página Resumo.
+. Na página Resumo, verifique a área Comentários para ler quaisquer notas que possam ter sido deixadas por outro engenheiro que também possa estar investigando essa falha.
+. Anote todas as mensagens de desempenho.
+. Mova o ponteiro do Mouse sobre os segmentos do gráfico da linha de tempo do evento para exibir informações adicionais.
+. Selecione uma mensagem de erro para um dispositivo e exibida abaixo da linha do tempo do evento e clique no ícone Detalhes do erro que é exibido à direita da mensagem.
++
+Os detalhes do erro incluem o texto da mensagem de erro, causas mais prováveis, informações em uso e sugestões do que pode ser tentado para corrigir o problema.
+
+. Na área dispositivos reportados por este coletor de dados, você pode filtrar a lista para exibir apenas os dispositivos de interesse, e você pode clicar no *Nome* vinculado de um dispositivo para exibir a página de ativos desse dispositivo.
+. Quando você retornar à página de resumo do coletor de dados, marque a área *Mostrar alterações recentes* na parte inferior da página para ver se as alterações recentes poderiam ter causado o problema.
+

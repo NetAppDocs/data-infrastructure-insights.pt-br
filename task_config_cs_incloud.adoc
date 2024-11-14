@@ -1,0 +1,94 @@
+---
+sidebar: sidebar 
+permalink: task_config_cs_incloud.html 
+keywords: Cloud, Storage, AWS, Cloud Volumes, Cloud ONTAP, firewall, VPC, Subnet,  cloud secure 
+summary: O Workload Security usa coletores de dados para coletar dados de acesso de arquivos e usuários de dispositivos. 
+---
+= Configurando o Cloud Volumes ONTAP e o Amazon FSX para NetApp ONTAP Collector
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Workload Security usa coletores de dados para coletar dados de acesso de arquivos e usuários de dispositivos.
+
+
+
+== Configuração de armazenamento Cloud Volumes ONTAP
+
+Consulte a documentação do OnCommand Cloud Volumes ONTAP para configurar uma instância do AWS de nó único/HA para hospedar o agente de segurança de carga de trabalho: https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/index.html[]
+
+Após a conclusão da configuração, siga as etapas para configurar o SVM: https://docs.netapp.com/us-en/cloudinsights/task_add_collector_svm.html[]
+
+
+
+== Plataformas compatíveis
+
+* Cloud Volumes ONTAP, compatível com todos os fornecedores de serviços de nuvem disponíveis, onde disponível. Por exemplo: Amazon, Azure, Google Cloud.
+* ONTAP no FSX
+
+
+
+
+== Configuração da Máquina do Agente
+
+A máquina do agente deve ser configurada nas respetivas sub-redes dos provedores de serviços de nuvem. Leia mais sobre o acesso à rede em [requisitos do agente].
+
+Abaixo estão as etapas para a instalação do agente na AWS. Etapas equivalentes, conforme aplicável ao provedor de serviços de nuvem, podem ser seguidas no Azure ou no Google Cloud para a instalação.
+
+Na AWS, siga as etapas a seguir para configurar a máquina a ser usada como agente de segurança de carga de trabalho:
+
+Siga as etapas a seguir para configurar a máquina a ser usada como agente de segurança de carga de trabalho:
+
+.Passos
+. Faça login no console da AWS e navegue até a página de instâncias EC2 e selecione _Launch instance_.
+. Selecione uma AMI RHEL ou CentOS com a versão apropriada, conforme mencionado nesta página: https://docs.netapp.com/us-en/cloudinsights/concept_cs_agent_requirements.html[]
+. Selecione a VPC e a sub-rede em que a instância do Cloud ONTAP reside.
+. Selecione _T2.xlarge_ (4 vcpus e 16 GB de RAM) como recursos alocados.
++
+.. Crie a instância EC2.
+
+
+. Instale os pacotes Linux necessários usando o gerenciador de pacotes YUM:
++
+.. Instale os pacotes Linux nativos _wget_ e _unzip_.
+
+
+
+
+
+
+== Instale o agente de segurança de carga de trabalho
+
+. Faça login como Administrador ou proprietário de conta no seu ambiente Data Infrastructure Insights.
+. Navegue até Workload Security *Collectors* e clique na guia *Agents*.
+. Clique em * Agente* e especifique RHEL como a plataforma de destino.
+. Copie o comando Instalação do agente.
+. Cole o comando Agent Installation na instância RHEL EC2 na qual você está conetado. Isso instala o agente Workload Security, desde que todos os link:concept_cs_agent_requirements.html["Pré-requisitos do agente"] sejam atendidos.
+
+
+Para obter as etapas detalhadas, consulte este link: https://docs.NetApp.com/US-en/cloudinsights/task_cs_add_Agent.html
+
+
+
+== Solução de problemas
+
+Problemas conhecidos e suas resoluções são descritos na tabela a seguir.
+
+|===
+
+
+| Problema | Resolução 
+
+
+| "Segurança de carga de trabalho: Falha ao determinar o tipo de ONTAP para o coletor de dados do Amazon FxSN" é mostrado pelo coletor de dados. O cliente não consegue adicionar um novo coletor de dados Amazon FSxN ao Workload Security. A conexão com o cluster FSxN na porta 443 do agente está esgotando. Os grupos de segurança do firewall e da AWS têm as regras necessárias habilitadas para permitir a comunicação. Um agente já está implantado e também está na mesma conta da AWS. Esse mesmo agente é usado para conetar e monitorar os dispositivos NetApp restantes (e todos eles estão funcionando). | Resolva esse problema adicionando o segmento de rede fsxadmin LIF à regra de segurança do agente. Permitido todas as portas se você não tiver certeza sobre as portas. 
+|===

@@ -1,0 +1,95 @@
+---
+sidebar: sidebar 
+permalink: task_dc_ibm_cleversafe.html 
+keywords: data collector, IBM Cleversafe 
+summary: Configurando o coletor de dados IBM Cleversafe. 
+---
+= Coletor de dados IBM Cleversafe
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa esse coletor de dados para descobrir dados de inventário e desempenho para sistemas de armazenamento IBM Cleversafe.
+
+
+NOTE: O IBM Cleversafe é medido a uma taxa bruta diferente de TB para Unidade gerenciada. A cada 40 TB de capacidade não formatada do IBM Cleversafe é cobrada como 1 link:concept_subscribing_to_cloud_insights.html#pricing["Unidade gerenciada (MU)"].
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados IBM Cleversafe. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Pool de storage | Pool de storage 
+
+
+| Recipiente | Volume interno 
+
+
+| Recipiente | Partilha de ficheiros 
+
+
+| Compartilhamento NFS | Partilhar 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* O endereço IP dos serviços de dados externos para o cluster
+* Nome de usuário e senha do administrador
+* Porta 9440
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| IP ou nome do host do gerente | Endereço IP ou nome do host do nó de gerenciamento 
+
+
+| Nome de utilizador | Nome de usuário para a conta de usuário com super usuário ou função de administrador do sistema 
+
+
+| Palavra-passe | Senha para a conta de usuário com super usuário ou função de administrador do sistema 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de pesquisa de inventário (min) | Intervalo entre sondagens de inventário. 
+
+
+| Tempo limite da conexão HTTP (seg) | Tempo limite HTTP em segundos. 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

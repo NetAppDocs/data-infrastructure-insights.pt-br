@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: task_cs_delete_agent.html 
+keywords: agent, Workload Security, delete agent, Cloud Secure 
+summary: Excluindo agentes de Segurança de carga de trabalho 
+---
+= Excluindo um agente de segurança de carga de trabalho
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Quando você exclui um agente de segurança de carga de trabalho, todos os coletores de dados associados ao agente devem ser excluídos primeiro.
+
+
+
+== Excluindo um agente
+
+
+IMPORTANT: A exclusão de um agente exclui todos os coletores de dados associados ao agente. Se você pretende configurar os coletores de dados com um agente diferente, você deve criar um backup das configurações do Data Collector antes de excluir o Agente.
+
+.Antes de começar
+. Certifique-se de que todos os coletores de dados associados ao agente sejam excluídos do portal Workload Security.
++
+Nota: Ignore esta etapa se todos os coletores associados estiverem no estado PARADO.
+
+
+
+.Etapas para excluir um agente:
+. SSH na VM do agente e execute o seguinte comando. Quando solicitado, digite "y" para continuar.
++
+....
+sudo /opt/netapp/cloudsecure/agent/install/cloudsecure-agent-uninstall.sh
+Uninstall CloudSecure Agent? [y|N]:
+....
+. Clique em *Workload Security > Collectors > Agents*
++
+O sistema exibe a lista de agentes configurados.
+
+. Clique no menu de opções para o agente que você está excluindo.
+. Clique em *Excluir*.
++
+O sistema exibe a página *Excluir agente*.
+
+. Clique em *Excluir* para confirmar a exclusão.
+

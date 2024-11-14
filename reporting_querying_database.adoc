@@ -1,0 +1,177 @@
+---
+sidebar: sidebar 
+permalink: reporting_querying_database.html 
+summary: Use as APIs do Data Infrastructure Insights para consultar o banco de dados de relatórios diretamente. 
+keywords: reporting, cognos, data warehouse, dwh, API 
+---
+= Acesse o banco de dados de relatórios via API
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+A poderosa API do Data Infrastructure Insights permite que os usuários consultem diretamente o banco de dados de relatórios do Data Infrastructure Insights, sem passar pelo ambiente do Cognos Reporting.
+
+
+NOTE: Esta documentação refere-se ao recurso Relatório de Insights de infraestrutura de dados, que está disponível no Data Infrastructure Insights Premium Edition.
+
+
+
+== OData
+
+A API Data Infrastructure Insights Reporting segue o link:https://www.odata.org/["OData v4"]padrão (Open Data Protocol) para consulta do banco de dados Reporting. Para mais informações ou para saber mais, consulte link:https://www.odata.org/getting-started/basic-tutorial/["este tutorial"]OData.
+
+Todas as solicitações começarão com o url _URL do Insights de infraestrutura do \https://<Data>/REST/v1/dwh-management/odata_
+
+
+
+== Gerando uma APIKey
+
+Leia mais sobre link:API_Overview.html["APIs do Data Infrastructure Insights"].
+
+Para gerar uma chave de API, faça o seguinte:
+
+* Inicie sessão no ambiente Data Infrastructure Insights e selecione *Admin > API Access*.
+* Clique em " API Access Token".
+* Introduza um nome e uma descrição.
+* Para o tipo, escolha _Data Warehouse_.
+* Definir permissões como leitura/gravação.
+* Defina uma data de expiração de desejos.
+* Clique em "Salvar", depois * copie a chave e salve-a* em algum lugar seguro. Você não poderá acessar a chave completa mais tarde.
+
+
+APIkeys são bons para <<synchronous-or-asynchronous,_Sync_ ou _Async_>>.
+
+
+
+== Consulta direta de tabelas
+
+Com a chave API em vigor, as consultas diretas do banco de dados de relatórios agora são possíveis. URLs longos podem ser simplificados para o \https://.../odata/ para fins de exibição, em vez do URL completo do Insights de infraestrutura da \https://<Data>/REST/v1/dwh-management/odata/
+
+Tente consultas simples como
+
+* URL>/REST/v1/dwh-Management/odata/dwh_custom \https://<Data
+* URL>/REST/v1/dwh-Management/odata/dwh_inventory \https://<Data
+* URL>/REST/v1/dwh-Management/odata/dwh_inventory/storage \https://<Data
+* URL>/REST/v1/dwh-Management/odata/dwh_inventory/Disk \https://<Data
+* \https://.../odata/dwh_custom/custom_queries
+
+
+
+
+== Exemplos de API REST
+
+O URL para todas as chamadas é _URL do Insights da infraestrutura da \https://<Data>/REST/v1/dwh-management/odata_.
+
+* GET //** - recupera dados do Banco de dados de relatórios.
+
+
+Formato: _URL do Insights da infraestrutura da \https://<Data>/REST/v1/dwh-Management/odata/<schema_name>/<query>_
+
+Exemplo:
+
+ https://<domain>/rest/v1/dwh-management/odata/dwh_inventory/fabric?$count=true&$orderby=name
+Resultado:
+
+....
+{
+   "@odata.context": "$metadata#fabric",
+   "@odata.count": 2,
+   "value": [
+       {
+           "id": 851,
+           "identifier": "10:00:50:EB:1A:40:3B:44",
+           "wwn": "10:00:50:EB:1A:40:3B:44",
+           "name": "10:00:50:EB:1A:40:3B:44",
+           "vsanEnabled": "0",
+           "vsanId": null,
+           "zoningEnabled": "0",
+           "url": "https://<domain>/web/#/assets/fabrics/941716"
+       },
+       {
+           "id": 852,
+           "identifier": "10:00:50:EB:1A:40:44:0C",
+           "wwn": "10:00:50:EB:1A:40:44:0C",
+           "name": "10:00:50:EB:1A:40:44:0C",
+           "vsanEnabled": "0",
+           "vsanId": null,
+           "zoningEnabled": "0",
+           "url": "https://<domain>/web/#/assets/fabrics/941836"
+        }
+    ]
+}
+....
+
+
+== Dicas úteis
+
+Tenha em mente o seguinte ao trabalhar com consultas de API de relatórios.
+
+* O payload da consulta deve ser uma string JSON válida
+* A carga útil da consulta deve estar contida em uma única linha
+* Aspas duplas devem ser escapadas, ou seja, ""
+* Os separadores são suportados como t
+* Evite comentários
+* Nomes de tabelas minúsculas são suportados
+
+
+Além disso:
+
+* São necessários colhedores 2:
++
+** Nome "X-CloudInsights-ApiKey"
+** Valor de atributo "<apikey>"
+
+
+
+
+Sua chave de API será específica do seu ambiente Data Infrastructure Insights.
+
+
+
+== Síncrono ou assíncrono?
+
+Por padrão, um comando API operará no modo _synchronous_, o que significa que você envia a solicitação e a resposta é retornada imediatamente. No entanto, às vezes uma consulta pode levar muito tempo para ser executada, o que pode levar ao tempo limite da solicitação. Para contornar isso, você pode executar uma solicitação _assincronamente_. No modo assíncrono, a solicitação retornará um URL através do qual a execução pode ser monitorada. O URL retornará o resultado quando estiver pronto.
+
+Para executar uma consulta no modo assíncrono, adicione o cabeçalho `*Prefer: respond-async*` à solicitação. Após a execução bem-sucedida, a resposta conterá os seguintes cabeçalhos:
+
+....
+Status Code: 202 (which means ACCEPTED)
+preference-applied: respond-async
+location: https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_custom/asyncStatus/<token>
+....
+Consultar o URL de localização retornará os mesmos cabeçalhos se a resposta ainda não estiver pronta, ou retornará com o status 200 se a resposta estiver pronta. O conteúdo da resposta será do tipo texto e contém o status http da consulta original e alguns metadados, seguidos pelos resultados da consulta original.
+
+....
+HTTP/1.1 200 OK
+ OData-Version: 4.0
+ Content-Type: application/json;odata.metadata=minimal
+ oDataResponseSizeCounted: true
+
+ { <JSON_RESPONSE> }
+....
+Para ver uma lista de todas as consultas assíncronas e quais delas estão prontas, use o seguinte comando:
+
+ GET https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_custom/asyncList
+A resposta tem o seguinte formato:
+
+....
+{
+   "queries" : [
+       {
+           "Query": "https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_custom/heavy_left_join3?$count=true",
+           "Location": "https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_custom/asyncStatus/<token>",
+           "Finished": false
+       }
+   ]
+}
+....

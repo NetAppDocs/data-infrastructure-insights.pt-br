@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: task_identify_inactive_devices.html 
+keywords: inactive, device, 
+summary: Identificar dispositivos inativos permite que você escolha excluí-los ou alocá-los a uma função ativa. 
+---
+= Identificação de dispositivos inativos
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Identificar os ativos que você tem e quem os está usando é fundamental para "dimensionar corretamente" e liberar uma infraestrutura não utilizada. Você pode facilmente realocar ou desativar recursos subutilizados e evitar compras desnecessárias.
+
+Use as etapas a seguir para identificar ativos inativos.
+
+.Passos
+* Navegue até *explorar -> Nova consulta métrica*.
+* Selecione _Storage_ na lista suspensa.
+* Clique na engrenagem e adicione _isActive_ como uma coluna.
++
+As linhas que mostram uma verificação estão ativas. "X" indica dispositivos inativos.
+
+

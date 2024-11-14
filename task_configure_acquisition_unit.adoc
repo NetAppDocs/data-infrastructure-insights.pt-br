@@ -1,0 +1,263 @@
+---
+sidebar: sidebar 
+permalink: task_configure_acquisition_unit.html 
+keywords: Acquisition Unit, AU, install, configure, Linux, add, remove, uninstall, delete, deleting, move, moving 
+summary: Instalação, desinstalação, configuração de suporte a proxy e muito mais no Windows e Linux. 
+---
+= Configurar unidades de aquisição
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights coleta dados do dispositivo usando uma ou mais unidades de aquisição instaladas em servidores locais. Cada Unidade de aquisição pode hospedar vários coletores de dados, que enviam métricas de dispositivo para o Data Infrastructure Insights para análise.
+
+Este tópico descreve como adicionar unidades de aquisição e descreve as etapas adicionais necessárias quando seu ambiente usa um proxy.
+
+
+NOTE: Para uma auditoria precisa e relatórios de dados, é altamente recomendável sincronizar o tempo na máquina da unidade de aquisição usando *Network Time Protocol (NTP)* ou *Simple Network Time Protocol (SNTP)*.
+
+Leia sobre segurança do Data Infrastructure Insights link:security_overview.html["aqui"].
+
+
+
+== Adicionando uma Unidade de aquisição Linux
+
+.Antes de começar
+* Se o sistema estiver usando um proxy, você deverá definir as variáveis de ambiente proxy antes que a unidade de aquisição seja instalada. Para obter mais informações, <<Configurando variáveis de ambiente proxy>>consulte .
+
+
+.Etapas para a instalação da Unidade de aquisição do Linux
+. Faça login como Administrador ou proprietário de conta no seu ambiente Data Infrastructure Insights.
+. Clique em *Observability > Collectors > Acquisition Units > Acquisition Unit*
++
+O sistema exibe a caixa de diálogo _Install Acquisition Unit_. Escolha Linux.
+
+
+
+[role="thumb"]
+image:NewLinuxAUInstall.png["Instruções do Linux AU"]
+
+. Verifique se o servidor ou VM que hospeda a Unidade de aquisição atende aos requisitos de sistema recomendados.
+. Verifique se o servidor está executando uma versão suportada do Linux. Clique em _as versões suportadas (i)_ para obter uma lista de versões suportadas.
+. Copie o snippet de comando Installation na caixa de diálogo para uma janela de terminal no servidor ou na VM que hospedará a unidade de aquisição.
+. Cole e execute o comando no shell Bash.
+
+
+.Depois de terminar
+* Clique em *Observability > Collectors > Acquisition Units* (observabilidade > coletores > unidades de aquisição) para verificar o estado das unidades de aquisição.
+* Pode aceder aos registos da Unidade de aquisição em /var/log/NetApp/cloudinsights/acq/acq.log
+* Use o seguinte script para controlar a Unidade de aquisição:
++
+** cloudinsights-service.sh (parar, iniciar, reiniciar, verificar o estado)
+
+
+* Use o seguinte script para desinstalar a Unidade de aquisição:
++
+** cloudinsights-uninstall.sh
+
+
+
+
+
+
+=== Configurando variáveis de ambiente proxy
+
+Para ambientes que usam um proxy, você deve definir as variáveis de ambiente proxy antes de adicionar a Unidade de aquisição. As instruções para configurar o proxy são fornecidas na caixa de diálogo _Adicionar unidade de aquisição_.
+
+. Clique em _have a Proxy Server?_
+. Copie os comandos para um editor de texto e defina suas variáveis de proxy conforme necessário.
++
+Nota: Esteja ciente de restrições em carateres especiais nos campos de nome de usuário e senha do proxy: '%' e '!' são permitidos no campo de nome de usuário. ':', '%' e '!' são permitidos no campo de senha.
+
+. Execute o comando editado em um terminal usando o shell Bash.
+. Instale o software da unidade de aquisição.
+
+
+
+
+=== Configuração do proxy
+
+A Unidade de aquisição usa autenticação de 2 vias/mútua para se conetar ao servidor Data Infrastructure Insights. O certificado de cliente deve ser passado para o servidor Data Infrastructure Insights para ser autenticado. Para isso, o proxy deve ser configurado para encaminhar a solicitação https para o servidor Data Infrastructure Insights sem descriptografar os dados.
+
+A maneira mais simples de fazer isso é especificar a configuração curinga em seu proxy/firewall para se comunicar com o Data Infrastructure Insights, por exemplo:
+
+ *.cloudinsights.netapp.com
+
+NOTE: O uso de um asterisco (*) para curinga é comum, mas sua configuração de proxy/firewall pode usar um formato diferente. Verifique com a documentação do proxy para garantir a especificação correta do curinga em seu ambiente.
+
+Mais informações sobre a configuração do proxy podem ser encontradas no NetApp link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit["Knowledgbase"].
+
+
+
+==== Exibindo URLs de proxy
+
+Você pode visualizar seus URLs de endpoint proxy clicando no link *Configurações de proxy* ao escolher um coletor de dados durante a integração ou no link em _Configurações de proxy_ na página *Ajuda > suporte*. Uma tabela como a seguinte é exibida.
+
+image:ProxyEndpoints_NewTable.png["Tabela de pontos finais do proxy"]
+
+Se você tiver o Workload Security no seu ambiente, os URLs de endpoint configurados também serão exibidos nesta lista.
+
+
+
+== Adicionar uma Unidade de aquisição do Windows
+
+.Passos para a instalação da unidade de aquisição do Windows
+. Inicie sessão no servidor/VM da Unidade de aquisição como um utilizador com permissões de Administrador.
+. Nesse servidor, abra uma janela do navegador e faça login no seu ambiente Data Infrastructure Insights como Administrador ou proprietário da conta.
+. Clique em *observabilidade > coletores > unidades de aquisição > Unidade de aquisição* .
++
+O sistema exibe a caixa de diálogo _Install Acquisition Unit_. Escolha Windows.
+
+
+
+image::NewWindowsAUInstall.png[Instalação do Windows AU]
+
+. Verifique se o servidor ou VM que hospeda a Unidade de aquisição atende aos requisitos de sistema recomendados.
+. Verifique se o servidor está executando uma versão suportada do Windows. Clique em _as versões suportadas (i)_ para obter uma lista de versões suportadas.
+. Clique no botão *Download Installer (Windows 64-bit)*.
+. Copie a chave de acesso. Você precisará disso durante a instalação.
+. No servidor/VM da Unidade de aquisição, execute o instalador transferido.
+. Cole a chave de acesso no assistente de instalação quando solicitado.
+. Durante a instalação, você terá a oportunidade de fornecer suas configurações de servidor proxy.
+
+
+.Depois de terminar
+* Clique em * > observabilidade > coletores > unidades de aquisição* para verificar o estado das unidades de aquisição.
+* Pode aceder ao registo da unidade de aquisição no <install dir>/Cloud Insights/Unidade de aquisição/log/acq.log
+* Use o script a seguir para parar, iniciar, reiniciar ou verificar o status da Unidade de aquisição:
++
+ cloudinsights-service.sh
+
+
+
+
+=== Configuração do proxy
+
+A Unidade de aquisição usa autenticação de 2 vias/mútua para se conetar ao servidor Data Infrastructure Insights. O certificado de cliente deve ser passado para o servidor Data Infrastructure Insights para ser autenticado. Para isso, o proxy deve ser configurado para encaminhar a solicitação https para o servidor Data Infrastructure Insights sem descriptografar os dados.
+
+A maneira mais simples de fazer isso é especificar a configuração curinga em seu proxy/firewall para se comunicar com o Data Infrastructure Insights, por exemplo:
+
+ *.cloudinsights.netapp.com
+
+NOTE: O uso de um asterisco (*) para curinga é comum, mas sua configuração de proxy/firewall pode usar um formato diferente. Verifique com a documentação do proxy para garantir a especificação correta do curinga em seu ambiente.
+
+Mais informações sobre a configuração do proxy podem ser encontradas no NetApp link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit["Knowledgbase"].
+
+
+
+==== Exibindo URLs de proxy
+
+Você pode visualizar seus URLs de endpoint proxy clicando no link *Configurações de proxy* ao escolher um coletor de dados durante a integração ou no link em _Configurações de proxy_ na página *Ajuda > suporte*. Uma tabela como a seguinte é exibida.
+
+image:ProxyEndpoints_NewTable.png["Tabela de pontos finais do proxy"]
+
+Se você tiver o Workload Security no seu ambiente, os URLs de endpoint configurados também serão exibidos nesta lista.
+
+
+
+== Desinstalar uma unidade de aquisição
+
+Para desinstalar o software da unidade de aquisição, faça o seguinte:
+
+'''
+*Windows:*
+
+Se estiver a desinstalar uma unidade de aquisição *Windows*:
+
+. No servidor/VM da Unidade de aquisição, abra o Painel de Controle e escolha *Desinstalar um Programa*. Selecione o programa Data Infrastructure Insights Acquisition Unit para remoção.
+. Clique em Desinstalar e siga as instruções.
+
+
+'''
+*Linux:*
+
+Se você estiver desinstalando uma unidade de aquisição *Linux*:
+
+. No servidor/VM da Unidade de aquisição, execute o seguinte comando:
++
+ sudo cloudinsights-uninstall.sh -p
+. Para obter ajuda com a desinstalação, execute:
++
+ sudo cloudinsights-uninstall.sh --help
+
+
+'''
+*Windows e Linux:*
+
+*Após* desinstalação da AU:
+
+. Em Data Infrastructure Insights, vá para *Observability > Collectors e selecione a guia *Acquisition Units* (unidades de aquisição).
+. Clique no botão Opções à direita da Unidade de aquisição que deseja desinstalar e selecione _Delete_. Só pode eliminar uma unidade de aquisição se não houver coletores de dados atribuídos a ela.
+
+
+
+NOTE: Não é possível eliminar uma unidade de aquisição (AU) que tenha coletores de dados ligados a ela. Mova todos os coletores de dados da AU para outra AU (edite o coletor e simplesmente selecione uma AU diferente) antes de excluir a AU original.
+
+Uma unidade de aquisição com uma estrela próxima a ela está sendo usada para resolução do dispositivo. Antes de remover esta AU, tem de selecionar outra AU para utilizar para a Resolução do dispositivo. Passe o Mouse sobre uma AU diferente e abra o menu "três pontos" para selecionar "usar para resolução do dispositivo".
+
+image:AU_for_Device_Resolution.png["Au usado para a resolução do dispositivo"]
+
+
+
+== Reinstalar uma unidade de aquisição
+
+Para reinstalar uma Unidade de aquisição no mesmo servidor/VM, siga estes passos:
+
+.Antes de começar
+Você deve ter uma Unidade de aquisição temporária configurada em um servidor/VM separado antes de reinstalar uma Unidade de aquisição.
+
+.Passos
+. Inicie sessão no servidor/VM da unidade de aquisição e desinstale o software AU.
+. Faça login no seu ambiente Data Infrastructure Insights e acesse *Observability > Collectors*.
+. Para cada coletor de dados, clique no menu Opções à direita e selecione _Editar_. Atribua o coletor de dados à Unidade de aquisição temporária e clique em *Save*.
++
+Você também pode selecionar vários coletores de dados do mesmo tipo e clicar no botão *ações em massa*. Escolha _Edit_ e atribua os coletores de dados à Unidade de aquisição temporária.
+
+. Depois de todos os coletores de dados terem sido movidos para a Unidade de aquisição temporária, vá para *Observability > Collectors* e selecione a guia *Acquisition Units* (unidades de aquisição).
+. Clique no botão Opções à direita da unidade de aquisição que deseja reinstalar e selecione _Delete_. Só pode eliminar uma unidade de aquisição se não houver coletores de dados atribuídos a ela.
+. Agora você pode reinstalar o software da Unidade de aquisição no servidor/VM original. Clique em * Unidade de aquisição* e siga as instruções acima para instalar a Unidade de aquisição.
+. Uma vez que a unidade de aquisição tenha sido reinstalada, atribua os coletores de dados à unidade de aquisição.
+
+
+
+
+== Ver detalhes AU
+
+A página de detalhes da unidade de aquisição (AU) fornece detalhes úteis para uma UA, bem como informações para ajudar na resolução de problemas. A página de detalhes da AU contém as seguintes seções:
+
+* Uma seção *summary* que mostra o seguinte:
++
+** *Nome* e *IP* da Unidade de aquisição
+** Conexão atual *Status* da AU
+** *Último relatório* tempo de enquete bem-sucedido do coletor de dados
+** O *sistema operacional* da máquina AU
+** Qualquer *Nota* atual para a UA. Utilize este campo para introduzir um comentário para a UA. O campo exibe a nota adicionada mais recentemente.
+
+
+* Uma tabela dos *coletores de dados* da UA mostrando, para cada coletor de dados:
++
+** *Nome* - clique neste link para detalhar a página de detalhes do coletor de dados com informações adicionais
+** *Status* - informações de sucesso ou erro
+** *Tipo* - Fornecedor/modelo
+** *Endereço IP* do coletor de dados
+** Nível de *impacto* atual
+** *Último tempo adquirido* - quando o coletor de dados foi analisado com sucesso pela última vez
+
+
+
+
+image:AU_Detail_Example.png["Exemplo de página de detalhes AU"]
+
+Para cada coletor de dados, você pode clicar no menu "três pontos" para clonar, Editar, Poll ou Excluir o coletor de dados. Você também pode selecionar vários coletores de dados nesta lista para executar ações em massa neles.
+
+Para reiniciar a Unidade de aquisição, clique no botão *Restart* na parte superior da página. Solte este botão para tentar *Restaurar conexão* para a AU em caso de problema de conexão.

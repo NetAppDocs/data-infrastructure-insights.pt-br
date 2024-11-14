@@ -1,0 +1,92 @@
+---
+sidebar: sidebar 
+permalink: task_dc_ibm_ds4000.html 
+keywords: data collector, IBM, DS4000 
+summary: Coletor de dados IBM TotalStorage DS4000 
+---
+= Coletor de dados IBM TotalStorage DS4000
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Este coletor de dados adquire informações de inventário e desempenho do sistema de armazenamento IBM DS4000. Existem duas configurações possíveis (firmware 6.x e firmware 7.x), e ambas têm os mesmos valores.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados IBM DS4000. Para cada tipo de ativo adquirido, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Disco | Disco 
+
+
+| Grupo de volume | Grupo de discos 
+
+
+| Storage array | Armazenamento 
+
+
+| Controlador | Nó de storage 
+
+
+| Grupo de volume | Pool de storage 
+
+
+| Volume | Volume 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* Endereço IP de cada matriz DS5 ou FAStT
+* Validação de acesso fazendo ping no endereço IP de ambos os controladores no array
+* Requisitos do porto: 2463
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Lista separada por vírgulas de IPs do controlador SANtricity da matriz | Endereços IP e/ou nomes de domínio totalmente qualificados para os controladores de matriz 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | O padrão é de 30 minutos 
+
+
+| Intervalo de enquete de desempenho até 3600 segundos | O padrão é de 300 segundos 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

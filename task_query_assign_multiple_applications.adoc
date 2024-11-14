@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: task_query_assign_multiple_applications.html 
+summary: Use uma consulta para atribuir vários aplicativos ou anotações a, ou remover vários aplicativos ou anotações de objetos. 
+keywords: query, queries, application, annotation, multiple 
+---
+= Atribuir vários aplicativos ou remover vários aplicativos de ativos
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Você pode atribuir vários link:task_create_application.html["aplicações"]ou remover vários aplicativos de ativos usando uma consulta em vez de ter que atribuí-los ou removê-los manualmente.
+
+
+NOTE: Você pode usar estas etapas para adicionar ou remover link:task_defining_annotations.html["anotações"]da mesma maneira.
+
+.Antes de começar
+Você já deve ter criado uma consulta que encontre todos os ativos que você editar.
+
+.Passos
+. Clique em *explorar* e selecione *consultas métricas*.
++
+A página consultas é exibida.
+
+. Clique no nome da consulta que encontra os ativos.
++
+A lista de ativos associados à consulta é exibida.
+
+. Selecione os ativos desejados na lista ou clique na caixa de seleção superior para selecionar todos.
++
+A lista suspensa ações em massa é exibida.
+
+. Para adicionar um aplicativo aos ativos selecionados, clique em ações em massa e selecione *Adicionar aplicativo*.
+. Selecione uma ou mais aplicações.
++
+Você pode selecionar vários aplicativos para hosts, volumes internos, qtrees e máquinas virtuais; no entanto, você pode selecionar apenas um aplicativo para um volume ou um compartilhamento.
+
+. Clique em *Salvar*.
+. Para remover um aplicativo atribuído aos ativos, clique em ações em massa e selecione *Remover aplicativo*.
+. Selecione a aplicação ou aplicações que pretende remover.
+. Clique em *Excluir*.
+
+
+Quaisquer novos aplicativos que você atribuir substituem quaisquer aplicativos no ativo que foram derivados de outro ativo. Por exemplo, os volumes herdam aplicativos de hosts e, quando novos aplicativos são atribuídos a um volume, o novo aplicativo tem precedência sobre o aplicativo derivado.
+
+Depois de clicar em _Save_ em um adicionar em massa ou em _Remove_ em uma ação de exclusão em massa, o Data Infrastructure Insights informa que a ação levará algum tempo. Você pode ignorar essa mensagem; a ação continuará em segundo plano.
+
+
+NOTE: Para ambientes com grandes quantidades de ativos relacionados, a herança de atribuições de aplicativos para esses ativos pode levar vários minutos. Por favor, aguarde mais tempo para que a herança ocorra se você tiver muitos ativos relacionados.

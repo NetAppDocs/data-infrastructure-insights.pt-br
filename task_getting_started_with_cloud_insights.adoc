@@ -1,0 +1,128 @@
+---
+sidebar: sidebar 
+permalink: task_getting_started_with_cloud_insights.html 
+summary: Primeiros passos com o Data Infrastructure Insights. 
+keywords: invite, roles, data collector, acquisition unit, AU 
+---
+= Começando a coletar dados
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Depois de se inscrever no Data Infrastructure Insights e fazer login no seu ambiente pela primeira vez, você será guiado pelas etapas a seguir para começar a coletar e gerenciar dados.
+
+Os coletores de dados descobrem informações de suas fontes de dados, como dispositivos de armazenamento, switches de rede e máquinas virtuais. As informações recolhidas são utilizadas para análise, validação, monitorização e resolução de problemas.
+
+O Data Infrastructure Insights tem três tipos de coletores de dados disponíveis:
+
+* Infraestrutura (dispositivos de armazenamento, switches de rede, infraestrutura de computação)
+* Sistemas operacionais (como VMware ou Windows)
+* Serviços (como Kafka)
+
+
+Selecione seu primeiro coletor de dados entre os fornecedores e modelos compatíveis disponíveis. Você pode facilmente adicionar coletores de dados adicionais mais tarde.
+
+
+
+== Instale uma unidade de aquisição
+
+Se você selecionou um coletor de dados _Infrastructure_, uma Unidade de aquisição será necessária para injetar dados no Data Infrastructure Insights. Terá de transferir e instalar o software da Unidade de aquisição num servidor ou VM no centro de dados a partir do qual irá recolher. Uma única unidade de aquisição pode ser usada para vários coletores de dados.
+
+image:NewLinuxAUInstall.png["Instruções do Linux AU"]
+
+* Siga o link:task_configure_acquisition_unit.html["instruções"] apresentado para instalar a sua unidade de aquisição. Assim que o software da unidade de aquisição estiver instalado, o botão continuar é apresentado e pode avançar para o passo seguinte.
+
+
+image:NewAUDetected.png["Nova AU detetada"]
+
+Pode configurar unidades de aquisição adicionais mais tarde, se necessário. Por exemplo, você pode querer que diferentes unidades de aquisição coletem informações de data centers em diferentes regiões.
+
+
+
+== Configure o coletor de dados - infraestrutura
+
+Para coletores de dados _Infrastructure_, você será solicitado a preencher os campos de coletor de dados apresentados:
+
+* Dê ao coletor de dados um nome único e significativo.
+* Insira as credenciais (nome de usuário e senha) para se conetar ao dispositivo, conforme apropriado.
+* Preencha quaisquer outros campos obrigatórios nas seções _Configuration_ e _Advanced Configuration_.
+* Clique em *Add Collector* para salvar o coletor de dados.
+
+
+Você será capaz de configurar coletores de dados adicionais mais tarde.
+
+
+
+== Configure o Data Collector - sistemas operacionais e Serviços
+
+
+
+=== Sistema operativo:
+
+Para coletores de dados _sistema operacional_, escolha uma plataforma (Linux, Windows) para instalar um Data Infrastructure Insights Agent. Você deve ter pelo menos um agente para coletar dados dos Serviços. O agente também coleta dados do próprio host, para uso no Data Infrastructure Insights. Estes dados são categorizados como dados "Node" em widgets, etc.
+
+* Abra uma janela de terminal ou comando no host ou VM do agente e cole o comando exibido para instalar o agente.
+* Quando a instalação estiver concluída, clique em *Complete Setup*.
+
+
+
+
+=== Serviços:
+
+Para coletores de dados _Service_, clique em um bloco para abrir a página de instruções para esse serviço.
+
+* Escolha uma plataforma e uma chave de acesso ao agente.
+* Se você não tiver um agente instalado nessa plataforma, siga as instruções para instalar o agente.
+* Clique em *continuar* para abrir a página de instruções do coletor de dados.
+* Siga as instruções para configurar o coletor de dados.
+* Quando a configuração estiver concluída, clique em *Complete Setup*.
+
+
+
+
+== Adicione painéis
+
+Dependendo do tipo de coletor de dados inicial que você selecionou para configurar (armazenamento, switch, etc.), um ou mais painéis relevantes serão importados. Por exemplo, se você configurou um coletor de dados de armazenamento, um conjunto de painéis relacionados ao armazenamento será importado e um será definido como sua Página inicial do Data Infrastructure Insights. Pode alterar a página inicial a partir da lista *painéis > Mostrar todos os painéis*.
+
+Você pode importar painéis adicionais mais tarde link:concept_dashboards_overview.html["crie o seu próprio"]ou .
+
+
+
+== Isso é tudo o que há para ele
+
+Depois de concluir o processo de configuração inicial, seu ambiente começará a coletar dados.
+
+Se o processo de configuração inicial for interrompido (por exemplo, se você fechar a janela do navegador), você precisará seguir os passos manualmente:
+
+* Escolha um Data Collector
+* Instale um Agente ou Unidade de aquisição, se solicitado
+* Configure o coletor de dados
+
+
+
+
+== Definições úteis
+
+As definições a seguir podem ser úteis quando se fala sobre coletores de dados ou recursos do Data Infrastructure Insights:
+
+* Ciclo de vida do coletor: Um coletor pertencerá a um dos seguintes estados em seu ciclo de vida:
++
+** *Preview*: Disponível em uma capacidade limitada ou para um público limitado. link:concept_preview_features.html["Recursos de visualização"] Espera-se que os coletores de dados se tornem GA após o período de pré-visualização. Os períodos de visualização variam de acordo com o público ou a funcionalidade.
+** *GA*: Um recurso ou coletor de dados que geralmente está disponível para todos os clientes, com base no Edition ou no conjunto de recursos.
+** *Deprecated*: Aplica-se a coletores de dados que são, ou são esperados para se tornar, não mais funcionalmente sustentáveis. Os coletores de dados obsoletos são frequentemente substituídos por coletores de dados mais recentes e funcionalmente atualizados.
+** *Deleted*: Um coletor de dados que foi removido e não está mais disponível.
+
+
+* Unidade de aquisição: Um computador dedicado à hospedagem de coletores de dados, normalmente uma Máquina Virtual. Esse computador normalmente está localizado no mesmo data center/VPC que os itens monitorados.
+* Fonte de dados: Um módulo para comunicação com uma pilha de hardware ou software. Ele consiste em uma configuração e código que são executados no computador da AU para se comunicar com o dispositivo.
+

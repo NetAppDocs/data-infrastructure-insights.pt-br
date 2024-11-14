@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: infrastructure_change_analytics.html 
+keywords: changes, management, analysis, infra, infrastructure 
+summary: O Cloud Insights controla as alterações na infraestrutura para facilitar a análise e a solução de problemas. 
+---
+= Análise de mudança de infraestrutura
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+A análise de mudança de infraestrutura fornece uma visão geral das mudanças recentes na infraestrutura (armazenamento, switch, etc.) em seu ambiente. Com o Change Analysis, você pode acompanhar as alterações de configuração e analisar os problemas esperados e inesperados.
+
+
+
+== Como a análise de mudança de infraestrutura ajuda?
+
+Em qualquer ambiente, mudanças nos seus recursos podem acontecer devido a alterações mal configuradas, perda de energia, etc. a análise de alterações ajuda fornecendo um único painel para visualizar e correlacionar a integridade dos seus recursos com interrupções ou alterações planejadas. As alterações são calculadas com cada enquete de inventário (seguindo a primeira enquete em um novo coletor).
+
+Para analisar as alterações de infraestrutura, navegue até *observabilidade > análise de alterações*. São listados alertas e alterações de configuração para o intervalo de tempo atual. As linhas de alerta mostram o status de alerta atual (ativo ou resolvido).
+
+Você também pode navegar para uma Landing page para obter um recurso. Se tiverem ocorrido alterações a esse código fonte ou recursos relacionados, estas serão apresentadas na secção Vista de especialistas da página. Aumente o zoom para investigar alterações individuais ou deixe a vista ampla para ver todas as alterações dentro do intervalo de tempo selecionado. Passar o Mouse sobre uma mudança lhe dará um resumo da mudança. Ao clicar nessa alteração, a visão do especialista será focada no momento dessa alteração.
+
+image:change_analysis_on_a_landing_page.png["Alterar análise em uma Landing page"]
+
+A seleção de um item na lista abrirá um painel de deslizamento, fornecendo mais detalhes sobre o alerta ou alteração.
+
+
+
+== Filtragem
+
+Assim como em todos os recursos do Cloud Insights, filtrar a lista de alterações é intuitivo: Na parte superior da página, você pode filtrar para tipos de ativos específicos (_dispoled on:type_) e/ou filtrar apenas para ativos com nomes específicos, se desejado (_dispoled on:name_), ou adicionar seus próprios filtros selecionando o botão.
+
+image:infraChange_filter_dropdown.png["Lista suspensa filtragem de mudança de infraestrutura"]
+
+Você também pode ir diretamente para alertas de teclas ou alterações na seção de status abaixo das configurações de filtro, incluindo os três principais recursos atuais com mais alertas.
+
+image:Change_Analysis_filters_and_status.png["status e links rápidos para alertas e alterações"]
+
+
+
+== Quais objetos são analisados para mudanças?
+
+A tabela a seguir lista os objetos e atributos incluídos na análise de mudança de infraestrutura.
+
+|===
+
+
+| Tipo Objeto | Atributos 
+
+
+| Disco | DiskSize.Total islocalização do tipo de velocidade do grupo de discos virtuais SerialNumber status da função do fornecedor modelo storage.name storagePools.name nome isEncriptado 
+
+
+| Armazenamento | Família ip isative microcodeVersion model name protocols SerialNumber vendor 
+
+
+| StorageNode | Nome storage.name nodeVersion model SerialNumber numberOfProcessors State partner.name cache memory managementIpAddresses parentSerialNumber SiteName 
+
+
+| StoragePool | Tipo de nome isAutoCategorização éredundância virtual vendorTier usesFlashPools storage.vendor storage.ip storage.model storage.family storage.name storageNodes.name Capacity.Total (Dynamic attribute) isCompactionSavingEnabled Enabled objectStoreName objectStoreProviderType objectStoreSizeLimit objectStoreLimit objectStoreTieringFullnessThresThresThresThresThresThresThreshold objectStoreS3Name 
+
+
+| Qtree | Digite securityStyle isOplockEnabled shares.name storage.name internalVolume.name storageVirtualMachine.name simpleName statusNome do texto 
+
+
+| StorageVirtualMachine | Nome storage.name tipo de estado ipSpace protocolos internalVolumeLimit 
+
+
+| Volume | Nome simpleName label type storage.name storage.vendor storage.ip storage.model storage.family isAutoCategorização isThinProvisMainframe isMeta isReplicaSource isReplicaTarget isSnapshot isVirtual internalVolume.name internalvolume.virtualStorage storageNodes.name storageNodes.partner.name storagePools.name storageVirtualMachine.name storageGroups isEncripted isPresented IOPS EnquosLimqosLimitqosLimitMBPS Policy 
+
+
+| Internalvolume | FlashPoolEligibility name simpleName spaceGuarantee status type virtualStorage replicaSources.name storageNodes.name storageNodes.partner.name storage.name storage.vendor storage.ip storage.model storage.family storageVirtualMachine.name storagePool.name capacity.isThinProvisPolicy qosLimitRaw qosLimitIOPS qosLimitMBPS isLimitMBPS isEncripted adaptiveQosPolicy junctionPath objectTieringMinimumCoolingDays 
+
+
+| VirtualMachine | Nome dnsname IP os processadores de memória guestState powerState host.name host.clusterName host.ip host.os dataStore.name instanceType publicIps securityGroups virtualCenterIp 
+
+
+| Armazenamento de dados | Nome virtualCenterIp tipo 
+
+
+| Host | Nome modelo IP isActive os fabricante cpuCount memory isHypervisor clusterName virtualCenterIp 
+
+
+| vmdk(VirtualMachineDisk) | Tipo de nome dataStore.name isRdm virtualMachine.host.name virtualMachine.name isSnapshot 
+
+
+| Porta | Nome isActive wwn tipo portIndex velocidade da lâmina gbicType connectedPorts.device.name connectedPorts.device.type connectedPorts.name connectedPorts.nodeWwn connectedPorts.wwn controlador device.name device.type fabrics.name Fabrics.vsanId nodeWwn descrição 
+|===
+"Análise de mudança" rastreia alertas para os seguintes casos:
+
+* Alertas de monitores de log nos tipos de log de _logs.VMware.events_ e _logs.NetApp.ems_.
+* Alertas de monitores de métricas nos tipos de objeto acima; eles devem ser selecionados no campo _Group by_ para que a análise de mudança os rastreie.
+

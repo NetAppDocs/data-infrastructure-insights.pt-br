@@ -1,0 +1,80 @@
+---
+sidebar: sidebar 
+permalink: concept_cs_api.html 
+keywords: api, access, token, swagger 
+summary: O Workload Security inclui uma API poderosa para integração com outros aplicativos, como CMDBs. 
+---
+= API de segurança de carga de trabalho
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+A API de segurança de carga de trabalho permite que clientes da NetApp e fornecedores de software independentes (ISVs) integrem a segurança de carga de trabalho com outros aplicativos, como CMDB ou outros sistemas de emissão de tíquetes.
+
+Requisitos para acesso à API:
+
+* Um modelo de token de acesso à API é usado para conceder acesso.
+* O gerenciamento de token de API é realizado por usuários do Workload Security com a função Administrador.
+
+
+
+
+== Documentação da API (Swagger)
+
+As informações mais recentes da API são encontradas efetuando login no Workload Security e navegando até *Admin > API Access*. Clique no link *Documentação da API*. A Documentação da API é baseada no Swagger, que fornece uma breve descrição e informações de uso para a API e permite que você experimente no seu ambiente.
+
+
+NOTE: Ao chamar a API de atividade Forensics, use a API cloudsecure_forensics.Activities.*v2* API. Se você estiver fazendo várias chamadas para essa API, verifique se as chamadas ocorrem sequencialmente, não em paralelo. Várias chamadas paralelas podem fazer com que a API termine o tempo limite.
+
+
+
+== Tokens de acesso à API
+
+Antes de usar a API Workload Security, você deve criar um ou mais *tokens de acesso à API*. Os tokens de acesso concedem permissões de leitura. Você também pode definir a expiração para cada token de acesso.
+
+Para criar um token de acesso:
+
+* Clique em *Admin > API Access*
+* Clique em * API Access Token*
+* Digite *Nome do Token*
+* Especifique *validade do token*
+
+
+
+NOTE: Seu token só estará disponível para copiar para a área de transferência e salvar durante o processo de criação. Os tokens não podem ser recuperados depois que são criados, por isso é altamente recomendável copiar o token e salvá-lo em um local seguro. Você será solicitado a clicar no botão Copiar token de acesso à API antes de fechar a tela de criação de token.
+
+Você pode desativar, ativar e revogar tokens. Os tokens que estão desativados podem ser ativados.
+
+Os tokens concedem acesso de propósito geral às APIs da perspetiva do cliente, gerenciando o acesso às APIs no escopo de seu próprio ambiente.
+
+O aplicativo recebe um token de acesso depois que um usuário autentica e autoriza o acesso com êxito e passa o token de acesso como uma credencial quando chama a API de destino. O token passado informa à API que o portador do token foi autorizado a acessar a API e executar ações específicas com base no escopo que foi concedido durante a autorização.
+
+O cabeçalho HTTP onde o token de acesso é passado é *X-CloudInsights-ApiKey:*
+
+Por exemplo, use o seguinte para recuperar ativos de armazenamento:
+
+ curl https://<tenant_host_name>/rest/v1/cloudsecure/activities -H 'X-CloudInsights-ApiKey: <API_Access_Token>'
+Onde _<API_Access_Token>_ é o token que você salvou durante a criação da chave de acesso à API.
+
+Informações detalhadas podem ser encontradas no link _API Documentation_ em *Admin > API Access*.
+
+
+
+== Script para extrair dados através da API
+
+Os agentes de segurança de carga de trabalho incluem um script de exportação para facilitar chamadas paralelas para a API v2 dividindo o intervalo de tempo solicitado em lotes menores.
+
+O script está localizado em _/opt/NetApp/cloudsecure/Agent/export-script_. Um arquivo README no mesmo diretório fornece instruções de uso.
+
+Aqui está um comando de exemplo para invocar o script:
+
+[source]
+----
+python3 data-export.py --tenant_url <tenant id>.cs01.cloudinsights.netapp.com --access_key %ACCESS_KEY% --path_filter "<dir path>" --user_name "<user>" --from_time "01-08-2024 00:00:00" --to_time "31-08-2024 23:59:59" --iteration_interval 12 --num_workers 3
+----
+Parâmetros-chave: - `--iteration_interval 12`: Divide o intervalo de tempo solicitado em intervalos de 12 horas. - `--num_workers 3`: Fetches esses intervalos em paralelo usando 3 threads.

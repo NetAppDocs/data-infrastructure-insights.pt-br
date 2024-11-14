@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: task_config_telegraf_activemq.html 
+keywords: telegraf, installation, install, ActiveMQ 
+summary: Configuração do coletor de dados HTTP 
+---
+= ActiveMQ Data Collector
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do ActiveMQ.
+
+
+
+== Instalação
+
+. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha ActiveMQ.
++
+Selecione o sistema operacional ou a plataforma na qual o agente Telegraf está instalado.
+
+. Se você ainda não instalou um Agente para coleção ou deseja instalar um Agente para um sistema operacional ou plataforma diferente, clique em _Mostrar instruções_ para expandir as link:task_config_telegraf_agent.html["Instalação do agente"] instruções.
+. Selecione a chave de acesso do agente para uso com este coletor de dados. Você pode adicionar uma nova chave de acesso ao agente clicando no botão * chave de acesso ao agente*. Prática recomendada: Use uma chave de acesso de agente diferente somente quando você quiser agrupar coletores de dados, por exemplo, por SO/Plataforma.
+. Siga as etapas de configuração para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+
+
+image:ActiveMQDCConfigWindows.png["Configuração ActiveMQ"]
+
+
+
+== Configuração
+
+As informações podem ser encontradas no http://activemq.apache.org/getting-started.html["Documentação do ActiveMQ"]
+
+
+
+== Objetos e contadores
+
+Os seguintes objetos e seus contadores são coletados:
+
+[cols="<.<,<.<,<.<,<.<"]
+|===
+| Objeto: | Identificadores: | Atributos: | Pontos de dados: 
+
+
+| Fila ActiveMQ | Servidor de porta de fila de namespace | UUUID do nó IP do nó de nome do nó | Tamanho da fila de contagem de filas de contagem de filas de contagem de filas de contagem de filas de contagem de filas 
+
+
+| Assinante ActiveMQ | ID de conexão ID de cliente Port Server namespace | É subscrição do Seletor de SO do nó de nome do nó de destino ativo nó UUUID do nó de destino ativo | Contagem de desfila despachada contagem despachado tamanho da fila contagem de espera pendente contagem Enqueue tamanho da fila 
+
+
+| Tópico ActiveMQ | Tópico servidor de porta namespace | Nó Nome nó nó IP nó UUUID nó os | Tamanho da contagem Enqueue contagem contagem contagem contagem Dequeue consumidores 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.

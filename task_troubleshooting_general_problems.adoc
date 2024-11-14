@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: task_troubleshooting_general_problems.html 
+summary: Dicas de solução de problemas de Insights de infraestrutura de dados gerais. 
+keywords: troubleshooting, problems, browser, login, log in, accessing, access to, Trident, qtree, quota 
+---
+= Solução de problemas gerais do Data Infrastructure Insights
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Aqui você encontrará sugestões para solução de problemas do Data Infrastructure Insights.
+
+Consulte também link:task_troubleshooting_linux_acquisition_unit_problems.html["Solução de problemas da Unidade de aquisição do Linux"] e link:task_troubleshooting_windows_acquisition_unit_problems.html["Solução de problemas da Unidade de aquisição do Windows"].
+
+
+
+== Problemas de login
+
+|===
+| *Problema:* | *Tente isto:* 
+
+
+| O Data Infrastructure Insights faz logout automaticamente a cada 6 horas | Isso se deve a cookies de terceiros desativados no navegador. Os usuários podem configurar seu navegador para habilitar todos os cookies de 3rd partes, ou usar uma lista de exceções mais restrita para apenas habilitar aqueles para o Data Infrastructure Insights. Exemplo: Abra as configurações do seu navegador Selecione a opção "permitir todos os cookies". *OR* Selecione "Bloquear cookies de terceiros" e adicione exceções para _[*.]auth0.com_ e _[*.]NetApp.com_. O Microsoft Edge segue o mesmo formato para exceções que o Chrome. No Firefox, as exceções de cookies são designadas simplesmente como _auth0.com_ e _NetApp.com_. 
+
+
+| Tenho uma conta BlueXP , mas não consigo iniciar sessão no BlueXP . | Abra um ticket do https://mysupport.netapp.com/site/help[]. Selecione a categoria "BlueXP .NetApp.com > problemas de conta/login" ou "BlueXP .NetApp.com > problemas de Federação". Estes são especificamente para problemas ou perguntas do BlueXP . Para todos os outros problemas de suporte técnico do Data Infrastructure Insights, entre em Contato link:concept_requesting_support.html["Suporte à NetApp"]com . 
+
+
+| Fui convidado para o Data Infrastructure Insights, mas recebo uma mensagem "não autorizada". | Verifique se você se inscreveu em uma conta do BlueXP  ou se sua organização usa login SSO com o BlueXP . Verifique se o endereço de e-mail do seu perfil do BlueXP  corresponde ao endereço de e-mail exibido no e-mail de boas-vindas do Insights de infraestrutura de dados. Se o e-mail não corresponder, solicite um novo convite com o endereço de e-mail correto. 
+
+
+| Eu fiz logout do BlueXP  e fui desconetado automaticamente do Insights de infraestrutura de dados. | O logon único (SSO) em todos os serviços de nuvem da NetApp faz logout de todas as sessões do Insights de infraestrutura de dados. Se você tiver acesso a várias contas do Data Infrastructure Insights, fazer logout de qualquer uma das sessões ativas. Inicie sessão novamente para aceder à sua conta. 
+
+
+| Eu fui desconetado automaticamente após vários dias. | As contas de nuvem do NetApp exigem nova autenticação a cada poucos dias (a configuração atual do BlueXP  é de 7 dias). Inicie sessão novamente para aceder à sua conta. 
+
+
+| Recebo uma mensagem de erro "já não está autorizado a iniciar sessão". | Entre em Contato com o administrador da conta para verificar o acesso ao Data Infrastructure Insights. Verifique se o endereço de e-mail do seu perfil do BlueXP  corresponde ao endereço de e-mail exibido no e-mail de boas-vindas do Insights de infraestrutura de dados 
+
+
+| Outros erros de login | Experimente o modo de navegação anônima no Chrome ou limpe o histórico do navegador, os cookies e o cache. Tente com um perfil de navegador diferente (ou seja, Chrome - adicionar pessoa). 
+|===
+
+
+== Outras questões
+
+|===
+
+
+| *Pergunta:* | *Resposta:* 
+
+
+| Minhas cotas duras do Qtree estão sendo exibidas corretamente em consultas, mas minhas cotas suaves estão sendo exibidas como a capacidade total do volume. Está correto? | Somente cotas rígidas -- definidas manualmente ou definidas através do Trident--serão exibidas como as cotas definidas; se nenhuma cota rígida for especificada, a capacidade do Qtree será a capacidade de volume interno. 
+
+
+| Eu tenho uma cota suave e uma cota rígida manualmente definida no mesmo Qtree, mas a capacidade total exibida é a cota rígida; isso está correto? | Sim, se for especificada uma cota rígida, essa será mostrada como a capacidade total. 
+
+
+| Ao inserir um horário de programação de relatórios do Cognos, às vezes eu acabo com um "m" extra no horário de programação. Por exemplo, se eu inserir a hora como "02:15 PM", ele pode adicionar um caractere extra: "02:15 PMM" (ou PMM). Quando eu clico fora, ele muda para "2:15 AM". Posso salvar o relatório, mas quando reabro o relatório salvo, a hora do horário aparece como AM (ou seja, manhã), independentemente de eu ter inserido AM ou PM na hora do horário. | Volte a introduzir a hora da programação, tendo o cuidado de não introduzir os carateres "AM" ou "PM" completos; basta introduzir "A" para "AM ou "P" para "PM". Se não for apresentado o caráter extra, a hora de programação será definida corretamente. 
+|===
+
+
+== Recursos
+
+Dicas adicionais de solução de problemas podem ser encontradas no link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights["Base de conhecimento da NetApp"] (login de suporte necessário).
+
+Informações adicionais de suporte podem ser encontradas na página Insights de infraestrutura de dadoslink:concept_requesting_support.html["Suporte"].
+
+Se você tiver uma assinatura ativa do Data Infrastructure Insights, poderá usar estas opções de suporte:
+
+link:https://www.netapp.com/us/contact-us/support.aspx["Telefone"] link:https://mysupport.netapp.com/site/cases/mine/create?serialNumber=95001014387268156333["Ticket de suporte"]
+
+Para obter mais informações, consulte https://docs.netapp.com/us-en/cloudinsights/concept_requesting_support.html["Documentação de suporte do Data Infrastructure Insights"] .

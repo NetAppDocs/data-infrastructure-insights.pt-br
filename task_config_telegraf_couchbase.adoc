@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: task_config_telegraf_couchbase.html 
+keywords: telegraf, installation, install, couchbase 
+summary: Configuração do coletor de dados Couchbase 
+---
+= Coletor de dados Couchbase
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do Couchbase.
+
+
+
+== Instalação
+
+. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha Couchbase.
++
+Selecione o sistema operacional ou a plataforma na qual o agente Telegraf está instalado.
+
+. Se você ainda não instalou um Agente para coleção ou deseja instalar um Agente para um sistema operacional ou plataforma diferente, clique em _Mostrar instruções_ para expandir as link:task_config_telegraf_agent.html["Instalação do agente"] instruções.
+. Selecione a chave de acesso do agente para uso com este coletor de dados. Você pode adicionar uma nova chave de acesso ao agente clicando no botão * chave de acesso ao agente*. Prática recomendada: Use uma chave de acesso de agente diferente somente quando você quiser agrupar coletores de dados, por exemplo, por SO/Plataforma.
+. Siga as etapas de configuração para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+
+
+image:CouchbaseDCConfigWindows.png["Configuração Couchbase"]
+
+
+
+== Configuração
+
+As informações podem ser encontradas no link:https://docs.couchbase.com/home/index.html["Documentação do Couchbase"].
+
+
+
+== Objetos e contadores
+
+Os seguintes objetos e seus contadores são coletados:
+
+[cols="<.<,<.<,<.<,<.<"]
+|===
+| Objeto: | Identificadores: | Atributos: | Pontos de dados: 
+
+
+| Nó Couchbase | Nome do host do nó Couchbase do namespace Cluster | IP do nó de nome do nó | Memória livre Total de memória 
+
+
+| Balde Couchbase | Cluster de bucket do namespace | IP do nó de nome do nó | Dados usados dados Registros disco usado contagem de itens memória operações usadas por segundo cota usada 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.

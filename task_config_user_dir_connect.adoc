@@ -1,0 +1,195 @@
+---
+sidebar: sidebar 
+permalink: task_config_user_dir_connect.html 
+keywords: collector, configure, LDAP, Active Directory, cloud secure 
+summary: Configurando o Workload Security ative Directory User Directory Collector 
+---
+= Configurando um Coletor de diretório de usuários do ative Directory (AD)
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+A Segurança da carga de trabalho pode ser configurada para coletar atributos de usuário de servidores do ative Directory.
+
+.Antes de começar
+* Você deve ser um Administrador do Data Infrastructure Insights ou um proprietário de conta para executar esta tarefa.
+* Você deve ter o endereço IP do servidor que hospeda o servidor ative Directory.
+* Um agente deve ser configurado antes de configurar um conetor do diretório de usuários.
+
+
+.Passos para configurar um Coletor de diretório de usuários
+. No menu Workload Security, clique em: *Collectors > User Directory Collectors > User Directory Collector* e selecione *ative Directory*
++
+O sistema exibe a tela Adicionar diretório do usuário.
+
+
+
+Configure o Coletor de diretório de usuários inserindo os dados necessários nas seguintes tabelas:
+
+[cols="2*"]
+|===
+
+
+| Nome | Descrição 
+
+
+| Nome | Nome exclusivo para o diretório do usuário. Por exemplo _GlobalADCollector_ 
+
+
+| Agente | Selecione um agente configurado na lista 
+
+
+| Nome de domínio/IP do servidor | Endereço IP ou nome de domínio totalmente qualificado (FQDN) do servidor que hospeda o diretório ativo 
+
+
+| Nome da floresta | Nível de floresta da estrutura do diretório. O nome da floresta permite ambos os seguintes formatos: _X.y.z_> nome de domínio direto como você o tem no SVM. [Exemplo: hq.companyname.com]_DC,DC_DC_com] ou você pode especificar como o seguinte: _Ou NetApp <username> <engineering> 
+
+
+| Vincular DN | Usuário autorizado a pesquisar o diretório. Por exemplo: _username@companyname.com_ ou _username@domainname.com_ além disso, a permissão de domínio somente leitura é necessária. O usuário deve ser um membro do grupo Segurança _Controladores de domínio somente leitura_. 
+
+
+| Palavra-passe BIND | Senha do servidor de diretório (ou seja, senha para nome de usuário usado no DN de vinculação) 
+
+
+| Protocolo | ldap, ldaps, ldap-start-tls 
+
+
+| Portas | Selecione a porta 
+|===
+Insira os seguintes atributos necessários do Directory Server se os nomes de atributo padrão tiverem sido modificados no ative Directory. Na maioria das vezes, esses nomes de atributos são _not_ modificados no ative Directory, caso em que você pode simplesmente prosseguir com o nome do atributo padrão.
+
+[cols="2*"]
+|===
+
+
+| Atributos | Nome do atributo no Directory Server 
+
+
+| Nome de exibição | nome 
+
+
+| SID | objectsid 
+
+
+| Nome de utilizador | SAMAccountName 
+|===
+Clique em incluir atributos opcionais para adicionar qualquer um dos seguintes atributos:
+
+[cols="2*"]
+|===
+
+
+| Atributos | Nome do atributo no servidor de diretório 
+
+
+| Endereço de e-mail | e-mail 
+
+
+| Número de telefone | número de telefone 
+
+
+| Função | título 
+
+
+| País | co 
+
+
+| Estado | estado 
+
+
+| Departamento | departamento 
+
+
+| Foto | thumbnailphoto 
+
+
+| ManagerDN | gerente 
+
+
+| Grupos | Membro Of 
+|===
+
+
+== Testando a configuração do coletor do diretório de usuários
+
+Você pode validar permissões de Usuário LDAP e Definições de Atributo usando os seguintes procedimentos:
+
+* Use o seguinte comando para validar a permissão de usuário LDAP de segurança de workload:
++
+`ldapsearch -o ldif-wrap=no -LLL -x -b "dc=netapp,dc=com" -h 10.235.40.29 -p 389 -D \Administrator@netapp.com -W`
+
+* Use o AD Explorer para navegar em um banco de dados do AD, exibir propriedades e atributos de objetos, exibir permissões, exibir o esquema de um objeto, executar pesquisas sofisticadas que você pode salvar e executar novamente.
++
+** Instale link:https://docs.microsoft.com/en-us/sysinternals/downloads/adexplorer["Explorador de ANÚNCIOS"] em qualquer máquina Windows que possa se conetar ao servidor AD.
+** Conete-se ao servidor AD usando o nome de usuário/senha do servidor de diretório AD.
+
+
+
+
+image:cs_ADExample.png["Ligação de ANÚNCIO"]
+
+
+
+== Solução de problemas de erros de configuração do coletor do diretório do usuário
+
+A tabela a seguir descreve problemas conhecidos e resoluções que podem ocorrer durante a configuração do coletor:
+
+[cols="2*"]
+|===
+| Problema: | Resolução: 
+
+
+| Adicionar um conetor do diretório de usuários resulta no estado "erro". O erro diz: "Credenciais inválidas fornecidas para o servidor LDAP". | Nome de utilizador ou palavra-passe incorretos fornecidos. Edite e forneça o nome de usuário e a senha corretos. 
+
+
+| Adicionar um conetor do diretório de usuários resulta no estado "erro". Erro diz: "Falha ao obter o objeto correspondente a DN | Nome da floresta incorreto fornecido. Edite e forneça o nome correto da floresta. 
+
+
+| Os atributos opcionais do usuário de domínio não estão aparecendo na página Perfil de usuário de Segurança de carga de trabalho. | Isso provavelmente se deve a uma incompatibilidade entre os nomes de atributos opcionais adicionados no CloudSecure e os nomes de atributos reais no ative Directory. Edite e forneça o(s) nome(s) do atributo opcional correto(s). 
+
+
+| Coletor de dados no estado de erro com "Falha ao recuperar usuários LDAP. Motivo da falha: Não é possível conetar no servidor, a conexão é nula" | Reinicie o coletor clicando no botão _Restart_. 
+
+
+| Adicionar um conetor do diretório de usuários resulta no estado "erro". | Certifique-se de que forneceu valores válidos para os campos obrigatórios (servidor, nome da floresta, bind-DN, bind-Password). Certifique-se de que a entrada BIND-DN é sempre fornecida como "Administrador <domain_forest_name>" ou como uma conta de usuário com Privileges de administrador de domínio. 
+
+
+| Adicionar um conetor do diretório de usuários resulta no estado "TENTAR NOVAMENTE". Mostra o erro "não é possível definir o estado do comando Collector,Reason TCP [Connect(localhost:35012,None,List(),some(,seconds),true)] falhou por causa de java.net.ConnectionException:Connection recusado." | IP ou FQDN incorreto fornecido para o servidor AD. Edite e forneça o endereço IP ou FQDN correto. 
+
+
+| Adicionar um conetor do diretório de usuários resulta no estado "erro". O erro diz: "Falha ao estabelecer a conexão LDAP". | IP ou FQDN incorreto fornecido para o servidor AD. Edite e forneça o endereço IP ou FQDN correto. 
+
+
+| Adicionar um conetor do diretório de usuários resulta no estado "erro". O erro diz: "Falha ao carregar as configurações. Motivo: A configuração da fonte de dados tem um erro. Razão específica: /Connector/conf/application.conf: 70: LDAP.ldap-port tem STRING de tipo em vez DE NÚMERO" | Valor incorreto para a porta fornecida. Tente usar os valores de porta padrão ou o número de porta correto para o servidor AD. 
+
+
+| Comecei com os atributos obrigatórios, e funcionou. Depois de adicionar os opcionais, os dados de atributos opcionais não são obtidos do AD. | Isso provavelmente se deve a uma incompatibilidade entre os atributos opcionais adicionados no CloudSecure e os nomes de atributos reais no ative Directory. Edite e forneça o nome do atributo obrigatório ou opcional correto. 
+
+
+| Depois de reiniciar o coletor, quando acontecerá a sincronização AD? | A sincronização DE ANÚNCIOS ocorrerá imediatamente após o coletor ser reiniciado. Levará aproximadamente 15 minutos para obter dados do usuário de aproximadamente 300K usuários e é atualizado a cada 12 horas automaticamente. 
+
+
+| Os dados do usuário são sincronizados do AD para o CloudSecure. Quando os dados serão excluídos? | Os dados do usuário são mantidos para 13months em caso de não atualização. Se o locatário for excluído, os dados serão excluídos. 
+
+
+| O conetor do diretório do usuário resulta no estado "erro". "O conetor está no estado de erro. Nome do serviço: UsersLdap. Motivo da falha: Falha ao recuperar usuários LDAP. Motivo da falha: 80090308: LdapErr: DSID-0C090453, comentário: AcceptSecurityContext error, data 52e, v3839" | Nome da floresta incorreto fornecido. Veja acima como fornecer o nome correto da floresta. 
+
+
+| O número de telefone não está a ser preenchido na página de perfil de utilizador. | Isso é provavelmente devido a um problema de mapeamento de atributos com o ative Directory. 1. Edite o coletor específico do ative Directory que está obtendo as informações do usuário do ative Directory. 2. Em atributos opcionais, há um nome de campo "número de telefone" mapeado para o atributo do ative Directory 'número de telefone'. 4. Agora, use a ferramenta Explorador do ative Directory conforme descrito acima para navegar no ative Directory e ver o nome do atributo correto. 3. Certifique-se de que, no ative Directory, existe um atributo chamado "número de telefone" que tem, de fato, o número de telefone do usuário. 5. Digamos que no ative Directory foi modificado para "número de telefone". 6. Em seguida, edite o coletor CloudSecure User Directory. Na seção de atributo opcional, substitua 'número de telefone' por 'número de telefone'. 7. Salve o coletor do ative Directory, o coletor reiniciará e obterá o número de telefone do usuário e exibirá o mesmo na página do perfil do usuário. 
+
+
+| Se o certificado de encriptação (SSL) estiver ativado no servidor AD (ative Directory), o Coletor do diretório de utilizadores de Segurança de carga de trabalho não pode ligar-se ao servidor AD. | Desative a criptografia do AD Server antes de configurar um coletor de diretório de usuários. Uma vez que os detalhes do usuário são obtidos, ele estará lá por 13 meses. Se o servidor AD for desconetado após buscar os detalhes do usuário, os usuários recém-adicionados no AD não serão obtidos. Para buscar novamente, o coletor de diretório do usuário precisa ser conetado ao AD. 
+
+
+| Os dados do ative Directory estão presentes no CloudInsights Security. Deseja excluir todas as informações do usuário do CloudInsights. | Não é possível excluir APENAS as informações do usuário do ative Directory do CloudInsights Security. Para excluir o usuário, o locatário completo precisa ser excluído. 
+|===

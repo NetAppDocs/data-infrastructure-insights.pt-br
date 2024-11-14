@@ -1,0 +1,123 @@
+---
+sidebar: sidebar 
+permalink: task_dc_brocade_bna.html 
+keywords: data collector, Brocade, BNA 
+summary: Configurar o coletor Brocade BNA. 
+---
+= Coletor de dados do consultor de rede Brocade
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Insights de infraestrutura de dados usa o coletor de dados do consultor de rede da Brocade para adquirir dados de inventário e desempenho de switches Brocade.
+
+
+
+== Terminologia
+
+Informações de infraestrutura de dados adquire as seguintes informações de inventário do coletor de dados do consultor de rede da Brocade. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Interrutor | Interrutor 
+
+
+| Porta | Porta 
+
+
+| Malha virtual, malha física | Malha 
+
+
+| Comutador lógico | Comutador lógico 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+Para configurar este coletor de dados, são necessários os seguintes itens:
+
+* A Unidade de aquisição do Data Infrastructure Insights initará conexões à porta TCP 443 no servidor BNA. O servidor BNA deve estar executando a versão 14.2.1 ou superior.
+* Endereço IP do servidor do consultor de rede Brocade
+* Nome de usuário e senha para uma conta de administrador
+* Requisito de porta: HTTP/HTTPS 443
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| IP do servidor do consultor de rede Brocade | Endereço IP do servidor do Network Advisor 
+
+
+| Nome de utilizador | Nome de utilizador do comutador 
+
+
+| Nome de utilizador | Nome de usuário do administrador 
+
+
+| Palavra-passe | Senha do administrador 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Tipo de ligação | HTTPS (porta padrão 443) ou HTTP (porta padrão 80) 
+
+
+| Substituir porta de ligação | Se estiver em branco, use a porta padrão no campo tipo de conexão; caso contrário, insira a porta de conexão a ser usada 
+
+
+| Palavra-passe | Palavra-passe para o interrutor 
+
+
+| Intervalo de pesquisa de inventário (min) | A predefinição é 40 
+
+
+| Gateway de acesso de relatório | Verifique para incluir dispositivos no modo Gateway de acesso 
+
+
+| Intervalo de enquete de desempenho (seg) | A predefinição é 1800 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| Receba uma mensagem informando que mais de 1 nó está conetado à porta do Gateway de acesso ou que o coletor de dados não consegue detetar o dispositivo Gateway de acesso. | Verifique se o dispositivo NPV está funcionando corretamente e se todas as WWNs conetadas são esperadas. Não adquira diretamente o dispositivo NPV. Em vez disso, a aquisição do switch de malha central coletará os dados do dispositivo NPV. 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

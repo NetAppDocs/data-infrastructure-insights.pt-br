@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: task_dc_dell_xc_series.html 
+keywords: data collector, Dell, EMC, xc 
+summary: Configurar o coletor de dados da série XC da Dell EMC. 
+---
+= Coletor de dados da série XC da Dell EMC
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa esse coletor de dados para descobrir informações de inventário e desempenho para os storages de armazenamento da série XC da Dell EMC.
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP externo do prisma | Endereço IP do servidor XC 
+
+
+| Nome de utilizador | Nome de usuário para o servidor XC 
+
+
+| Palavra-passe | Senha usada para o servidor XC 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Porta TCP | Porta usada para comunicação TCP com o servidor XC 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 60 minutos. 
+
+
+| Intervalo de enquete de desempenho (min) | Intervalo entre sondagens de desempenho. O padrão é 300 segundos. 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

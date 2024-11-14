@@ -1,0 +1,113 @@
+---
+sidebar: sidebar 
+permalink: task_dc_huawei_oceanstor.html 
+keywords: data collector, Huawei, OceanStor, Dorado 
+summary: 'Configurar o coletor de dados OceanStor (REST/HTTPS) da Huawei.' 
+---
+= Coletor de dados Huawei OceanStor
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa o coletor de dados OceanStor (REST/HTTPS) da Huawei para descobrir o inventário e o desempenho para o armazenamento OceanStor e OceanStor Dorado da Huawei.
+
+
+
+== Terminologia
+
+A Data Infrastructure Insights adquire as seguintes informações de inventário e desempenho do OceanStor da Huawei. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Pool de storage | Pool de storage 
+
+
+| Sistema de ficheiros | Volume interno 
+
+
+| Controlador | Nó de storage 
+
+
+| Porta FC (mapeada) | Mapa de volume 
+
+
+| Iniciador FC do host (mapeado) | Máscara de volume 
+
+
+| Compartilhamento NFS/CIFS | Partilhar 
+
+
+| ISCSI Link Target | Nó de destino iSCSI 
+
+
+| Iniciador de ligação iSCSI | Nó do iniciador iSCSI 
+
+
+| Disco | Disco 
+
+
+| LUN | Volume 
+|===
+
+
+== Requisitos
+
+Os seguintes requisitos são necessários para configurar este coletor de dados:
+
+* Endereço IP do dispositivo
+* Credenciais para acessar o gerenciador de dispositivos OceanStor
+* A porta 8088 deve estar disponível
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP do host OceanStor | Endereço IP ou nome de domínio totalmente qualificado do OceanStor Device Manager 
+
+
+| Nome de utilizador | Nome utilizado para iniciar sessão no OceanStor Device Manager 
+
+
+| Palavra-passe | Palavra-passe utilizada para iniciar sessão no OceanStor Device Manager 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Porta TCP | Porta TCP usada para se conetar ao OceanStor Device Manager. A predefinição é 8088. 
+
+
+| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 60 minutos. 
+
+
+| Intervalo de pesquisa de desempenho (seg). | O padrão é 300 segundos. 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
