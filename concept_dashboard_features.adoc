@@ -639,9 +639,6 @@ Clicar no link em um widget de valor único ou em um widget de indicador exibir�
 
 Como widgets de valor único e de indicador, você pode definir a formatação condicional em widgets de tabela, permitindo destacar dados com cores e/ou ícones especiais.
 
-
-NOTE: No momento, a formatação condicional não está disponível no Data Infrastructure Insights Federal Edition.
-
 A formatação condicional permite que você defina e realce limiares de nível de aviso e nível crítico em widgets de tabela, trazendo visibilidade instantânea para outliers e pontos de dados excecionais.
 
 image:ConditionalFormattingExample.png["Exemplo de formatação condicional"]

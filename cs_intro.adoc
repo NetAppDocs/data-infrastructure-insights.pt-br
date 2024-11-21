@@ -22,9 +22,6 @@ summary: Visão geral
 A segurança de workload de storage (anteriormente Cloud Secure) ajuda a proteger seus dados com inteligência acionável sobre ameaças internas. Ele fornece visibilidade e controle centralizados de todos os acessos a dados corporativos em ambientes de nuvem híbrida para garantir que as metas de segurança e conformidade sejam atingidas.
 
 
-NOTE: A segurança do workload não está disponível no Data Infrastructure Insights Federal Edition.
-
-
 
 == Visibilidade
 

@@ -73,10 +73,3 @@ Você espera:
 Para cada resposta "Sim" acima, recomenda-se adicionar 8 GB de memória e 50 GB de espaço em disco à AU. Então, por exemplo, se você respondeu "Sim" para ambos, você deve implantar um sistema de memória 24GB com 150GBMB ou mais de espaço em disco. No Linux, o espaço em disco a ser adicionado ao local do log.
 
 Para perguntas adicionais sobre o dimensionamento, entre em Contato com o suporte da NetApp.
-
-
-
-== Requisito adicional da edição federal
-
-* Para instalações de unidades de aquisição em clusters Data Infrastructure Insights Federal Edition, o sistema operacional subjacente deve ter uma boa fonte de entropia. Em sistemas Linux, isso geralmente é feito instalando _rng-tools_ ou usando hardware random number generation (RNG). É da responsabilidade do cliente garantir que este requisito é cumprido na máquina da unidade de aquisição.
-
