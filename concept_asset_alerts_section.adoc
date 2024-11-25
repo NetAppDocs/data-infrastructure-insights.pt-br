@@ -19,7 +19,7 @@ keywords: asset, landing page, violations, Alerts,
 
 
 [role="lead"]
-Você pode usar a seção Alertas relacionados de uma página de ativos para ver quaisquer alertas que ocorram em seu ambiente como resultado de um monitor atribuído a um ativo. Os monitores geram alertas com base nas condições definidas e permitem identificar a implicação e analisar o impactos e a causa raiz do problema de uma forma que permita uma correção rápida e eficaz.
+Você pode usar a seção Alertas relacionados de uma página de ativo para ver quaisquer alertas que ocorram no seu locatário como resultado de um monitor atribuído a um ativo. Os monitores geram alertas com base nas condições definidas e permitem identificar a implicação e analisar o impactos e a causa raiz do problema de uma forma que permita uma correção rápida e eficaz.
 
 O exemplo a seguir mostra uma seção típica de Alertas relacionados que é exibida em uma página de ativos:
 

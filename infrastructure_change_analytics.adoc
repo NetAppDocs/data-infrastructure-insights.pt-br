@@ -16,7 +16,7 @@ summary: O Cloud Insights controla as alterações na infraestrutura para facili
 
 
 [role="lead"]
-A análise de mudança de infraestrutura fornece uma visão geral das mudanças recentes na infraestrutura (armazenamento, switch, etc.) em seu ambiente. Com o Change Analysis, você pode acompanhar as alterações de configuração e analisar os problemas esperados e inesperados.
+A análise de mudança de infraestrutura fornece uma visão geral das mudanças recentes na infraestrutura (armazenamento, switch, etc.) no seu locatário. Com o Change Analysis, você pode acompanhar as alterações de configuração e analisar os problemas esperados e inesperados.
 
 
 

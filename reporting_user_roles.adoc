@@ -16,7 +16,7 @@ keywords: reporting, cognos, data warehouse, dwh, users, roles, user roles
 
 
 [role="lead"]
-Se você tiver o Data Infrastructure Insights Premium Edition com relatórios, todos os usuários do Data Infrastructure Insights em seu ambiente também terão um login único (SSO) no aplicativo relatórios (ou seja, Cognos). Basta clicar no link *relatórios* no menu e você será automaticamente conetado ao Reporting.
+Se você tiver o Data Infrastructure Insights Premium Edition com relatórios, todos os usuários do Data Infrastructure Insights no seu locatário também terão um login único (SSO) no aplicativo relatórios (ou seja, Cognos). Basta clicar no link *relatórios* no menu e você será automaticamente conetado ao Reporting.
 
 Sua função de usuário no Data Infrastructure Insights determina sua função de usuário de relatórios:
 
@@ -91,7 +91,7 @@ NOTE: Se você alterar suas preferências de e-mail de usuário no Data Infrastr
 
 === Que passos devo tomar para preparar o meu ambiente existente para ativar o SSO?
 
-Para garantir que seus relatórios sejam mantidos, migre todos os relatórios de _meu conteúdo_ para _conteúdo de equipe_ usando as etapas a seguir. Você deve fazer isso antes de ativar o SSO em seu ambiente:
+Para garantir que seus relatórios sejam mantidos, migre todos os relatórios de _meu conteúdo_ para _conteúdo de equipe_ usando as etapas a seguir. Você deve fazer isso antes de ativar o SSO no seu locatário:
 
 . Navegue até *Menu > conteúdo*
 

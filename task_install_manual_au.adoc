@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_install_manual_au.html 
 keywords: Acquisition Unit, AU, install, configure, Linux, add, remove, uninstall, delete, deleting, move, moving, manual, AU, Patch 
-summary: O Data Infrastructure Insights pode ser configurado para que o software AU seja atualizado manualmente, fornecendo mais controle sobre o software instalado em seu ambiente. 
+summary: O Data Infrastructure Insights pode ser configurado para que o software AU seja atualizado manualmente, fornecendo mais controle sobre o software instalado no seu locatário. 
 ---
 = Instalar manualmente o software da unidade de aquisição
 :hardbreaks:
@@ -16,7 +16,7 @@ summary: O Data Infrastructure Insights pode ser configurado para que o software
 
 
 [role="lead"]
-Por padrão, o Data Infrastructure Insights atualiza automaticamente o software da Unidade de aquisição (AU) à medida que as atualizações são implantadas. No entanto, em ambientes controlados seguros, a atualização automática pode não ser possível ou desejada. Nesses casos, o Data Infrastructure Insights pode ser configurado para que o software AU seja atualizado manualmente, fornecendo mais controle sobre o software instalado em seu ambiente.
+Por padrão, o Data Infrastructure Insights atualiza automaticamente o software da Unidade de aquisição (AU) à medida que as atualizações são implantadas. No entanto, em ambientes controlados seguros, a atualização automática pode não ser possível ou desejada. Nesses casos, o Data Infrastructure Insights pode ser configurado para que o software da AU seja atualizado manualmente, fornecendo mais controle sobre o software instalado no seu locatário.
 
 Para transferir e instalar manualmente o software AU, execute as seguintes etapas. O Data Infrastructure Insights fornece uma página útil de documentação do Swagger que pode ser usada para muitas dessas etapas ou pode usar seu próprio script/comandos de API. Vá para Admin > API Access e clique no link "API Documentation".
 

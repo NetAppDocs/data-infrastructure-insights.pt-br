@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task_create_application.html 
-summary: Você define aplicativos que você aplica a ativos em seu ambiente conforme necessário. 
+summary: Você define aplicativos que você aplica aos ativos do locatário conforme necessário. 
 keywords: application, create application, 
 ---
 = Criando aplicativos
@@ -16,7 +16,7 @@ keywords: application, create application,
 
 
 [role="lead"]
-Para rastrear dados associados a aplicativos específicos em execução no seu ambiente, é possível definir os aplicativos no Data Infrastructure Insights.
+Para rastrear dados associados a aplicativos específicos em execução no locatário, é possível definir os aplicativos no Data Infrastructure Insights.
 
 .Antes de começar
 Se você quiser associar o aplicativo a uma entidade de negócios, você deve criar a entidade de negócios antes de definir o aplicativo.

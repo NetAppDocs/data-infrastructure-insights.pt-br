@@ -19,11 +19,11 @@ keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, 
 
 
 [role="lead"]
-As consultas permitem que você monitore e solucione problemas de sua rede pesquisando os ativos e as métricas em seu ambiente em um nível granular com base em critérios selecionados pelo usuário (por exemplo, anotações).
+As consultas permitem que você monitore e solucione problemas de sua rede pesquisando os ativos e as métricas do locatário em um nível granular com base em critérios selecionados pelo usuário (por exemplo, anotações).
 
 Observe que as regras de anotação, que atribuem automaticamente anotações a ativos, _require_ uma consulta.
 
-Você pode consultar os ativos de inventário físico ou virtual (e suas métricas associadas) em seu ambiente ou as métricas fornecidas com integração, como Kubernetes ou dados avançados do ONTAP.
+Você pode consultar os ativos de inventário físico ou virtual (e suas métricas associadas) no seu locatário ou as métricas fornecidas com integração, como Kubernetes ou dados avançados do ONTAP.
 
 
 

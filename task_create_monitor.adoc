@@ -36,7 +36,7 @@ O Data Infrastructure Insights também fornece várias opçõeslink:task_system_
 
 == Melhores práticas de segurança
 
-Os alertas do Data Infrastructure Insights são projetados para destacar pontos de dados e tendências em seu ambiente, e o Data Infrastructure Insights permite que você insira qualquer endereço de e-mail válido como destinatário de alerta. Se você estiver trabalhando em um ambiente seguro, esteja especialmente ciente de quem está recebendo a notificação ou de outra forma tem acesso ao alerta.
+Os alertas do Data Infrastructure Insights são projetados para destacar pontos de dados e tendências em seu locatário, e o Data Infrastructure Insights permite que você insira qualquer endereço de e-mail válido como destinatário de alerta. Se você estiver trabalhando em um ambiente seguro, esteja especialmente ciente de quem está recebendo a notificação ou de outra forma tem acesso ao alerta.
 
 
 
@@ -232,7 +232,7 @@ Se um monitor não for mais necessário, você pode excluí-lo selecionando *Exc
 
 == Monitorar grupos
 
-O agrupamento permite visualizar e gerir monitores relacionados. Por exemplo, você pode ter um grupo de monitores dedicado ao armazenamento em seu ambiente ou monitores relevantes para uma determinada lista de destinatários.
+O agrupamento permite visualizar e gerir monitores relacionados. Por exemplo, você pode ter um grupo de monitores dedicado ao armazenamento no locatário ou monitores relevantes para uma determinada lista de destinatários.
 
 image:Monitors_GroupList.png["Agrupamento de monitores"]
 
@@ -297,7 +297,7 @@ image:Monitors_PauseGroup.png["Pausar um grupo"]
 
 == Monitores definidos pelo sistema
 
-O Data Infrastructure Insights inclui vários monitores definidos pelo sistema para métricas e logs. Os monitores do sistema disponíveis dependem dos coletores de dados presentes no seu ambiente. Devido a isso, os monitores disponíveis no Data Infrastructure Insights podem mudar à medida que os coletores de dados são adicionados ou suas configurações alteradas.
+O Data Infrastructure Insights inclui vários monitores definidos pelo sistema para métricas e logs. Os monitores do sistema disponíveis dependem dos coletores de dados presentes no locatário. Devido a isso, os monitores disponíveis no Data Infrastructure Insights podem mudar à medida que os coletores de dados são adicionados ou suas configurações alteradas.
 
 Consulte link:task_system_monitors.html["Monitores definidos pelo sistema"]a página para obter descrições de monitores incluídos no Data Infrastructure Insights.
 

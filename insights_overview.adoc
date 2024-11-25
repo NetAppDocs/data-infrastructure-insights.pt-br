@@ -31,7 +31,7 @@ Vários Insights estão disponíveis. Navegue até *Dashboards > Insights* para 
 
 === Recursos compartilhados sob estresse
 
-Workloads de alto impacto podem reduzir o desempenho de outros workloads em um recurso compartilhado. Isso coloca o recurso compartilhado sob estresse. O Data Infrastructure Insights fornece ferramentas para ajudar você a investigar a saturação e o impactos dos recursos em seu ambiente. link:insights_shared_resources_under_stress.html["Saiba mais"]
+Workloads de alto impacto podem reduzir o desempenho de outros workloads em um recurso compartilhado. Isso coloca o recurso compartilhado sob estresse. O Data Infrastructure Insights fornece ferramentas para ajudar você a investigar a saturação e o impactos dos recursos no locatário. link:insights_shared_resources_under_stress.html["Saiba mais"]
 
 
 

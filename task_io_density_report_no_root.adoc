@@ -34,12 +34,12 @@ As etapas deste guia também podem ser aplicadas aos sistemas de armazenamento d
 
 
 
-== Criando uma consulta para identificar agregados raiz NetApp no seu ambiente
+== Criando uma consulta para identificar agregados de raiz NetApp
 
-As consultas fornecem pesquisa em um nível granular, com base em critérios selecionados pelo usuário. O uso de uma consulta permite pesquisar volumes internos em seu ambiente que contenham o agregado raiz do NetApp.
+As consultas fornecem pesquisa em um nível granular, com base em critérios selecionados pelo usuário. O uso de uma consulta permite pesquisar volumes internos no locatário que contenham o agregado raiz do NetApp.
 
 .Passos
-. Criar uma consulta para identificar agregados de raiz NetApp no seu ambiente: Clique em *consultas > Nova consulta > Selecionar tipo de recurso* (?)
+. Crie uma consulta para identificar agregados de raiz NetApp no seu locatário: Clique em *consultas > Nova consulta > Selecionar tipo de recurso* (?)
 . Clique em *pool de armazenamento*
 . Insira o nome do agregado raiz
 +
@@ -48,7 +48,7 @@ Este exemplo usa "aggr0" para o nome. Ao criar um agregado, somente os seguintes
 +
 .. Deve começar com uma letra ou um sublinhado (_).
 .. Ele pode conter apenas letras, dígitos e sublinhados.
-.. Pode ter 250 carateres ou menos. Na maioria dos casos, o agregado é o nome aggr0, aggr_0, ou algo similar. Pode ser necessário um processo iterativo para identificar todos os agregados raiz do NetApp no seu ambiente.
+.. Pode ter 250 carateres ou menos. Na maioria dos casos, o agregado é o nome aggr0, aggr_0, ou algo similar. Pode ser necessário um processo iterativo para identificar todos os agregados raiz do NetApp no seu locatário.
 
 
 . Clique em *Salvar* e insira um nome para a nova consulta.
@@ -61,7 +61,7 @@ Como mencionado anteriormente, esse pode ser um processo iterativo e exigir vár
 
 == Crie uma anotação para os volumes raiz retornados por suas consultas
 
-As anotações são notas especializadas que você atribui aos seus ativos, permitindo que você filtre os ativos por suas anotações. A anotação criada será usada para identificar os agregados raiz do NetApp no seu ambiente e garantir que eles não sejam incluídos em um relatório específico.
+As anotações são notas especializadas que você atribui aos seus ativos, permitindo que você filtre os ativos por suas anotações. A anotação que você criar será usada para identificar os agregados raiz do NetApp no seu locatário e garantir que eles não sejam incluídos em um relatório específico.
 
 .Antes de começar
 Você deve ter identificado todos os agregados raiz que deseja excluir do relatório "alta densidade de e/S".
@@ -85,7 +85,7 @@ Você deve ter identificado todos os agregados raiz que deseja excluir do relat�
 Como alternativa à aplicação manual de anotações a ativos individuais, você pode aplicar automaticamente anotações a vários ativos usando regras de anotação. As regras de anotação são baseadas em consultas criadas e, quando executadas no sistema, adicionam novos ativos a conjuntos de ativos existentes. Quando esses conjuntos de ativos são excluídos de um relatório, os novos ativos também são automaticamente excluídos.
 
 .Antes de começar
-Você precisa ter criado e salvo uma consulta que identifique os agregados raiz do NetApp identificados no ambiente.
+Você precisa ter criado e salvo uma consulta que identifique os agregados raiz do NetApp identificados no locatário.
 
 .Passos
 . Na barra de ferramentas Data Infrastructure Insights, clique em *Manage > Annotation rules*.

@@ -19,7 +19,7 @@ keywords: dashboard, gallery, import
 
 
 [role="lead"]
-O Data Infrastructure Insights fornece uma série de painéis recomendados para fornecer insights de negócios sobre seus dados. Cada painel contém widgets projetados para ajudar a responder a uma pergunta específica ou resolver um problema específico relevante para os dados que estão sendo coletados no seu ambiente.
+O Data Infrastructure Insights fornece uma série de painéis recomendados para fornecer insights de negócios sobre seus dados. Cada painel contém widgets projetados para ajudar a responder a uma pergunta específica ou resolver um problema específico relevante para os dados que estão sendo coletados no seu locatário.
 
 Para importar um painel da galeria, faça o seguinte:
 

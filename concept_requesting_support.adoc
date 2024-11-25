@@ -113,7 +113,7 @@ Além das opções de suporte autônomo acima, se você tiver uma assinatura do 
 
 NOTE: Você deve se Registrar para <<activating-support-entitlement,ative o suporte>>obter os produtos de nuvem da NetApp. Para se Registrar, vá para NetApp'link:https://register.netapp.com["Registro de suporte de serviços de dados em nuvem"]s .
 
-É altamente recomendável que você marque a caixa para permitir que um engenheiro de suporte da NetApp acesse seu ambiente Insights de infraestrutura de dados durante sua sessão de suporte. Isso permitirá que o engenheiro solucione o problema e o ajudará a resolvê-lo rapidamente. Quando o problema for resolvido ou a sessão de suporte tiver terminado, pode desmarcar a caixa.
+É altamente recomendável que você marque a caixa para permitir que um engenheiro de suporte da NetApp acesse seu locatário do Insights de infraestrutura de dados durante sua sessão de suporte. Isso permitirá que o engenheiro solucione o problema e o ajudará a resolvê-lo rapidamente. Quando o problema for resolvido ou a sessão de suporte tiver terminado, pode desmarcar a caixa.
 
 Você pode solicitar suporte por qualquer um dos seguintes métodos. Você precisa ter uma assinatura ativa do Data Infrastructure Insights para usar essas opções de suporte:
 

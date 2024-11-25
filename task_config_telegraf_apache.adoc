@@ -19,7 +19,7 @@ summary: Configuração do coletor de dados Apache
 
 
 [role="lead"]
-Este coletor de dados permite a coleta de dados de servidores Apache em seu ambiente.
+Este coletor de dados permite a coleta de dados de servidores Apache em seu locatário.
 
 .Pré-requisitos
 * Você deve ter seu servidor HTTP Apache configurado e funcionando corretamente

@@ -38,7 +38,7 @@ Por exemplo, se você não terminar o processo de identificação do dispositivo
 Antes de criar seus relatórios, execute as seguintes tarefas:
 
 * Configure tudo link:task_configure_data_collectors.html["coletores de dados"] corretamente.
-* Insira anotações (como camadas, data centers e unidades de negócios) em dispositivos e recursos do ambiente. É benéfico ter anotações estáveis antes de gerar relatórios, porque o Data Infrastructure Insights Reporting coleta informações históricas.
+* Insira anotações (como camadas, data centers e unidades de negócios) em dispositivos e recursos do locatário. É benéfico ter anotações estáveis antes de gerar relatórios, porque o Data Infrastructure Insights Reporting coleta informações históricas.
 
 
 
@@ -194,7 +194,7 @@ As capacidades no modelo de dados de capacidade da VM são retiradas de discos v
 
 ==== Modelo de dados de capacidade de volume
 
-Permite analisar todos os aspectos dos volumes em seu ambiente e organizar os dados por fornecedor, modelo, categoria, nível de serviço e data center.
+Permite analisar todos os aspectos dos volumes no locatário e organizar os dados por fornecedor, modelo, categoria, nível de serviço e data center.
 
 Você pode visualizar a capacidade relacionada a volumes órfãos, volumes não utilizados e volumes de proteção (usados para replicação). Você também pode ver diferentes tecnologias de volume (iSCSI ou FC) e comparar volumes virtuais com volumes não virtuais para problemas de virtualização de storage.
 

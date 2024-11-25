@@ -19,7 +19,7 @@ summary: Adicionando agentes de Segurança de carga de trabalho
 
 
 [role="lead"]
-A Segurança da carga de trabalho (anteriormente Cloud Secure) coleta dados de atividade do usuário usando um ou mais agentes. Os agentes se conetam a dispositivos em seu ambiente e coletam dados que são enviados para a camada SaaS de segurança de workload para análise. link:concept_cs_agent_requirements.html["Requisitos do agente"]Consulte para configurar uma VM de agente.
+A Segurança da carga de trabalho (anteriormente Cloud Secure) coleta dados de atividade do usuário usando um ou mais agentes. Os agentes se conetam a dispositivos no locatário e coletam dados que são enviados para a camada SaaS de segurança do workload para análise. link:concept_cs_agent_requirements.html["Requisitos do agente"]Consulte para configurar uma VM de agente.
 
 
 

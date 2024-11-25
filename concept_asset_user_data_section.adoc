@@ -25,7 +25,7 @@ A seção dados do usuário de uma página de ativo exibe e permite que você al
 
 == Usando a seção dados do usuário para atribuir ou modificar aplicativos
 
-É possível atribuir aplicativos em execução no ambiente a determinados ativos (host, máquinas virtuais, volumes, volumes internos, qtrees e hipervisores). A seção dados do usuário permite adicionar, alterar ou remover os aplicativos atribuídos a um ativo. Para todos esses tipos de ativos, exceto volumes, você pode atribuir mais de um aplicativo.
+É possível atribuir aplicativos em execução no locatário a determinados ativos (host, máquinas virtuais, volumes, volumes internos, qtrees e hipervisores). A seção dados do usuário permite adicionar, alterar ou remover os aplicativos atribuídos a um ativo. Para todos esses tipos de ativos, exceto volumes, você pode atribuir mais de um aplicativo.
 
 .Passos
 . Localize uma página de ativo fazendo qualquer um dos seguintes procedimentos:

@@ -38,7 +38,7 @@ Para começar a explorar, selecione *ONTAP Essentials* no menu principal de info
 
 image:OE_Overview.png["Painel de visão geral do ONTAP Essentials"]
 
-O painel *Visão geral* exibe informações úteis, como o número de clusters em seu ambiente, com suas porcentagens gerais de capacidade e desempenho. Você também verá dados preditivos sobre o número de dias esperados até que a capacidade de storage ou a capacidade de performance fiquem sem espaço. Além disso, se quaisquer controladores em sua infraestrutura estiverem sendo executados com sua CPU em mais de 65% - potencialmente colocando seu cluster em risco em caso de failover - o ONTAP Essentials mostra esses controladores como controladores "quentes".
+O painel *Visão geral* exibe informações úteis, como o número de clusters no locatário, com suas porcentagens gerais de capacidade e desempenho. Você também verá dados preditivos sobre o número de dias esperados até que a capacidade de storage ou a capacidade de performance fiquem sem espaço. Além disso, se quaisquer controladores em sua infraestrutura estiverem sendo executados com sua CPU em mais de 65% - potencialmente colocando seu cluster em risco em caso de failover - o ONTAP Essentials mostra esses controladores como controladores "quentes".
 
 Gráficos informativos dão-lhe uma olhada no desempenho ao longo do tempo, bem como avarias de uso de capacidade. Cada um desses gráficos ou pontos de dados pode ser usado como ponto de partida para exploração ou investigação.
 
@@ -158,7 +158,7 @@ Os detalhes do Anti-ransomware mostram se uma VM de storage está protegida pela
 
 == Alertas
 
-Aqui você pode visualizar os alertas ativos em seu ambiente e detalhar rapidamente possíveis problemas. Selecione a guia _resolvido_ para exibir alertas que foram resolvidos.
+Aqui você pode visualizar os alertas ativos no seu locatário e analisar rapidamente possíveis problemas. Selecione a guia _resolvido_ para exibir alertas que foram resolvidos.
 
 image:OE_Alerts.png["Lista de alertas do ONTAP Essentials"]
 
@@ -184,7 +184,7 @@ image:ONTAP_Essentials_Alerts_Menu.png["Menu de rede do ONTAP Essentials"] image
 
 == Workloads
 
-Visualize e explore workloads em LUNs/volumes, compartilhamentos NFS ou SMB ou Qtrees no seu ambiente.
+Visualize e explore workloads em LUNs/volumes, compartilhamentos NFS ou SMB ou Qtrees no seu locatário.
 
 image:ONTAP_Essentials_Workloads_Menu.png["Menu workloads"]
 

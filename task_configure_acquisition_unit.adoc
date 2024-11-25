@@ -105,7 +105,7 @@ Você pode visualizar seus URLs de endpoint proxy clicando no link *Configuraç�
 
 image:ProxyEndpoints_NewTable.png["Tabela de pontos finais do proxy"]
 
-Se você tiver o Workload Security no seu ambiente, os URLs de endpoint configurados também serão exibidos nesta lista.
+Se você tiver o Workload Security no locatário, os URLs de endpoint configurados também serão exibidos nesta lista.
 
 
 
@@ -161,7 +161,7 @@ Você pode visualizar seus URLs de endpoint proxy clicando no link *Configuraç�
 
 image:ProxyEndpoints_NewTable.png["Tabela de pontos finais do proxy"]
 
-Se você tiver o Workload Security no seu ambiente, os URLs de endpoint configurados também serão exibidos nesta lista.
+Se você tiver o Workload Security no locatário, os URLs de endpoint configurados também serão exibidos nesta lista.
 
 
 

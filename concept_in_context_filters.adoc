@@ -19,11 +19,11 @@ keywords: Assets, landing page, filtering, context, related
 
 
 [role="lead"]
-Ao configurar um widget na Landing page de um ativo, você pode definir filtros _in-context_ para mostrar apenas objetos diretamente relacionados ao ativo atual. Por padrão, quando você adiciona um widget, _todos_ objetos do tipo selecionado no ambiente são exibidos. Os filtros de contexto permitem exibir apenas os dados relevantes para o seu ativo atual.
+Ao configurar um widget na Landing page de um ativo, você pode definir filtros _in-context_ para mostrar apenas objetos diretamente relacionados ao ativo atual. Por padrão, quando você adiciona um widget, _todos_ objetos do tipo selecionado no seu locatário são exibidos. Os filtros de contexto permitem exibir apenas os dados relevantes para o seu ativo atual.
 
 Na maioria das Landing pages de ativos, os widgets permitem filtrar objetos relacionados ao ativo atual. Em listas suspensas de filtros, os tipos de objetos que exibem um ícone de link podem ser filtrados em contexto para o ativo atual.
 
-Por exemplo, em uma página de ativos de armazenamento, você pode adicionar um widget Gráfico de barras para mostrar as principais IOPS em volumes internos somente nesse armazenamento. Por padrão, quando você adiciona um widget, _all_ volumes internos em seu ambiente são exibidos.
+Por exemplo, em uma página de ativos de armazenamento, você pode adicionar um widget Gráfico de barras para mostrar as principais IOPS em volumes internos somente nesse armazenamento. Por padrão, quando você adiciona um widget, _all_ volumes internos em seu locatário são exibidos.
 
 Para mostrar apenas volumes internos no ativo de storage atual, faça o seguinte:
 
@@ -46,6 +46,6 @@ O gráfico de barras mostra apenas os volumes internos que residem no ativo de s
 
 O widget será exibido nas páginas de ativos para todos os objetos de armazenamento. Quando o link no contexto está ativado no widget, o gráfico de barras mostra dados para volumes internos relacionados apenas ao ativo de armazenamento atualmente exibido.
 
-Para desvincular os dados do objeto, edite o widget e clique no ícone de link ao lado do tipo de objeto. O link fica desativado e o gráfico exibe dados para objetos _all_ em seu ambiente.
+Para desvincular os dados do objeto, edite o widget e clique no ícone de link ao lado do tipo de objeto. O link fica desativado e o gráfico exibe dados para objetos _all_ no locatário.
 
 Você também pode usar link:concept_dashboard_features.html#variables["* variáveis especiais em widgets*"] para exibir informações relacionadas a ativos em Landing pages.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept_high_consuming_workloads.html 
 keywords: insight, greedy, degraded, bully, victim, impacted, impacting, impactful, impact, resources, consuming, workload 
-summary: Insights dão uma visão de como os recursos afetam outros recursos em seu ambiente. 
+summary: Insights dão uma visão de como os recursos afetam outros recursos em seu locatário. 
 ---
 = Insights: Workloads de alto consumo
 :toc: macro
@@ -19,7 +19,7 @@ summary: Insights dão uma visão de como os recursos afetam outros recursos em 
 
 
 [role="lead"]
-Workloads de alto impacto podem reduzir o desempenho de outros workloads em um recurso compartilhado. O Data Infrastructure Insights fornece ferramentas para ajudar você a investigar a saturação e o impactos dos recursos em seu ambiente.
+Workloads de alto impacto podem reduzir o desempenho de outros workloads em um recurso compartilhado. O Data Infrastructure Insights fornece ferramentas para ajudar você a investigar a saturação e o impactos dos recursos no locatário.
 
 
 
@@ -59,7 +59,7 @@ image:Insights_Demanding_Workload_Chart.png["Gráfico de workload exigente"] ima
 
 === O que faço para resolver a saturação?
 
-Existem várias etapas que você pode tomar para reduzir ou eliminar a chance de saturação em seu ambiente. Aqui estão algumas coisas que você pode tentar.
+Há uma série de etapas que você pode tomar para reduzir ou eliminar a chance de saturação em seu inquilino. Aqui estão algumas coisas que você pode tentar.
 
 * Mova os consumidores de IOPS alto
 +

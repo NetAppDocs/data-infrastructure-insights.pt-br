@@ -60,7 +60,7 @@ Leia também <<permissões,Permissões>>sobre .
 
 === Configurando o suporte Proxy
 
-Há dois lugares onde você pode usar um proxy em seu ambiente para instalar o Operador de Monitoramento do Kubernetes do NetApp. Estes podem ser os mesmos ou sistemas proxy separados:
+Há dois lugares onde você pode usar um proxy em seu locatário para instalar o Operador de Monitoramento do Kubernetes do NetApp. Estes podem ser os mesmos ou sistemas proxy separados:
 
 * Proxy necessário durante a execução do snippet de código de instalação (usando "curl") para conetar o sistema onde o snippet é executado ao seu ambiente Data Infrastructure Insights
 * Proxy necessário pelo cluster do Kubernetes de destino para se comunicar com seu ambiente Data Infrastructure Insights

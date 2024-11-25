@@ -407,7 +407,7 @@ image::SecondaryAxisExplained.png[Exemplo de eixo secundário]
 
 == Expressões em widgets
 
-Em um painel, qualquer widget de séries temporais (linha, spline, área, área empilhada) gráfico de barras, gráfico de colunas, gráfico de pizza ou widget de tabela permite criar expressões a partir de métricas que você escolher e mostrar o resultado dessas expressões em um único gráfico (ou coluna no caso do <<expressions-in-a-table-widget,widget da tabela>>). Os exemplos a seguir usam expressões para resolver problemas específicos. No primeiro exemplo, queremos mostrar IOPS de leitura como uma porcentagem do total de IOPS para todos os ativos de storage em nosso ambiente. O segundo exemplo dá visibilidade ao IOPS "do sistema" ou "sobrecarga" que ocorrem no seu ambiente - aqueles IOPS que não são diretamente da leitura ou da gravação de dados.
+Em um painel, qualquer widget de séries temporais (linha, spline, área, área empilhada) gráfico de barras, gráfico de colunas, gráfico de pizza ou widget de tabela permite criar expressões a partir de métricas que você escolher e mostrar o resultado dessas expressões em um único gráfico (ou coluna no caso do <<expressions-in-a-table-widget,widget da tabela>>). Os exemplos a seguir usam expressões para resolver problemas específicos. No primeiro exemplo, queremos mostrar IOPS de leitura como uma porcentagem do total de IOPS para todos os ativos de storage no locatário. O segundo exemplo dá visibilidade ao IOPS "do sistema" ou "sobrecarga" que ocorre no locatário - aqueles IOPS que não são diretamente da leitura ou da gravação de dados.
 
 Você pode usar variáveis em expressões (por exemplo, _ Var1 * 100_)
 
@@ -537,7 +537,7 @@ Selecionar uma variável tipo Atributo permite filtrar dados de widget contendo 
 
 image:Variables_Node_Example_Before_Variable_Applied.png["Nós de agente antes do filtro variável"]
 
-Mas se você quiser ver temporariamente apenas nós em sub-redes individuais em seu ambiente, você pode definir ou alterar a variável para um IP ou IPs específicos do nó de agente. Aqui estamos vendo apenas os nós na sub-rede "123":
+Mas se você quiser ver temporariamente apenas nós em sub-redes individuais em seu locatário, você pode definir ou alterar a variável para um IP ou IPs específicos do nó de agente. Aqui estamos vendo apenas os nós na sub-rede "123":
 
 image:Variables_Node_Example_After_Variable_Applied.png["Nós de agente após filtro variável"]
 
@@ -808,7 +808,7 @@ image:AutoRefreshPaused.png["Atualização automática em pausa"]
 
 == Grupos do painel de instrumentos
 
-O agrupamento permite visualizar e gerenciar painéis relacionados. Por exemplo, você pode ter um grupo de dashboard dedicado ao storage em seu ambiente. Os grupos de painéis são gerenciados na página *painéis > Mostrar todos os painéis*.
+O agrupamento permite visualizar e gerenciar painéis relacionados. Por exemplo, você pode ter um grupo de dashboard dedicado ao storage no locatário. Os grupos de painéis são gerenciados na página *painéis > Mostrar todos os painéis*.
 
 image:DashboardGroupNoPin.png["Agrupamento do tablier"]
 
@@ -822,7 +822,7 @@ O número de painéis contidos em cada grupo é mostrado ao lado do nome do grup
 
 Para criar um novo grupo, clique no botão criar novo grupo de painel*. Digite um nome para o grupo e clique em *criar grupo*. Um grupo vazio é criado com esse nome.
 
-Para adicionar painéis ao grupo, clique no grupo _todos os painéis_ para mostrar todos os painéis em seu ambiente, clique em _Meus painéis_ se você quiser ver apenas os painéis que possui e execute um dos seguintes procedimentos:
+Para adicionar painéis ao grupo, clique no grupo _todos os painéis_ para mostrar todos os painéis no locatário, clique em _Meus painéis_ se você quiser ver apenas os painéis que possui e siga um dos seguintes procedimentos:
 
 * Para adicionar um único painel, clique no menu à direita do painel e selecione _Adicionar ao grupo_.
 * Para adicionar vários painéis a um grupo, selecione-os clicando na caixa de seleção ao lado de cada painel, depois clique no botão *ações em massa* e selecione _Adicionar ao grupo_.

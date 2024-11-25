@@ -21,7 +21,7 @@ summary: Explicação da página inicial do Kubernetes
 [role="lead"]
 O Data Infrastructure Insights Kubernetes Explorer é uma ferramenta poderosa para exibir a integridade geral e o uso dos clusters do Kubernetes, além de permitir que você analise facilmente as áreas de investigação.
 
-Clicar em *painéis > Kubernetes Explorer* abre a página de lista de clusters do Kubernetes. Esta página de visão geral contém uma tabela dos clusters do Kubernetes no seu ambiente.
+Clicar em *painéis > Kubernetes Explorer* abre a página de lista de clusters do Kubernetes. Esta página de visão geral contém uma tabela dos clusters do Kubernetes no seu locatário.
 
 image:Kubernetes_List_Page_new.png["Página de lista do Kubernetes"]
 
@@ -29,7 +29,7 @@ image:Kubernetes_List_Page_new.png["Página de lista do Kubernetes"]
 
 === Lista de cluster
 
-A lista de clusters exibe as seguintes informações para cada cluster no seu ambiente:
+A lista de cluster exibe as seguintes informações para cada cluster no locatário:
 
 * Cluster *Nome*. Clicar num nome de cluster abrirá o link:kubernetes_cluster_detail.html["*página de detalhes*"] para esse cluster.
 * *Percentagens de saturação*. A saturação geral é a mais alta da CPU, memória ou saturação de armazenamento.

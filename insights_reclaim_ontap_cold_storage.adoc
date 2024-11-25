@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: insights_reclaim_ontap_cold_storage.html 
 keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload 
-summary: Insights dão uma visão de como os recursos afetam outros recursos em seu ambiente. 
+summary: Insights dão uma visão de como os recursos afetam outros recursos em seu locatário. 
 ---
 = Insights: Recupere o storage frio da ONTAP
 :toc: macro

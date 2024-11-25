@@ -104,8 +104,8 @@ Para obter explicações mais detalhadas sobre esses e outros recursos do Dashbo
 
 == Configurando um Dashboard como sua Home Page
 
-Você pode escolher qual painel definir como a *home page* do seu ambiente usando um dos seguintes métodos:
+Você pode escolher qual painel definir como a *home page* do seu locatário usando um dos seguintes métodos:
 
-* Vá para *painéis > Mostrar todos os painéis* para exibir a lista de painéis em seu ambiente. Clique no menu de opções à direita do painel desejado e selecione *Definir como Página Inicial*.
+* Vá para *painéis > Mostrar todos os painéis* para exibir a lista de painéis no locatário. Clique no menu de opções à direita do painel desejado e selecione *Definir como Página Inicial*.
 * Clique em um painel na lista para abrir o painel. Clique no menu suspenso no canto superior e selecione *Definir como Página Inicial*.
 

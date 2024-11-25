@@ -135,7 +135,7 @@ Sua assinatura será mensurada por um desses métodos, dependendo se você tem u
 
 ==== Medição da capacidade
 
-A observabilidade do Data Infrastructure Insights mede o uso de acordo com o nível de armazenamentos em seu ambiente. Você pode ter armazenamentos que se enquadram em uma ou mais dessas categorias:
+A observabilidade do Data Infrastructure Insights mede o uso de acordo com o nível de armazenamentos em seu locatário. Você pode ter armazenamentos que se enquadram em uma ou mais dessas categorias:
 
 * Primário bruto
 * Objeto bruto

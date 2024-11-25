@@ -13,11 +13,11 @@ summary: Compreender as aplicações utilizadas no ambiente da sua empresa ajuda
 :revdate: Understanding the applications used in your company's environment helps you to keep track of asset usage and cost.
 
 
-Antes de controlar os dados associados aos aplicativos em execução no ambiente, primeiro é necessário definir esses aplicativos e associá-los aos ativos apropriados. Você pode associar aplicativos aos seguintes ativos: Hosts, máquinas virtuais, volumes, volumes internos, qtrees, compartilhamentos e hipervisores.
+Antes de rastrear dados associados aos aplicativos em execução no locatário, primeiro é necessário definir esses aplicativos e associá-los aos ativos apropriados. Você pode associar aplicativos aos seguintes ativos: Hosts, máquinas virtuais, volumes, volumes internos, qtrees, compartilhamentos e hipervisores.
 
 Este tópico fornece um exemplo de rastreamento do uso de máquinas virtuais que a equipe de marketing usa para seu e-mail do Exchange.
 
-Talvez você queira criar uma tabela semelhante à seguinte para identificar aplicativos usados em seu ambiente e observar o grupo ou a unidade de negócios usando cada aplicativo.
+Talvez você queira criar uma tabela semelhante à seguinte para identificar aplicativos usados no locatário e observar o grupo ou a unidade de negócios usando cada aplicativo.
 
 [cols="5*"]
 |===

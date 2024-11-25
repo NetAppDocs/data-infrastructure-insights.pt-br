@@ -39,7 +39,7 @@ As informações mais recentes da API são encontradas efetuando login no Data I
 
 image:API_Swagger_Types.png["Tipos de API"]
 
-A Documentação da API é baseada no Swagger, que fornece uma breve descrição e informações de uso para a API, e permite que você experimente no seu ambiente. Dependendo da sua função de usuário e/ou edição do Data Infrastructure Insights, os tipos de API disponíveis podem variar.
+A Documentação da API é baseada no Swagger, que fornece uma breve descrição e informações de uso para a API, e permite que você experimente isso em seu locatário. Dependendo da sua função de usuário e/ou edição do Data Infrastructure Insights, os tipos de API disponíveis podem variar.
 
 image:API_Swagger_Example.png["Exemplo de Swagger API"]
 
@@ -195,11 +195,9 @@ Estão disponíveis resumos de desempenho para estes tipos de contadores:
 
 == Métricas de performance do objeto
 
-A API pode retornar métricas detalhadas para objetos em seu ambiente, por exemplo:
+A API pode retornar métricas detalhadas para objetos no seu locatário, por exemplo:
 
 * Métricas de desempenho de storage como IOPS (número de solicitações de entrada/saída por segundo), latência ou taxa de transferência.
-
-
 * Métricas de desempenho do switch, como utilização de tráfego, dados BB Credit Zero ou erros de porta.
 
 

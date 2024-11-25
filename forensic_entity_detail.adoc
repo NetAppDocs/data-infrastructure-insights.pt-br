@@ -17,7 +17,7 @@ summary: Página de entidades forenses
 
 
 [role="lead"]
-A página entidades Forensics fornece informações detalhadas sobre a atividade da entidade em seu ambiente.
+A página entidades Forensics fornece informações detalhadas sobre a atividade da entidade no seu inquilino.
 
 
 
@@ -25,7 +25,7 @@ A página entidades Forensics fornece informações detalhadas sobre a atividade
 
 Clique em *Forensics > Activity Forensics* e clique na guia _entities_ para acessar a página entidades.
 
-Esta página fornece uma visão geral da atividade da entidade em seu ambiente, destacando as seguintes informações: * Um gráfico que mostra _entidades únicas_ acessadas por minuto * Um gráfico de _tipos de entidade acessados_ * um detalhamento dos _caminhos comuns_ * Uma lista das _Top 50 entidades_ do número total de entidades
+Esta página fornece uma visão geral da atividade da entidade no seu inquilino, destacando as seguintes informações: * Um gráfico mostrando _entidades únicas_ acessadas por minuto * Um gráfico de _tipos de entidade acessados_ * um detalhamento dos _caminhos comuns_ * Uma lista das _principais 50 entidades_ do número total de entidades
 
 image:CS-Entities-Page.png["Página entidades"]
 

@@ -19,7 +19,7 @@ keywords: query, queries
 
 
 [role="lead"]
-As consultas permitem que você pesquise os ativos em seu ambiente em um nível granular, permitindo filtrar os dados que você deseja e classificar os resultados de acordo com o seu gosto.
+As consultas permitem que você pesquise os ativos em seu locatário em um nível granular, permitindo filtrar os dados que você deseja e classificar os resultados de acordo com o seu gosto.
 
 Por exemplo, você pode criar uma consulta para _volumes_, adicionar um filtro para localizar _storages_ específicos associados aos volumes selecionados, adicionar outro filtro para encontrar uma _anotação_ específica, como "Tier 1" nos armazenamentos selecionados e, finalmente, adicionar outro filtro para localizar todos os armazenamentos com _IOPS - leitura (IO/s)_ maior que 25. Quando os resultados são exibidos, você pode classificar as colunas de informações associadas à consulta em ordem crescente ou decrescente.
 

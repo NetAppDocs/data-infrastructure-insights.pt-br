@@ -19,7 +19,7 @@ keywords: dashboard, widget, custom, example, virtual machine, vm, performance
 
 
 [role="lead"]
-Atualmente, existem muitos desafios que as operações DE TI enfrentam. Os administradores precisam fazer mais com menos, e é preciso ter visibilidade total dos data centers dinâmicos. Neste exemplo, mostraremos como criar um painel com widgets que fornecem informações operacionais sobre o desempenho da máquina virtual (VM) em seu ambiente. Ao seguir este exemplo e criar widgets para atender às suas próprias necessidades específicas, você pode fazer coisas como visualizar o desempenho do armazenamento de back-end em comparação com o desempenho da máquina virtual frontend ou visualizar a latência da VM versus a demanda de e/S.
+Atualmente, existem muitos desafios que as operações DE TI enfrentam. Os administradores precisam fazer mais com menos, e é preciso ter visibilidade total dos data centers dinâmicos. Neste exemplo, mostraremos como criar um painel com widgets que fornecem informações operacionais sobre o desempenho da máquina virtual (VM) em seu locatário. Ao seguir este exemplo e criar widgets para atender às suas próprias necessidades específicas, você pode fazer coisas como visualizar o desempenho do armazenamento de back-end em comparação com o desempenho da máquina virtual frontend ou visualizar a latência da VM versus a demanda de e/S.
 
 .Sobre esta tarefa
 Aqui vamos criar um painel de desempenho de máquina virtual contendo o seguinte:
@@ -43,7 +43,7 @@ Abre-se a página *novo painel*.
 . Vamos começar a adicionar nossos widgets. Se necessário, clique no ícone *Editar* para ativar o modo Editar.
 . Clique no ícone *Adicionar widget* e selecione *Tabela* para adicionar um novo widget de tabela ao painel.
 +
-A caixa de diálogo Editar widget é aberta. Os dados padrão exibidos são para todos os armazenamentos em seu ambiente.
+A caixa de diálogo Editar widget é aberta. Os dados padrão exibidos são para todos os armazenamentos em seu locatário.
 
 
 
@@ -52,7 +52,7 @@ image:VMDashboard-TableWidget1.png["Caixa de diálogo Edit Table Widget"]
 . Podemos personalizar este widget. No campo Nome na parte superior, exclua "Widget 1" e digite "Tabela de desempenho da Máquina Virtual".
 . Clique no menu suspenso tipo de ativo e altere _Storage_ para _Virtual Machine_.
 +
-Os dados da tabela são alterados para mostrar todas as máquinas virtuais em seu ambiente.
+Os dados da tabela são alterados para mostrar todas as máquinas virtuais no locatário.
 
 . Vamos adicionar algumas colunas à tabela. Clique no ícone de engrenagem à direita e selecione _Hypervisor name_, _IOPS - total_ e _latência - total_. Você também pode tentar digitar o nome na pesquisa para exibir rapidamente o campo desejado.
 +

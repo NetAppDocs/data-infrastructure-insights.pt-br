@@ -19,7 +19,7 @@ summary: Os insights podem ajudar você a prever quando é provável que os espa
 
 
 [role="lead"]
-Ficar sem espaço em seu ambiente nunca é uma boa situação. O Data Infrastructure Insights ajuda a prever o tempo que você fez antes dos volumes persistentes do Kubernetes ficarem cheios.
+Ficar sem espaço em seu inquilino nunca é uma boa situação. O Data Infrastructure Insights ajuda a prever o tempo que você fez antes dos volumes persistentes do Kubernetes ficarem cheios.
 
 Os namespaces _Kubernetes em execução fora do espaço_ Insight oferecem uma visão das cargas de trabalho nos namespaces do Kubernetes que correm o risco de ficar sem espaço, com uma estimativa do número de dias restantes antes que cada volume persistente fique cheio.
 
