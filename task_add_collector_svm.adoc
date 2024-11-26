@@ -149,6 +149,28 @@ security login create -user-or-group-name csuser -application http -authmethod p
 ....
 
 
+=== Modo Protobuf
+
+A Segurança da carga de trabalho configurará o mecanismo FPolicy no modo protobuf quando esta opção estiver ativada nas configurações _Advanced Configuration_ do coletor. O modo Protobuf é suportado no ONTAP versão 9,15 e posterior.
+
+Mais detalhes sobre esse recurso podem ser encontrados no link:https://docs.netapp.com/us-en/ontap/nas-audit/steps-setup-fpolicy-config-concept.html["Documentação do ONTAP"].
+
+Permissões específicas são necessárias para o protobuf (algumas ou todas elas podem já existir):
+
+Modo de cluster:
+
+....
+security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <cluster_name>
+security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole
+....
+Modo SVM:
+
+....
+security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <svm_name>
+security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole -vserver <svm_name>
+....
+
+
 === Permissões para proteção autônoma contra ransomware do ONTAP e acesso à ONTAP negadas
 
 Se você estiver usando credenciais de administração de cluster, não serão necessárias novas permissões.
