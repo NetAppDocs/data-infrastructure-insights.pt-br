@@ -19,8 +19,6 @@ summary: O operador de monitoramento do Kubernetes coleta dados do Kubernetes pa
 O Data Infrastructure Insights oferece a coleção *Operador de Monitoramento do Kubernetes* para Kubernetes. Navegue até *Kubernetes > Collectors > Kubernetes Collector* para implantar um novo operador.
 
 
-toc::[]
-
 
 == Antes de instalar o operador de monitoramento do Kubernetes
 
@@ -65,15 +63,11 @@ image:KubernetesModifyDeploymentMenu.png["Modifique o menu de implantação na p
 
 O ecrã mostra o estado atual de cada componente e permite desativar ou ativar componentes para esse coletor, conforme necessário.
 
-image:KubernetesModifyDeploymentScreen.png["Opções de implantação do Mody, 700"]
+image:KubernetesModifyDeploymentScreen.png["Modifique as opções de implantação, largura de 700 mm"]
 
 
 
-== A atualizar
-
-
-
-=== Atualização para o operador de monitoramento mais recente do Kubernetes
+== Atualização para o operador de monitoramento mais recente do Kubernetes
 
 Determine se existe um AgentConfiguration com o Operador existente (se o seu namespace não for o _NetApp-monitoring_ padrão, substitua o namespace apropriado):
 
