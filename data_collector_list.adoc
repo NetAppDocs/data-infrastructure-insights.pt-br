@@ -250,6 +250,9 @@ Lista alfabética de coletores de dados suportados pelo Data Infrastructure Insi
 | link:task_dc_na_ontap_rest.html["Coletor de REPOUSO NetApp ONTAP"] | Infraestrutura 
 
 
+| link:task_dc_na_ontap_all_san_array.html["Coletor de array all-SAN NetApp ONTAP (ASA)"] | Infraestrutura 
+
+
 | link:task_dc_na_cdot.html["NetApp ONTAP Select"] | Infraestrutura 
 
 
@@ -305,6 +308,9 @@ Lista alfabética de coletores de dados suportados pelo Data Infrastructure Insi
 
 
 | link:task_config_telegraf_agent.html#ubuntu-and-debian["Ubuntu  Debian"] | Serviço 
+
+
+| link:task_dc_vast_datastore.html["Armazenamento de dados VASTO"] | Infraestrutura 
 
 
 | link:task_dc_vmware.html["VMware vSphere"] | Infraestrutura 

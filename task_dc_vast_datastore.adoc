@@ -1,0 +1,135 @@
+---
+sidebar: sidebar 
+permalink: task_dc_vast_datastore.html 
+keywords: data collector, VAST storage, VAST data 
+summary: Configurando o coletor de dados de armazenamento de dados do armazenamento de dados do VAST Data. 
+---
+= Coletor de dados do VASTO datastore
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+O Data Infrastructure Insights usa o coletor de dados do VAST datastore para coletar dados de inventário e performance.
+
+
+
+== Terminologia
+
+Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+
+
+| Transportadoras | Discos (parte do compartimento de disco do campo de localização) 
+
+
+| Cluster | Armazenamento 
+
+
+| CNodes | StorageNode (tipo cnode) 
+
+
+| DNodes | StorageNode (tipo dnode) 
+
+
+| NVRAMs | Discos 
+
+
+| Caminhos protegidos | Sincronização interna do volume 
+
+
+| Políticas DE QoS | Volume interno (limites DE QOS) 
+
+
+| Quotas | Cota 
+
+
+| SSDs | Discos 
+
+
+| Inquilinos | Storage Virtual Machine 
+
+
+| ViewPolicies | FileShare (para permissões) 
+
+
+| Vistas | Volume interno 
+|===
+Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+
+
+
+== Requisitos
+
+* Endereço IP do sistema de armazenamento de dados VASTO ou nome de domínio totalmente qualificado
+* Username / Password para aceder ao VASTO sistema
+* Requisito de porta: HTTPS 443
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Armazenamento de dados VAST IP/nome de host | Endereço IP ou FQDN do sistema de armazenamento 
+
+
+| Utilizador | Nome de utilizador do armazenamento VASTO 
+
+
+| Palavra-passe | Senha de armazenamento VASTO 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Tipo de ligação | Escolha HTTP ou HTTPS. Também exibe a porta padrão. 
+
+
+| Substituir a porta TCP | Se estiver em branco, use a porta padrão no campo tipo de conexão; caso contrário, insira a porta de conexão a ser usada 
+
+
+| Intervalo de pesquisa de inventário (min) | O padrão é 60 minutos 
+
+
+| Intervalo de enquete de desempenho (seg) | A predefinição é 300 
+|===
+
+
+== Solução de problemas
+
+Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+
+
+
+=== Inventário
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
+| "Credenciais de login inválidas" com mensagens de erro "a política não permite" ou "você não está autorizado" | Valide a conta de usuário e a senha da Pure através da interface http da Pure 
+|===
+Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
