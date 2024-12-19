@@ -20,7 +20,43 @@ A NetApp está continuamente melhorando e aprimorando seus produtos e serviços.
 
 
 
+== Dezembro de 2024
+
+
+
+=== Apresentamos o SAN Analyzer: Visibilidade aprimorada para workloads de bloco
+
+A SAN desempenha um papel crucial no tratamento de workloads vitais, mas sua complexidade pode resultar em interrupções significativas e interrupções dos clientes. Com o *SAN Analyzer* da DII, o gerenciamento de SAN torna-se mais simples e eficiente. Essa poderosa ferramenta oferece visibilidade completa, mapeando dependências de VM/host para rede, LUN e armazenamento. Ao fornecer um mapa de topologia interativo, o SAN Analyzer permite identificar problemas, entender alterações e melhorar a compreensão do fluxo de dados. Otimize o gerenciamento de SAN em AMBIENTES DE TI complexos com o SAN Analyzer e aumente a visibilidade dos workloads de bloco.
+
+image:san_analyzer_example_with_panel.png["Mapa de topologia de um sistema de storage do SAN Analyzer"]
+
+
+
+=== Otimize os custos de VM com desativação de host inteligente e recuperação de VM
+
+O Data Infrastructure Insights ajuda a gerenciar os custos de infraestrutura e licenciamento, analisando o comportamento histórico do ambiente e estabelecendo previsões de curto e longo prazo, gerando recomendações detalhadas para desativação de host e recuperação de VMs desativadas e ociosas. Essas recomendações ajudam você a garantir a estabilidade do desempenho, liberar a capacidade não utilizada e reduzir a alocação de memória e CPU.
+
+image:vm_optimization_summary.png["Ecrã Resumo da otimização da VM"]
+
+
+
+=== Descubra insights de log com suporte a gráficos de tempo e widget de tabela
+
+Agora você pode aproveitar os gráficos de tempo (barra, linha, área) para identificar tendências e padrões nos dados de log, como erros recorrentes ou picos de atividade, fornecendo informações valiosas sobre o comportamento do sistema ao longo do tempo. Além disso, com tabelas, agora você pode incluir mensagens de log diretamente no painel, permitindo uma visualização mais abrangente dos detalhes do log.
+
+image:log_insights_dashboard_example.png["registre insights em um painel"]
+
+
+
 == Novembro de 2024
+
+
+
+=== Nova API de alertas de segurança de workload
+
+Recupere detalhes de alerta forense com o novo Workload Security link:concept_cs_api.html["*Cloudsecure_forensics.alerts* API"].
+
+image:ws_forensics_alerts_api.png["API de alertas de segurança de carga de trabalho"]
 
 
 
