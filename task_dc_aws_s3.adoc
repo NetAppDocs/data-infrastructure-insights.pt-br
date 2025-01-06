@@ -119,12 +119,6 @@ Observe que a AWS diferencia maiúsculas de minúsculas, enquanto o Data Infrast
 
 
 
-== Incluir Regiões extra
-
-Na seção AWS Data Collector *Configuração avançada*, você pode definir o campo *incluir regiões extras* para incluir regiões adicionais, separadas por vírgula ou ponto e vírgula. Por padrão, esse campo é definido como *_US-.*_*, que é coletado em todas as regiões da AWS dos EUA. Para coletar em _todas_ regiões, defina este campo como *_.*_*. Se o campo *incluir regiões extras* estiver vazio, o coletor de dados coletará os ativos especificados no campo *região AWS* conforme especificado na seção *Configuração*.
-
-
-
 == Coleta de contas AWS Child
 
 O Data Infrastructure Insights dá suporte à coleta de contas filhas para a AWS em um único coletor de dados da AWS. A configuração para essa coleção é executada no ambiente AWS:

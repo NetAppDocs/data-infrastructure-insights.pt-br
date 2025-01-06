@@ -48,6 +48,15 @@ image:log_insights_dashboard_example.png["registre insights em um painel"]
 
 
 
+=== Gerencie o risco de forma proativa com agrupamento Forensics
+
+Apresentamos a nossa mais recente funcionalidade concebida para melhorar as suas capacidades de segurança e gestão de recursos! Com a funcionalidade forense avançada Group-by e o suporte hierárquico de vários grupos, agora você pode identificar facilmente quais usuários acessaram pastas específicas, determinar os usuários e compartilhamentos mais ativos e gerenciar proativamente o risco rastreando endereços IP de clientes ativos. Otimize seu armazenamento e uso de largura de banda identificando os arquivos e pastas mais acessados e obtenha maior controle sobre o acesso ao sistema, identificando usuários reais.
+
+image:forensics-group-by-example-screen.png["ecrã de exemplo forensics mostrando group-by (por grupo)"]
+
+'''
+
+
 == Novembro de 2024
 
 
