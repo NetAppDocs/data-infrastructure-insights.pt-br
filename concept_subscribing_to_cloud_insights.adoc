@@ -25,7 +25,7 @@ Os primeiros passos do Data Infrastructure Insights são tão fáceis quanto tr�
 
 Durante o processo de Registro, você pode escolher a região global para hospedar seu ambiente Data Infrastructure Insights. Para obter mais informações, leia sobre o Data Infrastructure Insights link:security_information_and_region.html["Informação e região"].
 
-Para obter uma comparação completa dos recursos disponíveis nas edições Data Infrastructure Insights Basic e Premium, consulte a link:https://www.netapp.com/cloud-services/cloud-insights/editions-pricing["Preços do Data Infrastructure Insights"] página.
+Para obter uma comparação completa dos recursos disponíveis nas edições Data Infrastructure Insights Basic e Premium, consulte a link:https://www.netapp.com/cloud-services/cloud-insights/editions-pricing["Edições do Data Infrastructure Insights"] página.
 
 
 WARNING: Os ambientes inativos do Data Infrastructure Insights Basic Edition são excluídos e seus recursos são recuperados. Um ambiente é considerado inativo se não houver atividade do usuário por 30 dias consecutivos, se não houver dados ingeridos por 7 dias consecutivos. O Data Infrastructure Insights enviará uma notificação e fornecerá um período de carência de quatro dias antes que um ambiente seja excluído.
