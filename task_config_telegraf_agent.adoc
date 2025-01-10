@@ -29,7 +29,7 @@ Para obter informações sobre como instalar no Kubernetes, consulte a link:task
 NOTE: Para uma auditoria precisa e relatórios de dados, é altamente recomendável sincronizar a hora na máquina do agente usando *Network Time Protocol (NTP)* ou *Simple Network Time Protocol (SNTP)*.
 
 
-NOTE: Se você quiser verificar os arquivos de instalação antes de instalar o Agente, consulte a seção abaixo em <<Verificando somas de verificação>>.
+NOTE: Se você quiser verificar os arquivos de instalação antes de instalar o Agente, consulte a seção abaixo em <<Verifying Checksums>>.
 
 
 
@@ -364,9 +364,9 @@ systemctl stop telegraf (If your operating system is using systemd)
 
 
 
-== Verificando somas de verificação
+== Verificando somas de verificação do pacote Telegraf
 
-O instalador do agente Data Infrastructure Insights executa verificações de integridade, mas alguns usuários podem querer executar suas próprias verificações antes de instalar ou aplicar artefatos baixados. Isso pode ser feito baixando o instalador e gerando uma soma de verificação para o pacote baixado e comparando a soma de verificação com o valor mostrado nas instruções de instalação.
+O instalador do agente Data Infrastructure Insights executa verificações de integridade, mas alguns usuários podem querer executar suas próprias verificações antes de instalar o binário Telegraf baixado. Isso pode ser feito baixando o instalador e gerando uma soma de verificação para o pacote baixado e comparando a soma de verificação com o valor mostrado nas instruções de instalação.
 
 
 
@@ -387,35 +387,36 @@ Não Windows (estes exemplos são para o Kubernetes; os nomes de script reais po
 
 * Transferir e instalar (predefinição):
 +
- installerName=cloudinsights-kubernetes.sh … && sudo -E -H ./$installerName --download –-install
+ installerName=cloudinsights-ubuntu_debian.sh … && ./$installerName --download --verify && sudo -E -H ./$installerName --install
 * Apenas transferência:
 +
- installerName=cloudinsights-kubernetes.sh … && sudo -E -H ./$installerName --download
+ installerName=cloudinsights-ubuntu_debian.sh … && ./$installerName --download --verify
 
 
 Windows:
 
 * Transferir e instalar (predefinição):
 +
- !$($installerName=".\cloudinsights-windows.ps1") … -and $(&$installerName -download -install)
+ !$($installerName=".\cloudinsights-windows.ps1") … -and $(if(((Get-FileHash $installerName).Hash).ToLower() -eq "INSTALLER_CHECKSUM ") { &$installerName -download -verify -install } else { Write-Host "Install script checksum does not match"})"
 * Apenas transferência:
 +
- !$($installerName=".\cloudinsights-windows.ps1") … -and $(&$installerName -download)
+ !$($installerName=".\cloudinsights-windows.ps1") … -and $(if(((Get-FileHash $installerName).Hash).ToLower() -eq "INSTALLER_CHECKSUM ") { &$installerName -download -verify } else { Write-Host "Install script checksum does not match"})"
 
 
 O comando somente download fará o download de todos os artefatos necessários do Data Infrastructure Insights para o diretório de trabalho. Os artefactos incluem, mas podem não estar limitados a:
 
 * um script de instalação
 * um arquivo de ambiente
-* Ficheiros YAML
-* um arquivo de checksum (terminando em sha256.signed ou sha256.ps1)
+* Um binário Telegraf
+* Uma assinatura para o binário Telegraf
+* um certificado público para verificar a assinatura binária
 
 
-O script de instalação, o arquivo de ambiente e os arquivos YAML podem ser verificados usando a inspeção visual.
+O snippet de instalação baixado e copiado do DII verifica automaticamente o script de instalação e a assinatura do binário telegraf é verificada pelo script de instalação.
 
 
 
-=== Gerar valor de soma de verificação
+=== Verifique o valor da soma de verificação
 
 Para gerar o valor da soma de verificação, execute o seguinte comando para sua plataforma apropriada:
 
@@ -425,20 +426,6 @@ Para gerar o valor da soma de verificação, execute o seguinte comando para sua
 * Windows:
 +
  Get-FileHash telegraf.zip -Algorithm SHA256 | Format-List
-
-
-
-
-=== Verifique a soma de verificação
-
-Extraia o checksum esperado do arquivo checksum
-
-* Não janelas:
-+
- openssl smime -verify -in telegraf*.sha256.signed -CAfile netapp_cert.pem -purpose any -nosigs -noverify
-* Windows:
-+
- (Get-Content telegraf.zip.sha256.ps1 -First 1).toUpper()
 
 
 

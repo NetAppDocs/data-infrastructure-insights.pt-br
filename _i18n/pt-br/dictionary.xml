@@ -6554,10 +6554,7 @@
   <block id="b5648f15565fb8185bfc83aaabee9577" category="paragraph">Se o seu sistema operacional não estiver usando systemd:</block>
   <block id="936ff88b3ce432ac2624f7f2bb4998a4" category="paragraph">Para desinstalar o agente no Ubuntu/Debian, em um terminal Bash, execute o seguinte:</block>
   <block id="7f3a9bda6122a676154f73d5edf02232" category="list-text"><block ref="760050cb55c606cd7ef0af21f798bf45" category="inline-link-macro-rx"></block>.</block>
-  <block id="99b7973dda927022b1a7232d7b78e926" category="section-title">Verificando somas de verificação</block>
-  <block id="6a9aa39bb342c83778b90096fb82f44f" category="paragraph">O instalador do agente Data Infrastructure Insights executa verificações de integridade, mas alguns usuários podem querer executar suas próprias verificações antes de instalar ou aplicar artefatos baixados. Isso pode ser feito baixando o instalador e gerando uma soma de verificação para o pacote baixado e comparando a soma de verificação com o valor mostrado nas instruções de instalação.</block>
   <block id="1078df24543dad61e1b5b51f611f5b0f" category="section-title">Baixe o pacote de instalação sem instalar</block>
-  <block id="48feb91430f93bd8ac9740e9cdc40c75" category="paragraph">Para executar uma operação somente de download (em oposição ao download-e-install padrão), os usuários podem editar o comando de instalação do agente obtido a partir da interface do usuário e remover a opção "install".</block>
   <block id="deadee5e2cfce7600cfd5def40a7d618" category="paragraph">Siga estes passos:</block>
   <block id="8c386e0a7a8cfc20ef9a26dacd925e69" category="list-text">Copie o snippet do Agent Installer como indicado.</block>
   <block id="225b18b0098145b352b8fbf6c04e8098" category="list-text">Em vez de colar o snippet em uma janela de comando, cole-o em um editor de texto.</block>
@@ -6571,14 +6568,8 @@
   <block id="37756806bad02e3e8fb3d5413278c336" category="paragraph">O comando somente download fará o download de todos os artefatos necessários do Data Infrastructure Insights para o diretório de trabalho. Os artefactos incluem, mas podem não estar limitados a:</block>
   <block id="8d4a361a3f25b78818c569d8f15cf4a6" category="list-text">um script de instalação</block>
   <block id="b015398c226e1e3576258432ece31819" category="list-text">um arquivo de ambiente</block>
-  <block id="004cac3ce7d67014b5fadcffaf9b5b70" category="list-text">Ficheiros YAML</block>
-  <block id="9f32134bbefffdc9df70a2d73c2df6a6" category="list-text">um arquivo de checksum (terminando em sha256.signed ou sha256.ps1)</block>
-  <block id="4f1c754cd67cd57cebe0be2f5e8638a4" category="paragraph">O script de instalação, o arquivo de ambiente e os arquivos YAML podem ser verificados usando a inspeção visual.</block>
-  <block id="d8f6d626cfe2a4f97d97ff93d95db51b" category="section-title">Gerar valor de soma de verificação</block>
   <block id="d1703bc5bb53c90ffbbae52dfe829603" category="paragraph">Para gerar o valor da soma de verificação, execute o seguinte comando para sua plataforma apropriada:</block>
   <block id="9374ddadb9776b458a2963573b22f63d" category="list-text">RHEL/Ubuntu:</block>
-  <block id="aacd43790bd404cab1a350cb047a9a9d" category="section-title">Verifique a soma de verificação</block>
-  <block id="43e3c65a555911ad6d7235d9e9206e4c" category="paragraph">Extraia o checksum esperado do arquivo checksum</block>
   <block id="47a6cd89e04d0d805a75aa0fe5822c20" category="list-text">Não janelas:</block>
   <block id="b59ea01f26635c31c3c1df660848f6c8" category="section-title">Instale o pacote transferido</block>
   <block id="6c32334bfce9f857b0fdbdca68040a0b" category="paragraph">Uma vez que todos os artefatos tenham sido verificados satisfatoriamente, a instalação do agente pode ser iniciada executando:</block>
@@ -11888,4 +11879,12 @@
   <block id="d932f771e537d16693bed2e69269a746" category="paragraph"><block ref="d932f771e537d16693bed2e69269a746" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ee0b2f1c8ad7945cf603e8d752a5e7b5" category="inline-link-macro">Edições do Data Infrastructure Insights</block>
   <block id="bbf9080a1bf1fb2f62558ce683d64be0" category="paragraph">Para obter uma comparação completa dos recursos disponíveis nas edições Data Infrastructure Insights Basic e Premium, consulte a <block ref="49bb501f6c401ae5b06c3dbe5fc987bd" category="inline-link-macro-rx"></block> página.</block>
+  <block id="3bbdd1e5a1fbf0d58680e594b8806722" category="section-title">Verificando somas de verificação do pacote Telegraf</block>
+  <block id="7ff5578ba477d9e2321cffdc188dd439" category="paragraph">O instalador do agente Data Infrastructure Insights executa verificações de integridade, mas alguns usuários podem querer executar suas próprias verificações antes de instalar o binário Telegraf baixado. Isso pode ser feito baixando o instalador e gerando uma soma de verificação para o pacote baixado e comparando a soma de verificação com o valor mostrado nas instruções de instalação.</block>
+  <block id="741ebc51b7127a27c632897c49b71ad3" category="paragraph">Para executar uma operação somente de download (em oposição ao download-e-install padrão), os usuários podem editar o comando de instalação do agente obtido a partir da interface do usuário e remover a opção "install".</block>
+  <block id="8b5391cb0617a6870147a0c34743013d" category="list-text">Um binário Telegraf</block>
+  <block id="6b15d8f349fa2e771a92e4131bcae2d2" category="list-text">Uma assinatura para o binário Telegraf</block>
+  <block id="b7e85347cdffb5889c57e4b1ad785a2e" category="list-text">um certificado público para verificar a assinatura binária</block>
+  <block id="bfc63dcde995168de645c7c0b1b67357" category="paragraph">O snippet de instalação baixado e copiado do DII verifica automaticamente o script de instalação e a assinatura do binário telegraf é verificada pelo script de instalação.</block>
+  <block id="26f2872f4049fcba9927c1b41d6502d3" category="section-title">Verifique o valor da soma de verificação</block>
 </blocks>
