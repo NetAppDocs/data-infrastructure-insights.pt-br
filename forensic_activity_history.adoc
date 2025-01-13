@@ -55,7 +55,7 @@ A tabela _*All Activity*_ mostra as seguintes informações. Observe que nem tod
 ** *Outra alteração* - qualquer outro evento que não esteja descrito acima. Todos os eventos não mapeados são mapeados para o tipo de atividade "outra mudança". Aplicável a ficheiros e pastas.
 
 
-* O *Path* é _entity_ path.
+* O *Path* é _entity_ path. Este deve ser o caminho exato da entidade (por exemplo, "_/home/userX/nested1/nested2/abc.txt_") OU parte do diretório do caminho para pesquisa recursiva (por exemplo, "_/home/userX/nested1/nested2/_"). NOTA: Padrões de caminho regex (por exemplo, _userX_) NÃO são permitidos aqui. Alternativamente, filtros de nível de pasta de caminho individuais, como mencionado abaixo, também podem ser especificados para filtragem de caminho.
 * A pasta de nível *1st (raiz)* é o diretório raiz do caminho da entidade em letras minúsculas.
 * A pasta de nível *2nd* é o diretório de segundo nível do caminho da entidade em letras minúsculas.
 * A pasta de nível *3rd* é o diretório de terceiro nível do caminho da entidade em letras minúsculas.
@@ -112,7 +112,7 @@ Você pode filtrar os dados de atividade Forense pelos seguintes campos:
 Os seguintes campos estão sujeitos a regras especiais de filtragem:
 
 * *Entity Type*, usando a extensão entity (file) - é preferível especificar o tipo exato de entidade dentro de aspas. Por exemplo _"txt"_.
-* *Path* da entidade - filtros de caminho de diretório (string de caminho que termina com /) até 4 diretórios profundos são recomendados para resultados mais rápidos. Por exemplo, _"/home/userX/nested1/nested2/"_. Consulte a tabela abaixo para obter mais detalhes.
+* * Caminho* da entidade - este deve ser o caminho exato da entidade (por exemplo, "_/home/userX/nested1/nested2/abc.txt_") OU parte do diretório do caminho para pesquisa recursiva (por exemplo, "_/home/userX/nested1/nested2/_"). NOTA: Padrões de caminho regex (por exemplo, *userX*) NÃO são permitidos aqui. Filtros de caminho de diretório (string de caminho que termina com /) até 4 diretórios profundos são recomendados para resultados mais rápidos. Por exemplo, "_/home/userX/nested1/nested2/_". Consulte a tabela abaixo para obter mais detalhes.
 * 1st Level Folder (root) - diretório raiz do Entity Path como filtros. Por exemplo, se o caminho da entidade for /home/userX/nested1/nested2/, então Home OU "Home" pode ser usado.
 * Pasta de nível 2nd - diretório de nível 2nd dos filtros Entity Path. Por exemplo, se o caminho da entidade é /home/userX/nested1/nested2/, então userX OU "userX" pode ser usado.
 * Pasta de nível 3rd – diretório de nível 3rd dos filtros Entity Path.
@@ -145,7 +145,7 @@ Os campos anteriores estão sujeitos ao seguinte ao filtrar:
 | Caminho: "/home/userX/nested1/" | Pesquisa recursiva de todos os arquivos e pastas sob determinado diretório | Rápido | Pesquisas de diretório até 4 diretórios serão rápidas. 
 
 
-| Caminho: "/home/userX/nested1/test" | Pesquisa recursiva de todos os arquivos e pastas sob determinado caminho regex(test* pode significar ARQUIVO OU diretório OU ambos) | Mais lento | A pesquisa de regex será mais lenta em comparação com as pesquisas de diretório. 
+| Caminho: "/home/userX/nested1/test" | Correspondência exata onde o valor do caminho corresponde a /home/userX/nested1/test | Mais lento | A pesquisa exata será mais lenta em comparação com as pesquisas de diretório. 
 
 
 | Caminho: "/home/userX/nested1/nested2/nested3/" | Pesquisa recursiva de todos os arquivos e pastas sob determinado diretório | Mais lento | Mais de 4 buscas de diretórios são mais lentas para pesquisar. 
@@ -230,7 +230,7 @@ O histórico de atividades é retido por 13 meses para ambientes ativos de segur
 |===
 
 
-== Pesquisa de caminho / caminho original
+== Pesquisa de caminho
 
 Os resultados da pesquisa com e sem / serão diferentes
 

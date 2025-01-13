@@ -4034,9 +4034,7 @@
   <block id="1fec62ac6ef0096301dec6c9552701f7" category="cell">Pesquisa recursiva de todos os arquivos e pastas sob determinado diretório</block>
   <block id="e16b5b7f26f54214445cbe38d72c2828" category="cell">Rápido</block>
   <block id="f6a092f816e6eb604694d6a921395ccb" category="cell">Pesquisas de diretório até 4 diretórios serão rápidas.</block>
-  <block id="840207e609d7b9a7b687b3b2712e903d" category="cell">Pesquisa recursiva de todos os arquivos e pastas sob determinado caminho regex(test* pode significar ARQUIVO OU diretório OU ambos)</block>
   <block id="e7b02c274fe199317927b2a2d54e280e" category="cell">Mais lento</block>
-  <block id="4b88bc6659fa6ffa1353db049ea38556" category="cell">A pesquisa de regex será mais lenta em comparação com as pesquisas de diretório.</block>
   <block id="1bd0462f5987c1382af61035c6ea62ff" category="cell">Mais de 4 buscas de diretórios são mais lentas para pesquisar.</block>
   <block id="2127f473d96f54c997a492a6ca024c5b" category="cell">Quaisquer outros filtros não baseados em caminho. Filtros de tipo de usuário e entidade recomendados para estar entre aspas, por exemplo,</block>
   <block id="9b9935ad5969c28de13381a2e512b47c" category="paragraph">NOTA:</block>
@@ -4071,7 +4069,6 @@
   <block id="e0c965c954b5a9fdc33c5b0516799f7d" category="cell">Retorna tudo o que não começa com"AutoRansomUser4_03162022"</block>
   <block id="eae639a70006feff484a39363c977e24" category="cell">Domínio</block>
   <block id="3c16a1572c295ef2bbd770516679c559" category="cell">retorna resultados onde o campo de destino está vazio</block>
-  <block id="012f3ec70fcf8eccc1fce56e4a0b94b6" category="section-title">Pesquisa de caminho / caminho original</block>
   <block id="64048c881c93933680d02730e9d9ce63" category="paragraph">Os resultados da pesquisa com e sem / serão diferentes</block>
   <block id="53ca5edb3205aa3468395e1789114a60" category="cell">Não funciona</block>
   <block id="1d7531d059e4088a0878ea4eb94d32b6" category="cell">"/AutoDir1/AutoFile03242022"</block>
@@ -11587,7 +11584,6 @@
   <block id="8b323f07a8614b39412ac6f03ce45d0e" category="sidebar">Gerenciamento de usuários de segurança de carga de trabalho</block>
   <block id="abc492c54ab99cf963d50d67acb42565" category="sidebar">Verificador da taxa de eventos (Guia de dimensionamento do agente)</block>
   <block id="a8df87f53c1b831dfc886e69dec19144" category="sidebar">Atividade forense - toda atividade</block>
-  <block id="e5ac43b15443b9248d0df9b88a442cf9" category="sidebar">Atividade Forensics - entidades</block>
   <block id="f9aae5fda8d810a29f12d1e61b4ab25f" category="sidebar">Usuários</block>
   <block id="9b5911ec569b49f0ae81ecb2c9067806" category="sidebar">Integração da proteção autônoma contra ransomware do ONTAP</block>
   <block id="1c31d515d2e78422350a8dfc6a331a38" category="sidebar">Integração negada de Acesso à ONTAP</block>
@@ -11835,7 +11831,6 @@
   <block id="ce0a4ef9bdcf713141ba5af92b5449a2" category="list-text">Um grupo por lista suspensa fornecerá a opção de agrupar a atividade por usuários, caminho, tipo de entidade etc.</block>
   <block id="2f67a7ee2834facb4c2289f3f9f8a7b0" category="list-text">Um botão de caminho comum estará disponível acima da tabela em clique da qual podemos obter slide out painel com detalhes de caminho de entidade.</block>
   <block id="2b9b3cac1b8e073b6533f3389ac6ad5f" category="list-text">O *usuário* que acessou a entidade com um link para o <block ref="62cf04ad66abc0c5964885d5ae0624ca" category="inline-link-macro-rx"></block> como um painel deslizante.</block>
-  <block id="06bc22bdba9ef782b6246496ad8db1bd" category="list-text">O *Path* é _entity_ path.</block>
   <block id="2c20ae8e4eac25c0be12e73a9aea15f8" category="list-text">A pasta de nível *1st (raiz)* é o diretório raiz do caminho da entidade em letras minúsculas.</block>
   <block id="d56292c623739eef9a2dbb8219169c5c" category="list-text">A pasta de nível *2nd* é o diretório de segundo nível do caminho da entidade em letras minúsculas.</block>
   <block id="21a75329f45abb51a3f768e3caaf47c5" category="list-text">A pasta de nível *3rd* é o diretório de terceiro nível do caminho da entidade em letras minúsculas.</block>
@@ -11849,7 +11844,6 @@
   <block id="80662c9452da0395efcb752fc6efd791" category="list-text">A contagem de atividades é apresentada como uma hiperligação; selecionar esta opção irá adicionar o agrupamento selecionado como um filtro. A tabela de atividade será atualizada com base nesse filtro.</block>
   <block id="f5048103eec701282d4bd47edb30c0dd" category="list-text">Observe que se você alterar o filtro, alterar o intervalo de tempo ou atualizar a tela, não será possível retornar aos resultados filtrados sem definir o filtro novamente.</block>
   <block id="a7b9ef6a74f521c07a42dfe2b3ba5984" category="list-text">O filtro pode ser adicionado a partir do painel deslizante. O valor é adicionado aos filtros apropriados na lista acima _Filtrar por_.</block>
-  <block id="a6c33488a3d8762852d55cced3c5bf96" category="list-text">*Path* da entidade - filtros de caminho de diretório (string de caminho que termina com /) até 4 diretórios profundos são recomendados para resultados mais rápidos. Por exemplo, _"/home/userX/nested1/nested2/"_. Consulte a tabela abaixo para obter mais detalhes.</block>
   <block id="abc9548bbf938c1b00d7d7943eea69c6" category="list-text">1st Level Folder (root) - diretório raiz do Entity Path como filtros. Por exemplo, se o caminho da entidade for /home/userX/nested1/nested2/, então Home OU "Home" pode ser usado.</block>
   <block id="ef05d086fd7703f59da830094683f26b" category="list-text">Pasta de nível 2nd - diretório de nível 2nd dos filtros Entity Path. Por exemplo, se o caminho da entidade é /home/userX/nested1/nested2/, então userX OU "userX" pode ser usado.</block>
   <block id="d09c77be27888e5715284768b4b56a37" category="list-text">Pasta de nível 3rd – diretório de nível 3rd dos filtros Entity Path.</block>
@@ -11873,10 +11867,6 @@
   <block id="17411e5191f440928552bd359518e697" category="cell">Funciona; retorna todas as atividades com diretório de 1st níveis que correspondem com diretório de AutoDir1 e 2nd níveis que correspondem com AutoFile03242022 (caso insensível)</block>
   <block id="a874dae9695be1c2a6ef02373776f7b7" category="cell">Um asterisco (*) na cadeia de pesquisa procura tudo. No entanto, as cadeias de carateres curinga principais como _*&lt;searchTerm&gt;_ ou _*&lt;searchTerm&gt;*_ resultarão em uma consulta lenta. Para obter um melhor desempenho, use strings de prefixo no formato _&lt;searchTerm&gt;*_ (em outras palavras, anexe o asterisco (*) _after_ um termo de pesquisa). Exemplo: Use a string _testvolume*_, em vez de _*testvolume_ ou _*test*volume_. Use uma pesquisa de diretório para ver todas as atividades abaixo de uma determinada pasta recursivamente (pesquisa hierárquica). Por exemplo, "/path1/path2/path3/" listará todas as atividades recursivamente em /path1/path2/path3. Alternativamente, use a opção "Adicionar ao filtro" na guia todas as atividades."</block>
   <block id="980f8b6539b7c131f66cdde66f81a98f" category="cell">Filtros de caminho de diretório (string de caminho terminando com /) até 4 diretórios profundos são recomendados para resultados mais rápidos. Por exemplo, se o caminho de diretório for /AAA/BBB/CCC/DDD, tente pesquisar "/AAA/BBB/CCC/DDD/" para carregar dados mais rapidamente.</block>
-  <block id="26ae3eeb85fe056d40f1b756635ebb59" category="section-title">Gerencie o risco de forma proativa com agrupamento Forensics</block>
-  <block id="144b03f9a57dbd781b29163e6412a6a3" category="paragraph">Apresentamos a nossa mais recente funcionalidade concebida para melhorar as suas capacidades de segurança e gestão de recursos! Com a funcionalidade forense avançada Group-by e o suporte hierárquico de vários grupos, agora você pode identificar facilmente quais usuários acessaram pastas específicas, determinar os usuários e compartilhamentos mais ativos e gerenciar proativamente o risco rastreando endereços IP de clientes ativos. Otimize seu armazenamento e uso de largura de banda identificando os arquivos e pastas mais acessados e obtenha maior controle sobre o acesso ao sistema, identificando usuários reais.</block>
-  <block id="15b5571e4da70619b1e8530a8df35661" category="inline-image-macro">ecrã de exemplo forensics mostrando group-by (por grupo)</block>
-  <block id="d932f771e537d16693bed2e69269a746" category="paragraph"><block ref="d932f771e537d16693bed2e69269a746" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ee0b2f1c8ad7945cf603e8d752a5e7b5" category="inline-link-macro">Edições do Data Infrastructure Insights</block>
   <block id="bbf9080a1bf1fb2f62558ce683d64be0" category="paragraph">Para obter uma comparação completa dos recursos disponíveis nas edições Data Infrastructure Insights Basic e Premium, consulte a <block ref="49bb501f6c401ae5b06c3dbe5fc987bd" category="inline-link-macro-rx"></block> página.</block>
   <block id="3bbdd1e5a1fbf0d58680e594b8806722" category="section-title">Verificando somas de verificação do pacote Telegraf</block>
@@ -11887,4 +11877,18 @@
   <block id="b7e85347cdffb5889c57e4b1ad785a2e" category="list-text">um certificado público para verificar a assinatura binária</block>
   <block id="bfc63dcde995168de645c7c0b1b67357" category="paragraph">O snippet de instalação baixado e copiado do DII verifica automaticamente o script de instalação e a assinatura do binário telegraf é verificada pelo script de instalação.</block>
   <block id="26f2872f4049fcba9927c1b41d6502d3" category="section-title">Verifique o valor da soma de verificação</block>
+  <block id="9dd6e3f1271bf8cdcd9a0becace5f06f" category="section-title">Janeiro de 2025</block>
+  <block id="d482be2df573f6eb04e440a4a05482a1" category="section-title">Gerencie de forma proativa o risco com agrupamento Forensics</block>
+  <block id="2e6b3809f9d5218f35a0a7a320263e07" category="paragraph">Apresentamos a nossa mais recente funcionalidade concebida para melhorar as suas capacidades de segurança e gestão de recursos! Com a funcionalidade avançada de grupo por e o suporte hierárquico de grupo por grupo múltiplo, agora é possível identificar facilmente os utilizadores que acederam a pastas específicas, determinar os utilizadores e partilhas mais ativos e gerir proativamente os riscos através do controlo de endereços IP de cliente ativos. Otimize seu armazenamento e uso de largura de banda identificando os arquivos e pastas mais acessados e obtenha maior controle sobre o acesso ao sistema identificando usuários.</block>
+  <block id="7c86c6e5a05df9478bfb181de6b56a05" category="inline-image-macro">ecrã de exemplo de monitorização de atividade forense</block>
+  <block id="e14be859c412d77ea3be17beace7319c" category="paragraph"><block ref="e14be859c412d77ea3be17beace7319c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b6e54264047927b79be771cbfd2b5201" category="section-title">Controle de acesso ao painel de controle</block>
+  <block id="84229233ad61c44b8e53075992f6c8a5" category="paragraph">O Data Infrastructure Insights agora oferece maior controle sobre o acesso aos painéis que você cria. Você escolhe quem pode modificar seus gráficos. Você controla a exposição a informações potencialmente confidenciais. Ainda está trabalhando em um painel que não está pronto para visibilidade geral? Você pode mantê-lo privado até que você esteja pronto para compartilhá-lo.</block>
+  <block id="f916d734e48a8724b0f8c434b43a06a7" category="inline-image-macro">opções de compartilhamento do painel</block>
+  <block id="e2d1989486babbb3dc0993863f9f4ef8" category="paragraph"><block ref="e2d1989486babbb3dc0993863f9f4ef8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c278bdd917e4f32f7d8a13861d3c1a43" category="list-text">O *Path* é _entity_ path. Este deve ser o caminho exato da entidade (por exemplo, "_/home/userX/nested1/nested2/abc.txt_") OU parte do diretório do caminho para pesquisa recursiva (por exemplo, "_/home/userX/nested1/nested2/_"). NOTA: Padrões de caminho regex (por exemplo, _userX_) NÃO são permitidos aqui. Alternativamente, filtros de nível de pasta de caminho individuais, como mencionado abaixo, também podem ser especificados para filtragem de caminho.</block>
+  <block id="09cde459dc94ebcdb7fb39e8a2b6e65f" category="list-text">* Caminho* da entidade - este deve ser o caminho exato da entidade (por exemplo, "_/home/userX/nested1/nested2/abc.txt_") OU parte do diretório do caminho para pesquisa recursiva (por exemplo, "_/home/userX/nested1/nested2/_"). NOTA: Padrões de caminho regex (por exemplo, *userX*) NÃO são permitidos aqui. Filtros de caminho de diretório (string de caminho que termina com /) até 4 diretórios profundos são recomendados para resultados mais rápidos. Por exemplo, "_/home/userX/nested1/nested2/_". Consulte a tabela abaixo para obter mais detalhes.</block>
+  <block id="39dfb1596c6a6cd5efc77677cffa9f47" category="cell">Correspondência exata onde o valor do caminho corresponde a /home/userX/nested1/test</block>
+  <block id="67796eee76b434ba7f714f24fce77a4c" category="cell">A pesquisa exata será mais lenta em comparação com as pesquisas de diretório.</block>
+  <block id="ee884ab6f8aeb5114dc04fcb169533de" category="section-title">Pesquisa de caminho</block>
 </blocks>
