@@ -442,6 +442,41 @@ Windows:
  .\cloudinsights-windows.ps1 -install
 
 
+== Criando e usando tokens de acesso à API
+
+Para criar um token de acesso à API para ingestão de dados Telegraf, siga um destes procedimentos:
+
+
+
+=== Crie através da página de instalação do Data Collector
+
+. Navegue até a página de instalação do Data Collector para a plataforma que você deseja usar (Windows, Linux).
+. Crie um token com o botão Token de Acesso à API.
+. Introduza um nome e clique em Guardar.
+. O nome do token agora deve ser selecionado no menu suspenso e será usado ao instalar o coletor.
+
+
+
+
+=== Crie manualmente um token de acesso à API
+
+. Navegue até Admin>Acesso à API.
+. Clique em API Access Token.
+. Insira um nome e, opcionalmente, uma descrição.
+. Em "que tipo de APIs esse token será usado para chamar?", selecione "ingestão de dados" somente e, em seguida, desmarque "Unidade de aquisição".
+. Em "permissões", selecione ler/escrever.
+. Desmarque "rotacionar automaticamente tokens para Kubernetes".
+
+
+Para usar seu token de acesso à API recém-criado, selecione-o no menu suspenso "Selecionar token de acesso à API existente ou criar um novo" na página do instalador. Observe que somente tokens com as seguintes propriedades podem ser usados:
+
+* Tipo de API: Somente "ingestão de dados"
+* Permissões: Ler/escrever
+* Rotação automática do Kubernetes: Desligada
+
+
+
+
 == Solução de problemas
 
 Algumas coisas para tentar se você encontrar problemas para configurar um agente:
