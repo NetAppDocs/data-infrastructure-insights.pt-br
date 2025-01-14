@@ -112,7 +112,10 @@ A tabela abaixo lista as opções possíveis para o arquivo _AgentConfiguration_
 |  | SkipProcessorsAfterAgregadores | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentação de configuração do Telegraf"] 
 
 
-|  | não protegido | Consulte este link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376["Problema de Telegraf conhecido"]. A configuração _desprotegido_ instruirá o Operador de Monitoramento do Kubernetes a executar o Telegraf com o `--unprotected` sinalizador. 
+|  | não protegido | ee isto link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376["Problema de Telegraf conhecido"]. A configuração _desprotegido_ instruirá o Operador de Monitoramento do Kubernetes a executar o Telegraf com o `--unprotected` sinalizador. 
+
+
+|  | insecureK8sSkipVerify | Se o telegraf não conseguir verificar o certificado devido à falta de SANs IP, tente ativar o salto de verificação 
 
 
 | kube-state-metrics |  | Opções de configuração que podem personalizar a instalação de métricas de estado kube do Operador 
