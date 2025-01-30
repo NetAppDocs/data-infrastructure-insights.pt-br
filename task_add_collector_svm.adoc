@@ -278,11 +278,12 @@ Em versões do ONTAP anteriores a 9,9.1, _data-fpolicy-client_ não precisam ser
 
 == Play-Pause Data Collector
 
-2 novas operações são agora mostradas no menu kebab do coletor (PAUSA e RETOMADA).
-
 Se o Coletor de dados estiver no estado _Running_, você pode pausar a coleta. Abra o menu "três pontos" para o coletor e SELECIONE PAUSE. Enquanto o coletor está em pausa, nenhum dado é coletado do ONTAP e nenhum dado é enviado do coletor para o ONTAP. Isso significa que nenhum evento do Fpolicy fluirá do ONTAP para o coletor de dados e dali para Insights de infraestrutura de dados.
 
 Observe que se novos volumes, etc. forem criados no ONTAP enquanto o coletor estiver em pausa, a Segurança de carga de trabalho não coletará os dados e esses volumes, etc., não serão refletidos em painéis ou tabelas.
+
+
+NOTE: Um coletor não pode ser pausado se tiver usuários restritos. Restaure o acesso do usuário antes de pausar o coletor.
 
 Tenha em mente o seguinte:
 
