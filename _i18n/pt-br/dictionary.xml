@@ -11923,4 +11923,8 @@
   <block id="b03a68ce04fd31de1bf167d4c6537d2f" category="paragraph">Ao fornecer um mapa de topologia interativo, o SAN Analyzer permite identificar problemas, entender alterações e melhorar a compreensão do fluxo de dados. Otimize o gerenciamento de SAN em AMBIENTES DE TI complexos com o SAN Analyzer e aumente a visibilidade dos workloads de bloco.</block>
   <block id="9c6601cca8cd67405c34e4897bb272f1" category="section-title">Explore as conexões entre seus ativos</block>
   <block id="14fe64769d4df689f51e13f60c5ec439" category="admonition">Um coletor não pode ser pausado se tiver usuários restritos. Restaure o acesso do usuário antes de pausar o coletor.</block>
+  <block id="81c776ec15386302abf1c34d317e3393" category="paragraph">Selecione *Observability &gt; Analyze &gt; SAN Analyzer* para visualizar o SAN Analyzer. Defina um filtro para aplicação, host, malha e/ou armazenamento. O mapa para os objetos é exibido, mostrando objetos conetados. Passe o Mouse sobre um objeto para exibir métricas de tráfego para essas conexões.</block>
+  <block id="fde6f74861c217b576ec5d769f2467c3" category="paragraph"><block ref="fde6f74861c217b576ec5d769f2467c3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3cfbb427bd17b95ae08e5597561217ef" category="paragraph">Clicar em um objeto ou grupo abre um painel deslizante fornecendo detalhes adicionais sobre o objeto e suas conexões. O slideout inclui guias mostrando um Resumo, detalhes da porta e informações de zona, se disponível.</block>
+  <block id="7512260392fef04bf211fab22007addd" category="paragraph"><block ref="7512260392fef04bf211fab22007addd" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

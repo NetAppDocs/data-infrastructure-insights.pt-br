@@ -25,3 +25,11 @@ image:san_analyzer_example_with_panel.png["Mapa de topologia de um sistema de st
 
 
 == Explore as conexões entre seus ativos
+
+Selecione *Observability > Analyze > SAN Analyzer* para visualizar o SAN Analyzer. Defina um filtro para aplicação, host, malha e/ou armazenamento. O mapa para os objetos é exibido, mostrando objetos conetados. Passe o Mouse sobre um objeto para exibir métricas de tráfego para essas conexões.
+
+image:san_analyzer_traffic_metrics.png[""]
+
+Clicar em um objeto ou grupo abre um painel deslizante fornecendo detalhes adicionais sobre o objeto e suas conexões. O slideout inclui guias mostrando um Resumo, detalhes da porta e informações de zona, se disponível.
+
+image:san_analyzer_slideout_example.png[""]
