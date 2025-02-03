@@ -11927,4 +11927,16 @@
   <block id="fde6f74861c217b576ec5d769f2467c3" category="paragraph"><block ref="fde6f74861c217b576ec5d769f2467c3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3cfbb427bd17b95ae08e5597561217ef" category="paragraph">Clicar em um objeto ou grupo abre um painel deslizante fornecendo detalhes adicionais sobre o objeto e suas conexões. O slideout inclui guias mostrando um Resumo, detalhes da porta e informações de zona, se disponível.</block>
   <block id="7512260392fef04bf211fab22007addd" category="paragraph"><block ref="7512260392fef04bf211fab22007addd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="18082cdb9388e2686e081dd6012e47b8" category="summary">Você determina se um dashboard criado é público ou privado.</block>
+  <block id="cc5c681651d638257ae03658c963c7c6" category="doc">Gerenciamento de acesso ao dashboard</block>
+  <block id="571ad98bb1054a211a5d3fa3a3240265" category="paragraph">O Data Infrastructure Insights agora oferece maior controle sobre o acesso aos painéis que você cria. Você escolhe quem pode modificar seus gráficos. Você controla a exposição a informações potencialmente confidenciais. Manter um painel privado permite que você finalize suas visualizações até que elas estejam prontas para serem consumidas por outras pessoas em sua organização.</block>
+  <block id="505e6238dfdc62d1b4bbdf930fa887b8" category="inline-image-macro">opções de compartilhamento de painel, largura de 300 mm</block>
+  <block id="43b5d7a5affce9056fb3d7ec4b82fe17" category="paragraph"><block ref="43b5d7a5affce9056fb3d7ec4b82fe17" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="547a803d844f9925f62c57d49f10caf6" category="paragraph">Por padrão, quando você cria um novo painel, esse painel só é visível para você, o criador. Nenhum outro usuário pode ver ou modificar o painel.</block>
+  <block id="78d12ef818f574226b0780765511e2d5" category="paragraph">Depois de finalizar seu painel, você pode optar por permitir que outras pessoas da sua organização o visualizem. Para compartilhar um painel, na lista de painéis, selecione _share_ no menu à direita.</block>
+  <block id="8e561a2090f27ed80a24e59dff11dcce" category="inline-image-macro">partilha de acesso ao painel a partir do menu</block>
+  <block id="5fc6afe4cfc7bc7e58ad6e7119812663" category="paragraph"><block ref="5fc6afe4cfc7bc7e58ad6e7119812663" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="16442b20a2319083af65dedb2d7e942e" category="paragraph">Você pode optar por compartilhar o painel com todos ou selecionar usuários, com permissões Editar ou somente leitura.</block>
+  <block id="1dcba5cd7d6049883623c0653a2031f6" category="inline-image-macro">Drop-Downs para compartilhar um painel com a permissão Editar ou ler</block>
+  <block id="ac0466f21ebde71eed9f3673b4c7da1b" category="paragraph"><block ref="ac0466f21ebde71eed9f3673b4c7da1b" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
