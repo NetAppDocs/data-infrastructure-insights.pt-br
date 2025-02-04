@@ -34,7 +34,7 @@ Você pode ampliar o gráfico arrastando um retângulo no gráfico. A página in
 * Um botão de caminho comum estará disponível acima da tabela em clique da qual podemos obter slide out painel com detalhes de caminho de entidade.
 
 
-A tabela _*All Activity*_ mostra as seguintes informações. Observe que nem todas essas colunas são exibidas por padrão. Você pode selecionar colunas a serem exibidas clicando no ícone "engrenagem".
+A tabela *All Activity* mostra as seguintes informações. Observe que nem todas essas colunas são exibidas por padrão. Você pode selecionar colunas a serem exibidas clicando no ícone "engrenagem".
 
 * A *hora* que uma entidade foi acessada incluindo o ano, mês, dia e hora do último acesso.
 * O *usuário* que acessou a entidade com um link para o link:forensic_user_overview.html["Informações do utilizador"] como um painel deslizante.
@@ -52,10 +52,10 @@ A tabela _*All Activity*_ mostra as seguintes informações. Observe que nem tod
 ** *Renomear* - Renomear arquivo ou pasta.
 ** *Write* - os dados são gravados em um arquivo.
 ** *Write Metadata* - os metadados do arquivo são escritos, por exemplo, permissão alterada.
-** *Outra alteração* - qualquer outro evento que não esteja descrito acima. Todos os eventos não mapeados são mapeados para o tipo de atividade "outra mudança". Aplicável a ficheiros e pastas.
+** *Outra alteração* - qualquer outro evento que não esteja descrito acima. Todos os eventos não mapeados são mapeados para o tipo de atividade "outra alteração". Aplicável a ficheiros e pastas.
 
 
-* O *Path* é _entity_ path. Este deve ser o caminho exato da entidade (por exemplo, "_/home/userX/nested1/nested2/abc.txt_") OU parte do diretório do caminho para pesquisa recursiva (por exemplo, "_/home/userX/nested1/nested2/_"). NOTA: Padrões de caminho regex (por exemplo, _userX_) NÃO são permitidos aqui. Alternativamente, filtros de nível de pasta de caminho individuais, como mencionado abaixo, também podem ser especificados para filtragem de caminho.
+* O *Path* é _entity_ path. Este deve ser o caminho exato da entidade (por exemplo, "_/home/userX/nested1/nested2/abc.txt_") OU parte do diretório do caminho para pesquisa recursiva (por exemplo, "_/home/userX/nested1/nested2/_"). OBSERVAÇÃO: Padrões de caminho regex (por exemplo, 'aninhados*) NÃO são permitidos aqui. Alternativamente, filtros de nível de pasta de caminho individuais, como mencionado abaixo, também podem ser especificados para filtragem de caminho.
 * A pasta de nível *1st (raiz)* é o diretório raiz do caminho da entidade em letras minúsculas.
 * A pasta de nível *2nd* é o diretório de segundo nível do caminho da entidade em letras minúsculas.
 * A pasta de nível *3rd* é o diretório de terceiro nível do caminho da entidade em letras minúsculas.
@@ -65,6 +65,7 @@ A tabela _*All Activity*_ mostra as seguintes informações. Observe que nem tod
 * O *Protocolo* usado para buscar eventos.
 * O *caminho original* usado para renomear eventos quando o arquivo original foi renomeado. Esta coluna não está visível na tabela por padrão. Use o seletor de coluna para adicionar essa coluna à tabela.
 * O *volume* onde as entidades residem. Esta coluna não está visível na tabela por padrão. Use o seletor de coluna para adicionar essa coluna à tabela.
+* O *Nome da entidade* é o último componente do caminho da entidade; para o tipo de entidade como arquivo, é o nome do arquivo.
 
 
 A seleção de uma linha de tabela abre um painel deslizante com o perfil de usuário em uma guia e a visão geral da atividade e da entidade em outra guia.
@@ -75,6 +76,7 @@ O método padrão _Group by_ é _Activity Forensics_. Se você selecionar um mé
 
 * A contagem de atividades é apresentada como uma hiperligação; selecionar esta opção irá adicionar o agrupamento selecionado como um filtro. A tabela de atividade será atualizada com base nesse filtro.
 * Observe que se você alterar o filtro, alterar o intervalo de tempo ou atualizar a tela, não será possível retornar aos resultados filtrados sem definir o filtro novamente.
+* Observe que quando o Nome da entidade for selecionado como filtro, o menu suspenso Group by será desativado; além disso, quando o usuário já estiver na tela Group by (Grupo por), o filtro Entity Name as (Nome da entidade como filtro) será desativado.
 
 
 
@@ -86,7 +88,7 @@ Existem dois métodos que você pode usar para filtrar dados.
 * O filtro pode ser adicionado a partir do painel deslizante. O valor é adicionado aos filtros apropriados na lista acima _Filtrar por_.
 * Filtre dados digitando no campo _Filtrar por_:
 +
-Selecione o filtro apropriado no topo do widget 'Filtrar por' clicando no botão *[
+Selecione o filtro apropriado no topo do widget 'Filtrar por' clicando no botão *[]*:
 
 +
 image:Forensic_Activity_Filter.png["Tipo de entidade: 500"]
@@ -102,7 +104,6 @@ Pressione Enter ou clique fora da caixa de filtro para aplicar o filtro.
 Você pode filtrar os dados de atividade Forense pelos seguintes campos:
 
 * O tipo *Activity*.
-* *IP de origem* a partir do qual a entidade foi acessada. Você deve fornecer um endereço IP de origem válido em aspas duplas, por exemplo "10,1.1,1". IPs incompletos, como "10,1.1.*", "10,1.*.*", etc., não funcionarão.
 * *Protocolo* para buscar atividades específicas do protocolo.
 * *Nome de usuário* do usuário que realiza a atividade. Você precisa fornecer o nome de usuário exato para filtrar. A pesquisa com nome de usuário parcial ou nome de usuário parcial pré-fixado ou sufixo com '*' não funcionará.
 * *Redução de ruído* para filtrar arquivos criados nas últimas 2 horas pelo usuário. Ele também é usado para filtrar arquivos temporários (por exemplo, arquivos .tmp) acessados pelo usuário.
@@ -112,16 +113,23 @@ Você pode filtrar os dados de atividade Forense pelos seguintes campos:
 Os seguintes campos estão sujeitos a regras especiais de filtragem:
 
 * *Entity Type*, usando a extensão entity (file) - é preferível especificar o tipo exato de entidade dentro de aspas. Por exemplo _"txt"_.
-* * Caminho* da entidade - este deve ser o caminho exato da entidade (por exemplo, "_/home/userX/nested1/nested2/abc.txt_") OU parte do diretório do caminho para pesquisa recursiva (por exemplo, "_/home/userX/nested1/nested2/_"). NOTA: Padrões de caminho regex (por exemplo, *userX*) NÃO são permitidos aqui. Filtros de caminho de diretório (string de caminho que termina com /) até 4 diretórios profundos são recomendados para resultados mais rápidos. Por exemplo, "_/home/userX/nested1/nested2/_". Consulte a tabela abaixo para obter mais detalhes.
-* 1st Level Folder (root) - diretório raiz do Entity Path como filtros. Por exemplo, se o caminho da entidade for /home/userX/nested1/nested2/, então Home OU "Home" pode ser usado.
-* Pasta de nível 2nd - diretório de nível 2nd dos filtros Entity Path. Por exemplo, se o caminho da entidade é /home/userX/nested1/nested2/, então userX OU "userX" pode ser usado.
+* *Path* da entidade - este deve ser o caminho exato da entidade (por exemplo, "_/home/userX/nested1/nested2/abc.txt_") OU parte do diretório do caminho para pesquisa recursiva (por exemplo, "_/home/userX/nested1/nested2/_"). OBSERVAÇÃO: Padrões de caminho regex (por exemplo, 'aninhados*) NÃO são permitidos aqui. Filtros de caminho de diretório (string de caminho que termina com /) até 4 diretórios profundos são recomendados para resultados mais rápidos. Por exemplo, "_/home/userX/nested1/nested2/_". Consulte a tabela abaixo para obter mais detalhes.
+* 1st Level Folder (root) - diretório raiz do Entity Path como filtros. Por exemplo, se o caminho da entidade for /home/userX/nested1/nested2/, então home OU "home" pode ser usado.
+* Pasta de nível 2nd - diretório de nível 2nd dos filtros Entity Path. Por exemplo, se o caminho da entidade for /home/userX/nested1/nested2/, então userX OU "userX" pode ser usado.
 * Pasta de nível 3rd – diretório de nível 3rd dos filtros Entity Path.
-* Por exemplo, se o caminho da entidade é /home/userX/nested1/nested2/, então nested1 OU "nested1" pode ser usado.
-* Pasta de nível 4th - diretório de nível 4th dos filtros Entity Path. Por exemplo, se o caminho da entidade é /home/userX/nested1/nested2/, então nested2 OU "nested2" pode ser usado.
+* Por exemplo, se o caminho da entidade for /home/userX/nested1/nested2/, então nested1 OU "nested1" pode ser usado.
+* Pasta de nível 4th - diretório de nível 4th dos filtros Entity Path. Por exemplo, se o caminho da entidade for /home/userX/nested1/nested2/, então nested2 OU "nested2" pode ser usado.
 * *Usuário* realizando a atividade - é preferível especificar o usuário exato dentro de aspas. Por exemplo, _"Administrador"_.
 * *Dispositivo* (SVM) onde as entidades residem
 * *Volume* onde as entidades residem
 * O *caminho original* usado para renomear eventos quando o arquivo original foi renomeado.
+* *IP de origem* a partir do qual a entidade foi acessada.
++
+** Você pode usar Wild-cards * e ?. Por exemplo:10,0.0.*, 10,0?.0,10, 10,10*
+** Se a correspondência exata for necessária, você deve fornecer um endereço IP de origem válido em aspas duplas, por exemplo "10,1.1,1.". IPs incompletos com aspas duplas como "10,1.1.", "10,1..*", etc. não funcionarão.
+
+
+* O *Entity Name* - o nome do arquivo do Entity Path como filtros. Por exemplo, se o caminho da entidade é /home/userX/nested1/testfile.txt então, o nome da entidade é testfile.txt. Por favor, note que é recomendado especificar o nome exato do arquivo entre aspas; tente evitar as pesquisas curinga. Por exemplo, "testfile.txt". Além disso, observe que esse filtro de nome de entidade é recomendado para intervalos de tempo mais curtos (até 3 dias).
 
 
 Os campos anteriores estão sujeitos ao seguinte ao filtrar:
@@ -130,6 +138,8 @@ Os campos anteriores estão sujeitos ao seguinte ao filtrar:
 * Strings curinga não devem conter aspas: Exemplo: Searchtext, * searchtext*, irá filtrar para quaisquer strings contendo 'searchtext'.
 * String com um prefixo, exemplo: Searchtext* , pesquisará quaisquer strings que começam com 'searchtext'.
 
+
+Observe que todos os campos de filtro são pesquisa sensível a maiúsculas e minúsculas. Por exemplo: Se o filtro aplicado for tipo de entidade com valor como 'searchtext', ele retornará resultados com tipo de entidade como 'searchtext', 'SearchText', 'SEARCHTEXT'
 
 
 
@@ -152,6 +162,21 @@ Os campos anteriores estão sujeitos ao seguinte ao filtrar:
 
 
 | Quaisquer outros filtros não baseados em caminho. Filtros de tipo de usuário e entidade recomendados para estar entre aspas, por exemplo, |  | Rápido |  
+
+
+| Nome da entidade: "Test.log" | Correspondência exata onde o nome do arquivo é test.log | Rápido | Como é a correspondência exata 
+
+
+| Nome da entidade: *test.log | Nomes de arquivo que terminam com test.log | Lento | Devido ao cartão selvagem, pode ser lento. 
+
+
+| Nome da entidade: Teste*.log | Nomes de arquivo começando com teste e termina com .log | Lento | Devido ao cartão selvagem, pode ser lento. 
+
+
+| Nome da entidade: Test.lo | Nomes de arquivo começando com test.lo por exemplo: Ele irá corresponder test.log, test.log.1, test.log1 | Mais lento | Devido ao cartão selvagem no final, pode ser lento. 
+
+
+| Nome da entidade: Teste | Nomes de arquivo começando com teste | Mais lento | Devido ao cartão selvagem no final e valor mais genérico usado, ele pode ser mais lento. 
 |===
 NOTA:
 
@@ -184,8 +209,8 @@ O recurso de exportações assíncronas no Storage Workload Security foi projeta
 . * Download*: Clique no botão "Download último arquivo de exportação criado" para obter os dados exportados em um formato .zip. Esses dados estarão disponíveis para download até que o usuário inicie outra exportação assíncrona ou decorram 3 dias, o que ocorrer primeiro. O botão permanecerá ativado até que outra exportação assíncrona seja iniciada.
 . *Limitações*:
 +
-** O número de downloads assíncronos está atualmente limitado a 1 por usuário e 3 por locatário.
-** Os dados exportados estão limitados a um máximo de 1 milhões de Registros.
+** O número de downloads assíncronos está atualmente limitado a 1 por usuário para cada Tabela de análise de atividades e atividades e 3 por locatário.
+** Os dados exportados estão limitados a um máximo de 1 milhões de Registros para o Quadro de atividades; enquanto para o Grupo por, o limite é de meio milhão de Registros.
 
 
 
@@ -214,16 +239,16 @@ O histórico de atividades é retido por 13 meses para ambientes ativos de segur
 | Filtro | O que faz | Exemplo | Aplicável a estes filtros | Não aplicável a estes filtros | Resultado 
 
 
-| * (Asterisco) | permite-lhe procurar tudo | Auto*03172022 se o texto de pesquisa contiver hífen ou sublinhado, dê expressão entre parênteses. Por exemplo, (svm*) para pesquisar svm-123 | Usuário, tipo de entidade, dispositivo, volume, caminho original, pasta 1stLevel, pasta 2ndLevel, pasta 3rdLevel, pasta 4thLevel |  | Retorna todos os recursos que começam com "Auto" e terminam com "03172022" 
+| * (Asterisco) | permite-lhe procurar tudo | Auto*03172022 se o texto de pesquisa contiver hífen ou sublinhado, dê expressão entre parênteses. Por exemplo, (svm*) para pesquisar svm-123 | Usuário, tipo de entidade, dispositivo, volume, caminho original, pasta 1stLevel, pasta 2ndLevel, pasta 3rdLevel, pasta 4thLevel, Nome da entidade, IP de origem |  | Retorna todos os recursos que começam com "Auto" e terminam com "03172022" 
 
 
-| ? (ponto de interrogação) | permite-lhe procurar um número específico de carateres | AutoSabotageUser1_03172022? | Usuário, tipo de entidade, dispositivo, volume, pasta 1stLevel, pasta 2ndLevel, pasta 3rdLevel, pasta 4thLevel |  | Retorna AutoSabotageUser1_03172022A, AutoSabotageUser1_03172022B, AutoSabotageUser1_031720225 e assim por diante 
+| ? (ponto de interrogação) | permite-lhe procurar um número específico de carateres | AutoSabotageUser1_03172022? | Usuário, tipo de entidade, dispositivo, volume, pasta 1stLevel, pasta 2ndLevel, pasta 3rdLevel, pasta 4thLevel, Nome da entidade, IP de origem |  | Retorna AutoSabotageUser1_03172022A, AutoSabotageUser1_03172022B, AutoSabotageUser1_031720225 e assim por diante 
 
 
-| OU | permite especificar várias entidades | AutoSabotageUser1_03172022 OR AutoRansomUser4_03162022 | Usuário, domínio, tipo de entidade, caminho original |  | Retorna qualquer um de AutoSabotageUser1_03172022 OU AutoRansomUser4_03162022 
+| OU | permite especificar várias entidades | AutoSabotageUser1_03172022 OR AutoRansomUser4_03162022 | Usuário, domínio, tipo de entidade, caminho original, Nome da entidade, IP de origem |  | Retorna qualquer um de AutoSabotageUser1_03172022 OU AutoRansomUser4_03162022 
 
 
-| NÃO | permite excluir texto dos resultados da pesquisa | NOT AutoRansomUser4_03162022 | Usuário, domínio, tipo de entidade, caminho original, pasta 1stLevel, pasta 2ndLevel, pasta 3rdLevel, pasta 4thLevel | Dispositivo | Retorna tudo o que não começa com"AutoRansomUser4_03162022" 
+| NÃO | permite excluir texto dos resultados da pesquisa | NOT AutoRansomUser4_03162022 | Usuário, domínio, tipo de entidade, caminho original, pasta 1stLevel, pasta 2ndLevel, pasta 3rdLevel, pasta 4thLevel, Nome da entidade, IP de origem | Dispositivo | Retorna tudo o que não começa com"AutoRansomUser4_03162022" 
 
 
 | Nenhum | Procura valores NULL em todos os campos | Nenhum | Domínio |  | retorna resultados onde o campo de destino está vazio 
@@ -284,17 +309,20 @@ Por exemplo:
 | Problema | Tente isto 
 
 
-| Na tabela "todas as atividades", sob a coluna "Usuário", o nome de usuário é mostrado como: "ldap:HQ.COMPANYNAME.COM:S-1-5-21-3577637-1906459482-1437260136-1831817” ou "LDAP:default:80038003" | Possíveis razões podem ser: 1. Ainda não foram configurados coletores de diretório de utilizadores. Para adicionar um, vá para *Workload Security > Collectors > User Directory Collectors* e clique em * User Directory Collector*. Escolha _ative Directory_ ou _LDAP Directory Server_. 2. Um Coletor de diretório de usuários foi configurado, no entanto ele parou ou está em estado de erro. Aceda a *Collectors > User Directory Collectors* e verifique o estado. Consulte link:http://docs.netapp.com/us-en/cloudinsights/task_config_user_dir_connect.html#troubleshooting-user-directory-collector-configuration-errors["Solução de problemas do User Directory Collector"]a seção da documentação para obter dicas de solução de problemas. Depois de configurar corretamente, o nome será resolvido automaticamente dentro de 24 horas. Se ele ainda não for resolvido, verifique se você adicionou o coletor de dados de usuário correto. Certifique-se de que o usuário faz parte do ative Directory/LDAP Directory Server adicionado. 
+| Na tabela "todas as atividades", sob a coluna "Utilizador", o nome de utilizador é apresentado como: "ldap:HQ.COMPANYNAME.COM:S-1-5-21-3577637-1906459482-1437260136-1831817" ou "LDAP:default:80038003" | Possíveis razões podem ser: 1. Ainda não foram configurados coletores de diretório de utilizadores. Para adicionar um, vá para *Workload Security > Collectors > User Directory Collectors* e clique em * User Directory Collector*. Escolha _ative Directory_ ou _LDAP Directory Server_. 2. Um Coletor de diretório de usuários foi configurado, no entanto ele parou ou está em estado de erro. Aceda a *Collectors > User Directory Collectors* e verifique o estado. Consulte link:http://docs.netapp.com/us-en/cloudinsights/task_config_user_dir_connect.html#troubleshooting-user-directory-collector-configuration-errors["Solução de problemas do User Directory Collector"]a seção da documentação para obter dicas de solução de problemas. Depois de configurar corretamente, o nome será resolvido automaticamente dentro de 24 horas. Se ele ainda não for resolvido, verifique se você adicionou o coletor de dados de usuário correto. Certifique-se de que o usuário faz parte do ative Directory/LDAP Directory Server adicionado. 
 
 
 | Alguns eventos NFS não são vistos na IU. | Verifique o seguinte: 1. Um coletor de diretório de usuário para servidor AD com conjunto de atributos POSIX deve ser executado com o atributo unixid habilitado a partir da UI. 2. Qualquer usuário que fizer acesso NFS deve ser visto quando pesquisado na página de usuário da IU 3. Eventos brutos (Eventos para os quais o usuário ainda não foi descoberto) não são compatíveis com NFS 4. O acesso anônimo à exportação NFS não será monitorado. 5. Certifique-se de que a versão NFS usada em menos de NFS4,1. 
 
 
-| Depois de digitar algumas letras contendo um caractere curinga como asterisco (*) nos filtros nas páginas Forensics _All Activity_ ou _entities_, as páginas são carregadas muito lentamente. | Um asterisco (*) na cadeia de pesquisa procura tudo. No entanto, as cadeias de carateres curinga principais como _*<searchTerm>_ ou _*<searchTerm>*_ resultarão em uma consulta lenta. Para obter um melhor desempenho, use strings de prefixo no formato _<searchTerm>*_ (em outras palavras, anexe o asterisco (*) _after_ um termo de pesquisa). Exemplo: Use a string _testvolume*_, em vez de _*testvolume_ ou _*test*volume_. Use uma pesquisa de diretório para ver todas as atividades abaixo de uma determinada pasta recursivamente (pesquisa hierárquica). Por exemplo, "/path1/path2/path3/" listará todas as atividades recursivamente em /path1/path2/path3. Alternativamente, use a opção "Adicionar ao filtro" na guia todas as atividades." 
+| Depois de digitar algumas letras contendo um caractere curinga como asterisco (*) nos filtros nas páginas Forensics _All Activity_ ou _entities_, as páginas são carregadas muito lentamente. | Um asterisco (*) na cadeia de pesquisa procura tudo. No entanto, as cadeias de carateres curinga principais como _*<searchTerm>_ ou _*<searchTerm>*_ resultarão em uma consulta lenta. Para obter um melhor desempenho, use strings de prefixo no formato _<searchTerm>*_ (em outras palavras, anexe o asterisco (*) _after_ um termo de pesquisa). Exemplo: Use a string _testvolume*_, em vez de _*testvolume_ ou _*test*volume_. Use uma pesquisa de diretório para ver todas as atividades abaixo de uma determinada pasta recursivamente (pesquisa hierárquica). Por exemplo, "/path1/path2/path3/" listará todas as atividades recursivamente em /path1/path2/path3. Em alternativa, utilize a opção "Adicionar ao filtro" no separador todas as atividades." 
 
 
 | Estou encontrando um erro "solicitação falhou com o código de status 500/503" ao usar um filtro Path. | Tente usar um intervalo de datas menor para filtrar Registros. 
 
 
-| A IU forense está carregando dados lentamente ao usar o filtro _path_. | Filtros de caminho de diretório (string de caminho terminando com /) até 4 diretórios profundos são recomendados para resultados mais rápidos. Por exemplo, se o caminho de diretório for /AAA/BBB/CCC/DDD, tente pesquisar "/AAA/BBB/CCC/DDD/" para carregar dados mais rapidamente. 
+| A IU forense está carregando dados lentamente ao usar o filtro _path_. | Filtros de caminho de diretório (string de caminho que termina com /) até 4 diretórios profundos são recomendados para resultados mais rápidos. Por exemplo, se o caminho de diretório for /AAA/BBB/CCC/DDD, tente procurar "/AAA/BBB/CCC/DDD/" para carregar dados mais rapidamente. 
+
+
+| A UI forense está carregando dados lentamente e enfrentando falhas ao usar o filtro de nome de entidade. | Por favor, tente com intervalos de tempo menores e com o valor exato pesquisa com aspas duplas. Por exemplo, se o entityPath é "/home/userX/nested1/nested2/nested3/testfile.txt" então, tente com "testfile.txt" como filtro de nome de entidade. 
 |===
