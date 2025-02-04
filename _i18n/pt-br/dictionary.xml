@@ -11939,4 +11939,15 @@
   <block id="16442b20a2319083af65dedb2d7e942e" category="paragraph">Você pode optar por compartilhar o painel com todos ou selecionar usuários, com permissões Editar ou somente leitura.</block>
   <block id="1dcba5cd7d6049883623c0653a2031f6" category="inline-image-macro">Drop-Downs para compartilhar um painel com a permissão Editar ou ler</block>
   <block id="ac0466f21ebde71eed9f3673b4c7da1b" category="paragraph"><block ref="ac0466f21ebde71eed9f3673b4c7da1b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="98465e4573c2849304e85edaeef13370" category="summary">Otimização da VM</block>
+  <block id="761ab7bf046ac25fda0da8f1af542322" category="paragraph">Para começar, navegue para observabilidade &gt; analisar &gt; Otimização da VM. Você verá um resumo de economias potenciais, discriminado pelo número de núcleos e economia de armazenamento. Você pode definir filtros para focar por data center, IP do Virtual Center ou cluster, ou definir seus próprios filtros para restringir ainda mais seu foco.</block>
+  <block id="045386d087f10e1f0ae1e3bf75624afe" category="inline-image-macro">visão geral da otimização da vm</block>
+  <block id="7110454d98ba958eec64260bbc5dec80" category="paragraph"><block ref="7110454d98ba958eec64260bbc5dec80" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="03f6f40a2cf552119978ffce0238086f" category="paragraph">A guia Descomissionamento do Hypervisor mostra suas possíveis economias de custo com base na estratégia de otimização selecionada. Cada estratégia utiliza limites diferentes para determinar economias potenciais.</block>
+  <block id="6e3975fe060cfaed5d52ef53dce4935b" category="paragraph">Selecione um cluster na lista para abrir um painel deslizante com detalhes sobre a utilização da CPU e da memória para o cluster.</block>
+  <block id="f76142da98b557ade1c2d52abf0a207b" category="inline-image-macro">separador de otimização do hipervisor</block>
+  <block id="bfea8ae8feffd62a3b499ac0dc5015ac" category="paragraph"><block ref="bfea8ae8feffd62a3b499ac0dc5015ac" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0dc236d363c2d7f668f1ee1391ffab69" category="paragraph">A guia VM Reclamation fornece detalhes sobre VMs que estão ociosas ou desligadas por mais de 30, 60 ou 90 dias, juntamente com economias potenciais de capacidade, memória e vCPU. A seleção de uma VM na lista abre a página de detalhes dessa VM.</block>
+  <block id="5edbd52aee44c2dfb6c01abc4128600a" category="inline-image-macro">guia recuperação de vm</block>
+  <block id="e2e66b001cd3f2f1481c4b23049ca899" category="paragraph"><block ref="e2e66b001cd3f2f1481c4b23049ca899" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
