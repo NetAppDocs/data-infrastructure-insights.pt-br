@@ -40,7 +40,7 @@ Quando você abre o Portal de relatórios, a pasta _conteúdo da equipe_ é o po
 . Selecione *relatórios* para acessar os relatórios predefinidos.
 
 
-image:Reporting_Menu.png["Menu de relatórios"] image:Reporting_Team_Content.png["Conteúdo da equipe mostrando relatórios destacados"]
+image:Reporting_Menu.png["Menu de relatórios"] image:Reporting_Team_Content.png["Conteúdo da equipe mostrando relatórios destacados, com largura de 800"]
 
 
 

@@ -70,17 +70,6 @@ Se a sua avaliação gratuita expirou e você ainda não se inscreveu no Data In
 
 
 
-== E se a minha subscrição tiver expirado?
-
-Se você tiver uma assinatura do Data Infrastructure Insights, mas essa assinatura expirou, você terá um período de carência de cinco dias para renovar sua assinatura. Toda a funcionalidade Data Infrastructure Insights permanecerá ativa durante esse período de carência.
-
-Após o período de carência ter decorrido, a funcionalidade Data Infrastructure Insights é suspensa até que você seja renovado. Para renovar, consulte a página *Admin > Subscription* ou entre em Contato com as vendas da NetApp.
-
-
-NOTE: Os dados do Data Infrastructure Insights coletados até o fim do período de carência permanecem intactos por 30 dias após o período de carência. Se você renovar sua assinatura dentro desse tempo, todos os seus dados até o momento em que o período de carência terminar estarão disponíveis para você.
-
-
-
 == E se a minha *subscrição* tiver expirado?
 
 Se você tiver uma assinatura do Data Infrastructure Insights, mas essa assinatura expirou, você terá um período de carência de cinco dias para renovar sua assinatura. Toda a funcionalidade Data Infrastructure Insights permanecerá ativa durante esse período de carência.
