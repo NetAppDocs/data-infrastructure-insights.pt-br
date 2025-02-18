@@ -34,6 +34,11 @@ A seguir estão os requisitos para configurar e usar este coletor de dados:
 
 
 
+NOTE: O ASA R2 denota os modelos de última geração da plataforma de armazenamento ONTAP ASA. Isso inclui os modelos de matriz ASA A1K, A90, A70, A50, A30 e A20.
+
+Para todos os sistemas ASA da geração anterior, utilize o link:task_dc_na_ontap_rest.html["Descanso em ONTAP"] coletor.
+
+
 
 == Uma Nota sobre permissões
 

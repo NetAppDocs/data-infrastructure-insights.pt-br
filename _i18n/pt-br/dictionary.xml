@@ -12007,4 +12007,7 @@
   <block id="95168a3a05a80c7b596b36a7ec8218c4" category="section-title">Atualizações manuais</block>
   <block id="92e9b9412f142b06bb1d5b741604efd6" category="inline-image-macro">Conteúdo da equipe mostrando relatórios destacados, com largura de 800</block>
   <block id="d7daabce37094cca59c57db4ac298a14" category="paragraph"><block ref="042d6428eca469dceeec3a1b4202ab56" category="inline-image-macro-rx" type="image"></block> <block ref="5880297252ec23e342670c23021aaf20" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="10c63504ca2c4306533812bf37add08d" category="admonition">O ASA R2 denota os modelos de última geração da plataforma de armazenamento ONTAP ASA. Isso inclui os modelos de matriz ASA A1K, A90, A70, A50, A30 e A20.</block>
+  <block id="8429b607073457ee8f7513c9b33f2b47" category="inline-link-macro">Descanso em ONTAP</block>
+  <block id="9813cb21933d9e535322d83efc9b8d25" category="paragraph">Para todos os sistemas ASA da geração anterior, utilize o <block ref="75bdda54644cc13465ab7acc10710396" category="inline-link-macro-rx"></block> coletor.</block>
 </blocks>
