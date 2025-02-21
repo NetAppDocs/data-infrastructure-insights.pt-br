@@ -12011,4 +12011,7 @@
   <block id="9813cb21933d9e535322d83efc9b8d25" category="paragraph">Para todos os sistemas ASA da geração anterior, utilize o <block ref="75bdda54644cc13465ab7acc10710396" category="inline-link-macro-rx"></block> coletor.</block>
   <block id="6cc5c9e930ea3d3b8bff4367c60ceea4" category="section-title">Fevereiro de 2025</block>
   <block id="8261d0e1521d30da1b36761d508cb245" category="paragraph">Para exibir o uso da API, navegue até *Observability &gt; Admin &gt; API Access* e selecione _View API Usage_. Observe que essa API está disponível apenas para APIs de observabilidade DII; ela não se aplica à segurança de workload.</block>
+  <block id="bcaea0fa3a691efcd767e69c0bf6c611" category="paragraph">Para garantir que seus destinatários recebam notificações do Data Infrastructure Insights, adicione os seguintes endereços de e-mail a qualquer lista de "permitir":</block>
+  <block id="920ab4b11a04d50637a16a5c9699b3ba" category="list-text">accounts@service.cloudinsights.netapp.com</block>
+  <block id="b68146f7d3be586c34e5b6d021541f50" category="list-text">DoNotReply@cloudinsights.netapp.com</block>
 </blocks>

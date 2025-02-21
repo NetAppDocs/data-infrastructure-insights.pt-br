@@ -56,6 +56,15 @@ A seguir estão exemplos dos tipos de notificações que podem ser enviadas e as
 
 | A conta de teste ou assinatura expirou deixará de coletar dados em 48 horas a conta será excluída após 48 horas | link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Vendas da NetApp"]Contacte para adquirir uma subscrição 
 |===
+[NOTE]
+====
+Para garantir que seus destinatários recebam notificações do Data Infrastructure Insights, adicione os seguintes endereços de e-mail a qualquer lista de "permitir":
+
+* accounts@service.cloudinsights.netapp.com
+* DoNotReply@cloudinsights.netapp.com
+
+
+====
 
 
 == Lista de destinatários globais para alertas
