@@ -19,22 +19,13 @@ keywords: onboarding, getting started, video, tutorial, resolution, dashboard, q
 
 
 [role="lead"]
-O Data Infrastructure Insights é carregado com recursos úteis que permitem localizar dados de forma rápida e fácil, solucionar problemas e fornecer insights sobre seu ambiente corporativo. Encontre dados facilmente com consultas avançadas, visualize dados em painéis e envie alertas por e-mail para os limites de dados definidos.
+O Data Infrastructure Insights é carregado com recursos úteis que permitem solucionar problemas de forma rápida e fácil e fornecer insights sobre seu ambiente corporativo. Encontre dados facilmente com consultas avançadas, visualize dados em painéis e envie alertas por e-mail para os limites de dados definidos.
 
-O Data Infrastructure Insights inclui vários tutoriais em vídeo para ajudá-lo a entender esses recursos e implementar melhor suas estratégias de insights de negócios.
-
-
-
-== Introdução
-
-Assista a um breve tutorial explicando como o Data Infrastructure Insights funciona.
-
-video::howTo.mp4[]
 
 
 == Lista de verificação e tutoriais em vídeo
 
-A *Lista de verificação de arranque* apresentada no seu site Data Infrastructure Insights contém uma lista de várias tarefas e conceitos úteis. A seleção de um item na lista de verificação leva você à página de Insights de infraestrutura de dados apropriada para esse conceito. Por exemplo, clicar no item _criar um Dashboard_ abre a página Data Infrastructure Insights *Dashboards*.
+A *Lista de verificação de inicialização* exibida no seu locatário do Data Infrastructure Insights contém uma lista de várias tarefas e conceitos úteis. A seleção de um item na lista de verificação leva você à página de Insights de infraestrutura de dados apropriada para esse conceito. Por exemplo, clicar no item _criar um Dashboard_ abre a página Data Infrastructure Insights *Dashboards*.
 
 image:OnboardingChecklist.png["Progresso da lista de verificação do tutorial"]
 
@@ -51,29 +42,4 @@ NOTE: Você pode ver os tutoriais em qualquer ordem que você gosta, quantas vez
 
 === A lista de verificação está em falta
 
-A lista de verificação de arranque é apresentada no seu site até clicar no link _não mostrar novamente_ na parte inferior da lista de verificação. Mesmo depois de descartar a lista de verificação, os tutoriais ainda estão disponíveis em cada página apropriada do Data Infrastructure Insights até que você ignore cada um da barra de cabeçalho da mensagem.
-
-
-
-== Veja os tutoriais
-
-
-
-=== A consultar dados
-
-video::Queries.mp4[]
-
-
-=== Criando um Dashboard
-
-video::Dashboards.mp4[]
-
-
-=== Solução de problemas
-
-video::Troubleshooting.mp4[]
-
-
-=== Resolver dispositivos
-
-video::AHR_small.mp4[]
+A lista de verificação de arranque é apresentada até clicar no link _não mostrar novamente_ na parte inferior da lista de verificação. Mesmo depois de descartar a lista de verificação, os tutoriais ainda estão disponíveis em cada página apropriada do Data Infrastructure Insights até que você ignore cada um da barra de cabeçalho da mensagem.

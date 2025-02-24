@@ -1437,11 +1437,7 @@
   <block id="bf3f7ef872246f009e37d0a4c0951049" category="paragraph">*Formato:* US-BV- 1</block>
   <block id="08b3c5691f5c3cb584dc1a3ec5321962" category="summary">O Data Infrastructure Insights tem tutoriais para mostrar como executar muitas tarefas.</block>
   <block id="5b425cd08035f29c3dad5d45f1d2ea6e" category="doc">Tutoriais de recursos</block>
-  <block id="c11546e49fdd67698723459cc158d58e" category="paragraph">O Data Infrastructure Insights é carregado com recursos úteis que permitem localizar dados de forma rápida e fácil, solucionar problemas e fornecer insights sobre seu ambiente corporativo. Encontre dados facilmente com consultas avançadas, visualize dados em painéis e envie alertas por e-mail para os limites de dados definidos.</block>
-  <block id="0b79795d3efc95b9976c7c5b933afce2" category="section-title">Introdução</block>
-  <block id="1a2d0d51ce048c550f58a12da3a8a0b7" category="paragraph">Assista a um breve tutorial explicando como o Data Infrastructure Insights funciona.</block>
   <block id="7dc1d63676b307452b778906ec63a727" category="section-title">Lista de verificação e tutoriais em vídeo</block>
-  <block id="bb32edd6cfeb5b70b9425ab7efaffc7d" category="paragraph">A *Lista de verificação de arranque* apresentada no seu site Data Infrastructure Insights contém uma lista de várias tarefas e conceitos úteis. A seleção de um item na lista de verificação leva você à página de Insights de infraestrutura de dados apropriada para esse conceito. Por exemplo, clicar no item _criar um Dashboard_ abre a página Data Infrastructure Insights *Dashboards*.</block>
   <block id="06bc4be9452f8162d26f7cb4b4d2e0b2" category="inline-image-macro">Progresso da lista de verificação do tutorial</block>
   <block id="8d72a33fb7e1e81326ed633058c4c3c6" category="paragraph"><block ref="8d72a33fb7e1e81326ed633058c4c3c6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="76139ab832813477c275f09a383293c0" category="paragraph">Na parte superior da página há um link para um tutorial em vídeo mostrando como criar um painel. Você pode ver o vídeo quantas vezes quiser até clicar no botão _Get It! Não mostrar novamente este link_ para esse vídeo. O vídeo estará disponível toda vez que você for para a página Dashboards, até que você o rejeite.</block>
@@ -1450,10 +1446,6 @@
   <block id="0aac9dc0b59278dac24dcb96f42f6674" category="paragraph">Depois de assistir ao vídeo pelo menos uma vez, o item _Create a Dashboard_ na lista de verificação é desmarcado, indicando que você concluiu o tutorial. Você pode então prosseguir para o próximo tutorial.</block>
   <block id="02bf91ef19eb660db8593e97292dde1c" category="admonition">Você pode ver os tutoriais em qualquer ordem que você gosta, quantas vezes quiser até ser demitido.</block>
   <block id="2d7a0a906729c332280875fa9c1ea09c" category="section-title">A lista de verificação está em falta</block>
-  <block id="9fd687d950079f0d903acce7d665006e" category="paragraph">A lista de verificação de arranque é apresentada no seu site até clicar no link _não mostrar novamente_ na parte inferior da lista de verificação. Mesmo depois de descartar a lista de verificação, os tutoriais ainda estão disponíveis em cada página apropriada do Data Infrastructure Insights até que você ignore cada um da barra de cabeçalho da mensagem.</block>
-  <block id="ec7cecc5c967770303bd0879fae9fa97" category="section-title">Veja os tutoriais</block>
-  <block id="dd0d7945a3c6cc8c8a340c913a130d8d" category="section-title">A consultar dados</block>
-  <block id="730fe644f1d87eaec727a65945705b30" category="section-title">Resolver dispositivos</block>
   <block id="e8cdc72b15f2eb76eb1815f526758f2e" category="doc">Insights: Workloads de alto consumo</block>
   <block id="e182a8a3f2adf774fb1c959df71b8600" category="section-title">Terminologia</block>
   <block id="7f595b1ef82026007f2533413106e7d8" category="paragraph">Ao falar sobre carga de trabalho ou impactos de recursos, as seguintes definições são úteis.</block>
@@ -12013,5 +12005,7 @@
   <block id="bcaea0fa3a691efcd767e69c0bf6c611" category="paragraph">Para garantir que seus destinatários recebam notificações do Data Infrastructure Insights, adicione os seguintes endereços de e-mail a qualquer lista de "permitir":</block>
   <block id="920ab4b11a04d50637a16a5c9699b3ba" category="list-text">accounts@service.cloudinsights.netapp.com</block>
   <block id="b68146f7d3be586c34e5b6d021541f50" category="list-text">DoNotReply@cloudinsights.netapp.com</block>
-  <block id="b496ede8f397a48079afe818e67e759f" category="paragraph">O Data Infrastructure Insights inclui vários tutoriais em vídeo para ajudá-lo a entender esses recursos e implementar melhor suas estratégias de insights de negócios.</block>
+  <block id="f96c0cb8e557b8c2286592a385c5fd6e" category="paragraph">O Data Infrastructure Insights é carregado com recursos úteis que permitem solucionar problemas de forma rápida e fácil e fornecer insights sobre seu ambiente corporativo. Encontre dados facilmente com consultas avançadas, visualize dados em painéis e envie alertas por e-mail para os limites de dados definidos.</block>
+  <block id="9a3ddb6d99b9ffb5f7473690abc9fb52" category="paragraph">A *Lista de verificação de inicialização* exibida no seu locatário do Data Infrastructure Insights contém uma lista de várias tarefas e conceitos úteis. A seleção de um item na lista de verificação leva você à página de Insights de infraestrutura de dados apropriada para esse conceito. Por exemplo, clicar no item _criar um Dashboard_ abre a página Data Infrastructure Insights *Dashboards*.</block>
+  <block id="363b2b401698741ed946f685265f5dc1" category="paragraph">A lista de verificação de arranque é apresentada até clicar no link _não mostrar novamente_ na parte inferior da lista de verificação. Mesmo depois de descartar a lista de verificação, os tutoriais ainda estão disponíveis em cada página apropriada do Data Infrastructure Insights até que você ignore cada um da barra de cabeçalho da mensagem.</block>
 </blocks>
