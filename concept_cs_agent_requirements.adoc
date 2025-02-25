@@ -26,7 +26,7 @@ Você develink:task_cs_add_agent.html["Instale um agente"], a fim de adquirir in
 | Componente | Requisito Linux 
 
 
-| Sistema operacional | Um computador executando uma versão licenciada de um dos seguintes: * CentOS 64 64 64 24,04 11 9,4 Stream (9,2 15 SP3 20,04 64 64 64-bit), CentOS 9 9,4 15 SP5 22,04 10 9,3 Stream, SELinux * OpenSUSE Leap 8,8 a 15,5 (64-bit) * Oracle Linux 8,6 - 64, 9,1 a 9,4 (8,8-bit) * Red Hat Enterprise Linux 8,6 a 15,3, 9,1 a 9,4 (8-bit), SELinux * Rocky 64 Recomenda-se um servidor dedicado. 
+| Sistema operacional | Um computador executando uma versão licenciada de um dos seguintes: * CentOS 9,1 9,4 15 SP4 20,04 64 64 64 Stream (64 9,5 15 SP6 22,04 10 9,4-bit) * OpenSUSE Leap 15,3 64 64 24,04 11 9,5 a 15,5 (64-bit) * Oracle Linux 8,10 (64-bit), 9,1 a 9,4 (64-bit), SELinux * Red Hat Enterprise Linux 8,10 (64-bit), 9 a 9,5 (64-bit) Recomenda-se um servidor dedicado. 
 
 
 | Comandos | 'unzip' é necessário para a instalação. Além disso, o comando 'sudo su –' é necessário para instalação, execução de scripts e desinstalação. 
