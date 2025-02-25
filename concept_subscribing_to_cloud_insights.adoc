@@ -27,7 +27,7 @@ Os primeiros passos do Data Infrastructure Insights são tão fáceis quanto tr�
 ** Agende uma reunião ou aguarde que um representante entre em Contato com você sobre seu teste.
 
 
-* *Subscribe* to Data Infrastructure Insights para acesso contínuo e ininterrupto aos seus dados via link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Vendas da NetApp"] direto ou link:https://aws.amazon.com/marketplace/pp/prodview-pbc3h2mkgaqxe["AWS Marketplace"].
+* *Subscribe* to Data Infrastructure Insights para acesso contínuo e ininterrupto aos seus dados via link:https://bluexp.netapp.com/contact-cds["Vendas da NetApp"] direto ou link:https://aws.amazon.com/marketplace/pp/prodview-pbc3h2mkgaqxe["AWS Marketplace"].
 
 
 Durante o processo de Registro, você pode escolher a região global para hospedar seu ambiente Data Infrastructure Insights. Para obter mais informações, leia sobre o Data Infrastructure Insights link:security_information_and_region.html["Informação e região"].
@@ -185,7 +185,7 @@ Se sua contagem de unidades gerenciadas for inferior a 1.000, você poderá se i
 
 === Inscreva-se através do NetApp vendas diretas
 
-Se a sua contagem de unidades geridas esperada for igual ou superior a 1.000, clique no link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["*Contato de vendas*"] botão para subscrever a equipa de vendas da NetApp.
+Se a sua contagem de unidades geridas esperada for igual ou superior a 1.000, clique no link:https://bluexp.netapp.com/contact-cds["*Contato de vendas*"] botão para subscrever a equipa de vendas da NetApp.
 
 Você deve fornecer seus dados de informações de infraestrutura *número de série* ao seu representante de vendas da NetApp para que sua assinatura paga possa ser aplicada ao seu ambiente de informações de infraestrutura de dados. O número de série identifica exclusivamente o ambiente de avaliação do Data Infrastructure Insights e pode ser encontrado na página *Admin > Subscription*.
 

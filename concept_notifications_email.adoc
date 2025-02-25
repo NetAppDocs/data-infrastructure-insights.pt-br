@@ -48,13 +48,13 @@ A seguir estão exemplos dos tipos de notificações que podem ser enviadas e as
 | A versão de avaliação ou subscrição foi atualizada | Reveja os detalhes da subscrição link:concept_subscribing_to_cloud_insights.html["Subscrição"]na página 
 
 
-| A assinatura expirará em 90 dias. A assinatura expirará em 30 dias | Nenhuma ação necessária se a "renovação automática" estiver ativada, o Contato link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Vendas da NetApp"] para renovar a assinatura 
+| A assinatura expirará em 90 dias. A assinatura expirará em 30 dias | Nenhuma ação necessária se a "renovação automática" estiver ativada entre em Contato com as vendas da NetApp para renovar a assinatura 
 
 
-| O teste termina em 2 dias | Renove o teste a partir link:concept_subscribing_to_cloud_insights.html["Subscrição"]da página. Você pode renovar um teste uma vez. link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Vendas da NetApp"]Contacte para adquirir uma subscrição 
+| O teste termina em 2 dias | Renove o teste a partir link:concept_subscribing_to_cloud_insights.html["Subscrição"]da página. Você pode renovar um teste uma vez. Entre em Contato com a NetApp Sales para comprar uma assinatura 
 
 
-| A conta de teste ou assinatura expirou deixará de coletar dados em 48 horas a conta será excluída após 48 horas | link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Vendas da NetApp"]Contacte para adquirir uma subscrição 
+| A conta de teste ou assinatura expirou deixará de coletar dados em 48 horas a conta será excluída após 48 horas | Entre em Contato com a NetApp Sales para comprar uma assinatura 
 |===
 [NOTE]
 ====

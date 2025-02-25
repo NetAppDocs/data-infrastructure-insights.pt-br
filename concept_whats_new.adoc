@@ -568,7 +568,7 @@ image:StorageNodeSupportData.png["Informações de suporte do nó de storage"]
 
 === Mapear tags VMware para anotações do Cloud Insights
 
-O link:task_dc_vmware.html#mapping-vmware-tags-to-cloud-insights-annotations["VMware"]coletor de dados permite preencher anotações de texto do Cloud Insights com tags de mesmo nome configuradas no VMware.
+O link:task_dc_vmware.html["VMware"]coletor de dados permite preencher anotações de texto do Cloud Insights com tags de mesmo nome configuradas no VMware.
 
 
 
@@ -1387,7 +1387,7 @@ O agente para ingestão de dados de integração telegraf foi atualizado para a 
 
 === Recursos de visualização
 
-O Cloud Insights destaca regularmente uma série de novas funcionalidades de pré-visualização interessantes. Se você estiver interessado em visualizar um ou mais desses recursos, entre em Contato com o link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Equipe de vendas da NetApp"] para obter mais informações.
+O Cloud Insights destaca regularmente uma série de novas funcionalidades de pré-visualização interessantes. Se você estiver interessado em visualizar um ou mais desses recursos, entre em Contato com o link:https://bluexp.netapp.com/contact-cds["Equipe de vendas da NetApp"] para obter mais informações.
 
 |===
 
@@ -1452,7 +1452,7 @@ Agora você pode configurar o Cloud Insights para alertar quando a modificação
 
 === Recursos de visualização
 
-O Cloud Insights destaca regularmente uma série de novas funcionalidades de pré-visualização interessantes. Se você estiver interessado em visualizar um ou mais desses recursos, entre em Contato com o link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Equipe de vendas da NetApp"] para obter mais informações.
+O Cloud Insights destaca regularmente uma série de novas funcionalidades de pré-visualização interessantes. Se você estiver interessado em visualizar um ou mais desses recursos, entre em Contato com o link:https://bluexp.netapp.com/contact-cds["Equipe de vendas da NetApp"] para obter mais informações.
 
 |===
 
@@ -1511,7 +1511,7 @@ O Cloud Insights mantém você atualizado sobre as alterações no seu ambiente 
 
 === Recursos de visualização
 
-O Cloud Insights destaca regularmente uma série de novas funcionalidades de pré-visualização interessantes. Se você estiver interessado em visualizar um ou mais desses recursos, entre em Contato com o link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Equipe de vendas da NetApp"] para obter mais informações.
+O Cloud Insights destaca regularmente uma série de novas funcionalidades de pré-visualização interessantes. Se você estiver interessado em visualizar um ou mais desses recursos, entre em Contato com o link:https://bluexp.netapp.com/contact-cds["Equipe de vendas da NetApp"] para obter mais informações.
 
 |===
 
@@ -2386,7 +2386,7 @@ Sua função de usuário no Cloud Insights determina link:reporting_user_roles.h
 NOTE: O relatório Cloud Insights está disponível para ambientes de 500 MUs ou mais.
 
 
-IMPORTANT: Se você é um cliente atual do Premium Edition e deseja manter seus relatórios, leia link:reporting_user_roles.html#important-note-for-existing-customers["nota importante para os clientes existentes"]este .
+IMPORTANT: Se você é um cliente atual do Premium Edition e deseja manter seus relatórios, leia link:reporting_user_roles.html["nota importante para os clientes existentes"]este .
 
 
 
@@ -2992,7 +2992,7 @@ O link:task_config_telegraf_kubernetes.html["Kubernetes Data Collector"] agora c
 
 === Edições Cloud Insights
 
-O Cloud Insights está disponível em diferentes edições para atender às suas necessidades de orçamento e negócios. Os clientes NetApp existentes com uma conta de suporte NetApp ativa podem desfrutar de 7 dias de retenção de dados e acesso a coletores de dados NetApp com a *Edição básica* gratuita, ou obter maior retenção de dados, acesso a todos os coletores de dados suportados, suporte técnico especializado e muito mais com *Edição padrão*. Para obter mais informações sobre os recursos disponíveis, consulte o site do NetApplink:https://cloud.netapp.com/cloud-insights["Cloud Insights"].
+O Cloud Insights está disponível em diferentes edições para atender às suas necessidades de orçamento e negócios. Os clientes NetApp existentes com uma conta de suporte NetApp ativa podem desfrutar de 7 dias de retenção de dados e acesso a coletores de dados NetApp com a *Edição básica* gratuita, ou obter maior retenção de dados, acesso a todos os coletores de dados suportados, suporte técnico especializado e muito mais com *Edição padrão*. Para obter mais informações sobre os recursos disponíveis, consulte o site do NetApplink:https://www.netapp.com/cloud-services/cloud-insights/["Cloud Insights"].
 
 
 

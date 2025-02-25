@@ -5,13 +5,16 @@ keywords: applications, asset, cost
 summary: Compreender as aplicações utilizadas no ambiente da sua empresa ajuda-o a controlar a utilização e os custos dos ativos. 
 ---
 = Rastreamento do uso de ativos por aplicativo
+:hardbreaks:
 :allow-uri-read: 
-:firstname: [.lead]
-:author: [.lead]
-:authorinitials: [
-:authors: [.lead]
-:revdate: Understanding the applications used in your company's environment helps you to keep track of asset usage and cost.
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
+
+[role="lead"]
+Compreender os aplicativos usados no ambiente da sua empresa ajuda você a acompanhar o uso e o custo dos ativos.
 
 Antes de rastrear dados associados aos aplicativos em execução no locatário, primeiro é necessário definir esses aplicativos e associá-los aos ativos apropriados. Você pode associar aplicativos aos seguintes ativos: Hosts, máquinas virtuais, volumes, volumes internos, qtrees, compartilhamentos e hipervisores.
 

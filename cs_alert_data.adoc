@@ -10,7 +10,7 @@ summary: O Workload Security cria alertas em caso de atividade anormal do usuár
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media
+:imagesdir: ./media/
 
 
 [role="lead"]

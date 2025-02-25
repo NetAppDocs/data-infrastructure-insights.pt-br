@@ -10,7 +10,7 @@ summary: 'Você pode definir políticas de resposta automatizadas para possívei
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media
+:imagesdir: ./media/
 
 
 [role="lead"]

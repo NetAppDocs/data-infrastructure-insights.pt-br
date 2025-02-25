@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: san_anayzer_overview.html 
+permalink: san_analyzer_overview.html 
 summary: O SAN Analyzer fornece topologia para ativos no seu locatário 
 keywords: topology, analyze, analysis, map 
 ---
@@ -28,16 +28,16 @@ image:san_analyzer_example_with_panel.png["Mapa de topologia de um sistema de st
 
 Selecione *Observability > Analyze > SAN Analyzer* para visualizar o SAN Analyzer. Defina um filtro para aplicação, host, malha e/ou armazenamento. O mapa para os objetos é exibido, mostrando objetos conetados. Passe o Mouse sobre um objeto para exibir métricas de tráfego para essas conexões.
 
+image:san_analyzer_traffic_metrics.png["Exemplo de métricas de tráfego do analisador de SAN"]
+
 
 NOTE: A maioria dos filtros do SAN Analyzer (incluindo aqueles que você pode adicionar) são contextuais; quando você seleciona um objeto em um desses filtros, as opções apresentadas nos outros menus suspensos são atualizadas em contexto com o objeto ou objetos selecionados. As únicas exceções são a aplicação, a porta e o interrutor; esses filtros não são contextuais.
-
-image:san_analyzer_traffic_metrics.png[""]
 
 Clicar em um objeto ou grupo abre um painel deslizante fornecendo detalhes adicionais sobre o objeto e suas conexões. O painel deslizante exibe um resumo, que fornece detalhes sobre o objeto selecionado (por exemplo, IP, hipervisor, malhas conetadas, etc., dependendo do tipo de objeto), e gráficos mostrando métricas para o objeto, como latência ou IOPS, e alterações e alertas, se relevante. Você também pode selecionar para exibir as métricas dos principais objetos correlacionados nos gráficos, se desejado.
 
 Além da guia Resumo, o painel deslizante exibe guias para itens como detalhes da porta ou informações de zona, conforme aplicável ao objeto escolhido.
 
-image:san_analyzer_slideout_example.png[""]
+image:san_analyzer_slideout_example.png["Painel deslizante do analisador SAN"]
 
 Se o seu ambiente incluir dispositivos iSCSI, passar o Mouse sobre o objeto _iSCSI_ destaca as conexões relacionadas a esses dispositivos iSCSI relevantes.
 
