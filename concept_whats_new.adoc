@@ -1037,7 +1037,7 @@ A Monitoração de API foi movida da página de assinatura para a página *Admin
 
 O coletor de dados Cloud Connection for ONTAP 9.9 está sendo obsoleto. A partir de 4 de abril de 2023, os coletores de dados do Cloud Connection em seu ambiente não coletarão mais dados e, em vez disso, apresentarão um erro ao polling. O coletor de dados do Cloud Connection será removido completamente do Cloud Insights em uma atualização subsequente.
 
-Antes de 4 de abril de 2023, é obrigatório configurar um novo coletor de dados do software de gerenciamento de dados NetApp ONTAP para qualquer sistema ONTAP coletado atualmente pelo Cloud Connection. link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/How_to_transition_from_NetApp_Cloud_Connection_to_AU_based_data_collector["Saiba mais"].
+Antes de 4 de abril de 2023, é obrigatório configurar um novo coletor de dados do software de gerenciamento de dados NetApp ONTAP para qualquer sistema ONTAP coletado atualmente pelo Cloud Connection.
 
 '''
 

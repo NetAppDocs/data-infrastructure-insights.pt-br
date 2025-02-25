@@ -70,7 +70,7 @@ Consulte também link:task_troubleshooting_linux_acquisition_unit_problems.html[
 
 == Recursos
 
-Dicas adicionais de solução de problemas podem ser encontradas no link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights["Base de conhecimento da NetApp"] (login de suporte necessário).
+Dicas adicionais de solução de problemas podem ser encontradas no link:https://kb.netapp.com/Cloud/BlueXP/DII["Base de conhecimento da NetApp"] (login de suporte necessário).
 
 Informações adicionais de suporte podem ser encontradas na página Insights de infraestrutura de dadoslink:concept_requesting_support.html["Suporte"].
 

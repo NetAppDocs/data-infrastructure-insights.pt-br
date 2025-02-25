@@ -87,10 +87,9 @@ Muitas ofertas do NetApp incluem o Data Infrastructure Insights Basic Edition co
 
 Estas opções de suporte estão disponíveis no modo de avaliação e estão disponíveis gratuitamente 24x7:
 
-* *https://kb.NetApp.com/Special:Pesquisa na nuvem[base de conhecimento]*
-
-
-Clique nos links nesta seção leva você para a base de conhecimento da NetApp, onde você pode pesquisar por artigos relevantes, como fazer e muito mais.
+* *https://kb.netapp.com/Cloud/BlueXP/DII[KnowledgeBase]*
++
+Clicar nos links nesta seção leva você à base de conhecimento do NetApp, onde você pode pesquisar por artigos relevantes, instruções e muito mais.
 
 * *link:https://docs.netapp.com/us-en/cloudinsights/["Documentação"]*
 +
