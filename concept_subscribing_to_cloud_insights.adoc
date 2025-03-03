@@ -58,8 +58,6 @@ NOTE: Se você precisar de tempo adicional para avaliar o Data Infrastructure In
 
 Você também pode se inscrever para uma avaliação gratuita pelo AWS Marketplace. A avaliação gratuita do AWS Marketplace oferece acesso ao Data Infrastructure Insights por um período de teste de 33 dias e permite até 499 <<observability-metering,Unidades gerenciadas>> (MUs).
 
-Nota: Se você configurar mais de 499 MUs, você entrará no estado "violado". Enquanto seu teste estiver em estado violado, você perderá o acesso a algumas funcionalidades do Data Infrastructure Insights até que a violação seja resolvida, reduzindo o número de MUs configuradas ou assinando o Data Infrastructure Insights.
-
 A avaliação gratuita do AWS Marketplace não pode ser estendida. A qualquer momento durante a avaliação, você pode fazer o downgrade para uma assinatura do Data Infrastructure Insights Basic Edition ou alterar para uma assinatura paga do Data Infrastructure Insights, visitando a página *Admin -> Subscription*.
 
 
@@ -142,7 +140,7 @@ Cada nível é medido a uma taxa diferente, com o todo calculado em conjunto par
 
  Effective usage = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioning TiB)
 
-NOTE: A soma de unidades gerenciadas pode diferir ligeiramente da contagem de coletores de dados na seção de resumo. Isso ocorre porque as contagens de unidades gerenciadas são arredondadas para a Unidade gerenciada mais próxima. A soma desses números na lista de coletores de dados pode ser ligeiramente maior do que o total de unidades gerenciadas na seção de status. A seção de resumo reflete sua contagem de unidades gerenciadas real para sua assinatura. Para facilitar isso, o DII calcula um único número de direito * efetivo* com base em quantidades _subscritas_; em seguida, calcula esse mesmo número com base no armazenamento _descoberto_ e só declara violação se a capacidade efetiva descoberta for maior do que o direito efetivo. Isso oferece flexibilidade para monitorar quantidades que variam de acordo com os valores inscritos para cada nível, o que o DII permite, contanto que o storage total descoberto esteja dentro dos direitos efetivos inscritos.
+NOTE: A soma de unidades gerenciadas pode diferir ligeiramente da contagem de coletores de dados na seção de resumo. Isso ocorre porque as contagens de unidades gerenciadas são arredondadas para a Unidade gerenciada mais próxima. A soma desses números na lista de coletores de dados pode ser ligeiramente maior do que o total de unidades gerenciadas na seção de status. A seção de resumo reflete sua contagem de unidades gerenciadas real para sua assinatura. Para facilitar isso, o DII calcula um único número de direito * efetivo com base em quantidades _subscritas_; em seguida, calcula esse mesmo número com base no armazenamento _descoberto_. Isso oferece flexibilidade para monitorar quantidades que variam de acordo com os valores inscritos para cada nível, o que o DII permite, contanto que o storage total descoberto esteja dentro dos direitos efetivos inscritos.
 
 
 
