@@ -158,8 +158,6 @@ Observabilidade da infraestrutura de dados e uso do medidor de observabilidade d
 
 
 
-Se o seu ambiente incluir ou for esperado que inclua 1.000 ou mais unidades gerenciadas, você estará qualificado para *preço por volume* e será solicitado a entrar em Contato com as vendas da NetApp para se inscrever. <<how-do-i-subscribe,abaixo>>Consulte para obter mais detalhes.
-
 
 
 === Medição da segurança da carga de trabalho
@@ -183,7 +181,7 @@ Se sua contagem de unidades gerenciadas for inferior a 1.000, você poderá se i
 
 === Inscreva-se através do NetApp vendas diretas
 
-Se a sua contagem de unidades geridas esperada for igual ou superior a 1.000, clique no link:https://bluexp.netapp.com/contact-cds["*Contato de vendas*"] botão para subscrever a equipa de vendas da NetApp.
+Se a sua contagem de unidades geridas esperada for igual ou superior a 1.000, clique no link:https://www.netapp.com/forms/cloud-insights-contact-us["*Contato de vendas*"] botão para subscrever a equipa de vendas da NetApp.
 
 Você deve fornecer seus dados de informações de infraestrutura *número de série* ao seu representante de vendas da NetApp para que sua assinatura paga possa ser aplicada ao seu ambiente de informações de infraestrutura de dados. O número de série identifica exclusivamente o ambiente de avaliação do Data Infrastructure Insights e pode ser encontrado na página *Admin > Subscription*.
 
