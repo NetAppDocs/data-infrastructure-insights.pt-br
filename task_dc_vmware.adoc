@@ -138,7 +138,7 @@ Na tela de configuração avançada, marque a caixa *desempenho da VM* para cole
 
 == Mapeamento de tags VMware para anotações do Data Infrastructure Insights
 
-O coletor de dados VMware permite preencher anotações do Data Infrastructure Insights com tags configuradas no VMware. As anotações devem ser nomeadas exatamente como as tags VMware. O Data Infrastructure Insights sempre preencherá anotações de tipo texto com o mesmo nome e fará uma "melhor tentativa" para preencher anotações de outros tipos (número, boolean, etc.). Se a anotação for de um tipo diferente e o coletor de dados não a preencher, pode ser necessário remover a anotação e recriá-la como um tipo de texto.
+O coletor de dados VMware permite preencher anotações do Data Infrastructure Insights com tags configuradas no VMware. O nome da anotação DII deve ser idêntico ao nome VMware *category*; a tag é então aplicada como um valor de anotação de uma anotação DII com o mesmo nome da categoria. O Data Infrastructure Insights sempre preencherá anotações de tipo texto com o mesmo nome e fará uma "melhor tentativa" para preencher anotações de outros tipos (número, boolean, etc.). Se a anotação for de um tipo diferente e o coletor de dados não a preencher, pode ser necessário remover a anotação e recriá-la como um tipo de texto.
 
 Observe que as tags VMware podem diferenciar maiúsculas de minúsculas, enquanto as tags Data Infrastructure Insights diferenciam maiúsculas de minúsculas. Então, se você criar uma anotação chamada "PROPRIETÁRIO" no Data Infrastructure Insights e tags chamadas "PROPRIETÁRIO", "proprietário" e "proprietário" no VMware, todas essas variações de "proprietário" serão mapeadas para a anotação "PROPRIETÁRIO" do Cloud Insight.
 
