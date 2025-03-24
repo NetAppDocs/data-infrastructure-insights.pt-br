@@ -12,7 +12,7 @@ keywords: data collector, vendor, infrastructure, integration, service
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ./media/The alerting page redesign will also be ready by the of the month. Need to add it to what’s new as wellopens
 
 
 [role="lead"]
@@ -272,9 +272,6 @@ Lista alfabética de coletores de dados suportados pelo Data Infrastructure Insi
 
 
 | link:task_dc_nutanix.html["Série Nutanix NX"] | Infraestrutura 
-
-
-| link:task_dc_openstack.html["OpenStack"] | Infraestrutura 
 
 
 | link:task_config_telegraf_openzfs.html["OpenZFS"] | Serviço 
