@@ -47,6 +47,6 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 
 Os arquivos de aviso fornecem informações sobre direitos autorais de terceiros e licenças usadas no software NetApp.
 
-link:media/Data_Infrastructure_InsightsOn-prem_ComponentsNOTICE-1.pdf["Aviso para Insights de infraestrutura de dados (anteriormente Cloud Insights)"]
+link:media/Data_Infrastructure_Insights-On-prem-Components-ReleaseNotice1.pdf["Aviso para Insights de infraestrutura de dados (anteriormente Cloud Insights)"]
 
 link:media/Data_Infrastructure_Insights_Workload_SecurityOn-prem_ComponentsNOTICE-1.pdf["Aviso de segurança de carga de trabalho (anteriormente Cloud Secure)"]
