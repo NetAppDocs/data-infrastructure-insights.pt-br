@@ -19,7 +19,7 @@ keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying
 
 
 [role="lead"]
-Você pode personalizar o formato de saída e a entrega de um relatório, definir propriedades ou horários do relatório e relatórios de e-mail.
+Você pode personalizar o formato de saída e a entrega de um relatório, definir propriedades ou programações do relatório e relatórios de e-mail.
 
 
 NOTE: O recurso relatórios está disponível no Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html["Edição Premium"].
@@ -39,8 +39,6 @@ Você pode personalizar o formato e o método de entrega dos relatórios.
 image:Reporting_Output_and_Delivery.png["Relatório de saída e entrega"]
 
 . Clique em *Propriedades > Programação*
-
-
 . Pode definir as seguintes opções:
 +
 ** *Agendar* quando quiser que os relatórios sejam executados.
