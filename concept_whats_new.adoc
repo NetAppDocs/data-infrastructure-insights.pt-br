@@ -32,14 +32,6 @@ image:ontap_essentials_asa_views.png["Lista suspensa do ONTAP Essentials que mos
 
 
 
-=== ONTAP Essentials para a última geração de sistemas ASA
-
-O ONTAP Essentials agora inclui capacidade de gerenciamento pronta para uso para a última geração link:task_dc_na_ontap_all_san_array.html["ASA"]de dispositivos. Isso inclui o Analisador de SAN para topologias VM a LUN de workloads executados no ONTAP, agora também disponível com suporte do NetApp como parte do Data Infrastructure Insights Basic Edition.
-
-image:ontap_essentials_asa_views.png["Lista suspensa do ONTAP Essentials que mostra o ASA como distinto do unificado"]
-
-
-
 === Rastreamento de uso da API DII: Melhore a segurança e a eficiência
 
 Fortaleça sua postura de segurança e simplifique o gerenciamento de recursos com o rastreamento aprimorado de uso da API REST, disponível para usuários de administração. Com o rastreamento de uso da API, você pode ver quais tokens de API estão sendo usados, a partir de quais endereços IP e o volume de tráfego que eles geram. Ao vincular tokens a endereços IP específicos e níveis de uso, você obterá insights poderosos sobre o acesso ao sistema e as tendências de uso, dando a você o controle de que precisa para manter um ambiente seguro e eficiente e manter as operações funcionando sem problemas. Fortaleça sua postura de segurança e simplifique o gerenciamento de recursos com o rastreamento aprimorado de uso da API REST, disponível para usuários de administração. Com o rastreamento de uso da API, você pode ver quais tokens de API estão sendo usados, a partir de quais endereços IP e o volume de tráfego que eles geram. Ao vincular tokens a endereços IP específicos e níveis de uso, você obterá insights poderosos sobre o acesso ao sistema e as tendências de uso, dando a você o controle de que precisa para manter um ambiente seguro e eficiente e manter as operações funcionando sem problemas.
