@@ -78,5 +78,8 @@ image:CS_Data_Collector_Error.png["Erro do Coletor de Segurança da carga de tra
 
 
 | O Data Collector está errando quando o modo SVM está selecionado. | Durante a conexão no modo SVM, se o IP de gerenciamento de cluster for usado para se conetar em vez do IP de gerenciamento SVM, a conexão falhará. Certifique-se de que o SVM IP correto seja usado. 
+
+
+| O coletor de dados mostra uma mensagem de erro quando o recurso Acesso negado está ativado: "O conetor está em estado de erro. Nome do serviço: Auditoria. Motivo da falha: Falha ao configurar o fpolicy no SVM test_svm. Motivo: O usuário não está autorizado." | O usuário pode estar perdendo as PERMISSÕES REST necessárias para o recurso Acesso negado. Siga as instruções em link:concept_ws_integration_with_ontap_access_denied.html["esta página"] para definir as permissões. Reinicie o coletor assim que as permissões estiverem definidas. 
 |===
 Se você ainda estiver tendo problemas, entre em Contato com os links de suporte mencionados na página *Ajuda > suporte*.
