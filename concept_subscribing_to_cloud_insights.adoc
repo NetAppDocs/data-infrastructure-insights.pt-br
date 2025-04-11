@@ -6,13 +6,7 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 ---
 = Subscrever o Data Infrastructure Insights
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]
@@ -136,11 +130,10 @@ A observabilidade do Data Infrastructure Insights mede o uso de acordo com o ní
 * Nuvem consumida
 
 
-Cada nível é medido a uma taxa diferente, com o todo calculado em conjunto para lhe dar um direito _efetivo_. A fórmula para calcular o uso eficaz é a seguinte:
+Cada nível é medido a uma taxa diferente, com o todo calculado em conjunto para lhe dar um direito ponderado. A fórmula para calcular a utilização ponderada é a seguinte:
 
- Effective usage = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioning TiB)
-
-NOTE: A soma de unidades gerenciadas pode diferir ligeiramente da contagem de coletores de dados na seção de resumo. Isso ocorre porque as contagens de unidades gerenciadas são arredondadas para a Unidade gerenciada mais próxima. A soma desses números na lista de coletores de dados pode ser ligeiramente maior do que o total de unidades gerenciadas na seção de status. A seção de resumo reflete sua contagem de unidades gerenciadas real para sua assinatura. Para facilitar isso, o DII calcula um único número de direito * efetivo com base em quantidades _subscritas_; em seguida, calcula esse mesmo número com base no armazenamento _descoberto_. Isso oferece flexibilidade para monitorar quantidades que variam de acordo com os valores inscritos para cada nível, o que o DII permite, contanto que o storage total descoberto esteja dentro dos direitos efetivos inscritos.
+ Weighted usage = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioning TiB)
+Para facilitar isso, o DII calcula um único número de direito * ponderado com base em quantidades _subscritas_; em seguida, calcula esse mesmo número com base no armazenamento _descoberto_ e só declara violação se a capacidade descoberta for maior do que o direito ponderado. Isso proporciona flexibilidade para monitorar quantidades que variam de acordo com os valores inscritos para cada nível, o que o DII permite, contanto que o storage total descoberto esteja dentro dos direitos ponderados subscritos.
 
 
 
