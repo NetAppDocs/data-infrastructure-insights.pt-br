@@ -5,17 +5,8 @@ summary: Configurar o coletor de dados NetApp StorageGRID
 keywords: data collector, queries, create, storagegrid 
 ---
 = Coletor de dados NetApp StorageGRID
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ summary: 'Usando ferramentas de criação de relatórios para criar relatórios 
 keywords: reporting, cognos, data warehouse, dwh, ad-hoc, custom 
 ---
 = Criando relatórios personalizados
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

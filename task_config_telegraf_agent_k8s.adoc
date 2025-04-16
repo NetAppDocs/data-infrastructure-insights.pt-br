@@ -6,13 +6,8 @@ summary: O operador de monitoramento do Kubernetes coleta dados do Kubernetes pa
 ---
 = Instalação e configuração do operador de monitoramento Kubernetes
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
 :nofooter: 
-:toclevels: 2
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ keywords: data collector, azure, Netapp files, anf
 summary: Configurando o coletor de dados Azure NetApp Files. 
 ---
 = Configurar o coletor de dados Azure NetApp Files
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -6,13 +6,7 @@ summary: Generic DB Host Resolver Collector
 ---
 = NetApp resolvedor de host de banco de dados genérico
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

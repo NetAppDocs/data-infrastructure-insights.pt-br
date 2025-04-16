@@ -5,17 +5,8 @@ summary: Ao consultar a alta densidade de e/S, você deseja excluir volumes raiz
 keywords: NetApp, root volume, high I/O, 
 ---
 = Garantir que os relatórios de densidade de e/S descrevam apenas volumes de dados internos
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

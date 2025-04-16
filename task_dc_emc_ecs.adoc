@@ -5,17 +5,8 @@ keywords: data collector, ecs, EMC
 summary: Configurar o coletor de dados ECS. 
 ---
 = Configurar o coletor de dados EMC ECS
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

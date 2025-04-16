@@ -5,17 +5,8 @@ summary: Visão geral da seção Alertas relacionados à página de ativos em In
 keywords: asset, landing page, violations, Alerts, 
 ---
 = Seção Alertas relacionados à Página de ativos
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

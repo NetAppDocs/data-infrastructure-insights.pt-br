@@ -6,13 +6,7 @@ summary: O Cloud Insights controla as alterações na infraestrutura para facili
 ---
 = Análise de mudança de infraestrutura
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

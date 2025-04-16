@@ -5,17 +5,8 @@ summary: Modificar ou excluir uma consulta
 keywords: query, queries, modify, edit, delete, remove 
 ---
 = Modificar ou excluir uma consulta
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ keywords: data collector, ONTAP, NetApp, SVM, cloud ontap, firewall
 summary: Adicionando coletores de dados do Workload Security 
 ---
 = Configurando o coletor de dados SVM do ONTAP
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -57,18 +48,18 @@ O Workload Security usa coletores de dados para coletar dados de acesso de arqui
 
 * Verifique se os aplicativos corretos estão definidos para o SVM executando o seguinte comando:
 +
- clustershell::> security login show -vserver <vservername> -user-or-group-name <username>
+ clustershell:> security login show -vserver <vservername> -user-or-group-name <username>
 
 
 Exemplo de saída: image:cs_svm_sample_output.png["Exemplo de saída de comando SVM"]
 
-* Certifique-se de que o SVM tenha um servidor CIFS configurado: Clustershell::> `vserver cifs show`
+* Certifique-se de que o SVM tenha um servidor CIFS configurado: Clustershell:> `vserver cifs show`
 +
 O sistema retorna o nome do SVM, o nome do servidor CIFS e os campos adicionais.
 
-* Defina uma senha para o usuário SVM vsadmin. Se estiver usando usuário personalizado ou usuário de administrador de cluster, pule esta etapa. Clustershell::> `security login password -username vsadmin -vserver svmname`
-* Desbloqueie o usuário do SVM vsadmin para acesso externo. Se estiver usando usuário personalizado ou usuário de administrador de cluster, pule esta etapa. Clustershell::> `security login unlock -username vsadmin -vserver svmname`
-* Certifique-se de que a política de firewall do LIF de dados está definida como 'mgmt' (não 'dados'). Ignore esta etapa se estiver usando um lif de gerenciamento dedicado para adicionar o SVM. Clustershell::> `network interface modify -lif <SVM_data_LIF_name> -firewall-policy mgmt`
+* Defina uma senha para o usuário SVM vsadmin. Se estiver usando usuário personalizado ou usuário de administrador de cluster, pule esta etapa. Clustershell:> `security login password -username vsadmin -vserver svmname`
+* Desbloqueie o usuário do SVM vsadmin para acesso externo. Se estiver usando usuário personalizado ou usuário de administrador de cluster, pule esta etapa. Clustershell:> `security login unlock -username vsadmin -vserver svmname`
+* Certifique-se de que a política de firewall do LIF de dados está definida como 'mgmt' (não 'dados'). Ignore esta etapa se estiver usando um lif de gerenciamento dedicado para adicionar o SVM. Clustershell:> `network interface modify -lif <SVM_data_LIF_name> -firewall-policy mgmt`
 * Quando um firewall está ativado, você deve ter uma exceção definida para permitir tráfego TCP para a porta usando o coletor de dados Data ONTAP.
 +
 link:concept_cs_agent_requirements.html["Requisitos do agente"]Consulte para obter informações de configuração. Isso se aplica a agentes locais e agentes instalados na nuvem.
@@ -301,7 +292,7 @@ Se estiver usando a política de serviço com o ONTAP *versão 9.9.1 ou mais rec
 Exemplo:
 
 ....
-Testcluster-1::*> net int service-policy create -policy only_data_fpolicy -allowed-addresses 0.0.0.0/0 -vserver aniket_svm
+Testcluster-1:*> net int service-policy create -policy only_data_fpolicy -allowed-addresses 0.0.0.0/0 -vserver aniket_svm
 -services data-cifs,data-nfs,data,-core,data-fpolicy-client
 (network interface service-policy create)
 ....

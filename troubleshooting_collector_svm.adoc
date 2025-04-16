@@ -6,10 +6,11 @@ summary: Solução de problemas de coletores de dados do Workload Security
 ---
 = Solução de problemas do coletor de dados SVM do ONTAP
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
+:firstname: :nofooter:yml
+:author: :nofooter:yml
+:authorinitials: :
+:authors: :nofooter:yml
 :icons: font
 :linkattrs: 
 :imagesdir: ./media/
@@ -20,11 +21,11 @@ O Workload Security usa coletores de dados para coletar dados de acesso de arqui
 
 Consulte link:task_add_collector_svm.html["Configurando o SVM Collector"]a página para obter instruções sobre como configurar este coletor.
 
-Problemas conhecidos e suas resoluções são descritos na tabela a seguir.
-
-No caso de um erro, clique em _more detail_ na coluna _Status_ para obter detalhes sobre o erro.
+No caso de um erro, você pode clicar em _mais detalhes_ na coluna _Status_ da página coletores de dados instalados para obter detalhes sobre o erro.
 
 image:CS_Data_Collector_Error.png["Erro do Coletor de Segurança da carga de trabalho mais Detail Link"]
+
+Problemas conhecidos e suas resoluções são descritos na tabela a seguir.
 
 [cols="2*"]
 |===

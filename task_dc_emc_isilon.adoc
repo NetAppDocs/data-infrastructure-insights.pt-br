@@ -5,17 +5,8 @@ keywords: data collector, isilon, EMC, DELL, PowerScale
 summary: 'Configurar o coletor de dados Dell EMC PowerScale (anteriormente Isilon).' 
 ---
 = Coletor de dados Dell EMC PowerScale
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

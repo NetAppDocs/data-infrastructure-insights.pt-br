@@ -5,17 +5,8 @@ summary: 'Personalização da saída e entrega de relatórios, cópia de relató
 keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying 
 ---
 = Gerenciando relatórios
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

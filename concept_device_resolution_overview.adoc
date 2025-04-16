@@ -6,13 +6,7 @@ summary: A Resolução automática de dispositivos ajuda você a rastrear com pr
 ---
 = Visão geral da resolução automática do dispositivo
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ keywords: acquisition, AU, data collector, collector, bulk edit, postpone pollin
 summary: Um resumo. 
 ---
 = Gerenciamento de coletores de dados configurados
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

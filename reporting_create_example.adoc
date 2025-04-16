@@ -5,17 +5,8 @@ summary: Use este procedimento para criar um relatório usando os relatórios pr
 keywords: reporting, cognos, data warehouse, dwh, create, report 
 ---
 = Criando um relatório (exemplo)
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

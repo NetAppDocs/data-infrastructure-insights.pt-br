@@ -5,17 +5,8 @@ keywords: IBM, SVC,SAN
 summary: Configurando o coletor de dados do IBM SAN volume Controller. 
 ---
 = Configurando o coletor de dados do IBM SAN volume Controller
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ keywords: 'data collector, stout, fsx, fsx-netapp, Amazon, AWS, cluster, volume,
 summary: Amazon FSX para NetApp ONTAP Data Collector 
 ---
 = Coletor de dados do Amazon FSX para NetApp ONTAP
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

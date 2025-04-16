@@ -5,17 +5,8 @@ keywords: monitors, alerts, log, metric
 summary: Crie monitores para alertar sobre limites de desempenho ou inventário, bem como condições de métricas ou log. 
 ---
 = Monitores do sistema
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -24,8 +15,8 @@ O Data Infrastructure Insights inclui vários monitores definidos pelo sistema p
 
 NOTE: Muitos monitores do sistema estão no estado _Pausado_ por padrão. Você pode ativar um monitor de sistema selecionando a opção _Resume_ para o monitor. Certifique-se de que _coleta avançada de dados de contador_ e _enable ONTAP EMS log Collection_ estão habilitados no coletor de dados. Essas opções podem ser encontradas no Coletor de dados do ONTAP em _Configuração Avançada_: image:Enable_Log_Monitor_Collection.png["Ativar a coleção de registos de contador avançado e EMS para ONTAP"]
 
+índice:[]
 
-toc::[]
 
 
 == Descrições do monitor

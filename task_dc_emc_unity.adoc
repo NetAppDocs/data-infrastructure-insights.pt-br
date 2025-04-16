@@ -5,17 +5,8 @@ keywords: data collector, VNXe, EMC, Unity
 summary: Configurando o coletor de dados VNXe. 
 ---
 = Configurando o coletor de dados EMC Unity
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

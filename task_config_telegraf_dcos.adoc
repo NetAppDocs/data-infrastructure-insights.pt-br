@@ -5,17 +5,8 @@ keywords: telegraf, installation, install, dcos
 summary: configuração de dcos 
 ---
 = Coletor de dados DC/os
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

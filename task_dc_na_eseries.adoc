@@ -5,17 +5,8 @@ keywords: data collector, ontap, clustered ontap, e-series, santricity
 summary: Configurando o coletor de dados NetApp e-Series. 
 ---
 = Coletor de dados da API NetApp e-Series Legacy SANtricity
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

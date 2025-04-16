@@ -5,17 +5,8 @@ summary: A seção Expert View de uma página de ativos é uma ferramenta podero
 keywords: asset page, expert view, metrics, greedy, degraded, correlated, contributors, chart, refresh 
 ---
 = Visão do especialista
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

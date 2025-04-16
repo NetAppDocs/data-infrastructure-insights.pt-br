@@ -5,17 +5,8 @@ summary: Como exportar os resultados de uma consulta para um arquivo .csv
 keywords: query, queries, export, csv 
 ---
 = Exportar resultados da consulta para um arquivo .CSV
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

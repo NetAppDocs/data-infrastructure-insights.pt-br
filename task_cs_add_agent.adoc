@@ -5,17 +5,8 @@ keywords: agent, Workload Security, installation, Cloud Secure
 summary: Adicionando agentes de Segurança de carga de trabalho 
 ---
 = Instalação do Agente de Segurança de carga de trabalho
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -40,7 +31,7 @@ A Segurança da carga de trabalho (anteriormente Cloud Secure) coleta dados de a
 O sistema exibe a página Adicionar um agente:
 
 +
-image::Add-agent-1.png[Adicionando um agente de segurança de carga de trabalho]
+image:Add-agent-1.png["Adicionando um agente de segurança de carga de trabalho"]
 
 . Verifique se o servidor do agente atende aos requisitos mínimos do sistema.
 . Para verificar se o servidor de agente está executando uma versão suportada do Linux, clique em _versões suportadas (i)_.
@@ -52,7 +43,7 @@ image:CloudSecureAgentWithProxy_Instructions.png["Agent Install with Proxy Note 
 . Execute o comando de instalação em uma janela de terminal.
 . O sistema exibe a seguinte mensagem quando a instalação for concluída com êxito:
 +
-image::new-agent-detect.png[Mensagem para a instalação bem-sucedida do agente]
+image:new-agent-detect.png["Mensagem para a instalação bem-sucedida do agente"]
 
 
 

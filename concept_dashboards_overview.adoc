@@ -6,13 +6,7 @@ keywords: dashboard, widget, custom, view, data
 ---
 = Visão geral dos painéis
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]
@@ -21,8 +15,8 @@ O Data Infrastructure Insights oferece aos usuários a flexibilidade para criar 
 
 IMPORTANT: Os exemplos nestas seções são apenas para fins de explicação e não cobrem todos os cenários possíveis. Os conceitos e etapas aqui podem ser usados para criar seus próprios painéis para destacar os dados específicos para suas necessidades específicas.
 
+índice:[]
 
-toc::[]
 
 
 == Criando um Dashboard

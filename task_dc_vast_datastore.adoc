@@ -5,17 +5,8 @@ keywords: data collector, VAST storage, VAST data
 summary: Configurando o coletor de dados de armazenamento de dados do armazenamento de dados do VAST Data. 
 ---
 = Coletor de dados do VASTO datastore
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

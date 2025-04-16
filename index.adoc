@@ -6,13 +6,7 @@ keywords:
 ---
 = Documentação do Data Infrastructure Insights
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

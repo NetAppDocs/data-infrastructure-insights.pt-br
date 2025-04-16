@@ -5,17 +5,8 @@ keywords: insight, greedy, degraded, bully, victim, impacted, impacting, impactf
 summary: Insights dão uma visão de como os recursos afetam outros recursos em seu locatário. 
 ---
 = Insights: Workloads de alto consumo
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

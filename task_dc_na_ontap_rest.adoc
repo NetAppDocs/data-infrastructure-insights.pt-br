@@ -6,13 +6,7 @@ summary: Coletor de DADOS REST do ONTAP
 ---
 = Coletor de DADOS REST do NetApp ONTAP
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

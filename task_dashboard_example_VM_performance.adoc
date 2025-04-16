@@ -5,17 +5,8 @@ summary: Exemplo de dashboard destacando o desempenho da máquina virtual.
 keywords: dashboard, widget, custom, example, virtual machine, vm, performance 
 ---
 = Exemplo de dashboard: Desempenho da máquina virtual
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

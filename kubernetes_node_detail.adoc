@@ -6,13 +6,7 @@ summary: A página de detalhes do nó do Kubernetes fornece insights sobre o sto
 ---
 = Página de detalhes do nó do Kubernetes
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

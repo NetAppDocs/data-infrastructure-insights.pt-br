@@ -5,24 +5,16 @@ summary: Funcionalidades e conceitos do painel de instrumentos.
 keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand 
 ---
 = Funcionalidades do painel de instrumentos
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
 :nofooter: 
-:toclevels: 1
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
 Painéis e widgets permitem uma grande flexibilidade na forma como os dados são exibidos. Aqui estão alguns conceitos para ajudar você a aproveitar ao máximo seus painéis personalizados.
 
+índice:[]
 
-toc::[]
 
 
 == Nome do widget
@@ -66,13 +58,17 @@ Quando legendas são exibidas, se a página de destino do ativo indicado pela le
 
 O Insights de infraestrutura de dados fornece diferentes opções *Transform* para determinadas métricas em widgets (especificamente, aquelas métricas chamadas "personalizadas" ou métricas de integração, como do Kubernetes, dados avançados do ONTAP, plugins do Telegraf, etc.), permitindo que você exiba os dados de várias maneiras. Ao adicionar métricas transformáveis a um widget, você é apresentado com uma lista suspensa fornecendo as seguintes opções de transformação:
 
-Nenhum:: Os dados são apresentados como estão, sem manipulação.
-Taxa:: Valor atual dividido pelo intervalo de tempo desde a observação anterior.
-Cumulativo:: A acumulação da soma dos valores anteriores e do valor atual.
-Delta:: A diferença entre o valor de observação anterior e o valor atual.
-Taxa Delta:: Valor Delta dividido pelo intervalo de tempo desde a observação anterior.
-Taxa acumulada:: Valor cumulativo dividido pelo intervalo de tempo desde a observação anterior.
+Nenhum: Os dados são exibidos como estão, sem manipulação.
 
+Taxa: Valor atual dividido pelo intervalo de tempo desde a observação anterior.
+
+Cumulativo: A acumulação da soma dos valores anteriores e do valor atual.
+
+Delta: A diferença entre o valor de observação anterior e o valor atual.
+
+Taxa Delta: Valor Delta dividido pelo intervalo de tempo desde a observação anterior.
+
+Taxa acumulada: Valor cumulativo dividido pelo intervalo de tempo desde a observação anterior.
 
 Observe que transformar métricas não altera os dados subjacentes em si, mas apenas a maneira como os dados são exibidos.
 
@@ -401,7 +397,7 @@ A linha de latência agora é desenhada em sua própria escala, que é exibida n
 
 
 
-image::SecondaryAxisExplained.png[Exemplo de eixo secundário]
+image:SecondaryAxisExplained.png["Exemplo de eixo secundário"]
 
 
 

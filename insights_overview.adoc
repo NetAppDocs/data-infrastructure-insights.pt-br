@@ -5,17 +5,8 @@ keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, res
 summary: Os insights fornecem uma visão do uso e das tendências dos recursos. 
 ---
 = Insights
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

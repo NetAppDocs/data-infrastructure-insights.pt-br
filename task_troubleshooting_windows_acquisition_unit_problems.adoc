@@ -5,17 +5,8 @@ summary: Dicas de solução de problemas para problemas da Unidade de aquisiçã
 keywords: AU, acquisition unit, trioubleshooting 
 ---
 = Solução de problemas da Unidade de aquisição no Windows
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

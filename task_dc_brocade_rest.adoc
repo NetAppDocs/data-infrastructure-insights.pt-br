@@ -5,17 +5,8 @@ keywords: data collector, Brocade, FC switch, FOS, Rest
 summary: Configurando o coletor de DADOS REST do Brocade FOS. 
 ---
 = Coletor de DADOS REST do Brocade FOS
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

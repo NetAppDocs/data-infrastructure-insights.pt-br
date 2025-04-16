@@ -267,6 +267,8 @@ sidebar:
       url: "/cs_notifications_email.html"
     - title: API de segurança de carga de trabalho
       url: "/concept_cs_api.html"
+    - title: Solução de problemas do SVM Collector
+      url: "/troubleshooting_collector_svm.html"
   - title: Solução de problemas
     entries:
     - title: Resolução de problemas gerais

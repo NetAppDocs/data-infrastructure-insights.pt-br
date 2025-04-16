@@ -5,17 +5,8 @@ summary: Configurar o NetApp Cloud volumes Services para coletor de dados da AWS
 keywords: data collector, NetApp, Cloud, AWS 
 ---
 = NetApp Cloud volumes Services para coletor de dados da AWS
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

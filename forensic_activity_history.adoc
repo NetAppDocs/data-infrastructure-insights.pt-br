@@ -5,15 +5,12 @@ keywords: Forensic, activity history, activity data, history
 summary: dados do histórico de atividades forenses 
 ---
 = Forensics - todas as atividades
-:toc: macro
 :hardbreaks:
 :allow-uri-read: 
-:toc: 
 :nofooter: 
 :icons: font
 :linkattrs: 
 :imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

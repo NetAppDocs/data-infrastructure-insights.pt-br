@@ -5,17 +5,8 @@ keywords: data collector, HDS HNAS, HDS NAS
 summary: 'Configurar o coletor de dados do HDS nas (HNAS).' 
 ---
 = Configurar o coletor de dados Hitachi Vantara nas
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

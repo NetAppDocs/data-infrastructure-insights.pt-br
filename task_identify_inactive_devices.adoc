@@ -6,13 +6,7 @@ summary: Identificar dispositivos inativos permite que você escolha excluí-los
 ---
 = Identificação de dispositivos inativos
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

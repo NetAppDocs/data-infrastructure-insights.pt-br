@@ -5,17 +5,8 @@ summary: Use uma consulta para atribuir vários aplicativos ou anotações a, ou
 keywords: query, queries, application, annotation, multiple 
 ---
 = Atribuir vários aplicativos ou remover vários aplicativos de ativos
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

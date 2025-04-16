@@ -5,17 +5,8 @@ summary: Visão geral da seção Resumo da página de ativos em Insights de infr
 keywords: asset, summary, landing page, topology, auto, refresh 
 ---
 = Seção Resumo da página de ativos
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

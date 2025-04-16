@@ -5,17 +5,8 @@ keywords: roles, guest, user, administrator, SSO, Federate, federation, identity
 summary: O Data Infrastructure Insights fornece várias contas de usuário com diferentes níveis de permissão. 
 ---
 = Contas de usuário e funções
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

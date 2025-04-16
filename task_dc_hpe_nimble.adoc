@@ -5,17 +5,8 @@ keywords: data collector, HP Nimble, HP, HPE, Alletra 6000
 summary: 'Configurando o coletor de dados HP Enterprise Alletra 6000 (anteriormente Nimble).' 
 ---
 = Coletor de dados HPE Alletra 6000
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

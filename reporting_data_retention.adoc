@@ -5,17 +5,8 @@ summary: Retenção de dados do Data Infrastructure Insights para relatórios
 keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying, retention 
 ---
 = Como os dados históricos são retidos para relatórios
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

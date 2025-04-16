@@ -5,17 +5,8 @@ keywords: data collector, Huawei, OceanStor, Dorado
 summary: 'Configurar o coletor de dados OceanStor (REST/HTTPS) da Huawei.' 
 ---
 = Coletor de dados Huawei OceanStor
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

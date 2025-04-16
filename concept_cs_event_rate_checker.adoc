@@ -5,17 +5,8 @@ summary: Esse script pode ser executado para verificar a taxa de eventos no SVM 
 keywords: event, checker, rate, sizing, cloud secure 
 ---
 = Verificador de taxa de eventos SVM (Guia de dimensionamento de agentes)
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

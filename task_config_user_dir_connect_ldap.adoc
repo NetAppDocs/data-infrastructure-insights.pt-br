@@ -5,17 +5,8 @@ keywords: collector, configure, LDAP, Active Directory, cloud secure
 summary: Configurando o Workload Security LDAP User Directory Collector 
 ---
 = Configurando um LDAP Directory Server Collector
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

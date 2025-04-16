@@ -5,17 +5,8 @@ keywords: Automatic, AR, AHR, Host, automatic device resolution
 summary: A Resolução do dispositivo ajuda-o a controlar com precisão o desempenho e o inventário no seu ambiente. 
 ---
 = Regras de resolução do dispositivo
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

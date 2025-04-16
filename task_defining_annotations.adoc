@@ -5,17 +5,8 @@ keywords: annotations, monitor, notes, tags
 summary: Rastreie dados usando anotações. 
 ---
 = Definir anotações
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -109,25 +100,15 @@ Pode introduzir até 255 carateres nestes campos.
 
 
 .Tipos de anotação
-Booleano:: Cria uma lista suspensa com as opções de sim e não. Por exemplo, a anotação "Direct Attached" é booleana.
-Data:: Isso cria um campo que contém uma data. Por exemplo, se a anotação for uma data, selecione esta.
-Lista:: Cria uma das seguintes opções:
-+
---
-* Uma lista fixa suspensa
-+
-Quando outros estão atribuindo esse tipo de anotação em um dispositivo, eles não podem adicionar mais valores à lista.
+Boolean: Cria uma lista suspensa com as opções de sim e não. Por exemplo, a anotação "Direct Attached" é booleana. Data: Isso cria um campo que contém uma data. Por exemplo, se a anotação for uma data, selecione esta. Lista: Cria uma das seguintes opções: * Uma lista fixa suspensa
 
-* Uma lista suspensa flexível
-+
-Se selecionar a opção Adicionar novos valores em tempo real ao criar esta lista, quando outros estiverem a atribuir este tipo de anotação num dispositivo, poderão adicionar mais valores à lista.
+Quando outros estão atribuindo esse tipo de anotação em um dispositivo, eles não podem adicionar mais valores à lista. * Uma lista drop-down flexível
 
+Se você selecionar a opção Adicionar novos valores em tempo real ao criar esta lista, quando outros estiverem atribuindo esse tipo de anotação em um dispositivo, eles poderão adicionar mais valores à lista.
 
+Number (número): Cria um campo onde o utilizador que atribui a anotação pode introduzir um número. Por exemplo, se o tipo de anotação for "Floor" (Piso), o utilizador pode selecionar o valor Type (tipo de valor) de "Number" (número) e introduzir o número do piso.
 
---
-Número:: Cria um campo onde o utilizador que atribui a anotação pode introduzir um número. Por exemplo, se o tipo de anotação for "Floor" (Piso), o utilizador pode selecionar o valor Type (tipo de valor) de "Number" (número) e introduzir o número do piso.
-Texto:: Cria um campo que permite texto de forma livre. Por exemplo, pode introduzir "Idioma" como tipo de anotação, selecionar "texto" como tipo de valor e introduzir um idioma como valor.
-
+Texto: Cria um campo que permite texto de forma livre. Por exemplo, pode introduzir "Idioma" como tipo de anotação, selecionar "texto" como tipo de valor e introduzir um idioma como valor.
 
 
 NOTE: Depois de definir o tipo e guardar as alterações, não pode alterar o tipo da anotação. Se você precisar alterar o tipo, você terá que excluir a anotação e criar uma nova.

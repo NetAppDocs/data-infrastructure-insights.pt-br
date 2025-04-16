@@ -5,17 +5,12 @@ keywords: Forensic, user activity, user activity data,
 summary: dados de atividade do utilizador forense 
 ---
 = Dados de atividade do utilizador forense
-:toc: macro
 :hardbreaks:
-:toclevels: 
 :allow-uri-read: 
-:toc: 
-:toclevels: 
 :nofooter: 
 :icons: font
 :linkattrs: 
 :imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

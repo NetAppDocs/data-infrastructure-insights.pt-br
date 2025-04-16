@@ -5,17 +5,8 @@ keywords: service map, workloads,
 summary: Apresenta fluxos e dependências de workload do Kubernetes e destaca problemas de rede e desempenho 
 ---
 = Monitoramento e mapa de desempenho de rede do Kubernetes
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

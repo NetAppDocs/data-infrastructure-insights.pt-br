@@ -5,17 +5,8 @@ keywords: data collector, S3, Storage
 summary: Configurando o AWS S3 como coletor de dados de armazenamento. 
 ---
 = Configurando o AWS S3 como coletor de dados de armazenamento
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

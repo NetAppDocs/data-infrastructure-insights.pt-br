@@ -5,17 +5,8 @@ keywords: data collector, VNX, EMC, Dell
 summary: Configurando o coletor de dados VNX. 
 ---
 = Configurando o coletor de dados unificado VNX da Dell EMC
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

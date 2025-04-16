@@ -5,17 +5,8 @@ summary: O Data Infrastructure Insights pode fornecer visualizações de storage
 keywords: storage, virtual, virtualized, virtualization, 
 ---
 = Virtualização de storage
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

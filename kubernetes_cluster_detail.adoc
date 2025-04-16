@@ -5,17 +5,8 @@ keywords: kubernetes, pods, clusters, nodes. troubleshooting, planning
 summary: A página de detalhes do Kubernetes fornece informações e detalhes para ajudar na solução de problemas e no Planejamento. 
 ---
 = Página de detalhes do cluster do Kubernetes
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

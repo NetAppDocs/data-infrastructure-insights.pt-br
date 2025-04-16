@@ -5,17 +5,8 @@ summary: O ONTAP Essentials é um conjunto de dashboards e fluxos de trabalho pa
 keywords: dashboard, widget, ontap, overview, insight 
 ---
 = Essenciais de ONTAP
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

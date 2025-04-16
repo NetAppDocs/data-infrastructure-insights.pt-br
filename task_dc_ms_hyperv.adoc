@@ -5,17 +5,8 @@ keywords: data collector, Microsoft, Hyper-V
 summary: Configurando o coletor de dados Microsoft Hyper-V. 
 ---
 = Coletor de dados Microsoft Hyper-V.
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

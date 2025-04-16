@@ -5,17 +5,8 @@ summary: O Data Infrastructure Insights segue as práticas recomendadas de segur
 keywords: security, risk, protection 
 ---
 = Ferramenta SecurityAdmin
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

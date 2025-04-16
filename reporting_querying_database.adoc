@@ -5,17 +5,8 @@ summary: Use as APIs do Data Infrastructure Insights para consultar o banco de d
 keywords: reporting, cognos, data warehouse, dwh, API 
 ---
 = Acesse o banco de dados de relatórios via API
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

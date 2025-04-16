@@ -5,17 +5,8 @@ keywords: webhook, notification, Discord, integration
 summary: Crie um webhook para alertar sobre limites de desempenho ou inventário para o discord 
 ---
 = Webhook exemplo para discord
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

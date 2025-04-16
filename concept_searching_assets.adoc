@@ -5,17 +5,8 @@ summary: a techniquest pode ajudá-lo a localizar os ativos que você está proc
 keywords: asset page, objects, search, advanced, alerts 
 ---
 = Dicas e dicas para pesquisar ativos e alertas
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ summary: Adicionar endereços de e-mail para notificações.
 keywords: email, notifications, signature, recipient, list, subscription 
 ---
 = Configurar notificações por e-mail
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

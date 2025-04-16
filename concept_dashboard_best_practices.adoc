@@ -5,17 +5,8 @@ summary: Práticas recomendadas para aproveitar ao máximo seus dashboards
 keywords: dashboard, hints, tips, best practice, widgets, metrics, 
 ---
 = Melhores práticas para painéis e Widgets
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

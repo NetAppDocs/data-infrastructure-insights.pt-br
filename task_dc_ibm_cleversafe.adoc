@@ -5,17 +5,8 @@ keywords: data collector, IBM Cleversafe
 summary: Configurando o coletor de dados IBM Cleversafe. 
 ---
 = Coletor de dados IBM Cleversafe
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

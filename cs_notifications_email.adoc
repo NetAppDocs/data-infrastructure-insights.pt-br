@@ -5,17 +5,8 @@ summary: Adicionar endereços de e-mail para notificações de Alertas de Segura
 keywords: email, notifications, alerts, warnings, attacks 
 ---
 = Configurar notificações de e-mail para alertas, avisos e integridade do coletor de agente/fonte de dados
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

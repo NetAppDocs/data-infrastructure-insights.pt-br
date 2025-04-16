@@ -5,17 +5,8 @@ summary: A segurança do workload se integra ao ONTAP para receber eventos de ac
 keywords: ransomware, ARP, Protection, Security, access 
 ---
 = Integração com o ONTAP Access negada
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
