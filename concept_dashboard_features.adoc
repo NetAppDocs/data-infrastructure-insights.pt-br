@@ -8,6 +8,9 @@ keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll 
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -359,6 +362,12 @@ O intervalo de tempo personalizado permite-lhe selecionar até 31 dias consecuti
 
 
 
+=== Aumentar o zoom para um intervalo de tempo
+
+Ao visualizar um widget de séries temporais (linha, spline, Área, Área empilhada) - ou um gráfico em uma página de destino - você pode arrastar o Mouse sobre o gráfico para ampliar. No canto superior direito da tela, você pode bloquear esse intervalo de tempo para que gráficos em outras páginas reflitam dados para esse intervalo de tempo bloqueado. Para desbloquear, selecione um intervalo de tempo diferente na lista.
+
+
+
 == Substituindo o tempo do Painel em widgets individuais
 
 Você pode substituir a configuração de intervalo de tempo do painel principal em widgets individuais. Esses widgets exibirão dados com base no período de tempo definido, não no período de tempo do painel.
@@ -506,8 +515,6 @@ image:ExpressionExample.png["Expressão em um widget de tabela"]
 == Variáveis
 
 Variáveis permitem alterar os dados exibidos em alguns ou todos os widgets em um painel de uma vez. Ao definir um ou mais widgets para usar uma variável comum, as alterações feitas em um só lugar fazem com que os dados exibidos em cada widget sejam atualizados automaticamente.
-
-As variáveis do dashboard vêm em vários tipos, podem ser usadas em diferentes campos e devem seguir regras para nomear. Estes conceitos são explicados aqui.
 
 
 
@@ -886,3 +893,25 @@ image:Interpolation_Stair.png["Linha reta simples mostrando interpolação de es
 
 
 image:Interpolation_Linear.png["Linha reta simples mostrando interpolação linear com pontos de dados adicionais entre cada ponto original"]
+
+
+
+=== Anomaly Bounds in Line Widgets
+
+Ao incluir um widget de gráfico de linha ou spline em um painel ou página de destino, você pode optar por exibir o gráfico no contexto dos *limites esperados* para os dados. Você pode pensar nisso como procurando anomalias nos padrões de seus dados.
+
+O DII usa dados sazonais (por hora ou diariamente) para definir limites superiores e inferiores onde _espera_ que os dados caiam em um determinado momento. Se os picos de dados acima ou abaixo dos limites esperados, o gráfico destacará isso como uma anomalia.
+
+image:expected_bounds_example_showing_spike.png["exemplo de limites de anomalia - mostrando um pico onde os dados reais picos acima do limite esperado, largura 600"]
+
+Para visualizar limites de anomalias, edite o widget e escolha _Mostrar limites de anomalias_. Você pode escolher entre dois algoritmos de deteção:
+
+* *Adaptive detetor* adapta-se rapidamente às alterações, tornando-o útil para investigações detalhadas.
+* *Smooth detetor* minimiza o ruído e falsos positivos, filtrando flutuações de curto prazo e ainda detetando mudanças significativas.
+
+
+Além disso, você pode optar por mostrar a sazonalidade _Hourly_ ou _Daily_, bem como definir a sensibilidade da deteção. A sensibilidade _High_ deteta mais cruzamento de limites, a sensibilidade _Low_ deteta menos.
+
+image:expected_bounds_settings.png["Configurações para limites de anomalias, incluindo o algoritmo de deteção, sazonalidade e sensibilidade"]
+
+Tenha em mente que você só pode visualizar os limites esperados quando o gráfico estiver definido para exibir uma única linha. Se as configurações de Grupo por ou filtros mostrarem várias linhas ou se você tiver definido várias consultas para o widget, a opção para mostrar os limites esperados será desativada.
