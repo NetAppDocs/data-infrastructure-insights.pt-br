@@ -131,6 +131,13 @@ Valide a conta de usuário e a senha do ZFS
 
 
  a| 
+"A solicitação falhou com o status 404 \https://.....:215/api/access/v1"
+ a| 
+Seu array ZFS pode ser muito antigo para ter suporte à API REST. AK 2013.1.3.0 foi a primeira versão ZFS do SO compatível com API REST, e nem todos os dispositivos ZFS podem ser atualizados para ele.
+
+
+
+ a| 
 "Erro de configuração" com mensagem de erro "o serviço DE REPOUSO está desativado"
  a| 
 Verifique se o serviço REST está ativado neste dispositivo.

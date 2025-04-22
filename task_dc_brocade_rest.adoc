@@ -22,6 +22,8 @@ Isso criará um usuário "NetAppCIUser" com uma senha de "Qwerty!". Esse usuári
 
 Por padrão, este coletor tentará descobrir todos os dispositivos FOS que fazem parte de todas as malhas das quais o switch faz parte.
 
+Observação: O usuário padrão somente leitura DO FOS "user" NÃO tem permissões de visualização em todas as telas virtuais, nem tem permissões de "função de chassi". Isso significa que você terá uma baixa probabilidade de sucesso usando o "usuário" com o Data Infrastructure Insights, que precisa entender tanto a configuração física quanto lógica do dispositivo FOS.
+
 
 
 == Terminologia
