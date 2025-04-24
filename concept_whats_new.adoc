@@ -57,49 +57,6 @@ Se você tiver configurado notificações sobre coletores de dados, a partir de 
 '''
 
 
-== Abril de 2025
-
-
-
-=== A anomalia alimentada POR ML contém Widgets em linha para resolução proativa de problemas
-
-Para solucionar problemas de desempenho com widgets de gráfico de linha ou spline, agora você pode exibir limites de comportamento esperados ao lado de métricas reais, permitindo distinguir entre tendências de métricas normais e anormais.
-
-O aprendizado de máquina DII com análise de dados sazonal estabelece limites inteligentes baseados em padrões históricos. Quando as métricas se desviam dos intervalos esperados, o sistema as destaca como anomalias, permitindo uma rápida identificação de problemas, reduzindo o tempo médio de resolução e solucionando problemas antes que impactem as operações.
-
-image:expected_bounds_example_showing_spike.png["limites esperados mostrando pico acima, largura de 400mm"]
-
-
-
-=== Otimize os custos da VMware com o suporte de storage VSAN
-
-Nosso recurso de otimização de VM agora inclui suporte para ambientes VMware com storage VSAN. Além do uso de CPU e memória, a análise agora considera o armazenamento VSAN local para recomendações de recuperação, ajudando você a reduzir ainda mais os custos de licenciamento.
-
-image:vm_optimization_with_vsan.png["Exemplo de otimização de VM com VSAN"]
-
-
-
-=== Alerte os detalhes na ponta dos seus dedos
-
-Investigar alertas é mais fácil do que nunca com o novo painel deslizante. Selecione um alerta para ver os detalhes desse alerta e alterne facilmente entre alertas sem perder o seu lugar durante a investigação de problemas.
-
-image:alert_slideout_example.png["Slideout de alerta para uma navegação mais fácil"]
-
-
-
-=== Exportação assíncrona de segurança de carga de trabalho
-
-A exportação de dados forenses pode levar de alguns segundos a um número de horas, dependendo da quantidade de dados a exportar. O Workload Security exporta esses dados de forma assíncrona, para que você possa continuar trabalhando enquanto o .CSV está sendo compilado.
-
-
-
-=== Notificações de coletor de dados agrupadas em regras
-
-Se você tiver configurado notificações sobre coletores de dados, a partir de 15 de abril essas notificações serão tratadas em regras de notificação, com uma única regra para coletores que tenham destinatários idênticos. Os coletores com destinatários diferentes terão regras separadas. As notificações de coletor existentes são migradas para regras de notificação.
-
-'''
-
-
 == Março de 2025
 
 
@@ -144,14 +101,6 @@ image:ws_test_connection_button.png["workload security test connection button"] 
 
 
 
-=== Testar conetividade para coletores de dados de segurança de carga de trabalho de armazenamento
-
-O recurso de conetividade de teste tem como objetivo ajudar os usuários finais a identificar as causas específicas de falhas ao configurar coletores de dados no Data Infrastructure Insights (DII) Workload Security. Isso permite que os usuários autorcorrigam problemas relacionados à comunicação de rede ou funções ausentes.
-
-image:ws_test_connection_button.png["workload security test connection button"] image:ws_test_connection_success_example.png["Workload Security 'Test Connection' success message"]
-
-
-
 === Suporte ao sistema operacional
 
 Os seguintes sistemas operacionais agora são suportados com unidades de aquisição do Data Infrastructure Insights, além dos seguinteslink:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html["já suportado"]:
@@ -171,18 +120,6 @@ Os seguintes sistemas operacionais agora são suportados com unidades de aquisi�
 
 == Fevereiro de 2025
 
-
-
-=== ONTAP Essentials para a última geração de sistemas ASA
-
-O ONTAP Essentials agora inclui capacidade de gerenciamento pronta para uso para a última geração link:task_dc_na_ontap_all_san_array.html["ASA"]de dispositivos. Isso inclui o Analisador de SAN para topologias VM a LUN de workloads executados no ONTAP, agora também disponível com suporte do NetApp como parte do Data Infrastructure Insights Basic Edition.
-
-image:ontap_essentials_asa_views.png["Lista suspensa do ONTAP Essentials que mostra o ASA como distinto do unificado"]
-
-
-
-=== ONTAP Essentials para a última geração de sistemas ASA
-
 O ONTAP Essentials agora inclui capacidade de gerenciamento pronta para uso para a última geração link:task_dc_na_ontap_all_san_array.html["ASA"]de dispositivos. Isso inclui o Analisador de SAN para topologias VM a LUN de workloads executados no ONTAP, agora também disponível com suporte do NetApp como parte do Data Infrastructure Insights Basic Edition.
 
 image:ontap_essentials_asa_views.png["Lista suspensa do ONTAP Essentials que mostra o ASA como distinto do unificado"]
@@ -191,15 +128,11 @@ image:ontap_essentials_asa_views.png["Lista suspensa do ONTAP Essentials que mos
 
 === Rastreamento de uso da API DII: Melhore a segurança e a eficiência
 
-Fortaleça sua postura de segurança e simplifique o gerenciamento de recursos com o rastreamento aprimorado de uso da API REST, disponível para usuários de administração. Com o rastreamento de uso da API, você pode ver quais tokens de API estão sendo usados, a partir de quais endereços IP e o volume de tráfego que eles geram. Ao vincular tokens a endereços IP específicos e níveis de uso, você obterá insights poderosos sobre o acesso ao sistema e as tendências de uso, dando a você o controle de que precisa para manter um ambiente seguro e eficiente e manter as operações funcionando sem problemas. Fortaleça sua postura de segurança e simplifique o gerenciamento de recursos com o rastreamento aprimorado de uso da API REST, disponível para usuários de administração. Com o rastreamento de uso da API, você pode ver quais tokens de API estão sendo usados, a partir de quais endereços IP e o volume de tráfego que eles geram. Ao vincular tokens a endereços IP específicos e níveis de uso, você obterá insights poderosos sobre o acesso ao sistema e as tendências de uso, dando a você o controle de que precisa para manter um ambiente seguro e eficiente e manter as operações funcionando sem problemas.
+Fortaleça sua postura de segurança e simplifique o gerenciamento de recursos com o rastreamento aprimorado de uso da API REST, disponível para usuários de administração. Com o rastreamento de uso da API, você pode ver quais tokens de API estão sendo usados, a partir de quais endereços IP e o volume de tráfego que eles geram. Ao vincular tokens a endereços IP específicos e níveis de uso, você obterá insights poderosos sobre o acesso ao sistema e as tendências de uso, dando a você o controle de que precisa para manter um ambiente seguro e eficiente e manter as operações funcionando sem problemas.
 
-Para exibir o uso da API, navegue até *Observability > Admin > API Access* e selecione _View API Usage_. Observe que essa API está disponível apenas para APIs de observabilidade DII; ela não se aplica à segurança de workload. Para exibir o uso da API, navegue até *Observability > Admin > API Access* e selecione _View API Usage_. Observe que essa API está disponível apenas para APIs de observabilidade DII; ela não se aplica à segurança de workload.
+Para exibir o uso da API, navegue até *Observability > Admin > API Access* e selecione _View API Usage_. Observe que essa API está disponível apenas para APIs de observabilidade DII; ela não se aplica à segurança de workload.
 
 image:api_usage_analytics_screenshot.png["Exemplo de análise de uso da API"]
-
-
-
-=== API de segurança de carga de trabalho para restringir usuários
 
 
 
