@@ -348,6 +348,43 @@ security login rest-role create -role csrestrole -api /api/cluster/jobs/ -access
 ....
 
 
+== Migrar coletores
+
+Você pode migrar facilmente um coletor de Workload Security de um agente para outro, permitindo o balanceamento de carga eficiente de coletores entre agentes.
+
+
+
+=== Pré-requisitos
+
+* O agente de origem deve estar no estado _Connected_.
+* O coletor a ser migrado deve estar no estado _running_.
+
+
+Nota:
+
+* Migrar é suportado para coletores de dados e diretório de usuários.
+* A migração de um coletor não é suportada para locatários gerenciados manualmente.
+
+
+
+
+=== Migrar coletor
+
+Para migrar um coletor, siga estas etapas:
+
+. Vá para a página "Editar Coletor".
+. Selecione um agente de destino no menu suspenso agente.
+. Clique no botão "Salvar coletor".
+
+
+A Segurança da carga de trabalho processará a solicitação. Na migração bem-sucedida, o usuário será redirecionado para a página de lista de coletores. Em caso de falha, uma mensagem apropriada será exibida na página de edição.
+
+Observação: Quaisquer alterações de configuração feitas anteriormente na página "Editar Coletor" permanecerão aplicadas quando o coletor for migrado com êxito para o agente de destino.
+
+image:ws_migrate_collector_to_another_agent.png["migre um coletor escolhendo outro agente"]
+
+
+
 == Solução de problemas
 
 Consulte link:troubleshooting_collector_svm.html["Solução de problemas do SVM Collector"]a página para obter dicas de solução de problemas.

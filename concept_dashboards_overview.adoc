@@ -7,6 +7,10 @@ keywords: dashboard, widget, custom, view, data
 = Visão geral dos painéis
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -14,8 +18,6 @@ O Data Infrastructure Insights oferece aos usuários a flexibilidade para criar 
 
 
 IMPORTANT: Os exemplos nestas seções são apenas para fins de explicação e não cobrem todos os cenários possíveis. Os conceitos e etapas aqui podem ser usados para criar seus próprios painéis para destacar os dados específicos para suas necessidades específicas.
-
-índice:[]
 
 
 
@@ -34,17 +36,15 @@ Você cria um novo dashboard em um de dois lugares:
 O ecrã Painel de instrumentos tem vários controlos:
 
 * * Time seletor*: Permite visualizar os dados do painel durante um intervalo de tempo, desde os últimos 15 minutos até os últimos 30 dias, ou um intervalo de tempo personalizado de até 31 dias. Você pode optar por substituir esse intervalo de tempo global em widgets individuais.
-* *Botão Editar*: Selecionar este irá ativar o modo Editar, que permite fazer alterações no painel de instrumentos. Novos painéis abrem no modo Editar por padrão.
 * Botão *Salvar*: Permite salvar ou excluir o painel.
 +
-Você pode renomear o painel atual digitando um novo nome antes de clicar em *Salvar*.
+Você pode renomear o painel atual clicando em *Renomear* no menu Salvar.
 
-
-
-* *Botão Adicionar Widget*, que permite adicionar qualquer número de tabelas, gráficos ou outros widgets ao painel.
+* O botão Add Widget* permite que você adicione qualquer número de tabelas, gráficos ou outros widgets ao painel.
 +
 Os widgets podem ser redimensionados e realocados para diferentes posições dentro do painel de controle, para lhe dar a melhor visualização de seus dados de acordo com suas necessidades atuais.
 
+* Botão Adicionar variável*, que permite que você use variáveis para filtrar ativamente os dados do painel.
 
 
 
@@ -88,6 +88,11 @@ image:PieChart.png["Gráfico de pizza"]
 * * Observação widget*: Até 1000 carateres de texto livre.
 +
 image:NoteWidget.png["Widget de nota"]
+
+* *Gráfico da barra de tempo*: Exibe dados de log ou métrica ao longo do tempo.
+
+
+image:time_bar_chart.png["exemplo de gráfico de barras de tempo mostrando dados de log, largura de 200 mm"]
 
 * *Tabela de alertas*: Exibe até os últimos 1.000 alertas.
 
