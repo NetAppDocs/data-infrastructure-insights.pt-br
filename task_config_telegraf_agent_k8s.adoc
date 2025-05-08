@@ -153,15 +153,15 @@ Se o operador de monitoramento foi implantado em seu próprio namespace dedicado
  kubectl delete ns <NAMESPACE>
 Se o primeiro comando retornar "nenhum recurso encontrado", use as instruções a seguir para desinstalar versões mais antigas do operador de monitoramento.
 
-Execute cada um dos seguintes comandos em ordem. Dependendo da sua instalação atual, alguns desses comandos podem retornar mensagens "objeto não encontrado". Essas mensagens podem ser ignoradas com segurança.
+Execute cada um dos seguintes comandos em ordem. Dependendo da instalação atual, alguns desses comandos podem retornar mensagens 'objeto não encontrado'. Essas mensagens podem ser ignoradas com segurança.
 
 ....
-kubectl -n <NAMESPACE> delete agent agent-monitoring-netapp
+kubectl -n <NAMESPACE> delete agent netapp-ci-agent-monitoring-netapp
 kubectl delete crd agents.monitoring.netapp.com
-kubectl -n <NAMESPACE> delete role agent-leader-election-role
-kubectl delete clusterrole agent-manager-role agent-proxy-role agent-metrics-reader <NAMESPACE>-agent-manager-role <NAMESPACE>-agent-proxy-role <NAMESPACE>-cluster-role-privileged
-kubectl delete clusterrolebinding agent-manager-rolebinding agent-proxy-rolebinding agent-cluster-admin-rolebinding <NAMESPACE>-agent-manager-rolebinding <NAMESPACE>-agent-proxy-rolebinding <NAMESPACE>-cluster-role-binding-privileged
-kubectl delete <NAMESPACE>-psp-nkmo
+kubectl -n <NAMESPACE> delete role netapp-ci-agent-manager netapp-ci-kube-state-metrics
+kubectl delete clusterrole netapp-ci-<NAMESPACE>-additional-permissions netapp-ci-<NAMESPACE>-agent-manager netapp-ci-<NAMESPACE>-agent-secret netapp-ci-<NAMESPACE>-agent-view-plus netapp-ci-<NAMESPACE>-change-observer-view-plkubectl get us netapp-ci-<NAMESPACE>-kube-state-metrics netapp-ci-<NAMESPACE>-net-observerkubectl
+kubectl delete clusterrolebinding netapp-ci-<NAMESPACE>-additional-permissions netapp-ci-<NAMESPACE>-agent-manager netapp-ci-<NAMESPACE>-agent-secret netapp-ci-<NAMESPACE>-agent-view netapp-ci-<NAMESPACE>-agent-view-plus netapp-ci-<NAMESPACE>-change-observer-additional-permissions netapp-ci-<NAMESPACE>-change-observer-secret netapp-ci-<NAMESPACE>-change-observer-view netapp-ci-<NAMESPACE>-change-observer-view-plus netapp-ci-<NAMESPACE>-event-exporter netapp-ci-<NAMESPACE>-kube-state-metrics netapp-ci-<NAMESPACE>-net-observer
+kubectl delete netapp-ci-<NAMESPACE>-psp-nkmo
 kubectl delete ns <NAMESPACE>
 ....
 Se uma restrição de contexto de segurança foi criada anteriormente:

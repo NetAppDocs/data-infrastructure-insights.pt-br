@@ -6361,7 +6361,6 @@
   <block id="12deeaac5f633c54b730f8c247dbf7e0" category="paragraph">As versões mais recentes do operador de monitoramento podem ser desinstaladas com os seguintes comandos:</block>
   <block id="aee5f180cc531b30ec6cf8dcf509d9b8" category="paragraph">Se o operador de monitoramento foi implantado em seu próprio namespace dedicado, exclua o namespace:</block>
   <block id="97e76f0c81cc1c26b3d8ffe0d972c5af" category="paragraph">Se o primeiro comando retornar "nenhum recurso encontrado", use as instruções a seguir para desinstalar versões mais antigas do operador de monitoramento.</block>
-  <block id="0b14d0fbc4256c7ec7c3bb39b2c28854" category="paragraph">Execute cada um dos seguintes comandos em ordem. Dependendo da sua instalação atual, alguns desses comandos podem retornar mensagens "objeto não encontrado". Essas mensagens podem ser ignoradas com segurança.</block>
   <block id="82a8cca794947463478c2f08445a8ff4" category="paragraph">Se uma restrição de contexto de segurança foi criada anteriormente:</block>
   <block id="a945216a5c61e628c867b8948c797454" category="section-title">Sobre o Kube-State-metrics</block>
   <block id="951a50d1b55837ddb5ff4cb5af4ebc8a" category="paragraph">O Operador de Monitoramento do Kubernetes do NetApp instala suas próprias métricas de estado do kube para evitar conflitos com outras instâncias.</block>
@@ -7238,7 +7237,6 @@
   <block id="9931bdf1120e743a2d938e061f7df898" category="paragraph">Uma mensagem de confirmação é exibida, solicitando se deseja excluir a regra.</block>
   <block id="b101d3b5c8c4309f4cffa3adfd387b6b" category="list-text">Clique em *OK*</block>
   <block id="e42dae64f8e80d611352315992a2460d" category="doc">Criando aplicativos</block>
-  <block id="598c4639acaf0f3c5a419f9cf865ef56" category="paragraph">Se você quiser associar o aplicativo a uma entidade de negócios, você deve criar a entidade de negócios antes de definir o aplicativo.</block>
   <block id="ba52eab802a385ced7d6e9782614bf0b" category="paragraph">O Data Infrastructure Insights permite rastrear dados de ativos associados a aplicativos para coisas como relatórios de uso ou custos.</block>
   <block id="91ee28fc3faa982ecdc71598fe7ce8b9" category="list-text">No menu Data Infrastructure Insights, clique em *observabilidade &gt; Enrich &gt; Applications*. Selecione</block>
   <block id="8358341ae527ee11b5b1dc8e8f22edea" category="paragraph">A caixa de diálogo Adicionar aplicativo é exibida.</block>
@@ -12379,4 +12377,5 @@
   <block id="839fd302fc2dc5dee66803e94e9f95dc" category="paragraph">Por favor, certifique-se de que não existem erros relacionados ao fpolicy.</block>
   <block id="6e393b37e77fb2093e24fb776c6faf55" category="paragraph">*Problema:* o coletor de dados entra em estado de erro e, em seguida, entra em ESTADO DE EXECUÇÃO após algum tempo, em seguida, volta para erro novamente. Este ciclo repete-se. *Tente isto:* isso normalmente acontece no seguinte cenário:</block>
   <block id="8202c6a36256606217ad100be587d707" category="paragraph">*Problema:* Data Collector mostra a mensagem de erro: "Erro: Falha ao determinar a integridade do coletor dentro de 2 tentativas, tente reiniciar o coletor novamente (Código de erro: AGENT008)". *Tente isto:*</block>
+  <block id="c073fe7a74166cd5d73ec57ce2d1f76e" category="paragraph">Execute cada um dos seguintes comandos em ordem. Dependendo da instalação atual, alguns desses comandos podem retornar mensagens 'objeto não encontrado'. Essas mensagens podem ser ignoradas com segurança.</block>
 </blocks>
