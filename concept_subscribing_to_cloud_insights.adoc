@@ -159,7 +159,7 @@ A segurança do workload é medida pelo cluster usando a mesma abordagem que a m
 
 Você pode exibir o uso do Workload Security na página *Admin > Subscription* na guia *Workload Security*.
 
-image:ws_metering_example_page.png["'Admin > Subscription > separador Workload Security (Segurança de carga de trabalho) que mostra contagens de nó de gama alta, gama média e nível de entrada'"]
+image:ws_metering_example_page.png["Admin > subscrição > separador Segurança de carga de trabalho que apresenta contagens de nó de gama alta, gama média e nível de entrada"]
 
 
 NOTE: As assinaturas existentes do Workload Security têm seu uso de MU ajustado para que o uso do nó não consuma unidades gerenciadas. O Data Infrastructure Insights mede o uso para garantir a conformidade com o uso licenciado.

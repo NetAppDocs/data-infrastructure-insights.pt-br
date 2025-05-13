@@ -1962,8 +1962,6 @@
   <block id="f057d707b9d5c17f0fad56f8204f6bff" category="section-title">Medição da segurança da carga de trabalho</block>
   <block id="c3ef097c271469a3ca9718d35396087c" category="paragraph">A segurança do workload é medida pelo cluster usando a mesma abordagem que a medição de observabilidade.</block>
   <block id="3943920606f23b23925f15408e26cae2" category="paragraph">Você pode exibir o uso do Workload Security na página *Admin &gt; Subscription* na guia *Workload Security*.</block>
-  <block id="36e75837cd661882faf4ce93d35cafea" category="inline-image-macro">'Admin &amp;gt; Subscription &amp;gt; separador Workload Security (Segurança de carga de trabalho) que mostra contagens de nó de gama alta, gama média e nível de entrada'</block>
-  <block id="78770d4128ce656a56bd8e8ecd580a0e" category="paragraph"><block ref="9d3e296bb7e7c4cf7ec09d1ec6e96740" category="inline-image-macro-rx" type="image"></block></block>
   <block id="daba1c6ff8590913bcb10d43d3bfcf13" category="admonition">As assinaturas existentes do Workload Security têm seu uso de MU ajustado para que o uso do nó não consuma unidades gerenciadas. O Data Infrastructure Insights mede o uso para garantir a conformidade com o uso licenciado.</block>
   <block id="c015ba02347af3d8c00ede570637622a" category="section-title">Como faço para me inscrever?</block>
   <block id="99d34ca2583ae7363bd4e07f9b2d98cc" category="inline-xref">auto-subscrição</block>
@@ -12378,4 +12376,6 @@
   <block id="6e393b37e77fb2093e24fb776c6faf55" category="paragraph">*Problema:* o coletor de dados entra em estado de erro e, em seguida, entra em ESTADO DE EXECUÇÃO após algum tempo, em seguida, volta para erro novamente. Este ciclo repete-se. *Tente isto:* isso normalmente acontece no seguinte cenário:</block>
   <block id="8202c6a36256606217ad100be587d707" category="paragraph">*Problema:* Data Collector mostra a mensagem de erro: "Erro: Falha ao determinar a integridade do coletor dentro de 2 tentativas, tente reiniciar o coletor novamente (Código de erro: AGENT008)". *Tente isto:*</block>
   <block id="c073fe7a74166cd5d73ec57ce2d1f76e" category="paragraph">Execute cada um dos seguintes comandos em ordem. Dependendo da instalação atual, alguns desses comandos podem retornar mensagens 'objeto não encontrado'. Essas mensagens podem ser ignoradas com segurança.</block>
+  <block id="d873c97dd6dca1c7bd30ed50b82bee0f" category="inline-image-macro">Admin &amp;gt; subscrição &amp;gt; separador Segurança de carga de trabalho que apresenta contagens de nó de gama alta, gama média e nível de entrada</block>
+  <block id="a2efde4371837d491f7f2d093cb687a2" category="paragraph"><block ref="6239b49ee0db956af965dd1ce0c92bfa" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
