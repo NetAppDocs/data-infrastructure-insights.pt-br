@@ -57,6 +57,49 @@ Se você tiver configurado notificações sobre coletores de dados, a partir de 
 '''
 
 
+== Abril de 2025
+
+
+
+=== A anomalia alimentada POR ML contém Widgets em linha para resolução proativa de problemas
+
+Para solucionar problemas de desempenho com widgets de gráfico de linha ou spline, agora você pode exibir limites de comportamento esperados ao lado de métricas reais, permitindo distinguir entre tendências de métricas normais e anormais.
+
+O aprendizado de máquina DII com análise de dados sazonal estabelece limites inteligentes baseados em padrões históricos. Quando as métricas se desviam dos intervalos esperados, o sistema as destaca como anomalias, permitindo uma rápida identificação de problemas, reduzindo o tempo médio de resolução e solucionando problemas antes que impactem as operações.
+
+image:expected_bounds_example_showing_spike.png["limites esperados mostrando pico acima, largura de 300mm"]
+
+
+
+=== Otimize os custos da VMware com o suporte de storage VSAN
+
+Nosso recurso de otimização de VM agora inclui suporte para ambientes VMware com storage VSAN. Além do uso de CPU e memória, a análise agora considera o armazenamento VSAN local para recomendações de recuperação, ajudando você a reduzir ainda mais os custos de licenciamento.
+
+image:vm_optimization_with_vsan.png["Exemplo de otimização de VM com VSAN"]
+
+
+
+=== Alerte os detalhes na ponta dos seus dedos
+
+Investigar alertas é mais fácil do que nunca com o novo painel deslizante. Selecione um alerta para ver os detalhes desse alerta e alterne facilmente entre alertas sem perder o seu lugar durante a investigação de problemas.
+
+image:alert_slideout_example.png["Slideout de alerta para uma navegação mais fácil"]
+
+
+
+=== Exportação assíncrona de segurança de carga de trabalho
+
+A exportação de dados forenses pode levar de alguns segundos a um número de horas, dependendo da quantidade de dados a exportar. O Workload Security exporta esses dados de forma assíncrona, para que você possa continuar trabalhando enquanto o .CSV está sendo compilado.
+
+
+
+=== Notificações de coletor de dados agrupadas em regras
+
+Se você tiver configurado notificações sobre coletores de dados, a partir de 15 de abril essas notificações serão tratadas em regras de notificação, com uma única regra para coletores que tenham destinatários idênticos. Os coletores com destinatários diferentes terão regras separadas. As notificações de coletor existentes são migradas para regras de notificação.
+
+'''
+
+
 == Março de 2025
 
 
