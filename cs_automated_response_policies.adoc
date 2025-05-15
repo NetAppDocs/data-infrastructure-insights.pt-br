@@ -18,7 +18,7 @@ As políticas de resposta acionam ações como tirar um instantâneo ou restring
 
 Pode definir políticas em dispositivos específicos ou em todos os dispositivos. Para definir uma política de resposta, selecione *Admin > Automated Response Policies* e clique no botão apropriado. Você pode criar políticas para ataques ou avisos.
 
-image:Automated_Response_Screenshot.png["Criar política de ataque"]
+image:ws_add_attack_policy.png["Adicione uma caixa de diálogo de política de ataque mostrando webhook dropdown"]
 
 Você deve salvar a política com um nome exclusivo.
 
@@ -27,6 +27,8 @@ Para desativar uma ação de resposta automatizada (por exemplo, tirar Snapshot)
 Quando um alerta é acionado contra os dispositivos especificados (ou todos os dispositivos, se selecionados), a política de resposta automática tira um instantâneo dos seus dados. Pode ver o estado do instantâneo no link:cs_alert_data.html#the-alert-details-page["Página de detalhes do alerta"].
 
 Consulte a link:cs_restrict_user_access.html["Restringir o acesso do usuário"] página para obter mais detalhes sobre como restringir o acesso do usuário por IP.
+
+Você pode anexar um ou mais webhooks a uma política para ser notificado quando um alerta é criado e ação é tomada. Recomenda-se adicionar não mais de 10 webhooks a uma policy.tenha em mente que se uma política for pausada, as notificações do webhook não serão acionadas.
 
 Você pode modificar ou pausar uma Política de resposta automatizada escolhendo a opção no menu suspenso da política.
 

@@ -97,4 +97,10 @@ Aqui você encontrará sugestões para solucionar problemas com relatórios.
 
 
 | Ao agendar um relatório para ser enviado por e-mail, o nome do usuário conetado é preenchido previamente para o campo "para" do e-mail. No entanto, o nome está na forma de "nome próprio lastname" (nome próprio, espaço, sobrenome). Como esse não é um endereço de e-mail válido, o e-mail não será enviado quando o relatório programado for executado. | Ao agendar o relatório para ser enviado por e-mail, limpe o nome pré-preenchido e insira um endereço de e-mail válido e formatado corretamente no campo "para". 
+
+
+| Meu relatório agendado é enviado por e-mail, mas o relatório não pode ser acessado se a origem for da pasta "meu conteúdo". | Para evitar isso, o relatório ou exibição de relatório deve ser salvo na pasta "conteúdo da equipe > relatórios personalizados - xxxxxx" e a programação criada a partir dessa versão salva. A pasta "relatórios personalizados - xxxxxx" é visível para todos os usuários no locatário. 
+
+
+| Ao salvar um trabalho, a pasta pode mostrar "conteúdo da equipe" com a lista de conteúdo de "relatórios personalizados - xxxxxx", no entanto, você não pode salvar o trabalho aqui porque Cognos acha que esta é a pasta "conteúdo da equipe" onde você não tem acesso para escrever. | O trabalho é criar uma nova pasta com um nome exclusivo (ou seja, "NewFolder") e salvá-la, ou para salvar em "meu conteúdo" e, em seguida, copiar / mover para "relatórios personalizados - xxxxxx". 
 |===

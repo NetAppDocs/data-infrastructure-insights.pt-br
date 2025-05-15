@@ -1,0 +1,136 @@
+---
+sidebar: sidebar 
+permalink: ws_notifications_using_webhooks.html 
+keywords: alert, webhook, notification 
+summary: Crie um webhook para notificações de alerta de segurança de carga de trabalho. 
+---
+= Notificações de segurança de carga de trabalho usando webhooks
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Webhooks permitem que os usuários enviem notificações de alerta críticas ou de aviso para vários aplicativos usando um canal webhook personalizado.
+
+Muitos aplicativos comerciais suportam webhooks como uma interface de entrada padrão, por exemplo: Slack, PagerDuty, Teams e discord. Ao suportar um canal de webhook genérico e personalizável, o Workload Security pode suportar muitos desses canais de entrega. Informações sobre a configuração dos webhooks podem ser encontradas nos sites dos respetivos aplicativos. Por exemplo, o Slack fornece link:https://api.slack.com/messaging/webhooks["este guia útil"]o .
+
+Você pode criar vários canais de webhook, cada canal direcionado para uma finalidade diferente, aplicativos separados, destinatários diferentes, etc.
+
+A instância do canal webhook é composta pelos seguintes elementos
+
+|===
+| Nome | Descrição 
+
+
+| URL | URL de destino do webhook, incluindo o prefixo http:// ou https:// junto com os parâmetros de url 
+
+
+| Método | GET/POST - o padrão é POST 
+
+
+| Cabeçalho personalizado | Especifique quaisquer cabeçalhos personalizados aqui 
+
+
+| Corpo da mensagem | Coloque o corpo da sua mensagem aqui 
+
+
+| Parâmetros de alerta predefinidos | Lista os parâmetros padrão para o webhook 
+
+
+| Parâmetros e segredos personalizados | Parâmetros e segredos personalizados permitem que você adicione parâmetros exclusivos e elementos seguros, como senhas 
+|===
+
+
+== Criando um webhook
+
+Para criar um Webhook de Segurança de carga de trabalho, vá para Admin > notificações e selecione a guia "webhooks de segurança de carga de trabalho". A imagem a seguir mostra uma tela de criação de webhook do Slack.
+
+Observação: O usuário deve ser um _Admin_ de Segurança de carga de trabalho para criar e gerenciar webhooks de Segurança de carga de trabalho.
+
+image:ws_webhook_slack_example.png["Exemplo do Slack para Workload Security, largura de 500 mm"]
+
+* Insira as informações apropriadas para cada um dos campos e clique em "Salvar".
+* Você também pode clicar no botão "testar Webhook" para testar a conexão. Observe que isso enviará o "corpo da mensagem" (sem substituições) para a URL definida de acordo com o método selecionado.
+* Os webhooks SWS incluem vários parâmetros predefinidos. Além disso, você pode criar seus próprios parâmetros personalizados ou segredos.
+
+
+
+
+== Parâmetros: O que são e como usá-los?
+
+Os parâmetros de alerta são valores dinâmicos preenchidos por alerta. Por exemplo, o parâmetro _%%severity%%%_ será substituído pelo tipo de gravidade do alerta.
+
+Observe que as substituições não são realizadas ao clicar no botão "testar webhook"; o teste envia uma carga útil que mostra os marcadores de posição do parâmetro (_%%<param-name>%%_), mas não os substitui por dados.
+
+
+
+=== Parâmetros e segredos personalizados
+
+Nesta seção, você pode adicionar quaisquer parâmetros personalizados e / ou segredos que desejar. Um parâmetro personalizado ou segredo pode estar no URL ou corpo da mensagem. Os segredos permitem que o usuário configure um parâmetro personalizado seguro como senha, apiKey etc.
+
+A imagem de exemplo a seguir mostra como os parâmetros personalizados são usados na criação do webhook.
+
+image:ws_webhook_parameters_example.png["webhook de segurança de carga de trabalho com parâmetros, largura de 800 mm"]
+
+
+
+== Página de lista de webhooks de segurança de carga de trabalho
+
+Na página da lista Webhooks, são exibidos os campos Nome, criado por, criado em, Status, seguro e último relatório. Nota: O valor da coluna 'tatus' continuará mudando com base no resultado do último resultado do gatilho do webhook. A seguir estão exemplos de resultados de status.
+
+|===
+
+
+| Estado | Descrição 
+
+
+| OK | Notificação enviada com sucesso. 
+
+
+| 403 | Proibido. 
+
+
+| 404 | Página não encontrada. 
+
+
+| 400  a| 
+Pedido incorreto. Você pode ver esse status se houver algum erro no corpo da mensagem, por exemplo:
+
+* json mal formatado.
+* Fornecendo valor inválido para chaves reservadas. Por exemplo, o PagerDuty aceita apenas críticas/aviso/erro/informações para "gravidade". Qualquer outro resultado pode produzir um status 400.
+* Erros de validação específicos da aplicação. Por exemplo, o Slack permite um máximo de 10 campos dentro de uma seção. Incluir mais de 10 pode resultar em um status 400.
+
+
+
+
+| 410 | O recurso já não está disponível 
+|===
+A coluna "último comunicado" indica a hora em que o webhook foi acionado pela última vez.
+
+Na página de listagem webhooks, os usuários também podem Editar/duplicar/Excluir webhooks.
+
+
+
+== Configure a notificação do Webhook na política de alerta
+
+Para adicionar uma notificação de webhook a uma política de alerta, aceda a -Workload Security > Policies- e selecione uma política existente ou adicione uma nova política. Na seção _ações_ > _notificações do Webhook_, selecione os webhooks necessários.
+
+image:ws_edit_attack_policy.png["Caixa de diálogo Editar política de ataque mostrando webhook dropdown, largura de 500 mm"]
+
+As notificações do webhook estão vinculadas a políticas. Quando o ataque (RW/DD/WARN) acontece, a ação configurada (tirar instantâneo/bloqueio do utilizador) será executada e, em seguida, a notificação associada do webhook será acionada.
+
+Observação: As notificações por e-mail são independentes das políticas, elas serão acionadas como de costume.
+
+* Se uma política for pausada, as notificações do webhook não serão acionadas.
+* Vários webhooks podem ser anexados a uma única política, mas recomenda-se anexar não mais de 5 webhooks a uma política.
+
+
+
+
+=== Exemplos de Webhook de segurança de carga de trabalho
+
+Webhooks link:ws_webhook_example_slack.html["Folga"]para Webhooks para Webhooks link:ws_webhook_example_pagerduty.html["PagerDuty"] link:ws_webhook_example_teams.html["Equipas"] para link:ws_webhook_example_discord.html["Discórdia"]

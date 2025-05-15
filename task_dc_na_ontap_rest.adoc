@@ -49,9 +49,7 @@ security login rest-role create -role {role name} -api /api -access readonly
 security login rest-role create -role {role name} -api /api/cluster/agents -access all
 vserver services web access create -name spi -role {role name} -vserver {vserver name as retrieved above}
 ....
-
-
-. Crie o usuário somente leitura usando o seguinte comando. Depois de executar o comando Create, você será solicitado a digitar uma senha para esse usuário.
+. Crie o usuário somente leitura usando o seguinte comando. Depois de executar o comando Create, você será solicitado a digitar uma senha para esse usuário. Observe que no comando a seguir mostramos a função definida como _CI_readonly_. Se você criar uma função com nome diferente na etapa 3 acima, use esse nome de função personalizado.
 
 
  security login create -user-or-group-name {username} -application http -authentication-method password -role {role name}

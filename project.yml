@@ -105,12 +105,22 @@ sidebar:
         url: "/task_create_monitor.html"
       - title: Visualizar e gerir alertas
         url: "/task_view_and_manage_alerts.html"
-      - title: Configurando destinatários de notificação
-        url: "/concept_notifications_email.html"
       - title: Monitores definidos pelo sistema
         url: "/task_system_monitors.html"
-      - title: Notificação do webhook
-        url: "/task_create_webhook.html"
+      - title: Configurando destinatários de notificação
+        url: "/concept_notifications_email.html"
+      - title: Notificações do webhook
+        entries:
+        - title: Configurando webhooks
+          url: "/task_create_webhook.html"
+        - title: Exemplo de webhook - discord
+          url: "/task_webhook_example_discord.html"
+        - title: Exemplo de webhook - PagerDuty
+          url: "/task_webhook_example_pagerduty.html"
+        - title: Exemplo de webhook - Slack
+          url: "/task_webhook_example_slack.html"
+        - title: Webhook exemplo - equipes
+          url: "/task_webhook_example_teams.html"
     - title: Trabalhando com Anotações
       entries:
       - title: Definir anotações
@@ -263,8 +273,20 @@ sidebar:
       url: "/cs_restrict_user_access.html"
     - title: Simulando um ataque de ransomware
       url: "/concept_cs_attack_simulator.html"
-    - title: Notificações
+    - title: Notificações por e-mail
       url: "/cs_notifications_email.html"
+    - title: Notificações do webhook
+      entries:
+      - title: Criando Webhooks
+        url: "/ws_notifications_using_webhooks.html"
+      - title: Exemplo do discord Webhook
+        url: "/ws_webhook_example_discord.html"
+      - title: Exemplo do PagerDuty Webhook
+        url: "/ws_webhook_example_pagerduty.html"
+      - title: Exemplo do Slack Webhook
+        url: "/ws_webhook_example_slack.html"
+      - title: Exemplo do Webhook da equipe
+        url: "/ws_webhook_example_teams.html"
     - title: API de segurança de carga de trabalho
       url: "/concept_cs_api.html"
     - title: Solução de problemas do SVM Collector

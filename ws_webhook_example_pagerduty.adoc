@@ -28,7 +28,7 @@ NOTE: Esta página refere-se a instruções de terceiros, que estão sujeitas a 
 +
 image:Webhooks_PagerDutyScreen1.png["Ecrã Pagerduty"]
 
-. Selecione a guia _integrações_ para ver a *chave de integração*. Você precisará dessa chave quando criar o webhook do Data Infrastructure Insights abaixo.
+. Selecione a guia _integrações_ para ver a *chave de integração*. Você precisará dessa chave quando criar o webhook Workload Security abaixo.
 
 
 . Vá para *incidents* ou *Services* para ver Alertas.
