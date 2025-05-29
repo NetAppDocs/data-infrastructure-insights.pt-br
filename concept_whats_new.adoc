@@ -14,6 +14,47 @@ A NetApp está continuamente melhorando e aprimorando seus produtos e serviços.
 
 
 
+== Maio de 2025
+
+
+
+=== As novas Landing Pages mantêm você no fluxo
+
+As Landing pages redesenhadas abordam tudo o que você precisa - dados de resumo, gráficos de desempenho, correlações, alertas e alterações e recursos-chave - em uma única visualização.
+
+Agora você pode solucionar problemas mais rapidamente e permanecer em fluxo, sem pular entre abas ou perder contexto.
+
+image:lp_new_design.png["novo design de landing page mostrando o posicionamento das seções de resumo e desempenho e recursos adicionais"]
+
+
+
+=== Melhorias na segurança da carga de trabalho
+
+*Webhooks agora disponíveis para alertas de segurança de carga de trabalho*
+
+O Workforce Security agora oferece suporte a notificações prontas para uso no webhook para ferramentas como Slack, PagerDuty, Teams e muito mais. Além disso, oferecemos modelos personalizáveis que permitem adaptar a mensagem ou integrar com qualquer outro SIEM ou aplicativo de terceiros. Encaminhe alertas críticos diretamente para os fluxos de trabalho de segurança existentes, para que sua equipe possa investigar e responder mais rapidamente.
+
+image:ws_webhook_slack_example.png["Exemplo do Slack para Workload Security, largura de 400 mm"]
+
+*Migrar coletores de segurança de carga de trabalho entre agentes*
+
+Você pode migrar facilmente um coletor de Workload Security de um agente para outro, permitindo o balanceamento de carga eficiente de coletores entre agentes. Migrar é tão fácil quanto editar o coletor e selecionar o agente de destino na lista.
+
+image:ws_migrate_collector_to_another_agent.png["coletor de migração, largura de 500 mm"]
+
+
+
+=== Exportação assíncrona .CSV
+
+Exportar dados para .CSV pode levar de alguns segundos a um número de horas, dependendo da quantidade de dados a exportar. O Data Infrastructure Insights agora exporta esses dados de forma assíncrona, para que você possa continuar trabalhando enquanto o .CSV está sendo compilado.
+
+Veja suas exportações .CSV selecionando o ícone "Bell" na barra de ferramentas superior direita.
+
+image:csv_export_async.png["ícone de bell com lista de exportações .csv prontas para download, largura de 400 mm"]
+
+'''
+
+
 == Abril de 2025
 
 

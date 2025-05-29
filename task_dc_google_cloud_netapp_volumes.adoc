@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: task_dc_google_cloud_netapp_volumes.html 
+summary: Configurar o coletor de dados do Google Cloud NetApp volumes 
+keywords: data collector, queries, create, google, cloud, volumes, 
+---
+= NetApp Google Cloud NetApp volumes coletor de dados
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Esse coletor de dados é compatível com a coleta de inventário e performance das configurações da plataforma de nuvem do Google NetApp Cloud volumes. Este coletor procurará descobrir todos os recursos de computação em todos os projetos dentro de uma organização do Google. Se você tiver várias organizações do Google que deseja descobrir com o Data Infrastructure Insights, será necessário implantar um coletor de Insights de infraestrutura de dados por organização.
+
+
+
+== Requisitos da conta de serviço
+
+* Você deve criar uma conta de serviço seguindo as instruções em link:https://cloud.google.com/iam/docs/creating-managing-service-accounts["Criando/gerenciando contas de serviço"]. Essa conta de serviço é identificada por um ID exclusivo, conhecido como seu _ClientID_, que será usado como um nome de usuário.
+* Além disso, crie uma chave de conta de serviço seguindo as instruções em link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys["Criando/gerenciando chaves de conta de serviço"]. Essa chave pode ser baixada como um arquivo json, cujo conteúdo será usado como senha.
+* A conta de serviço deve ter escopo para _Compute.readonly_, _monitoring.read_ e _cloud-Platform_.
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Código Organização | O ID da organização que você deseja descobrir com este coletor. Este campo é obrigatório se a sua conta de serviço for capaz de ver mais de uma organização 
+
+
+| Escolha 'Excluir' ou 'incluir' para filtrar ativos GCNV por local | Este padrão é excluído, já que este coletor por padrão pretende descobrir todos os volumes GCNV em todo o mundo dentro de sua organização. 
+
+
+| GCNV Excluir/incluir localizações | Este padrão é estar vazio, e é usado em conjunto com a opção "escolher 'excluir' ou 'incluir'. Se alguém quiser apenas descobrir ativos em certas regiões do mundo, essas 2 opções podem ser manipuladas para limitar o escopo deste coletor 
+
+
+| IDs de projeto | A lista de IDs de projeto que você deseja filtrar dentro ou fora da descoberta, dependendo do valor do valor "escolha 'Excluir'....". A lista padrão está vazia 
+
+
+| ID do cliente | ID do cliente para a configuração do Google Cloud Platform 
+
+
+| Copie e cole o conteúdo do seu arquivo de credencial do Google aqui | Copie suas credenciais do Google para a conta do Cloud Platform para este campo 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de enquete de inventário (min) | O padrão é de 60 minutos 
+
+
+| Use o proxy AU para chamadas de API REST | Esta caixa de verificação fará com que o coletor use o mesmo proxy que o AU onde o coletor vive. Isso não está habilitado por padrão - o que significa que o coletor tentará enviar chamadas de API HTTPS diretamente para o Google. 
+
+
+| Rotule chaves e valores nos quais filtrar VMs | Clique em * rótulo de filtro* para escolher quais VMs (e discos associados) incluir/excluir filtrando chaves e valores que correspondem a chaves e valores de rótulos na VM. A chave da etiqueta é necessária, o valor da etiqueta é opcional. Quando o valor de rótulo está vazio, a VM é filtrada desde que corresponda à chave de rótulo. 
+
+
+| Intervalo de enquete de desempenho (seg) | O padrão é de 300 segundos 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

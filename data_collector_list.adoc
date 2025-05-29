@@ -130,6 +130,9 @@ Lista alfabética de coletores de dados suportados pelo Data Infrastructure Insi
 | link:task_dc_google_cloud.html["Google Compute e Storage"] | Infraestrutura 
 
 
+| link:task_dc_google_cloud_netapp_volumes.html["Google Cloud NetApp volumes"] | Infraestrutura 
+
+
 | link:task_config_telegraf_hadoop.html["Hadoop"] | Serviço 
 
 

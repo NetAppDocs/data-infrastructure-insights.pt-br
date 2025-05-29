@@ -7,10 +7,72 @@ keywords: asset page, objects, landing page, Virtual machine, VM, Storage Virtua
 = Visão geral da página de ativos
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-As páginas de ativos resumem o status atual de um ativo e contêm links para informações adicionais sobre o ativo e seus ativos relacionados.
+As Landing pages de ativos resumem o status atual de um ativo e contêm links para informações adicionais sobre o ativo e seus ativos relacionados.
+
+As Landing pages oferecem uma visualização de página única do objeto, com informações de Resumo, desempenho e recursos relacionados.
+
+image:lp_new_design.png["Novo design LP"]
+
+
+
+== Seção de resumo
+
+Na parte superior de uma Landing page está a seção Resumo expandible, que inclui vários gráficos sparkline exibindo tendências de dados recentes para coisas como throughput ou latência, bem como informações e atributos de objetos, e quaisquer monitores que possam estar alertando para o objeto.
+
+A secção Resumo também apresenta e permite alterar as anotações atribuídas ao ativo.
+
+
+
+== Seção de desempenho
+
+A Seção desempenho exibe dados de desempenho para o objeto. Selecione _Settings_ para adicionar gráficos adicionais à exibição, como taxa de transferência ou capacidade, ou selecione recursos correlacionados ou contribuintes para traçar seus dados ao lado do objeto. Os dispositivos que podem potencialmente estar causando contenção também serão listados na seção desempenho. Os dados nos gráficos são atualizados automaticamente à medida que os coletores de dados pesquisam e os dados atualizados são adquiridos.
+
+Pode selecionar o <<performance-metric-definitions,métricas>> que pretende visualizar no gráfico de desempenho para o período de tempo selecionado. Clique no menu suspenso _Settings_ e escolha entre as métricas listadas.
+
+Além dos dados de desempenho, quaisquer alertas que estejam ou estiveram ativos dentro do intervalo de tempo de página selecionado também serão exibidos.
+
+image:lp_alert_example.png["exemplo de alerta em uma landing page"]
+
+Você pode selecionar entre os seguintes dispositivos que podem estar listados na seção desempenho:
+
+* Topo correlacionado
++
+Mostra os ativos que têm uma alta correlação (porcentagem) com uma ou mais métricas de performance para o ativo base.
+
+* Principais colaboradores
++
+Mostra os ativos que contribuem (porcentagem) para o ativo base.
+
+* Alterações superiores
++
+Ativos relacionados a mudanças recentes.
+
+* Contenções da carga de trabalho
++
+Mostra os ativos que impactam ou são afetados por outros recursos compartilhados, como hosts, redes e armazenamento. Estes são às vezes chamados de recursos _gananciosos_ e _degradados_.
+
+
+
+
+
+== Seção de recursos adicionais
+
+A seção recursos adicionais exibe tabelas de dados para recursos relacionados ao tipo de objeto atual. Você pode expandir e recolher essas tabelas para se concentrar em recursos específicos. Selecione o ícone de engrenagem para mostrar temporariamente métricas ou atributos adicionais em uma tabela.
+
+
+
+== Adicionar widgets personalizados
+
+Você pode adicionar seus próprios widgets a qualquer página de ativos. Os widgets que você adicionar aparecerão nas páginas de ativos para todos os objetos desse tipo. Por exemplo, adicionar um widget personalizado a uma página de ativos de armazenamento exibirá esse widget nas páginas de ativos para todos os ativos de armazenamento.
+
+Widgets personalizados são colocados na parte inferior de uma página de destino, abaixo das seções desempenho e recurso.
 
 
 
@@ -34,15 +96,15 @@ O Data Infrastructure Insights fornece páginas de ativos para os seguintes ativ
 * Porta
 * Interrutor
 * Malha
+* Host
+* Zona
 
 
 
 
 == Alterar o intervalo de tempo dos dados apresentados
 
-Por padrão, uma página de ativo exibe as últimas 24 horas de dados; no entanto, você pode alterar o segmento de dados exibido selecionando outro intervalo de tempo fixo ou um intervalo de tempo personalizado para exibir menos ou mais dados.
-
-Você pode alterar o segmento de tempo dos dados exibidos usando uma opção localizada em cada página de ativo, independentemente do tipo de ativo. Para alterar o intervalo de tempo, clique no intervalo de tempo exibido na barra superior e escolha entre os seguintes segmentos de tempo:
+Por padrão, uma página de ativo exibe as últimas 3 horas de dados; no entanto, você pode alterar o segmento de tempo dos dados exibidos usando uma opção localizada em cada página de ativo, independentemente do tipo de ativo. Para alterar o intervalo de tempo, clique no intervalo de tempo exibido na barra superior e escolha entre os seguintes segmentos de tempo:
 
 * Durar 15 minutos
 * Durar 30 minutos
@@ -55,16 +117,122 @@ Você pode alterar o segmento de tempo dos dados exibidos usando uma opção loc
 * Últimos 2 dias
 * Últimos 3 dias
 * Últimos 7 dias
+* Últimos 14 dias
 * Últimos 30 dias
 * Intervalo de tempo personalizado
 
 
 O intervalo de tempo personalizado permite-lhe selecionar até 31 dias consecutivos. Também pode definir a hora de início e a hora de fim do dia para este intervalo. A hora de Início padrão é 12:00 AM no primeiro dia selecionado e a hora de término padrão é 11:59 PM no último dia selecionado. Clicar em aplicar aplicará o intervalo de tempo personalizado à página de ativos.
 
-As informações em uma seção de resumo da página de ativos, bem como em quaisquer tabelas ou widgets personalizados na página, são atualizadas automaticamente com base no intervalo de tempo selecionado. A taxa de atualização atual é exibida no canto superior direito da seção Resumo, bem como em quaisquer tabelas ou widgets relevantes na página.
+As informações na página são atualizadas automaticamente com base no intervalo de tempo selecionado. A taxa de atualização atual é exibida no canto superior direito da seção Resumo, bem como em quaisquer tabelas ou widgets relevantes na página.
 
 
 
-== Adicionar widgets personalizados
+== Definições métricas de desempenho
 
-Você pode adicionar seus próprios widgets a qualquer página de ativos. Os widgets que você adicionar aparecerão nas páginas de ativos para todos os objetos desse tipo. Por exemplo, adicionar um widget personalizado a uma página de ativos de armazenamento exibirá esse widget nas páginas de ativos para todos os ativos de armazenamento.
+A seção desempenho pode exibir várias métricas com base no período de tempo selecionado para o ativo. Cada métrica é exibida em seu próprio gráfico de desempenho. Você pode adicionar ou remover métricas e ativos relacionados dos gráficos, dependendo dos dados que deseja ver; as métricas que você pode escolher variam dependendo do tipo de ativo.
+
+|===
+
+
+| *Métrica* | *Descrição* 
+
+
+| BB crédito zero Rx, TX | Número de vezes que a contagem de crédito de buffer para buffer de receção/transmissão foi transferida para zero durante o período de amostragem. Esta métrica representa o número de vezes que a porta anexada teve que parar de transmitir porque esta porta estava fora de créditos para fornecer. 
+
+
+| BB crédito zero duração TX | Tempo em milissegundos durante o qual o crédito BB de transmissão foi zero durante o intervalo de amostragem. 
+
+
+| Taxa de acerto do cache (Total, leitura, escrita) % | Porcentagem de solicitações que resultam em acertos de cache. Quanto maior o número de acessos versus acessos ao volume, melhor é o desempenho. Esta coluna está vazia para matrizes de armazenamento que não recolhem informações de acerto de cache. 
+
+
+| Utilização de cache (total) % | Porcentagem total de solicitações de cache que resultam em acertos de cache 
+
+
+| Classe 3 descarta | Contagem de cartões de transporte de dados de classe 3 Fibre Channel. 
+
+
+| Utilização de CPU (total) % | Quantidade de recursos de CPU usados ativamente, como uma porcentagem do total disponível (sobre todas as CPUs virtuais). 
+
+
+| Erro CRC | Número de quadros com verificações de redundância cíclica (CRCs) inválidas detetadas pela porta durante o período de amostragem 
+
+
+| Taxa de quadros | Taxa de quadros de transmissão em quadros por segundo (FPS) 
+
+
+| Tamanho médio do fotograma (Rx, TX) | Relação entre o tráfego e o tamanho do quadro. Essa métrica permite identificar se há estruturas suspensas na malha. 
+
+
+| Tamanho do quadro demasiado longo | Contagem de quadros de transmissão de dados Fibre Channel que são muito longos. 
+
+
+| Tamanho do quadro demasiado curto | Contagem de quadros de transmissão de dados Fibre Channel que são muito curtos. 
+
+
+| Densidade de e/S (total, leitura, gravação) | Número de IOPS dividido pela capacidade usada (conforme adquirido da pesquisa de inventário mais recente da fonte de dados) para o elemento volume, volume interno ou armazenamento. Medido em número de operações de e/S por segundo por TB. 
+
+
+| IOPS (total, leitura, gravação) | Número de solicitações de serviço de e/S de leitura/gravação que passam pelo canal de e/S ou uma parte desse canal por unidade de tempo (medido em e/S por segundo) 
+
+
+| Taxa de transferência IP (total, leitura, gravação) | Total: Taxa agregada à qual os dados IP foram transmitidos e recebidos em megabytes por segundo. 
+
+
+| Leitura: Taxa de transferência IP (receber): | Taxa média na qual os dados IP foram recebidos em megabytes por segundo. 
+
+
+| Escreva: Taxa de transferência IP (transmissão): | Taxa média na qual os dados IP foram transmitidos em megabytes por segundo. 
+
+
+| Latência (total, leitura, gravação) | Latência (R&W): Taxa na qual os dados são lidos ou gravados nas máquinas virtuais em um período fixo de tempo. O valor é medido em megabytes por segundo. 
+
+
+| Latência: | Tempo médio de resposta das máquinas virtuais em um armazenamento de dados. 
+
+
+| Latência máxima: | O maior tempo de resposta das máquinas virtuais em um armazenamento de dados. 
+
+
+| Falha na ligação | Número de falhas de link detetadas pela porta durante o período de amostragem. 
+
+
+| Reposição da ligação Rx, TX | O número de redefinições da ligação de receção ou de transmissão durante o período de amostragem. Essa métrica representa o número de redefinições de link que foram emitidas pela porta anexada a essa porta. 
+
+
+| % De utilização da memória (total) | Limite para a memória usada pelo host. 
+
+
+| % R/W parcial (total) | Número total de vezes que uma operação de leitura/gravação cruza um limite de distribuição em qualquer módulo de disco em um LUN RAID 5, RAID 1/0 ou RAID 0 geralmente, os cruzamentos de faixa não são benéficos, porque cada um requer uma e/S adicional Uma porcentagem baixa indica um tamanho eficiente do elemento de distribuição e é uma indicação de alinhamento inadequado de um volume (ou um LUN NetApp). Para CLARiiON, esse valor é o número de cruzamentos de faixa divididos pelo número total de IOPS. 
+
+
+| Erros de porta | Relatório de erros de porta durante o período de amostragem/período de tempo determinado. 
+
+
+| Contagem de perda de sinal | Número de erros de perda de sinal. Se ocorrer um erro de perda de sinal, não existe uma ligação elétrica e existe um problema físico. 
+
+
+| Taxa de swap (taxa total, em taxa, fora taxa) | Taxa na qual a memória é trocada dentro, fora ou ambos do disco para a memória ativa durante o período de amostragem. Este contador aplica-se a máquinas virtuais. 
+
+
+| Contagem de perdas de sincronização | Número de erros de perda de sincronização. Se ocorrer um erro de perda de sincronização, o hardware não poderá fazer sentido do tráfego ou bloquear nele. Todo o equipamento pode não estar usando a mesma taxa de dados, ou a ótica ou as conexões físicas podem ser de baixa qualidade. A porta deve ressincronizar após cada erro, o que afeta o desempenho do sistema. Medido em KB/seg 
+
+
+| Taxa de transferência (total, leitura, gravação) | Taxa na qual os dados estão sendo transmitidos, recebidos ou ambos em um período fixo de tempo em resposta a solicitações de serviço de e/S (medido em MB por segundo). 
+
+
+| Limites de eliminação de tempo limite - TX | Contagem de quadros de transmissão descartados causada por tempo limite. 
+
+
+| Taxa de tráfego (total, leitura, gravação) | Tráfego transmitido, recebido ou ambos recebidos durante o período de amostragem, em mebibytes por segundo. 
+
+
+| Utilização de tráfego (Total, leitura, escrita) | Relação de tráfego recebido/transmitido/total para receber/transmitir/capacidade total, durante o período de amostragem. 
+
+
+| Utilização (Total, leitura, escrita) % | Percentagem da largura de banda disponível utilizada para transmissão (TX) e receção (Rx). 
+
+
+| Escrever pendente (total) | Número de solicitações de serviço de e/S de gravação pendentes. 
+|===

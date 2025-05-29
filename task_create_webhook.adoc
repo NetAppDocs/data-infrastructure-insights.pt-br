@@ -7,6 +7,10 @@ summary: Crie monitores para alertar sobre limites de desempenho ou inventário
 = Notificação usando Webhooks
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -64,6 +68,8 @@ image:Webhook_Default_Parameters.png["Parâmetros padrão do Webhook do Insights
 === Parâmetros: O que são e como os utilizo?
 
 Os parâmetros de alerta são valores dinâmicos preenchidos por alerta. Por exemplo, o parâmetro _%%TriggeredOn%%_ será substituído pelo objeto no qual o alerta foi acionado.
+
+Você pode adicionar qualquer atributo de objeto (por exemplo, nome de armazenamento) como um parâmetro a um webhook. Por exemplo, você pode definir parâmetros para nome de volume e nome de armazenamento em uma descrição de webhook como: "Alta latência para volume: _%%relatedObject.volume.name%%_, armazenamento: _%%relatedObject.storage.name%%_".
 
 Note que nesta seção, as substituições são _não_ executadas ao clicar no botão "testar Webhook"; o botão envia uma carga útil que mostra as substituições _%_, mas não as substitui por dados.
 

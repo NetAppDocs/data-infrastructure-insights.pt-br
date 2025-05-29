@@ -7,6 +7,10 @@ summary: Adicionando coletores de dados do Workload Security
 = Configurando o coletor de dados SVM do ONTAP
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -20,7 +24,7 @@ O Workload Security usa coletores de dados para coletar dados de acesso de arqui
 +
 ** Data ONTAP 9,2 e versões posteriores. Para obter o melhor desempenho, use uma versão do Data ONTAP superior a 9.13.1.
 ** Protocolo SMB versão 3,1 e anterior.
-** Versões NFS até NFS 4,1 com ONTAP 9.15,1 ou posterior, inclusive.
+** Versões de NFS até NFS 4,1 (observe que o NFS 4,1 é compatível com ONTAP 9,15 ou posterior).
 ** O FlexGroup é suportado a partir do ONTAP 9 .4 e versões posteriores
 ** O ONTAP Select é suportado
 
@@ -59,7 +63,7 @@ O sistema retorna o nome do SVM, o nome do servidor CIFS e os campos adicionais.
 
 * Defina uma senha para o usuário SVM vsadmin. Se estiver usando usuário personalizado ou usuário de administrador de cluster, pule esta etapa. Clustershell:> `security login password -username vsadmin -vserver svmname`
 * Desbloqueie o usuário do SVM vsadmin para acesso externo. Se estiver usando usuário personalizado ou usuário de administrador de cluster, pule esta etapa. Clustershell:> `security login unlock -username vsadmin -vserver svmname`
-* Certifique-se de que a política de firewall do LIF de dados está definida como 'mgmt' (não 'dados'). Ignore esta etapa se estiver usando um lif de gerenciamento dedicado para adicionar o SVM. Clustershell:> `network interface modify -lif <SVM_data_LIF_name> -firewall-policy mgmt`
+* Certifique-se de que a política de firewall do LIF de dados está definida como 'gmt' (não 'data'). Ignore esta etapa se estiver usando um lif de gerenciamento dedicado para adicionar o SVM. Clustershell:> `network interface modify -lif <SVM_data_LIF_name> -firewall-policy mgmt`
 * Quando um firewall está ativado, você deve ter uma exceção definida para permitir tráfego TCP para a porta usando o coletor de dados Data ONTAP.
 +
 link:concept_cs_agent_requirements.html["Requisitos do agente"]Consulte para obter informações de configuração. Isso se aplica a agentes locais e agentes instalados na nuvem.
@@ -110,17 +114,8 @@ Credenciais de nível de cluster são necessárias para que esse recurso funcion
 
 Se você estiver usando credenciais de administração de cluster, não serão necessárias novas permissões.
 
-Se você estiver usando um usuário personalizado (por exemplo, _csuser_) com permissões dadas ao usuário, siga as etapas abaixo para conceder permissões ao Workload Security para bloquear o usuário.
+Se você estiver usando um usuário personalizado (por exemplo, _csuser_) com permissões dadas ao usuário, siga as etapas em link:cs_restrict_user_access.html["Bloqueio de acesso do usuário"] para conceder permissões ao Workload Security para bloquear o usuário.
 
-Para csuser com credenciais de cluster, faça o seguinte na linha de comando ONTAP:
-
-....
-security login role create -role csrole -cmddirname "vserver export-policy rule" -access all
-security login role create -role csrole -cmddirname set -access all
-security login role create -role csrole -cmddirname "vserver cifs session" -access all
-security login role create -role csrole -cmddirname "vserver services access-check authentication translate" -access all
-security login role create -role csrole -cmddirname "vserver name-mapping" -access all
-....
 
 
 == Uma Nota sobre permissões
@@ -131,6 +126,14 @@ security login role create -role csrole -cmddirname "vserver name-mapping" -acce
 
 Se você não puder usar o usuário administrador de gerenciamento de cluster para permitir que a Segurança de carga de trabalho acesse o coletor de dados ONTAP SVM, você poderá criar um novo usuário chamado "csuser" com as funções como mostrado nos comandos abaixo. Use o nome de usuário "csuser" e a senha para "csuser" ao configurar o coletor de dados do Workload Security para usar o Cluster Management IP.
 
+Observação: Você pode criar uma única função para usar para todas as permissões de recursos para um usuário personalizado. Se houver um usuário existente, exclua primeiro o usuário existente e a função usando estes comandos:
+
+....
+security login delete -user-or-group-name csuser -application *
+security login role delete -role csrole -cmddirname *
+security login rest-role delete -role csrestrole -api *
+security login rest-role delete -role arwrole -api *
+....
 Para criar o novo usuário, faça login no ONTAP com o nome de usuário/senha do administrador de gerenciamento de cluster e execute os seguintes comandos no servidor ONTAP:
 
  security login role create -role csrole -cmddirname DEFAULT -access readonly
@@ -142,8 +145,7 @@ security login role create -role csrole -cmddirname "event filter" -access all
 security login role create -role csrole -cmddirname "event notification destination" -access all
 security login role create -role csrole -cmddirname "event notification" -access all
 security login role create -role csrole -cmddirname "security certificate" -access all
-....
-....
+security login role create -role csrole -cmddirname "cluster application-record" -access all
 security login create -user-or-group-name csuser -application ontapi -authmethod password -role csrole
 security login create -user-or-group-name csuser -application ssh -authmethod password -role csrole
 security login create -user-or-group-name csuser -application http -authmethod password -role csrole
@@ -154,6 +156,13 @@ security login create -user-or-group-name csuser -application http -authmethod p
 
 Se você não puder usar o usuário administrador de gerenciamento de cluster para permitir que a Segurança de carga de trabalho acesse o coletor de dados ONTAP SVM, você poderá criar um novo usuário chamado "csuser" com as funções como mostrado nos comandos abaixo. Use o nome de usuário "csuser" e a senha para "csuser" ao configurar o coletor de dados do Workload Security para usar o SVM Management IP.
 
+Observação: Você pode criar uma única função para usar para todas as permissões de recursos para um usuário personalizado. Se houver um usuário existente, exclua primeiro o usuário existente e a função usando estes comandos:
+
+....
+security login delete -user-or-group-name csuser -application * -vserver <vservername>
+security login role delete -role csrole -cmddirname * -vserver <vservername>
+security login rest-role delete -role csrestrole -api * -vserver <vservername>
+....
 Para criar o novo usuário, faça login no ONTAP com o nome de usuário/senha do administrador de gerenciamento de cluster e execute os seguintes comandos no servidor ONTAP. Para facilitar, copie esses comandos para um editor de texto e substitua o <vservername> pelo nome do SVM antes e execute esses comandos no ONTAP:
 
  security login role create -vserver <vservername> -role csrole -cmddirname DEFAULT -access none
@@ -183,16 +192,10 @@ Permissões específicas são necessárias para o protobuf (algumas ou todas ela
 
 Modo de cluster:
 
-....
-security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <cluster_name>
-security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole
-....
+ security login role create -role csrole -cmddirname "vserver fpolicy" -access all
 Modo SVM:
 
-....
-security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <svm_name>
-security login create -user-or-group-name csuser -application http -authmethod password -role csrestrole -vserver <svm_name>
-....
+ security login role create -vserver <vservername> -role csrole -cmddirname "vserver fpolicy" -access all
 
 
 === Permissões para proteção autônoma contra ransomware do ONTAP e acesso à ONTAP negadas
@@ -277,9 +280,9 @@ O seguinte é recomendado para o MetroCluster:
 . Os coletores de dados devem ser conetados por _Cluster IP_.
 . A qualquer momento, um coletor de dados deve estar em execução, outro estará em erro.
 +
-O coletor de dados do SVM atual será exibido como _Running_. O coletor de dados do SVM 'parado' atual será exibido como _Error_.
+O coletor de dados do SVM atual será exibido como _Running_. O coletor de dados do SVM atual será exibido como _Error_.
 
-. Sempre que houver um switchover, o estado do coletor de dados mudará de "execução" para "erro" e vice-versa.
+. Sempre que houver uma mudança, o estado do coletor de dados mudará de "running" (em execução) para "error" (erro) e vice-versa.
 . Levará até dois minutos para que o coletor de dados se mova do estado de erro para o estado de execução.
 
 
@@ -311,8 +314,8 @@ NOTE: Um coletor não pode ser pausado se tiver usuários restritos. Restaure o 
 
 Tenha em mente o seguinte:
 
-* A limpeza de instantâneos não acontecerá de acordo com as configurações configuradas em um coletor pausado.
-* Os eventos EMS (como ONTAP ARP) não serão processados em um coletor pausado. Isso significa que, se o ONTAP identificar um ataque de ransomware, a segurança de workloads da infraestrutura de dados não conseguirá adquirir esse evento.
+* A purga de instantâneos não acontecerá de acordo com as configurações configuradas em um coletor pausado.
+* Os eventos EMS (como ONTAP ARP) não serão processados em um coletor pausado. Isso significa que, se o ONTAP identificar um ataque de ransomware, a segurança de workloads da infraestrutura de dados não poderá adquirir esse evento.
 * Os e-mails de notificações de saúde NÃO serão enviados para um coletor em pausa.
 * Ações manuais ou automáticas (como captura Instantânea ou bloqueio do usuário) não serão suportadas em um coletor pausado.
 * Nas atualizações do agente ou coletor, a VM do agente reinicia/reinicia ou a reinicialização do serviço do agente, um coletor pausado permanecerá no estado _Pausado_.
@@ -337,14 +340,14 @@ Permissões específicas são necessárias para o armazenamento persistente (alg
 Modo de cluster:
 
 ....
-security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <cluster-name>
-security login rest-role create -role csrestrole -api /api/cluster/jobs/ -access readonly -vserver <cluster-name>
+security login role create -role csrole -cmddirname "vserver fpolicy" -access all
+security login role create -role csrole -cmddirname "job show" -access readonly
 ....
 Modo SVM:
 
 ....
-security login rest-role create -role csrestrole -api /api/protocols/fpolicy -access all -vserver <vserver-name>
-security login rest-role create -role csrestrole -api /api/cluster/jobs/ -access readonly -vserver <vserver-name>
+security login role create -vserver <vservername> -role csrole -cmddirname "vserver fpolicy" -access all
+security login role create -vserver <vservername> -role csrole -cmddirname "job show" -access readonly
 ....
 
 
