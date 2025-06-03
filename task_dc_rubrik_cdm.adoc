@@ -59,10 +59,13 @@ Para configurar este coletor de dados, são necessários os seguintes itens:
 | IP | Endereço IP do cluster Rubrik 
 
 
-| Nome de utilizador | Nome de utilizador para o cluster 
+| Nome de usuário / Conta de serviço | Nome de utilizador para o cluster 
 
 
-| Palavra-passe | Palavra-passe para o cluster 
+| Senha / Segredo | Palavra-passe para o cluster 
+
+
+| ID da organização para a conta de serviço | Isso precisa ser a string completa, como "Organização:::nnnnnn-nnnn....." 
 |===
 
 
@@ -93,6 +96,6 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 | Recebi uma mensagem informando que mais de um armazenamento foi criado. | Verifique se o cluster está configurado corretamente e se o coletor está apontando para um único cluster. 
 
 
-| Recebi um aviso de que a API de disco retornou mais dados | Consulte o suporte para obter dados adicionais. 
+| A enquete falha com 400 [Solicitação inválida].... ManagedId inválido.... | Você preencheu o campo ID da organização com um valor, mas o cluster Rubrik NÃO acredita que essa seja uma ID da organização válida, apesar da mensagem de erro do Rubrik se referir a ela como "ManagedId". 
 |===
 Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

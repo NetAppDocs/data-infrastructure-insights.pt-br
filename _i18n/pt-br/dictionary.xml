@@ -9338,8 +9338,6 @@
   <block id="e41f6efeb9a8c29ac8077a1348b68078" category="cell">Palavra-passe para o cluster</block>
   <block id="444301801d58f01b1fb488fe224bb8c5" category="cell">Recebi uma mensagem informando que mais de um armazenamento foi criado.</block>
   <block id="7de7475f4bb973126434d7c3f9801f08" category="cell">Verifique se o cluster está configurado corretamente e se o coletor está apontando para um único cluster.</block>
-  <block id="fc971fc699329bc531b4d65ff180a629" category="cell">Recebi um aviso de que a API de disco retornou mais dados</block>
-  <block id="3cd62817285774be5e17bfa3b11a6309" category="cell">Consulte o suporte para obter dados adicionais.</block>
   <block id="aa7bcff87c480aa90d0e5d1001e89590" category="summary">Configurando o coletor de dados VMware.</block>
   <block id="3642158841a114e36a8c869b919b1091" category="doc">Configurando o coletor de dados do VMware vSphere</block>
   <block id="2c2ae7694a57522d5f3200005b67fffd" category="paragraph">O coletor de dados do VMware vSphere coleta informações de configuração e desempenho do convidado da VM e do host ESXi e requer Privileges somente leitura em todos os objetos do vSphere. A partir de agosto de 2024, o coletor do vSphere também traz mensagens de log de ambientes vSphere e algumas métricas específicas da VMware. Observe que o Data Infrastructure Insights só pode recuperar informações de logs do VMware de ambientes vSphere 8.0.1 ou superior. Da mesma forma, as métricas específicas do fornecedor são suportadas apenas para ambientes vSphere mais de 7. Como tal, você pode querer desativar a caixa de seleção logs e/ou métricas específicas do fornecedor em um determinado coletor se ele for apontado para uma instância mais antiga do vSphere.</block>
@@ -10535,9 +10533,6 @@
   <block id="29e29650476f773b7c44149e72a13e69" category="list-text">*Dismiss* para remover o alerta da lista de alertas ativos.</block>
   <block id="e8638926499f5e7bec918a2f4d6dc36a" category="paragraph">Você pode gerenciar vários alertas selecionando a caixa de seleção à esquerda de cada Alerta e clicando em _alterar Status dos Alertas selecionados_.</block>
   <block id="70a18f3fbffa69fc35378e4b2e87f766" category="paragraph">Clicar em um ID de alerta abre a página de detalhes de alerta.</block>
-  <block id="f7e83685d25e3038170e83ca19c3cbf0" category="section-title">Página de detalhes do alerta</block>
-  <block id="b254b175b71c2c7dca19ba0dcbc5da07" category="paragraph">A Página de Detalhes do alerta fornece detalhes adicionais sobre o alerta, incluindo um _Summary_, uma _Expert View_ mostrando gráficos relacionados aos dados do objeto, quaisquer ativos relacionados_ e _Comments_ inseridos pelos investigadores do alerta.</block>
-  <block id="1b489429111564ed0ac0109b22575d28" category="paragraph"><block ref="1b489429111564ed0ac0109b22575d28" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0dc88092036f29d0c951123c9b9f932e" category="section-title">Alerta quando os dados estão em falta</block>
   <block id="ffbb059fbd1b72fd858ad1db288acd16" category="paragraph">Em um sistema em tempo real, como o Data Infrastructure Insights, para acionar a análise de um Monitor para decidir se um Alerta deve ser gerado, contamos com uma de duas coisas:</block>
   <block id="9f76cab36d38af05dce74499497c7b3b" category="list-text">a próxima datapoint para chegar</block>
@@ -12579,4 +12574,17 @@
   <block id="25663750e3a92ca79621844d9a055d8a" category="paragraph"><block ref="25663750e3a92ca79621844d9a055d8a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="44c7c3a77a122ce29cb93ab53513f83f" category="section-title">Vírgulas em nomes de ativos</block>
   <block id="4d53c0239522855d4d60019758390f70" category="section-title">Formato de hora ou não formato de hora?</block>
+  <block id="3756ac460c094adc890ad7f26460010b" category="cell">35000-55000</block>
+  <block id="0e948943e8277507eeeec08bbb91d3b4" category="cell">IP de gerenciamento de clusters</block>
+  <block id="8ad596bfbf4c5161efe95c1bf071f052" category="cell">Comunicação do IP de Gerenciamento de Cluster do ONTAP com o Agente de Segurança de Carga de Trabalho para *eventos EMS*. Essas portas devem ser abertas para o Agente de Segurança de Carga de Trabalho para que o ONTAP envie *eventos EMS* para ele, incluindo qualquer firewall no próprio Agente de Segurança de Carga de Trabalho (se houver). OBSERVE que você não precisa reservar *todos* dessas portas, mas as portas que você reserva para isso devem estar dentro desse intervalo. Recomenda-se começar reservando cerca de 100 portas e aumentando, se necessário.</block>
+  <block id="ab1259588b3e1ad3b770e413f8408667" category="cell">Nome de usuário / Conta de serviço</block>
+  <block id="2fde62a7ecea2efe8b301312f6a6b292" category="cell">Senha / Segredo</block>
+  <block id="8ec2e527e4b860bd5119c6e2816e5f0e" category="cell">ID da organização para a conta de serviço</block>
+  <block id="30993e7595c12ab5f7aa162f78a59c3b" category="cell">Isso precisa ser a string completa, como "Organização:::nnnnnn-nnnn....."</block>
+  <block id="2ce06c7c6b7a3d5ec1168fa41dc94826" category="cell">A enquete falha com 400 [Solicitação inválida].... ManagedId inválido....</block>
+  <block id="59e8601d861464a8b5978359c99a89b2" category="cell">Você preencheu o campo ID da organização com um valor, mas o cluster Rubrik NÃO acredita que essa seja uma ID da organização válida, apesar da mensagem de erro do Rubrik se referir a ela como "ManagedId".</block>
+  <block id="a6d988d681ec5a2ac741001e80c67bbc" category="section-title">Painel de detalhes de alerta</block>
+  <block id="bb9284d1e6e1080190597d2d9826cc87" category="paragraph">Selecione qualquer linha de alerta para abrir o painel de detalhes do alerta. O painel de detalhes do alerta fornece detalhes adicionais sobre o alerta, incluindo um _Resumo_, uma _Visualização de Especialista_ mostrando gráficos relacionados aos dados do objeto, quaisquer _Ativos Relacionados_ e _Comentários_ inseridos pelos investigadores do alerta.</block>
+  <block id="ce2f8058fa83417353b52945b6bfd42f" category="inline-image-macro">painel de detalhes de alerta métrico</block>
+  <block id="8f9a1f05fd3f7e730fd077aaaac2e6f0" category="paragraph"><block ref="8f9a1f05fd3f7e730fd077aaaac2e6f0" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
