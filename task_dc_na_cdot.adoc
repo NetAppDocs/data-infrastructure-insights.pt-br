@@ -187,7 +187,10 @@ Insights de infraestrutura de dados tem a capacidade de coletar dados de switch 
 
 == Métricas de potência do ONTAP
 
-Vários modelos do ONTAP fornecem métricas de potência para Insights de infraestrutura de dados que podem ser usados para monitoramento ou alerta. As listas de modelos suportados e não suportados abaixo não são abrangentes, mas devem fornecer alguma orientação; em geral, se um modelo estiver na mesma família que um na lista, o suporte deve ser o mesmo.
+Vários modelos do ONTAP fornecem métricas de potência para Insights de infraestrutura de dados que podem ser usados para monitoramento ou alerta.
+
+
+NOTE: Estas listas não são abrangentes e estão sujeitas a alterações. Em geral, se um modelo pertencer à mesma família de um modelo da lista, o suporte deverá ser o mesmo, mas não há garantia de que seja. Se não tiver certeza se o seu modelo suporta métricas de potência, entre em contato com o suporte da ONTAP.
 
 Modelos suportados:
 

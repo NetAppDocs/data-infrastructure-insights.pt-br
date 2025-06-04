@@ -7,6 +7,10 @@ keywords: topology, analyze, analysis, map
 = Visão geral do SAN Analyzer
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -32,6 +36,10 @@ Clicar em um objeto ou grupo abre um painel deslizante fornecendo detalhes adici
 Além da guia Resumo, o painel deslizante exibe guias para itens como detalhes da porta ou informações de zona, conforme aplicável ao objeto escolhido.
 
 image:san_analyzer_slideout_example.png["Painel deslizante do analisador SAN"]
+
+Se o seu ambiente tiver protocolos diferentes, você pode filtrar por iSCSI ou FC:
+
+image:san_analyzer_protocols.png["Protocolos do SAN Analyzer"]
 
 Se o seu ambiente incluir dispositivos iSCSI, passar o Mouse sobre o objeto _iSCSI_ destaca as conexões relacionadas a esses dispositivos iSCSI relevantes.
 
