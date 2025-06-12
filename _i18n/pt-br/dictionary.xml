@@ -12581,4 +12581,13 @@
   <block id="f551ca729032aed761417786181395c8" category="paragraph">O Insights de infraestrutura de dados usa o coletor REST do Brocade FOS para descobrir o inventário e o desempenho dos dispositivos de switch Brocade que executam o firmware 8,2 e posterior do FabricOS. Observe que as primeiras versões do FOS 8.2 podem ter bugs na API REST; é altamente recomendável executar a versão mais recente possível do FOS suportada pela sua plataforma.</block>
   <block id="882ec11eef2cffbd43db944e6046b98d" category="cell">Erro: O inventário falha com 401 Não autorizado...Chave de sessão inválida...</block>
   <block id="fcad57aa5101382922e3f8fe687cf7b0" category="cell">Este é um bug distinto de algumas versões iniciais do FOS 8.2, como a 8.2.1c, que NÃO oferecem suporte adequado à autenticação básica HTTP. Atualize para uma versão posterior, 8.2 ou 9.*.</block>
+  <block id="94d267f658e04734eb2e098127293a89" category="section-title">Junho de 2025</block>
+  <block id="b792c127dc9f478a7930f4bc0161feba" category="section-title">VM Analyzer: Visibilidade holística da VM para o armazenamento e solução de problemas</block>
+  <block id="2d1fb0b32df39d06f41d0fd035211a2a" category="paragraph">O recurso *VM Analyzer* do DII oferece uma visão abrangente e completa dos seus ambientes virtualizados. O VM Analyzer agiliza a solução de problemas mapeando todo o caminho, das máquinas virtuais ao armazenamento, permitindo que os usuários identifiquem rapidamente problemas de desempenho em discos virtuais, VMs, hosts, datastores, volumes e armazenamento. Com uma visão intuitiva da topologia, filtragem e métricas de desempenho detalhadas, os administradores podem identificar facilmente gargalos, analisar desequilíbrios de tráfego e otimizar o desempenho geral do armazenamento.</block>
+  <block id="8c044a5eedd54f1f8fba795eed42e6a6" category="inline-image-macro">Mapa de topologia de um sistema de storage do VM Analyzer</block>
+  <block id="a3c3da49bc8b32e34a738f7438c8a53d" category="paragraph"><block ref="a3c3da49bc8b32e34a738f7438c8a53d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d7633d5867fc4c2291155ab5b8e0b0f0" category="paragraph">Os seguintes sistemas operacionais agora são suportados com unidades de aquisição do Data Infrastructure Insights, além dos seguintes<block ref="6afa3e3eb626ea3ea6592dfd126d0ce7" category="inline-link-macro-rx"></block>:</block>
+  <block id="b25b84328544405f6b0ef29d21ec179a" category="list-text">Debian (64-bit) 12</block>
+  <block id="fc4f76c3c67141253726c8c6550bc344" category="list-text">Oracle Enterprise Linux (64 bits) 9,6</block>
+  <block id="3f9083673db59761ee75134079acb794" category="list-text">Red Hat (64 bits) 9.6</block>
 </blocks>
