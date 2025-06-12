@@ -10,7 +10,7 @@ summary: Configurando o coletor de DADOS REST do Brocade FOS.
 
 
 [role="lead"]
-O Insights de infraestrutura de dados usa o coletor REST do Brocade FOS para descobrir o inventário e o desempenho dos dispositivos de switch Brocade que executam o firmware 8,2 e posterior do FabricOS.
+O Insights de infraestrutura de dados usa o coletor REST do Brocade FOS para descobrir o inventário e o desempenho dos dispositivos de switch Brocade que executam o firmware 8,2 e posterior do FabricOS. Observe que as primeiras versões do FOS 8.2 podem ter bugs na API REST; é altamente recomendável executar a versão mais recente possível do FOS suportada pela sua plataforma.
 
 Observação: O nível padrão DE "usuário" DO FOS não é suficientemente poderoso para que o Data Infrastructure Insights visualize todos os aspetos lógicos de um dispositivo - precisamos de uma conta de usuário com a "função de chassi" ativada, bem como permissões em todas as estruturas virtuais configuradas em um switch.
 
@@ -124,6 +124,9 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 
 | O recurso Teste me avisa que um protocolo está inacessível | Um determinado dispositivo Brocade FOS 8,2 só vai querer falar em HTTP ou HTTPS - se um switch tiver um certificado digital instalado, o switch irá lançar erros HTTP se alguém tentar se comunicar com ele com HTTP não criptografado versus HTTPS. O recurso de teste tenta a comunicação com HTTP e HTTPS - se o Teste disser que um protocolo passa, você pode salvar o coletor com segurança e não se preocupar que o outro protocolo não foi bem-sucedido - o coletor tentará ambos os protocolos durante a coleta, e só falhará se nenhum deles funcionar. 
+
+
+| Erro: O inventário falha com 401 Não autorizado...Chave de sessão inválida... | Este é um bug distinto de algumas versões iniciais do FOS 8.2, como a 8.2.1c, que NÃO oferecem suporte adequado à autenticação básica HTTP. Atualize para uma versão posterior, 8.2 ou 9.*. 
 
 
 | Erro: "Dados Infrastructure Insights receberam função de chassi inválida" | Verifique se o usuário configurado nesta fonte de dados recebeu a permissão de função de chassi. 
