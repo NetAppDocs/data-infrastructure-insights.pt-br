@@ -87,7 +87,7 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 
 
-==== Inventário
+=== Inventário
 
 [cols="2*"]
 |===
@@ -98,14 +98,14 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 |===
 
 
-==== Desempenho
+=== Desempenho
 
 [cols="2*"]
 |===
 | Problema: | Tente isto: 
 
 
-| Erro: Não foram recolhidos dados suficientes. | • Verifique o carimbo de data/hora da coleção no arquivo de log e modifique o intervalo de polling em conformidade • aguarde mais tempo 
+| Erro: Não foram recolhidos dados suficientes. | * Verifique o registro de data e hora da coleta no arquivo de log e modifique o intervalo de pesquisa de acordo. * Aguarde mais tempo. 
 
 
 | Erro: O intervalo de polling de desempenho é muito grande. | Verifique o timestamp da coleção no arquivo de log e modifique o intervalo de polling em conformidade 

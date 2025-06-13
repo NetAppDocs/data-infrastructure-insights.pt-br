@@ -62,7 +62,7 @@ Para ambientes de segurança de carga de trabalho *baseados nos EUA*:
 | TCP | 443 | Agente de segurança de carga de trabalho | <site_name>.cs01.cloudinsights.NetApp.com <site_name>.c01.cloudinsights.NetApp.com <site_name>.c02.cloudinsights.NetApp.com | Acesso ao Data Infrastructure Insights 
 
 
-| TCP | 443 | Agente de segurança de carga de trabalho | gateway.c01.cloudinsights.netapp.com agentlogin.cs01.cloudinsights.netapp.com | Acesso aos serviços de autenticação 
+| TCP | 443 | Agente de segurança de carga de trabalho | agentlogin.cs01.cloudinsights.netapp.com | Acesso aos serviços de autenticação 
 |===
 Para ambientes de segurança de carga de trabalho *baseados na Europa*:
 
@@ -74,7 +74,7 @@ Para ambientes de segurança de carga de trabalho *baseados na Europa*:
 | TCP | 443 | Agente de segurança de carga de trabalho | <site_name>.cs01-eu-1.cloudinsights.NetApp.com <site_name>.c01-eu-1.cloudinsights.NetApp.com <site_name>.c02-eu-1.cloudinsights.NetApp.com | Acesso ao Data Infrastructure Insights 
 
 
-| TCP | 443 | Agente de segurança de carga de trabalho | gateway.c01.cloudinsights.NetApp.com agentlogin.cs01-eu-1.cloudinsights.NetApp.com | Acesso aos serviços de autenticação 
+| TCP | 443 | Agente de segurança de carga de trabalho | agentlogin.cs01-eu-1.cloudinsights.netapp.com | Acesso aos serviços de autenticação 
 |===
 Para ambientes de segurança de workload *baseados na APAC*:
 
@@ -86,7 +86,7 @@ Para ambientes de segurança de workload *baseados na APAC*:
 | TCP | 443 | Agente de segurança de carga de trabalho | <site_name>.cs01-ap-1.cloudinsights.NetApp.com <site_name>.c01-ap-1.cloudinsights.NetApp.com <site_name>.c02-ap-1.cloudinsights.NetApp.com | Acesso ao Data Infrastructure Insights 
 
 
-| TCP | 443 | Agente de segurança de carga de trabalho | gateway.c01.cloudinsights.NetApp.com agentlogin.cs01-ap-1.cloudinsights.NetApp.com | Acesso aos serviços de autenticação 
+| TCP | 443 | Agente de segurança de carga de trabalho | agentlogin.cs01-ap-1.cloudinsights.netapp.com | Acesso aos serviços de autenticação 
 |===
 
 

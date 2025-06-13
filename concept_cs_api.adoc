@@ -58,8 +58,8 @@ O cabeçalho HTTP onde o token de acesso é passado é *X-CloudInsights-ApiKey:*
 
 Por exemplo, use o seguinte para recuperar ativos de armazenamento:
 
- curl https://<tenant_host_name>/rest/v1/cloudsecure/activities -H 'X-CloudInsights-ApiKey: <API_Access_Token>'
-Onde _<API_Access_Token>_ é o token que você salvou durante a criação da chave de acesso à API.
+ curl https://<Workload Security tenant>/rest/v1/cloudsecure/activities -H 'X-CloudInsights-ApiKey: <API_Access_Token>'
+Onde _<API_Access_Token>_ é o token que você salvou durante a criação da chave de acesso da API e _<Workload Security Tenant>_ é o URL do locatário do seu ambiente de Workload Security.
 
 Informações detalhadas podem ser encontradas no link _API Documentation_ em *Admin > API Access*.
 
@@ -75,6 +75,6 @@ Aqui está um comando de exemplo para invocar o script:
 
 [source]
 ----
-python3 data-export.py --tenant_url <tenant id>.cs01.cloudinsights.netapp.com --access_key %ACCESS_KEY% --path_filter "<dir path>" --user_name "<user>" --from_time "01-08-2024 00:00:00" --to_time "31-08-2024 23:59:59" --iteration_interval 12 --num_workers 3
+python3 data-export.py --tenant_url <Workload Security tenant> --access_key %ACCESS_KEY% --path_filter "<dir path>" --user_name "<user>" --from_time "01-08-2024 00:00:00" --to_time "31-08-2024 23:59:59" --iteration_interval 12 --num_workers 3
 ----
 Parâmetros-chave: - `--iteration_interval 12`: Divide o intervalo de tempo solicitado em intervalos de 12 horas. - `--num_workers 3`: Fetches esses intervalos em paralelo usando 3 threads.

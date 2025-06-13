@@ -7,6 +7,10 @@ summary: Usando um script, você pode simular um ataque de ransomware para testa
 = Segurança da carga de trabalho: Simulando um ataque
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -16,149 +20,196 @@ Você pode usar as instruções nesta página para simular um ataque para testar
 
 == Coisas a observar antes de começar
 
-* O script de simulação de ransomware funciona apenas no Linux.
+* O script de simulação de ransomware funciona apenas no Linux. O script de simulação também deve gerar alertas de alta confiança caso o usuário tenha integrado o ONTAP ARP com o Workload Security.
+* O Workload Security detectará eventos e alertas gerados com o NFS 4.1 somente se a versão do ONTAP for 9.15 ou superior.
 * O script é fornecido com os arquivos de instalação do agente Workload Security. Ele está disponível em qualquer máquina que tenha um agente Workload Security instalado.
 * Você pode executar o script na própria máquina do agente Workload Security; não há necessidade de preparar outra máquina Linux. No entanto, se você preferir executar o script em outro sistema, basta copiar o script e executá-lo lá.
+* Os usuários podem optar pelo Python ou pelo shell script com base em suas preferências e requisitos de sistema.
+* O script Python requer instalações prévias. Se não quiser usar Python, use o script de shell.
 
 
 
 
-== Tenha pelo menos 1.000 arquivos de amostra
+== Diretrizes:
 
-Esse script deve ser executado em uma SVM com uma pasta que tenha arquivos para criptografar. Recomendamos ter pelo menos 1.000 arquivos dentro dessa pasta e quaisquer subpastas. Os ficheiros não podem estar vazios. Não crie os arquivos e criptografe-os usando o mesmo usuário. O Workload Security considera esta uma atividade de baixo risco e, portanto, não gera um alerta (ou seja, o mesmo usuário modifica os arquivos que ele/ela/eles acabaram de criar).
+Este script deve ser executado em uma SVM contendo uma pasta com um número substancial de arquivos para criptografia, idealmente 100 ou mais, incluindo arquivos em subpastas. Certifique-se de que os arquivos não estejam vazios.
 
-Veja abaixo as instruções para link:#create-files-programmatically["crie arquivos não vazios programaticamente"].
-
-
-
-== Diretrizes antes de executar o simulador:
-
-. Certifique-se de que os ficheiros encriptados não estão vazios.
-. Certifique-se de encriptar > 50 ficheiros. Um pequeno número de arquivos será ignorado.
-. Não execute um ataque com o mesmo usuário várias vezes. Depois de algumas vezes, o Workload Security vai aprender esse comportamento do usuário e assumir que é o comportamento normal do usuário.
-. Não criptografe arquivos que o mesmo usuário acabou de criar. Alterar um arquivo que acabou de ser criado por um usuário não é considerado uma atividade arriscada. Em vez disso, use arquivos criados por outro usuário OU aguarde algumas horas entre a criação dos arquivos e a criptografia.
+Para gerar o alerta, pause temporariamente o coletor antes da criação dos dados de teste. Após a geração dos arquivos de amostra, reinicie o coletor e inicie o processo de criptografia.
 
 
 
+== Passos:
 
-== Prepare o sistema
 
-Primeiro, monte o volume alvo na máquina. Você pode montar uma montagem NFS ou exportação CIFS.
 
-Para montar a exportação NFS no Linux:
+=== Prepare o sistema:
 
-....
+Primeiro, monte o volume de destino na máquina. Você pode montar uma exportação NFS ou CIFS.
+
+
+
+==== Para montar a exportação NFS no Linux:
+
+[listing]
+----
 mount -t nfs -o vers=4.0 10.193.177.158:/svmvol1 /mntpt
 mount -t nfs -o vers=4.0 Vserver data IP>:/nfsvol /destinationlinuxfolder
-....
+----
 Não monte o NFS versão 4,1; ele não é suportado pelo Fpolicy.
 
-Para montar CIFS no Linux:
 
- mount -t cifs //10.193.77.91/sharedfolderincluster /root/destinationfolder/ -o username=raisa
+
+==== Para montar CIFS no Linux:
+
+[listing]
+----
+mount -t cifs //10.193.77.91/sharedfolderincluster /root/destinationfolder/ -o username=raisa
+----
+
+
+==== Habilitar a proteção autônoma contra ransomware do ONTAP (opcional):
+
+Se a versão do seu cluster ONTAP for 9.11.1 ou superior, você poderá habilitar o serviço ONTAP Ransomware Protection executando o seguinte comando no console de comando do ONTAP.
+
+ security anti-ransomware volume enable -volume [volume_name] -vserver [svm_name]
 Em seguida, configure um Data Collector:
 
 . Configure o agente Workload Security se ainda não tiver sido feito.
-. Configurar o coletor de dados SVM, se ainda não tiver feito.
+. Configure um coletor de dados SVM se ainda não tiver feito isso.
+. Certifique-se de que o protocolo de montagem esteja selecionado ao configurar o coletor de dados.
 
+
+
+
+== Gere os arquivos de amostra programaticamente:
+
+Antes de criar os arquivos, você deve primeiro parar ou link:task_add_collector_svm.html#play-pause-data-collector["pausar o coletor de dados"] processamento.
+
+Antes de executar a simulação, você deve primeiro adicionar arquivos para serem criptografados. Você pode copiar manualmente os arquivos a serem criptografados para a pasta de destino ou usar um dos scripts incluídos para criá-los programaticamente. Independentemente do método utilizado, certifique-se de que haja pelo menos 100 arquivos para criptografar.
+
+Se você optar por criar os arquivos programaticamente, poderá usar o Shell ou o Python:
+
+
+
+=== Concha:
+
+. Faça login na caixa Agente.
+. Monte um compartilhamento NFS ou CIFS do SVM do arquivador para a máquina do agente. CD para essa pasta.
+. Copie o script do diretório de instalação do agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/shell/create_dataset.sh) para o local de montagem de destino.
+. Execute o seguinte comando usando os scripts no diretório montado (por exemplo, /root/demo) para criar a pasta e os arquivos do conjunto de dados de teste:
++
+ './create_dataset.sh'
+. Isso criará 100 arquivos não vazios com várias extensões dentro da pasta de montagem em um diretório chamado "test_dataset".
+
+
+
+
+=== Python:
+
+
+
+==== Pré-requisito do script Python:
+
+* Instale o Python (se ainda não estiver instalado).
++
+** Baixe o Python 3.5.2 ou superior em  https://www.python.org/[] .
+** Para verificar a instalação do Python, execute  `python --version` .
+** O script Python foi testado em versões tão antigas quanto a 3.5.2.
+
+
+* Instale o pip se ainda não estiver instalado:
++
+** Baixe o script get-pip.py em  https://bootstrap.pypa.io/[] .
+** Instalar pip usando  `python get-pip.py` .
+** Verifique a instalação do pip com  `pip --version` .
+
+
+* Biblioteca PyCryptodome:
++
+** O script usa a biblioteca PyCryptodome.
+** Instalar PyCryptodome com  `pip install pycryptodome` .
+** Confirme a instalação do PyCryptodome executando  `pip show pycryptodome` .
+
+
+
+
+
+
+==== Script de criação de arquivo em Python:
+
+. Faça login na caixa Agente.
+. Monte um compartilhamento NFS ou CIFS do SVM do arquivador para a máquina do agente. CD para essa pasta.
+. Copie o script do diretório de instalação do agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/python/create_dataset.py) para o local de montagem de destino.
+. Execute o seguinte comando usando os scripts dentro do diretório montado (por exemplo, /root/demo) para criar a pasta e os arquivos do conjunto de dados de teste:
++
+ 'python create_dataset.py'
+. Isso criará 100 arquivos não vazios com várias extensões dentro da pasta de montagem em um diretório chamado “test_dataset”
+
+
+
+
+== Retomar o coletor
+
+Se você pausou o coletor antes de seguir essas etapas, certifique-se de retomá-lo depois que os arquivos de amostra forem criados.
 
 
 
 == Execute o script ransomware Simulator
 
-. Faça login (ssh) na máquina do agente Workload Security.
-. Navegue para: _/opt/NetApp/cloudsecure/Agent/install_
-. Chame o script do simulador sem parâmetros para ver o uso:
+Para gerar um alerta de ransomware, você pode executar o script incluído, que simulará um alerta de ransomware no Workload Security.
+
+
+
+=== Concha:
+
+. Copie o script do diretório de instalação do agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/shell/simulate_attack.sh) para o local de montagem de destino.
+. Execute o seguinte comando usando os scripts no diretório montado (por exemplo, /root/demo) para criptografar o conjunto de dados de teste:
 +
-....
-# pwd
-/opt/netapp/cloudsecure/agent/install
-# ./ransomware_simulator.sh
-Error: Invalid directory  provided.
-Usage: ./ransomware_simulator.sh [-e] [-d] [-i <input_directory>]
-       -e to encrypt files (default)
-       -d to restore files
-       -i <input_directory> - Files under the directory to be encrypted
-....
+ './simulate_attack.sh'
+. Isso criptografará os arquivos de amostra criados no diretório "test_dataset".
+
+
+
+
+=== Python:
+
+. Copie o script do diretório de instalação do agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/python/simulate_attack.py) para o local de montagem de destino.
+. Observe que os pré-requisitos do Python são instalados conforme a seção Pré-requisitos do script Python
+. Execute o seguinte comando usando os scripts no diretório montado (por exemplo, /root/demo) para criptografar o conjunto de dados de teste:
 +
-....
-Encrypt command example: ./ransomware_simulator.sh -e -i /mnt/audit/reports/
-Decrypt command example: ./ransomware_simulator.sh -d -i /mnt/audit/reports/
-....
+ 'python simulate_attack.py'
+. Isso criptografará os arquivos de amostra criados no diretório "test_dataset".
 
 
 
 
-== Criptografe seus arquivos de teste
+== Gerar um alerta no Workload Security
 
-Para criptografar os arquivos, execute o seguinte comando:
+Quando a execução do script do simulador for concluída, um alerta será exibido na interface do usuário da Web em alguns minutos.
 
-....
-# ./ransomware_simulator.sh -e -i /root/for/
-Encryption key is saved in /opt/netapp/cloudsecure/cloudsecure-agent-1.251.0/install/encryption-key,
-which can be used for restoring the files.
-Encrypted /root/for/File000.txt
-Encrypted /root/for/File001.txt
-Encrypted /root/for/File002.txt
-...
-....
+Observação: caso todas as condições a seguir sejam atendidas, um Alerta de Alta Confiança será gerado.
+
+. Monitorou a versão ONTAP do SVM superior a 9.11.1
+. Proteção autônoma contra ransomware ONTAP configurada
+. O coletor de dados de segurança da carga de trabalho é adicionado no modo Cluster.
 
 
-== Restaurar ficheiros
+O Workload Security detecta padrões de ransomware com base no comportamento do usuário, enquanto o ONTAP ARP detecta atividades de ransomware com base em atividades de criptografia em arquivos.
 
-Para descriptografar, execute o seguinte comando:
+Se as condições forem atendidas, o Workload Security marcará os alertas como Alerta de Alta Confiança.
 
-....
-[root@scspa2527575001 install]# ./ransomware_simulator.sh -d -i /root/for/
-File /root/for/File000.txt is restored.
-File /root/for/File001.txt is restored.
-File /root/for/File002.txt is restored.
-...
-....
+Exemplo de alerta de alta confiança na página Lista de alertas:
 
+image:ws_high_confidence_alert.png["Exemplo de alerta de alta confiança, página de lista"]
 
-== Execute o script várias vezes
+Exemplo de detalhe de alerta de alta confiança:
 
-Depois de gerar um ataque de ransomware para um usuário, mude para outro usuário para gerar um ataque adicional. O Workload Security aprende o comportamento do usuário e não alerta sobre ataques repetidos de ransomware em um curto período para o mesmo usuário.
+image:ws_high_confidence_alert_detail.png["Exemplo de alerta de alta confiança, página de detalhes"]
 
 
 
-== Crie arquivos programaticamente
+== Disparando alertas várias vezes
 
-Antes de criar os arquivos, você deve primeiro parar ou pausar o processamento do coletor de dados. Execute as etapas abaixo antes de adicionar o coletor de dados ao Agente. Se você já adicionou o coletor de dados, basta editar o coletor de dados, inserir uma senha inválida e salvá-la. Isso colocará temporariamente o coletor de dados no estado de erro. Nota: Certifique-se de anotar a palavra-passe original!
+O Workload Security aprende o comportamento do usuário e não gera alertas sobre ataques repetidos de ransomware em 24 horas para o mesmo usuário.
 
-
-NOTE: A opção recomendada é link:task_add_collector_svm.html#play-pause-data-collector["pausar o coletor"] antes de criar seus arquivos.]
-
-Antes de executar a simulação, você deve primeiro adicionar arquivos para serem criptografados. Você pode copiar manualmente os arquivos a serem criptografados na pasta de destino ou usar um script (veja o exemplo abaixo) para criar programaticamente os arquivos. Qualquer que seja o método utilizado, copie pelo menos 1.000 ficheiros.
-
-Se você optar por criar programaticamente os arquivos, faça o seguinte:
-
-. Faça login na caixa Agente.
-. Montar uma exportação NFS do SVM do arquivador para a máquina Agent. CD para essa pasta.
-. Nessa pasta, crie um arquivo chamado createfiles.sh
-. Copie as linhas a seguir para esse arquivo.
-+
-....
-for i in {000..1000}
-do
-   echo hello > "File${i}.txt"
-done
-echo 3 > /proc/sys/vm/drop_caches ; sync
-....
-. Salve o arquivo.
-. Certifique-se de executar permissão no arquivo:
-+
- chmod 777 ./createfiles.sh
-. Execute o script:
-+
- ./createfiles.sh
-+
-os ficheiros 1000 serão criados na pasta atual.
-
-. Reative o coletor de dados
-+
-Se você desativou o coletor de dados na etapa 1, edite o coletor de dados, insira a senha correta e salve. Certifique-se de que o coletor de dados está de volta no estado em execução.
-
-. Se você fez uma pausa no coletor antes de seguir estas etapas, certifique-se link:task_add_collector_svm.html#play-pause-data-collector["retomar o coletor"]de .
-
+Para gerar um novo alerta com um usuário diferente, siga os mesmos passos novamente (criando dados de teste e depois criptografando os dados de teste).
