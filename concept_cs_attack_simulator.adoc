@@ -59,7 +59,7 @@ Não monte o NFS versão 4,1; ele não é suportado pelo Fpolicy.
 
 
 
-==== Para montar CIFS no Linux:
+==== Para montar o CIFS no Linux:
 
 [listing]
 ----
