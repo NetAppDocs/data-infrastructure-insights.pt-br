@@ -154,7 +154,9 @@ Se você pausou o coletor antes de seguir essas etapas, certifique-se de retomá
 
 
 
-== Execute o script ransomware Simulator
+== Gere os arquivos de amostra programaticamente:
+
+Antes de criar os arquivos, você deve primeiro parar ou link:task_add_collector_svm.html#play-pause-data-collector["pausar o coletor de dados"] processamento.
 
 Para gerar um alerta de ransomware, você pode executar o script incluído, que simulará um alerta de ransomware no Workload Security.
 

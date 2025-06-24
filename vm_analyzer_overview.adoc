@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: vm_analyzer_overview.html 
+summary: O VM Analyzer fornece topologia para ativos virtuais em seu locatário 
+keywords: topology, analyze, analysis, map, virtual, vm, vmware 
+---
+= Visão geral do VM Analyzer
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Com o *VM Analyzer* da DII, gerenciar seus ativos virtuais se torna mais simples e eficiente. Esta ferramenta poderosa oferece visibilidade de ponta a ponta, mapeando dependências de VMDK/VM para Host, Datastore, Volume Interno/Volume para Armazenamento.
+
+Ao fornecer um mapa de topologia interativo, o VM Analyzer permite identificar problemas, entender alterações e melhorar a compreensão do fluxo de dados. Simplifique o gerenciamento de VMs e aumente sua visibilidade das cargas de trabalho virtuais.
+
+image:vm_analyzer_example_with_panel_a.png["Mapa de topologia de um sistema de storage do VM Analyzer"]
+
+
+
+== Explore as conexões entre seus ativos
+
+Selecione *Observability > Analyze > VM Analyzer* para visualizar o VM Analyzer. Defina um filtro para Aplicativo, Máquina Virtual, Volume, Volume Interno ou adicione seus próprios filtros. O mapa para os objetos é exibido, mostrando objetos conetados. Passe o Mouse sobre um objeto para exibir métricas de tráfego para essas conexões.
+
+image:vm_analyzer_performance_metrics.png["Exemplo de métricas de desempenho do VM Analyzer"]
+
+
+NOTE: A maioria dos filtros do VM Analyzer (incluindo aqueles que você pode adicionar) são contextuais; quando você seleciona um objeto em um desses filtros, as opções apresentadas nos outros menus suspensos são atualizadas em contexto com o objeto ou objetos selecionados.
+
+Clicar em um objeto ou grupo abre um painel deslizante fornecendo detalhes adicionais sobre o objeto e suas conexões. O painel deslizante exibe um resumo, que fornece detalhes sobre o objeto selecionado (por exemplo, taxa de transferência ou utilização, dependendo do tipo de objeto), e gráficos que mostram métricas para o objeto, como latência ou IOPS. Abas adicionais permitem explorar recursos adicionais relacionados ou alterações e alertas. Você pode optar por exibir métricas para os principais objetos correlacionados ou concorrentes nos gráficos, se desejar.
+
+
+
+== Veja em ação
+
+link:https://media.netapp.com/video-detail/0e62b784-8456-5ef7-8879-f0352135a0f1/simplified-troubleshooting-with-vm-analyzer["Solução de problemas simplificada com o VM Analyzer (vídeo)"]
