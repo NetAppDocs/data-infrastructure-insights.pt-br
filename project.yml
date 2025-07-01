@@ -105,6 +105,10 @@ sidebar:
         url: "/task_create_monitor.html"
       - title: Visualizar e gerir alertas
         url: "/task_view_and_manage_alerts.html"
+      - title: Configurando destinatários de notificação
+        url: "/concept_notifications_email.html"
+      - title: Monitores de deteção de anomalias
+        url: "/concept_anomaly_detection.html"
       - title: Monitores definidos pelo sistema
         url: "/task_system_monitors.html"
       - title: Configurando destinatários de notificação
