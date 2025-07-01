@@ -915,3 +915,6 @@ Além disso, você pode optar por mostrar a sazonalidade _Hourly_ ou _Daily_, be
 image:expected_bounds_settings.png["Configurações para limites de anomalias, incluindo o algoritmo de deteção, sazonalidade e sensibilidade"]
 
 Tenha em mente que você só pode visualizar os limites esperados quando o gráfico estiver definido para exibir uma única linha. Se as configurações de Grupo por ou filtros mostrarem várias linhas ou se você tiver definido várias consultas para o widget, a opção para mostrar os limites esperados será desativada.
+
+
+NOTE: O DII analisa todos os dados existentes na semana anterior à criação do monitor e identifica picos ou quedas significativas de dados com duração superior a 30 minutos — essas são consideradas anomalias. Durante a segunda semana (a fase de "aprendizado"), à medida que mais pontos de dados são coletados e analisados, há uma chance de aumento de "ruído" nos alertas. Esse "ruído" normalmente diminui à medida que mais dados são analisados nas semanas subsequentes.
