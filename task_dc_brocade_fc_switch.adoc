@@ -153,12 +153,38 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 | Erro: "Dados Infrastructure Insights receberam função de chassi inválida" | Verifique se o usuário configurado nesta fonte de dados recebeu a permissão de função de chassi. 
 
 
-| Erro: "Endereço IP do chassis incorreto" | Altere a configuração da fonte de dados para usar o endereço IP do chassi. 
+| Erro: "Endereço IP do chassis incorreto" | Como regra geral, o DII NÃO suporta Tradução de Endereço de Rede ou Tradução de Endereço de Porta entre a Unidade de Aquisição e os dispositivos. O DII pode estar detectando que o nome do host/endereço IP na configuração do coletor NÃO corresponde a nenhum dos endereços que o dispositivo acredita possuir. 
 
 
 | Receba uma mensagem informando que mais de 1 nó está conetado à porta do Gateway de acesso | Verifique se o dispositivo NPV está funcionando corretamente e se todas as WWNs conetadas são esperadas. Não adquira diretamente o dispositivo NPV. Em vez disso, a aquisição do switch de malha central coletará os dados do dispositivo NPV. 
 
 
+| Erro: ....Máximo de sessões remotas para login... | O FOS possui limites diferentes para o número de sessões SSH simultâneas suportadas por função de usuário. A sessão SSH da DII para este dispositivo está sendo rejeitada no login por violar esses limites. Isso pode ser um sinal de que coletores duplicados estão descobrindo o mesmo ativo, o que deve ser evitado. 
+|===
+
+
+=== Desempenho
+
+[cols="2*"]
+|===
+| Problema: | Tente isto: 
+
+
 | A coleção de desempenho falha com "tempo limite durante o envio de solicitação SNMP". | Dependendo das variáveis de consulta e da configuração do switch, algumas consultas podem exceder o tempo limite padrão. link:https://kb.netapp.com/Cloud/BlueXP/DII/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["Saiba mais"]. 
+
+
+| A coleta de desempenho falha com ...Duplicatas de linha encontradas na tabela SNMP... | O DII detectou respostas SNMP incorretas. Você provavelmente está executando o FOS 8.2.3e. Atualize para a versão 8.2.3e2 ou superior. 
+
+
+| As coletas de desempenho falham com ...Nome de usuário desconhecido... | Você configurou seu coletor DII com um valor "Nome de Usuário SNMP" que não está alocado em um dos slots de usuário SNMPv3. A simples criação de um usuário no Brocade FOS NÃO o habilita necessariamente como um usuário SNMPv3 — você deve atribuí-lo a um dos slots de usuário v3. 
+
+
+| As coletas de desempenho falham com ...Nível de segurança sem suporte... | Você configurou seu coletor DII para usar SNMPv3, mas com criptografia (também conhecida como privacidade) e/ou configurações de autorização que não estão habilitadas no dispositivo em questão. 
+
+
+| A coleta de desempenho falha com ...A senha de privacidade vazia é permitida apenas para o Protocolo de Privacidade NENHUM | Você configurou seu coletor DII para usar SNMPv3, com uma criptografia também conhecida como protocolo de privacidade (AES, etc.), mas você tem um valor "SNMP Privacy Password" vazio, então o DII não pode negociar fluxos de dados SNMPv3 criptografados com este dispositivo 
+
+
+| A coleta de desempenho falha com .....VF:nn, erro: Sem acesso... | Você configurou seu coletor DII para usar SNMPv3 em um dispositivo com vários Fabrics Virtuais habilitados, mas o usuário SNMPv3 NÃO possui direitos para a VF NN. O DII não oferece suporte à descoberta parcial de um ativo físico. Você deve sempre conceder acesso ao DII a todos os 128 VFs possíveis de forma proativa, pois o DII sempre tentará recuperar dados de desempenho para qualquer VF existente em um determinado dispositivo físico. 
 |===
 Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

@@ -11,7 +11,7 @@ summary: 'Os insights de infraestrutura de dados coletam dados de risco do consu
 
 
 [role="lead"]
-O NetApp link:https://www.netapp.com/us/products/data-infrastructure-management/active-iq.aspx["Consultor digital da Active IQ"](também conhecido como consultor digital) fornece uma série de visualizações, análises e outros serviços relacionados ao suporte aos clientes da NetApp para seus sistemas de hardware / software. Os dados relatados pelo Digital Advisor podem melhorar a solução de problemas do sistema e também fornecer informações sobre otimização e análise preditiva relacionadas aos seus dispositivos.
+O NetApp link:https://docs.netapp.com/us-en/active-iq/["Consultor digital da Active IQ"](também conhecido como consultor digital) fornece uma série de visualizações, análises e outros serviços relacionados ao suporte aos clientes da NetApp para seus sistemas de hardware / software. Os dados relatados pelo Digital Advisor podem melhorar a solução de problemas do sistema e também fornecer informações sobre otimização e análise preditiva relacionadas aos seus dispositivos.
 
 O Insights de infraestrutura de dados coleta os *riscos* para qualquer sistema de storage NetApp Clustered Data ONTAP que é monitorado e reportado pelo consultor digital. Os riscos relatados para os sistemas de storage são coletados automaticamente pelo Data Infrastructure Insights como parte de sua coleta de dados desses dispositivos. Você deve adicionar o coletor de dados apropriado ao Data Infrastructure Insights para coletar informações de risco do Digital Advisor.
 
