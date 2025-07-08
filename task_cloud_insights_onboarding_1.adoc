@@ -7,12 +7,14 @@ keywords: onboarding, new user
 = Integração do Data Infrastructure Insights
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 Antes de começar a trabalhar com o Insights de infraestrutura de dados, você deve se inscrever no portal *NetApp BlueXP *. Se você já tiver um login no NetApp BlueXP , poderá iniciar uma avaliação gratuita do Insights de infraestrutura de dados com algumas etapas rápidas.
-
-índice:[]
 
 
 
