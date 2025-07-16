@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_google_cloud_netapp_volumes.html 
-summary: Configurar o coletor de dados do Google Cloud NetApp volumes 
+summary: Configurar o coletor de dados do Google Cloud NetApp Volumes . 
 keywords: data collector, queries, create, google, cloud, volumes, 
 ---
-= NetApp Google Cloud NetApp volumes coletor de dados
+= Coletor de dados do Google Cloud NetApp Volumes
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ keywords: data collector, queries, create, google, cloud, volumes,
 
 
 [role="lead"]
-Esse coletor de dados é compatível com a coleta de inventário e performance das configurações da plataforma de nuvem do Google NetApp Cloud volumes. Este coletor procurará descobrir todos os recursos de computação em todos os projetos dentro de uma organização do Google. Se você tiver várias organizações do Google que deseja descobrir com o Data Infrastructure Insights, será necessário implantar um coletor de Insights de infraestrutura de dados por organização.
+Este coletor de dados oferece suporte à coleta de inventário e desempenho das configurações do Google Cloud NetApp Volumes . O coletor descobre volumes e recursos de armazenamento do NetApp em todos os projetos de uma organização do Google. Se você tiver várias organizações do Google que deseja monitorar com o Data Infrastructure Insights, implante um coletor por organização.
 
 
 
 == Requisitos da conta de serviço
 
-* Você deve criar uma conta de serviço seguindo as instruções em link:https://cloud.google.com/iam/docs/creating-managing-service-accounts["Criando/gerenciando contas de serviço"]. Essa conta de serviço é identificada por um ID exclusivo, conhecido como seu _ClientID_, que será usado como um nome de usuário.
+* Você deve criar uma conta de serviço seguindo as instruções em link:https://cloud.google.com/iam/docs/creating-managing-service-accounts["Criando/gerenciando contas de serviço"]. Esta conta de serviço é identificada por um ID exclusivo, conhecido como _clientId_, que será usado como nome de usuário.
 * Além disso, crie uma chave de conta de serviço seguindo as instruções em link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys["Criando/gerenciando chaves de conta de serviço"]. Essa chave pode ser baixada como um arquivo json, cujo conteúdo será usado como senha.
 * A conta de serviço deve ter escopo para _Compute.readonly_, _monitoring.read_ e _cloud-Platform_.
 
@@ -29,7 +29,7 @@ Esse coletor de dados é compatível com a coleta de inventário e performance d
 
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -40,7 +40,7 @@ Esse coletor de dados é compatível com a coleta de inventário e performance d
 | Escolha 'Excluir' ou 'incluir' para filtrar ativos GCNV por local | Este padrão é excluído, já que este coletor por padrão pretende descobrir todos os volumes GCNV em todo o mundo dentro de sua organização. 
 
 
-| GCNV Excluir/incluir localizações | Este padrão é estar vazio, e é usado em conjunto com a opção "escolher 'excluir' ou 'incluir'. Se alguém quiser apenas descobrir ativos em certas regiões do mundo, essas 2 opções podem ser manipuladas para limitar o escopo deste coletor 
+| GCNV Excluir/incluir localizações | O padrão é vazio e é usado em conjunto com a opção "Escolher 'Excluir' ou 'Incluir'". Se você deseja descobrir ativos apenas em determinadas regiões, use essas duas opções para limitar o escopo deste coletor. 
 
 
 | IDs de projeto | A lista de IDs de projeto que você deseja filtrar dentro ou fora da descoberta, dependendo do valor do valor "escolha 'Excluir'....". A lista padrão está vazia 
@@ -55,7 +55,7 @@ Esse coletor de dados é compatível com a coleta de inventário e performance d
 
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -63,7 +63,7 @@ Esse coletor de dados é compatível com a coleta de inventário e performance d
 | Intervalo de enquete de inventário (min) | O padrão é de 60 minutos 
 
 
-| Use o proxy AU para chamadas de API REST | Esta caixa de verificação fará com que o coletor use o mesmo proxy que o AU onde o coletor vive. Isso não está habilitado por padrão - o que significa que o coletor tentará enviar chamadas de API HTTPS diretamente para o Google. 
+| Use o proxy AU para chamadas de API REST | Selecione esta opção para que o coletor use o mesmo proxy da Unidade de Aquisição na qual o coletor reside. Por padrão, esta opção está desabilitada, o que significa que o coletor tenta enviar chamadas de API HTTPS diretamente para o Google. 
 
 
 | Rotule chaves e valores nos quais filtrar VMs | Clique em * rótulo de filtro* para escolher quais VMs (e discos associados) incluir/excluir filtrando chaves e valores que correspondem a chaves e valores de rótulos na VM. A chave da etiqueta é necessária, o valor da etiqueta é opcional. Quando o valor de rótulo está vazio, a VM é filtrada desde que corresponda à chave de rótulo. 

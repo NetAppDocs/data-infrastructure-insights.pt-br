@@ -2,16 +2,19 @@
 sidebar: sidebar 
 permalink: telegraf_agent_k8s_config_options.html 
 keywords: telegraf, installation, install, agent, telegraf agent, kubernetes, eks, operator, k8s, options, configuration 
-summary: O Operador de Monitoramento do Kubernetes do NetApp tem várias opções configuráveis. 
+summary: Configure o NetApp Kubernetes Monitoring Operator usando as opções do AgentConfiguration. 
 ---
 = Opções de configuração do operador de monitoramento Kubernetes
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-A link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator["Operador de monitoramento do Kubernetes"] configuração pode ser personalizada.
+O link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator["Operador de monitoramento do Kubernetes"] Oferece amplas opções de personalização por meio do arquivo AgentConfiguration. Configure limites de recursos, intervalos de coleta, configurações de proxy, tolerâncias e configurações específicas de componentes para telegraf, kube-state-metrics, coleta de logs, mapeamento de carga de trabalho, gerenciamento de alterações e muito mais para otimizar o monitoramento do seu ambiente Kubernetes.
 
 A tabela abaixo lista as opções possíveis para o arquivo _AgentConfiguration_:
 
@@ -131,7 +134,7 @@ A tabela abaixo lista as opções possíveis para o arquivo _AgentConfiguration_
 |  | tolerâncias | tolerações adicionais de métricas de estado do kube. 
 
 
-|  | etiquetas | uma lista separada por vírgulas de recursos que kube-state-metrics deve capturar 
+|  | etiquetas | uma lista separada por vírgulas de recursos para os quais o kube-state-metrics deve capturar rótulos +++ exemplo: cronjobs=[*],daemonsets=[*],deployments=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*], persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resourcequotas=[*],services=[*],statefulsets=[*] +++ 
 
 
 | registos |  | Opções de configuração que podem personalizar a coleta de logs e a instalação do Operador 
@@ -200,7 +203,7 @@ A tabela abaixo lista as opções possíveis para o arquivo _AgentConfiguration_
 |  | MemRequest | pedido de mem para mudança-observador-watch-rs 
 
 
-|  | FailureDeclaraçãoIntervalMins | Intervalo em minutos após o qual uma implantação não-bem-sucedida de uma carga de trabalho será marcada como falhou 
+|  | IntervaloDeclaraçãoDeFalhaDeCargaDeFalhaSegundos | Intervalo após o qual uma implantação malsucedida de uma carga de trabalho será marcada como falha, em segundos 
 
 
 |  | DeployAggrIntervalSeconds | Frequência na qual os eventos em andamento de implantação da carga de trabalho são enviados 
@@ -454,8 +457,8 @@ spec:
     # cpuRequest: '500m'
     # memRequest: '500Mi'
 
-    # # Interval in minutes after which a non-successful deployment of a workload will be marked as failed
-    # failureDeclarationIntervalMins: '30'
+    # # Interval after which a non-successful deployment of a workload will be marked as failed, in seconds
+    # workloadFailureDeclarationIntervalSeconds: '30'
 
     # # Frequency at which workload deployment in-progress events are sent
     # deployAggrIntervalSeconds: '300'
