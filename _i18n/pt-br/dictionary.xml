@@ -12667,4 +12667,6 @@
   <block id="c84711fe6ad5fa23070462b2086412e2" category="cell">uma lista separada por vírgulas de recursos para os quais o kube-state-metrics deve capturar rótulos +++ exemplo: cronjobs=[*],daemonsets=[*],deployments=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*], persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resourcequotas=[*],services=[*],statefulsets=[*] +++</block>
   <block id="f7b8b6cbce2f95ef7109d41adce08b69" category="cell">IntervaloDeclaraçãoDeFalhaDeCargaDeFalhaSegundos</block>
   <block id="02c3ccd1d51babc54da2759d79e61c5c" category="cell">Intervalo após o qual uma implantação malsucedida de uma carga de trabalho será marcada como falha, em segundos</block>
+  <block id="8edfed76354af11279c58c2d91948eda" category="cell">Caminho de Log do contêiner de bits fluentes</block>
+  <block id="3150c73f1d1522f3b831f0d591077194" category="cell">Por padrão, o Fluentbit DaemonSet montará os caminhos de host /var/log e /var/lib/docker/containers para acessar/ler os logs de contêiner do Kubernetes. Se o Kubernetes tiver sido configurado para colocar os logs de contêiner em um local não padrão, use esta opção para modificar o Fluentbit DaemonSet para montar o caminho não padrão.</block>
 </blocks>

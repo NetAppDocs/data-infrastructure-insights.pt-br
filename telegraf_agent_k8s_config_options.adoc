@@ -158,6 +158,9 @@ A tabela abaixo lista as opções possíveis para o arquivo _AgentConfiguration_
 |  | Evento-exportador-maxEventAgeSeconds | idade máxima do evento exportador de eventos. Consulte https://github.com/jkroepke/resmoio-kubernetes-event-exporter[] 
 
 
+|  | Caminho de Log do contêiner de bits fluentes | Por padrão, o Fluentbit DaemonSet montará os caminhos de host /var/log e /var/lib/docker/containers para acessar/ler os logs de contêiner do Kubernetes. Se o Kubernetes tiver sido configurado para colocar os logs de contêiner em um local não padrão, use esta opção para modificar o Fluentbit DaemonSet para montar o caminho não padrão. 
+
+
 | mapa de workload |  | Opções de configuração que podem personalizar a coleta e instalação do mapa de carga de trabalho do Operador. 
 
 
@@ -421,6 +424,11 @@ spec:
     # fluent-bit-memLimit: '1Gi'
     # fluent-bit-cpuRequest: '50m'
     # fluent-bit-memRequest: '100Mi'
+
+    # By default, the Fluentbit DaemonSet will mount the /var/log and /var/lib/docker/containers host paths to access/read the
+    # Kubernetes container logs.  If Kubernetes has been configured to place container logs in a non-default location, use
+    # this option to modify the Fluentbit DaemonSet to mount the non-default path.
+    # fluent-bit-containerLogPath
 
   # # Settings for the Network Performance and Map feature.
   # workload-map:
