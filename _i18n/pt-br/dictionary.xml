@@ -10626,11 +10626,8 @@
   <block id="b33aed8f3134996703dc39f9a7c95783" category="cell">agente</block>
   <block id="4e49d105e5ecfd95da78eb980f698488" category="cell">Opções de configuração comuns a todos os componentes que o operador pode instalar. Estes podem ser considerados como opções "globais".</block>
   <block id="286bec770910c4da609323e21222e283" category="cell">DockerRepo</block>
-  <block id="55f37f5127b4085cc0881e89df336196" category="cell">Uma substituição dockerRepo para extrair imagens de repositórios docker privados de clientes em comparação com o repositório docker Data Infrastructure Insights. O padrão é repositório docker do Data Infrastructure Insights</block>
   <block id="994be3a18bf7e0a16ab2be2d5c1643ae" category="cell">DockerImagePullSecret</block>
-  <block id="9f033a5b208feb9ef67ab1def3051525" category="cell">Opcional: Um segredo para o repositório privado dos clientes</block>
   <block id="343d28c140c3f5ce20a1ac3f8f7dae2c" category="cell">Nome exclusivo</block>
-  <block id="5a550f6f445193e3c7e81200a2c9d8de" category="cell">Campo de texto livre que identifica exclusivamente um cluster em todos os clusters de clientes. Isso deve ser exclusivo para um locatário do Data Infrastructure Insights. O padrão é o que o cliente insere na IU para o campo "Nome do cluster"</block>
   <block id="5c7af4a6b686285084e62f255503c141" category="cell">Proxy Format: Proxy: Server: Port: Username: Password: NoProxy: IsTelegrafProxyEnabled: IsAuProxyEnabled: IsFluentbitProxyEnabled: IsCollectorProxyEnabled:</block>
   <block id="f8ac74d8a3668ddf89efeb8e806ca908" category="cell">Opcional para definir proxy. Este é geralmente o proxy corporativo do cliente.</block>
   <block id="0c8011c6947aae43789eb8972c306e85" category="cell">Opções de configuração que podem personalizar a instalação do telegraf do Operador</block>
@@ -10720,10 +10717,6 @@
   <block id="6e753299d008aca89690ad5b5c6b784f" category="cell">Limite MEM para mudança-observador-server-rs</block>
   <block id="582e83d73d36aa6674624867468704da" category="cell">Pedido de CPU para change-observer-Watch-rs</block>
   <block id="d73c96f8e69fcf08ffd440cc16f573af" category="cell">pedido de mem para mudança-observador-watch-rs</block>
-  <block id="c055d40d7bbe856522ad8c59006f6754" category="cell">DeployAggrIntervalSeconds</block>
-  <block id="e06e4cc3c2b6796e0850387e7147734e" category="cell">Frequência na qual os eventos em andamento de implantação da carga de trabalho são enviados</block>
-  <block id="43aa9b44901fa9982cd6c7faf3f97402" category="cell">NonWorkloadAggrIntervalSeconds</block>
-  <block id="cff422cbad1df823699a6830f754d451" category="cell">Frequência na qual implantações que não são de carga de trabalho são combinadas e enviadas</block>
   <block id="6d53bc2f7711e2d9a24631defb23b18f" category="cell">TermsToRedact</block>
   <block id="532aa006f97c495d1734618405645779" category="cell">Um conjunto de expressões regulares usadas em nomes env e mapas de dados cujo valor será editado termos de exemplo:"pwd", "password", "token", "apikey", "api-key", "jwt"</block>
   <block id="44011a6b8af68cc46d2d0dfb669fd887" category="cell">AdicionalKindsToWatch</block>
@@ -11290,7 +11283,6 @@
   <block id="ca351e1a429ee72dbdb2061c22743ef6" category="list-text">Navegue até *observabilidade &gt; explorar -&gt; Nova consulta métrica*.</block>
   <block id="5e7f24385025eba3461014d3d964455b" category="paragraph">Para remover dispositivos inativos, basta selecionar os dispositivos a serem removidos e, na lista suspensa *ações em massa*, selecione _Excluir dispositivos inativos_.</block>
   <block id="72a442c57900f55848aa4acb856a507d" category="sidebar">Identificação de dispositivos inativos</block>
-  <block id="2f461803a8b3a27284482a32459a1078" category="cell">ee isto <block ref="0dcd3ea27696029fecb8ccd7e247f633" category="inline-link-macro-rx"></block>. A configuração _desprotegido_ instruirá o Operador de Monitoramento do Kubernetes a executar o Telegraf com o<block ref="3a41393afb053a415e6dc30cf704d899" prefix=" " category="inline-code"></block> sinalizador.</block>
   <block id="0860569a69c3584507ee09f4be585418" category="cell">insecureK8sSkipVerify</block>
   <block id="3008cd3125cccc003fa13335717e556e" category="cell">Se o telegraf não conseguir verificar o certificado devido à falta de SANs IP, tente ativar o salto de verificação</block>
   <block id="9e43104f0687bd3a308759c5411641d7" category="paragraph"><block ref="9e43104f0687bd3a308759c5411641d7" category="inline-link-macro-rx"></block></block>
@@ -12663,10 +12655,20 @@
   <block id="44690d418c76e0ca92d23ed5623ea33b" category="cell">O padrão é vazio e é usado em conjunto com a opção "Escolher 'Excluir' ou 'Incluir'". Se você deseja descobrir ativos apenas em determinadas regiões, use essas duas opções para limitar o escopo deste coletor.</block>
   <block id="c3fd7f4eb7ebff0a7ad57fe275b56834" category="cell">Selecione esta opção para que o coletor use o mesmo proxy da Unidade de Aquisição na qual o coletor reside. Por padrão, esta opção está desabilitada, o que significa que o coletor tenta enviar chamadas de API HTTPS diretamente para o Google.</block>
   <block id="ae4768c261eca8a6c88e3f5101e586e5" category="summary">Configure o NetApp Kubernetes Monitoring Operator usando as opções do AgentConfiguration.</block>
-  <block id="4b6ede77804c1986eba28cc32fdecda4" category="paragraph">O <block ref="025a80672f7feae526479c9984c435c7" category="inline-link-macro-rx"></block> Oferece amplas opções de personalização por meio do arquivo AgentConfiguration. Configure limites de recursos, intervalos de coleta, configurações de proxy, tolerâncias e configurações específicas de componentes para telegraf, kube-state-metrics, coleta de logs, mapeamento de carga de trabalho, gerenciamento de alterações e muito mais para otimizar o monitoramento do seu ambiente Kubernetes.</block>
   <block id="c84711fe6ad5fa23070462b2086412e2" category="cell">uma lista separada por vírgulas de recursos para os quais o kube-state-metrics deve capturar rótulos +++ exemplo: cronjobs=[*],daemonsets=[*],deployments=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*], persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resourcequotas=[*],services=[*],statefulsets=[*] +++</block>
   <block id="f7b8b6cbce2f95ef7109d41adce08b69" category="cell">IntervaloDeclaraçãoDeFalhaDeCargaDeFalhaSegundos</block>
   <block id="02c3ccd1d51babc54da2759d79e61c5c" category="cell">Intervalo após o qual uma implantação malsucedida de uma carga de trabalho será marcada como falha, em segundos</block>
   <block id="8edfed76354af11279c58c2d91948eda" category="cell">Caminho de Log do contêiner de bits fluentes</block>
   <block id="3150c73f1d1522f3b831f0d591077194" category="cell">Por padrão, o Fluentbit DaemonSet montará os caminhos de host /var/log e /var/lib/docker/containers para acessar/ler os logs de contêiner do Kubernetes. Se o Kubernetes tiver sido configurado para colocar os logs de contêiner em um local não padrão, use esta opção para modificar o Fluentbit DaemonSet para montar o caminho não padrão.</block>
+  <block id="7e5bd63d855501c5e08449ea5b593ee7" category="summary">monitorar a saúde da infraestrutura</block>
+  <block id="48f51aa9a5737857bbd298bfb874281e" category="doc">Monitorar a saúde da infraestrutura</block>
+  <block id="a2c6fd0b23854404c386430346919db8" category="paragraph">O <block ref="025a80672f7feae526479c9984c435c7" category="inline-link-macro-rx"></block> Oferece amplas opções de personalização por meio do arquivo AgentConfiguration. Você pode configurar limites de recursos, intervalos de coleta, configurações de proxy, tolerâncias e configurações específicas de componentes para otimizar o monitoramento do seu ambiente Kubernetes. Use essas opções para personalizar o telegraf, o kube-state-metrics, a coleta de logs, o mapeamento de carga de trabalho, o gerenciamento de alterações e outros componentes de monitoramento.</block>
+  <block id="ea55ba51f0b69383ec5bb89cabada638" category="cell">Uma substituição do dockerRepo para extrair imagens dos repositórios docker privados do cliente, em vez do repositório docker do Data Infrastructure Insights . O padrão é o repositório docker do Data Infrastructure Insights .</block>
+  <block id="8e8bb119221ff93e3f93bea9ae89444f" category="cell">Opcional: Um segredo para o repositório privado do cliente.</block>
+  <block id="82b5c50bc4616a08a16b907f9dd29573" category="cell">Campo de texto livre que identifica exclusivamente um cluster entre todos os clusters do cliente. Ele deve ser exclusivo para cada locatário do Data Infrastructure Insights . O padrão é o que o cliente insere na interface do usuário para o campo "Nome do Cluster".</block>
+  <block id="d466d69e5a5f62e5d6773f7d399fe086" category="cell">Veja isto <block ref="0dcd3ea27696029fecb8ccd7e247f633" category="inline-link-macro-rx"></block> . A configuração _desprotegido_ instruirá o Operador de Monitoramento do Kubernetes a executar o Telegraf com o <block ref="3a41393afb053a415e6dc30cf704d899" prefix=" " category="inline-code"></block> bandeira.</block>
+  <block id="fded60399ef22b3b04bd3856d344233b" category="cell">workloadDeployAggrIntervalSeconds</block>
+  <block id="f5d43bfb3eaf806884e4936fc4453865" category="cell">Frequência em que as implantações de carga de trabalho são combinadas e enviadas, em segundos</block>
+  <block id="fb937d63289578595fb05fc626554661" category="cell">nonWorkloadDeployAggrIntervalSeconds</block>
+  <block id="e4685d20c866cca50df5bea5e4230497" category="cell">Frequência em que as implantações sem carga de trabalho são combinadas e enviadas, em segundos</block>
 </blocks>

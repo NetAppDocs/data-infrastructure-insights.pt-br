@@ -1,0 +1,17 @@
+---
+sidebar: sidebar 
+permalink: monitor_infrastructure_health.html 
+keywords: health, infra, infrastructure, monitoring 
+summary: monitorar a saúde da infraestrutura 
+---
+= Monitorar a saúde da infraestrutura
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Monitorar a saúde da infraestrutura
