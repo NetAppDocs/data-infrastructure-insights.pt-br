@@ -8,6 +8,9 @@ summary: O operador de monitoramento do Kubernetes coleta dados do Kubernetes pa
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -92,7 +95,7 @@ Se você atualizou usando o recurso de atualizações por botão e encontrar qua
 
 Determine se existe um AgentConfiguration com o Operador existente (se o seu namespace não for o _NetApp-monitoring_ padrão, substitua o namespace apropriado):
 
- kubectl -n netapp-monitoring get agentconfiguration netapp-monitoring-configuration
+ kubectl -n netapp-monitoring get agentconfiguration netapp-ci-monitoring-configuration
 Se existir uma configuração AgentConfiguration:
 
 * <<installing-the-kubernetes-monitoring-operator,Instale>> O operador mais recente sobre o operador existente.
@@ -325,8 +328,8 @@ Para remover a permissão do Operador de Monitoramento do Kubernetes para exibir
 
 [listing]
 ----
- ClusterRole/netapp-ci-<namespace>-agent-secret-clusterrole
- ClusterRoleBinding/netapp-ci-<namespace>-agent-secret-clusterrolebinding
+ ClusterRole/netapp-ci<namespace>-agent-secret
+ ClusterRoleBinding/netapp-ci<namespace>-agent-secret
 ----
 Se for uma atualização, exclua também os recursos do cluster:
 
@@ -334,11 +337,12 @@ Se for uma atualização, exclua também os recursos do cluster:
 ----
  kubectl delete ClusterRole/netapp-ci-<namespace>-agent-secret-clusterrole
  kubectl delete ClusterRoleBinding/netapp-ci-<namespace>-agent-secret-clusterrolebinding
+
 ----
 Se a análise de mudança estiver ativada, modifique o _AgentConfiguration_ ou _operator-config.yaml_ para descomentar a seção de gerenciamento de alterações e inclua _kindsToIgnoreFromWatch: '"segredos"'_ na seção Gerenciamento de alterações. Observe a presença e a posição de aspas simples e duplas nesta linha.
 
 ....
-# change-management:
+change-management:
   ...
   # # A comma separated list of kinds to ignore from watching from the default set of kinds watched by the collector
   # # Each kind will have to be prefixed by its apigroup

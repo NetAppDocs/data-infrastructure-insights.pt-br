@@ -1857,7 +1857,6 @@
   <block id="dcfc2d1a305cec73fa5f84fa3a0ed89c" category="paragraph">O Data Infrastructure Insights exibe um banner quando sua avaliação gratuita está chegando ao fim Dentro desse banner há um link _View Subscription_, que abre a página *Admin -&gt; Subscription*. Os usuários não administradores verão o banner, mas não poderão acessar a página de assinatura.</block>
   <block id="14e0941a34fd8121073e220481ffa66f" category="admonition">Se você precisar de tempo adicional para avaliar o Data Infrastructure Insights e sua avaliação estiver definida para expirar em 4 dias ou menos, poderá estender sua avaliação por mais 30 dias. Você pode estender o teste apenas uma vez. Você não pode estender se o seu teste expirou.</block>
   <block id="de41af8028b5287cc6d65bb0e73cae11" category="section-title">Teste pelo AWS Marketplace</block>
-  <block id="c66bd552dea63071ad19e124c869ab2e" category="paragraph">A avaliação gratuita do AWS Marketplace não pode ser estendida. A qualquer momento durante a avaliação, você pode fazer o downgrade para uma assinatura do Data Infrastructure Insights Basic Edition ou alterar para uma assinatura paga do Data Infrastructure Insights, visitando a página *Admin -&gt; Subscription*.</block>
   <block id="03742c91392961db83c5540550a3500a" category="section-title">E se o meu teste tiver expirado?</block>
   <block id="55b44e6cb866667b35e33325e5f2b246" category="paragraph">Se a sua avaliação gratuita expirou e você ainda não se inscreveu no Data Infrastructure Insights, você terá funcionalidade limitada até se inscrever. A ingestão de dados pode cessar e, após algumas semanas, seus dados serão excluídos de acordo com nossa política de retenção de dados.</block>
   <block id="35b65825e5ac5124cb47e8b94e7e203a" category="paragraph">Se você tiver uma assinatura do Data Infrastructure Insights, mas essa assinatura expirou, você terá um período de carência de cinco dias para renovar sua assinatura. Toda a funcionalidade Data Infrastructure Insights permanecerá ativa durante esse período de carência.</block>
@@ -12671,4 +12670,5 @@
   <block id="f5d43bfb3eaf806884e4936fc4453865" category="cell">Frequência em que as implantações de carga de trabalho são combinadas e enviadas, em segundos</block>
   <block id="fb937d63289578595fb05fc626554661" category="cell">nonWorkloadDeployAggrIntervalSeconds</block>
   <block id="e4685d20c866cca50df5bea5e4230497" category="cell">Frequência em que as implantações sem carga de trabalho são combinadas e enviadas, em segundos</block>
+  <block id="1cd8d8ba87dcbd642231ac1e1fb52f76" category="paragraph">O teste gratuito do AWS Marketplace não pode ser estendido.</block>
 </blocks>
