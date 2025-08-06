@@ -278,12 +278,12 @@ O seguinte é recomendado para o MetroCluster:
 
 . Conecte dois coletores de dados, um ao SVM de origem e outro ao SVM de destino.
 . Os coletores de dados devem ser conetados por _Cluster IP_.
-. A qualquer momento, um coletor de dados deve estar em execução, outro estará em erro.
+. A qualquer momento, um coletor de dados deve estar em execução, outro será mostrado como _Parado_.
 +
-O coletor de dados do SVM atual será exibido como _Running_. O coletor de dados do SVM atual será exibido como _Error_.
+O coletor de dados do SVM 'em execução' atual será exibido como _Em execução_.  O coletor de dados do SVM 'parado' atual será exibido como _Parado_.
 
-. Sempre que houver uma mudança, o estado do coletor de dados mudará de "running" (em execução) para "error" (erro) e vice-versa.
-. Levará até dois minutos para que o coletor de dados se mova do estado de erro para o estado de execução.
+. Sempre que houver uma alternância, o estado do coletor de dados mudará de 'em execução' para 'parado' e vice-versa.
+. Levará até dois minutos para que o coletor de dados passe do estado _Parado_ para o estado _Em execução_.
 
 
 

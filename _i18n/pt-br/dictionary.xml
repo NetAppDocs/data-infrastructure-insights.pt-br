@@ -5930,8 +5930,6 @@
   <block id="eff16f7e2ed55dec2fc30b6481ebf593" category="paragraph">O seguinte é recomendado para o MetroCluster:</block>
   <block id="65b46bd8eed280f6feefa47f4a74d302" category="list-text">Conecte dois coletores de dados, um ao SVM de origem e outro ao SVM de destino.</block>
   <block id="d5d55b52a220ca4d14feac2aa8b83d23" category="list-text">Os coletores de dados devem ser conetados por _Cluster IP_.</block>
-  <block id="c2e2e688fedcc6b98883e05a15afc9b8" category="list-text">A qualquer momento, um coletor de dados deve estar em execução, outro estará em erro.</block>
-  <block id="34d88af94446d0d86575e402898fc1b0" category="list-text">Levará até dois minutos para que o coletor de dados se mova do estado de erro para o estado de execução.</block>
   <block id="f0240b95ecfe16d637a84130b5ed57d9" category="section-title">Política de Serviço</block>
   <block id="4cb8e0d8b1d299b402fd5ddce7d39cd5" category="paragraph">Se estiver usando a política de serviço com o ONTAP *versão 9.9.1 ou mais recente*, a fim de se conetar ao coletor de origem de dados, o serviço _data-fpolicy-client_ será necessário junto com o serviço de dados _data-nfs_ e/ou _data-cifs_.</block>
   <block id="ee22588534e4e3b699a85e968f56f4a7" category="paragraph">Em versões do ONTAP anteriores a 9,9.1, _data-fpolicy-client_ não precisam ser definidas.</block>
@@ -12344,8 +12342,6 @@
   <block id="1b0825e538a70e8323fac1cbfe230ee5" category="paragraph">Observação: Você pode criar uma única função para usar para todas as permissões de recursos para um usuário personalizado. Se houver um usuário existente, exclua primeiro o usuário existente e a função usando estes comandos:</block>
   <block id="91f83541442d1c49aaf40212bccffad1" category="paragraph">Observação: Você pode criar uma única função para usar para todas as permissões de recursos para um usuário personalizado. Se houver um usuário existente, exclua primeiro o usuário existente e a função usando estes comandos:</block>
   <block id="858faeb682f19ff16f83d24c86cb97f7" category="cell">Nome de usuário para acessar o SVM/cluster ao adicionar via IP de cluster as opções são: 1. Cluster-admin 2. 'csuser' 3. AD-user com papel semelhante ao csuser. Ao adicionar via SVM IP, as opções são: 4. Vsadmin 5. 'csuser' 6. AD-username com função semelhante ao csuser.</block>
-  <block id="0851edbfbb1a0406acbc79df15296b3f" category="paragraph">O coletor de dados do SVM atual será exibido como _Running_. O coletor de dados do SVM atual será exibido como _Error_.</block>
-  <block id="046c8e391630ab49d75409e270a4f4b6" category="list-text">Sempre que houver uma mudança, o estado do coletor de dados mudará de "running" (em execução) para "error" (erro) e vice-versa.</block>
   <block id="7a69a2fce9a9acb9c8a84936863c1330" category="paragraph">Observe que se novos volumes, etc. forem criados no ONTAP enquanto o coletor estiver em pausa, a Segurança de carga de trabalho não coletará os dados e esses volumes, etc., não serão refletidos em painéis ou tabelas.</block>
   <block id="0d55775dbf06cf5596fe0f5c3363f19a" category="list-text">A purga de instantâneos não acontecerá de acordo com as configurações configuradas em um coletor pausado.</block>
   <block id="f8b4c5607366d38cf806b0860c9cc5e4" category="list-text">Os eventos EMS (como ONTAP ARP) não serão processados em um coletor pausado. Isso significa que, se o ONTAP identificar um ataque de ransomware, a segurança de workloads da infraestrutura de dados não poderá adquirir esse evento.</block>
@@ -12671,4 +12667,8 @@
   <block id="fb937d63289578595fb05fc626554661" category="cell">nonWorkloadDeployAggrIntervalSeconds</block>
   <block id="e4685d20c866cca50df5bea5e4230497" category="cell">Frequência em que as implantações sem carga de trabalho são combinadas e enviadas, em segundos</block>
   <block id="1cd8d8ba87dcbd642231ac1e1fb52f76" category="paragraph">O teste gratuito do AWS Marketplace não pode ser estendido.</block>
+  <block id="f9140e559462604832a886e4eb558360" category="list-text">A qualquer momento, um coletor de dados deve estar em execução, outro será mostrado como _Parado_.</block>
+  <block id="a2c39bece4ce05e23c13d7dc078d390f" category="paragraph">O coletor de dados do SVM 'em execução' atual será exibido como _Em execução_.  O coletor de dados do SVM 'parado' atual será exibido como _Parado_.</block>
+  <block id="e02fc5a08fc17a2cc71f90cc044645af" category="list-text">Sempre que houver uma alternância, o estado do coletor de dados mudará de 'em execução' para 'parado' e vice-versa.</block>
+  <block id="f2d8284860e834b1803b72a789ffeb84" category="list-text">Levará até dois minutos para que o coletor de dados passe do estado _Parado_ para o estado _Em execução_.</block>
 </blocks>
