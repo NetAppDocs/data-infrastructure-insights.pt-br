@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: monitor_infrastructure_health.html 
-keywords: health, infra, infrastructure, monitoring 
-summary: monitorar a saúde da infraestrutura 
+keywords: health, monitor, infrastructure 
+summary: Monitorar a saúde da infraestrutura 
 ---
 = Monitorar a saúde da infraestrutura
 :hardbreaks:

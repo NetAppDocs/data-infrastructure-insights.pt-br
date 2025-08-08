@@ -12655,8 +12655,6 @@
   <block id="02c3ccd1d51babc54da2759d79e61c5c" category="cell">Intervalo após o qual uma implantação malsucedida de uma carga de trabalho será marcada como falha, em segundos</block>
   <block id="8edfed76354af11279c58c2d91948eda" category="cell">Caminho de Log do contêiner de bits fluentes</block>
   <block id="3150c73f1d1522f3b831f0d591077194" category="cell">Por padrão, o Fluentbit DaemonSet montará os caminhos de host /var/log e /var/lib/docker/containers para acessar/ler os logs de contêiner do Kubernetes. Se o Kubernetes tiver sido configurado para colocar os logs de contêiner em um local não padrão, use esta opção para modificar o Fluentbit DaemonSet para montar o caminho não padrão.</block>
-  <block id="7e5bd63d855501c5e08449ea5b593ee7" category="summary">monitorar a saúde da infraestrutura</block>
-  <block id="48f51aa9a5737857bbd298bfb874281e" category="doc">Monitorar a saúde da infraestrutura</block>
   <block id="a2c6fd0b23854404c386430346919db8" category="paragraph">O <block ref="025a80672f7feae526479c9984c435c7" category="inline-link-macro-rx"></block> Oferece amplas opções de personalização por meio do arquivo AgentConfiguration. Você pode configurar limites de recursos, intervalos de coleta, configurações de proxy, tolerâncias e configurações específicas de componentes para otimizar o monitoramento do seu ambiente Kubernetes. Use essas opções para personalizar o telegraf, o kube-state-metrics, a coleta de logs, o mapeamento de carga de trabalho, o gerenciamento de alterações e outros componentes de monitoramento.</block>
   <block id="ea55ba51f0b69383ec5bb89cabada638" category="cell">Uma substituição do dockerRepo para extrair imagens dos repositórios docker privados do cliente, em vez do repositório docker do Data Infrastructure Insights . O padrão é o repositório docker do Data Infrastructure Insights .</block>
   <block id="8e8bb119221ff93e3f93bea9ae89444f" category="cell">Opcional: Um segredo para o repositório privado do cliente.</block>
@@ -12667,8 +12665,9 @@
   <block id="fb937d63289578595fb05fc626554661" category="cell">nonWorkloadDeployAggrIntervalSeconds</block>
   <block id="e4685d20c866cca50df5bea5e4230497" category="cell">Frequência em que as implantações sem carga de trabalho são combinadas e enviadas, em segundos</block>
   <block id="1cd8d8ba87dcbd642231ac1e1fb52f76" category="paragraph">O teste gratuito do AWS Marketplace não pode ser estendido.</block>
-  <block id="f9140e559462604832a886e4eb558360" category="list-text">A qualquer momento, um coletor de dados deve estar em execução, outro será mostrado como _Parado_.</block>
-  <block id="a2c39bece4ce05e23c13d7dc078d390f" category="paragraph">O coletor de dados do SVM 'em execução' atual será exibido como _Em execução_.  O coletor de dados do SVM 'parado' atual será exibido como _Parado_.</block>
-  <block id="e02fc5a08fc17a2cc71f90cc044645af" category="list-text">Sempre que houver uma alternância, o estado do coletor de dados mudará de 'em execução' para 'parado' e vice-versa.</block>
   <block id="f2d8284860e834b1803b72a789ffeb84" category="list-text">Levará até dois minutos para que o coletor de dados passe do estado _Parado_ para o estado _Em execução_.</block>
+  <block id="da3fe25b9ad7a2bbb8f75a52d2d39828" category="summary">Monitorar a saúde da infraestrutura</block>
+  <block id="0513a990ff8b7eb9d4d9e530e812b450" category="paragraph">O ONTAP SVM Data Collector permite que o Workload Security monitore atividades de acesso a arquivos e usuários em máquinas virtuais de armazenamento (SVMs) do NetApp ONTAP .  Este guia orienta você sobre os pré-requisitos, a configuração e o gerenciamento do coletor de dados SVM para fornecer monitoramento de segurança abrangente do seu ambiente ONTAP .</block>
+  <block id="57da797adb74a055edb3de9c7e734b65" category="list-text">A qualquer momento, o coletor de dados do SVM 'em execução' atual será exibido como _Em execução_. O coletor de dados do SVM 'parado' atual será exibido como _Parado_.</block>
+  <block id="61dcd000a72340c1c72d4c7a96c2ec90" category="list-text">Sempre que houver uma alternância, o estado do coletor de dados mudará de _Em execução_ para _Parado_ e vice-versa.</block>
 </blocks>
