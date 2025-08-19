@@ -7,10 +7,14 @@ summary: Coletor de DADOS REST do ONTAP
 = Coletor de DADOS REST do NetApp ONTAP
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Esse coletor de dados adquire inventário, logs do EMS e dados de desempenho de sistemas de armazenamento que executam o ONTAP 9.14,1 ou superior usando chamadas de API REST. Para sistemas ONTAP em versões anteriores, use o tipo coletor "NetApp ONTAP Data Management Software" baseado em ZAPI.
+Este coletor de dados adquire inventário, logs de EMS e dados de desempenho de sistemas de armazenamento que executam o ONTAP 9.14.1 e superior usando chamadas de API REST.  Para sistemas ONTAP em versões anteriores, use o tipo de coletor "NetApp ONTAP Data Management Software" baseado em ZAPI.
 
 
 NOTE: O coletor REST ONTAP pode ser usado como um substituto para o coletor baseado em ONTAPI anterior. Como tal, pode haver diferenças nas métricas que são coletadas ou relatadas. Para obter mais informações sobre as diferenças entre ONTAPI e REST, consulte link:https://docs.netapp.com/us-en/ontap-restmap-9141/index.html["ONTAP 9.14,1 mapeamento ONTAPI-to-REST"]a documentação.
@@ -77,6 +81,18 @@ User/Group                 Authentication                 Acct   Authentication
 Name           Application Method        Role Name        Locked Method
 -------------- ----------- ------------- ---------------- ------ --------------
 restUser       http        password      restRole         no     none
+----
+Você pode verificar o acesso spi se necessário:
+
+[listing]
+----
+**Vserver:> vserver services web access show -name spi
+ Vserver                      Type     Service Name     Role
+-------------- -------- ---------------- ----------------
+<vserver name >     admin             spi           admin
+<vserver name >     admin             spi           csrestrole
+
+2 entries were displayed.**
 ----
 
 

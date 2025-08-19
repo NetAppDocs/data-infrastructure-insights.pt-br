@@ -1692,7 +1692,6 @@
   <block id="2240ee7d4e56b8ba7ac49b14311cdeed" category="inline-link-macro">Equipe de vendas da NetApp</block>
   <block id="5fa0ef8fc40e60003288942e2da3e300" category="cell">*Recurso*</block>
   <block id="d972e288b86634fdb9a758828b4d511a" category="cell">Recupere o storage frio da ONTAP</block>
-  <block id="e1f1a8af4cedab3466112b828b25b73f" category="cell">Fornece visualizações de workloads de volume do ONTAP com capacidade baixa, bem como outras métricas relacionadas.</block>
   <block id="5f06573aae905166447bf8d646c6bf89" category="summary">Consultar Visão geral</block>
   <block id="fadb076bccad39c075c50bfa7f81bc31" category="doc">Ativos usados em consultas</block>
   <block id="01baf5f78b2649e6a38c88d12944a3d9" category="paragraph">Observe que as regras de anotação, que atribuem automaticamente anotações a ativos, _require_ uma consulta.</block>
@@ -4058,7 +4057,6 @@
   <block id="44b44ec49661da05e81e9deacf4859c9" category="list-text">Incrível! O que se segue? <block ref="30a61035c14bad051f5a421dfd3d3693" category="inline-link-macro-rx"></block> <block ref="e6669e87e16244b0fccfa5ac76c749db" category="inline-link-macro-rx"></block> <block ref="e09dedd8fbac179aa2311a644e5eafb9" category="inline-link-macro-rx"></block> <block ref="4a83477a1c1cd11a9cc88c7f83441cbd" category="inline-link-macro-rx"></block> <block ref="0a7046f023aad7ac467f1bc6bd4c7520" category="inline-link-macro-rx"></block></block>
   <block id="d17aef0dcce543eeda80f0586306b127" category="inline-link-macro">*subscribe*</block>
   <block id="f22fe88435293fe687ec1e801a002593" category="list-text">Isso é ótimo! Estou pronto para <block ref="ba6df6766cca6593f2f22c86bc0c10f1" category="inline-link-macro-rx"></block>.</block>
-  <block id="a6a9e422cc6712614bdeb1c7c082055f" category="summary">O Cloud Insights controla as alterações na infraestrutura para facilitar a análise e a solução de problemas.</block>
   <block id="48ad331c1d02b88cdeaea9528083c718" category="doc">Análise de mudança de infraestrutura</block>
   <block id="2309f522d85e82b60b3b59f8e753778b" category="section-title">Como a análise de mudança de infraestrutura ajuda?</block>
   <block id="9aad3ab86193ce06a9d17691b4d44ab4" category="paragraph">Em qualquer ambiente, mudanças nos seus recursos podem acontecer devido a alterações mal configuradas, perda de energia, etc. a análise de alterações ajuda fornecendo um único painel para visualizar e correlacionar a integridade dos seus recursos com interrupções ou alterações planejadas. As alterações são calculadas com cada enquete de inventário (seguindo a primeira enquete em um novo coletor).</block>
@@ -9087,7 +9085,6 @@
   <block id="5c60750a2abc4b9d7aa61cc76e102a94" category="cell">Soluções possíveis: * Recomendado: Re-gerar certificado para o Virtual Center usando uma chave RSA mais forte (por exemplo, 1024 bits). * Não recomendado: Modifique a configuração JVM java.security para aproveitar a restrição jdk.certpath.disabledAlgorithms para permitir a chave RSA de 512 bits. Consulte as notas de versão da atualização 40 do JDK 7 em <block ref="ac06061ee1016775797c99e274153a15" category="inline-link-rx"></block></block>
   <block id="2b9be21f00b184f2a6ee90f1574df505" category="summary">Coletor de DADOS REST do ONTAP</block>
   <block id="e61b2d254813ba4e2bc2a8a223f0e0eb" category="doc">Coletor de DADOS REST do NetApp ONTAP</block>
-  <block id="550bad6f96e635103df31a148cb33c00" category="paragraph">Esse coletor de dados adquire inventário, logs do EMS e dados de desempenho de sistemas de armazenamento que executam o ONTAP 9.14,1 ou superior usando chamadas de API REST. Para sistemas ONTAP em versões anteriores, use o tipo coletor "NetApp ONTAP Data Management Software" baseado em ZAPI.</block>
   <block id="a5bc5e25da90f0de3436e66f223df7bc" category="inline-link-macro">ONTAP 9.14,1 mapeamento ONTAPI-to-REST</block>
   <block id="6e2fe63a1853939e7fbcdfb785f57e86" category="admonition">O coletor REST ONTAP pode ser usado como um substituto para o coletor baseado em ONTAPI anterior. Como tal, pode haver diferenças nas métricas que são coletadas ou relatadas. Para obter mais informações sobre as diferenças entre ONTAPI e REST, consulte <block ref="239e0ab1e46437458ce3ffae42b58457" category="inline-link-macro-rx"></block>a documentação.</block>
   <block id="992ec6f152c405f64da205561d5810c3" category="list-text">Tem de ter acesso a uma conta de utilizador com o nível de acesso necessário. Observe que as permissões de administrador são necessárias ao criar um novo usuário/função REST.</block>
@@ -12666,8 +12663,38 @@
   <block id="e4685d20c866cca50df5bea5e4230497" category="cell">Frequência em que as implantações sem carga de trabalho são combinadas e enviadas, em segundos</block>
   <block id="1cd8d8ba87dcbd642231ac1e1fb52f76" category="paragraph">O teste gratuito do AWS Marketplace não pode ser estendido.</block>
   <block id="f2d8284860e834b1803b72a789ffeb84" category="list-text">Levará até dois minutos para que o coletor de dados passe do estado _Parado_ para o estado _Em execução_.</block>
-  <block id="da3fe25b9ad7a2bbb8f75a52d2d39828" category="summary">Monitorar a saúde da infraestrutura</block>
   <block id="0513a990ff8b7eb9d4d9e530e812b450" category="paragraph">O ONTAP SVM Data Collector permite que o Workload Security monitore atividades de acesso a arquivos e usuários em máquinas virtuais de armazenamento (SVMs) do NetApp ONTAP .  Este guia orienta você sobre os pré-requisitos, a configuração e o gerenciamento do coletor de dados SVM para fornecer monitoramento de segurança abrangente do seu ambiente ONTAP .</block>
   <block id="57da797adb74a055edb3de9c7e734b65" category="list-text">A qualquer momento, o coletor de dados do SVM 'em execução' atual será exibido como _Em execução_. O coletor de dados do SVM 'parado' atual será exibido como _Parado_.</block>
   <block id="61dcd000a72340c1c72d4c7a96c2ec90" category="list-text">Sempre que houver uma alternância, o estado do coletor de dados mudará de _Em execução_ para _Parado_ e vice-versa.</block>
+  <block id="342c42c2979927d6b0d68318cd6111a6" category="summary">O Data Infrastructure Insights rastreia mudanças na infraestrutura para facilitar a análise e a solução de problemas.</block>
+  <block id="65be717dc296d58230cdf6471cf551c6" category="summary">Monitore a integridade da infraestrutura com pontuação unificada baseada em desempenho, capacidade, configuração e alertas de componentes para resolução proativa de problemas.</block>
+  <block id="48f51aa9a5737857bbd298bfb874281e" category="doc">Monitorar a saúde da infraestrutura</block>
+  <block id="9af3e29dc9d4dd7c03ed034e837cae19" category="paragraph">O Data Infrastructure Insights fornece monitoramento abrangente da integridade da infraestrutura que rastreia o desempenho, a capacidade, a configuração e o status dos componentes do seu ambiente de armazenamento.  As pontuações de integridade são calculadas com base nos alertas do monitor nessas categorias, fornecendo uma visão unificada da integridade do sistema e permitindo a resolução proativa de problemas.</block>
+  <block id="6021dbd64d31bad79679304f2df95f96" category="section-title">O painel de saúde da infraestrutura</block>
+  <block id="90fee6011aeb14ebd1b3f6d5319de775" category="admonition">Monitorar a saúde da infraestrutura é uma<block ref="312c0c6b46ba32b4b11ba8c9da5788ed" category="inline-link-macro-rx"></block> recurso e está sujeito a alterações.</block>
+  <block id="6d6ede202b061f87d3856c3a68a32733" category="paragraph">Navegue até *Observabilidade &gt; Analisar* e selecione *Saúde da infraestrutura*.  O painel fornece uma visão geral da integridade do seu sistema, com base nas categorias de alertas do monitor e pontuações, conforme explicado abaixo.  Defina filtros na parte superior para restringir o foco da sua investigação.</block>
+  <block id="2fea58dd0f63d16cb2264053904f52cb" category="inline-image-macro">visão geral da saúde da infraestrutura</block>
+  <block id="de0fb65c9e3436d4f762f2f75c9c80b0" category="paragraph"><block ref="de0fb65c9e3436d4f762f2f75c9c80b0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1aa157ede793f01cc555adc2a30791e8" category="paragraph">Por padrão, as pontuações de saúde são agrupadas por data center; você pode selecionar o agrupamento que funciona melhor para sua sessão.</block>
+  <block id="066389fa03fcba02204f22926e22624e" category="section-title">Configurar monitores para uso na integridade da infraestrutura</block>
+  <block id="a60dbecbd86aeef8b8d3aa2ad769c85b" category="paragraph">As pontuações de integridade são orientadas por alertas configurados para inclusão nos cálculos de integridade do sistema.</block>
+  <block id="ee7e09ec846abc74e8ad67f86534b722" category="paragraph">Ao criar um monitor para um objeto de infraestrutura, você pode escolher se deseja incluir alertas do monitor nos cálculos.  Na parte inferior da tela, expanda a Configuração avançada e selecione _Incluir no cálculo de integridade da infraestrutura_.  Selecione uma categoria à qual aplicar o cálculo do monitor:</block>
+  <block id="1498d49bfadff63838ea7195f135ac9e" category="list-text">*Saúde do componente* - falha do ventilador, processador de serviço offline, etc.</block>
+  <block id="6b97abbf6ca0e03a0cd3a9533866bf5f" category="list-text">*Saúde do desempenho* - alta utilização do nó de armazenamento, pico anormal na latência do nó, etc.</block>
+  <block id="bf79b02d39df2b08288a4abe2535b26a" category="list-text">*Saúde da capacidade* - capacidade do pool de armazenamento próxima do limite, espaço insuficiente para instantâneo de LUN, etc.</block>
+  <block id="c843c56f83e57485f38786634addb64f" category="list-text">*Integridade da configuração* - camada de nuvem inacessível, relacionamento do SnapMirror fora de sincronia, etc.</block>
+  <block id="d40858c687455dd29e9ad9471cef9f13" category="inline-image-macro">monitore a configuração avançada para adicionar aos cálculos de saúde, largura=400</block>
+  <block id="d3b587e592f9498e43468c5ad959f251" category="paragraph"><block ref="d3b587e592f9498e43468c5ad959f251" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d3146ac696d63c6e03b116d00c510d06" category="section-title">Pontuações de saúde explicadas</block>
+  <block id="a0d13ceea9d5180b46f6c11f89216bc8" category="paragraph">As pontuações são apresentadas em uma escala de 0 a 100, sendo 100 a saúde plena.  Objetos de infraestrutura monitorados que estão enfrentando problemas atualmente ou recentemente diminuirão essa pontuação de acordo com as seguintes médias ponderadas:</block>
+  <block id="ae476e1f9649f2266c271a5cdda0e9cc" category="list-text">Componentes, Desempenho ou Capacidade: 30% cada</block>
+  <block id="c99f872e67eeb86518c37462b0a7f179" category="list-text">Configuração: 10%</block>
+  <block id="3488867800ace6ce0bd52ef898824a3d" category="paragraph">As pontuações de integridade são impactadas por alertas gerados pelos monitores que você configurou para incluir nos cálculos de integridade da infraestrutura das seguintes maneiras:</block>
+  <block id="be8af7f981a23068d2bbb2ca5b2a82e9" category="list-text">Alertas críticos reduzem a pontuação de saúde pelo peso total da categoria</block>
+  <block id="a5d26862450bfc0c6b76f92767759d6f" category="list-text">Alertas de aviso reduzem a pontuação em _metade_ do peso da categoria.</block>
+  <block id="7641f230a605045bb26fee7202d471e4" category="paragraph">Se alguma categoria não for reportada, a média ponderada será ajustada adequadamente.</block>
+  <block id="f4cd96b732f2628b044469cd1a104e85" category="paragraph">Por exemplo: 1 alerta crítico em Componentes (-30) e 1 alerta de advertência em Desempenho (50% de 30 = -15) produzem uma pontuação de saúde de 55 (100 menos 45).</block>
+  <block id="9a1645f81973ce35a5b8a3cb57dafb2e" category="paragraph">Quando os alertas são resolvidos, essas reduções na pontuação de saúde diminuem gradualmente e a pontuação se recupera totalmente em 2 horas.</block>
+  <block id="3ad17df8e0c21cd3fba4fa89d748a88e" category="paragraph">Este coletor de dados adquire inventário, logs de EMS e dados de desempenho de sistemas de armazenamento que executam o ONTAP 9.14.1 e superior usando chamadas de API REST.  Para sistemas ONTAP em versões anteriores, use o tipo de coletor "NetApp ONTAP Data Management Software" baseado em ZAPI.</block>
+  <block id="93c13f56f33b4026f411d3de7b0577a5" category="paragraph">Você pode verificar o acesso spi se necessário:</block>
 </blocks>

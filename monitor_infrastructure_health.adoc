@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: monitor_infrastructure_health.html 
-keywords: health, monitor, infrastructure 
-summary: Monitorar a saúde da infraestrutura 
+keywords: infra, infrastructure, health, monitor 
+summary: Monitore a integridade da infraestrutura com pontuação unificada baseada em desempenho, capacidade, configuração e alertas de componentes para resolução proativa de problemas. 
 ---
 = Monitorar a saúde da infraestrutura
 :hardbreaks:
@@ -14,4 +14,55 @@ summary: Monitorar a saúde da infraestrutura
 
 
 [role="lead"]
-Monitorar a saúde da infraestrutura
+O Data Infrastructure Insights fornece monitoramento abrangente da integridade da infraestrutura que rastreia o desempenho, a capacidade, a configuração e o status dos componentes do seu ambiente de armazenamento.  As pontuações de integridade são calculadas com base nos alertas do monitor nessas categorias, fornecendo uma visão unificada da integridade do sistema e permitindo a resolução proativa de problemas.
+
+
+
+== O painel de saúde da infraestrutura
+
+
+NOTE: Monitorar a saúde da infraestrutura é umalink:concept_preview_features.html["Pré-visualização"] recurso e está sujeito a alterações.
+
+Navegue até *Observabilidade > Analisar* e selecione *Saúde da infraestrutura*.  O painel fornece uma visão geral da integridade do seu sistema, com base nas categorias de alertas do monitor e pontuações, conforme explicado abaixo.  Defina filtros na parte superior para restringir o foco da sua investigação.
+
+image:infra_health_main_screen.png["visão geral da saúde da infraestrutura"]
+
+Por padrão, as pontuações de saúde são agrupadas por data center; você pode selecionar o agrupamento que funciona melhor para sua sessão.
+
+
+
+== Configurar monitores para uso na integridade da infraestrutura
+
+As pontuações de integridade são orientadas por alertas configurados para inclusão nos cálculos de integridade do sistema.
+
+Ao criar um monitor para um objeto de infraestrutura, você pode escolher se deseja incluir alertas do monitor nos cálculos.  Na parte inferior da tela, expanda a Configuração avançada e selecione _Incluir no cálculo de integridade da infraestrutura_.  Selecione uma categoria à qual aplicar o cálculo do monitor:
+
+* *Saúde do componente* - falha do ventilador, processador de serviço offline, etc.
+* *Saúde do desempenho* - alta utilização do nó de armazenamento, pico anormal na latência do nó, etc.
+* *Saúde da capacidade* - capacidade do pool de armazenamento próxima do limite, espaço insuficiente para instantâneo de LUN, etc.
+* *Integridade da configuração* - camada de nuvem inacessível, relacionamento do SnapMirror fora de sincronia, etc.
+
+
+image:infra_health_monitor_advanced_config.png["monitore a configuração avançada para adicionar aos cálculos de saúde, largura=400"]
+
+
+
+== Pontuações de saúde explicadas
+
+As pontuações são apresentadas em uma escala de 0 a 100, sendo 100 a saúde plena.  Objetos de infraestrutura monitorados que estão enfrentando problemas atualmente ou recentemente diminuirão essa pontuação de acordo com as seguintes médias ponderadas:
+
+* Componentes, Desempenho ou Capacidade: 30% cada
+* Configuração: 10%
+
+
+As pontuações de integridade são impactadas por alertas gerados pelos monitores que você configurou para incluir nos cálculos de integridade da infraestrutura das seguintes maneiras:
+
+* Alertas críticos reduzem a pontuação de saúde pelo peso total da categoria
+* Alertas de aviso reduzem a pontuação em _metade_ do peso da categoria.
+
+
+Se alguma categoria não for reportada, a média ponderada será ajustada adequadamente.
+
+Por exemplo: 1 alerta crítico em Componentes (-30) e 1 alerta de advertência em Desempenho (50% de 30 = -15) produzem uma pontuação de saúde de 55 (100 menos 45).
+
+Quando os alertas são resolvidos, essas reduções na pontuação de saúde diminuem gradualmente e a pontuação se recupera totalmente em 2 horas.
