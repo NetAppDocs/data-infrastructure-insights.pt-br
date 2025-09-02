@@ -1,27 +1,47 @@
 ---
 sidebar: sidebar 
 permalink: concept_import_from_dashboard_gallery.html 
-summary: Você pode importar painéis recomendados para ajudar a responder a perguntas sobre insights de negócios. 
-keywords: dashboard, gallery, import 
+summary: Você pode importar painéis recomendados para ajudar a responder perguntas sobre insights de negócios.  Você também pode importar painéis personalizados que você exportou anteriormente. 
+keywords: dashboard, gallery, import, export 
 ---
-= Importar a partir da Galeria do Dashboard
+= Importando painéis
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-O Data Infrastructure Insights fornece uma série de painéis recomendados para fornecer insights de negócios sobre seus dados. Cada painel contém widgets projetados para ajudar a responder a uma pergunta específica ou resolver um problema específico relevante para os dados que estão sendo coletados no seu locatário.
+O Data Infrastructure Insights fornece uma série de painéis recomendados para fornecer insights comerciais sobre seus dados.  Cada painel contém widgets projetados para ajudar a responder a uma pergunta específica ou resolver um problema específico relevante aos dados que estão sendo coletados no seu locatário.  O DII também permite que você exporte um painel útil e o importe para outro locatário.
+
+
+
+== Importar a partir da Galeria do Dashboard
 
 Para importar um painel da galeria, faça o seguinte:
 
-. Selecione *painéis > painéis*
-. Clique em * na Galeria*
+. Selecione *Observabilidade > Explorar > Todos os painéis*
+. Clique em *+Importar painel* e escolha _Importar da galeria_.
 +
-Uma lista de *painéis recomendados* é exibida. Cada painel é nomeado com uma pergunta específica que o painel pode ajudá-lo a resolver. Os painéis estão disponíveis para ajudar a responder perguntas sobre diferentes tipos de objetos, incluindo AWS, NetApp, storage, VMware e outros
+Uma lista de *Painéis Recomendados* é exibida, com base nos coletores de dados em seu ambiente.  Os painéis estão disponíveis para ajudar a responder perguntas sobre diferentes tipos de objetos, incluindo AWS, NetApp, Storage, VMware e outros.
 
-. Selecione um ou mais painéis da lista e clique em *Adicionar painéis*. Esses painéis agora são exibidos na lista de painéis.
+. Selecione um ou mais painéis da lista e clique em *Adicionar painéis*.  Esses painéis serão exibidos na sua lista de painéis.
 
 
 Além dos painéis recomendados, você também pode optar por importar *painéis adicionais* que não sejam relevantes para seus dados atuais. Por exemplo, se você não tiver coletores de dados de armazenamento atualmente instalados, mas estiver planejando configurar alguns no futuro, ainda poderá optar por importar os painéis relevantes para o armazenamento. Esses painéis estarão disponíveis para exibição, mas podem não mostrar nenhum dado relevante até que pelo menos um coletor de dados de armazenamento esteja configurado.
 
 A importação a partir da galeria do painel está disponível para usuários com função Administrador ou proprietário da conta.
+
+
+
+== Importando um painel exportado
+
+Para *exportar* um painel, na página *Observabilidade > Explorar > Todos os painéis*, clique no menu à direita do painel e escolha _Exportar_.  Você também pode selecionar vários painéis e escolher _Exportar_ no menu suspenso _Ações em massa_.  Os painéis são salvos em um arquivo .ZIP no seu sistema local.
+
+Para *importar* o painel, navegue até o locatário desejado e faça o seguinte:
+
+. Selecione *Observabilidade > Explorar > Todos os painéis*
+. Clique em *+Importar painel* e escolha _Importar do arquivo_.  Selecione o .ZIP do arquivo que você exportou anteriormente.  Os painéis serão importados e exibidos na sua lista de painéis.  Observe que se você estiver importando um painel com o mesmo nome de um painel existente, um "(2)" será anexado ao nome do painel.
+

@@ -44,4 +44,8 @@ O Operador de Monitoramento do Kubernetes do NetApp extrai os contadores de mét
 . Métricas do ReplicaSet
 . Métricas de serviço
 . Métricas StatefulSet
+. Métricas do AutoScaler de Pod Horizontal
+. Métricas do Cronjob
+. Métricas de trabalho
+. Métricas de cota de recursos
 

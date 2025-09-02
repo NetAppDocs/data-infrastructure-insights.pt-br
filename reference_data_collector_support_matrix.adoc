@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference_data_collector_support_matrix.html 
 summary: A Matriz de suporte do Data Collector contém informações detalhadas sobre coletores de dados suportados. 
-keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, Huawei 
+keywords: support matrix, vendor, NetApp, IBM, EMC, Dell, HP, Hitachi, VMware, Huawei, OpenStack 
 ---
 = Matriz de suporte do Data Infrastructure Insights Data Collector
 :hardbreaks:
@@ -142,7 +142,7 @@ Produtos suportados por este coletor de dados:
 .5+| Informações | Nome da API | Implementado | SSH |  
 
 
-| Versão da API | Implementado | SSH |  
+| Versão da API | Implementado | SSH | Google 
 
 
 | Nome da fonte de dados | Implementado | SSH | Informações 
@@ -11676,6 +11676,392 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+== Volumes do Google Cloud Netapp
+
+Produtos suportados por este coletor de dados:
+
+|===
+| Produto | Categoria | Característica/Atributo | Estado | Protocolo utilizado | Informações adicionais 
+
+
+.71+| fundação .7+| Partilha de ficheiros | Nome | Implementado | HTTPS |  
+
+
+| Caminho | Implementado | HTTPS | Caminho do FileShare 
+
+
+| ID Qtree | Implementado | HTTPS | id único da qtree 
+
+
+| É Internalvolume | Implementado | HTTPS | se o compartilhamento de arquivos representa um volume interno (volume NetApp) ou é uma qtree/pasta dentro do volume interno 
+
+
+| É compartilhado | Implementado | HTTPS | Se este FileShare tem quaisquer compartilhamentos associados a ele 
+
+
+| Estado | Implementado | HTTPS |  
+
+
+| Tipo de segurança | Implementado | HTTPS |  
+
+
+.3+| Informações | Nome da fonte de dados | Implementado | HTTPS | Informações 
+
+
+| ID do originador | Implementado | HTTPS |  
+
+
+| Data | Implementado | HTTPS |  
+
+
+.24+| Volume interno | ID do volume interno | Implementado | HTTPS |  
+
+
+| Nome | Implementado | HTTPS |  
+
+
+| ID do conjunto de armazenamento | Implementado | HTTPS |  
+
+
+| Tipo | Folga | HTTPS |  
+
+
+| Thin Provisioning | Implementado | HTTPS |  
+
+
+| Thin Provisioning suportado | Implementado | HTTPS | Se esse volume interno é compatível com thin Provisioning para a camada de volume em cima dele 
+
+
+| Habilitado para deduplicação | Implementado | HTTPS | A deduplicação está habilitada no pool de storage 
+
+
+| Compressão ativada | Implementado | HTTPS | A compressão está ativada no pool de armazenamento 
+
+
+| Hora da última captura instantânea | Implementado | HTTPS | hora do último instantâneo 
+
+
+| Contagem de instantâneos | Implementado | HTTPS | Número de instantâneos nos volumes internos 
+
+
+| Estado | Implementado | HTTPS |  
+
+
+| Tipo de proteção | Implementado | HTTPS |  
+
+
+| Capacidade utilizada do Snapshot | Implementado | HTTPS |  
+
+
+| Capacidade alocada do Snapshot | Folga | HTTPS | Capacidade alocada de instantâneos em MB 
+
+
+| Capacidade de dados utilizados | Implementado | HTTPS |  
+
+
+| Capacidade alocada dos dados | Folga | HTTPS | capacidade alocada para os dados 
+
+
+| Capacidade total utilizada | Implementado | HTTPS | Capacidade total em MB 
+
+
+| Capacidade total alocada | Implementado | HTTPS |  
+
+
+| Relação bruta/utilizável | Implementado | HTTPS | taxa para converter de capacidade utilizável para capacidade bruta 
+
+
+| Disposição em camadas nos dias mínimos de resfriamento | Implementado | HTTPS |  
+
+
+| QoS - Política | Implementado | HTTPS |  
+
+
+|  | Implementado | HTTPS |  
+
+
+| Comentário | Folga | HTTPS | estado: comentário de texto livre descrevendo o svm 
+
+
+| Limite de QoS bruto | Implementado | HTTPS |  
+
+
+.5+| QTree | ID Qtree | Implementado | HTTPS | id único da qtree 
+
+
+| Nome | Implementado | HTTPS |  
+
+
+| Estilo de segurança | Implementado | HTTPS | Estilo de segurança do diretório: UNIX, ntfs ou misto 
+
+
+| Estado | Implementado | HTTPS |  
+
+
+| Tipo | Folga | HTTPS |  
+
+
+.3+| Partilhar | Nome | Implementado | HTTPS |  
+
+
+| Protocolo | Implementado | HTTPS | enum para protocolo de compartilhamento 
+
+
+| Interfaces IP | Implementado | HTTPS | Lista separada por vírgulas de endereços IP nos quais esse compartilhamento é exposto 
+
+
+.2+| Iniciador da partilha | Iniciador | Implementado | HTTPS |  
+
+
+| Permissão | Implementado | HTTPS | Permissões para este compartilhamento específico 
+
+
+.10+| Armazenamento | IP | Implementado | HTTPS |  
+
+
+| Exibir IP | Implementado | HTTPS |  
+
+
+| Nome | Implementado | HTTPS |  
+
+
+| Fabricante | Implementado | HTTPS |  
+
+
+| Família | Implementado | HTTPS | A família de armazenamento poderia ser CLARiiON, Symmetrix, et al 
+
+
+| Virtual | Implementado | HTTPS | Este é um dispositivo de virtualização de armazenamento? 
+
+
+| Gerenciar URL | Implementado | HTTPS |  
+
+
+| Capacidade bruta total | Implementado | HTTPS | Capacidade bruta total (soma de todos os discos no array) 
+
+
+| Capacidade bruta extra | Implementado | HTTPS | Capacidade bruta de discos sobressalentes (soma de todos os discos que são sobressalentes) 
+
+
+| Capacidade bruta com falha | Implementado | HTTPS | Capacidade bruta de discos com falha (soma de todos os discos com falha) 
+
+
+.17+| Pool de storage | ID do conjunto de armazenamento | Implementado | HTTPS |  
+
+
+| Nome | Implementado | HTTPS |  
+
+
+| Tipo | Folga | HTTPS |  
+
+
+| Estado | Implementado | HTTPS |  
+
+
+| Thin Provisioning suportado | Implementado | HTTPS | Se esse volume interno é compatível com thin Provisioning para a camada de volume em cima dele 
+
+
+| Incluir na capacidade DWH | Implementado | HTTPS | Uma maneira de ACQ para controlar quais pools de armazenamento são interessantes na capacidade DWH 
+
+
+| Nível do fornecedor | Implementado | HTTPS | Nome de nível específico do fornecedor 
+
+
+| Habilitado para deduplicação | Implementado | HTTPS | A deduplicação está habilitada no pool de storage 
+
+
+| Compressão ativada | Implementado | HTTPS | A compressão está ativada no pool de armazenamento 
+
+
+| Virtual | Implementado | HTTPS | Este é um dispositivo de virtualização de armazenamento? 
+
+
+| Grupo RAID | Implementado | HTTPS | Indica se esse storagePool é um grupo raid 
+
+
+| Capacidade de dados utilizados | Implementado | HTTPS |  
+
+
+| Capacidade alocada dos dados | Folga | HTTPS | capacidade alocada para os dados 
+
+
+| Capacidade total alocada | Implementado | HTTPS |  
+
+
+| Capacidade do disco físico (MB) | Implementado | HTTPS | usado como capacidade bruta para pool de storage 
+
+
+| Relação bruta/utilizável | Implementado | HTTPS | taxa para converter de capacidade utilizável para capacidade bruta 
+
+
+|  | Implementado | HTTPS |  
+
+
+.52+| desempenho .21+| Volume interno | Total de latência | Implementado | HTTPS |  
+
+
+| Espaço de armazenamento de objetos utilizado | Implementado | HTTPS |  
+
+
+| Capacidade total | Implementado | HTTPS |  
+
+
+| Leitura de latência | Implementado | HTTPS |  
+
+
+| IOPS outros | Implementado | HTTPS |  
+
+
+| Gravação de IOPS | Implementado | HTTPS |  
+
+
+| Capacidade utilizada | Implementado | HTTPS |  
+
+
+| Taxa de transferência de leitura | Implementado | HTTPS |  
+
+
+| ID do servidor | Implementado | HTTPS |  
+
+
+| Total de IOPS | Implementado | HTTPS |  
+
+
+| Taxa de capacidade usada do Snapshot | Implementado | HTTPS | Relatado como uma série temporal 
+
+
+| Gravação de latência | Implementado | HTTPS |  
+
+
+| Leitura de IOPS | Implementado | HTTPS | Número de IOPs de leitura no disco 
+
+
+| Relação capacidade utilizada | Implementado | HTTPS |  
+
+
+| Capacidade total de dados | Implementado | HTTPS |  
+
+
+| Capacidade de dados utilizados | Implementado | HTTPS |  
+
+
+| Gravação de taxa de transferência | Implementado | HTTPS |  
+
+
+| Taxa de transferência total | Implementado | HTTPS | Taxa total média do disco (leitura e gravação em todos os discos) em MB/s. 
+
+
+| Capacidade utilizada do Snapshot | Implementado | HTTPS |  
+
+
+| Chave | Implementado | HTTPS |  
+
+
+| Capacidade reservada do Snapshot | Implementado | HTTPS |  
+
+
+.16+| Armazenamento | Total de latência | Implementado | HTTPS |  
+
+
+| Capacidade bruta com falha | Implementado | HTTPS |  
+
+
+| Capacidade bruta extra | Implementado | HTTPS | Capacidade bruta de discos sobressalentes (soma de todos os discos que são sobressalentes) 
+
+
+| Leitura de latência | Implementado | HTTPS |  
+
+
+| IOPS outros | Implementado | HTTPS |  
+
+
+| Gravação de IOPS | Implementado | HTTPS |  
+
+
+| Capacidade bruta | Implementado | HTTPS |  
+
+
+| Taxa de transferência de leitura | Implementado | HTTPS |  
+
+
+| ID do servidor | Implementado | HTTPS |  
+
+
+| Total de IOPS | Implementado | HTTPS |  
+
+
+| Gravação de latência | Implementado | HTTPS |  
+
+
+| Leitura de IOPS | Implementado | HTTPS | Número de IOPs de leitura no disco 
+
+
+| Capacidade dos StoragePools | Implementado | HTTPS |  
+
+
+| Gravação de taxa de transferência | Implementado | HTTPS |  
+
+
+| Taxa de transferência total | Implementado | HTTPS | Taxa total média do disco (leitura e gravação em todos os discos) em MB/s. 
+
+
+| Chave | Implementado | HTTPS |  
+
+
+.15+| Disco do StoragePool | Espaço de armazenamento de objetos utilizado | Implementado | HTTPS |  
+
+
+| Capacidade total | Implementado | HTTPS |  
+
+
+| Gravação de IOPS | Implementado | HTTPS |  
+
+
+| Capacidade utilizada | Implementado | HTTPS |  
+
+
+| Capacidade bruta | Implementado | HTTPS |  
+
+
+| Taxa de transferência de leitura | Implementado | HTTPS |  
+
+
+| Total de IOPS | Implementado | HTTPS |  
+
+
+| Leitura de IOPS | Implementado | HTTPS | Número de IOPs de leitura no disco 
+
+
+| Relação capacidade utilizada | Implementado | HTTPS |  
+
+
+| Capacidade total de dados | Implementado | HTTPS |  
+
+
+| Capacidade provisionada | Implementado | HTTPS |  
+
+
+| Capacidade de dados utilizados | Implementado | HTTPS |  
+
+
+| Gravação de taxa de transferência | Implementado | HTTPS |  
+
+
+| Taxa de transferência total | Implementado | HTTPS | Taxa total média do disco (leitura e gravação em todos os discos) em MB/s. 
+
+
+| Taxa de capacidade de excesso de compromisso | Implementado | HTTPS | Relatado como uma série temporal 
+|===
+APIs de gerenciamento usadas por este coletor de dados:
+
+|===
+| API | Protocolo utilizado | Protocolo da camada de transporte utilizado | Portas de entrada usadas | Portas de saída usadas | Suporta autenticação | Requer apenas credenciais "só de leitura" | Suporta criptografia | Firewall amigável (portas estáticas) 
+
+
+| API REST do Google Compute Platform | HTTPS |  | 443 |  | verdadeiro | verdadeiro | verdadeiro | verdadeiro 
+|===
+
+
 == HDS HCP (HTTPS)
 
 Modelos e versões suportados por este coletor de dados:
@@ -19912,8 +20298,8 @@ Modelos e versões suportados por este coletor de dados:
 * 9.8.0P7
 * 9.8.0P8
 * 9.8.0P9
-* 9.9.0
-* 9.9.1
+* 9,0
+* 9,1
 * 9.9.1P10
 * 9.9.1P11
 * 9.9.1P12
@@ -22029,26 +22415,48 @@ Modelos e versões suportados por este coletor de dados:
 
 
 | ---AFF-A300 ASA-A400 AFF-A70 ASA-A250 AFF-A700s AFF-A800 AFF-A90 AFF-C400 AFF-C800 AFF-C250 AFF-A900 AFF-C190 AFF-A700 ASA-A400 ASA-A800 ASA-C250 AFF-C800 CDvM200 FAS2720 FAS2750 FAS2820 FAS8200 FAS8300 FAS8700 FAS9000 FAS9500-A250 AFF-A150 AFF-A220 AFF FASDvM300 SIMBOX  a| 
-* NetappRelease 9.14.1P10: Qui Nov 28 12:32:16 UTC 2024
-* NetappRelease 9.14.1P11: Quarta Janeiro 22 11:55:28 UTC 2025
-* NetappRelease 9.14.1P1: Qui Nov 15 00:45:21 UTC 2024
-* NetappRelease 9.14.1P4: Qui Abr 18 15:59:10 UTC 2024
-* NetappRelease 9.14.1P5: SAT May 18 19:42:16 UTC 2024
-* NetappRelease 9.14.1P6: Ter Jun 18 16:11:44 UTC 2024
-* NetappRelease 9.14.1P7: Qui Nov 01 03:07:44 UTC 2024
-* NetappRelease 9.14.1P8: Sex Sep 13 07:12:27 UTC 2024
-* NetappRelease 9.14.1P9: Seg out 21 18:04:05 UTC 2024
-* NetappRelease 9.15.1: Qui Jul 04 12:21:07 UTC 2024
-* NetappRelease 9.15.1P1: Ter Jul 30 05:15:49 UTC 2024
-* NetappRelease 9.15.1P2: Ter Ago 27 16:35:16 UTC 2024
-* NetappRelease 9.15.1P3: Quarta Setembro 25 22:33:44 UTC 2024
-* NetappRelease 9.15.1P4: Dom out 27 20:15:53 UTC 2024
-* NetappRelease 9.15.1P5: Dom Nov 24 16:31:37 UTC 2024
-* NetappRelease 9.15.1P6: Terça Dezembro 04 01:42:39 UTC 2024
-* NetappRelease 9.15.1P7: Sáb Jan 18 21:34:02 UTC 2025
-* NetappRelease 9.15.1RC2: Seg Jun 24 04:49:55 UTC 2024
-* NetappRelease 9.16.1: Sáb Jan 18 19:31:15 UTC 2025
-* NetappRelease 9.16.1P1: Sex Fev 14 03:53:50 UTC 2025
+* Versão 9.14.1P10 da NetApp : qui, 28 de nov. de 2024, 12:32:16 UTC
+* Versão 9.14.1P11 da NetApp : quarta-feira, 22 de janeiro, 11h55min28s UTC de 2025
+* Versão 9.14.1P1 da NetApp : qui, 15 de fev. de 2024, 00:45:21 UTC
+* Versão 9.14.1P4 da NetApp : qui, 18 de abr. de 2024, 15:59:10 UTC
+* Versão 9.14.1P5 da NetApp : sábado, 18 de maio, 19:42:16 UTC de 2024
+* Versão 9.14.1P6 da NetApp : Terça-feira, 18 de junho, 16:11:44 UTC de 2024
+* Versão 9.14.1P7 da NetApp : qui, 1º de agosto de 2024, 03:07:44 UTC
+* Versão 9.14.1P8 da NetApp : Sexta-feira, 13 de setembro, 07:12:27 UTC de 2024
+* Versão 9.14.1P9 da NetApp : Seg, 21 de Out de 2024, 18:04:05 UTC
+* Versão 9.15.1 da NetApp : qui, 4 de julho de 2024, 12:21:07 UTC
+* Versão 9.15.1P1 da NetApp : Terça-feira, 30 de julho, 05:15:49 UTC de 2024
+* Versão 9.15.1P2 da NetApp : Terça-feira, 27 de agosto, 16:35:16 UTC de 2024
+* Versão 9.15.1P3 da NetApp : quarta-feira, 25 de setembro, 22:33:44 UTC de 2024
+* Versão 9.15.1P4 da NetApp : domingo, 27 de outubro, 20:15:53 ​​UTC de 2024
+* Versão 9.15.1P5 da NetApp : domingo, 24 de novembro, 16:31:37 UTC de 2024
+* Versão 9.15.1P6 da NetApp : quarta-feira, 4 de dezembro de 2024, às 01:42:39 UTC
+* Versão 9.15.1P7 da NetApp : sábado, 18 de janeiro, 21:34:02 UTC de 2025
+* Versão 9.15.1RC2 da NetApp : segunda-feira, 24 de junho, 04:49:55 UTC de 2024
+* Versão 9.16.1 da NetApp : sábado, 18 de janeiro, 19:31:15 UTC de 2025
+* Versão 9.16.1P1 da NetApp : Sexta-feira, 14 de fevereiro de 2025, 03:53:50 UTC
+* Versão 9.16.1RC1 da NetApp : Seg, 4 de Nov de 2024, 10:39:46 UTC
+* Versão 9.16.1X26 da NetApp : Seg, 09 de Dez de 2024, 10:27:42 UTC
+* Versão 9.16.1X29 da NetApp : domingo, 12 de janeiro, 11h18min25s UTC de 2025
+* Versão 9.17.1X7 da NetApp : Sexta-feira, 14 de fevereiro, 11:21:52 UTC de 2025
+* Lançamento do NetApp Clawhammer__9.14.1: Sáb, 18 de maio, 09:23:49 UTC 2024
+* Lançamento do NetApp Cloudstream__9.16.1: Seg, 4 de Nov de 2024, 05:51:46 UTC
+* Lançamento do NetApp Cloudstream__9.16.1: qui, 13 de março de 2025, 20:55:54 UTC
+* Lançamento do NetApp Electricjellyfish__9.17.1: Seg, 03 de Mar de 2025, 05:57:49 UTC
+* Lançamento do NetApp Electricjellyfish__9.17.1: Dom 09 Mar 05:56:14 UTC 2025
+* Lançamento do NetApp Electricjellyfish__9.17.1: Dom, 16 de Mar de 2025, 04:54:53 UTC
+* Lançamento do NetApp Electricjellyfish__9.17.1: Terça-feira, 28 de janeiro, 11:48:14 UTC de 2025
+* Lançamento do NetApp Electricjellyfish__9.17.1: Terça-feira, 18 de março, 04:59:54 UTC de 2025
+* Lançamento do NetApp Electricjellyfish__9.17.1: Qua, 12 de Mar de 2025, 04:42:03 UTC
+* Lançamento do NetApp Mightysquirrel__9.15.1: Sexta-feira, 24 de maio, 05:03:10 UTC de 2024
+* Lançamento do NetApp Mightysquirrel__9.15.1: Sáb, 18 de janeiro, 11:39:42 UTC de 2025
+* Lançamento do NetApp Tropicallightning__9.18.0: Sexta-feira, 21 de fevereiro, 14:02:58 UTC de 2025
+* Lançamento do NetApp Tropicallightning__9.18.0: Seg, 17 de Fev, 08:18:14 UTC de 2025
+* Lançamento do NetApp Tropicallightning__9.18.0: qui, 20 de fev. de 2025, 08:11:55 UTC
+* Lançamento do NetApp Tropicallightning__9.18.0: qui, 27 de fev. de 2025, 04:15:40 UTC
+* Lançamento do NetApp Tropicallightning__9.18.0: Terça-feira, 18 de fevereiro, 14:00:54 UTC de 2025
+* Lançamento do NetApp Tropicallightning__9.18.0: quarta-feira, 26 de fevereiro, 08:19:21 UTC de 2025
+* Lançamento do NetApp Tropicallightning__9.18.0: quarta-feira, 29 de janeiro, 08:34:06 UTC de 2025
 
 
 |===
@@ -24380,6 +24788,268 @@ APIs de gerenciamento usadas por este coletor de dados:
 
 
 | NUTANIX REST API | HTTPS | HTTPS | 443 |  | verdadeiro | verdadeiro | verdadeiro | verdadeiro 
+|===
+
+
+== OpenStack (API REST / SSH)
+
+|===
+|===
+Produtos suportados por este coletor de dados:
+
+|===
+| Produto | Categoria | Característica/Atributo | Estado | Protocolo utilizado | Informações adicionais 
+
+
+.76+| fundação .7+| Armazenamento de dados | Capacidade | Implementado | HTTPS | Capacidade de captura instantânea usada em MB 
+
+
+| MOID | Implementado | HTTPS |  
+
+
+| Nome | Implementado | HTTPS |  
+
+
+| OID | Implementado | HTTPS |  
+
+
+| Capacidade provisionada | Implementado | HTTPS |  
+
+
+| Capacidade utilizada | Implementado | HTTPS |  
+
+
+| IP do Virtual Center | Implementado | HTTPS |  
+
+
+.3+| Armazenamento de dados NasShare | OID do datastore | Implementado | HTTPS |  
+
+
+| OID de partilha nas | Implementado | HTTPS |  
+
+
+| OID | Implementado | HTTPS |  
+
+
+.4+| Anfitrião NasShare | OID de partilha nas | Implementado | HTTPS |  
+
+
+| OID do host | Implementado | HTTPS |  
+
+
+| OID | Implementado | HTTPS |  
+
+
+| Somente leitura | Implementado | HTTPS |  
+
+
+.6+| LUN | OID | Implementado | HTTPS |  
+
+
+| Número | Implementado | HTTPS |  
+
+
+| OID do datastore | Implementado | HTTPS |  
+
+
+| OID do host | Implementado | HTTPS |  
+
+
+| Nome do disco | Implementado | HTTPS |  
+
+
+| TID | Implementado | HTTPS |  
+
+
+.6+| Compartilhamento nas | Capacidade | Implementado | HTTPS | Capacidade alocada em MB 
+
+
+| IP do arquivador | Implementado | HTTPS |  
+
+
+| Nome do arquivador | Implementado | HTTPS |  
+
+
+| OID | Implementado | HTTPS |  
+
+
+| Compartilhar caminho | Implementado | HTTPS | Para que um HvNasShare seja correspondido a um compartilhamento 
+
+
+| Tipo | Folga | HTTPS |  
+
+
+.6+| Caminho | OID | Implementado | HTTPS |  
+
+
+| OID LUN | Implementado | HTTPS |  
+
+
+| Porta de host WWPN | Implementado | HTTPS |  
+
+
+| Porta de armazenamento WWPN | Implementado | HTTPS |  
+
+
+| Ativo | Implementado | HTTPS |  
+
+
+| Tipo | Folga | HTTPS |  
+
+
+.6+| Servidor | Cluster | Implementado | HTTPS | Nome do cluster 
+
+
+| Nome do datacenter | Implementado | HTTPS |  
+
+
+| OID do host | Implementado | HTTPS |  
+
+
+| MOID | Implementado | HTTPS |  
+
+
+| OID | Implementado | HTTPS |  
+
+
+| IP do Virtual Center | Implementado | HTTPS |  
+
+
+.7+| Disco virtual | Capacidade | Implementado | HTTPS | Capacidade de captura instantânea usada em MB 
+
+
+| OID do datastore | Implementado | HTTPS |  
+
+
+| OID LUN | Implementado | HTTPS |  
+
+
+| Nome | Implementado | HTTPS |  
+
+
+| OID | Implementado | HTTPS |  
+
+
+| Tipo | Folga | HTTPS |  
+
+
+| Capacidade utilizada | Implementado | HTTPS |  
+
+
+.13+| VirtualMachine | Estado convidado | Implementado | HTTPS |  
+
+
+| OID do datastore | Implementado | HTTPS |  
+
+
+| OID do host | Implementado | HTTPS |  
+
+
+| IPS | Implementado | HTTPS |  
+
+
+| MOID | Implementado | HTTPS |  
+
+
+| Memória | Implementado | HTTPS |  
+
+
+| Nome | Implementado | HTTPS |  
+
+
+| OID | Implementado | HTTPS |  
+
+
+| Estado de alimentação | Implementado | HTTPS |  
+
+
+| Hora de mudança de estado | Implementado | HTTPS |  
+
+
+| Processadores | Implementado | HTTPS |  
+
+
+| Capacidade provisionada | Implementado | HTTPS |  
+
+
+| Capacidade utilizada | Implementado | HTTPS |  
+
+
+.3+| VirtualMachine Disk | OID | Implementado | HTTPS |  
+
+
+| OID do VirtualDisk | Implementado | HTTPS |  
+
+
+| OID do VirtualMachine | Implementado | HTTPS |  
+
+
+.7+| Host | Contagem de CPU de host | Implementado | HTTPS |  
+
+
+| Domínio anfitrião | Implementado | HTTPS |  
+
+
+| Memória instalada do host | Implementado | HTTPS |  
+
+
+| Sistema operacional de host | Implementado | HTTPS |  
+
+
+| IPS | Implementado | HTTPS |  
+
+
+| Nome | Implementado | HTTPS |  
+
+
+| OID | Implementado | HTTPS |  
+
+
+.4+| Nó iSCSI | Aliases de host | Implementado | HTTPS |  
+
+
+| Nome do nó | Implementado | HTTPS |  
+
+
+| OID | Implementado | HTTPS |  
+
+
+| Tipo | Folga | HTTPS |  
+
+
+.4+| Informações | Nome da fonte de dados | Implementado | HTTPS | Informações 
+
+
+| Data | Implementado | HTTPS |  
+
+
+| ID do originador | Implementado | HTTPS |  
+
+
+| Chave originadora | Implementado | HTTPS |  
+
+
+.4+| desempenho .4+| Host | Utilização total da CPU | Implementado |  |  
+
+
+| Chave | Implementado |  |  
+
+
+| Utilização total da memória | Implementado |  |  
+
+
+| ID do servidor | Implementado |  |  
+|===
+APIs de gerenciamento usadas por este coletor de dados:
+
+|===
+| API | Protocolo utilizado | Protocolo da camada de transporte utilizado | Portas de entrada usadas | Portas de saída usadas | Suporta autenticação | Requer apenas credenciais "só de leitura" | Suporta criptografia | Firewall amigável (portas estáticas) 
+
+
+| API REST do OpenStack | HTTPS | HTTPS | 443 |  | verdadeiro | falso | verdadeiro | verdadeiro 
+
+
+| OpenStack SSH | SSH | SSH | 22 |  | verdadeiro | falso | verdadeiro | verdadeiro 
 |===
 
 

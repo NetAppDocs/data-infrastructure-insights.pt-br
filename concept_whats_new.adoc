@@ -18,6 +18,49 @@ A NetApp está continuamente melhorando e aprimorando seus produtos e serviços.
 
 
 
+== Agosto de 2025
+
+
+
+=== Dados de widgets focados na ponta dos seus dedos
+
+O novo recurso *Analisar* na maioria dos widgets permite que você observe mais detalhadamente os dados em um widget por vez.  Basta clicar no botão "Analisar" em um widget para abrir uma visualização detalhada, onde você pode explorar interativamente os dados subjacentes e ampliar para obter insights mais profundos, sem sair do contexto do painel.
+
+image:widget_analyze_panel.png["Analisar painel para um widget de linha, largura=900"]
+
+
+
+=== Exportar e importar painéis
+
+Se você gerencia vários locatários e desenvolveu um painel útil, pode exportá-lo e importá-lo para outro locatário.
+
+image:dashboard_import_from_file.png["imagem mostrando importação"] image:dashboard_export_from_menu.png["imagem mostrando exportação"]
+
+
+
+=== Integração aprimorada na nuvem: suporte ao Google Cloud NetApp Volumes (GCNV)
+
+* O Google Cloud NetApp Volumes* (GCNV) agora tem suporte total como coletor de dados no DII, completando nosso ecossistema para monitoramento de nuvem híbrida.  Obtenha visibilidade de objetos de armazenamento críticos, como organizações, pools e volumes em toda a infraestrutura.  Agora você pode rastrear todos os seus ambientes de armazenamento, no local ou na nuvem, a partir de uma única plataforma.
+
+
+
+=== Monitoramento aprimorado do StorageGRID
+
+A coleta de logs do StorageGRID agora está habilitada por padrão, fornecendo dados de rastreamento de eventos para o DII, e expandimos o monitoramento do StorageGrid com mais de 50 alertas padrão, rastreamento de eventos em tempo real e novos painéis para simplificar operações complexas da grade de armazenamento.  Fique à frente dos problemas com insights mais profundos sobre políticas de tráfego e desempenho de buckets.
+
+
+
+=== Suporte ao sistema operacional
+
+Os seguintes sistemas operacionais agora são suportados com unidades de aquisição do Data Infrastructure Insights, além dos seguinteslink:concept_acquisition_unit_requirements.html["já suportado"]:
+
+* AlmaLinux (64 bits) 10
+* Red Hat (64 bits) 10
+* Rocky (64 bits) 9.6
+
+
+
+
 == Junho de 2025
 
 

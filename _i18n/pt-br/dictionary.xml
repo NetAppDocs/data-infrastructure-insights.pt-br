@@ -1391,13 +1391,8 @@
   <block id="de611c8e9567515efd9824b262d8d9e1" category="paragraph">A implementação de uma política de QoS por workload para garantir recursos livres suficientes disponíveis aliviará a saturação no pool de storage. Esta é uma solução a longo prazo.</block>
   <block id="5d43336b0046b068224b4a4c606863ba" category="list-text">Adicione recursos adicionais</block>
   <block id="31fa4ab3e19080703e914efb949bbced" category="paragraph">Se o recurso compartilhado (por exemplo, pool de armazenamento) atingir o ponto de saturação de IOPS, adicionar mais ou mais discos mais rápidos ao pool garantirá recursos livres suficientes disponíveis para aliviar a saturação.</block>
-  <block id="4e2217a1fba6817d301befaa05659074" category="summary">Você pode importar painéis recomendados para ajudar a responder a perguntas sobre insights de negócios.</block>
   <block id="cfa4bbfe8fe25421b55d6bc77170da89" category="doc">Importar a partir da Galeria do Dashboard</block>
   <block id="62a23650084673f5c844edf6588b4cbc" category="paragraph">Para importar um painel da galeria, faça o seguinte:</block>
-  <block id="5c42bfffed923b7136ae5aee981826dd" category="list-text">Selecione *painéis &gt; painéis*</block>
-  <block id="bb6ec7619f5b7d24eeed488d054902d5" category="list-text">Clique em * na Galeria*</block>
-  <block id="58e1b019dfb18a656bddd772932b2be5" category="paragraph">Uma lista de *painéis recomendados* é exibida. Cada painel é nomeado com uma pergunta específica que o painel pode ajudá-lo a resolver. Os painéis estão disponíveis para ajudar a responder perguntas sobre diferentes tipos de objetos, incluindo AWS, NetApp, storage, VMware e outros</block>
-  <block id="4915483ae3205b553b3e977503ffdcc5" category="list-text">Selecione um ou mais painéis da lista e clique em *Adicionar painéis*. Esses painéis agora são exibidos na lista de painéis.</block>
   <block id="09339c347014dcb0ab0269c229d7014b" category="paragraph">Além dos painéis recomendados, você também pode optar por importar *painéis adicionais* que não sejam relevantes para seus dados atuais. Por exemplo, se você não tiver coletores de dados de armazenamento atualmente instalados, mas estiver planejando configurar alguns no futuro, ainda poderá optar por importar os painéis relevantes para o armazenamento. Esses painéis estarão disponíveis para exibição, mas podem não mostrar nenhum dado relevante até que pelo menos um coletor de dados de armazenamento esteja configurado.</block>
   <block id="486f30ea223e9ebeeba1fe336355cc78" category="paragraph">A importação a partir da galeria do painel está disponível para usuários com função Administrador ou proprietário da conta.</block>
   <block id="5976a9e9a3634f5fad61b59fc6e5f3b1" category="summary">Você pode filtrar objetos que estão relacionados diretamente ao ativo atual.</block>
@@ -6561,9 +6556,6 @@
   <block id="551df464e5bd2444d259057c7eacc9f7" category="list-text">Métricas de volume persistente</block>
   <block id="7e75de4210a4f75b62291d2c27cdf70b" category="list-text">Métricas do pedido de volume persistente</block>
   <block id="7fc93683f45a50f207241b90641f402b" category="list-text">Métricas do pod</block>
-  <block id="0017245fe792a61975ebc02c48b109c5" category="list-text">Métricas do ReplicaSet</block>
-  <block id="de3e236a6c33c06117bf9ae35e2b9bb0" category="list-text">Métricas de serviço</block>
-  <block id="e0c0cc3c69b0271b0179dc71d1e9bfa7" category="list-text">Métricas StatefulSet</block>
   <block id="d500a402a0f4d5ab2dedb2c5a7ec2eaf" category="summary">Configuração do coletor de dados memcached</block>
   <block id="0f5c57f0abc7ee69be3379cf9f5ede78" category="doc">Memcached Data Collector</block>
   <block id="0bcc6251db330c98836511cffac20f00" category="paragraph">O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do memcached.</block>
@@ -11081,7 +11073,6 @@
   <block id="555fd4883eff42c3c7a47a8af5c0d4c2" category="summary">Insights dão uma visão de como os recursos afetam outros recursos em seu locatário.</block>
   <block id="e59c6b6bc918194e22abd3fa59a5ca7d" category="paragraph">Workloads de alto impacto podem reduzir o desempenho de outros workloads em um recurso compartilhado. O Data Infrastructure Insights fornece ferramentas para ajudar você a investigar a saturação e o impactos dos recursos no locatário.</block>
   <block id="509083e073a2e0f15ee1570b73d69d00" category="paragraph">Há uma série de etapas que você pode tomar para reduzir ou eliminar a chance de saturação em seu inquilino. Aqui estão algumas coisas que você pode tentar.</block>
-  <block id="1f2b15694262ada8f944efcce4011d38" category="paragraph">O Data Infrastructure Insights fornece uma série de painéis recomendados para fornecer insights de negócios sobre seus dados. Cada painel contém widgets projetados para ajudar a responder a uma pergunta específica ou resolver um problema específico relevante para os dados que estão sendo coletados no seu locatário.</block>
   <block id="4bbf5764e6c6a35690454c3eba30942e" category="paragraph">Ao configurar um widget na Landing page de um ativo, você pode definir filtros _in-context_ para mostrar apenas objetos diretamente relacionados ao ativo atual. Por padrão, quando você adiciona um widget, _todos_ objetos do tipo selecionado no seu locatário são exibidos. Os filtros de contexto permitem exibir apenas os dados relevantes para o seu ativo atual.</block>
   <block id="a810d449fa071ebf1cdba77afdf17361" category="paragraph">Por exemplo, em uma página de ativos de armazenamento, você pode adicionar um widget Gráfico de barras para mostrar as principais IOPS em volumes internos somente nesse armazenamento. Por padrão, quando você adiciona um widget, _all_ volumes internos em seu locatário são exibidos.</block>
   <block id="d8f350e48dd09b31c8d65dc6fc5985f8" category="paragraph">Para desvincular os dados do objeto, edite o widget e clique no ícone de link ao lado do tipo de objeto. O link fica desativado e o gráfico exibe dados para objetos _all_ no locatário.</block>
@@ -11902,8 +11893,6 @@
   <block id="9f4478aaba51d401f2aa6f72291db2c4" category="list-text">9.8.0P7</block>
   <block id="0040df68d204b4266db9420b2bd9165c" category="list-text">9.8.0P8</block>
   <block id="5ccc1d7c927ab6348c87a26b1d4df138" category="list-text">9.8.0P9</block>
-  <block id="214f5cb6ee4c43e9856f8c8c4a4497fa" category="list-text">9.9.0</block>
-  <block id="67c6ecbcd91c613e8659b3f0c4b01510" category="list-text">9.9.1</block>
   <block id="3a4b029b3c2e71cb6764a2c18e652488" category="list-text">9.9.1P10</block>
   <block id="46e5a6ca96917b5474029bbaac860801" category="list-text">9.9.1P11</block>
   <block id="203468c884044389db8d0082e97d7fdb" category="list-text">9.9.1P12</block>
@@ -11923,26 +11912,6 @@
   <block id="f6d334c5abfc986211c0472ba79714a7" category="list-text">9.9.1P9</block>
   <block id="265835728543cddb55a9e9c7cc79f48b" category="cell">ASA-A1K ASA-A20 ASA-A90</block>
   <block id="b186a55ab6e895af5dbbc598dba3d2c9" category="cell">---AFF-A300 ASA-A400 AFF-A70 ASA-A250 AFF-A700s AFF-A800 AFF-A90 AFF-C400 AFF-C800 AFF-C250 AFF-A900 AFF-C190 AFF-A700 ASA-A400 ASA-A800 ASA-C250 AFF-C800 CDvM200 FAS2720 FAS2750 FAS2820 FAS8200 FAS8300 FAS8700 FAS9000 FAS9500-A250 AFF-A150 AFF-A220 AFF FASDvM300 SIMBOX</block>
-  <block id="4c0a8dc21a8419b47120aceea8e1125d" category="list-text">NetappRelease 9.14.1P10: Qui Nov 28 12:32:16 UTC 2024</block>
-  <block id="bd8781e094b04996c9da26acdb31835b" category="list-text">NetappRelease 9.14.1P11: Quarta Janeiro 22 11:55:28 UTC 2025</block>
-  <block id="9681072c1ea9c013348ab66f6e07671c" category="list-text">NetappRelease 9.14.1P1: Qui Nov 15 00:45:21 UTC 2024</block>
-  <block id="bf8eab24cb02461594da1045e213930e" category="list-text">NetappRelease 9.14.1P4: Qui Abr 18 15:59:10 UTC 2024</block>
-  <block id="eb0703ee609d4fa35d49740db94c46ff" category="list-text">NetappRelease 9.14.1P5: SAT May 18 19:42:16 UTC 2024</block>
-  <block id="675a5dc32854b0e9a37ab836ff3d2ff5" category="list-text">NetappRelease 9.14.1P6: Ter Jun 18 16:11:44 UTC 2024</block>
-  <block id="1edaa5e1ef58d0b172ae73aed3f0ce7d" category="list-text">NetappRelease 9.14.1P7: Qui Nov 01 03:07:44 UTC 2024</block>
-  <block id="7dd8a7b0082420d42d35a2ef42b26403" category="list-text">NetappRelease 9.14.1P8: Sex Sep 13 07:12:27 UTC 2024</block>
-  <block id="50170e8f644d8478279324b20d68697b" category="list-text">NetappRelease 9.14.1P9: Seg out 21 18:04:05 UTC 2024</block>
-  <block id="08925be9345315a2b43d75f76557ffc3" category="list-text">NetappRelease 9.15.1: Qui Jul 04 12:21:07 UTC 2024</block>
-  <block id="1b03996435ea4659e34dbc3be7e4faf5" category="list-text">NetappRelease 9.15.1P1: Ter Jul 30 05:15:49 UTC 2024</block>
-  <block id="1b45216cf6f4f6afea44d1e8e3050ec2" category="list-text">NetappRelease 9.15.1P2: Ter Ago 27 16:35:16 UTC 2024</block>
-  <block id="6d7a324e9dd2dee885a0fe392e254a93" category="list-text">NetappRelease 9.15.1P3: Quarta Setembro 25 22:33:44 UTC 2024</block>
-  <block id="eba11b6b68d1d4168edfb3c7cfe6d025" category="list-text">NetappRelease 9.15.1P4: Dom out 27 20:15:53 UTC 2024</block>
-  <block id="40957df94a29d3dc26d13e7fd2ea5600" category="list-text">NetappRelease 9.15.1P5: Dom Nov 24 16:31:37 UTC 2024</block>
-  <block id="bfdf678e3fa003fe7446d7e1eaedd107" category="list-text">NetappRelease 9.15.1P6: Terça Dezembro 04 01:42:39 UTC 2024</block>
-  <block id="5a091f5e936dc49d848c9c443a8c6ac2" category="list-text">NetappRelease 9.15.1P7: Sáb Jan 18 21:34:02 UTC 2025</block>
-  <block id="f4a2db329e641047bab00d72f457a0f3" category="list-text">NetappRelease 9.15.1RC2: Seg Jun 24 04:49:55 UTC 2024</block>
-  <block id="5fe3118f15f475a13fd3a59f91a58a73" category="list-text">NetappRelease 9.16.1: Sáb Jan 18 19:31:15 UTC 2025</block>
-  <block id="4563b8f0209cbd3757ef3f8f3d6c367f" category="list-text">NetappRelease 9.16.1P1: Sex Fev 14 03:53:50 UTC 2025</block>
   <block id="12017dd49435719b25983ccf8856826d" category="cell">H410S-2 H610S-2 H610S-4 SF19210 SF2405 SF4805 SF9605 SF9608 H410S-0 H410S-1 H410S-2 H500S H610S-1 H610S-2 H610S-4 SF19210 SF38410 SF4805 SF9605 SF9608</block>
   <block id="b8fe9bf283a2aa8fb31a26d93fefe962" category="cell">11.1.0.72 11.7.0.76 12.0.0.333 12.2.0.777 12.3.0.958 12.3.1.103 12.3.1.165 12.3.2.3 12.5.0.897 12.7.0.380</block>
   <block id="fc8e016a41c4109eeb75bb9795abff5c" category="cell">11.4.0 11.5.0.11 11.5.0.6 11.5.0.7 11.5.0.9 11.6.0 11.6.0.10 11.6.0.11 11.6.0.12 11.6.0.13 11.6.0.14 11.6.0.15 11.6.0.16 11.6.0.4 11.6.0.5 11.6.0.7 11.6.0.8 11.6.0.9 11.7.0 11.7.0.11 11.7.0.12 11.7.0.13 11.7.0.3 11.7.0.4 11.7.0.5 11.7.0.6 11.7.0.8 11.7.0.9 11.8.0 11.8.0.1 11.8.0.2 11.8.0.3 11.8.0.5 11.8.0.6 11.8.0.7 11.8.0.8 11.8.0.9 11.9.0 11.9.0.1 11.9.0.2 11.9.0.3 11.9.0.4</block>
@@ -12697,4 +12666,88 @@
   <block id="3ad17df8e0c21cd3fba4fa89d748a88e" category="paragraph">Este coletor de dados adquire inventário, logs de EMS e dados de desempenho de sistemas de armazenamento que executam o ONTAP 9.14.1 e superior usando chamadas de API REST.  Para sistemas ONTAP em versões anteriores, use o tipo de coletor "NetApp ONTAP Data Management Software" baseado em ZAPI.</block>
   <block id="93c13f56f33b4026f411d3de7b0577a5" category="paragraph">Você pode verificar o acesso spi se necessário:</block>
   <block id="1895704ffbc6e56720172ab7d145f8ae" category="list-text">Um grupo suspenso fornecerá a opção de agrupar a atividade por usuários, tipo de entidade, etc.</block>
+  <block id="661407737232b02ed42fdcaccc52a989" category="summary">Você pode importar painéis recomendados para ajudar a responder perguntas sobre insights de negócios.  Você também pode importar painéis personalizados que você exportou anteriormente.</block>
+  <block id="814e9312d5012962801c92801ada715a" category="doc">Importando painéis</block>
+  <block id="35642875ab84f7c01f7b4f8c5b7370eb" category="paragraph">O Data Infrastructure Insights fornece uma série de painéis recomendados para fornecer insights comerciais sobre seus dados.  Cada painel contém widgets projetados para ajudar a responder a uma pergunta específica ou resolver um problema específico relevante aos dados que estão sendo coletados no seu locatário.  O DII também permite que você exporte um painel útil e o importe para outro locatário.</block>
+  <block id="9eef967a7122bf9630405305617e4e10" category="list-text">Selecione *Observabilidade &gt; Explorar &gt; Todos os painéis*</block>
+  <block id="e2b9567d5ed9826f5b33cc82b6b48c9a" category="list-text">Clique em *+Importar painel* e escolha _Importar da galeria_.</block>
+  <block id="442611d1e65fccedfb24d9e93fc8d022" category="paragraph">Uma lista de *Painéis Recomendados* é exibida, com base nos coletores de dados em seu ambiente.  Os painéis estão disponíveis para ajudar a responder perguntas sobre diferentes tipos de objetos, incluindo AWS, NetApp, Storage, VMware e outros.</block>
+  <block id="c278748c03ac7c63e78a8a6b0f1df607" category="list-text">Selecione um ou mais painéis da lista e clique em *Adicionar painéis*.  Esses painéis serão exibidos na sua lista de painéis.</block>
+  <block id="463aff751b84859089090b16df134a54" category="section-title">Importando um painel exportado</block>
+  <block id="f1960283271313cca6f2ee751bb839a4" category="paragraph">Para *exportar* um painel, na página *Observabilidade &gt; Explorar &gt; Todos os painéis*, clique no menu à direita do painel e escolha _Exportar_.  Você também pode selecionar vários painéis e escolher _Exportar_ no menu suspenso _Ações em massa_.  Os painéis são salvos em um arquivo .ZIP no seu sistema local.</block>
+  <block id="e904d613acedfd47857c01a3e83288d5" category="paragraph">Para *importar* o painel, navegue até o locatário desejado e faça o seguinte:</block>
+  <block id="85115996868406c3be7d22031546ea8b" category="list-text">Clique em *+Importar painel* e escolha _Importar do arquivo_.  Selecione o .ZIP do arquivo que você exportou anteriormente.  Os painéis serão importados e exibidos na sua lista de painéis.  Observe que se você estiver importando um painel com o mesmo nome de um painel existente, um "(2)" será anexado ao nome do painel.</block>
+  <block id="f2b8b6f430b7f576184932457a175ac1" category="section-title">Agosto de 2025</block>
+  <block id="167709a15fc0d6657761385112f15f73" category="section-title">Dados de widgets focados na ponta dos seus dedos</block>
+  <block id="db7189d1904b9f82df7ba474de3b5d0d" category="paragraph">O novo recurso *Analisar* na maioria dos widgets permite que você observe mais detalhadamente os dados em um widget por vez.  Basta clicar no botão "Analisar" em um widget para abrir uma visualização detalhada, onde você pode explorar interativamente os dados subjacentes e ampliar para obter insights mais profundos, sem sair do contexto do painel.</block>
+  <block id="864b1bff1874e25af8024845e3fbeb99" category="inline-image-macro">Analisar painel para um widget de linha, largura=900</block>
+  <block id="a9a44d8e75f0b85161593898087378ac" category="paragraph"><block ref="a9a44d8e75f0b85161593898087378ac" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2640cf729f998c5a4772d0d262b634bc" category="section-title">Exportar e importar painéis</block>
+  <block id="b969de8ef716c961d11e0e3ab0669b4d" category="paragraph">Se você gerencia vários locatários e desenvolveu um painel útil, pode exportá-lo e importá-lo para outro locatário.</block>
+  <block id="8ac2d419ae9640f919d87ed9aab07913" category="inline-image-macro">imagem mostrando importação</block>
+  <block id="e6756ef648d9fdab32540f840d7d467d" category="inline-image-macro">imagem mostrando exportação</block>
+  <block id="fc08aca1b74b0619d3bc578bcce17902" category="paragraph"><block ref="3c0f316e0f8c7b9ef139fe5a122cb32e" category="inline-image-macro-rx" type="image"></block> <block ref="73ab4d5e4caf622ddb726a40d9a6158c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5334ca7adcf8bd049e2327925d078254" category="section-title">Integração aprimorada na nuvem: suporte ao Google Cloud NetApp Volumes (GCNV)</block>
+  <block id="3b8439a1124a026046363bbb284b907d" category="paragraph">* O Google Cloud NetApp Volumes* (GCNV) agora tem suporte total como coletor de dados no DII, completando nosso ecossistema para monitoramento de nuvem híbrida.  Obtenha visibilidade de objetos de armazenamento críticos, como organizações, pools e volumes em toda a infraestrutura.  Agora você pode rastrear todos os seus ambientes de armazenamento, no local ou na nuvem, a partir de uma única plataforma.</block>
+  <block id="4fe3ddf6311dd69b488dd9c0a917e13e" category="section-title">Monitoramento aprimorado do StorageGRID</block>
+  <block id="fb1fc788165334c2063c95600a42e2c0" category="paragraph">A coleta de logs do StorageGRID agora está habilitada por padrão, fornecendo dados de rastreamento de eventos para o DII, e expandimos o monitoramento do StorageGrid com mais de 50 alertas padrão, rastreamento de eventos em tempo real e novos painéis para simplificar operações complexas da grade de armazenamento.  Fique à frente dos problemas com insights mais profundos sobre políticas de tráfego e desempenho de buckets.</block>
+  <block id="78299f1e45872d79191e476c74e9733f" category="list-text">AlmaLinux (64 bits) 10</block>
+  <block id="8669ac0b688ff62234404a6b559ccf6b" category="list-text">Red Hat (64 bits) 10</block>
+  <block id="cfec6f20c0cbe89f3573def53b207a87" category="list-text">Rocky (64 bits) 9.6</block>
+  <block id="c822c1b63853ed273b89687ac505f9fa" category="cell">Google</block>
+  <block id="6755455d4b017941c77ac47ecc006c5f" category="section-title">Volumes do Google Cloud Netapp</block>
+  <block id="cf5f238fca8b6e155078aa41c175743a" category="list-text">9,0</block>
+  <block id="796d3a90e43ce105cbf37298c5065f7e" category="list-text">9,1</block>
+  <block id="851951ec8aafc5b6103bcc711e5b146d" category="list-text">Versão 9.14.1P10 da NetApp : qui, 28 de nov. de 2024, 12:32:16 UTC</block>
+  <block id="b6e4769ffc3c304cb0e244469eb5a2a3" category="list-text">Versão 9.14.1P11 da NetApp : quarta-feira, 22 de janeiro, 11h55min28s UTC de 2025</block>
+  <block id="c4b1caf1883df9f205cef4582c354690" category="list-text">Versão 9.14.1P1 da NetApp : qui, 15 de fev. de 2024, 00:45:21 UTC</block>
+  <block id="776528ac98cb7680e7ad50ee0cfe7b3c" category="list-text">Versão 9.14.1P4 da NetApp : qui, 18 de abr. de 2024, 15:59:10 UTC</block>
+  <block id="f98496224c2e3f881aba9e784ec93e22" category="list-text">Versão 9.14.1P5 da NetApp : sábado, 18 de maio, 19:42:16 UTC de 2024</block>
+  <block id="763ea5732f2f3933c4fb2ecd5d146ae7" category="list-text">Versão 9.14.1P6 da NetApp : Terça-feira, 18 de junho, 16:11:44 UTC de 2024</block>
+  <block id="3eaa6f80b6d0804ddefd4125cd2825d6" category="list-text">Versão 9.14.1P7 da NetApp : qui, 1º de agosto de 2024, 03:07:44 UTC</block>
+  <block id="377d5f61d729ced11a315b13fa897455" category="list-text">Versão 9.14.1P8 da NetApp : Sexta-feira, 13 de setembro, 07:12:27 UTC de 2024</block>
+  <block id="a39dd43c7329f4340f59157d94da2516" category="list-text">Versão 9.14.1P9 da NetApp : Seg, 21 de Out de 2024, 18:04:05 UTC</block>
+  <block id="afc220589f135ac08cedcf65638e5820" category="list-text">Versão 9.15.1 da NetApp : qui, 4 de julho de 2024, 12:21:07 UTC</block>
+  <block id="a948f953d8b242da07f3e59617090fdf" category="list-text">Versão 9.15.1P1 da NetApp : Terça-feira, 30 de julho, 05:15:49 UTC de 2024</block>
+  <block id="da2c51e4e518f609f11b96ca8d15b54d" category="list-text">Versão 9.15.1P2 da NetApp : Terça-feira, 27 de agosto, 16:35:16 UTC de 2024</block>
+  <block id="890e63edd85c4a38218c6efface6cbb6" category="list-text">Versão 9.15.1P3 da NetApp : quarta-feira, 25 de setembro, 22:33:44 UTC de 2024</block>
+  <block id="64729e2b7300c61fefdb70e2e1c1cdd0" category="list-text">Versão 9.15.1P4 da NetApp : domingo, 27 de outubro, 20:15:53 ​​UTC de 2024</block>
+  <block id="7534587ed2c26661ec12d78d5d0af8dd" category="list-text">Versão 9.15.1P5 da NetApp : domingo, 24 de novembro, 16:31:37 UTC de 2024</block>
+  <block id="044b7433a1228a752cbd499d365c6aaa" category="list-text">Versão 9.15.1P6 da NetApp : quarta-feira, 4 de dezembro de 2024, às 01:42:39 UTC</block>
+  <block id="0edc31b0fa1e5b1f2ec2ccba0ca2e97e" category="list-text">Versão 9.15.1P7 da NetApp : sábado, 18 de janeiro, 21:34:02 UTC de 2025</block>
+  <block id="b8a5209ab0ce5dbd35ca2c148a02e755" category="list-text">Versão 9.15.1RC2 da NetApp : segunda-feira, 24 de junho, 04:49:55 UTC de 2024</block>
+  <block id="7fdbd16e1ff751fad04600d723d8011d" category="list-text">Versão 9.16.1 da NetApp : sábado, 18 de janeiro, 19:31:15 UTC de 2025</block>
+  <block id="88021ecf50f7541d3d24492a191e471b" category="list-text">Versão 9.16.1P1 da NetApp : Sexta-feira, 14 de fevereiro de 2025, 03:53:50 UTC</block>
+  <block id="652755e90249a76ef63d7204d6ab39ec" category="list-text">Versão 9.16.1RC1 da NetApp : Seg, 4 de Nov de 2024, 10:39:46 UTC</block>
+  <block id="e47d8be37475d6721d2595b43299102a" category="list-text">Versão 9.16.1X26 da NetApp : Seg, 09 de Dez de 2024, 10:27:42 UTC</block>
+  <block id="7faf1c14f22abc4af287a0938e0e11d4" category="list-text">Versão 9.16.1X29 da NetApp : domingo, 12 de janeiro, 11h18min25s UTC de 2025</block>
+  <block id="047366cbe3a752b392b76ee3de5a0693" category="list-text">Versão 9.17.1X7 da NetApp : Sexta-feira, 14 de fevereiro, 11:21:52 UTC de 2025</block>
+  <block id="7012035b5539239acce1eeb19262a908" category="list-text">Lançamento do NetApp Clawhammer__9.14.1: Sáb, 18 de maio, 09:23:49 UTC 2024</block>
+  <block id="85d028d27872290fedf829049ad47f51" category="list-text">Lançamento do NetApp Cloudstream__9.16.1: Seg, 4 de Nov de 2024, 05:51:46 UTC</block>
+  <block id="efb74c609c847e1c896c8b72027c2404" category="list-text">Lançamento do NetApp Cloudstream__9.16.1: qui, 13 de março de 2025, 20:55:54 UTC</block>
+  <block id="7f2742995919db50df5f00598e5f09a0" category="list-text">Lançamento do NetApp Electricjellyfish__9.17.1: Seg, 03 de Mar de 2025, 05:57:49 UTC</block>
+  <block id="2edf70c8ccc51de9879a7a5608bf4b02" category="list-text">Lançamento do NetApp Electricjellyfish__9.17.1: Dom 09 Mar 05:56:14 UTC 2025</block>
+  <block id="123d606b614e23ec31fff77492881c8e" category="list-text">Lançamento do NetApp Electricjellyfish__9.17.1: Dom, 16 de Mar de 2025, 04:54:53 UTC</block>
+  <block id="f4598e00f7ffd88870d0e3e74f03ca67" category="list-text">Lançamento do NetApp Electricjellyfish__9.17.1: Terça-feira, 28 de janeiro, 11:48:14 UTC de 2025</block>
+  <block id="3da7c7d0ad098d0403439c55c28b881b" category="list-text">Lançamento do NetApp Electricjellyfish__9.17.1: Terça-feira, 18 de março, 04:59:54 UTC de 2025</block>
+  <block id="a6dcc912d114a251ae84dd2cab790bad" category="list-text">Lançamento do NetApp Electricjellyfish__9.17.1: Qua, 12 de Mar de 2025, 04:42:03 UTC</block>
+  <block id="dee458b98d2c954aa5710d5ff5ec6f76" category="list-text">Lançamento do NetApp Mightysquirrel__9.15.1: Sexta-feira, 24 de maio, 05:03:10 UTC de 2024</block>
+  <block id="bcb2cfdb78a14353f1d5af70b02bc8d2" category="list-text">Lançamento do NetApp Mightysquirrel__9.15.1: Sáb, 18 de janeiro, 11:39:42 UTC de 2025</block>
+  <block id="ce49fece61e12f5a3412955bf11d0a64" category="list-text">Lançamento do NetApp Tropicallightning__9.18.0: Sexta-feira, 21 de fevereiro, 14:02:58 UTC de 2025</block>
+  <block id="7be80b0ed106d01981b4e8b0c0464b69" category="list-text">Lançamento do NetApp Tropicallightning__9.18.0: Seg, 17 de Fev, 08:18:14 UTC de 2025</block>
+  <block id="029b913c65804a2c418b0b53a4d82ad3" category="list-text">Lançamento do NetApp Tropicallightning__9.18.0: qui, 20 de fev. de 2025, 08:11:55 UTC</block>
+  <block id="863f3b3b2bce28a4155cac6677b8d39c" category="list-text">Lançamento do NetApp Tropicallightning__9.18.0: qui, 27 de fev. de 2025, 04:15:40 UTC</block>
+  <block id="b7dbdc5d1260f2529401e6a89c57599d" category="list-text">Lançamento do NetApp Tropicallightning__9.18.0: Terça-feira, 18 de fevereiro, 14:00:54 UTC de 2025</block>
+  <block id="535e3c92d1c92a88e2982c4f8fc0dd3f" category="list-text">Lançamento do NetApp Tropicallightning__9.18.0: quarta-feira, 26 de fevereiro, 08:19:21 UTC de 2025</block>
+  <block id="df6f3a88081da957cb9d0f6ea6b6a978" category="list-text">Lançamento do NetApp Tropicallightning__9.18.0: quarta-feira, 29 de janeiro, 08:34:06 UTC de 2025</block>
+  <block id="5ae0ae5f7d8a52fd8d8b0c9920771343" category="section-title">OpenStack (API REST / SSH)</block>
+  <block id="9a49bf4f2da6cbfd867175d49a9d97e1" category="cell">API REST do OpenStack</block>
+  <block id="bf17d59a145a73aabf6bd6a5b8e6fdc7" category="cell">OpenStack SSH</block>
+  <block id="77a6c9dd6788598b4a9539c66fbe684d" category="list-text">Métricas do ReplicaSet</block>
+  <block id="c804187aad1ac0e05bfe9734492a853f" category="list-text">Métricas de serviço</block>
+  <block id="55f5ef8301af792ead511b71dc5d9729" category="list-text">Métricas StatefulSet</block>
+  <block id="a5c62c37e9763bdfccc0b8bdd293e8a9" category="list-text">Métricas do AutoScaler de Pod Horizontal</block>
+  <block id="8a971d74114c901e6e49ec38adf35b17" category="list-text">Métricas do Cronjob</block>
+  <block id="9184717578be39d9d8ce4dc4caf1561d" category="list-text">Métricas de trabalho</block>
+  <block id="e68008fca3fcb96a93c82b9cf703aee3" category="list-text">Métricas de cota de recursos</block>
 </blocks>
