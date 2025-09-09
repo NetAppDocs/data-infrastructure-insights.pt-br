@@ -22,6 +22,9 @@ A Segurança da carga de trabalho (anteriormente Cloud Secure) coleta dados de a
 
 
 
+NOTE: Mudanças globais podem ter um impacto potencial em seus sistemas ONTAP .  É altamente recomendável fazer alterações que afetem um grande número de coletores de dados fora dos horários de pico.
+
+
 
 == Etapas para instalar o agente
 

@@ -7,6 +7,10 @@ summary: A auditoria fornece uma visão das atividades do sistema e do usuário 
 = Auditoria
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -135,11 +139,13 @@ Os eventos de auditoria exibidos serão exportados para um arquivo .CSV, até um
 
 == Retenção de dados de auditoria
 
-O período de tempo que o Data Infrastructure Insights retém os dados de auditoria é baseado na sua Edição:
+O período durante o qual o Data Infrastructure Insights retém os dados de auditoria depende da sua assinatura:
 
-* Edição básica: Os dados de auditoria são mantidos por 30 dias
-* Edições Standard e Premium: Os dados de auditoria são retidos por 1 ano mais 1 dia
+* Ambientes de teste: os dados de auditoria são retidos por 30 dias
+* Ambientes assinados: os dados de auditoria são retidos por 1 ano mais 1 dia
 
+
+As entradas de auditoria mais antigas do que o tempo de retenção são automaticamente eliminadas. Nenhuma interação do usuário é necessária.
 
 As entradas de auditoria mais antigas do que o tempo de retenção são automaticamente eliminadas. Nenhuma interação do usuário é necessária.
 

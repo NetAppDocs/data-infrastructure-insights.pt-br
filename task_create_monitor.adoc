@@ -14,10 +14,7 @@ summary: Crie monitores para alertar sobre limites de desempenho ou inventário,
 
 
 [role="lead"]
-Você cria monitores para definir limites que acionam alertas para notificá-lo sobre problemas relacionados aos recursos da rede. Por exemplo, você pode criar um monitor para alertar para _node write latency_ para qualquer um dos vários protocolos.
-
-
-TIP: Monitores e alertas estão disponíveis em todas as edições do Data Infrastructure Insights, no entanto, o Basic Edition está sujeito ao seguinte: * Você só pode ter até cinco monitores personalizados ativos de cada vez. Qualquer monitor além de cinco será criado ou movido para o estado _Pausado_. * Os monitores de métricas VMDK, Virtual Machine, Host e datastore não são suportados. Se você tiver monitores criados para essas métricas, eles serão pausados e não poderão ser retomados ao fazer o downgrade para Basic Edition.
+Configure monitores para rastrear limites de desempenho, registrar eventos e anomalias em seus recursos de infraestrutura.  Crie alertas personalizados para métricas como latência de gravação de nó, capacidade de armazenamento ou desempenho do aplicativo e receba notificações quando tais condições forem atendidas.
 
 Os monitores permitem definir limites para métricas geradas por objetos de "infraestrutura", como armazenamento, VM, EC2 e portas, bem como para dados de "integração", como os coletados para Kubernetes, métricas avançadas do ONTAP e plugins do Telegraf. Esses monitores _métricos_ alertam você quando os limites de nível de aviso ou nível crítico são cruzados.
 

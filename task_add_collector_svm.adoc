@@ -14,7 +14,10 @@ summary: Adicionando coletores de dados do Workload Security
 
 
 [role="lead"]
-O ONTAP SVM Data Collector permite que o Workload Security monitore atividades de acesso a arquivos e usuários em máquinas virtuais de armazenamento (SVMs) do NetApp ONTAP .  Este guia orienta você sobre os pré-requisitos, a configuração e o gerenciamento do coletor de dados SVM para fornecer monitoramento de segurança abrangente do seu ambiente ONTAP .
+O ONTAP SVM Data Collector permite que o Workload Security monitore atividades de acesso a arquivos e usuários em máquinas virtuais de armazenamento (SVMs) do NetApp ONTAP . Este guia orienta você na configuração e no gerenciamento do coletor de dados SVM para fornecer monitoramento de segurança abrangente do seu ambiente ONTAP .
+
+
+NOTE: Mudanças globais podem ter um impacto potencial em seus sistemas ONTAP .  É altamente recomendável fazer alterações que afetem um grande número de coletores de dados fora dos horários de pico.
 
 
 
