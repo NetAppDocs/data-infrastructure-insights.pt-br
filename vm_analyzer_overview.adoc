@@ -37,4 +37,4 @@ Clicar em um objeto ou grupo abre um painel deslizante fornecendo detalhes adici
 
 == Veja em ação
 
-link:https://media.netapp.com/video-detail/0e62b784-8456-5ef7-8879-f0352135a0f1/simplified-troubleshooting-with-vm-analyzer["Solução de problemas simplificada com o VM Analyzer (vídeo)"]
+link:https://media.netapp.com/video-detail/0e62b784-8456-5ef7-8879-f0352135a0f1/simplified-troubleshooting-with-vm-analyzer["Solução de problemas simplificada com VM Analyzer (vídeo), janela=ler-mais-tarde"]

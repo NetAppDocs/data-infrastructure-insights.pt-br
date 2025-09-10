@@ -7,6 +7,10 @@ keywords: dashboard, hints, tips, best practice, widgets, metrics,
 = Melhores práticas para painéis e Widgets
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

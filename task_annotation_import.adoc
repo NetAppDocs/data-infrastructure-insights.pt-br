@@ -7,6 +7,10 @@ summary: Você pode importar anotações e aplicativos usando a API Data Infrast
 = Importar anotações
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

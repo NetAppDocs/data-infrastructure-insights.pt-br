@@ -27,8 +27,6 @@ sidebar:
       url: "/security_admin_tool.html"
   - title: Como começar
     entries:
-    - title: Tutoriais de recursos
-      url: "/concept_feature_tutorials.html"
     - title: Coleta de dados
       entries:
       - title: Visão geral

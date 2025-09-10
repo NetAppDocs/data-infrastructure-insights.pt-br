@@ -31,6 +31,12 @@ Você cria um novo dashboard em um de dois lugares:
 
 
 
+== Veja em ação
+
+link:https://media.netapp.com/video-detail/5a293f3c-c655-5879-9133-1a32aaa140e8["Crie painéis poderosos com o NetApp (vídeo),window=ler-mais-tarde"]
+
+
+
 == Controlos do tablier
 
 O ecrã Painel de instrumentos tem vários controlos:

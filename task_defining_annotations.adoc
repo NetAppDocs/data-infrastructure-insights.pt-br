@@ -7,6 +7,10 @@ summary: Rastreie dados usando anotações.
 = Definir anotações
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -24,6 +28,12 @@ Por exemplo, se um ativo estiver sendo alugado e o leasing expirar dentro de doi
 * Criando regras para aplicar automaticamente anotações a vários ativos do mesmo tipo.
 * Filtrar ativos por suas anotações.
 
+
+
+
+== Veja em ação
+
+link:https://media.netapp.com/video-detail/248621bd-6619-5dc8-9718-5d78d0fd21da["Anotações e regras de anotação (vídeo), janela=ler-mais-tarde"]
 
 
 

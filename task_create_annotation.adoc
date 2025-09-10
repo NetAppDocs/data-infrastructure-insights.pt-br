@@ -7,6 +7,10 @@ summary: Como criar uma anotação.
 = Usando anotações
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
