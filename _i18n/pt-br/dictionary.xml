@@ -11249,7 +11249,6 @@
   <block id="72a442c57900f55848aa4acb856a507d" category="sidebar">Identificação de dispositivos inativos</block>
   <block id="0860569a69c3584507ee09f4be585418" category="cell">insecureK8sSkipVerify</block>
   <block id="3008cd3125cccc003fa13335717e556e" category="cell">Se o telegraf não conseguir verificar o certificado devido à falta de SANs IP, tente ativar o salto de verificação</block>
-  <block id="9e43104f0687bd3a308759c5411641d7" category="paragraph"><block ref="9e43104f0687bd3a308759c5411641d7" category="inline-link-macro-rx"></block></block>
   <block id="2b8272217b69f1c5b5ad5968f0bc0945" category="list-text">Inscreva-se para uma avaliação gratuita do Data Infrastructure Insights para explorar os recursos disponíveis. Para se inscrever para uma avaliação gratuita:</block>
   <block id="6d2404e5699069be70636f65562fe693" category="list-text">Vá para<block ref="66922be03d9fc23a3ec9641b7884c8f2" category="inline-link-rx"></block></block>
   <block id="e78fd759357c2a61f07ddc6a902f9270" category="list-text">Selecione *como comprar* no topo da página.</block>
@@ -11587,7 +11586,6 @@
   <block id="bc23aa0997542e15a65a21a96991960a" category="paragraph">The user can go to the add/edit collector page, enter the cluster level details (in Cluster Mode) or SVM level details (in SVM Mode), and click on the *Test Connection* button. Workload Security will then process the request and display an appropriate success or failure message.</block>
   <block id="e8f41baace36619af4a7292787a17936" category="inline-image-macro">Workload Security 'Test Connection' success message</block>
   <block id="e6ea93198fd78cbc89b93053e0d0b573" category="paragraph"><block ref="e6ea93198fd78cbc89b93053e0d0b573" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c033c9dce9a48cc67d3409bab6aab6ba" category="paragraph"><block ref="c033c9dce9a48cc67d3409bab6aab6ba" category="inline-link-macro-rx"></block></block>
   <block id="88c55c9f00e518db40a6c680728b787f" category="section-title">Março de 2025</block>
   <block id="27e5c5c33051ef47e145b432e9e357db" category="section-title">Navegação contextual melhorada para uma gestão eficiente da infra-estrutura</block>
   <block id="ca3a08b4a664d3460c1afb17ce14a0ca" category="paragraph">Economize tempo aproveitando o Data Infrastructure Insights para excelência operacional. Agora estamos adicionando links de menu contextual que permitem que você salte diretamente de qualquer objeto para a página inicial do ativo para obter informações sobre o desempenho do dispositivo, SAN Analyzer para visualização da topologia da rede, logs para reconhecimento operacional ou Change Analyzer para gerenciamento de configuração.</block>
@@ -12754,4 +12752,6 @@
   <block id="cd0e26864bdcc93e571cf104049dc723" category="summary">Coletor de dados de matriz ONTAP All-San (ASA r2)</block>
   <block id="4d632e035deea033a31abbef4a39ee80" category="doc">Coletor de dados NetApp ONTAP ASA r2 (All-SAN Array)</block>
   <block id="d97291003c6a6e6615571bf02531ca30" category="sidebar">ONTAP ASA (matriz All-SAN) r2</block>
+  <block id="32344df03ee279db932571d5121eebc2" category="paragraph"><block ref="32344df03ee279db932571d5121eebc2" category="inline-link-macro-rx"></block></block>
+  <block id="af88d796899408a2445389775634dda1" category="paragraph"><block ref="af88d796899408a2445389775634dda1" category="inline-link-macro-rx"></block></block>
 </blocks>

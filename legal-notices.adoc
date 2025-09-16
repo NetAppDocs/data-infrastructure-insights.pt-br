@@ -43,6 +43,6 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 
 Incluir:https://raw.githubusercontent.com/NetAppDocs/common/main/_include/open-source-notice-intro.adoc[]
 
-link:media/Data_Infrastructure_Insights-On-prem-Components-ReleaseNotice1.pdf["Aviso para Insights de infraestrutura de dados (anteriormente Cloud Insights)"]
+link:media/DII_Notice-Sept_2025.pdf["Aviso para Insights de infraestrutura de dados (anteriormente Cloud Insights)"]
 
-link:media/Data_Infrastructure_Insights_Workload_SecurityOn-prem_ComponentsNOTICE-1.pdf["Aviso de segurança de carga de trabalho (anteriormente Cloud Secure)"]
+link:media/WS_Notice-Sept_2025.pdf["Aviso de segurança de carga de trabalho (anteriormente Cloud Secure)"]
