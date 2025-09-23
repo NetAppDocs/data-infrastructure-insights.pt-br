@@ -27,7 +27,7 @@ Clique em *Forensics > Activity Forensics* e clique na guia *All Activity* para 
 Você pode ampliar o gráfico arrastando um retângulo no gráfico. A página inteira será carregada para exibir o intervalo de tempo ampliado. Quando ampliada, é apresentado um botão que permite ao utilizador reduzir o zoom.
 
 * Uma lista dos dados _All Activity_.
-* Um grupo suspenso fornecerá a opção de agrupar a atividade por usuários, tipo de entidade, etc.
+* Um grupo suspenso fornecerá a opção de agrupar a atividade por usuários, pastas, tipo de entidade, etc.
 * Um botão de caminho comum estará disponível acima da tabela em clique da qual podemos obter slide out painel com detalhes de caminho de entidade.
 
 
