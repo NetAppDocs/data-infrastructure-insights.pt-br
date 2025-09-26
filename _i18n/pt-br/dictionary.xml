@@ -9119,7 +9119,6 @@
   <block id="c98d332ba8a502696256ec21ebc2eab0" category="summary">Configurar o coletor de dados NetApp StorageGRID</block>
   <block id="40d661645d6b35dfe2c38e25507244ac" category="doc">Coletor de dados NetApp StorageGRID</block>
   <block id="f9df060c8d375048604f19820f72d8cf" category="paragraph">O coletor de dados NetApp StorageGRID suporta a coleta de inventário e desempenho de configurações do StorageGRID.</block>
-  <block id="60299c50762b8f548c3ba08173af15db" category="admonition">O StorageGRID é medido a uma taxa bruta diferente de TB para Unidade gerenciada. Cada 40 TB de capacidade StorageGRID não formatada é cobrado como 1 <block ref="1802ea889a272a3510701d2ff63bbea6" category="inline-link-macro-rx"></block>.</block>
   <block id="1a11df726501498f41b0a07dead00843" category="paragraph">Insights de infraestrutura de dados adquire as seguintes informações de inventário do coletor NetApp StorageGRID. Para cada tipo de ativo adquirido, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:</block>
   <block id="392d70ca39f31f10bd637936769788df" category="cell">StorageGRID</block>
   <block id="71939180bcd43cc6a5d2266fda82622f" category="paragraph">A seguir estão os requisitos para configurar esta fonte de dados:</block>
@@ -12757,4 +12756,7 @@
   <block id="caecf875ec87c246704ef07763a1f352" category="list-text">Um grupo suspenso fornecerá a opção de agrupar a atividade por usuários, pastas, tipo de entidade, etc.</block>
   <block id="4372644de09f6a468879ea88e6579002" category="list-text">O FlexCache é compatível com NFS com ONTAP 9.7 e versões posteriores.</block>
   <block id="5a97d130bacafd15fd7701e8032dcd68" category="list-text">O FlexCache é compatível com SMB com ONTAP 9.14.1 e versões posteriores.</block>
+  <block id="181a51adda79e935faca2d7b775d08b6" category="paragraph">Para fornecer medição consistente em relação aos direitos DII em todos os sistemas StorageGRID , independentemente da topologia e configuração do hardware subjacente, o Data Infrastructure Insights usa a capacidade total disponível (storagegrid_storage_utilization_total_space_bytes), em vez da capacidade RAW com base no layout do disco físico.</block>
+  <block id="57c5326214c52d2a92dd11ca997a6719" category="paragraph">Para clientes que usam o modelo de licenciamento baseado em capacidade, o StorageGRID é medido como armazenamento de “objeto”.</block>
+  <block id="c865955193b52e756a8fdaf662399f0d" category="paragraph">Para clientes que usam o modelo de licenciamento legado (MU), o StorageGRID é medido como armazenamento secundário, a uma taxa de 40 TiB para 1 MU.</block>
 </blocks>
