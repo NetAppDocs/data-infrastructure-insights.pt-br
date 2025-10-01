@@ -142,6 +142,18 @@ Se você incluir uma string de filtro em aspas duplas, o Insight trata tudo entr
 
 
 
+=== Filtragem de valores booleanos
+
+Ao filtrar por um valor booleano, você poderá ter as seguintes opções para filtrar:
+
+* *Qualquer*: Isso retornará _todos_ os resultados, incluindo resultados definidos como "Sim", "Não" ou não definidos.
+* *Sim*: Retorna somente resultados "Sim".  Observe que DII mostra "Sim" como uma marca de seleção na maioria das tabelas.  Os valores podem ser definidos como "Verdadeiro", "Ligado", etc.; o DII trata todos eles como "Sim".
+* *Não*: Retorna somente resultados "Não".  Observe que DII mostra "Não" como um "X" na maioria das tabelas.  Os valores podem ser definidos como "Falso", "Desligado", etc.; o DII trata todos eles como "Não".
+* *Nenhum*: Retorna somente resultados em que o valor não foi definido.  Também chamados de valores "nulos".
+
+
+
+
 == O que faço agora que tenho resultados de consultas?
 
 A consulta fornece um local simples para adicionar anotações ou atribuir aplicativos a ativos. Note que só pode atribuir aplicações ou anotações aos seus ativos de inventário (disco, armazenamento, etc.). As métricas de integração não podem assumir atribuições de anotações ou aplicativos.

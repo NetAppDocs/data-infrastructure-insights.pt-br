@@ -31,12 +31,6 @@ Por exemplo, se um ativo estiver sendo alugado e o leasing expirar dentro de doi
 
 
 
-== Veja em ação
-
-link:https://media.netapp.com/video-detail/248621bd-6619-5dc8-9718-5d78d0fd21da["Anotações e regras de anotação (vídeo), janela=ler-mais-tarde"]
-
-
-
 == Tipos de anotação predefinidos
 
 O Data Infrastructure Insights fornece alguns tipos de anotação padrão. Essas anotações podem ser usadas para filtrar ou agrupar dados.
@@ -88,7 +82,7 @@ A tabela a seguir lista os tipos de anotação fornecidos pelo Data Infrastructu
 | Gravidade da violação | Classificação (por exemplo, maior) de uma violação (por exemplo, portas de host ausentes ou redundância ausente), em uma hierarquia de maior a menor importância. | Lista 
 |===
 
-NOTE: Alias, Data Center, Hot, Service Level, Sunset, Switch Level, Tier, and violation severity são anotações no nível do sistema, que você não pode excluir ou renomear; você pode alterar apenas os valores atribuídos.
+NOTE: Alias, Data Center, Hot, Service Level, Sunset, Switch Level, Tier e Violation Severity são anotações no nível do sistema, que você não pode excluir ou renomear; você pode alterar apenas os valores atribuídos a eles.
 
 
 
@@ -110,15 +104,23 @@ Pode introduzir até 255 carateres nestes campos.
 
 
 .Tipos de anotação
-Boolean: Cria uma lista suspensa com as opções de sim e não. Por exemplo, a anotação "Direct Attached" é booleana. Data: Isso cria um campo que contém uma data. Por exemplo, se a anotação for uma data, selecione esta. Lista: Cria uma das seguintes opções: * Uma lista fixa suspensa
+* Booleano: Cria uma lista suspensa com as opções sim e não. Por exemplo, a anotação "Anexado Diretamente" é booleana.
+* Data: Isso cria um campo que contém uma data.  Por exemplo, se a anotação for uma data, selecione isso.
+* Lista: Cria um dos seguintes:
++
+** Uma lista suspensa fixa
++
+Quando outros atribuem esse tipo de anotação em um dispositivo, eles não podem adicionar mais valores à lista.
 
-Quando outros estão atribuindo esse tipo de anotação em um dispositivo, eles não podem adicionar mais valores à lista. * Uma lista drop-down flexível
+** Uma lista suspensa flexível
++
+Se você selecionar a opção Adicionar novos valores dinamicamente ao criar esta lista, quando outros estiverem atribuindo este tipo de anotação em um dispositivo, eles poderão adicionar mais valores à lista.
 
-Se você selecionar a opção Adicionar novos valores em tempo real ao criar esta lista, quando outros estiverem atribuindo esse tipo de anotação em um dispositivo, eles poderão adicionar mais valores à lista.
 
-Number (número): Cria um campo onde o utilizador que atribui a anotação pode introduzir um número. Por exemplo, se o tipo de anotação for "Floor" (Piso), o utilizador pode selecionar o valor Type (tipo de valor) de "Number" (número) e introduzir o número do piso.
 
-Texto: Cria um campo que permite texto de forma livre. Por exemplo, pode introduzir "Idioma" como tipo de anotação, selecionar "texto" como tipo de valor e introduzir um idioma como valor.
+* Number (número): Cria um campo onde o utilizador que atribui a anotação pode introduzir um número. Por exemplo, se o tipo de anotação for "Floor" (Piso), o utilizador pode selecionar o valor Type (tipo de valor) de "Number" (número) e introduzir o número do piso.
+* Texto: Cria um campo que permite texto de forma livre. Por exemplo, pode introduzir "Idioma" como tipo de anotação, selecionar "texto" como tipo de valor e introduzir um idioma como valor.
+
 
 
 NOTE: Depois de definir o tipo e guardar as alterações, não pode alterar o tipo da anotação. Se você precisar alterar o tipo, você terá que excluir a anotação e criar uma nova.
@@ -138,6 +140,15 @@ Por exemplo, suponha que você esteja em uma página de ativo e o ativo tenha a 
 +
 As suas anotações aparecem na lista na página Anotações.
 
+
+
+.Uma nota sobre anotações booleanas
+Ao filtrar uma anotação booleana, você poderá ver os seguintes valores para filtrar:
+
+* *Qualquer*: Isso retornará _todos_ os resultados, incluindo resultados definidos como "Sim", "Não" ou não definidos.
+* *Sim*: Retorna somente resultados "Sim".  Observe que DII mostra "Sim" como uma marca de seleção na maioria das tabelas.  Os valores podem ser definidos como "Verdadeiro", "Ligado", etc.; o DII trata todos eles como "Sim".
+* *Não*: Retorna somente resultados "Não".  Observe que DII mostra "Não" como um "X" na maioria das tabelas.  Os valores podem ser definidos como "Falso", "Desligado", etc.; o DII trata todos eles como "Não".
+* *Nenhum*: Retorna somente resultados onde a anotação não foi definida.  Também chamados de valores "nulos".
 
 
 .Depois de terminar

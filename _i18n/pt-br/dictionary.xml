@@ -9313,7 +9313,6 @@
   <block id="3937c19963e89baafdbfa5c84162007d" category="cell">Pode ser usado para definir diferentes níveis de serviço em seu ambiente. As camadas podem definir o tipo de nível, como a velocidade necessária (por exemplo, ouro ou prata). Esse recurso está disponível somente em volumes internos, qtrees, matrizes de armazenamento, pools de armazenamento e volumes.</block>
   <block id="ada9af7e09b3cd313d5b59cd63288dc4" category="cell">Gravidade da violação</block>
   <block id="34c0c2c5a3a24bf63af1919806d5cc0d" category="cell">Classificação (por exemplo, maior) de uma violação (por exemplo, portas de host ausentes ou redundância ausente), em uma hierarquia de maior a menor importância.</block>
-  <block id="b87860ab0dc061b503ef8df718421f44" category="admonition">Alias, Data Center, Hot, Service Level, Sunset, Switch Level, Tier, and violation severity são anotações no nível do sistema, que você não pode excluir ou renomear; você pode alterar apenas os valores atribuídos.</block>
   <block id="5f1e3307a64cd09f6f6b66948ee50fa2" category="section-title">Criar anotações personalizadas</block>
   <block id="adc16f9bee699a3b015a38321d0c9cee" category="paragraph">Usando anotações, você pode adicionar dados personalizados específicos de negócios que correspondem às necessidades da sua empresa aos ativos. Embora o Data Infrastructure Insights forneça um conjunto de anotações padrão, você pode descobrir que deseja exibir dados de outras maneiras. Os dados em anotações personalizadas complementam os dados do dispositivo já coletados, como fabricante de armazenamento, volumes de número e estatísticas de desempenho. Os dados que você adiciona usando anotações não são descobertos pelo Data Infrastructure Insights.</block>
   <block id="84ec1a20b4e3f52996fa59ae944a6700" category="list-text">No menu Data Infrastructure Insights, clique em *Manage &gt; Annotations*.</block>
@@ -11990,9 +11989,6 @@
   <block id="c71b503670f2867f513635832d1599c3" category="paragraph"><block ref="c71b503670f2867f513635832d1599c3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d2b98171b3e920dab4bb3e92ccf4e89a" category="paragraph"><block ref="d2b98171b3e920dab4bb3e92ccf4e89a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="feacd3cef81abfcdbf59bda9ba5b97fd" category="paragraph"><block ref="feacd3cef81abfcdbf59bda9ba5b97fd" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="24b75506ade423135a0ebfd6a8ab8fa4" category="paragraph">Boolean: Cria uma lista suspensa com as opções de sim e não. Por exemplo, a anotação "Direct Attached" é booleana. Data: Isso cria um campo que contém uma data. Por exemplo, se a anotação for uma data, selecione esta. Lista: Cria uma das seguintes opções: * Uma lista fixa suspensa</block>
-  <block id="3eb86d134a8e7d548d1298e1aa9a12d5" category="paragraph">Quando outros estão atribuindo esse tipo de anotação em um dispositivo, eles não podem adicionar mais valores à lista. * Uma lista drop-down flexível</block>
-  <block id="d8f872f26b52cf9aec4a137dbe0a8c26" category="paragraph">Se você selecionar a opção Adicionar novos valores em tempo real ao criar esta lista, quando outros estiverem atribuindo esse tipo de anotação em um dispositivo, eles poderão adicionar mais valores à lista.</block>
   <block id="d41b70ca456515e9579f88a5bc4b81f5" category="paragraph">Number (número): Cria um campo onde o utilizador que atribui a anotação pode introduzir um número. Por exemplo, se o tipo de anotação for "Floor" (Piso), o utilizador pode selecionar o valor Type (tipo de valor) de "Number" (número) e introduzir o número do piso.</block>
   <block id="9dc3b5c01c2c832a96e1c6c19e498029" category="paragraph">Texto: Cria um campo que permite texto de forma livre. Por exemplo, pode introduzir "Idioma" como tipo de anotação, selecionar "texto" como tipo de valor e introduzir um idioma como valor.</block>
   <block id="bf446d389b04278c2780f587bb4b6e54" category="paragraph">No caso de um erro, você pode clicar em _mais detalhes_ na coluna _Status_ da página coletores de dados instalados para obter detalhes sobre o erro.</block>
@@ -12737,8 +12733,6 @@
   <block id="3c86c080f12d925b5a5ec1ad14563f65" category="paragraph">Configure monitores para rastrear limites de desempenho, registrar eventos e anomalias em seus recursos de infraestrutura.  Crie alertas personalizados para métricas como latência de gravação de nó, capacidade de armazenamento ou desempenho do aplicativo e receba notificações quando tais condições forem atendidas.</block>
   <block id="7c2fe93d0a150c1ccb110c7be9ba4de5" category="inline-link-macro">Crie painéis poderosos com o NetApp (vídeo),window=ler-mais-tarde</block>
   <block id="87844637813d306b7e217695fa07af30" category="paragraph"><block ref="87844637813d306b7e217695fa07af30" category="inline-link-macro-rx"></block></block>
-  <block id="0fa83ca72fc86aac9bf3cb98f8457548" category="inline-link-macro">Anotações e regras de anotação (vídeo), janela=ler-mais-tarde</block>
-  <block id="7353b790cd233bfb4d223636cde644bc" category="paragraph"><block ref="7353b790cd233bfb4d223636cde644bc" category="inline-link-macro-rx"></block></block>
   <block id="1fdb67257568169e128ab9cf001f8475" category="inline-link-macro">Solução de problemas simplificada com VM Analyzer (vídeo), janela=ler-mais-tarde</block>
   <block id="b1cd067329cb001e27800ecd33c25fac" category="paragraph"><block ref="b1cd067329cb001e27800ecd33c25fac" category="inline-link-macro-rx"></block></block>
   <block id="e71b7decdb06d88e6cf8e034f1ca4723" category="inline-link-macro">Coletor NetApp ONTAP ASA r2 (All-SAN Array)</block>
@@ -12759,4 +12753,21 @@
   <block id="181a51adda79e935faca2d7b775d08b6" category="paragraph">Para fornecer medição consistente em relação aos direitos DII em todos os sistemas StorageGRID , independentemente da topologia e configuração do hardware subjacente, o Data Infrastructure Insights usa a capacidade total disponível (storagegrid_storage_utilization_total_space_bytes), em vez da capacidade RAW com base no layout do disco físico.</block>
   <block id="57c5326214c52d2a92dd11ca997a6719" category="paragraph">Para clientes que usam o modelo de licenciamento baseado em capacidade, o StorageGRID é medido como armazenamento de “objeto”.</block>
   <block id="c865955193b52e756a8fdaf662399f0d" category="paragraph">Para clientes que usam o modelo de licenciamento legado (MU), o StorageGRID é medido como armazenamento secundário, a uma taxa de 40 TiB para 1 MU.</block>
+  <block id="24c8b6cd775a9f5db48def0a8d60b2de" category="section-title">Filtragem de valores booleanos</block>
+  <block id="e21bd2c5e8c9a18f8a46d4982abc7d19" category="paragraph">Ao filtrar por um valor booleano, você poderá ter as seguintes opções para filtrar:</block>
+  <block id="2c60a6bf607f2604b1c9ea225c01fe5f" category="list-text">*Qualquer*: Isso retornará _todos_ os resultados, incluindo resultados definidos como "Sim", "Não" ou não definidos.</block>
+  <block id="b450055879101bef9c44908d590708e3" category="list-text">*Sim*: Retorna somente resultados "Sim".  Observe que DII mostra "Sim" como uma marca de seleção na maioria das tabelas.  Os valores podem ser definidos como "Verdadeiro", "Ligado", etc.; o DII trata todos eles como "Sim".</block>
+  <block id="2d8a6f63945d37accd14439bc5c628c0" category="list-text">*Não*: Retorna somente resultados "Não".  Observe que DII mostra "Não" como um "X" na maioria das tabelas.  Os valores podem ser definidos como "Falso", "Desligado", etc.; o DII trata todos eles como "Não".</block>
+  <block id="76ea59ab07652499ae39b947c6c24151" category="list-text">*Nenhum*: Retorna somente resultados em que o valor não foi definido.  Também chamados de valores "nulos".</block>
+  <block id="5f5a92bd58c38457567a8f638d79bbae" category="admonition">Alias, Data Center, Hot, Service Level, Sunset, Switch Level, Tier e Violation Severity são anotações no nível do sistema, que você não pode excluir ou renomear; você pode alterar apenas os valores atribuídos a eles.</block>
+  <block id="ad1e3d1ed847d48da9abca38044ca432" category="list-text">Booleano: Cria uma lista suspensa com as opções sim e não. Por exemplo, a anotação "Anexado Diretamente" é booleana.</block>
+  <block id="3b7bd4f31319fccc3c2226989f30f2ae" category="list-text">Data: Isso cria um campo que contém uma data.  Por exemplo, se a anotação for uma data, selecione isso.</block>
+  <block id="543916d2ebe7d28ba5b4e5adc23f1e1c" category="list-text">Lista: Cria um dos seguintes:</block>
+  <block id="909b59bf6aecf275b91dbb2cf2ec5521" category="list-text">Uma lista suspensa fixa</block>
+  <block id="ef957d205d8a4826f9552e63f41f17fe" category="paragraph">Quando outros atribuem esse tipo de anotação em um dispositivo, eles não podem adicionar mais valores à lista.</block>
+  <block id="1658a49ef0d858de0e9ee69c3a5e10b4" category="list-text">Uma lista suspensa flexível</block>
+  <block id="6c97cf7a205eed7477c9cb071a14d09e" category="paragraph">Se você selecionar a opção Adicionar novos valores dinamicamente ao criar esta lista, quando outros estiverem atribuindo este tipo de anotação em um dispositivo, eles poderão adicionar mais valores à lista.</block>
+  <block id="c17dfb3f3f4ae3af21c5846ff8667831" category="paragraph-title">Uma nota sobre anotações booleanas</block>
+  <block id="86268b3f5a0b59ea7ad7bf21fde99e9d" category="paragraph">Ao filtrar uma anotação booleana, você poderá ver os seguintes valores para filtrar:</block>
+  <block id="5d7833cba1c63365c4f78e55d7a8df24" category="list-text">*Nenhum*: Retorna somente resultados onde a anotação não foi definida.  Também chamados de valores "nulos".</block>
 </blocks>
