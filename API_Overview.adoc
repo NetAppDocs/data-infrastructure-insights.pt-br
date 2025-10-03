@@ -261,18 +261,11 @@ Observe que esses comandos estão usando o namespace padrão "NetApp-monitoring"
 
 Observação: Se você tiver o operador de monitoramento mais recente do NetApp Kubernetes instalado e usar um token de acesso à API renovável, os tokens expirados serão automaticamente substituídos por tokens de acesso à API novos/atualizados. Não é necessário executar as etapas manuais listadas abaixo.
 
-* Edite o Operador de Monitoramento do Kubernetes do NetApp.
-+
- kubectl -n netapp-monitoring edit agent netapp-ci-agent-monitoring-netapp
-* Modifique o valor _spec.output-sink.api-key_, substituindo o antigo token de API pelo novo token de API.
-+
-....
-spec:
-…
-  output-sink:
-  - api-key:<NEW_API_TOKEN>
-....
+* Crie um novo token de API.
+* Siga os passos paralink:task_config_telegraf_agent_k8s.html#manual-upgrades["Atualização manual"] , selecionando o novo token de API.
 
+
+Observação: os clientes que gerenciam seu NetApp Kubernetes Monitoring Operator com uma ferramenta de gerenciamento de configuração, como o Kustomize, podem seguir as mesmas etapas para gerar e baixar um conjunto atualizado de YAMLs para enviar ao seu repositório.
 
 
 
