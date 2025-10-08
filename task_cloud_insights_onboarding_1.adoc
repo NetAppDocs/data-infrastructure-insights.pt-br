@@ -14,32 +14,30 @@ keywords: onboarding, new user
 
 
 [role="lead"]
-Antes de começar a trabalhar com o Insights de infraestrutura de dados, você deve se inscrever no portal *NetApp BlueXP *. Se você já tiver um login no NetApp BlueXP , poderá iniciar uma avaliação gratuita do Insights de infraestrutura de dados com algumas etapas rápidas.
+Antes de começar a trabalhar com o Data Infrastructure Insights, você deve se inscrever no portal * NetApp Console*.  Se você já tiver um login no NetApp Console, poderá iniciar um teste gratuito do Data Infrastructure Insights com algumas etapas rápidas.
 
 
 
-== Criando sua conta do NetApp BlueXP
+== Criando sua conta do NetApp Console
 
-Para começar a usar os serviços de nuvem da NetApp, link:https://bluexp.netapp.com/["*NetApp BlueXP *"^]acesse e clique em *Get Started*.
+Para começar a usar os serviços de nuvem da NetApp, acesselink:https://console.netapp.com/["* Console NetApp *"^] e clique em *Começar*.
 
 * Se ainda não se inscreveu, selecione *Inscrever-se*
 * Introduza um endereço de correio eletrónico comercial válido e escolha uma palavra-passe.
 * Introduza o nome da sua empresa e o seu nome completo.
 * Aceite os termos e condições e selecione *continuar*.
-* BlueXP  irá guiá-lo através de começar.
+* O console orientará você sobre como começar.
 
 
 
 
-=== E se eu já tiver um login no NetApp BlueXP ?
+=== E se eu já tiver um login do NetApp Console?
 
-Depois de ter uma conta no NetApp BlueXP , basta escolher *entrar* na link:https://bluexp.netapp.com/["*NetApp BlueXP *"^] página do portal.
+Depois de ter uma conta do NetApp Console, basta escolher *Fazer login* nolink:https://console.netapp.com/["* Console NetApp *"^] página do portal.
 
 Introduza o seu endereço de e-mail e palavra-passe. Você será levado para a página de ofertas de nuvem da NetApp.
 
-Selecione Data Infrastructure Insights.
-
-image:BlueXP_CloudInsights.png["Avaliação gratuita do Data Infrastructure Insights no BlueXP"]
+Navegue até *Análise e Controle > Observabilidade* para saber mais sobre o Data Infrastructure Insights e/ou solicitar uma demonstração.
 
 
 
@@ -49,7 +47,7 @@ Se esta for a primeira vez que fizer login no Data Infrastructure Insights, na o
 
 image:trial_region_selector.png["Selecionar a região na qual hospedar seu locatário do Data Infrastructure Insights"]
 
-Quando a criação do seu locatário estiver concluída, você poderá usar suas credenciais do BlueXP  para fazer login e iniciar seu teste gratuito de 30 dias do Insights de infraestrutura de dados. Durante esse teste, você pode explorar os recursos que o Data Infrastructure Insights tem a oferecer.
+Após a conclusão da criação do seu locatário, use suas credenciais do Console para efetuar login e iniciar seu teste gratuito de 30 dias do Data Infrastructure Insights.  Durante este teste, você pode explorar os recursos que o Data Infrastructure Insights tem a oferecer.
 
 Durante a avaliação gratuita, você pode link:concept_subscribing_to_cloud_insights.html["inicie a sua subscrição"] acessar o Data Infrastructure Insights a qualquer momento. Ao assinar, você pode usar os recursos do Data Infrastructure Insights com base na assinatura atual.
 
@@ -57,15 +55,15 @@ Durante a avaliação gratuita, você pode link:concept_subscribing_to_cloud_ins
 
 == Inicie sessão e vá
 
-Uma vez que seu locatário tenha sido criado, você pode simplesmente fazer login no Portal do NetApp BlueXP  e clicar em *ir para informações de infraestrutura de dados*. Você será levado diretamente ao seu locatário do Data Infrastructure Insights.
+Depois que seu locatário for criado, a qualquer momento você pode simplesmente fazer login no NetApp Console Portal e navegar até olink:https://services.cloud.netapp.com["Serviços em Nuvem"] página e selecione *Ir para Data Infrastructure Insights*.
 
 Você também pode abrir um navegador diretamente no URL do locatário do Data Infrastructure Insights, por exemplo:
 
  \https://<tenant-prefix>.c01.cloudinsights.netapp.com/
-O URL também será incluído no e-mail de convite de cada usuário para acesso simples e marcação de livros. Se o usuário ainda não estiver conetado ao BlueXP , ele será solicitado a fazer login.
+O URL também será incluído no e-mail de convite de cada usuário para facilitar o acesso e a marcação.  Se o usuário ainda não estiver conectado ao Console, ele será solicitado a fazer login.
 
 
-NOTE: Os novos usuários ainda precisam se inscrever para acessar o BlueXP  antes que possam acessar o URL do locatário.
+NOTE: Novos usuários ainda precisam se inscrever para ter acesso ao Console antes de poderem acessar o URL do locatário.
 
 Na primeira vez que você fizer login em um novo locatário, você será orientado através da configuração até link:task_getting_started_with_cloud_insights.html["*comece a recolher dados*"].
 
@@ -73,13 +71,13 @@ Na primeira vez que você fizer login em um novo locatário, você será orienta
 
 == Terminar sessão
 
-Para terminar sessão no Data Infrastructure Insights, clique no seu *Nome de utilizador* e selecione *Terminar sessão*. Você será levado de volta para a tela de login do BlueXP .
+Para sair do Data Infrastructure Insights, clique no seu *Nome de usuário* e selecione *Sair*.  Você será levado de volta para a tela de login do Console.
 
 
-NOTE: Fazer logout do Insights da infraestrutura de dados faz o logout do BlueXP . Você também será desconetado de outros serviços da NetApp Cloud que usam o login do BlueXP .
+NOTE: Sair do Data Infrastructure Insights desconecta você do Console.  Você também será desconectado de outros serviços do NetApp Cloud que usam o login do Console.
 
 
 
 === Tempo limite de inatividade
 
-Por padrão, o BlueXP  fará logout de um usuário se não houver atividade por seis horas (360 minutos). Independentemente da atividade, os usuários serão desconetados após sete dias.
+Por padrão, o Console desconectará o usuário se não houver atividade por seis horas (360 minutos).  Independentemente da atividade, os usuários serão desconectados após sete dias.

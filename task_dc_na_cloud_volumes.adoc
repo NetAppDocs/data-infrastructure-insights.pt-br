@@ -7,6 +7,10 @@ keywords: data collector, NetApp, Cloud, AWS
 = NetApp Cloud volumes Services para coletor de dados da AWS
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -51,6 +55,6 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 | Problema: | Tente isto: 
 
 
-| Recebi um erro semelhante a este: 'Falha ao executar solicitação: Conetar ao endpoint da região AWS>:8080 [ endpoint da região AWS>/IP do endpoint da região AWS>] falhou: Conetar o tempo limite: OBTER endpoint da região do \https://<AWS FQDN>:8080/v1/Storage/IPRanges HTTP/1,1' | O link:task_configure_acquisition_unit.html#proxy-configuration-2["proxy"] usado pelo Data Infrastructure Insights para se comunicar com a Unidade de aquisição não se comunica entre o Data Infrastructure Insights e o próprio Data Collector. Aqui estão algumas coisas que você pode tentar: Certifique-se de que a unidade de aquisição é capaz de resolver o fqdn e alcançar a porta necessária. Confirme se um proxy não é necessário para alcançar o ponto final especificado na mensagem de erro. O curl pode ser usado para testar a comunicação entre a unidade de aquisição e o endpoint. Certifique-se de que você está *não* usando um Proxy para este teste. Curl -s -H accept:Application/json -H "content-type: Application/json" -H api-key: Chave do cliente usada nas credenciais do coletor de dados -H segredo-chave: Chave secreta do cliente usada nas credenciais do coletor de dados> -X GET \https://<AWS endpoint regional>:8080/v1/Storage/IPRanges Veja isso link:https://kb.netapp.com/Cloud/BlueXP/DII/Data_Infrastructure_Insights_fails_discovery_for_Cloud_Volumes_Service_for_AWS["artigo da KB do NetApp"]. 
+| Recebi um erro semelhante a este: 'Falha ao executar solicitação: Conetar ao endpoint da região AWS>:8080 [ endpoint da região AWS>/IP do endpoint da região AWS>] falhou: Conetar o tempo limite: OBTER endpoint da região do \https://<AWS FQDN>:8080/v1/Storage/IPRanges HTTP/1,1' | Olink:task_configure_acquisition_unit.html#proxy-configuration-2["proxy"] usado pelo Data Infrastructure Insights para se comunicar com a Unidade de Aquisição não se comunica entre o Data Infrastructure Insights e o próprio Coletor de Dados.  Aqui estão algumas coisas que você pode tentar: Certifique-se de que a unidade de aquisição seja capaz de resolver o fqdn e alcançar a porta necessária.  Confirme se um proxy não é necessário para alcançar o ponto de extremidade especificado na mensagem de erro.  O Curl pode ser usado para testar a comunicação entre a unidade de aquisição e o ponto final.  Certifique-se de que você *não* está usando um proxy para este teste.  Exemplo: root@acquisitionunit# curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:<chave de API usada nas credenciais do coletor de dados -H secret-key:<chave secreta usada nas credenciais do coletor de dados> -X GET \https://<AWS Regional Endpoint>:8080/v1/Storage/IPRanges 
 |===
 Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].

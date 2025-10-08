@@ -16,18 +16,18 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 [role="lead"]
 Os primeiros passos do Data Infrastructure Insights são tão fáceis quanto três simples passos:
 
-. Inscreva-se para link:https://bluexp.netapp.com//["*NetApp BlueXP *"]ter acesso a todas as ofertas da NetApp na nuvem.
+. Crie uma conta emlink:https://console.netapp.com//["* Console NetApp *"] para ter acesso a todas as ofertas de nuvem da NetApp.
 . Inscreva-se para uma avaliação gratuita do Data Infrastructure Insights para explorar os recursos disponíveis. Para se inscrever para uma avaliação gratuita:
 +
 ** Vá para https://netapp.com[]
 ** Selecione *como comprar* no topo da página.
-** Selecione *solicitar avaliação*. Se você ainda não está registrado no BlueXP , digite seus detalhes e se inscreva. Caso contrário, inicie sessão.
+** Selecione *Solicitar teste*.  Se você ainda não estiver registrado no Console, insira seus dados e inscreva-se.  Caso contrário, faça login.
 ** Agende uma reunião ou aguarde que um representante entre em Contato com você sobre seu teste.
 
 
 . *Assine* o Data Infrastructure Insights para acesso contínuo e ininterrupto aos seus dados por meio de uma variedade de opções de assinatura flexíveis:
 +
-** link:https://bluexp.netapp.com/contact-cds["Vendas diretas da NetApp"]
+** link:https://console.netapp.com/contact-cds["Vendas diretas da NetApp"]
 ** Mercado AWS:
 +
 *** link:https://aws.amazon.com/marketplace/pp/prodview-axhuy7muvzfx2["Assinatura por prazo determinado"]
@@ -202,7 +202,7 @@ Clicar no link do Amazon Marketplace abre a página de assinatura da AWS https:/
 
 Depois de inserir a contagem total de unidades gerenciadas e escolher o prazo de assinatura de 12 meses ou 36 meses, clique em *Configurar sua conta* para concluir o processo de assinatura.
 
-Depois que o processo de assinatura da AWS estiver concluído, você será levado de volta ao seu ambiente Data Infrastructure Insights. Ou, se o ambiente não estiver mais ativo (por exemplo, você fez logout), você será levado para a página de login do NetApp BlueXP . Quando você entrar novamente no Data Infrastructure Insights, sua assinatura estará ativa.
+Após a conclusão do processo de assinatura da AWS, você será levado de volta ao seu ambiente do Data Infrastructure Insights .  Ou, se o ambiente não estiver mais ativo (por exemplo, se você tiver efetuado logout), você será levado para a página de login do NetAPp Console.  Quando você fizer login no Data Infrastructure Insights novamente, sua assinatura estará ativa.
 
 
 NOTE: Depois de clicar em *Configurar sua conta* na página do AWS Marketplace, você deve concluir o processo de assinatura da AWS em uma hora. Se você não o concluir dentro de uma hora, você precisará clicar em *Configurar sua conta* novamente para concluir o processo.

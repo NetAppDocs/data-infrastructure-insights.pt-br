@@ -89,9 +89,6 @@ Se você incluir uma string de filtro em aspas duplas, o Insight trata tudo entr
 Os eventos e ações auditados pelo Data Infrastructure Insights podem ser categorizados nas seguintes áreas amplas:
 
 * *Conta de usuário*: Login, logout, mudança de função, etc.
-+
-Exemplo: _Usuário *Tony Lavoie* logado a partir de *10,1.120,15*, agente de usuário *Mozilla/5,0 (Windows NT 10,0; Win64; x64) AppleWebKit/537,36 (KHTML, como Gecko) Chrome/85.0.4183.121 Safari/537,36*, método(s) de login *Início de sessão do Portal BlueXP _*
-
 * *Unidade de aquisição*: Criar, excluir, etc.
 +
 Exemplo: _Unidade de aquisição *AU-Boston-1* removida_.

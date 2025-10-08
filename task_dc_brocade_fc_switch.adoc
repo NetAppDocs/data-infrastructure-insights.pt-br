@@ -170,7 +170,7 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 | Problema: | Tente isto: 
 
 
-| A coleção de desempenho falha com "tempo limite durante o envio de solicitação SNMP". | Dependendo das variáveis de consulta e da configuração do switch, algumas consultas podem exceder o tempo limite padrão. link:https://kb.netapp.com/Cloud/BlueXP/DII/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["Saiba mais"]. 
+| A coleção de desempenho falha com "tempo limite durante o envio de solicitação SNMP". | Dependendo das variáveis de consulta e da configuração do switch, algumas consultas podem exceder o tempo limite padrão. link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["Saiba mais"] . 
 
 
 | A coleta de desempenho falha com ...Duplicatas de linha encontradas na tabela SNMP... | O DII detectou respostas SNMP incorretas. Você provavelmente está executando o FOS 8.2.3e. Atualize para a versão 8.2.3e2 ou superior. 

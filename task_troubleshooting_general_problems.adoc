@@ -25,19 +25,19 @@ Consulte também link:task_troubleshooting_linux_acquisition_unit_problems.html[
 | O Data Infrastructure Insights faz logout automaticamente a cada 6 horas | Isso se deve a cookies de terceiros desativados no navegador. Os usuários podem configurar seu navegador para habilitar todos os cookies de 3rd partes, ou usar uma lista de exceções mais restrita para apenas habilitar aqueles para o Data Infrastructure Insights. Exemplo: Abra as configurações do seu navegador Selecione a opção "permitir todos os cookies". *OR* Selecione "Bloquear cookies de terceiros" e adicione exceções para _[*.]auth0.com_ e _[*.]NetApp.com_. O Microsoft Edge segue o mesmo formato para exceções que o Chrome. No Firefox, as exceções de cookies são designadas simplesmente como _auth0.com_ e _NetApp.com_. 
 
 
-| Tenho uma conta BlueXP , mas não consigo iniciar sessão no BlueXP . | Abra um ticket do https://mysupport.netapp.com/site/help[]. Selecione a categoria "BlueXP .NetApp.com > problemas de conta/login" ou "BlueXP .NetApp.com > problemas de Federação". Estes são especificamente para problemas ou perguntas do BlueXP . Para todos os outros problemas de suporte técnico do Data Infrastructure Insights, entre em Contato link:concept_requesting_support.html["Suporte à NetApp"]com . 
+| Tenho uma conta do Console, mas não consigo fazer login. | Abra um ticket de https://mysupport.netapp.com/site/help[] .  Selecione a categoria console.netapp.com > Problemas de conta/login” ou console.netapp.com > Problemas de federação”.  Elas são específicas para problemas ou perguntas do Console.  Para todos os outros problemas de suporte técnico do Data Infrastructure Insights , entre em contatolink:concept_requesting_support.html["Suporte à NetApp"] . 
 
 
-| Fui convidado para o Data Infrastructure Insights, mas recebo uma mensagem "não autorizada". | Verifique se você se inscreveu em uma conta do BlueXP  ou se sua organização usa login SSO com o BlueXP . Verifique se o endereço de e-mail do seu perfil do BlueXP  corresponde ao endereço de e-mail exibido no e-mail de boas-vindas do Insights de infraestrutura de dados. Se o e-mail não corresponder, solicite um novo convite com o endereço de e-mail correto. 
+| Fui convidado para o Data Infrastructure Insights, mas recebo uma mensagem "não autorizada". | Verifique se você se inscreveu em uma conta do Console ou se sua organização usa login SSO com o Console.  Verifique se o endereço de e-mail do seu perfil do Console corresponde ao endereço de e-mail mostrado no e-mail de boas-vindas do Data Infrastructure Insights .  Se o e-mail não corresponder, solicite um novo convite com o endereço de e-mail correto. 
 
 
-| Eu fiz logout do BlueXP  e fui desconetado automaticamente do Insights de infraestrutura de dados. | O logon único (SSO) em todos os serviços de nuvem da NetApp faz logout de todas as sessões do Insights de infraestrutura de dados. Se você tiver acesso a várias contas do Data Infrastructure Insights, fazer logout de qualquer uma das sessões ativas. Inicie sessão novamente para aceder à sua conta. 
+| Saí do Console e fui desconectado automaticamente do Data Infrastructure Insights. | O logon único (SSO) em todos os serviços de nuvem da NetApp faz logout de todas as sessões do Insights de infraestrutura de dados. Se você tiver acesso a várias contas do Data Infrastructure Insights, fazer logout de qualquer uma das sessões ativas. Inicie sessão novamente para aceder à sua conta. 
 
 
-| Eu fui desconetado automaticamente após vários dias. | As contas de nuvem do NetApp exigem nova autenticação a cada poucos dias (a configuração atual do BlueXP  é de 7 dias). Inicie sessão novamente para aceder à sua conta. 
+| Eu fui desconetado automaticamente após vários dias. | As contas do NetApp Cloud exigem reautenticação a cada poucos dias (a configuração atual do Console é de 7 dias).  Efetue login novamente para acessar sua conta. 
 
 
-| Recebo uma mensagem de erro "já não está autorizado a iniciar sessão". | Entre em Contato com o administrador da conta para verificar o acesso ao Data Infrastructure Insights. Verifique se o endereço de e-mail do seu perfil do BlueXP  corresponde ao endereço de e-mail exibido no e-mail de boas-vindas do Insights de infraestrutura de dados 
+| Recebo uma mensagem de erro "já não está autorizado a iniciar sessão". | Entre em contato com o administrador da sua conta para verificar o acesso ao Data Infrastructure Insights.  Verifique se o endereço de e-mail do seu perfil do Console corresponde ao endereço de e-mail mostrado no e-mail de boas-vindas do Data Infrastructure Insights 
 
 
 | Outros erros de login | Experimente o modo de navegação anônima no Chrome ou limpe o histórico do navegador, os cookies e o cache. Tente com um perfil de navegador diferente (ou seja, Chrome - adicionar pessoa). 
@@ -64,7 +64,7 @@ Consulte também link:task_troubleshooting_linux_acquisition_unit_problems.html[
 
 == Recursos
 
-Dicas adicionais de solução de problemas podem ser encontradas no link:https://kb.netapp.com/Cloud/BlueXP/DII["Base de conhecimento da NetApp"] (login de suporte necessário).
+Dicas adicionais de solução de problemas podem ser encontradas emlink:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs["Base de conhecimento da NetApp"] (é necessário fazer login no suporte).
 
 Informações adicionais de suporte podem ser encontradas na página Insights de infraestrutura de dadoslink:concept_requesting_support.html["Suporte"].
 

@@ -86,7 +86,7 @@ A maneira mais simples de fazer isso é especificar a configuração curinga em 
 
 NOTE: O uso de um asterisco (*) para curinga é comum, mas sua configuração de proxy/firewall pode usar um formato diferente. Verifique com a documentação do proxy para garantir a especificação correta do curinga em seu ambiente.
 
-Mais informações sobre a configuração do proxy podem ser encontradas no NetApp link:https://kb.netapp.com/Cloud/BlueXP/DII/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit["Knowledgbase"].
+Mais informações sobre a configuração do proxy podem ser encontradas no NetApplink:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit["Knowledgbase"] .
 
 
 
@@ -143,7 +143,7 @@ A maneira mais simples de fazer isso é especificar a configuração curinga em 
 
 NOTE: O uso de um asterisco (*) para curinga é comum, mas sua configuração de proxy/firewall pode usar um formato diferente. Verifique com a documentação do proxy para garantir a especificação correta do curinga em seu ambiente.
 
-Mais informações sobre a configuração do proxy podem ser encontradas no NetApp link:https://kb.netapp.com/Cloud/BlueXP/DII/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit["Knowledgbase"].
+Mais informações sobre a configuração do proxy podem ser encontradas no NetApplink:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit["Knowledgbase"] .
 
 
 

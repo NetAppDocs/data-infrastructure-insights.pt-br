@@ -7,6 +7,10 @@ summary: Insights dão uma visão de como os recursos afetam outros recursos em 
 = Insights: Recupere o storage frio da ONTAP
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

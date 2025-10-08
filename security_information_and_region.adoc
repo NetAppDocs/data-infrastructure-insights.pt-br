@@ -40,7 +40,7 @@ Esses são dados gerados como resultado do NetApp que fornece o Serviço de dado
 
 * Dados de acesso do usuário
 +
-Informações de autenticação e acesso que permitem que o NetApp BlueXP  se comunique com sites regionais de informações de infraestrutura de dados, incluindo dados relacionados à autorização do usuário.
+Informações de autenticação e acesso que permitem que o NetApp Console se comunique com sites regionais do Data Infrastructure Insights , incluindo dados relacionados à autorização do usuário.
 
 * Dados do diretório do usuário de segurança do workload de armazenamento
 +
@@ -76,7 +76,7 @@ As seguintes informações são armazenadas na região do host:
 As informações a seguir residem nos Estados Unidos, independentemente da região que hospeda seu ambiente Data Infrastructure Insights:
 
 * Informações do site do ambiente (às vezes chamado de "locatário"), como o proprietário do site/conta.
-* Informações que permitem que o NetApp BlueXP  se comunique com sites regionais de informações de infraestrutura de dados, incluindo qualquer coisa a ver com autorização do usuário.
+* Informações que permitem que o NetApp Console se comunique com sites regionais do Data Infrastructure Insights , incluindo qualquer coisa relacionada à autorização do usuário.
 * Informações relacionadas à relação entre o usuário do Data Infrastructure Insights e o locatário.
 
 
