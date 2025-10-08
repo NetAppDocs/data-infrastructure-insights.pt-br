@@ -14,9 +14,7 @@ keywords: topology, analyze, analysis, map
 
 
 [role="lead"]
-A SAN desempenha um papel crucial no tratamento de workloads vitais, mas sua complexidade pode resultar em interrupções significativas e interrupções dos clientes. Com o *SAN Analyzer* da DII, o gerenciamento de SAN torna-se mais simples e eficiente. Essa poderosa ferramenta oferece visibilidade completa, mapeando dependências de VM/host para rede, LUN e armazenamento.
-
-Ao fornecer um mapa de topologia interativo, o SAN Analyzer permite identificar problemas, entender alterações e melhorar a compreensão do fluxo de dados. Otimize o gerenciamento de SAN em AMBIENTES DE TI complexos com o SAN Analyzer e aumente a visibilidade dos workloads de bloco.
+A SAN desempenha um papel crucial no tratamento de cargas de trabalho vitais, mas sua complexidade pode resultar em interrupções significativas e interrupções para o cliente.  Com o *SAN Analyzer* da DII, o gerenciamento de SAN se torna mais simples e eficiente.  Esta ferramenta poderosa oferece visibilidade de ponta a ponta, mapeando dependências de VM/Host para rede, LUN e armazenamento.  Ao fornecer um mapa de topologia interativo, o SAN Analyzer permite que você identifique problemas, entenda mudanças e melhore a compreensão do fluxo de dados.  Simplifique o gerenciamento de SAN em ambientes de TI complexos com o SAN Analyzer e aumente sua visibilidade das cargas de trabalho em bloco.
 
 image:san_analyzer_example_with_panel.png["Mapa de topologia de um sistema de storage do SAN Analyzer"]
 
@@ -44,3 +42,17 @@ image:san_analyzer_protocols.png["Protocolos do SAN Analyzer"]
 Se o seu ambiente incluir dispositivos iSCSI, passar o Mouse sobre o objeto _iSCSI_ destaca as conexões relacionadas a esses dispositivos iSCSI relevantes.
 
 image:san_analyzer_iscsi_traffic.png["Tráfego iSCSI realçado"]
+
+
+
+== Dicas para solução de problemas
+
+Algumas coisas que você pode tentar se tiver problemas:
+
+[cols="2*"]
+|===
+| *Problema:* | *Tente isto:* 
+
+
+| Vejo <0, =0 ou >0 na legenda para métricas como _trafficUtilization_ ou _trafficRate_. | Isso pode acontecer em casos muito raros, quando os valores métricos estão abaixo de duas casas decimais, como 0,000123.  Expandir a janela de tempo pode ajudar a analisar a métrica de forma mais eficaz. 
+|===
