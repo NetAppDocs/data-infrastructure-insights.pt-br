@@ -4,48 +4,48 @@ permalink: task_dc_na_solidfire.html
 summary: Configurar o coletor de dados NetApp SolidFire 
 keywords: data collector, queries, create 
 ---
-= Coletor de dados em array all-flash NetApp SolidFire
+= Coletor de dados NetApp SolidFire All-Flash Array
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O coletor de dados de array all-flash NetApp SolidFire dá suporte à coleta de inventário e desempenho de configurações de SolidFire iSCSI e Fibre Channel.
+O coletor de dados NetApp SolidFire All-Flash Array oferece suporte à coleta de inventário e desempenho de configurações iSCSI e Fibre Channel SolidFire .
 
-O coletor de dados do SolidFire utiliza a API REST do SolidFire. A unidade de aquisição em que reside o coletor de dados precisa ser capaz de iniciar conexões HTTPS com a porta TCP 443 no endereço IP de gerenciamento de cluster SolidFire. O coletor de dados precisa de credenciais capazes de fazer consultas de API REST no cluster SolidFire.
+O coletor de dados SolidFire utiliza a API REST do SolidFire .  A unidade de aquisição onde o coletor de dados reside precisa ser capaz de iniciar conexões HTTPS com a porta TCP 443 no endereço IP de gerenciamento do cluster SolidFire .  O coletor de dados precisa de credenciais capazes de fazer consultas REST API no cluster SolidFire .
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados de array all-flash NetApp SolidFire. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do NetApp SolidFire All-Flash Array.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| Condução | Disco 
+| Dirigir | Disco 
 
 
-| Cluster | Armazenamento 
+| Conjunto | Armazenar 
 
 
-| Nó | Nó de storage 
+| Nó | Nó de armazenamento 
 
 
 | Volume | Volume 
 
 
-| Porta Fibre Channel | Porta 
+| Porta de canal de fibra | Porta 
 
 
-| Grupo Acesso volume, atribuição LUN | Mapa de volume 
+| Grupo de acesso de volume, atribuição de LUN | Mapa de Volume 
 
 
-| Sessão iSCSI | Máscara de volume 
+| Sessão iSCSI | Máscara de Volume 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
@@ -53,7 +53,7 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 
 A seguir estão os requisitos para configurar este coletor de dados:
 
-* Endereço IP virtual de gerenciamento
+* Gerenciamento de Endereço IP Virtual
 * Nome de usuário e credenciais somente leitura
 * Porta 443
 
@@ -67,13 +67,13 @@ A seguir estão os requisitos para configurar este coletor de dados:
 | Campo | Descrição 
 
 
-| Endereço IP virtual de gerenciamento (MVIP) | Endereço IP virtual de gerenciamento do cluster do SolidFire 
+| Endereço IP Virtual de Gerenciamento (MVIP) | Gerenciamento de endereço IP virtual do SolidFire Cluster 
 
 
-| Nome de utilizador | Nome utilizado para iniciar sessão no cluster SolidFire 
+| Nome de usuário | Nome usado para efetuar login no cluster SolidFire 
 
 
-| Palavra-passe | Palavra-passe utilizada para iniciar sessão no cluster SolidFire 
+| Senha | Senha usada para efetuar login no cluster SolidFire 
 |===
 
 
@@ -84,30 +84,30 @@ A seguir estão os requisitos para configurar este coletor de dados:
 | Campo | Descrição 
 
 
-| Tipo de ligação | Escolha o tipo de conexão 
+| Tipo de conexão | Escolha o tipo de conexão 
 
 
-| Porta de comunicação | Porta usada para API NetApp 
+| Porta de comunicação | Porta usada para a API NetApp 
 
 
-| Intervalo de enquete de inventário (min) | O padrão é de 20 minutos 
+| Intervalo de pesquisa de inventário (min) | O padrão é 20 minutos 
 
 
-| Intervalo de enquete de desempenho (seg) | O padrão é de 300 segundos 
+| Intervalo de pesquisa de desempenho (seg) | O padrão é 300 segundos 
 |===
 
 
 == Solução de problemas
 
-Quando o SolidFire relata um erro, ele é exibido no Insights de infraestrutura de dados da seguinte forma:
+Quando o SolidFire relata um erro, ele é exibido no Data Infrastructure Insights da seguinte forma:
 
-_Uma mensagem de erro foi recebida de um dispositivo SolidFire ao tentar recuperar dados. A chamada foi <method> (<parameterString> ). A mensagem de erro do dispositivo foi (verifique o manual do dispositivo): <message>_
+_Uma mensagem de erro foi recebida de um dispositivo SolidFire ao tentar recuperar dados.  A chamada foi <método> (<parameterString> ).  A mensagem de erro do dispositivo foi (consulte o manual do dispositivo): <mensagem>_
 
-Local:
+Onde:
 
-* O <method> é um método HTTP, como GET ou PUT.
-* O <parameterString> é uma lista separada por vírgulas de parâmetros que foram incluídos na CHAMADA REST.
-* O <message> é o que o dispositivo retornou como a mensagem de erro.
+* O <método> é um método HTTP, como GET ou PUT.
+* <parameterString> é uma lista separada por vírgulas de parâmetros que foram incluídos na chamada REST.
+* A <mensagem> é o que o dispositivo retornou como mensagem de erro.
 
 
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

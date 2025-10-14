@@ -2,30 +2,30 @@
 sidebar: sidebar 
 permalink: task_config_user_dir_connect_ldap.html 
 keywords: collector, configure, LDAP, Active Directory, cloud secure 
-summary: Configurando o Workload Security LDAP User Directory Collector 
+summary: Configurando o Coletor de Diretório de Usuário LDAP de Segurança de Carga de Trabalho 
 ---
-= Configurando um LDAP Directory Server Collector
+= Configurando um coletor de servidor de diretório LDAP
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Você configura o Workload Security para coletar atributos de usuário de servidores LDAP Directory.
+Configure o Workload Security para coletar atributos de usuário de servidores de diretório LDAP.
 
 .Antes de começar
-* Você deve ser um Administrador do Data Infrastructure Insights ou um proprietário de conta para executar esta tarefa.
-* Você deve ter o endereço IP do servidor que hospeda o servidor LDAP Directory.
-* Um agente deve ser configurado antes de configurar um conetor de diretório LDAP.
+* Você deve ser um administrador ou proprietário da conta do Data Infrastructure Insights para executar esta tarefa.
+* Você deve ter o endereço IP do servidor que hospeda o servidor do diretório LDAP.
+* Um agente deve ser configurado antes de você configurar um conector de diretório LDAP.
 
 
-.Passos para configurar um Coletor de diretório de usuários
-. No menu Workload Security, clique em: *Collectors > User Directory Collectors > User Directory Collector* e selecione *LDAP Directory Server*
+.Etapas para configurar um coletor de diretório de usuário
+. No menu Segurança de Carga de Trabalho, clique em: *Coletores > Coletores de Diretório de Usuário > + Coletor de Diretório de Usuário* e selecione *Servidor de Diretório LDAP*
 +
-O sistema exibe a tela Adicionar diretório do usuário.
+O sistema exibe a tela Adicionar Diretório de Usuário.
 
 
 
-Configure o Coletor de diretório de usuários inserindo os dados necessários nas seguintes tabelas:
+Configure o Coletor de Diretório do Usuário inserindo os dados necessários nas seguintes tabelas:
 
 [cols="2*"]
 |===
@@ -34,53 +34,36 @@ Configure o Coletor de diretório de usuários inserindo os dados necessários n
 | Nome | Descrição 
 
 
-| Nome | Nome exclusivo para o diretório do usuário. Por exemplo _GlobalLDAPCollector_ 
+| Nome | Nome exclusivo para o diretório do usuário.  Por exemplo _GlobalLDAPCollector_ 
 
 
 | Agente | Selecione um agente configurado na lista 
 
 
-| Nome de domínio/IP do servidor | Endereço IP ou nome de domínio totalmente qualificado (FQDN) do servidor que hospeda o servidor de diretório LDAP 
+| IP do servidor/nome de domínio | Endereço IP ou Nome de Domínio Totalmente Qualificado (FQDN) do servidor que hospeda o Servidor de Diretório LDAP 
 
 
-| Base de pesquisa | Base de pesquisa do servidor LDAP a base de pesquisa permite ambos os seguintes formatos: _X.y.z_> nome de domínio direto como você o tem no SVM. [Exemplo: hq.companyname.com]_DC_DC_DC_DC_NetApp c_<username> c_c_c_c_c_c_c_c_c_c_c_c_c_c_c_c_c_c_c_c_c_<engineering>_c_c_c_c_c_c_c_c_c_c_c_c_c_c_c_c_c_c_c_c_c_c 
+| Base de Pesquisa | Base de pesquisa do servidor LDAP A Base de pesquisa permite ambos os formatos a seguir: _x.y.z_ => nome de domínio direto como você tem no seu SVM.  [Exemplo: hq.companyname.com] _DC=x,DC=y,DC=z_ => Nomes distintos relativos [Exemplo: DC=hq,DC= companyname,DC=com] Ou você pode especificar como o seguinte: _OU=engineering,DC=hq,DC= companyname,DC=com_ [para filtrar por engenharia de UO específica] _CN=username,OU=engineering,DC=companyname, DC=netapp, DC=com_ [para obter apenas um usuário específico com <username> da UO <engineering>] _CN=Acrobat Users,CN=Users,DC=hq,DC=companyname,DC=com,O= companyname,L=Boston,S=MA,C=US_ [para obter todos os usuários do Acrobat dentro dos usuários dessa organização] 
 
 
-| Vincular DN | Usuário autorizado a pesquisar o diretório. Por exemplo: uid, uid, uid, uid, uid, uid, uid, ucn, contas, dc, empresa, dc, dc, com para um usuário john@dorp.company.com. dorp.company.com 
+| Vincular DN | Usuário autorizado a pesquisar no diretório.  Por exemplo: uid=ldapuser,cn=users,cn=accounts,dc=domain,dc=companyname,dc=com uid=john,cn=users,cn=accounts,dc=dorp,dc=company,dc=com para um usuário john@dorp.company.com. dorp.company.com 
 
 
-| --contas | --usuários 
+| --contas | --Usuários 
 
 
-| --john | --anna 
+| --John | --Anna 
 
 
-| Palavra-passe BIND | Senha do servidor de diretório (ou seja, senha para nome de usuário usado no DN de vinculação) 
+| Senha BIND | Senha do servidor de diretório (ou seja, senha para nome de usuário usado no Bind DN) 
 
 
 | Protocolo | ldap, ldaps, ldap-start-tls 
 
 
-| Portas | Selecione a porta 
+| Portos | Selecione a porta 
 |===
-Insira os seguintes atributos necessários do servidor de diretório se os nomes de atributo padrão tiverem sido modificados no servidor de diretório LDAP. Na maioria das vezes, esses nomes de atributos são _not_ modificados no LDAP Directory Server, nesse caso, você pode simplesmente prosseguir com o nome do atributo padrão.
-
-[cols="2*"]
-|===
-
-
-| Atributos | Nome do atributo no Directory Server 
-
-
-| Nome de exibição | nome 
-
-
-| UNIXID | número de identificação 
-
-
-| Nome de utilizador | uid 
-|===
-Clique em incluir atributos opcionais para adicionar qualquer um dos seguintes atributos:
+Insira os seguintes atributos obrigatórios do Directory Server se os nomes de atributos padrão tiverem sido modificados no Directory Server LDAP.  Na maioria das vezes, esses nomes de atributos _não_ são modificados no Servidor de Diretório LDAP. Nesse caso, você pode simplesmente prosseguir com o nome de atributo padrão.
 
 [cols="2*"]
 |===
@@ -89,13 +72,30 @@ Clique em incluir atributos opcionais para adicionar qualquer um dos seguintes a
 | Atributos | Nome do atributo no servidor de diretório 
 
 
-| Endereço de e-mail | e-mail 
+| Nome de exibição | nome 
+
+
+| UNIXID | número de identificação 
+
+
+| Nome de usuário | uid 
+|===
+Clique em Incluir atributos opcionais para adicionar qualquer um dos seguintes atributos:
+
+[cols="2*"]
+|===
+
+
+| Atributos | Nome do atributo no servidor de diretório 
+
+
+| Endereço de email | correspondência 
 
 
 | Número de telefone | número de telefone 
 
 
-| Função | título 
+| Papel | título 
 
 
 | País | co 
@@ -104,91 +104,91 @@ Clique em incluir atributos opcionais para adicionar qualquer um dos seguintes a
 | Estado | estado 
 
 
-| Departamento | número de peça 
+| Departamento | número do departamento 
 
 
 | Foto | foto 
 
 
-| ManagerDN | gerente 
+| GerenteDN | gerente 
 
 
-| Grupos | Membro Of 
+| Grupos | membro de 
 |===
 
 
-== Testando a configuração do coletor do diretório de usuários
+== Testando a configuração do coletor de diretório do usuário
 
-Você pode validar permissões de Usuário LDAP e Definições de Atributo usando os seguintes procedimentos:
+Você pode validar permissões de usuário LDAP e definições de atributos usando os seguintes procedimentos:
 
-* Use o seguinte comando para validar a permissão de usuário LDAP de segurança de workload:
+* Use o seguinte comando para validar a permissão do usuário LDAP do Workload Security:
 +
  ldapsearch -D "uid=john ,cn=users,cn=accounts,dc=dorp,dc=company,dc=com" -W -x -LLL -o ldif-wrap=no -b "cn=accounts,dc=dorp,dc=company,dc=com" -H ldap://vmwipaapp08.dorp.company.com
-* Use o LDAP Explorer para navegar em um banco de dados LDAP, exibir propriedades e atributos de objetos, exibir permissões, exibir o esquema de um objeto, executar pesquisas sofisticadas que você pode salvar e executar novamente.
+* Use o LDAP Explorer para navegar em um banco de dados LDAP, visualizar propriedades e atributos de objetos, visualizar permissões, visualizar o esquema de um objeto e executar pesquisas sofisticadas que você pode salvar e reexecutar.
 +
-** Instale o LDAP Explorer (http://ldaptool.sourceforge.net/[]) ou o Java LDAP (http://jxplorer.org/[]Explorer ) em qualquer máquina Windows que possa se conetar ao servidor LDAP.
-** Conete-se ao servidor LDAP usando o nome de usuário/senha do servidor de diretório LDAP.
+** Instalar o LDAP Explorer(http://ldaptool.sourceforge.net/[] ) ou Java LDAP Explorer(http://jxplorer.org/[] ) em qualquer máquina Windows que possa se conectar ao servidor LDAP.
+** Conecte-se ao servidor LDAP usando o nome de usuário/senha do servidor de diretório LDAP.
 
 
 
 
-image:CloudSecure_LDAPDialog.png["Ligação LDAP"]
+image:CloudSecure_LDAPDialog.png["Conexão LDAP"]
 
 
 
 == Solução de problemas de erros de configuração do coletor de diretório LDAP
 
-A tabela a seguir descreve problemas conhecidos e resoluções que podem ocorrer durante a configuração do coletor:
+A tabela a seguir descreve problemas conhecidos e soluções que podem ocorrer durante a configuração do coletor:
 
 [cols="2*"]
 |===
 | Problema: | Resolução: 
 
 
-| Adicionar um conetor de diretório LDAP resulta no estado "erro". O erro diz: "Credenciais inválidas fornecidas para o servidor LDAP". | DN de vinculação ou Senha de vinculação incorreta ou base de pesquisa fornecida. Edite e forneça as informações corretas. 
+| Adicionar um conector de diretório LDAP resulta no estado 'Erro'.  O erro diz: “Credenciais inválidas fornecidas para o servidor LDAP”. | DN de vinculação ou senha de vinculação ou base de pesquisa incorreta fornecida.  Edite e forneça as informações corretas. 
 
 
-| Adicionar um conetor de diretório LDAP resulta no estado "erro". Erro diz: "Falha ao obter o objeto correspondente a DN | Base de pesquisa incorreta fornecida. Edite e forneça o nome correto da floresta. 
+| Adicionar um conector de diretório LDAP resulta no estado 'Erro'.  O erro diz: “Falha ao obter o objeto correspondente a DN=DC=hq,DC=domainname,DC=com fornecido como nome da floresta”. | Base de pesquisa fornecida incorreta.  Edite e forneça o nome correto da floresta. 
 
 
-| Os atributos opcionais do usuário de domínio não estão aparecendo na página Perfil de usuário de Segurança de carga de trabalho. | Isso provavelmente se deve a uma incompatibilidade entre os nomes de atributos opcionais adicionados no CloudSecure e os nomes de atributos reais no ative Directory. Os campos são sensíveis a maiúsculas e minúsculas. Edite e forneça o(s) nome(s) do atributo opcional correto(s). 
+| Os atributos opcionais do usuário do domínio não estão aparecendo na página Perfil do usuário do Workload Security. | Isso provavelmente ocorre devido a uma incompatibilidade entre os nomes dos atributos opcionais adicionados no CloudSecure e os nomes dos atributos reais no Active Directory.  Os campos diferenciam maiúsculas de minúsculas.  Edite e forneça o(s) nome(s) correto(s) do(s) atributo(s) opcional(is). 
 
 
-| Coletor de dados no estado de erro com "Falha ao recuperar usuários LDAP. Motivo da falha: Não é possível conetar no servidor, a conexão é nula" | Reinicie o coletor clicando no botão _Restart_. 
+| Coletor de dados em estado de erro com "Falha ao recuperar usuários LDAP.  Motivo da falha: Não é possível conectar no servidor, a conexão é nula" | Reinicie o coletor clicando no botão _Reiniciar_. 
 
 
-| Adicionar um conetor de diretório LDAP resulta no estado "erro". | Certifique-se de que forneceu valores válidos para os campos obrigatórios (servidor, nome da floresta, bind-DN, bind-Password). Certifique-se de que a entrada bind-DN é sempre fornecida como 
+| Adicionar um conector de diretório LDAP resulta no estado 'Erro'. | Certifique-se de ter fornecido valores válidos para os campos obrigatórios (Servidor, nome da floresta, DN de vinculação, Senha de vinculação).  Certifique-se de que a entrada bind-DN seja sempre fornecida como uid=ldapuser,cn=users,cn=accounts,dc=domain,dc=companyname,dc=com. 
 
 
-| Adicionar um conetor de diretório LDAP resulta no estado "TENTAR NOVAMENTE". Mostra o erro "Falha ao determinar a integridade do coletor, portanto, tentar novamente" | Certifique-se de que o IP do servidor e a base de pesquisa estão corretos /// 
+| Adicionar um conector de diretório LDAP resulta no estado 'RETRYING'.  Exibe o erro “Falha ao determinar a integridade do coletor, portanto, tente novamente” | Certifique-se de que o IP do servidor e a base de pesquisa corretos sejam fornecidos //// 
 
 
-| Ao adicionar o diretório LDAP, o seguinte erro é mostrado: "Falha ao determinar a integridade do coletor dentro de 2 tentativas, tente reiniciar o coletor novamente (Código de erro: AGENT008)" | Certifique-se de que o IP do servidor e a base de pesquisa estão corretos 
+| Ao adicionar o diretório LDAP, o seguinte erro é exibido: “Falha ao determinar a integridade do coletor em 2 tentativas, tente reiniciar o coletor novamente (Código de erro: AGENT008)” | Garanta que o IP do servidor e a base de pesquisa corretos sejam fornecidos 
 
 
-| Adicionar um conetor de diretório LDAP resulta no estado "TENTAR NOVAMENTE". Mostra o erro "não é possível definir o estado do comando Collector,Reason TCP [Connect(localhost:35012,None,List(),some(,seconds),true)] falhou por causa de java.net.ConnectionException:Connection recusado." | IP ou FQDN incorreto fornecido para o servidor AD. Edite e forneça o endereço IP ou FQDN correto. /// 
+| Adicionar um conector de diretório LDAP resulta no estado 'RETRYING'.  Exibe o erro “Não foi possível definir o estado do coletor, motivo pelo qual o comando TCP [Connect(localhost:35012,None,List(),Some(,seconds),true)] falhou devido a java.net.ConnectionException:Connection refused.” | IP ou FQDN incorreto fornecido para o servidor AD.  Edite e forneça o endereço IP ou FQDN correto.  //// 
 
 
-| Adicionar um conetor de diretório LDAP resulta no estado "erro". O erro diz: "Falha ao estabelecer a conexão LDAP". | IP ou FQDN incorreto fornecido para o servidor LDAP. Edite e forneça o endereço IP ou FQDN correto. Ou valor incorreto para a porta fornecida. Tente usar os valores de porta padrão ou o número de porta correto para o servidor LDAP. 
+| Adicionar um conector de diretório LDAP resulta no estado 'Erro'.  O erro diz: “Falha ao estabelecer conexão LDAP”. | IP ou FQDN incorreto fornecido para o servidor LDAP.  Edite e forneça o endereço IP ou FQDN correto.  Ou valor incorreto para a porta fornecida.  Tente usar os valores de porta padrão ou o número de porta correto para o servidor LDAP. 
 
 
-| Adicionar um conetor de diretório LDAP resulta no estado "erro". O erro diz: "Falha ao carregar as configurações. Motivo: A configuração da fonte de dados tem um erro. Razão específica: /Connector/conf/application.conf: 70: LDAP.ldap-port tem STRING de tipo em vez DE NÚMERO" | Valor incorreto para a porta fornecida. Tente usar os valores de porta padrão ou o número de porta correto para o servidor AD. 
+| Adicionar um conector de diretório LDAP resulta no estado 'Erro'.  O erro diz: “Falha ao carregar as configurações.  Motivo: A configuração da fonte de dados tem um erro.  Motivo específico: /connector/conf/application.conf: 70: ldap.ldap-port tem o tipo STRING em vez de NUMBER” | Valor incorreto fornecido para a Porta.  Tente usar os valores de porta padrão ou o número de porta correto para o servidor AD. 
 
 
-| Comecei com os atributos obrigatórios, e funcionou. Depois de adicionar os opcionais, os dados de atributos opcionais não são obtidos do AD. | Isso provavelmente se deve a uma incompatibilidade entre os atributos opcionais adicionados no CloudSecure e os nomes de atributos reais no ative Directory. Edite e forneça o nome do atributo obrigatório ou opcional correto. 
+| Comecei com os atributos obrigatórios e funcionou.  Após adicionar os opcionais, os dados dos atributos opcionais não estão sendo buscados do AD. | Isso provavelmente ocorre devido a uma incompatibilidade entre os atributos opcionais adicionados no CloudSecure e os nomes de atributos reais no Active Directory.  Edite e forneça o nome correto do atributo obrigatório ou opcional. 
 
 
-| Depois de reiniciar o coletor, quando acontecerá a sincronização LDAP? | A sincronização LDAP ocorrerá imediatamente após o coletor ser reiniciado. Levará aproximadamente 15 minutos para obter dados do usuário de aproximadamente 300K usuários e é atualizado a cada 12 horas automaticamente. 
+| Após reiniciar o coletor, quando a sincronização do LDAP ocorrerá? | A sincronização do LDAP ocorrerá imediatamente após a reinicialização do coletor.  Levará aproximadamente 15 minutos para buscar dados de aproximadamente 300 mil usuários e será atualizado automaticamente a cada 12 horas. 
 
 
-| Os dados do usuário são sincronizados do LDAP para o CloudSecure. Quando os dados serão excluídos? | Os dados do usuário são mantidos para 13months em caso de não atualização. Se o locatário for excluído, os dados serão excluídos. 
+| Os dados do usuário são sincronizados do LDAP para o CloudSecure.  Quando os dados serão excluídos? | Os dados do usuário são retidos por 13 meses caso não haja atualização.  Se o inquilino for excluído, os dados serão excluídos. 
 
 
-| O conetor de diretório LDAP resulta no estado "erro". "O conetor está no estado de erro. Nome do serviço: UsersLdap. Motivo da falha: Falha ao recuperar usuários LDAP. Motivo da falha: 80090308: LdapErr: DSID-0C090453, comentário: AcceptSecurityContext error, data 52e, v3839" | Nome da floresta incorreto fornecido. Veja acima como fornecer o nome correto da floresta. 
+| O conector do diretório LDAP resulta no estado 'Erro'.  "O conector está em estado de erro.  Nome do serviço: usersLdap.  Motivo da falha: Falha ao recuperar usuários LDAP.  Motivo da falha: 80090308: LdapErr: DSID-0C090453, comentário: erro AcceptSecurityContext, dados 52e, v3839" | Nome de floresta incorreto fornecido.  Veja acima como fornecer o nome correto da floresta. 
 
 
-| O número de telefone não está a ser preenchido na página de perfil de utilizador. | Isso é provavelmente devido a um problema de mapeamento de atributos com o ative Directory. 1. Edite o coletor específico do ative Directory que está obtendo as informações do usuário do ative Directory. 2. Em atributos opcionais, há um nome de campo "número de telefone" mapeado para o atributo do ative Directory 'número de telefone'. 4. Agora, utilize a ferramenta Explorador do ative Directory conforme descrito acima para navegar no servidor LDAP Directory e ver o nome do atributo correto. 3. Certifique-se de que no diretório LDAP existe um atributo chamado "número de telefone" que tem realmente o número de telefone do usuário. 5. Digamos que no diretório LDAP ele foi modificado para "número de telefone". 6. Em seguida, edite o coletor CloudSecure User Directory. Na seção de atributo opcional, substitua 'número de telefone' por 'número de telefone'. 7. Salve o coletor do ative Directory, o coletor reiniciará e obterá o número de telefone do usuário e exibirá o mesmo na página do perfil do usuário. 
+| O número de telefone não está sendo preenchido na página de perfil do usuário. | Isso provavelmente ocorre devido a um problema de mapeamento de atributos com o Active Directory. 1.  Edite o coletor específico do Active Directory que está buscando as informações do usuário do Active Directory. 2.  Observe que, nos atributos opcionais, há um campo chamado “Número de telefone” mapeado para o atributo 'telephonenumber' do Active Directory. 4.  Agora, use a ferramenta Active Directory Explorer conforme descrito acima para navegar no servidor de diretório LDAP e ver o nome do atributo correto. 3.  Certifique-se de que no diretório LDAP haja um atributo chamado 'telephonenumber' que realmente tenha o número de telefone do usuário. 5.  Digamos que no diretório LDAP ele foi modificado para 'número de telefone'. 6.  Em seguida, edite o coletor do diretório de usuários do CloudSecure.  Na seção de atributos opcionais, substitua 'telephonenumber' por 'phonenumber'. 7.  Salve o coletor do Active Directory, o coletor será reiniciado e obterá o número de telefone do usuário e o exibirá na página de perfil do usuário. 
 
 
-| Se o certificado de encriptação (SSL) estiver ativado no servidor AD (ative Directory), o Coletor do diretório de utilizadores de Segurança de carga de trabalho não pode ligar-se ao servidor AD. | Desative a criptografia do AD Server antes de configurar um coletor de diretório de usuários. Uma vez que os detalhes do usuário são obtidos, ele estará lá por 13 meses. Se o servidor AD for desconetado após buscar os detalhes do usuário, os usuários recém-adicionados no AD não serão obtidos. Para buscar novamente, o coletor de diretório do usuário precisa ser conetado ao AD. 
+| Se o certificado de criptografia (SSL) estiver habilitado no servidor Active Directory (AD), o Workload Security User Directory Collector não poderá se conectar ao servidor AD. | Desabilite a criptografia do servidor AD antes de configurar um coletor de diretório de usuário.  Depois que os detalhes do usuário forem obtidos, eles permanecerão lá por 13 meses.  Se o servidor AD for desconectado após a busca dos detalhes do usuário, os usuários recém-adicionados no AD não serão buscados.  Para buscar novamente o coletor de diretório do usuário, é necessário estar conectado ao AD. 
 |===

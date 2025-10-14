@@ -4,32 +4,32 @@ permalink: cs_intro.html
 keywords: CloudSecure, Cloud Secure 
 summary: Visão geral 
 ---
-= Sobre o Storage Workload Security
+= Sobre a segurança da carga de trabalho de armazenamento
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-A segurança de workload de storage (anteriormente Cloud Secure) ajuda a proteger seus dados com inteligência acionável sobre ameaças internas. Ele fornece visibilidade e controle centralizados de todos os acessos a dados corporativos em ambientes de nuvem híbrida para garantir que as metas de segurança e conformidade sejam atingidas.
+O Data Infrastructure Insights Storage Workload Security (antigo Cloud Secure) ajuda a proteger seus dados com inteligência acionável sobre ameaças internas.  Ele fornece visibilidade e controle centralizados de todo o acesso a dados corporativos em ambientes de nuvem híbrida para garantir que as metas de segurança e conformidade sejam atendidas.
 
 
 
 == Visibilidade
 
-Obtenha visibilidade centralizada e controle do acesso do usuário aos dados corporativos essenciais armazenados no local ou na nuvem.
+Obtenha visibilidade e controle centralizados do acesso do usuário aos seus dados corporativos críticos armazenados no local ou na nuvem.
 
-Substitua as ferramentas e os processos manuais que não fornecem visibilidade atempada e precisa do acesso e controlo dos dados. O Workload Security opera exclusivamente em sistemas de storage na nuvem e no local para fornecer alertas em tempo real de comportamento mal-intencionado do usuário.
+Substitua ferramentas e processos manuais que não fornecem visibilidade precisa e oportuna do acesso e controle de dados.  O Workload Security opera exclusivamente em sistemas de armazenamento na nuvem e no local para fornecer alertas em tempo real sobre comportamento malicioso de usuários.
 
 
 
 == Proteção
 
-Proteja os dados organizacionais contra a utilização indevida por parte de usuários mal-intencionados ou comprometidos por meio do aprendizado de máquina avançado e da detecção de anomalias.
+Proteja os dados organizacionais contra uso indevido por usuários mal-intencionados ou comprometidos por meio de aprendizado de máquina avançado e detecção de anomalias.
 
-Alerta você para acesso anormal aos dados por meio do aprendizado de máquina avançado e da detecção de anomalias de comportamento do usuário.
+Alerta você sobre qualquer acesso anormal a dados por meio de aprendizado de máquina avançado e detecção de anomalias no comportamento do usuário.
 
 
 
 == Conformidade
 
-Garanta a conformidade empresarial auditando o acesso aos dados dos usuários aos dados corporativos essenciais armazenados no local ou na nuvem.
+Garanta a conformidade corporativa auditando o acesso dos dados do usuário aos seus dados corporativos críticos armazenados no local ou na nuvem.

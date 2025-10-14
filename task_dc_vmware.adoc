@@ -4,29 +4,29 @@ permalink: task_dc_vmware.html
 keywords: data collector, VMware, 
 summary: Configurando o coletor de dados VMware. 
 ---
-= Configurando o coletor de dados do VMware vSphere
+= Configurando o coletor de dados do VMware VSphere
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O coletor de dados do VMware vSphere coleta informações de configuração e desempenho do convidado da VM e do host ESXi e requer Privileges somente leitura em todos os objetos do vSphere. A partir de agosto de 2024, o coletor do vSphere também traz mensagens de log de ambientes vSphere e algumas métricas específicas da VMware. Observe que o Data Infrastructure Insights só pode recuperar informações de logs do VMware de ambientes vSphere 8.0.1 ou superior. Da mesma forma, as métricas específicas do fornecedor são suportadas apenas para ambientes vSphere mais de 7. Como tal, você pode querer desativar a caixa de seleção logs e/ou métricas específicas do fornecedor em um determinado coletor se ele for apontado para uma instância mais antiga do vSphere.
+O coletor de dados do VMware vSphere coleta informações de desempenho e configuração do convidado da VM e do host ESXi e requer privilégios somente leitura em todos os objetos no vSphere.  A partir de agosto de 2024, o coletor vSphere também traz mensagens de log de ambientes vSphere e algumas métricas específicas do VMware.  Observe que o Data Infrastructure Insights só pode recuperar informações de logs do VMware de ambientes vSphere 8.0.1 ou superior.  Da mesma forma, as Métricas Específicas do Fornecedor são suportadas apenas em ambientes vSphere 7+.  Dessa forma, talvez você queira desabilitar os logs e/ou a caixa de seleção Métricas específicas do fornecedor em um determinado coletor se ele estiver apontado para uma instância mais antiga do vSphere.
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do VMware vSphere. Para cada tipo de ativo adquirido, a terminologia mais comum usada para o ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados VMware vSphere.  Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para o ativo.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
 | Disco virtual | Disco 
 
 
-| Host | Host 
+| Hospedar | Hospedar 
 
 
 | Máquina virtual | Máquina virtual 
@@ -38,9 +38,9 @@ O Data Infrastructure Insights adquire as seguintes informações de inventário
 | LUN | Volume 
 
 
-| Porta Fibre Channel | Porta 
+| Porta de canal de fibra | Porta 
 |===
-Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
@@ -50,13 +50,13 @@ As seguintes informações são necessárias para configurar este coletor de dad
 
 * Endereço IP do servidor do Virtual Center
 * Nome de usuário e senha somente leitura no Virtual Center
-* Exigimos Privileges somente leitura em todos os objetos dentro do Centro Virtual.
+* Exigimos privilégios somente leitura em todos os objetos no Virtual Center.
 * Acesso ao SDK no servidor do Virtual Center – normalmente já configurado.
-* Requisitos de porta: HTTP-80 https-443
+* Requisitos de porta: http-80 https-443
 * Validar acesso:
 +
 ** Faça login no Virtual Center Client usando o nome de usuário e a senha acima
-** Verificar SDK habilitado: telnet <vc_ip> 443
+** Verifique se o SDK está habilitado: telnet <vc_ip> 443
 
 
 
@@ -87,16 +87,16 @@ As seguintes informações são necessárias para configurar este coletor de dad
 | Endereço IP do centro virtual | Endereço IP do Centro Virtual 
 
 
-| Nome de utilizador | Nome de utilizador utilizado para aceder ao Centro Virtual 
+| Nome de usuário | Nome de usuário usado para acessar o Centro Virtual 
 
 
-| Palavra-passe | Palavra-passe utilizada para aceder ao Centro Virtual 
+| Senha | Senha utilizada para acessar o Centro Virtual 
 |===
 
 
 == Configuração avançada
 
-Na tela de configuração avançada, marque a caixa *desempenho da VM* para coletar dados de desempenho. A coleção de inventário está ativada por predefinição. Os seguintes campos podem ser configurados:
+Na tela de configuração avançada, marque a caixa *Desempenho da VM* para coletar dados de desempenho.  A coleta de inventário é habilitada por padrão.  Os seguintes campos podem ser configurados:
 
 [cols="2*"]
 |===
@@ -105,46 +105,46 @@ Na tela de configuração avançada, marque a caixa *desempenho da VM* para cole
 | Campo | Descrição 
 
 
-| Intervalo de pesquisa de inventário (min) | A predefinição é 20 
+| Intervalo de pesquisa de inventário (min) | O padrão é 20 
 
 
-| Filtrar VMs | Selecione CLUSTER, DATA CENTER ou HOST ESX 
+| Filtrar VMs | Selecione CLUSTER, DATACENTER ou ESX HOST 
 
 
-| Escolha 'Excluir' ou 'incluir' para especificar uma lista | Criar uma lista de filtros (CLUSTER, DATA CENTER e/ou ESX_HOST) 
+| Escolha 'Excluir' ou 'Incluir' para especificar uma lista | Crie uma lista de filtros (CLUSTER, DATACENTER e/ou ESX_HOST) 
 
 
-| Número de tentativas | A predefinição é 3 
+| Número de tentativas | O padrão é 3 
 
 
-| Porta de comunicação | A predefinição é 443 
+| Porta de comunicação | O padrão é 443 
 
 
-| Filtrar Lista de dispositivos... | Esta lista deve consistir em correspondências exatas de cadeia de carateres - se você pretende filtrar por ESX_HOST, você deve criar uma lista delimitada por vírgulas dos "nomes" exatos dos seus hosts ESX conforme relatado no Data Infrastructure Insights e no vSphere. Esses "nomes" podem ser endereços IP, nomes de host simples ou nomes de domínio totalmente qualificados (FQDNs) - isso é determinado por como esses hosts foram nomeados quando foram originalmente adicionados ao vSphere. Ao filtrar por CLUSTER, use os nomes de cluster do estilo Data Infrastructure Insights conforme relatado pelo IC em hipervisores - Data Infrastructure Insights prepende o nome do cluster vSphere com o nome do data center vSphere e uma barra direta - "DC1/clusterA" é o nome do cluster Data Infrastructure Insights relataria em um hypervisor no clusterA dentro do data center DC1. 
+| Lista de dispositivos de filtro... | Esta lista deve consistir em correspondências exatas de strings. Se você pretende filtrar por ESX_HOST, você deve criar uma lista delimitada por vírgulas dos "nomes" exatos dos seus hosts ESX, conforme relatado no Data Infrastructure Insights e no vSphere.  Esses "nomes" podem ser endereços IP, nomes de host simples ou nomes de domínio totalmente qualificados (FQDNs). Isso é determinado pela forma como esses hosts foram nomeados quando foram adicionados originalmente ao vSphere.  Ao filtrar por CLUSTER, use os nomes de cluster no estilo do Data Infrastructure Insights, conforme relatado pelo CI em hipervisores. O Data Infrastructure Insights acrescenta o nome do cluster do vSphere ao nome do datacenter do vSphere e uma barra. "DC1/clusterA" é o nome do cluster que o Data Infrastructure Insights relataria em um hipervisor no clusterA dentro do datacenter DC1. 
 
 
-| Intervalo de pesquisa de desempenho (seg) | A predefinição é 300 
+| Intervalo de pesquisa de desempenho (seg) | O padrão é 300 
 |===
 
 
-== Mapeamento de tags VMware para anotações do Data Infrastructure Insights
+== Mapeando tags VMware para anotações do Data Infrastructure Insights
 
-O coletor de dados VMware permite preencher anotações do Data Infrastructure Insights com tags configuradas no VMware. O nome da anotação DII deve ser idêntico ao nome VMware *category*; a tag é então aplicada como um valor de anotação de uma anotação DII com o mesmo nome da categoria. O Data Infrastructure Insights sempre preencherá anotações de tipo texto com o mesmo nome e fará uma "melhor tentativa" para preencher anotações de outros tipos (número, boolean, etc.). Se a anotação for de um tipo diferente e o coletor de dados não a preencher, pode ser necessário remover a anotação e recriá-la como um tipo de texto.
+O coletor de dados do VMware permite que você preencha anotações do Data Infrastructure Insights com tags configuradas no VMware.  O nome da anotação DII deve ser idêntico ao nome da *categoria* VMware; a tag é então aplicada como um valor de anotação de uma anotação DII do mesmo nome da categoria.  O Data Infrastructure Insights sempre preencherá anotações de mesmo tipo de texto e fará o "melhor esforço" para preencher anotações de outros tipos (número, booleano, etc.).  Se sua anotação for de um tipo diferente e o coletor de dados não conseguir preenchê-la, pode ser necessário remover a anotação e recriá-la como um tipo de texto.
 
-Observe que as tags VMware podem diferenciar maiúsculas de minúsculas, enquanto as tags Data Infrastructure Insights diferenciam maiúsculas de minúsculas. Então, se você criar uma anotação chamada "PROPRIETÁRIO" no Data Infrastructure Insights e tags chamadas "PROPRIETÁRIO", "proprietário" e "proprietário" no VMware, todas essas variações de "proprietário" serão mapeadas para a anotação "PROPRIETÁRIO" do Cloud Insight.
+Observe que as tags do VMware podem diferenciar maiúsculas de minúsculas, enquanto as tags do Data Infrastructure Insights não diferenciam maiúsculas de minúsculas.  Portanto, se você criar uma anotação chamada "OWNER" no Data Infrastructure Insights e tags chamadas "OWNER", "Owner" e "owner" no VMware, todas essas variações de "owner" serão mapeadas para a anotação "OWNER" do Cloud Insight.
 
 Tenha em mente o seguinte:
 
-* Atualmente, apenas publica automaticamente informações de suporte para dispositivos NetApp.
-* Como essas informações de suporte são mantidas em formulário de anotação, você pode consultá-las ou usá-las em painéis.
-* Se um usuário sobrescrever ou esvaziar o valor da anotação, o valor será preenchido automaticamente novamente quando o Data Infrastructure Insights atualizar anotações, o que ele faz uma vez por dia.
+* Atualmente, o Data Infrastructure Insights publica automaticamente apenas informações de suporte para dispositivos NetApp .
+* Como essas informações de suporte são mantidas em formato de anotação, você pode consultá-las ou usá-las em painéis.
+* Se um usuário substituir ou esvaziar o valor da anotação, o valor será preenchido automaticamente novamente quando o Data Infrastructure Insights atualizar as anotações, o que ele faz uma vez por dia.
 
 
 
 
 == Solução de problemas
 
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
@@ -152,18 +152,18 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
-| Erro: Incluir lista para filtrar VMs não pode estar vazia | Se a opção incluir lista estiver selecionada, liste nomes válidos de data center, cluster ou host para filtrar VMs 
+| Erro: A lista de inclusão para filtrar VMs não pode estar vazia | Se Incluir Lista for selecionado, liste nomes válidos de DataCenter, Cluster ou Host para filtrar VMs 
 
 
-| Erro: Falha ao instanciar uma conexão com o VirtualCenter no IP | Soluções possíveis: * Verifique as credenciais e o endereço IP inseridos. * Tente se comunicar com o Virtual Center usando o VMware Infrastructure Client. * Tente se comunicar com o Virtual Center usando o Navegador de objetos gerenciados (por exemplo, MOB). 
+| Erro: Falha ao instanciar uma conexão com o VirtualCenter no IP | Possíveis soluções: * Verifique as credenciais e o endereço IP inseridos.  * Tente se comunicar com o Virtual Center usando o VMware Infrastructure Client.  * Tente se comunicar com o Virtual Center usando o Managed Object Browser (por exemplo, MOB). 
 
 
-| Erro: O VirtualCenter at IP tem certificado não conforme exigido pela JVM | Soluções possíveis: * Recomendado: Re-gerar certificado para o Virtual Center usando uma chave RSA mais forte (por exemplo, 1024 bits). * Não recomendado: Modifique a configuração JVM java.security para aproveitar a restrição jdk.certpath.disabledAlgorithms para permitir a chave RSA de 512 bits. link:http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html["Notas de versão da atualização 40 do JDK 7"]Consulte . 
+| Erro: O VirtualCenter no IP possui um certificado não conforme que a JVM requer | Soluções possíveis: * Recomendado: Gere novamente o certificado para o Virtual Center usando uma chave RSA mais forte (por exemplo, 1024 bits).  * Não recomendado: modifique a configuração java.security da JVM para aproveitar a restrição jdk.certpath.disabledAlgorithms para permitir a chave RSA de 512 bits. Ver link:http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html["Notas de versão da atualização 40 do JDK 7"] . 
 
 
-| Estou vendo a mensagem: "O pacote VMware Logs não é suportado no VMware abaixo da versão 8,0.1" | A coleta de logs não é suportada em versões do VMware anteriores à 8.0.1.  Atualize sua infraestrutura do VI Center para a versão 8.0.1 ou posterior se desejar usar o recurso Coleções de Logs no Data Infrastructure Insights.  Para mais informações, veja aquilink:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["Artigo da KB"] . 
+| Estou vendo a mensagem: "O pacote VMware Logs não é compatível com o VMware abaixo da versão 8.0.1" | A coleta de logs não é suportada em versões do VMware anteriores à 8.0.1.  Atualize sua infraestrutura do VI Center para a versão 8.0.1 ou posterior se desejar usar o recurso Coleções de Logs no Data Infrastructure Insights.  Para mais informações, veja aquilink:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["Artigo da KB"] . 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

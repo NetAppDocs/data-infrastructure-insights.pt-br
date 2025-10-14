@@ -18,8 +18,8 @@ O coletor de dados EMC XtremIO adquire dados de inventário e desempenho do sist
 
 Para configurar o coletor de dados EMC XtremIO (HTTP), você deve ter:
 
-* O endereço de host XMS (XMS) do XtremIO Management Server
-* Uma conta com o administrador Privileges
+* Endereço do host do XtremIO Management Server (XMS)
+* Uma conta com privilégios de administrador
 * Acesso à porta 443 (HTTPS)
 
 
@@ -27,37 +27,37 @@ Para configurar o coletor de dados EMC XtremIO (HTTP), você deve ter:
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados EMC XtremIO. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desta fonte de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados EMC XtremIO.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas desta fonte de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
 | Disco (SSD) | Disco 
 
 
-| Cluster | Armazenamento 
+| Conjunto | Armazenar 
 
 
-| Controlador | Nó de storage 
+| Controlador | Nó de armazenamento 
 
 
 | Volume | Volume 
 
 
-| Mapa LUN | Mapa de volume 
+| Mapa LUN | Mapa de Volume 
 
 
-| Iniciador FC de destino | Máscara de volume 
+| Iniciador FC de destino | Máscara de Volume 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para esta fonte de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos desta fonte de dados.
 
 
 
 == Requisitos
 
-* O endereço IP do host XMS (XMS) do XtremIO Management Server
+* Endereço IP do host do XtremIO Management Server (XMS)
 * Nome de usuário e senha do administrador para o XtremIO
 
 
@@ -70,13 +70,13 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Anfitrião XMS | Endereço IP ou nome de domínio totalmente qualificado do XtremIO Management Server 
+| Host XMS | Endereço IP ou nome de domínio totalmente qualificado do XtremIO Management Server 
 
 
-| Nome de utilizador | Nome de usuário do XtremIO Management Server 
+| Nome de usuário | Nome de usuário para o XtremIO Management Server 
 
 
-| Palavra-passe | Senha para o XtremIO Management Server 
+| Senha | Senha para o servidor de gerenciamento XtremIO 
 |===
 
 
@@ -87,16 +87,16 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Porta de TCP | Porta TCP usada para se conetar ao XTremIO Management Server. A predefinição é 443. 
+| Porta TCP | Porta TCP usada para conectar ao XTremIO Management Server.  O padrão é 443. 
 
 
-| Intervalo de pesquisa de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 60 minutos. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário. O padrão é 60 minutos. 
 
 
-| Intervalo de pesquisa de desempenho (seg) | Intervalo entre sondagens de desempenho. O padrão é 300 segundos. 
+| Intervalo de pesquisa de desempenho (seg) | Intervalo entre pesquisas de desempenho. O padrão é 300 segundos. 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

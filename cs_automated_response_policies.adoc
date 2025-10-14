@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: cs_automated_response_policies.html 
 keywords: alert, snapshot, ransomware, attack 
-summary: 'Você pode definir políticas de resposta automatizadas para possíveis ataques (como ransomware) e/ou avisos de atividades' 
+summary: 'Você pode definir políticas de resposta automatizadas para ataques potenciais (como ransomware) e/ou avisos de atividade' 
 ---
-= Políticas de resposta automatizadas
+= Políticas de Resposta Automatizada
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,24 +14,24 @@ summary: 'Você pode definir políticas de resposta automatizadas para possívei
 
 
 [role="lead"]
-As políticas de resposta acionam ações como tirar um instantâneo ou restringir o acesso do usuário em caso de ataque ou comportamento anormal do usuário.
+As Políticas de Resposta acionam ações como tirar um instantâneo ou restringir o acesso do usuário em caso de ataque ou comportamento anormal do usuário.
 
-Pode definir políticas em dispositivos específicos ou em todos os dispositivos. Para definir uma política de resposta, selecione *Admin > Automated Response Policies* e clique no botão apropriado. Você pode criar políticas para ataques ou avisos.
+Você pode definir políticas em dispositivos específicos ou em todos os dispositivos.  Para definir uma política de resposta, selecione *Admin > Políticas de resposta automatizadas* e clique no botão *+Política* apropriado.  Você pode criar políticas para Ataques ou para Avisos.
 
-image:ws_add_attack_policy.png["Adicione uma caixa de diálogo de política de ataque mostrando webhook dropdown"]
+image:ws_add_attack_policy.png["Adicionar uma caixa de diálogo de política de ataque mostrando o menu suspenso do webhook"]
 
 Você deve salvar a política com um nome exclusivo.
 
-Para desativar uma ação de resposta automatizada (por exemplo, tirar Snapshot), basta desmarcar a ação e salvar a política.
+Para desabilitar uma ação de resposta automatizada (por exemplo, Tirar instantâneo), basta desmarcar a ação e salvar a política.
 
-Quando um alerta é acionado contra os dispositivos especificados (ou todos os dispositivos, se selecionados), a política de resposta automática tira um instantâneo dos seus dados. Pode ver o estado do instantâneo no link:cs_alert_data.html#the-alert-details-page["Página de detalhes do alerta"].
+Quando um alerta é disparado para os dispositivos especificados (ou todos os dispositivos, se selecionados), a política de resposta automatizada tira um instantâneo dos seus dados.  Você pode ver o status do instantâneo nolink:cs_alert_data.html#the-alert-details-page["Página de detalhes do alerta"] .
 
-Consulte a link:cs_restrict_user_access.html["Restringir o acesso do usuário"] página para obter mais detalhes sobre como restringir o acesso do usuário por IP.
+Veja olink:cs_restrict_user_access.html["Restringir acesso do usuário"] página para mais detalhes sobre como restringir o acesso do usuário por IP.
 
-Você pode anexar um ou mais webhooks a uma política para ser notificado quando um alerta é criado e ação é tomada. Recomenda-se adicionar não mais de 10 webhooks a uma policy.tenha em mente que se uma política for pausada, as notificações do webhook não serão acionadas.
+Você pode anexar um ou mais webhooks a uma política para ser notificado quando um alerta for criado e uma ação for tomada.  É recomendável adicionar no máximo 10 webhooks a uma política. Lembre-se de que, se uma política for pausada, as notificações de webhooks não serão acionadas.
 
-Você pode modificar ou pausar uma Política de resposta automatizada escolhendo a opção no menu suspenso da política.
+Você pode modificar ou pausar uma Política de Resposta Automatizada escolhendo a opção no menu suspenso da política.
 
-O Workload Security excluirá automaticamente os instantâneos uma vez por dia com base nas configurações de eliminação de instantâneos.
+O Workload Security excluirá automaticamente os snapshots uma vez por dia com base nas configurações de limpeza de snapshots.
 
-image:CloudSecure_SnapshotPurgeSettings.png["Definições de purga de instantâneos"]
+image:CloudSecure_SnapshotPurgeSettings.png["Configurações de limpeza de instantâneos"]

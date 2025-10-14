@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_subscribing_to_cloud_insights.html 
-summary: A qualquer momento durante a avaliação gratuita, você pode se inscrever no Data Infrastructure Insights. 
+summary: A qualquer momento durante seu teste gratuito, você pode assinar o Data Infrastructure Insights. 
 keywords: subscribe, trial, subscription, contract, raw capacity, region, data retention, retention, MU, managed unit, managed units, units, managed, module, evaluation, pricing, meter, metering 
 ---
-= Subscrever o Data Infrastructure Insights
+= Assinando o Data Infrastructure Insights
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,15 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 
 
 [role="lead"]
-Os primeiros passos do Data Infrastructure Insights são tão fáceis quanto três simples passos:
+Começar a usar o Data Infrastructure Insights é tão fácil quanto três etapas simples:
 
-. Crie uma conta emlink:https://console.netapp.com//["* Console NetApp *"] para ter acesso a todas as ofertas de nuvem da NetApp.
-. Inscreva-se para uma avaliação gratuita do Data Infrastructure Insights para explorar os recursos disponíveis. Para se inscrever para uma avaliação gratuita:
+. Crie uma conta emlink:https://console.netapp.com//["* NetApp Console*"] para ter acesso a todas as ofertas de nuvem da NetApp.
+. Registre-se para um teste gratuito do Data Infrastructure Insights para explorar os recursos disponíveis.  Para se registrar para um teste gratuito:
 +
 ** Vá para https://netapp.com[]
-** Selecione *como comprar* no topo da página.
+** Selecione *Como comprar* no topo da página.
 ** Selecione *Solicitar teste*.  Se você ainda não estiver registrado no Console, insira seus dados e inscreva-se.  Caso contrário, faça login.
-** Agende uma reunião ou aguarde que um representante entre em Contato com você sobre seu teste.
+** Agende uma reunião ou aguarde que um representante entre em contato com você sobre seu teste.
 
 
 . *Assine* o Data Infrastructure Insights para acesso contínuo e ininterrupto aos seus dados por meio de uma variedade de opções de assinatura flexíveis:
@@ -31,266 +31,266 @@ Os primeiros passos do Data Infrastructure Insights são tão fáceis quanto tr�
 ** Mercado AWS:
 +
 *** link:https://aws.amazon.com/marketplace/pp/prodview-axhuy7muvzfx2["Assinatura por prazo determinado"]
-*** link:https://aws.amazon.com/marketplace/pp/prodview-rn4qwencpjpge["Subscrição com pagamento conforme o uso"]
+*** link:https://aws.amazon.com/marketplace/pp/prodview-rn4qwencpjpge["Assinatura pré-paga"]
 *** link:https://aws.amazon.com/marketplace/pp/prodview-nku57vjsqdwzu["Assinatura de base fixa + excedentes pré-pagos"]
 
 
-** link:https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.dii_premium["Azure Marketplace"] (todas as opções de assinatura)
+** link:https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.dii_premium["Mercado do Azure"](todas as opções de assinatura)
 
 
 
 
-Durante o processo de Registro, você pode escolher a região global para hospedar seu ambiente Data Infrastructure Insights. Para obter mais informações, leia sobre o Data Infrastructure Insights link:security_information_and_region.html["Informação e região"].
+Durante o processo de registro, você pode escolher a região global para hospedar seu ambiente do Data Infrastructure Insights .  Para mais informações, leia sobre Data Infrastructure Insightslink:security_information_and_region.html["Informação e Região"] .
 
 Para obter informações detalhadas sobre os recursos e opções de preços do Data Infrastructure Insights , consulte olink:https://www.netapp.com/cloud-services/cloud-insights/editions-pricing["Edições do Data Infrastructure Insights"] página.
 
-Ao usar o Data Infrastructure Insights, se você vir um ícone de cadeado image:padlock.png["Cadeado"], isso significa que o recurso não está disponível em sua assinatura atual ou está disponível em um formulário limitado. Assine esse recurso para acesso total. Alguns recursos estão disponíveis como um <<module-evaluation,Avaliação do módulo>> antes da assinatura.
+Ao usar o Data Infrastructure Insights, se você vir um ícone de cadeadoimage:padlock.png["Cadeado"] , significa que o recurso não está disponível na sua assinatura atual ou está disponível de forma limitada.  Assine esse recurso para ter acesso total.  Alguns recursos estão disponíveis como um<<module-evaluation,Avaliação do Módulo>> antes de assinar.
 
 
 
-== Edição de avaliação
+== Edição de teste
 
-Quando você se inscreve no Data Infrastructure Insights e seu ambiente está ativo, entra em uma avaliação gratuita de 30 dias do Data Infrastructure Insights. Durante esse teste, você pode explorar os recursos que o Data Infrastructure Insights tem a oferecer em seu próprio ambiente.
+Ao se inscrever no Data Infrastructure Insights e seu ambiente estiver ativo, você entra em um teste gratuito de 30 dias do Data Infrastructure Insights.  Durante este teste, você pode explorar os recursos que o Data Infrastructure Insights tem a oferecer em seu próprio ambiente.
 
-A qualquer momento durante o período de teste, você pode se inscrever no Data Infrastructure Insights. A assinatura do Data Infrastructure Insights garante acesso ininterrupto aos seus dados, bem como opções estendidaslink:https://docs.netapp.com/us-en/cloudinsights/concept_requesting_support.html["*suporte ao produto*"].
+A qualquer momento durante o período de teste, você pode assinar o Data Infrastructure Insights.  A assinatura do Data Infrastructure Insights garante acesso ininterrupto aos seus dados, bem comolink:https://docs.netapp.com/us-en/cloudinsights/concept_requesting_support.html["*suporte ao produto*"] opções.
 
-O Data Infrastructure Insights exibe um banner quando sua avaliação gratuita está chegando ao fim Dentro desse banner há um link _View Subscription_, que abre a página *Admin -> Subscription*. Os usuários não administradores verão o banner, mas não poderão acessar a página de assinatura.
+O Data Infrastructure Insights exibe um banner quando seu teste gratuito está chegando ao fim.  Dentro desse banner há um link _Exibir assinatura_, que abre a página *Administrador -> Assinatura*.  Usuários não administradores verão o banner, mas não poderão acessar a página de Assinatura.
 
 
-NOTE: Se você precisar de tempo adicional para avaliar o Data Infrastructure Insights e sua avaliação estiver definida para expirar em 4 dias ou menos, poderá estender sua avaliação por mais 30 dias. Você pode estender o teste apenas uma vez. Você não pode estender se o seu teste expirou.
+NOTE: Se precisar de mais tempo para avaliar o Data Infrastructure Insights e seu teste estiver programado para expirar em 4 dias ou menos, você poderá estendê-lo por mais 30 dias.  Você pode estender o teste apenas uma vez.  Você não poderá estender o seu período de teste caso ele tenha expirado.
 
 
 
 === Teste pelo AWS Marketplace
 
-Você também pode se inscrever para uma avaliação gratuita pelo AWS Marketplace. O teste gratuito do AWS Marketplace dá acesso ao Data Infrastructure Insights por um período de teste de 33 dias.
+Você também pode se inscrever para um teste gratuito no AWS Marketplace.  O teste gratuito do AWS Marketplace dá acesso ao Data Infrastructure Insights por um período de teste de 33 dias.
 
 O teste gratuito do AWS Marketplace não pode ser estendido.
 
 
 
-=== E se o meu teste tiver expirado?
+=== E se meu período de teste tiver expirado?
 
-Se a sua avaliação gratuita expirou e você ainda não se inscreveu no Data Infrastructure Insights, você terá funcionalidade limitada até se inscrever. A ingestão de dados pode cessar e, após algumas semanas, seus dados serão excluídos de acordo com nossa política de retenção de dados.
-
-
-
-== E se a minha *subscrição* tiver expirado?
-
-Se você tiver uma assinatura do Data Infrastructure Insights, mas essa assinatura expirou, você terá um período de carência de cinco dias para renovar sua assinatura. Toda a funcionalidade Data Infrastructure Insights permanecerá ativa durante esse período de carência.
-
-Após o período de carência ter decorrido, a funcionalidade Data Infrastructure Insights é suspensa até que você seja renovado. Para renovar, consulte a página *Admin > Subscription* ou entre em Contato com as vendas da NetApp.
-
-
-NOTE: Seus dados do Data Infrastructure Insights permanecem intactos por 30 dias após o período de carência. Se você renovar sua assinatura dentro desse tempo, todos os seus dados até o momento em que o período de carência terminar estarão disponíveis para você.
+Se o seu teste gratuito expirou e você ainda não assinou o Data Infrastructure Insights, você terá funcionalidade limitada até assinar.  A ingestão de dados pode cessar e, após algumas semanas, seus dados serão excluídos de acordo com nossa política de retenção de dados.
 
 
 
-== Avaliação do módulo
+== E se minha *Assinatura* tiver expirado?
 
-Você também pode aproveitar *avaliações de módulos*. Por exemplo, se você já estiver inscrito no Infrastructure Observability, mas estiver adicionando o Kubernetes ao seu ambiente, entrará automaticamente em uma avaliação de 30 dias da observabilidade do Kubernetes, a partir de quando instalar o Operador de monitoramento do Kubernetes da NetApp. Você só será cobrado pelo uso de unidade gerenciada de observabilidade do Kubernetes ao final do período de avaliação.
+Se você tiver uma assinatura do Data Infrastructure Insights, mas ela tiver expirado, você terá um período de carência de cinco dias para renová-la.  Todas as funcionalidades do Data Infrastructure Insights permanecerão ativas durante esse período de carência.
 
-
-NOTE: Tenha em mente que você será cobrado pelo uso de uma nova unidade gerenciada (MU) após a avaliação, então certifique-se de Planejar adequadamente. Quando a avaliação do seu módulo terminar, você será notificado se precisar adicionar mais MUs para evitar a interrupção do serviço.
-
-Você pode monitorar o uso da unidade gerenciada na página *Admin > assinatura* na guia *uso*.
-
-image:Module_Trials_UsageTab.png["Ecrã de utilização de MU"]
+Após o término do período de carência, a funcionalidade do Data Infrastructure Insights será suspensa até que você renove.  Para renovar, consulte a página *Administrador > Assinatura* ou entre em contato com o departamento de vendas da NetApp .
 
 
-NOTE: A _Module Evaluation_ não é um _Trial_ - usamos o período de avaliação de prazo quando fornecemos aos clientes um período de teste gratuito para usar o serviço Data Infrastructure Insights para confirmar a adequação e habilitar a compra. Uma avaliação de módulo é diferente - é quando permitimos que um cliente pago experimente um módulo de Data Infrastructure Insights que ele não usou nos últimos meses de sua assinatura paga. Quando a avaliação está ativa, as cobranças apenas para o módulo recém-configurado são dispensadas. O ambiente de trabalho dos clientes ainda está sob assinatura e não reverteu para a versão de avaliação gratuita. A subscrição não foi alterada.
+NOTE: Seus dados do Data Infrastructure Insights permanecem intactos por 30 dias após o período de carência.  Se você renovar sua assinatura dentro desse período, todos os seus dados até o término do período de carência estarão disponíveis para você.
+
+
+
+== Avaliação do Módulo
+
+Você também pode aproveitar as *Avaliações de Módulos*.  Por exemplo, se você já estiver inscrito no Infrastructure Observability, mas estiver adicionando o Kubernetes ao seu ambiente, você entrará automaticamente em uma avaliação de 30 dias do Kubernetes Observability, a partir da instalação do NetApp Kubernetes Monitoring Operator.  Você só será cobrado pelo uso da sua unidade gerenciada do Kubernetes Observability no final do período de avaliação.
+
+
+NOTE: Tenha em mente que você será cobrado pelo uso da nova unidade gerenciada (MU) após a avaliação, portanto planeje adequadamente.  Quando a avaliação do seu módulo estiver terminando, você será notificado se precisará adicionar mais MUs para evitar interrupção do serviço.
+
+Você pode monitorar o uso da sua unidade gerenciada na página *Administrador > Assinatura* na aba *Uso*.
+
+image:Module_Trials_UsageTab.png["Tela de uso do MU"]
+
+
+NOTE: Uma _Avaliação de Módulo_ não é um _Teste_ - usamos o termo teste quando oferecemos aos clientes um período de teste gratuito de uso do serviço Data Infrastructure Insights para confirmar a adequação e permitir a compra.  Uma avaliação de módulo é diferente: é quando permitimos que um cliente pago experimente um módulo do Data Infrastructure Insights que ele não usou nos últimos meses de sua assinatura paga.  Quando a avaliação estiver ativa, as cobranças apenas pelo módulo recém-configurado serão dispensadas.  O ambiente de trabalho dos clientes ainda está sob assinatura e não voltou ao teste gratuito.  A assinatura não mudou.
 
 
 
 === Estimador
 
-Durante uma avaliação do módulo, você não será cobrado o uso de um para os recursos consumidos para o módulo, mas você pode abrir o *Estimador* (na guia _Summary_) para ver como as MUs serão cobradas após a avaliação, bem como jogar com cenários "e se" com o número de MUs que você pode precisar no futuro. Reponha os números saindo do Estimador.
+Durante uma avaliação de módulo, você não é cobrado pelo uso de MU pelos recursos consumidos no módulo, mas pode abrir o *Estimador* (na aba _Resumo_) para ver como os MUs serão cobrados após a avaliação, bem como brincar com cenários "E se" com o número de MUs que você pode precisar no futuro.  Redefina os números saindo do Estimador.
 
 image:Module_Trials_Estimator.png["Estimador"]
 
-Marque a caixa de seleção ao lado de um módulo para adicionar ou remover todos os MU do módulo do custo estimado.
+Marque a caixa de seleção ao lado de um módulo para adicionar ou remover todas as MUs do módulo do custo estimado.
 
-O Estimator também permite que você veja como os números se acumulam para um Add On - onde você mantém seu prazo de assinatura atual e aumenta o número de unidades gerenciadas licenciadas - ou uma opção de renovação para uma assinatura de renovação que você compraria quando seu prazo de assinatura atual terminar.
+O Estimator também permite que você veja como os números se comparam para um Add On - onde você mantém seu prazo de assinatura atual e aumenta o número de unidades gerenciadas licenciadas - ou uma opção de Renovação para uma assinatura de renovação que você compraria quando seu prazo de assinatura atual terminasse.
 
-Observe que os clientes só são elegíveis para uma avaliação de módulo uma vez por assinatura.
-
-
-
-== Opções de subscrição
-
-Para se inscrever, vá para *Admin -> Subscription*. Além dos botões *Subscribe*, você poderá ver seus coletores de dados instalados e calcular sua medição estimada. Para um ambiente típico, você pode clicar no botão AWS Marketplace de autoatendimento. Se o seu ambiente incluir ou se espera que inclua 1.000 ou mais unidades gerenciadas, você estará qualificado para o preço de volume.
+Observe que os clientes só têm direito a uma avaliação do módulo uma vez por assinatura.
 
 
 
-=== Medição de observabilidade
+== Opções de assinatura
 
-A capacidade de observação do Data Infrastructure Insights é avaliada de duas maneiras:
-
-* Medição da capacidade
-* Medição de unidade gerenciada (legado)
-
-
-Sua assinatura será mensurada por um desses métodos, dependendo se você tem uma assinatura existente ou está iniciando uma nova assinatura.
+Para assinar, vá para *Admin -> Assinatura*.  Além dos botões *Inscrever-se*, você poderá ver seus coletores de dados instalados e calcular sua medição estimada.  Para um ambiente típico, você pode clicar no botão de autoatendimento do AWS Marketplace.  Se o seu ambiente inclui ou espera-se que inclua 1.000 ou mais Unidades Gerenciadas, você está qualificado para o Preço por Volume.
 
 
 
-==== Medição da capacidade
+=== Medição de Observabilidade
 
-A observabilidade do Data Infrastructure Insights mede o uso de acordo com o nível de armazenamentos em seu locatário. Você pode ter armazenamentos que se enquadram em uma ou mais dessas categorias:
+A observabilidade do Data Infrastructure Insights é medida de duas maneiras:
 
-* Primário bruto
-* Objeto bruto
+* Medição de Capacidade
+* Medição de Unidade Gerenciada (Legado)
+
+
+Sua assinatura será medida por um desses métodos, dependendo se você já tem uma assinatura ou está iniciando uma nova assinatura.
+
+
+
+==== Medição de Capacidade
+
+O Observability do Data Infrastructure Insights mede o uso de acordo com o nível de armazenamento no seu locatário.  Você pode ter armazenamentos que se enquadram em uma ou mais destas categorias:
+
+* Matéria-prima primária
+* Objeto Bruto
 * Nuvem consumida
 
 
-Cada nível é medido a uma taxa diferente, com o todo calculado em conjunto para lhe dar um direito ponderado. A fórmula para calcular a utilização ponderada é a seguinte:
+Cada nível é medido a uma taxa diferente, com o todo calculado em conjunto para lhe dar um direito ponderado.  A fórmula para calcular o uso ponderado é a seguinte:
 
  Weighted Capacity = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioned TiB)
-Para facilitar isso, o DII calcula um único número de direito * ponderado com base em quantidades _subscritas_; em seguida, calcula esse mesmo número com base no armazenamento _descoberto_ e só declara violação se a capacidade descoberta for maior do que o direito ponderado. Isso proporciona flexibilidade para monitorar quantidades que variam de acordo com os valores inscritos para cada nível, o que o DII permite, contanto que o storage total descoberto esteja dentro dos direitos ponderados subscritos.
+Para facilitar isso, o DII calcula um único número de *direito ponderado* com base nas quantidades _inscritas_; ele então calcula o mesmo número com base no armazenamento _descoberto_ e só declara violação se a capacidade descoberta for maior que o direito ponderado.  Isso lhe dá flexibilidade para monitorar quantidades que variam dos valores assinados para cada nível, o que o DII permite, desde que o armazenamento total descoberto esteja dentro do direito ponderado assinado.
 
 
 
-==== Medição de unidade gerenciada (legado)
+==== Medição de Unidade Gerenciada (Legado)
 
-Observabilidade da infraestrutura de dados e uso do medidor de observabilidade do Kubernetes por *Unidade gerenciada*. O uso de suas unidades gerenciadas é calculado com base no número de *hosts ou máquinas virtuais* e na quantidade de *capacidade não formatada* sendo gerenciada em seu ambiente de infraestrutura.
+Uso do medidor de observabilidade de infraestrutura e de observabilidade do Kubernetes do Data Infrastructure Insights por *Unidade gerenciada*.  O uso de suas Unidades Gerenciadas é calculado com base no número de *hosts ou máquinas virtuais* e na quantidade de *capacidade não formatada* sendo gerenciada em seu ambiente de infraestrutura.
 
-* 1 Unidade gerenciada: 2 hosts (qualquer máquina virtual ou física)
-* 1 Unidade gerenciada: 4 TIB de capacidade não formatada de discos físicos ou virtuais
-* 1 Unidade gerenciada: 40 TIB de capacidade não formatada do armazenamento secundário selecionado: AWS S3, Cohesity SmartFiles, Dell EMC Data Domain, Hitachi Content Platform, IBM Cleversafe, NetApp StorageGRID, Rubrik.
-* 1 Unidade gerenciada: 4 vCPUs de Kuberentes.
+* 1 Unidade Gerenciada = 2 hosts (qualquer máquina virtual ou física)
+* 1 Unidade Gerenciada = 4 TiB de capacidade não formatada de discos físicos ou virtuais
+* 1 Unidade Gerenciada = 40 TiB de capacidade não formatada de armazenamento secundário selecionado: AWS S3, Cohesity SmartFiles, Dell EMC Data Domain, Dell EMC ECS, Hitachi Content Platform, IBM Cleversafe, NetApp StorageGRID, Rubrik.
+* 1 Unidade Gerenciada = 4 vCPUs do Kuberentes.
 +
-** 1 Ajuste da Unidade gerenciada K8s: 2 nós ou hosts também monitorados pela infraestrutura.
+** 1 Ajuste de Unidade Gerenciada K8s = 2 Nós ou Hosts também monitorados pela infraestrutura.
 
 
 
 
 
 
-=== Medição da segurança da carga de trabalho
+=== Medição de segurança da carga de trabalho
 
-A segurança do workload é medida pelo cluster usando a mesma abordagem que a medição de observabilidade.
+A segurança da carga de trabalho é medida pelo Cluster usando a mesma abordagem da medição de observabilidade.
 
-Você pode exibir o uso do Workload Security na página *Admin > Subscription* na guia *Workload Security*.
+Você pode visualizar seu uso do Workload Security na página *Administrador > Assinatura* na guia *Segurança de Carga de Trabalho*.
 
-image:ws_metering_example_page.png["Admin > subscrição > separador Segurança de carga de trabalho que apresenta contagens de nó de gama alta, gama média e nível de entrada"]
-
-
-NOTE: As assinaturas existentes do Workload Security têm seu uso de MU ajustado para que o uso do nó não consuma unidades gerenciadas. O Data Infrastructure Insights mede o uso para garantir a conformidade com o uso licenciado.
+image:ws_metering_example_page.png["Admin > Assinatura > Guia Segurança de Carga de Trabalho mostrando contagens de nós de alto nível, médio e básico"]
 
 
-
-== Como faço para me inscrever?
-
-Se sua contagem de unidades gerenciadas for inferior a 1.000, você poderá se inscrever por meio de vendas da NetApp ou <<self-subscribe-through-aws-marketplace,auto-subscrição>> pelo mercado AWS.
+NOTE: As assinaturas existentes do Workload Security têm seu uso de MU ajustado para que o uso do nó não consuma unidades gerenciadas.  O Data Infrastructure Insights mede o uso para garantir a conformidade com o uso licenciado.
 
 
 
-=== Inscreva-se através do NetApp vendas diretas
+== Como faço para assinar?
 
-Se a sua contagem de unidades geridas esperada for igual ou superior a 1.000, clique no link:https://www.netapp.com/forms/cloud-insights-contact-us["*Contato de vendas*"] botão para subscrever a equipa de vendas da NetApp.
-
-Você deve fornecer seus dados de informações de infraestrutura *número de série* ao seu representante de vendas da NetApp para que sua assinatura paga possa ser aplicada ao seu ambiente de informações de infraestrutura de dados. O número de série identifica exclusivamente o ambiente de avaliação do Data Infrastructure Insights e pode ser encontrado na página *Admin > Subscription*.
+Se a contagem de suas Unidades Gerenciadas for inferior a 1.000, você pode assinar por meio do NetApp Sales ou<<self-subscribe-through-aws-marketplace,autoinscrição>> por meio do AWS Marketplace.
 
 
 
-=== Inscreva-se automaticamente no AWS Marketplace
+=== Assine através do NetApp Sales Direct
+
+Se a contagem esperada de Unidades Gerenciadas for 1.000 ou mais, clique emlink:https://www.netapp.com/forms/cloud-insights-contact-us["*Entre em contato com Vendas*"] botão para assinar através da Equipe de Vendas da NetApp .
+
+Você deve fornecer seu *Número de Série* do Data Infrastructure Insights ao seu representante de vendas da NetApp para que sua assinatura paga possa ser aplicada ao seu ambiente do Data Infrastructure Insights .  O número de série identifica exclusivamente seu ambiente de teste do Data Infrastructure Insights e pode ser encontrado na página *Administrador > Assinatura*.
 
 
-NOTE: Você deve ser um proprietário ou administrador de conta para aplicar uma assinatura do AWS Marketplace à sua conta de avaliação existente do Data Infrastructure Insights. Além disso, você precisa ter uma conta do Amazon Web Services (AWS).
 
-Clicar no link do Amazon Marketplace abre a página de assinatura da AWS https://aws.amazon.com/marketplace/pp/prodview-pbc3h2mkgaqxe["Insights da infraestrutura de dados"], onde você pode concluir sua assinatura. Observe que os valores inseridos na calculadora não estão preenchidos na página de assinatura da AWS; você precisará inserir o total de unidades gerenciadas nessa página.
+=== Autoassinatura pelo AWS Marketplace
 
-Depois de inserir a contagem total de unidades gerenciadas e escolher o prazo de assinatura de 12 meses ou 36 meses, clique em *Configurar sua conta* para concluir o processo de assinatura.
+
+NOTE: Você deve ser um Proprietário ou Administrador de Conta para aplicar uma assinatura do AWS Marketplace à sua conta de teste existente do Data Infrastructure Insights .  Além disso, você deve ter uma conta Amazon Web Services (AWS).
+
+Clicar no link do Amazon Marketplace abre o AWS https://aws.amazon.com/marketplace/pp/prodview-pbc3h2mkgaqxe["Data Infrastructure Insights"] página de assinatura, onde você pode concluir sua assinatura.  Observe que os valores inseridos na calculadora não são preenchidos na página de assinatura da AWS; você precisará inserir a contagem total de Unidades Gerenciadas nesta página.
+
+Depois de inserir a contagem total de Unidades Gerenciadas e escolher o período de assinatura de 12 ou 36 meses, clique em *Configurar sua conta* para finalizar o processo de assinatura.
 
 Após a conclusão do processo de assinatura da AWS, você será levado de volta ao seu ambiente do Data Infrastructure Insights .  Ou, se o ambiente não estiver mais ativo (por exemplo, se você tiver efetuado logout), você será levado para a página de login do NetAPp Console.  Quando você fizer login no Data Infrastructure Insights novamente, sua assinatura estará ativa.
 
 
-NOTE: Depois de clicar em *Configurar sua conta* na página do AWS Marketplace, você deve concluir o processo de assinatura da AWS em uma hora. Se você não o concluir dentro de uma hora, você precisará clicar em *Configurar sua conta* novamente para concluir o processo.
+NOTE: Após clicar em *Configurar sua conta* na página do AWS Marketplace, você deve concluir o processo de assinatura da AWS em até uma hora.  Se você não concluir o processo em uma hora, será necessário clicar em *Configurar sua conta* novamente para concluir o processo.
 
-Se houver um problema e o processo de assinatura não for concluído corretamente, você ainda verá o banner "versão de avaliação" quando fizer login no seu ambiente. Neste caso, pode aceder a *Admin > subscrição* e repetir o processo de subscrição.
+Se houver um problema e o processo de assinatura não for concluído corretamente, você ainda verá o banner "Versão de teste" ao efetuar login no seu ambiente.  Nesse caso, você pode ir em *Admin > Assinatura* e repetir o processo de assinatura.
 
 
 
-== Veja o status da assinatura
+== Ver o status da sua assinatura
 
-Quando a sua subscrição estiver ativa, pode ver o estado da subscrição e a utilização da unidade gerida a partir da página *Admin > subscrição*.
+Depois que sua assinatura estiver ativa, você poderá visualizar o status da assinatura e o uso da Unidade Gerenciada na página *Administrador > Assinatura*.
 
-A guia Subscription *Summary* (Resumo* da assinatura) exibe coisas como as seguintes:
+A aba *Resumo* da Assinatura exibe coisas como o seguinte:
 
 * Edição atual
-* Número de série da subscrição
-* Direito de um atual
+* Número de série da assinatura
+* Direito atual à MU
 
 
-A guia *Usage* mostra seu uso atual de MU e como esse uso se divide pelo coletor de dados.
+A aba *Uso* mostra seu uso atual do MU e como esse uso é dividido por coletor de dados.
 
-image:SubscriptionUsageByModule.png["Utilização de MU por módulo"]
+image:SubscriptionUsageByModule.png["Uso de MU por módulo"]
 
-O separador *Histórico* dá-lhe informações sobre a sua utilização de MU nos últimos 7 a 90 dias. Passar o Mouse sobre uma coluna no gráfico dá a você um detalhamento por módulo (ou seja, observabilidade, Kubernetes).
+A aba *Histórico* fornece informações sobre o uso do MU nos últimos 7 a 90 dias.  Passar o mouse sobre uma coluna no gráfico fornece uma análise por módulo (por exemplo, Observabilidade, Kubernetes).
 
-image:Subscription_Usage_History.png["Histórico utilização MU"]
-
-
-
-== Veja o seu Gerenciamento de uso
-
-A guia Gerenciamento de uso mostra uma visão geral do uso da Unidade gerenciada, bem como guias que dividem o consumo de Unidade gerenciada por coletor ou cluster do Kubernetes.
-
-
-NOTE: A contagem de unidades gerenciadas de capacidade não formatada reflete uma soma da capacidade bruta total no ambiente e é arredondada para a Unidade gerenciada mais próxima.
-
-
-NOTE: A soma de unidades gerenciadas pode diferir ligeiramente da contagem de coletores de dados na seção de resumo. Isso ocorre porque as contagens de unidades gerenciadas são arredondadas para a Unidade gerenciada mais próxima. A soma desses números na lista de coletores de dados pode ser ligeiramente maior do que o total de unidades gerenciadas na seção de status. A seção de resumo reflete sua contagem de unidades gerenciadas real para sua assinatura.
-
-Caso seu uso esteja chegando ou excedendo o valor inscrito, você poderá reduzir o uso excluindo coletores de dados ou interrompendo o monitoramento dos clusters do Kubernetes. Exclua um item nesta lista clicando no menu "três pontos" e selecionando _Excluir_.
+image:Subscription_Usage_History.png["Histórico de uso do MU"]
 
 
 
-=== O que acontece se eu exceder a minha utilização subscrita?
+== Visualize seu gerenciamento de uso
 
-Os avisos são apresentados quando a utilização da unidade gerida exceder 80%, 90% e 100% do valor total subscrito:
+A guia Gerenciamento de uso mostra uma visão geral do uso da Unidade Gerenciada, bem como guias detalhando o consumo da Unidade Gerenciada por coletor ou cluster do Kubernetes.
+
+
+NOTE: A contagem de Unidades Gerenciadas de Capacidade Não Formatada reflete uma soma da capacidade bruta total no ambiente e é arredondada para a Unidade Gerenciada mais próxima.
+
+
+NOTE: A soma de Unidades Gerenciadas pode ser ligeiramente diferente da contagem de Coletores de Dados na seção de resumo.  Isso ocorre porque as contagens de Unidades Gerenciadas são arredondadas para a Unidade Gerenciada mais próxima.  A soma desses números na lista de Coletores de Dados pode ser um pouco maior que o total de Unidades Gerenciadas na seção de status.  A seção de resumo reflete sua contagem real de Unidades Gerenciadas para sua assinatura.
+
+Caso seu uso esteja próximo ou excedendo o valor assinado, você pode reduzir o uso excluindo coletores de dados ou interrompendo o monitoramento de clusters do Kubernetes.  Exclua um item desta lista clicando no menu "três pontos" e selecionando _Excluir_.
+
+
+
+=== O que acontece se eu exceder meu uso assinado?
+
+Avisos são exibidos quando o uso da sua Unidade Gerenciada excede 80%, 90% e 100% do valor total da sua assinatura:
 
 [cols="2*a"]
 |===
-| *Quando o uso excede:* | *Isto acontece/ação recomendada:* 
+| *Quando o uso excede:* | *Isso acontece / Ação recomendada:* 
 
 
  a| 
 *80%*
  a| 
-É apresentado um banner informativo. Nenhuma ação é necessária.
+Um banner informativo é exibido.  Nenhuma ação é necessária.
 
 
 
  a| 
 *90%*
  a| 
-É apresentado um banner de aviso. Você pode querer aumentar a contagem de unidades gerenciadas subscritas.
+Um banner de aviso é exibido.  Talvez você queira aumentar sua contagem de Unidades Gerenciadas assinadas.
 
 
 
  a| 
 *100%*
  a| 
-Um banner de erro é exibido até que você execute um dos seguintes procedimentos:
+Um banner de erro será exibido até que você execute uma das seguintes ações:
 
-* Remova os coletores de dados para que o uso da Unidade gerenciada esteja em ou abaixo do valor inscrito
-* Modifique a sua subscrição para aumentar a contagem de unidades geridas subscritas
+* Remova os coletores de dados para que o uso da sua unidade gerenciada fique igual ou abaixo do valor assinado
+* Modifique sua assinatura para aumentar a contagem de Unidades Gerenciadas assinadas
 
 
 |===
 
 
-== Inscreva-se diretamente e pule a avaliação
+== Assine diretamente e pule o teste
 
-Você também pode se inscrever no Data Infrastructure Insights diretamente do https://aws.amazon.com/marketplace/pp/prodview-pbc3h2mkgaqxe["AWS Marketplace"], sem primeiro criar um ambiente de teste. Assim que a subscrição estiver concluída e o ambiente estiver configurado, será imediatamente subscrito.
+Você também pode assinar o Data Infrastructure Insights diretamente do https://aws.amazon.com/marketplace/pp/prodview-pbc3h2mkgaqxe["Mercado AWS"] , sem primeiro criar um ambiente de teste.  Assim que sua assinatura for concluída e seu ambiente estiver configurado, você será inscrito imediatamente.
 
 
 
 == Adicionando um ID de direito
 
-Se você possui um produto NetApp válido incluído no Insights de infraestrutura de dados, poderá adicionar esse número de série do produto à sua assinatura existente do Insights de infraestrutura de dados. Por exemplo, se você adquiriu o NetApp Astra Control Center, o número de série da licença do Astra Control Center poderá ser usado para identificar a assinatura no Insights de infraestrutura de dados. Insights de infraestrutura de dados refere-se a isso um _ID de direito_.
+Se você possui um produto NetApp válido que vem junto com o Data Infrastructure Insights, você pode adicionar esse número de série do produto à sua assinatura existente do Data Infrastructure Insights .  Por exemplo, se você comprou o NetApp Astra Control Center, o número de série da licença do Astra Control Center pode ser usado para identificar a assinatura no Data Infrastructure Insights.  O Data Infrastructure Insights se refere a isso como um _ID de direito_.
 
-Para adicionar um ID de direito à sua assinatura do Data Infrastructure Insights, na página *Admin > Subscription*, clique em _ ID de direito_.
+Para adicionar um ID de direito à sua assinatura do Data Infrastructure Insights , na página *Administrador > Assinatura*, clique em _+ID de direito_.
 
 image:Subscription_AddEntitlementID.png["Adicione um ID de direito à sua assinatura"]

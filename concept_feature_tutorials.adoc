@@ -14,27 +14,27 @@ keywords: onboarding, getting started, video, tutorial, resolution, dashboard, q
 
 
 [role="lead"]
-O Data Infrastructure Insights é carregado com recursos úteis que permitem solucionar problemas de forma rápida e fácil e fornecer insights sobre seu ambiente corporativo. Encontre dados facilmente com consultas avançadas, visualize dados em painéis e envie alertas por e-mail para os limites de dados definidos.
+O Data Infrastructure Insights está repleto de recursos úteis que permitem solucionar problemas de forma rápida e fácil, além de fornecer insights sobre seu ambiente corporativo.  Encontre dados facilmente com consultas poderosas, visualize dados em painéis e envie alertas por e-mail para os limites de dados que você definir.
 
 
 
 == Lista de verificação e tutoriais em vídeo
 
-A *Lista de verificação de inicialização* exibida no seu locatário do Data Infrastructure Insights contém uma lista de várias tarefas e conceitos úteis. A seleção de um item na lista de verificação leva você à página de Insights de infraestrutura de dados apropriada para esse conceito. Por exemplo, clicar no item _criar um Dashboard_ abre a página Data Infrastructure Insights *Dashboards*.
+A *Lista de verificação de inicialização* exibida no seu locatário do Data Infrastructure Insights contém uma lista de várias tarefas e conceitos úteis.  Selecionar um item na lista de verificação leva você à página apropriada do Data Infrastructure Insights para esse conceito.  Por exemplo, clicar no item _Criar um painel_ abre a página *Painéis* do Data Infrastructure Insights .
 
 image:OnboardingChecklist.png["Progresso da lista de verificação do tutorial"]
 
-Na parte superior da página há um link para um tutorial em vídeo mostrando como criar um painel. Você pode ver o vídeo quantas vezes quiser até clicar no botão _Get It! Não mostrar novamente este link_ para esse vídeo. O vídeo estará disponível toda vez que você for para a página Dashboards, até que você o rejeite.
+No topo da página há um link para um tutorial em vídeo mostrando como criar um painel.  Você pode assistir ao vídeo quantas vezes quiser até clicar em _Entendi!  Não mostrar isso novamente_ link para esse vídeo.  O vídeo estará disponível sempre que você acessar a página Painéis, até que você o descarte.
 
-image:Startup-DashboardWatchVideo.png["Assista ao link de vídeo"]
+image:Startup-DashboardWatchVideo.png["Assista ao link do vídeo"]
 
-Depois de assistir ao vídeo pelo menos uma vez, o item _Create a Dashboard_ na lista de verificação é desmarcado, indicando que você concluiu o tutorial. Você pode então prosseguir para o próximo tutorial.
-
-
-NOTE: Você pode ver os tutoriais em qualquer ordem que você gosta, quantas vezes quiser até ser demitido.
+Depois de assistir ao vídeo pelo menos uma vez, o item _Criar um painel_ na lista de verificação é marcado, indicando que você concluiu o tutorial.  Você pode então prosseguir para o próximo tutorial.
 
 
+NOTE: Você pode visualizar os tutoriais na ordem que quiser, quantas vezes quiser, até dispensá-los.
 
-=== A lista de verificação está em falta
 
-A lista de verificação de arranque é apresentada até clicar no link _não mostrar novamente_ na parte inferior da lista de verificação. Mesmo depois de descartar a lista de verificação, os tutoriais ainda estão disponíveis em cada página apropriada do Data Infrastructure Insights até que você ignore cada um da barra de cabeçalho da mensagem.
+
+=== Descartando a lista de verificação
+
+A lista de verificação de inicialização é exibida até você clicar no link _Não mostrar isso novamente_ na parte inferior da lista de verificação.  Mesmo depois de descartar a lista de verificação, os tutoriais ainda estarão disponíveis em cada página apropriada do Data Infrastructure Insights até que você descarte cada um deles da barra de cabeçalho da mensagem.

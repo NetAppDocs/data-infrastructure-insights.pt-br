@@ -4,31 +4,31 @@ permalink: reporting_user_roles.html
 summary: O que você pode fazer com o Data Infrastructure Insights Reporting depende da sua função de usuário. 
 keywords: reporting, cognos, data warehouse, dwh, users, roles, user roles 
 ---
-= Funções de usuário do Data Infrastructure Insights Reporting
+= Funções de usuário de relatórios de Data Infrastructure Insights
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Se você tiver o Data Infrastructure Insights Premium Edition com relatórios, todos os usuários do Data Infrastructure Insights no seu locatário também terão um login único (SSO) no aplicativo relatórios (ou seja, Cognos). Basta clicar no link *relatórios* no menu e você será automaticamente conetado ao Reporting.
+Se você tiver o Data Infrastructure Insights Premium Edition com relatórios, cada usuário do Data Infrastructure Insights no seu locatário também terá um login de logon único (SSO) no aplicativo de relatórios (por exemplo, Cognos).  Basta clicar no link *Relatórios* no menu e você será automaticamente conectado aos Relatórios.
 
 Sua função de usuário no Data Infrastructure Insights determina sua função de usuário de relatórios:
 
 |===
 
 
-| Função Data Infrastructure Insights | Função de relatório | Permissões de relatórios 
+| Função de Data Infrastructure Insights | Função de Relatório | Permissões de relatórios 
 
 
-| Convidado | Consumidor | Pode visualizar, programar e executar relatórios e definir preferências pessoais, como as de idiomas e fusos horários. Os consumidores não podem criar relatórios ou executar tarefas administrativas. 
+| Convidado | Consumidor | Pode visualizar, agendar e executar relatórios e definir preferências pessoais, como idiomas e fusos horários.  Os consumidores não podem criar relatórios ou executar tarefas administrativas. 
 
 
-| Utilizador | Autor | Pode executar todas as funções de consumidor, bem como criar e gerenciar relatórios e painéis. 
+| Usuário | Autor | Pode executar todas as funções do consumidor, bem como criar e gerenciar relatórios e painéis. 
 
 
-| Administrador | Administrador | Pode executar todas as funções do autor, bem como todas as tarefas administrativas, tais como a configuração de relatórios e o encerramento e reinício das tarefas de relatório. 
+| Administrador | Administrador | Pode executar todas as funções de autor, bem como todas as tarefas administrativas, como configuração de relatórios e desligamento e reinicialização de tarefas de relatórios. 
 |===
-A tabela a seguir mostra as funções disponíveis para cada função de relatório.
+A tabela a seguir mostra as funções disponíveis para cada função de Relatórios.
 
 |===
 
@@ -36,34 +36,34 @@ A tabela a seguir mostra as funções disponíveis para cada função de relató
 | Recurso | Consumidor | Autor | Administrador 
 
 
-| Exibir relatórios na guia conteúdo da equipe | Sim | Sim | Sim 
+| Visualizar relatórios na guia Conteúdo da equipe | Sim | Sim | Sim 
 
 
-| Execute relatórios | Sim | Sim | Sim 
+| Executar relatórios | Sim | Sim | Sim 
 
 
 | Agendar relatórios | Sim | Sim | Sim 
 
 
-| Carregar ficheiros externos | Não | Sim | Sim 
+| Carregar arquivos externos | Não | Sim | Sim 
 
 
-| Criar trabalhos | Não | Sim | Sim 
+| Criar empregos | Não | Sim | Sim 
 
 
 | Crie histórias | Não | Sim | Sim 
 
 
-| Crie relatórios | Não | Sim | Sim 
+| Criar relatórios | Não | Sim | Sim 
 
 
-| Crie Pacotes e módulos de dados | Não | Sim | Sim 
+| Criar pacotes e módulos de dados | Não | Sim | Sim 
 
 
 | Executar tarefas administrativas | Não | Não | Sim 
 
 
-| Adicionar/Editar item HTML | Não | Não | Sim 
+| Adicionar/editar item HTML | Não | Não | Sim 
 
 
 | Executar relatório com item HTML | Sim | Sim | Sim 
@@ -72,36 +72,36 @@ A tabela a seguir mostra as funções disponíveis para cada função de relató
 | Adicionar/editar SQL personalizado | Não | Não | Sim 
 
 
-| Execute relatórios com SQL personalizado | Sim | Sim | Sim 
+| Executar relatórios com SQL personalizado | Sim | Sim | Sim 
 |===
 
 
-== Configurando preferências de e-mail do Cognos (relatórios)
+== Definindo preferências de e-mail de relatórios (Cognos)
 
 
-NOTE: Se você alterar suas preferências de e-mail de usuário no Data Infrastructure Insights Reporting (ou seja, o aplicativo Cognos), essas preferências estarão ativas _somente para a sessão atual_. Fazer logout do Cognos e voltar a entrar irá redefinir as suas preferências de e-mail.
+NOTE: Se você alterar suas preferências de e-mail do usuário no Data Infrastructure Insights Reporting (ou seja, no aplicativo Cognos), essas preferências ficarão ativas _somente para a sessão atual_.  Sair do Cognos e entrar novamente redefinirá suas preferências de e-mail.
 
 
 
-=== Que passos devo tomar para preparar o meu ambiente existente para ativar o SSO?
+=== Que medidas devo tomar para preparar meu ambiente existente para habilitar o SSO?
 
-Para garantir que seus relatórios sejam mantidos, migre todos os relatórios de _meu conteúdo_ para _conteúdo de equipe_ usando as etapas a seguir. Você deve fazer isso antes de ativar o SSO no seu locatário:
+Para garantir que seus relatórios sejam retidos, migre todos os relatórios de _Meu conteúdo_ para _Conteúdo da equipe_ usando as seguintes etapas.  Você deve fazer isso antes de habilitar o SSO no seu locatário:
 
-. Navegue até *Menu > conteúdo*
+. Navegue até *Menu > Conteúdo*
 
 
 image:Reporting_Menu.png["Menu superior esquerdo do Cognos"]
 
 . Crie uma nova pasta em *_Team Content_*
 +
-.. Se vários usuários tiverem sido criados, crie uma pasta separada para cada usuário para evitar a substituição de relatórios com nomes duplicados
+.. Se vários usuários foram criados, crie uma pasta separada para cada usuário para evitar sobrescrever relatórios com nomes duplicados
 
 
-. Navegue até _meu conteúdo_
-. Selecione todos os relatórios que deseja manter.
+. Navegue até _Meu Conteúdo_
+. Selecione todos os relatórios que você deseja manter.
 . No canto superior direito do menu, selecione "Copiar ou mover"
-. Navegue até a pasta recém-criada em _conteúdo da equipe_
-. Cole os relatórios na pasta recém-criada usando os botões "Copiar para" ou "mover para"
-. Quando o SSO estiver habilitado para o Cognos, faça login no Data Infrastructure Insights com o endereço de e-mail usado para criar sua conta.
-. Navegue até a pasta _conteúdo da equipe_ dentro do Cognos e copie ou mova os relatórios salvos anteriormente de volta para _meu conteúdo_.
+. Navegue até a pasta recém-criada em _Team Content_
+. Cole os relatórios na pasta recém-criada usando os botões "Copiar para" ou "Mover para"
+. Depois que o SSO estiver habilitado para o Cognos, faça login no Data Infrastructure Insights com o endereço de e-mail usado para criar sua conta.
+. Navegue até a pasta _Conteúdo da Equipe_ no Cognos e Copie ou Mova os relatórios salvos anteriormente de volta para _Meu Conteúdo_.
 

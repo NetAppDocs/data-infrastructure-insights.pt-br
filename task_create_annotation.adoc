@@ -14,109 +14,109 @@ summary: Como criar uma anotação.
 
 
 [role="lead"]
-Você cria anotações e as atribui a ativos que monitora. Anotações são anotações que fornecem informações sobre um ativo, como local físico, fim de vida útil, camada de storage ou níveis de serviço de volume.
+Você cria anotações e as atribui aos ativos que monitora.  Anotações são notas que fornecem informações sobre um ativo, como localização física, fim de vida útil, nível de armazenamento ou níveis de serviço de volume.
 
 
 
-== Definir anotações
+== Definindo anotações
 
-Usando anotações, você pode adicionar dados personalizados específicos de negócios que correspondem às necessidades da sua empresa aos ativos. Embora o Data Infrastructure Insights forneça um conjunto de anotações padrão, como ciclo de vida do ativo (aniversário ou fim da vida útil), localização do prédio ou do data center e nível, você pode achar que deseja exibir dados de outras maneiras.
+Usando anotações, você pode adicionar dados comerciais personalizados específicos aos ativos que correspondem às suas necessidades comerciais.  Embora o Data Infrastructure Insights forneça um conjunto de anotações padrão, como ciclo de vida do ativo (aniversário ou fim da vida útil), localização do edifício ou do data center e nível, você pode querer visualizar os dados de outras maneiras.
 
-Os dados em anotações personalizadas complementam os dados do dispositivo já coletados, como fabricante do switch, número de portas e estatísticas de desempenho. Os dados que você adiciona usando anotações não são descobertos pelo Data Infrastructure Insights.
-
-.Antes de começar
-* Liste qualquer terminologia do setor à qual os dados do ambiente devem ser associados.
-* Listar a terminologia corporativa à qual os dados do ambiente devem ser associados.
-* Identifique quaisquer tipos de anotação padrão que você possa ser capaz de usar.
-* Identifique quais anotações personalizadas você precisa criar. Você precisa criar a anotação antes que ela possa ser atribuída a um ativo.
-
-
-Utilize os seguintes passos para criar uma anotação.
-
-.Passos
-. No menu Data Infrastructure Insights, clique em *Observability > Enrich > Annotations*
-. Clique em * Annotation* para criar uma nova anotação.
-. Introduza um Nome, Descrição e tipo para a nova anotação.
-+
-Por exemplo, digite o seguinte para criar uma anotação de texto que define a localização física de um ativo no Data Center 4:
-
-+
-** Introduza um nome para a anotação, tal como "Location" (localização)
-** Introduza uma descrição do que a anotação está a descrever, tal como "a localização física é o Data Center 4"
-** Introduza o 'tipo' da anotação que é, como por exemplo "texto".
-
-
-
-
-
-
-== Atribuir manualmente anotações a ativos
-
-A atribuição de anotações a ativos ajuda a classificar, agrupar e gerar relatórios sobre ativos de maneiras relevantes para o seu negócio. Embora seja possível atribuir anotações a ativos de um tipo específico automaticamente usando regras de anotação, você pode atribuir anotações a um ativo individual usando sua página de ativo.
+Os dados em anotações personalizadas complementam os dados do dispositivo já coletados, como fabricante do switch, número de portas e estatísticas de desempenho.  Os dados que você adiciona usando anotações não são descobertos pelo Data Infrastructure Insights.
 
 .Antes de começar
-* Tem de ter criado a anotação que pretende atribuir.
+* Liste qualquer terminologia do setor à qual os dados ambientais devem ser associados.
+* Liste a terminologia corporativa à qual os dados ambientais devem ser associados.
+* Identifique quaisquer tipos de anotação padrão que você possa usar.
+* Identifique quais anotações personalizadas você precisa criar.  Você precisa criar a anotação antes que ela possa ser atribuída a um ativo.
+
+
+Siga as etapas a seguir para criar uma anotação.
+
+.Passos
+. No menu Data Infrastructure Insights , clique em *Observabilidade > Enriquecer > Anotações*
+. Clique em *+ Anotação* para criar uma nova anotação.
+. Insira um Nome, Descrição e tipo para a nova anotação.
++
+Por exemplo, insira o seguinte para criar uma anotação de texto que defina a localização física de um ativo no Data Center 4:
+
++
+** Digite um nome para a anotação, como "Localização"
+** Insira uma descrição do que a anotação está descrevendo, como "A localização física é o Data Center 4"
+** Digite o "tipo" de anotação, como "Texto".
+
+
+
+
+
+
+== Atribuição manual de anotações a ativos
+
+Atribuir anotações aos ativos ajuda você a classificar, agrupar e relatar ativos de maneiras relevantes para o seu negócio.  Embora você possa atribuir anotações a ativos de um tipo específico automaticamente usando regras de anotação, você pode atribuir anotações a um ativo individual usando sua página de ativos.
+
+.Antes de começar
+* Você deve ter criado a anotação que deseja atribuir.
 
 
 .Passos
-. Faça login no seu ambiente Data Infrastructure Insights.
-. Localize o ativo ao qual pretende aplicar a anotação.
+. Efetue login no seu ambiente do Data Infrastructure Insights .
+. Localize o ativo ao qual você deseja aplicar a anotação.
 +
-** Você pode localizar ativos consultando, escolhendo um widget dashoard ou pesquise. Quando tiver localizado o ativo desejado, clique no link para abrir a página de destino do ativo.
+** Você pode localizar ativos por meio de consulta, escolha em um widget do painel ou pesquisa.  Quando você localizar o ativo desejado, clique no link para abrir a página de destino do ativo.
 
 
-. Na página de ativos, na seção dados do usuário, clique em * Annotation*.
+. Na página de ativos, na seção Dados do usuário, clique em *+ Anotação*.
 . A caixa de diálogo Adicionar anotação é exibida.
-. Selecione uma anotação na lista.
-. Clique em valor e efetue uma das seguintes ações, dependendo do tipo de anotação selecionado:
+. Selecione uma anotação da lista.
+. Clique em Valor e faça um dos seguintes, dependendo do tipo de anotação selecionado:
 +
-** Se o tipo de anotação for lista, data ou Booleano, selecione um valor na lista.
-** Se o tipo de anotação for texto, introduza um valor.
+** Se o tipo de anotação for lista, data ou booleano, selecione um valor da lista.
+** Se o tipo de anotação for texto, digite um valor.
 
 
 . Clique em *Salvar*.
 
 
-Se pretender alterar o valor da anotação depois de a atribuir, clique no campo de anotação e selecione um valor diferente. Se a anotação for do tipo de lista para o qual a opção _Add new values on the fly_ está selecionada, você pode digitar um novo valor além de selecionar um valor existente.
+Se quiser alterar o valor da anotação depois de atribuí-la, clique no campo de anotação e selecione um valor diferente.  Se a anotação for do tipo lista para a qual a opção _Adicionar novos valores dinamicamente_ estiver selecionada, você poderá digitar um novo valor além de selecionar um valor existente.
 
 
 
-== Atribuir anotações usando regras de anotação
+== Atribuição de anotações usando regras de anotação
 
-Para atribuir automaticamente anotações a ativos com base nos critérios definidos, configure regras de anotação. O Data Infrastructure Insights atribui as anotações aos ativos com base nessas regras. O Data Infrastructure Insights também fornece duas regras de anotação padrão, que você pode modificar para atender às suas necessidades ou remover se não quiser usá-las.
+Para atribuir anotações automaticamente aos ativos com base nos critérios definidos por você, configure regras de anotação.  O Data Infrastructure Insights atribui as anotações aos ativos com base nessas regras.  O Data Infrastructure Insights também fornece duas regras de anotação padrão, que você pode modificar para atender às suas necessidades ou remover se não quiser usá-las.
 
 
 
 === Criando regras de anotação
 
-Como alternativa à aplicação manual de anotações a ativos individuais, você pode aplicar automaticamente anotações a vários ativos usando regras de anotação. Anotações definidas manualmente em páginas de ativos individuais têm precedência sobre anotações baseadas em regras quando o Insight avalia as regras de anotação.
+Como alternativa à aplicação manual de anotações a ativos individuais, você pode aplicar anotações automaticamente a vários ativos usando regras de anotação.  Anotações definidas manualmente em páginas de ativos individuais têm precedência sobre anotações baseadas em regras quando o Insight avalia as regras de anotação.
 
 .Antes de começar
 Você deve ter criado uma consulta para a regra de anotação.
 
 .Sobre esta tarefa
-Embora possa editar os tipos de anotação enquanto cria as regras, deve ter definido os tipos com antecedência.
+Embora você possa editar os tipos de anotação enquanto cria as regras, você deve ter definido os tipos com antecedência.
 
 .Passos
-. Clique em *Manage > Annotation rules* (gerir > regras de anotação)
+. Clique em *Gerenciar > Regras de anotação*
 +
-A página regras de anotação exibe a lista de regras de anotação existentes.
+A página Regras de anotação exibe a lista de regras de anotação existentes.
 
-. Clique em Adicionar*.
+. Clique em *+ Adicionar*.
 . Faça o seguinte:
 +
 .. Na caixa *Nome*, insira um nome exclusivo que descreva a regra.
 +
-Este nome aparecerá na página regras de anotação.
+Este nome aparecerá na página Regras de Anotação.
 
-.. Clique em *consulta* e selecione a consulta que é usada para aplicar a anotação aos ativos.
-.. Clique em *Annotation* e selecione a anotação que pretende aplicar.
-.. Clique em *value* e selecione um valor para a anotação.
+.. Clique em *Consulta* e selecione a consulta que será usada para aplicar a anotação aos ativos.
+.. Clique em *Anotação* e selecione a anotação que deseja aplicar.
+.. Clique em *Valor* e selecione um valor para a anotação.
 +
-Por exemplo, se você escolher aniversário como anotação, especifique uma data para o valor.
+Por exemplo, se você escolher Aniversário como anotação, especifique uma data para o valor.
 
 .. Clique em *Salvar*
-.. Clique em *Executar todas as regras* se quiser executar todas as regras imediatamente; caso contrário, as regras são executadas em um intervalo programado regularmente.
+.. Clique em *Executar todas as regras* se quiser executar todas as regras imediatamente; caso contrário, as regras serão executadas em um intervalo agendado regularmente.
 
 
 

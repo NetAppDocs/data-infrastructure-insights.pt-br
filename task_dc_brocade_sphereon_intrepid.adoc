@@ -2,15 +2,15 @@
 sidebar: sidebar 
 permalink: task_dc_brocade_sphereon_intrepid.html 
 keywords: data collector, Brocade, Sphereon Intrepid, 
-summary: Configurar o coletor de dados do comutador Brocade Sphereon/Intrepid 
+summary: Configurando o coletor de dados Brocade Sphereon/Intrepid Switch 
 ---
-= Configurar o coletor de dados do comutador Brocade Sphereon/Intrepid
+= Configurando o coletor de dados Brocade Sphereon/Intrepid Switch
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Insights de infraestrutura de dados usa o coletor de dados Brocade Sphereon/Intrepid Switch (SNMP) para descobrir o inventário para switches Brocade Sphereon ou Intrepid.
+O Data Infrastructure Insights usa o coletor de dados Brocade Sphereon/Intrepid Switch (SNMP) para descobrir inventário para switches Brocade Sphereon ou Intrepid.
 
 
 
@@ -18,10 +18,10 @@ O Insights de infraestrutura de dados usa o coletor de dados Brocade Sphereon/In
 
 Os seguintes requisitos devem ser atendidos para configurar este coletor de dados:
 
-* Deve haver conectividade IP para todos os switches na malha. Se você selecionar a caixa de seleção descobrir todos os switches na malha, o Data Infrastructure Insights identificará todos os switches da malha. No entanto, ela precisará de conectividade IP com esses switches adicionais para detectá-los.
+* Deve haver conectividade IP para todos os switches na malha.  Se você marcar a caixa de seleção Descobrir todos os switches na malha, o Data Infrastructure Insights identificará todos os switches na malha; no entanto, ele precisará de conectividade IP com esses switches adicionais para descobri-los.
 * String de comunidade somente leitura se estiver usando SNMP V1 ou SNMP V2.
 * Acesso HTTP ao switch para obter informações de zoneamento.
-* Validação de acesso executando o utilitário snmpwalk para o switch (veja _<install_path>_bin_).
+* Validação de acesso executando o utilitário snmpwalk no switch (consulte _<install_path>\bin\_).
 
 
 
@@ -33,19 +33,19 @@ Os seguintes requisitos devem ser atendidos para configurar este coletor de dado
 | Campo | Descrição 
 
 
-| Interrutor Sphereon | Endereço IP ou nome de domínio totalmente qualificado do switch 
+| Interruptor Sphereon | Endereço IP ou nome de domínio totalmente qualificado do switch 
 
 
 | Versão SNMP | Versão SNMP 
 
 
-| SNMP Community String | String de comunidade SNMP somente leitura usada para acessar o switch 
+| String de comunidade SNMP | String de comunidade SNMP somente leitura usada para acessar o switch 
 
 
-| Nome de utilizador SNMP | Nome de utilizador SMI-S para o comutador (apenas SNMP v3) 
+| Nome de usuário SNMP | Nome de usuário SMI-S para o switch (somente SNMP v3) 
 
 
-| Palavra-passe SNMP | Palavra-passe SMI-S para o comutador (apenas SNMP v3) 
+| Senha SNMP | Senha SMI-S para o switch (somente SNMP v3) 
 |===
 
 
@@ -56,31 +56,31 @@ Os seguintes requisitos devem ser atendidos para configurar este coletor de dado
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 15 minutos. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário. O padrão é 15 minutos. 
 
 
-| Protocolo Auth SNMP | Protocolo de autenticação SNMP (apenas SNMP v3) 
+| Protocolo de autenticação SNMP | Protocolo de autenticação SNMP (somente SNMP v3) 
 
 
-| Palavra-passe de privacidade SNMP | Palavra-passe de privacidade SNMP (apenas SNMP v3) 
+| Senha de privacidade SNMP | Senha de privacidade SNMP (somente SNMP v3) 
 
 
-| Número SNMP de geometrias | Número de tentativas de tentativa SNMP 
+| Número de tentativas SNMP | Número de tentativas de repetição SNMP 
 
 
-| Nome da malha | Nome do tecido a ser informado pelo coletor de dados. Deixe em branco para relatar o nome da tela como WWN. 
+| Nome do tecido | Nome do tecido a ser relatado pelo coletor de dados.  Deixe em branco para informar o nome do tecido como WWN. 
 
 
-| Ativar trapping | Selecione para ativar a aquisição ao receber uma trap SNMP do dispositivo. Se você selecionar Ativar trapping, você também deve ativar o SNMP. 
+| Habilitar Trapping | Selecione para habilitar a aquisição ao receber uma interceptação SNMP do dispositivo.  Se você selecionar habilitar interceptação, também deverá ativar o SNMP. 
 
 
-| Tempo mínimo entre armadilhas (segundos) | Tempo mínimo entre tentativas de aquisição desencadeadas por armadilhas. O padrão é 10 segundos. 
+| Tempo mínimo entre armadilhas (segundos) | Tempo mínimo entre tentativas de aquisição acionadas por armadilhas. O padrão é 10 segundos. 
 
 
-| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. O padrão é 300 segundos. 
+| Intervalo de pesquisa de desempenho (seg) | Intervalo entre pesquisas de desempenho. O padrão é 300 segundos. 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

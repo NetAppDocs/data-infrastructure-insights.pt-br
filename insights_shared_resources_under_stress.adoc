@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: insights_shared_resources_under_stress.html 
 keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload 
-summary: Insights dão uma visão de como os recursos afetam outros recursos em seu locatário. 
+summary: Os insights oferecem uma visão de como os recursos impactam outros recursos no seu locatário. 
 ---
 = Insights: Recursos compartilhados sob estresse
 :hardbreaks:
@@ -10,64 +10,64 @@ summary: Insights dão uma visão de como os recursos afetam outros recursos em 
 
 
 [role="lead"]
-Workloads de alto impacto podem reduzir o desempenho de outros workloads em um recurso compartilhado. Isso coloca o recurso compartilhado sob estresse. O Data Infrastructure Insights fornece ferramentas para ajudar você a investigar a saturação e o impactos dos recursos no locatário.
+Cargas de trabalho de alto impacto podem reduzir o desempenho de outras cargas de trabalho em um recurso compartilhado.  Isso coloca o recurso compartilhado sob estresse.  O Data Infrastructure Insights fornece ferramentas para ajudar você a investigar a saturação de recursos e o impacto no seu locatário.
 
 
 
 == Terminologia
 
-Ao falar sobre carga de trabalho ou impactos de recursos, as seguintes definições são úteis.
+Ao falar sobre carga de trabalho ou impacto de recursos, as seguintes definições são úteis.
 
-Um *workloads exigentes* é uma carga de trabalho que atualmente é identificada como impactando outros recursos no pool de armazenamento compartilhado. Esses workloads geram IOPS mais altos (por exemplo), reduzindo o IOPS nos workloads afetados. As cargas de trabalho exigentes são às vezes chamadas de cargas de trabalho extremamente consumidoras_.
+Uma *Carga de Trabalho Demandante* é uma carga de trabalho que atualmente é identificada como impactando outros recursos no pool de armazenamento compartilhado.  Essas cargas de trabalho geram IOPS mais altos (por exemplo), reduzindo IOPS nas cargas de trabalho impactadas.  Cargas de trabalho exigentes às vezes são chamadas de _cargas de trabalho de alto consumo_.
 
-Uma carga de trabalho *impactada* é uma carga de trabalho que é afetada por uma carga de trabalho de alto consumo no pool de armazenamento compartilhado. Esses workloads apresentam IOPS reduzidos e/ou latência mais alta, causados por workloads exigentes.
+Uma *Carga de Trabalho Impactada* é uma carga de trabalho que é afetada por uma carga de trabalho de alto consumo no Pool de Armazenamento compartilhado.  Essas cargas de trabalho estão apresentando IOPS reduzidos e/ou latência mais alta, causadas pelas cargas de trabalho exigentes.
 
-Observe que se o Data Infrastructure Insights não descobrir o workload de computação líder, o volume ou o volume interno em si será reconhecido como o workload. Isso se aplica a workloads exigentes e afetados.
+Observe que, se o Data Infrastructure Insights não tiver descoberto a principal carga de trabalho de computação, o próprio volume ou volume interno será reconhecido como a carga de trabalho.  Isso se aplica tanto a cargas de trabalho exigentes quanto impactadas.
 
-*A saturação de recursos compartilhados* é a taxa de impactos do IOPS para _linha de base_.
+*Saturação de Recursos Compartilhados* é a proporção entre IOPS impactantes e _linha de base_.
 
-*Baseline* é definido como o ponto de dados máximo relatado para cada carga de trabalho na hora imediatamente anterior à saturação detetada.
+*Linha de base* é definida como o ponto de dados máximo relatado para cada carga de trabalho na hora imediatamente anterior à saturação detectada.
 
-Uma *contenção* ou *saturação* ocorre quando o IOPS está afetando outros recursos ou cargas de trabalho no pool de armazenamento compartilhado.
+Uma *Contenção* ou *Saturação* ocorre quando é determinado que IOPS estão afetando outros recursos ou cargas de trabalho no pool de armazenamento compartilhado.
 
 
 
-== Workloads exigentes
+== Cargas de trabalho exigentes
 
-Para começar a analisar cargas de trabalho exigentes e impactadas em seus recursos compartilhados, clique em *painéis > Insights* e selecione *recursos compartilhados sob estresse* Insight.
+Para começar a analisar cargas de trabalho exigentes e impactadas em seus recursos compartilhados, clique em *Painéis > Insights* e selecione o Insight *Recursos compartilhados sob estresse*.
 
 image:InsightsMenu.png["Menu Insights"]
 
-O Data Infrastructure Insights exibe uma lista de todas as cargas de trabalho em que uma saturação foi detetada. Observe que o Data Infrastructure Insights mostrará cargas de trabalho em que pelo menos um recurso _exigente_ * ou * _recurso afetado_ foi detetado.
+O Data Infrastructure Insights exibe uma lista de todas as cargas de trabalho onde uma saturação foi detectada.  Observe que o Data Infrastructure Insights mostrará cargas de trabalho onde pelo menos um _recurso exigente_ *ou* _recurso impactado_ foi detectado.
 
-Clique em uma carga de trabalho para exibir a página de detalhes para ela. O gráfico superior mostra a atividade no recurso compartilhado (por exemplo, um pool de armazenamento) no qual a contenção/saturação está ocorrendo.
+Clique em uma carga de trabalho para visualizar a página de detalhes dela.  O gráfico superior mostra a atividade no recurso compartilhado (por exemplo, um pool de armazenamento) no qual a contenção/saturação está ocorrendo.
 
-image:ResourceInsightShared.png["Recurso compartilhado mostrando a contenção"]
+image:ResourceInsightShared.png["Recurso compartilhado mostrando contenção"]
 
-Abaixo estão dois gráficos que mostram as cargas de trabalho _exigentes_ e as cargas de trabalho que são _afetadas_ por essas cargas de trabalho exigentes.
+Abaixo estão dois gráficos mostrando as cargas de trabalho _exigentes_ e as cargas de trabalho que são _impactadas_ por essas cargas de trabalho exigentes.
 
-image:ResourceInsightDemanding.png["Gráfico de workload exigente"] image:ResourceInsightImpacted-a.png["Gráfico de workload impactado"]
+image:ResourceInsightDemanding.png["Gráfico de carga de trabalho exigente"] image:ResourceInsightImpacted-a.png["Gráfico de carga de trabalho impactada"]
 
-Abaixo de cada tabela, há uma lista de workloads e/ou recursos que afetam ou são afetados pela contenção. Clicar em um recurso (por exemplo, uma VM) abre uma página de detalhes para esse recurso. Clicar em uma carga de trabalho abre uma página de consulta mostrando os pods envolvidos. Observe que se o link abrir uma consulta vazia, pode ser porque o pod afetado não faz mais parte da contenção ativa. Você pode modificar o intervalo de tempo da consulta para exibir a lista de pods em um intervalo de tempo maior ou mais focado.
+Abaixo de cada tabela há uma lista de cargas de trabalho e/ou recursos que afetam ou são afetados pela contenção.  Clicar em um recurso (por exemplo, uma VM) abre uma página de detalhes para esse recurso.  Clicar em uma carga de trabalho abre uma página de consulta mostrando os pods envolvidos.  Observe que, se o link abrir uma consulta vazia, pode ser porque o pod afetado não faz mais parte da contenção ativa.  Você pode modificar o intervalo de tempo da consulta para visualizar a lista de pods em um intervalo de tempo maior ou mais focado.
 
 
 
-== O que faço para resolver a saturação?
+== O que devo fazer para resolver a saturação?
 
-Há uma série de etapas que você pode tomar para reduzir ou eliminar a chance de saturação em seu inquilino. Estes são mostrados expandindo o link * Mostrar recomendações* na página. Aqui estão algumas coisas que você pode tentar.
+Há uma série de medidas que você pode tomar para reduzir ou eliminar a chance de saturação do seu inquilino.  Elas são mostradas expandindo o link *+Mostrar recomendações* na página.  Aqui estão algumas coisas que você pode tentar.
 
-* Mova os consumidores de IOPS alto
+* Mova consumidores com IOPS alto
 +
-Mova as cargas de trabalho "exigentes" para pools de storage menos saturados. Recomenda-se avaliar o nível e a capacidade desses pools antes de mover as cargas de trabalho, a fim de evitar custos desnecessários ou contenções adicionais.
+Mova as cargas de trabalho "gananciosas" para pools de armazenamento menos saturados.  É recomendável avaliar o nível e a capacidade desses pools antes de mover as cargas de trabalho, para evitar custos desnecessários ou contenções adicionais.
 
 * Implementar uma política de qualidade de serviço (QoS)
 +
-A implementação de uma política de QoS por workload para garantir recursos livres suficientes disponíveis aliviará a saturação no pool de storage. Esta é uma solução a longo prazo.
+Implementar uma política de QoS por carga de trabalho para garantir recursos livres suficientes aliviará a saturação no pool de armazenamento.  Esta é uma solução de longo prazo.
 
-* Adicione recursos adicionais
+* Adicionar recursos adicionais
 +
-Se o recurso compartilhado (por exemplo, pool de armazenamento) atingir o ponto de saturação de IOPS, adicionar mais ou mais discos mais rápidos ao pool garantirá recursos livres suficientes disponíveis para aliviar a saturação.
+Se o recurso compartilhado (por exemplo, Pool de Armazenamento) tiver atingido o ponto de saturação de IOPS, adicionar mais discos ou discos mais rápidos ao pool garantirá recursos livres suficientes disponíveis para aliviar a saturação.
 
 
 
-Finalmente, você pode clicar no *Copy Insight Link* para copiar o url da página para a área de transferência, para compartilhar com os colegas mais facilmente.
+Por fim, você pode clicar em *Copiar link do Insight* para copiar a URL da página para a área de transferência e compartilhar mais facilmente com os colegas.

@@ -4,19 +4,19 @@ permalink: task_device_resolution_preferences.html
 keywords: Automatic, AR, AHR, Host, automatic device resolution, FC, Identify 
 summary:  
 ---
-= Opções de configuração na guia Preferências
+= Definir opções na aba Preferências
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-A guia Preferências de resolução do dispositivo permite criar um agendamento de resolução automática, especificar armazenamentos e dispositivos de fita para incluir ou excluir da identificação e definir opções de pesquisa DNS.
+A guia de preferências de resolução do dispositivo permite criar um cronograma de resolução automática, especificar fornecedores de armazenamento e fita para incluir ou excluir da identificação e definir opções de pesquisa de DNS.
 
 
 
-== Agendamento de resolução automática
+== Cronograma de resolução automática
 
-Uma programação de resolução automática pode especificar quando a resolução automática do dispositivo é executada:
+Um agendamento de resolução automática pode especificar quando a resolução automática do dispositivo é executada:
 
 |===
 
@@ -24,37 +24,37 @@ Uma programação de resolução automática pode especificar quando a resoluç�
 | Opção | Descrição 
 
 
-| A cada | Utilize esta opção para executar a resolução automática do dispositivo em intervalos de dias, horas ou minutos. 
+| Todo | Use esta opção para executar a resolução automática do dispositivo em intervalos de dias, horas ou minutos. 
 
 
-| Todos os dias | Use esta opção para executar a resolução automática do dispositivo diariamente em um horário específico. 
+| Diariamente | Use esta opção para executar a resolução automática do dispositivo diariamente em um horário específico. 
 
 
-| Manualmente | Utilize esta opção para executar apenas a resolução automática do dispositivo manualmente. 
+| Manualmente | Use esta opção para executar somente a resolução automática do dispositivo manualmente. 
 
 
 | Em cada mudança de ambiente | Use esta opção para executar a resolução automática do dispositivo sempre que houver uma alteração no ambiente. 
 |===
-Se você especificar _manualmente_, a resolução automática noturna do dispositivo será desativada.
+Se você especificar _Manualmente_, a resolução automática noturna do dispositivo será desabilitada.
 
 
 
 == Opções de processamento de DNS
 
-As opções de processamento DNS permitem selecionar as seguintes funcionalidades:
+As opções de processamento de DNS permitem que você selecione os seguintes recursos:
 
-* Quando o processamento de resultados de pesquisa DNS estiver ativado, você poderá adicionar uma lista de nomes DNS a serem anexados a dispositivos resolvidos.
-* Você pode selecionar Resolução automática de IPs: Para ativar a resolução automática de host para iniciadores iSCSI e hosts que acessam compartilhamentos NFS usando a pesquisa DNS. Se isso não for especificado, somente a resolução baseada em FC será executada.
-* Você pode optar por permitir sublinhados em nomes de host e usar um alias "conetado a" em vez do alias de porta padrão nos resultados.
-
-
+* Quando o processamento do resultado da pesquisa de DNS estiver habilitado, você poderá adicionar uma lista de nomes de DNS para anexar aos dispositivos resolvidos.
+* Você pode selecionar Resolução automática de IPs: para habilitar a resolução automática de host para iniciadores iSCSI e hosts que acessam compartilhamentos NFS usando pesquisa de DNS.  Se isso não for especificado, somente a resolução baseada em FC será executada.
+* Você pode optar por permitir sublinhados em nomes de host e usar um alias "conectado a" em vez do alias de porta padrão nos resultados.
 
 
-=== Incluindo ou excluindo fornecedores específicos de armazenamento e fita
-
-Você pode incluir ou excluir fornecedores específicos de armazenamento e fita para resolução automática. Você pode querer excluir fornecedores específicos se souber, por exemplo, que um host específico se tornará um host legado e deve ser excluído do seu novo ambiente. Você também pode adicionar novamente fornecedores que você excluiu anteriormente, mas não deseja mais excluídos.
 
 
-NOTE: As regras de resolução do dispositivo para fita funcionam apenas para WWNs em que o Fornecedor para essa WWN está definido como _incluído como apenas fita_ nas preferências dos fornecedores.
+=== Incluindo ou excluindo fornecedores específicos de armazenamento e fitas
 
-Veja também: link:concept_device_resolution_regex_examples.html["Exemplos de expressão regular"]
+Você pode incluir ou excluir fornecedores específicos de armazenamento e fita para resolução automática.  Talvez você queira excluir fornecedores específicos se souber, por exemplo, que um host específico se tornará um host legado e deverá ser excluído do seu novo ambiente.  Você também pode adicionar novamente fornecedores que você excluiu anteriormente, mas não deseja mais que sejam excluídos.
+
+
+NOTE: As regras de resolução de dispositivo para fita funcionam apenas para WWNs em que o Fornecedor desse WWN está definido como _Incluído apenas como fita_ nas preferências do Fornecedor.
+
+Veja também:link:concept_device_resolution_regex_examples.html["Exemplos de expressões regulares"]

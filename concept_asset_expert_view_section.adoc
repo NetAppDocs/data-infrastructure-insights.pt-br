@@ -1,58 +1,62 @@
 ---
 sidebar: sidebar 
 permalink: concept_asset_expert_view_section.html 
-summary: A seção Expert View de uma página de ativos é uma ferramenta poderosa para solução de problemas ou monitoramento. 
-keywords: asset page, expert view, metrics, greedy, degraded, correlated, contributors, chart, refresh 
+summary: A seção Desempenho de uma página de ativos é uma ferramenta poderosa para solução de problemas ou monitoramento. 
+keywords: asset page, expert view, metrics, greedy, degraded, correlated, contributors, chart, refresh, performance 
 ---
-= Visão do especialista
+= Seção de Desempenho
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-A seção Expert View de uma página de ativo permite que você visualize uma amostra de desempenho do ativo base com base em qualquer número de métricas aplicáveis no contexto de um período de tempo escolhido no gráfico de desempenho e quaisquer ativos relacionados a ele. Os dados nos gráficos são atualizados automaticamente à medida que os coletores de dados pesquisam e os dados atualizados são adquiridos.
+A seção Desempenho de uma página de ativos ou painel deslizante permite que você visualize uma amostra de desempenho do ativo base com base em qualquer número de métricas aplicáveis no contexto de um período de tempo escolhido no gráfico de desempenho e quaisquer ativos relacionados a ele.  Os dados nos gráficos são atualizados automaticamente conforme os coletores de dados pesquisam e os dados atualizados são adquiridos.
 
 
 
-== Usando a seção Expert View
+== Usando a seção Desempenho
 
-Veja a seguir um exemplo da seção Expert View em uma página de ativos de armazenamento:
+A seguir está um exemplo da seção Desempenho em uma página de ativos de armazenamento:
 
-image:Expert_View_2021.png["Exemplo de Visão de Especialista"]
+image:asset_page_performance_section.png["Seção de Desempenho"]
 
-Você pode selecionar as métricas que deseja exibir no gráfico de desempenho para o período de tempo selecionado. Clique no menu suspenso _Display Metrics_ e escolha entre as métricas listadas.
+Você pode selecionar as métricas que deseja visualizar no gráfico de desempenho para o período selecionado.  Clique no menu suspenso _Exibir métricas_ e escolha entre as métricas listadas.
 
-A seção *recursos* mostra o nome do ativo base e a cor que representa o ativo base no gráfico de desempenho. Se a seção *Top correlacionado* não contiver um ativo que você deseja visualizar no gráfico de desempenho, você poderá usar a caixa *pesquisar ativos* na seção *recursos adicionais* para localizar o ativo e adicioná-lo ao gráfico de desempenho. À medida que você adiciona recursos, eles aparecem na seção recursos adicionais.
+A seção *Recursos* mostra o nome do ativo base e a cor que representa o ativo base no gráfico de desempenho.  Se a seção *Principais correlacionados* não contiver um ativo que você deseja visualizar no gráfico de desempenho, você pode usar a caixa *Pesquisar ativos* na seção *Recursos adicionais* para localizar o ativo e adicioná-lo ao gráfico de desempenho.  À medida que você adiciona recursos, eles aparecem na seção Recursos adicionais.
 
-Também são mostrados na seção recursos, quando aplicável, quaisquer ativos relacionados ao ativo base nas seguintes categorias:
+Também são mostrados na seção Recursos, quando aplicável, quaisquer ativos relacionados ao ativo base nas seguintes categorias:
 
 * Topo correlacionado
 +
-Mostra os ativos que têm uma alta correlação (porcentagem) com uma ou mais métricas de performance para o ativo base.
+Mostra os ativos que têm uma alta correlação (porcentagem) com uma ou mais métricas de desempenho em relação ao ativo base.
 
 * Principais colaboradores
 +
 Mostra os ativos que contribuem (porcentagem) para o ativo base.
 
-* Contenções da carga de trabalho
+* Contenções de carga de trabalho
 +
-Mostra os ativos que impactam ou são afetados por outros recursos compartilhados, como hosts, redes e armazenamento. Estes são às vezes chamados de recursos _gananciosos_ e _degradados_.
+Mostra os ativos que impactam ou são impactados por outros recursos compartilhados, como hosts, redes e armazenamento.  Às vezes, eles são chamados de recursos _gananciosos_ e _degradados_.
 
 
 
 
 
-== Alertas no Expert View
+== Alertas na seção Desempenho
 
-Os alertas também são exibidos na seção Expert View de uma página inicial de ativos, mostrando o tempo e a duração do alerta, bem como a condição do monitor que o acionou.
+Os alertas também são exibidos na seção Desempenho da página inicial de um ativo, mostrando a hora e a duração do alerta, bem como a condição do monitor que o acionou.  Passe o mouse sobre um indicador de alerta para ver detalhes sobre o alerta.
 
-image:Alerts_In_Expert_View.png["Alertas no Expert View"]
+image:asset_page_alert_section.png["Alertas na seção de desempenho"]
 
 
 
-== Definições de métricas do Expert View
+== Definições de métricas de desempenho
 
-A seção Expert View de uma página de ativo exibe várias métricas com base no período de tempo selecionado para o ativo. Cada métrica é exibida em seu próprio gráfico de desempenho. Você pode adicionar ou remover métricas e ativos relacionados dos gráficos, dependendo dos dados que deseja ver. As métricas que você pode escolher variam dependendo do tipo de ativo.
+A seção Desempenho de uma página de ativo exibe diversas métricas com base no período de tempo selecionado para o ativo.  Cada métrica é exibida em seu próprio gráfico de desempenho.  Você pode adicionar ou remover métricas e ativos relacionados dos gráficos, dependendo dos dados que deseja ver.  As métricas que você pode escolher variam dependendo do tipo de ativo.
 
 |===
 
@@ -60,55 +64,55 @@ A seção Expert View de uma página de ativo exibe várias métricas com base n
 | *Métrica* | *Descrição* 
 
 
-| BB crédito zero Rx, TX | Número de vezes que a contagem de crédito de buffer para buffer de receção/transmissão foi transferida para zero durante o período de amostragem. Esta métrica representa o número de vezes que a porta anexada teve que parar de transmitir porque esta porta estava fora de créditos para fornecer. 
+| Crédito BB zero Rx, Tx | Número de vezes que a contagem de créditos de buffer para buffer de recepção/transmissão passou para zero durante o período de amostragem.  Esta métrica representa o número de vezes que a porta conectada teve que parar de transmitir porque estava sem créditos para fornecer. 
 
 
-| BB crédito zero duração TX | Tempo em milissegundos durante o qual o crédito BB de transmissão foi zero durante o intervalo de amostragem. 
+| Crédito BB duração zero Tx | Tempo em milissegundos durante o qual o crédito BB de transmissão foi zero durante o intervalo de amostragem. 
 
 
-| Taxa de acerto do cache (Total, leitura, escrita) % | Porcentagem de solicitações que resultam em acertos de cache. Quanto maior o número de acessos versus acessos ao volume, melhor é o desempenho. Esta coluna está vazia para matrizes de armazenamento que não recolhem informações de acerto de cache. 
+| Taxa de acertos do cache (total, leitura, gravação) % | Porcentagem de solicitações que resultam em acertos no cache.  Quanto maior o número de acessos versus acessos ao volume, melhor é o desempenho.  Esta coluna está vazia para matrizes de armazenamento que não coletam informações de acertos de cache. 
 
 
-| Utilização de cache (total) % | Porcentagem total de solicitações de cache que resultam em acertos de cache 
+| Utilização do cache (total) % | Porcentagem total de solicitações de cache que resultam em acertos de cache 
 
 
-| Classe 3 descarta | Contagem de cartões de transporte de dados de classe 3 Fibre Channel. 
+| Descartes de classe 3 | Contagem de descartes de transporte de dados Fibre Channel Classe 3. 
 
 
-| Utilização de CPU (total) % | Quantidade de recursos de CPU usados ativamente, como uma porcentagem do total disponível (sobre todas as CPUs virtuais). 
+| Utilização da CPU (Total) % | Quantidade de recursos de CPU usados ativamente, como uma porcentagem do total disponível (sobre todas as CPUs virtuais). 
 
 
-| Erro CRC | Número de quadros com verificações de redundância cíclica (CRCs) inválidas detetadas pela porta durante o período de amostragem 
+| Erro CRC | Número de quadros com verificações de redundância cíclica (CRCs) inválidas detectadas pela porta durante o período de amostragem 
 
 
-| Taxa de quadros | Taxa de quadros de transmissão em quadros por segundo (FPS) 
+| Taxa de quadros | Taxa de transmissão de quadros em quadros por segundo (FPS) 
 
 
-| Tamanho médio do fotograma (Rx, TX) | Relação entre o tráfego e o tamanho do quadro. Essa métrica permite identificar se há estruturas suspensas na malha. 
+| Tamanho médio do quadro (Rx, Tx) | Proporção de tráfego em relação ao tamanho do quadro.  Essa métrica permite identificar se há alguma estrutura suspensa no tecido. 
 
 
-| Tamanho do quadro demasiado longo | Contagem de quadros de transmissão de dados Fibre Channel que são muito longos. 
+| Tamanho do quadro muito longo | Contagem de quadros de transmissão de dados do Fibre Channel que são muito longos. 
 
 
-| Tamanho do quadro demasiado curto | Contagem de quadros de transmissão de dados Fibre Channel que são muito curtos. 
+| Tamanho do quadro muito curto | Contagem de quadros de transmissão de dados do Fibre Channel que são muito curtos. 
 
 
-| Densidade de e/S (total, leitura, gravação) | Número de IOPS dividido pela capacidade usada (conforme adquirido da pesquisa de inventário mais recente da fonte de dados) para o elemento volume, volume interno ou armazenamento. Medido em número de operações de e/S por segundo por TB. 
+| Densidade de E/S (Total, Leitura, Gravação) | Número de IOPS dividido pela capacidade utilizada (conforme adquirido na pesquisa de inventário mais recente da fonte de dados) para o elemento Volume, Volume interno ou Armazenamento.  Medido em número de operações de E/S por segundo por TB. 
 
 
-| IOPS (total, leitura, gravação) | Número de solicitações de serviço de e/S de leitura/gravação que passam pelo canal de e/S ou uma parte desse canal por unidade de tempo (medido em e/S por segundo) 
+| IOPS (Total, Leitura, Gravação) | Número de solicitações de serviço de E/S de leitura/gravação que passam pelo canal de E/S ou por uma parte desse canal por unidade de tempo (medido em E/S por segundo) 
 
 
-| Taxa de transferência IP (total, leitura, gravação) | Total: Taxa agregada à qual os dados IP foram transmitidos e recebidos em megabytes por segundo. 
+| Taxa de transferência de IP (total, leitura, gravação) | Total: Taxa agregada na qual os dados IP foram transmitidos e recebidos em megabytes por segundo. 
 
 
-| Leitura: Taxa de transferência IP (receber): | Taxa média na qual os dados IP foram recebidos em megabytes por segundo. 
+| Leitura: Taxa de transferência de IP (recebimento): | Taxa média na qual dados IP foram recebidos em megabytes por segundo. 
 
 
-| Escreva: Taxa de transferência IP (transmissão): | Taxa média na qual os dados IP foram transmitidos em megabytes por segundo. 
+| Escrever: Taxa de transferência de IP (transmissão): | Taxa média na qual os dados IP foram transmitidos em megabytes por segundo. 
 
 
-| Latência (total, leitura, gravação) | Latência (R&W): Taxa na qual os dados são lidos ou gravados nas máquinas virtuais em um período fixo de tempo. O valor é medido em megabytes por segundo. 
+| Latência (Total, Leitura, Escrita) | Latência (R&W): Taxa na qual os dados são lidos ou gravados nas máquinas virtuais em um período fixo de tempo.  O valor é medido em megabytes por segundo. 
 
 
 | Latência: | Tempo médio de resposta das máquinas virtuais em um armazenamento de dados. 
@@ -117,75 +121,75 @@ A seção Expert View de uma página de ativo exibe várias métricas com base n
 | Latência máxima: | O maior tempo de resposta das máquinas virtuais em um armazenamento de dados. 
 
 
-| Falha na ligação | Número de falhas de link detetadas pela porta durante o período de amostragem. 
+| Falha de link | Número de falhas de link detectadas pela porta durante o período de amostragem. 
 
 
-| Reposição da ligação Rx, TX | O número de redefinições da ligação de receção ou de transmissão durante o período de amostragem. Essa métrica representa o número de redefinições de link que foram emitidas pela porta anexada a essa porta. 
+| Redefinição de link Rx, Tx | Número de redefinições de links de recepção ou transmissão durante o período de amostragem.  Esta métrica representa o número de redefinições de link que foram emitidas pela porta conectada a esta porta. 
 
 
-| % De utilização da memória (total) | Limite para a memória usada pelo host. 
+| Utilização de memória (total) % | Limite para a memória usada pelo host. 
 
 
-| % R/W parcial (total) | Número total de vezes que uma operação de leitura/gravação cruza um limite de distribuição em qualquer módulo de disco em um LUN RAID 5, RAID 1/0 ou RAID 0 geralmente, os cruzamentos de faixa não são benéficos, porque cada um requer uma e/S adicional Uma porcentagem baixa indica um tamanho eficiente do elemento de distribuição e é uma indicação de alinhamento inadequado de um volume (ou um LUN NetApp). Para CLARiiON, esse valor é o número de cruzamentos de faixa divididos pelo número total de IOPS. 
+| % R/W parcial (total) | Número total de vezes que uma operação de leitura/gravação cruza um limite de faixa em qualquer módulo de disco em um LUN RAID 5, RAID 1/0 ou RAID 0. Geralmente, cruzamentos de faixas não são benéficos, porque cada um requer uma E/S adicional.  Uma porcentagem baixa indica um tamanho de elemento de faixa eficiente e é uma indicação de alinhamento incorreto de um volume (ou um LUN do NetApp ).  Para CLARiiON, esse valor é o número de cruzamentos de faixas dividido pelo número total de IOPS. 
 
 
-| Erros de porta | Relatório de erros de porta durante o período de amostragem/período de tempo determinado. 
+| Erros de porta | Relatório de erros de porta durante o período de amostragem/intervalo de tempo determinado. 
 
 
-| Contagem de perda de sinal | Número de erros de perda de sinal. Se ocorrer um erro de perda de sinal, não existe uma ligação elétrica e existe um problema físico. 
+| Contagem de perdas de sinal | Número de erros de perda de sinal.  Se ocorrer um erro de perda de sinal, não há conexão elétrica e há um problema físico. 
 
 
-| Taxa de swap (taxa total, em taxa, fora taxa) | Taxa na qual a memória é trocada dentro, fora ou ambos do disco para a memória ativa durante o período de amostragem. Este contador aplica-se a máquinas virtuais. 
+| Taxa de swap (taxa total, taxa de entrada, taxa de saída) | Taxa na qual a memória é trocada para dentro, para fora ou ambos do disco para a memória ativa durante o período de amostragem.  Este contador se aplica a máquinas virtuais. 
 
 
-| Contagem de perdas de sincronização | Número de erros de perda de sincronização. Se ocorrer um erro de perda de sincronização, o hardware não poderá fazer sentido do tráfego ou bloquear nele. Todo o equipamento pode não estar usando a mesma taxa de dados, ou a ótica ou as conexões físicas podem ser de baixa qualidade. A porta deve ressincronizar após cada erro, o que afeta o desempenho do sistema. Medido em KB/seg 
+| Contagem de perdas de sincronização | Número de erros de perda de sincronização.  Se ocorrer um erro de perda de sincronização, o hardware não consegue entender o tráfego nem bloqueá-lo.  Nem todos os equipamentos podem estar usando a mesma taxa de dados, ou as conexões ópticas ou físicas podem ser de baixa qualidade.  A porta deve ser ressincronizada após cada erro, o que afeta o desempenho do sistema.  Medido em KB/seg. 
 
 
-| Taxa de transferência (total, leitura, gravação) | Taxa na qual os dados estão sendo transmitidos, recebidos ou ambos em um período fixo de tempo em resposta a solicitações de serviço de e/S (medido em MB por segundo). 
+| Taxa de transferência (total, leitura, gravação) | Taxa na qual os dados estão sendo transmitidos, recebidos ou ambos em um período fixo de tempo em resposta a solicitações de serviço de E/S (medida em MB por segundo). 
 
 
-| Limites de eliminação de tempo limite - TX | Contagem de quadros de transmissão descartados causada por tempo limite. 
+| Quadros de descarte de tempo limite - Tx | Contagem de quadros de transmissão descartados causados por tempo limite. 
 
 
 | Taxa de tráfego (total, leitura, gravação) | Tráfego transmitido, recebido ou ambos recebidos durante o período de amostragem, em mebibytes por segundo. 
 
 
-| Utilização de tráfego (Total, leitura, escrita) | Relação de tráfego recebido/transmitido/total para receber/transmitir/capacidade total, durante o período de amostragem. 
+| Utilização de tráfego (total, leitura, gravação) | Proporção de tráfego recebido/transmitido/total para capacidade de recepção/transmissão/total, durante o período de amostragem. 
 
 
-| Utilização (Total, leitura, escrita) % | Percentagem da largura de banda disponível utilizada para transmissão (TX) e receção (Rx). 
+| Utilização (Total, Leitura, Gravação) % | Porcentagem de largura de banda disponível usada para transmissão (Tx) e recepção (Rx). 
 
 
-| Escrever pendente (total) | Número de solicitações de serviço de e/S de gravação pendentes. 
+| Escrita pendente (Total) | Número de solicitações de serviço de E/S de gravação pendentes. 
 |===
 
 
-== Usando a seção Expert View
+== Usando a seção Desempenho
 
-A seção visualização de especialistas permite que você visualize gráficos de desempenho de um ativo com base em qualquer número de métricas aplicáveis durante um período de tempo escolhido e adicione ativos relacionados para comparar e contrastar o desempenho do ativo e do ativo relacionado em diferentes períodos de tempo.
+A seção Desempenho permite que você visualize gráficos de desempenho de um ativo com base em qualquer número de métricas aplicáveis durante um período de tempo escolhido e adicione ativos relacionados para comparar e contrastar o desempenho do ativo e do ativo relacionado em diferentes períodos de tempo.
 
 .Passos
-. Localize uma página de ativo fazendo uma das seguintes opções:
+. Localize uma página de ativos fazendo o seguinte:
 +
-** PESQUISE e selecione um ativo específico.
-** Selecione um ativo de um widget de painel.
-** Consulte um conjunto de ativos e selecione um na lista de resultados.
+** Pesquise e selecione um ativo específico.
+** Selecione um ativo em um widget do painel.
+** Consulte um conjunto de ativos e selecione um da lista de resultados.
 +
-A página de ativos é exibida. Por padrão, o gráfico de desempenho mostra duas métricas para o período de tempo selecionado para a página de ativo. Por exemplo, para um storage, o gráfico de desempenho mostra a latência e o total de IOPS por padrão. A seção recursos exibe o nome do recurso e uma seção recursos adicionais, que permite pesquisar ativos. Dependendo do ativo, você também pode ver os ativos nas seções Top Correlated, Top Colaborador, ganancioso e degradado. Se não houver ativos relevantes para essas seções, elas não serão exibidas.
+A página de ativos é exibida.  Por padrão, o gráfico de desempenho mostra duas métricas para o período de tempo selecionado para a página de ativos.  Por exemplo, para um armazenamento, o gráfico de desempenho mostra a latência e o IOPS total por padrão.  A seção Recursos exibe o nome do recurso e uma seção Recursos adicionais, que permite pesquisar ativos.  Dependendo do ativo, você também pode ver ativos nas seções Principais correlacionados, Principais colaboradores, Gananciosos e Degradados.  Se não houver ativos relevantes para essas seções, eles não serão exibidos.
 
 
 
-. Você pode adicionar um gráfico de desempenho para uma métrica clicando em *Display Metrics* e selecionando as métricas que deseja exibir.
+. Você pode adicionar um gráfico de desempenho para uma métrica clicando no ícone de engrenagem *Configurações* e selecionando as métricas que deseja exibir.
 +
-Um gráfico separado é exibido para cada métrica selecionada. O gráfico exibe os dados do período de tempo selecionado. Você pode alterar o período de tempo clicando em outro período de tempo no canto superior direito da página de ativos ou ampliando o zoom em qualquer gráfico.
+Um gráfico separado é exibido para cada métrica selecionada.  O gráfico exibe os dados do período de tempo selecionado.  Você pode alterar o período de tempo clicando em outro período de tempo no canto superior direito da página do ativo ou ampliando qualquer gráfico.
 
 +
-Clique em *Display Metrics* para desmarcar qualquer gráfico. O gráfico de desempenho da métrica é removido do Expert View.
+Clique em *Configurações* para desmarcar qualquer gráfico.  O gráfico de desempenho da métrica é removido da seção Desempenho.
 
-. Você pode posicionar o cursor sobre o gráfico e alterar os dados de métrica exibidos para esse gráfico clicando em qualquer uma das opções a seguir, dependendo do ativo:
+. Você pode posicionar o cursor sobre o gráfico e alterar os dados métricos exibidos para esse gráfico clicando em qualquer um dos seguintes, dependendo do ativo:
 +
-** Leitura, escrita ou Total
-** TX, Rx ou Total
+** Ler, Escrever ou Totalizar
+** Tx, Rx ou Total
 +
 Total é o padrão.
 
@@ -194,23 +198,23 @@ Você pode arrastar o cursor sobre os pontos de dados no gráfico para ver como 
 
 
 
-. Na seção recursos, você pode adicionar quaisquer ativos relacionados aos gráficos de desempenho:
+. Na seção Recursos, você pode adicionar quaisquer ativos relacionados aos gráficos de desempenho:
 +
-** Você pode selecionar um ativo relacionado nas seções *Top correlacionado*, *Top Contribuidores*, *ganancioso* e *degradado* para adicionar dados desse ativo ao gráfico de desempenho para cada métrica selecionada.
+** Você pode selecionar um ativo relacionado nas seções *Principais correlacionados*, *Principais colaboradores*, *Ganância* e *Degradação* para adicionar dados desse ativo ao gráfico de desempenho para cada métrica selecionada.
 +
-Depois de selecionar o ativo, um bloco de cores aparece ao lado do ativo para indicar a cor de seus pontos de dados no gráfico.
+Depois de selecionar o ativo, um bloco de cor aparece ao lado do ativo para indicar a cor dos seus pontos de dados no gráfico.
 
 
 
-. Clique em *Ocultar recursos* para ocultar o painel recursos adicionais. Clique em *Resources* para mostrar o painel.
+. Clique em *Ocultar recursos* para ocultar o painel de recursos adicionais.  Clique em *Recursos* para mostrar o painel.
 +
-** Para qualquer ativo mostrado, você pode clicar no nome do ativo para exibir sua página de ativo, ou você pode clicar na porcentagem que o ativo correlaciona ou contribui para o ativo base para ver mais informações sobre a relação do ativo com o ativo base.
+** Para qualquer ativo mostrado, você pode clicar no nome do ativo para exibir sua página de ativos ou pode clicar na porcentagem que o ativo correlaciona ou contribui para o ativo base para visualizar mais informações sobre a relação do ativo com o ativo base.
 +
-Por exemplo, clicar na porcentagem vinculada ao lado de um ativo correlacionado superior exibe uma mensagem informativa comparando o tipo de correlação que o ativo tem com o ativo base.
+Por exemplo, clicar na porcentagem vinculada ao lado de um ativo correlacionado principal exibe uma mensagem informativa comparando o tipo de correlação que esse ativo tem com o ativo base.
 
-** Se a seção superior correlacionada não contiver um ativo que você deseja exibir em um gráfico de desempenho para fins de comparação, você poderá usar a caixa pesquisar ativos na seção recursos adicionais para localizar outros ativos.
-
-
+** Se a seção Principais correlacionados não contiver um ativo que você deseja exibir em um gráfico de desempenho para fins de comparação, você poderá usar a caixa Pesquisar ativos na seção Recursos adicionais para localizar outros ativos.
 
 
-Depois de selecionar um ativo, ele é exibido na seção recursos adicionais. Quando você não quiser mais exibir informações sobre o ativo, clique no ícone de lixeira para excluir.
+
+
+Depois de selecionar um ativo, ele é exibido na seção de recursos adicionais.  Quando você não quiser mais visualizar informações sobre o ativo, clique no ícone da lixeira para excluí-lo.

@@ -14,33 +14,33 @@ summary: Coletor de dados para Kubernetes
 
 
 [role="lead"]
-O Data Infrastructure Insights usa esse coletor de dados para coletar métricas de volume, nó e Pod do Kubernetes.
+O Data Infrastructure Insights usa esse coletor de dados para reunir métricas de pod, nó e contêiner do Kubernetes.
 
 
 
 == Instalação
 
-Para obter instruções de instalação do Kubernetes, consulte a link:task_config_telegraf_agent_k8s.html["Operador de monitoramento do Kubernetes"]página.
+Para obter instruções de instalação do Kubernetes, consulte olink:task_config_telegraf_agent_k8s.html["Operador de monitoramento do Kubernetes"] página.
 
 
 
-== Sobre o Kube-State-metrics
+== Sobre Kube-state-metrics
 
-O Operador de Monitoramento do Kubernetes instala as métricas de estado do kube automaticamente; nenhuma interação com o usuário é necessária.
+O Kubernetes Monitoring Operator instala o kube-state-metrics automaticamente; não é necessária interação do usuário.
 
 
 
-=== Contadores de métricas de estado-Kube
+=== Contadores de métricas de estado do Kube
 
-O Operador de Monitoramento do Kubernetes do NetApp extrai os contadores de métricas de estado do kube listados abaixo. Mais detalhes sobre cada contador podem ser encontrados em: https://github.com/kubernetes/kube-state-metrics/tree/main/docs#exposed-metrics[].
+O NetApp Kubernetes Monitoring Operator extrai os contadores kube-state-metrics listados abaixo.  Mais detalhes sobre cada balcão podem ser encontrados em: https://github.com/kubernetes/kube-state-metrics/tree/main/docs#exposed-metrics[] .
 
-. Métricas DaemonSet
-. Métricas de implantação
+. Métricas do DaemonSet
+. Métricas de Implantação
 . Métricas de namespace
-. Métricas do nó
-. Métricas de volume persistente
-. Métricas do pedido de volume persistente
-. Métricas do pod
+. Métricas de nós
+. Métricas de Volume Persistente
+. Métricas de reivindicação de volume persistente
+. Métricas de Pod
 . Métricas do ReplicaSet
 . Métricas de serviço
 . Métricas StatefulSet

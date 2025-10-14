@@ -1,59 +1,59 @@
 ---
 sidebar: sidebar 
 permalink: reporting_managing_reports.html 
-summary: 'Personalização da saída e entrega de relatórios, cópia de relatórios para a área de transferência, abertura de relatórios (XML).' 
+summary: 'Personalizar a saída e a entrega de relatórios, copiar relatórios para a área de transferência, abrir relatórios (XML).' 
 keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying 
 ---
-= Gerenciando relatórios
+= Gerenciando Relatórios
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Você pode personalizar o formato de saída e a entrega de um relatório, definir propriedades ou programações do relatório e relatórios de e-mail.
+Você pode personalizar o formato de saída e a entrega de um relatório, definir propriedades ou programações de relatórios e enviar relatórios por e-mail.
 
 
-NOTE: O recurso relatórios está disponível no Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html["Edição Premium"].
+NOTE: O recurso de relatórios está disponível no Data Infrastructure Insightslink:concept_subscribing_to_cloud_insights.html["Edição Premium"] .
 
 
-IMPORTANT: Antes de fazer alterações nas permissões de relatórios ou na segurança, você deve copiar os relatórios "meu conteúdo" para a pasta "conteúdo da equipe" para garantir que os relatórios sejam salvos.
+IMPORTANT: Antes de fazer alterações nas permissões ou na segurança dos relatórios, você deve copiar os relatórios "Meu Conteúdo" para a pasta "Conteúdo da Equipe" para garantir que os Relatórios sejam salvos.
 
 
 
-== Personalizar o formato de saída e a entrega de um relatório
+== Personalizando o formato de saída e entrega de um relatório
 
 Você pode personalizar o formato e o método de entrega dos relatórios.
 
-. No Portal de relatórios do Data Infrastructure Insights, vá para *Menu > conteúdo > meu conteúdo/conteúdo da equipe*. Passe o Mouse sobre o relatório que você deseja personalizar e abra o menu "três pontos".
+. No Portal de Relatórios do Data Infrastructure Insights , acesse *Menu > Conteúdo > Meu Conteúdo/Conteúdo da Equipe*.  Passe o mouse sobre o relatório que deseja personalizar e abra o menu "três pontos".
 
 
 image:Reporting_Output_and_Delivery.png["Relatório de saída e entrega"]
 
-. Clique em *Propriedades > Programação*
-. Pode definir as seguintes opções:
+. Clique em *Propriedades > Agendar*
+. Você pode definir as seguintes opções:
 +
-** *Agendar* quando quiser que os relatórios sejam executados.
-** Escolha *Opções* para o formato e entrega do relatório (Salvar, Imprimir, e-mail) e idiomas para o relatório.
+** *Agende* quando você deseja que os relatórios sejam executados.
+** Escolha *Opções* para o formato e entrega do relatório (Salvar, Imprimir, E-mail) e Idiomas para o relatório.
 
 
-. Clique em *Salvar* para produzir o relatório usando as seleções feitas.
+. Clique em *Salvar* para produzir o relatório usando as seleções que você fez.
 
 
 
 
-== Copiar um relatório para a área de transferência
+== Copiando um relatório para a área de transferência
 
 Use este processo para copiar um relatório para a área de transferência.
 
-. Selecione um relatório para copiar de (*Menu > conteúdo > meu conteúdo ou conteúdo da equipe*)
-. Escolha _Editar relatório_ no menu suspenso do relatório
+. Selecione um relatório para copiar (*Menu > Conteúdo > Meu conteúdo ou Conteúdo da equipe*)
+. Selecione _Editar relatório_ no menu suspenso do relatório
 +
-image:Reporting_Edit_Report.png["Editar um relatório"]
+image:Reporting_Edit_Report.png["Editando um Relatório"]
 
 . No canto superior direito da tela, abra o menu "três pontos" ao lado de "Propriedades".
 . Selecione *Copiar relatório para a área de transferência*.
 +
-image:Reporting_Copy_To_Clipboard.png["Copiar um relatório para a área de transferência"]
+image:Reporting_Copy_To_Clipboard.png["Copiando um relatório para a área de transferência"]
 
 
 
@@ -63,44 +63,44 @@ image:Reporting_Copy_To_Clipboard.png["Copiar um relatório para a área de tran
 
 Você pode abrir uma especificação de relatório que foi copiada anteriormente para a área de transferência.
 
-Sobre esta tarefa Comece criando um novo relatório ou abrindo um relatório existente que você deseja substituir pelo relatório copiado. As etapas abaixo são para um novo relatório.
+Sobre esta tarefa Comece criando um novo relatório ou abrindo um relatório existente que você deseja substituir pelo relatório copiado.  As etapas abaixo são para um novo relatório.
 
-. Selecione *Menu > novo > Relatório* e crie um relatório em branco.
+. Selecione *Menu > +Novo > Relatório* e crie um relatório em branco.
 . No canto superior direito da tela, abra o menu "três pontos" ao lado de "Propriedades".
-. Selecione *Open Report from Clipboard* (abrir relatório da área de transferência).
+. Selecione *Abrir relatório da área de transferência*.
 
 
-image:Reporting_Open_From_Clipboard.png["Abrir um relatório a partir da área de transferência"]
+image:Reporting_Open_From_Clipboard.png["Abrindo um relatório da área de transferência"]
 
 . Cole o código copiado na janela e selecione *OK*.
 . Selecione o ícone de disquete para salvar o relatório.
-. Escolha onde salvar o relatório (_My Content_, _Team Content_, ou crie uma nova pasta).
-. Dê ao novo relatório um nome significativo e selecione *Salvar*.
+. Escolha onde salvar o relatório (_Meu conteúdo_, _Conteúdo da equipe_ ou crie uma nova pasta).
+. Dê um nome significativo ao novo relatório e selecione *Salvar*.
 
 
 
 
-== Editar um relatório existente
+== Editando um relatório existente
 
-Esteja ciente de que a edição de arquivos em seu local padrão corre o risco de esses relatórios serem substituídos na próxima atualização do catálogo de relatórios. Recomenda-se salvar o relatório editado com um novo nome ou armazená-lo em um local não padrão.
+Esteja ciente de que editar arquivos em seu local padrão corre o risco de esses relatórios serem substituídos na próxima atualização do catálogo de relatórios.  É recomendável salvar o relatório editado com um novo nome ou armazená-lo em um local não padrão.
 
 
 
 == Solução de problemas
 
-Aqui você encontrará sugestões para solucionar problemas com relatórios.
+Aqui você encontrará sugestões para solucionar problemas com Relatórios.
 
 |===
 
 
-| *Problema:* | *Tente isto:* 
+| *Problema:* | *Experimente isto:* 
 
 
-| Ao agendar um relatório para ser enviado por e-mail, o nome do usuário conetado é preenchido previamente para o campo "para" do e-mail. No entanto, o nome está na forma de "nome próprio lastname" (nome próprio, espaço, sobrenome). Como esse não é um endereço de e-mail válido, o e-mail não será enviado quando o relatório programado for executado. | Ao agendar o relatório para ser enviado por e-mail, limpe o nome pré-preenchido e insira um endereço de e-mail válido e formatado corretamente no campo "para". 
+| Ao agendar um relatório para ser enviado por e-mail, o nome do usuário conectado é preenchido previamente no campo “Para” do e-mail.  No entanto, o nome está no formato "nome sobrenome" (primeiro nome, espaço, sobrenome).  Como este não é um endereço de e-mail válido, o e-mail não será enviado quando o relatório agendado for executado. | Ao agendar o envio do relatório por e-mail, limpe o nome pré-preenchido e insira um endereço de e-mail válido e formatado corretamente no campo “Para”. 
 
 
-| Meu relatório agendado é enviado por e-mail, mas o relatório não pode ser acessado se a origem for da pasta "meu conteúdo". | Para evitar isso, o relatório ou exibição de relatório deve ser salvo na pasta "conteúdo da equipe > relatórios personalizados - xxxxxx" e a programação criada a partir dessa versão salva. A pasta "relatórios personalizados - xxxxxx" é visível para todos os usuários no locatário. 
+| Meu relatório agendado é enviado por e-mail, mas o relatório não pode ser acessado se a origem for da pasta “Meu Conteúdo”. | Para evitar isso, o relatório ou a visualização do relatório deve ser salvo na pasta “Conteúdo da equipe > Relatórios personalizados - xxxxxx” e o cronograma criado a partir dessa versão salva.  A pasta "Relatórios personalizados - xxxxxx" fica visível para todos os usuários no locatário. 
 
 
-| Ao salvar um trabalho, a pasta pode mostrar "conteúdo da equipe" com a lista de conteúdo de "relatórios personalizados - xxxxxx", no entanto, você não pode salvar o trabalho aqui porque Cognos acha que esta é a pasta "conteúdo da equipe" onde você não tem acesso para escrever. | O trabalho é criar uma nova pasta com um nome exclusivo (ou seja, "NewFolder") e salvá-la, ou para salvar em "meu conteúdo" e, em seguida, copiar / mover para "relatórios personalizados - xxxxxx". 
+| ao salvar um trabalho, a pasta pode mostrar “Conteúdo da equipe” com a lista de conteúdo de “Relatórios personalizados - xxxxxx”, no entanto, você não pode salvar o trabalho aqui porque o Cognos acha que esta é a pasta “Conteúdo da equipe” onde você não tem acesso para escrever. | A solução alternativa é criar uma nova pasta com um nome exclusivo (por exemplo, “NovaPasta”) e salvá-la, ou salvá-la em “Meu Conteúdo” e depois copiar/mover para “Relatórios Personalizados - xxxxxx”. 
 |===

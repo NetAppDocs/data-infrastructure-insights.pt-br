@@ -1,17 +1,17 @@
 ---
 sidebar: sidebar 
 permalink: concept_troubleshooting_overview.html 
-summary: Nesta seção, você encontrará dicas e truques para ajudá-lo a solucionar problemas no ambiente Data Infrastructure Insights. 
+summary: Nesta seção, você encontrará dicas e truques para ajudar a solucionar problemas no seu ambiente do Data Infrastructure Insights . 
 keywords:  
 ---
-= Solução de problemas do Data Infrastructure Insights
+= Solução de problemas de Data Infrastructure Insights
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Os tópicos nesta seção fornecem conselhos para solução de problemas em caso de problemas com seu ambiente Data Infrastructure Insights.
+Os tópicos nesta seção fornecem conselhos sobre solução de problemas em caso de problemas com seu ambiente do Data Infrastructure Insights .
 
-Clique em uma categoria no menu à esquerda para ver as informações de solução de problemas dessa categoria.
+Clique em uma categoria no menu à esquerda para ver informações de solução de problemas para essa categoria.
 
-Você pode encontrar mais solução de problemas e outras link:concept_requesting_support.html["suporte"] informações na página Data Infrastructure Insights *Ajuda > suporte*.
+Você pode encontrar mais soluções de problemas e outraslink:concept_requesting_support.html["apoiar"] informações na página *Ajuda > Suporte* do Data Infrastructure Insights .

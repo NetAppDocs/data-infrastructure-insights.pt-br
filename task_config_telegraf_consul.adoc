@@ -4,37 +4,37 @@ permalink: task_config_telegraf_consul.html
 keywords: telegraf, installation, install, consul 
 summary: Configuração do coletor de dados do cônsul 
 ---
-= Consul Data Collector
+= Coletor de Dados do Cônsul
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Data Infrastructure Insights usa esse coletor de dados para coletar métricas da Cônsul.
+O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do Consul.
 
 
 
 == Instalação
 
-. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha Cônsul.
+. Em *Observabilidade > Coletores*, clique em *+Coletor de Dados*.  Escolha Cônsul.
 +
-Se você não tiver configurado um Agente para coleta, será solicitado link:task_config_telegraf_agent.html["instale um agente"]ao locatário.
+Se você não configurou um Agente para coleta, você será solicitado alink:task_config_telegraf_agent.html["instalar um agente"] no seu inquilino.
 
 +
-Se você já tiver um agente configurado, selecione o sistema operacional ou a Plataforma apropriada e clique em *continuar*.
+Se você já tiver um agente configurado, selecione o Sistema Operacional ou Plataforma apropriada e clique em *Continuar*.
 
-. Siga as instruções na tela Consul Configuration (Configuração do cônsul) para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
-
-
-
-
-== Configuração
-
-As informações podem ser encontradas no link:https://www.consul.io/docs/index.html["Documentação do cônsul"].
+. Siga as instruções na tela Configuração do Cônsul para configurar o coletor de dados.  As instruções variam dependendo do tipo de sistema operacional ou plataforma que você está usando para coletar dados.
 
 
 
-== Objetos e contadores para cônsul
+
+== Configurar
+
+Informações podem ser encontradas emlink:https://www.consul.io/docs/index.html["Documentação do Cônsul"] .
+
+
+
+== Objetos e Contadores para cônsul
 
 Os seguintes objetos e seus contadores são coletados:
 
@@ -43,10 +43,10 @@ Os seguintes objetos e seus contadores são coletados:
 | Objeto: | Identificadores: | Atributos: | Pontos de dados: 
 
 
-| Cônsul | Nó de serviço de ID de verificação de namespace | Nó IP nó os nó UUUID Nome do nó Serviço Nome verificar Nome ID do serviço Status | Aviso de aprovação crítica 
+| Cônsul | Nó de serviço de verificação de ID de namespace | IP do nó SO do nó UUID do nó Nome do nó Nome do serviço Verificar nome ID do serviço Status | Aviso de ultrapassagem crítica 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página.

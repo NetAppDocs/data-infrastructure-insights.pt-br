@@ -10,34 +10,34 @@ summary: Instruções gerais do coletor de dados
 
 
 [role="lead"]
-Você configura os coletores de dados em seu ambiente Data Infrastructure Insights para coletar dados de dispositivos no data center.
+Você configura Coletores de Dados no seu ambiente do Data Infrastructure Insights para coletar dados de dispositivos no data center.
 
 .Antes de começar
-* Tem de ter configurado uma Unidade de aquisição antes de poder começar a recolher dados.
-* Você precisa de credenciais para os dispositivos a partir dos quais você está coletando dados.
-* Endereços de rede do dispositivo, informações de conta e senhas são necessários para todos os dispositivos dos quais você está coletando dados.
+* Você deve ter configurado uma Unidade de Aquisição antes de começar a coletar dados.
+* Você precisa de credenciais para os dispositivos dos quais está coletando dados.
+* Endereços de rede de dispositivos, informações de conta e senhas são necessários para todos os dispositivos dos quais você está coletando dados.
 
 
 .Passos
-. No menu Data Infrastructure Insights, clique em *observabilidade > coletores*
+. No menu Data Infrastructure Insights , clique em *Observabilidade > Coletores*
 +
-O sistema exibe os coletores de dados disponíveis organizados pelo fornecedor.
+O sistema exibe os Coletores de Dados disponíveis organizados por fornecedor.
 
-. Clique em * Coletor* e selecione o coletor de dados a configurar.
+. Clique em *+ Coletor* e selecione o coletor de dados a ser configurado.
 +
-Na caixa de diálogo, pode configurar o coletor de dados e adicionar uma unidade de aquisição.
+Na caixa de diálogo, você pode configurar o coletor de dados e adicionar uma Unidade de Aquisição.
 
-. Introduza um nome para o coletor de dados.
-. Clique em *Configuração avançada* para adicionar campos de configuração adicionais. (Nem todos os coletores de dados exigem configuração avançada.)
-. Clique em *Configuração de teste* para verificar se o coletor de dados está configurado corretamente.
-. Clique em *Add Collector* para salvar a configuração e adicionar o coletor de dados ao seu locatário do Data Infrastructure Insights.
-
-
-Pode levar até dois períodos de enquete antes que os dados do serviço sejam exibidos em painéis ou disponíveis para consulta.
-
-* 1st pesquisa de inventário: imediatamente
-* pesquisa de dados de desempenho 1st para estabelecer uma linha de base: imediatamente após a pesquisa de inventário
-* enquete de desempenho 2nd: dentro de 15 segundos após a conclusão da enquete de desempenho 1st
+. Digite um nome para o coletor de dados.
+. Clique em *Configuração avançada* para adicionar campos de configuração adicionais.  (Nem todos os coletores de dados exigem configuração avançada.)
+. Clique em *Testar configuração* para verificar se o coletor de dados está configurado corretamente.
+. Clique em *Adicionar coletor* para salvar a configuração e adicionar o coletor de dados ao seu locatário do Data Infrastructure Insights .
 
 
-A polling então prossegue de acordo com os intervalos de enquete de inventário e desempenho configurados.
+Pode levar até dois períodos de pesquisa antes que os dados do serviço sejam exibidos nos painéis ou estejam disponíveis para consulta.
+
+* 1ª pesquisa de inventário: imediatamente
+* 1ª pesquisa de dados de desempenho para estabelecer uma linha de base: imediatamente após a pesquisa de inventário
+* 2ª pesquisa de desempenho: dentro de 15 segundos após a conclusão da 1ª pesquisa de desempenho
+
+
+A pesquisa prossegue de acordo com os intervalos de pesquisa de desempenho e inventário configurados.

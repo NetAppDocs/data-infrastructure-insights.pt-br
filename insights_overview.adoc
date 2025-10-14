@@ -2,39 +2,39 @@
 sidebar: sidebar 
 permalink: insights_overview.html 
 keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload, ttf, time to full, k8s, kubernetes, namespace 
-summary: Os insights fornecem uma visão do uso e das tendências dos recursos. 
+summary: Os insights oferecem uma visão do uso de recursos e tendências. 
 ---
-= Insights
+= Percepções
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Insights permitem que você analise coisas como o uso de recursos e como isso afeta outros recursos ou análises completas.
+Os insights permitem que você analise coisas como o uso de recursos e como ele afeta outros recursos, ou análises de tempo total.
 
-Vários Insights estão disponíveis. Navegue até *Dashboards > Insights* para começar a mergulhar. Você pode exibir Insights ativos (Insights que estão ocorrendo atualmente) na guia principal ou Insights inativos na guia _Inactive Insights_. Insights inativos são aqueles que estavam ativos anteriormente, mas não estão mais ocorrendo.
+Há uma série de Insights disponíveis.  Navegue até *Painéis > Insights* para começar a se aprofundar. Você pode visualizar Insights ativos (Insights que estão ocorrendo no momento) na guia principal ou Insights inativos na guia _Insights inativos_.  Insights inativos são aqueles que estavam ativos anteriormente, mas não estão mais ocorrendo.
 
 
 
-== Tipos de insight
+== Tipos de Insight
 
 
 
 === Recursos compartilhados sob estresse
 
-Workloads de alto impacto podem reduzir o desempenho de outros workloads em um recurso compartilhado. Isso coloca o recurso compartilhado sob estresse. O Data Infrastructure Insights fornece ferramentas para ajudar você a investigar a saturação e o impactos dos recursos no locatário. link:insights_shared_resources_under_stress.html["Saiba mais"]
+Cargas de trabalho de alto impacto podem reduzir o desempenho de outras cargas de trabalho em um recurso compartilhado.  Isso coloca o recurso compartilhado sob estresse.  O Data Infrastructure Insights fornece ferramentas para ajudar você a investigar a saturação de recursos e o impacto no seu locatário.link:insights_shared_resources_under_stress.html["Saber mais"]
 
 
 
-=== Namespaces do Kubernetes estão ficando sem espaço
+=== Espaços para namespaces do Kubernetes ficando sem espaço
 
-Os namespaces do Kubernetes que estão fora do espaço Insight oferecem uma visão das cargas de trabalho nos namespaces do Kubernetes que correm o risco de ficar sem espaço, com uma estimativa do número de dias restantes antes que cada espaço fique cheio. link:insights_k8s_namespaces_running_out_of_space.html["Saiba mais"]
-
-
-
-=== Recupere o storage frio da ONTAP
-
-O Insight _Reclaim ONTAP Cold Storage_ fornece dados sobre capacidade inativa, potencial economia de custo/energia e itens de ação recomendados para volumes em sistemas ONTAP. link:insights_reclaim_ontap_cold_storage.html["Saiba mais"]
+O Kubernetes Namespaces Running Out of Space Insight fornece uma visão das cargas de trabalho em seus namespaces do Kubernetes que correm o risco de ficar sem espaço, com uma estimativa do número de dias restantes antes que cada espaço fique cheio.link:insights_k8s_namespaces_running_out_of_space.html["Saber mais"]
 
 
-NOTE: Este é um recurso _Preview_ e pode mudar com o tempo à medida que as melhorias são feitas. link:/concept_preview_features.html["Saiba mais"] Sobre os recursos do Data Infrastructure Insights Preview.
+
+=== Recuperar armazenamento refrigerado ONTAP
+
+O _Reclaim ONTAP Cold Storage_ Insight fornece dados sobre capacidade de refrigeração, potencial economia de custos/energia e itens de ação recomendados para volumes em sistemas ONTAP .link:insights_reclaim_ontap_cold_storage.html["Saber mais"]
+
+
+NOTE: Este é um recurso de _prévia_ e pode mudar ao longo do tempo conforme melhorias são feitas. link:/concept_preview_features.html["Saber mais"] sobre os recursos de visualização do Data Infrastructure Insights .

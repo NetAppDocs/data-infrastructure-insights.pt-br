@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_webhook_example_teams.html 
 keywords: webhook, notification, Microsoft, Teams, integration 
-summary: Crie um webhook para alertar sobre limites de desempenho ou inventário para o Microsoft Teams 
+summary: Crie um webhook para alertar sobre limites de desempenho ou inventário do Microsoft Teams 
 ---
 = Exemplo de webhook para Microsoft Teams
 :hardbreaks:
@@ -10,47 +10,47 @@ summary: Crie um webhook para alertar sobre limites de desempenho ou inventário
 
 
 [role="lead"]
-Webhooks permitem que os usuários enviem notificações de alerta para vários aplicativos usando um canal de webhook personalizado. Esta página fornece um exemplo para configurar webhooks para equipes.
+Os webhooks permitem que os usuários enviem notificações de alerta para vários aplicativos usando um canal de webhook personalizado.  Esta página fornece um exemplo de configuração de webhooks para o Teams.
 
 
-NOTE: Esta página refere-se a instruções de terceiros, que podem estar sujeitas a alterações. Consulte a link:https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook["Documentação das equipas"]para obter as informações mais atualizadas.
+NOTE: Esta página se refere a instruções de terceiros, que podem estar sujeitas a alterações.  Consulte olink:https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook["Documentação das equipes"] para obter as informações mais atualizadas.
 
 
 
-== Configuração equipas:
+== Configuração das equipes:
 
-. Em equipes, selecione o kebab e procure por webhook de entrada.
+. No Teams, selecione o kebab e pesquise por Webhook de entrada.
 +
-image:Webhooks_Teams_Create_Webhook.png["Incoming Webhook em equipes"]
+image:Webhooks_Teams_Create_Webhook.png["Webhook de entrada no Teams"]
 
-. Selecione *Adicionar a uma equipe > Selecione uma equipe > Configurar um conetor*.
-. Copie o URL do Webhook. Você precisará colar isso na configuração do webhook do Data Infrastructure Insights.
-
-
+. Selecione *Adicionar a uma equipe > Selecionar uma equipe > Configurar um conector*.
+. Copie o URL do Webhook.  Você precisará colar isso na configuração do webhook do Data Infrastructure Insights .
 
 
-== Crie o Webhook do Data Infrastructure Insights:
-
-. Em Data Infrastructure Insights, navegue até *Admin > notificações* e selecione a guia *Webhooks*. Clique em * Webhook* para criar um novo webhook.
-. Dê ao webhook um Nome significativo, como "Teams Webhook".
-. Na lista suspensa _Template Type_, selecione *Teams*.
 
 
-image:Webhooks-Teams_example.png["Teams webhook template"]
+== Criar webhook de Data Infrastructure Insights :
 
-. Cole o URL de cima no campo _URL_.
+. No Data Infrastructure Insights, navegue até *Admin > Notificações* e selecione a guia *Webhooks*.  Clique em *+Webhook* para criar um novo webhook.
+. Dê ao webhook um nome significativo, como "Teams Webhook".
+. No menu suspenso _Tipo de modelo_, selecione *Equipes*.
+
+
+image:Webhooks-Teams_example.png["Modelo de webhook de equipes"]
+
+. Cole a URL acima no campo _URL_.
 
 
 
 
 == Notificações via Webhook
 
-Para notificar eventos via webhook, em Data Infrastructure Insights navegue até *Alertas > monitores* e clique em * Monitor* para criar um novo link:task_create_monitor.html["monitorar"].
+Para notificar eventos via webhook, no Data Infrastructure Insights navegue até *Alertas > Monitores* e clique em *+Monitor* para criar um novolink:task_create_monitor.html["monitor"] .
 
 * Selecione uma métrica e defina as condições do monitor.
-* Em _Configurar notificação(s) da equipe, escolha o método *Webhook* Delivery.
-* Escolha o webhook "Teams" para os eventos desejados (crítico, Aviso, resolvido)
+* Em _Configurar notificação(ões) da equipe, escolha o Método de entrega *Webhook*.
+* Selecione o webhook "Equipes" para os eventos desejados (Crítico, Aviso, Resolvido)
 +
-image:Webhooks_Teams_Notifications.png["Notificações do webhook"]
+image:Webhooks_Teams_Notifications.png["Notificações de webhook"]
 
 

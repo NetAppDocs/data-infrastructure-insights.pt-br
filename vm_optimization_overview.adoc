@@ -1,30 +1,30 @@
 ---
 sidebar: sidebar 
 permalink: vm_optimization_overview.html 
-summary: Otimização da VM 
+summary: Otimização de VM 
 keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand 
 ---
-= Otimização da VM
+= Otimização de VM
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
 
 
 [role="lead"]
-O Data Infrastructure Insights ajuda a gerenciar os custos de infraestrutura e licenciamento, analisando o comportamento histórico do ambiente e estabelecendo previsões de curto e longo prazo, gerando recomendações detalhadas para desativação de host e recuperação de VMs desativadas e ociosas. Essas recomendações ajudam você a garantir a estabilidade do desempenho, liberar a capacidade não utilizada e reduzir a alocação de memória e CPU.
+O Data Infrastructure Insights ajuda você a gerenciar custos de infraestrutura e licenciamento analisando o comportamento histórico do ambiente e estabelecendo previsões de curto e longo prazo, gerando recomendações detalhadas para descomissionamento de host e recuperação de VMs desligadas e ociosas.  Essas recomendações ajudam a garantir a estabilidade do desempenho, liberar capacidade não utilizada e reduzir a alocação de memória e CPU.
 
-image:vm_optimization_summary.png["Ecrã Resumo da otimização da VM"]
+image:vm_optimization_summary.png["Tela de Resumo de Otimização de VM"]
 
-Para começar, navegue para observabilidade > analisar > Otimização da VM. Você verá um resumo de economias potenciais, discriminado pelo número de núcleos e economia de armazenamento. Você pode definir filtros para focar por data center, IP do Virtual Center ou cluster, ou definir seus próprios filtros para restringir ainda mais seu foco.
+Para começar, navegue até Observabilidade > Analisar > Otimização de VM.  É mostrado um resumo das economias potenciais divididas por número de núcleos e economia de armazenamento.  Você pode definir filtros para focar por Data Center, IP do Virtual Center ou CLuster, ou definir seus próprios filtros para restringir ainda mais seu foco.
 
-image:vm_optimization_overview.png["visão geral da otimização da vm"]
+image:vm_optimization_overview.png["Visão geral da otimização de VM"]
 
-A guia Descomissionamento do Hypervisor mostra suas possíveis economias de custo com base na estratégia de otimização selecionada. Cada estratégia utiliza limites diferentes para determinar economias potenciais.
+A guia Descomissionamento do hipervisor mostra sua potencial economia de custos com base na estratégia de otimização selecionada.  Cada estratégia utiliza limites diferentes para determinar potenciais economias.
 
-Selecione um cluster na lista para abrir um painel deslizante com detalhes sobre a utilização da CPU e da memória para o cluster.
+Selecione um Cluster na lista para abrir um painel deslizante com detalhes sobre a utilização da CPU e da memória do cluster.
 
-image:vm_optimization_hypervisor_decommissioning_tab.png["separador de otimização do hipervisor"]
+image:vm_optimization_hypervisor_decommissioning_tab.png["guia de otimização do hipervisor"]
 
-A guia VM Reclamation fornece detalhes sobre VMs que estão ociosas ou desligadas por mais de 30, 60 ou 90 dias, juntamente com economias potenciais de capacidade, memória e vCPU. A seleção de uma VM na lista abre a página de detalhes dessa VM.
+A guia Recuperação de VM fornece detalhes sobre VMs que estão ociosas ou desligadas por mais de 30, 60 ou 90 dias, juntamente com possíveis economias de capacidade, memória e vCPU.  Selecionar uma VM da lista abre a página de detalhes dessa VM.
 
-image:vm_optimization_reclamation_tab.png["guia recuperação de vm"]
+image:vm_optimization_reclamation_tab.png["guia de recuperação de VM"]

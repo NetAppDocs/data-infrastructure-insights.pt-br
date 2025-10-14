@@ -2,25 +2,25 @@
 sidebar: sidebar 
 permalink: task_dc_brocade_efcm.html 
 keywords: data collector, Brocade, EFCM, 
-summary: Configurando o coletor de dados Brocade. 
+summary: Configurando o coletor de dados Brocade . 
 ---
-= Configuração do coletor de dados do Gerenciador de conectividade de Brocade para empresas
+= Configurando o coletor de dados do Brocade Enterprise Fabric Connectivity Manager
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Insights de infraestrutura de dados usa o coletor de dados do Gerenciador de conectividade de malha empresarial (EFCM) da Brocade para descobrir o inventário dos switches do Brocade EFCM. O Data Infrastructure Insights oferece suporte às versões 9,5, 9,6 e 9,7 do EFCM.
+O Data Infrastructure Insights usa o coletor de dados do Brocade Enterprise Fabric Connectivity Manager (EFCM) para descobrir inventário de switches Brocade EFCM.  O Data Infrastructure Insights oferece suporte às versões 9.5, 9.6 e 9.7 do EFCM.
 
 
 
 == Requisitos
 
 * Endereço de rede ou nome de domínio totalmente qualificado para o servidor EFCM
-* A versão EFCM deve ser 9,5, 9,6 ou 9,7
+* A versão do EFCM deve ser 9.5, 9.6 ou 9.7
 * Endereço IP do servidor EFCM
-* Nome de utilizador e palavra-passe apenas de leitura para o servidor EFCM
-* Acesso validado ao switch Connectrix pelo Telnet a partir do servidor Data Infrastructure Insights, usando o nome de usuário e senha somente leitura na porta 51512
+* Nome de usuário e senha somente leitura para o servidor EFCM
+* Acesso validado ao switch Connectrix por Telnet do servidor Data Infrastructure Insights , usando o nome de usuário e a senha somente leitura na porta 51512
 
 
 
@@ -35,10 +35,10 @@ O Insights de infraestrutura de dados usa o coletor de dados do Gerenciador de c
 | Servidor EFC | Endereço IP ou nome de domínio totalmente qualificado do servidor EFC 
 
 
-| Nome de utilizador | Nome de utilizador do comutador 
+| Nome de usuário | Nome de usuário para o switch 
 
 
-| Palavra-passe | Palavra-passe para o interrutor 
+| Senha | Senha para o switch 
 |===
 
 
@@ -49,32 +49,32 @@ O Insights de infraestrutura de dados usa o coletor de dados do Gerenciador de c
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 15 minutos. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário. O padrão é 15 minutos. 
 
 
-| Nome da malha | Nome do tecido a ser informado pelo coletor de dados do EFCM. Deixe em branco para relatar o nome da tela como WWN. 
+| Nome do tecido | Nome do tecido a ser relatado pelo coletor de dados do EFCM.  Deixe em branco para informar o nome do tecido como WWN. 
 
 
-| Porta de comunicação | Porta utilizada para comunicação com o switch 
+| Porta de comunicação | Porta usada para comunicação com o switch 
 
 
-| Ativar trapping | Selecione para ativar a aquisição ao receber uma trap SNMP do dispositivo. Se você selecionar Ativar trapping, você também deve ativar o SNMP. 
+| Habilitar Trapping | Selecione para habilitar a aquisição ao receber uma interceptação SNMP do dispositivo.  Se você selecionar habilitar interceptação, também deverá ativar o SNMP. 
 
 
-| Tempo mínimo entre armadilhas (seg) | Tempo mínimo entre tentativas de aquisição desencadeadas por armadilhas. O padrão é 15 segundos. 
+| Tempo mínimo entre armadilhas (seg) | Tempo mínimo entre tentativas de aquisição acionadas por armadilhas. O padrão é 15 segundos. 
 
 
-| Zonesets inativos | Lista separada por vírgulas de Zonesets inativos nos quais realizar a aquisição, além de realizar a aquisição nos conjuntos de zonas ativas 
+| Conjuntos de zonas inativas | Lista separada por vírgulas de conjuntos de zonas inativos nos quais realizar a aquisição, além de realizar a aquisição nos conjuntos de zonas ativos 
 
 
-| NIC a utilizar | Especifique qual interface de rede deve ser usada na RAU ao gerar relatórios em dispositivos SAN 
+| NIC para usar | Especifique qual interface de rede deve ser usada na RAU ao relatar dispositivos SAN 
 
 
-| Excluir dispositivos | Lista separada por vírgulas de nomes de unidades a incluir ou excluir da sondagem 
+| Excluir dispositivos | Lista separada por vírgulas de nomes de unidades a serem incluídas ou excluídas da pesquisa 
 
 
-| Utilize a alcunha do interrutor EFCM como o nome do interrutor | Selecione para utilizar a alcunha do switch EFCM como o nome do switch Data Infrastructure Insights. 
+| Use o apelido do switch EFCM como nome do switch | Selecione para usar o apelido do switch EFCM como o nome do switch do Data Infrastructure Insights . 
 
 
-| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. O padrão é 300 segundos. 
+| Intervalo de pesquisa de desempenho (seg) | Intervalo entre pesquisas de desempenho. O padrão é 300 segundos. 
 |===

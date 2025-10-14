@@ -2,47 +2,47 @@
 sidebar: sidebar 
 permalink: task_dc_ibm_svc.html 
 keywords: IBM, SVC,SAN 
-summary: Configurando o coletor de dados do IBM SAN volume Controller. 
+summary: Configurando o coletor de dados do IBM SAN Volume Controller. 
 ---
-= Configurando o coletor de dados do IBM SAN volume Controller
+= Configurando o coletor de dados do IBM SAN Volume Controller
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O coletor de dados IBM SAN volume Controller (SVC) coleta dados de inventário e desempenho usando SSH, suportando uma variedade de dispositivos que executam o sistema operacional SVC.
+O coletor de dados do IBM SAN Volume Controller (SVC) coleta dados de inventário e desempenho usando SSH, dando suporte a uma variedade de dispositivos que executam o sistema operacional SVC.
 
-A lista de dispositivos suportados inclui modelos como o SVC, o v7000, o V5000 e o v3700. Consulte a matriz de suporte do Data Infrastructure Insights para ver os modelos e versões de firmware compatíveis.
+A lista de dispositivos suportados inclui modelos como o SVC, o v7000, o v5000 e o v3700.  Consulte a matriz de suporte do Data Infrastructure Insights para modelos e versões de firmware suportados.
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do IBM SVC. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do IBM SVC.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| Condução | Disco 
+| Dirigir | Disco 
 
 
-| Cluster | Armazenamento 
+| Conjunto | Armazenar 
 
 
-| Nó | Nó de storage 
+| Nó | Nó de armazenamento 
 
 
-| Grupo Mdisk | Pool de storage 
+| Grupo Mdisk | Pool de armazenamento 
 
 
-| VDisk | Volume 
+| Vdisco | Volume 
 
 
-| Mdisk | LUNs e caminhos de back-end 
+| Mdisk | LUNs e caminhos de backend 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
@@ -50,18 +50,18 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 
 * Endereço IP de cada cluster SVC
 * Porta 22 disponível
-* Nome de utilizador e palavra-passe só de leitura
+* Nome de usuário e senha somente leitura
 
 
 
 
 === Requisitos de desempenho
 
-* Console SVC, que é obrigatório para qualquer cluster SVC e necessário para o pacote de fundação de descoberta SVC.
-* As credenciais exigirão nível de acesso administrativo apenas para copiar arquivos de desempenho de nós de cluster para o nó de configuração.
-* Ative a coleta de dados conetando-se ao cluster SVC por SSH e executando: _Svctask startstats -interval 1_
+* Console SVC, que é obrigatório para qualquer cluster SVC e necessário para o pacote de base de descoberta do SVC.
+* As credenciais exigirão nível de acesso administrativo somente para copiar arquivos de desempenho dos nós do cluster para o nó de configuração.
+* Habilite a coleta de dados conectando-se ao cluster SVC por SSH e executando: _svctask startstats -interval 1_
 +
-Observação: Alternativamente, habilite a coleta de dados usando a interface do usuário de gerenciamento SVC.
+Observação: como alternativa, habilite a coleta de dados usando a interface de usuário de gerenciamento do SVC.
 
 
 
@@ -77,10 +77,10 @@ Observação: Alternativamente, habilite a coleta de dados usando a interface do
 | Endereços IP do cluster | Endereços IP ou nomes de domínio totalmente qualificados do armazenamento SVC 
 
 
-| Nome Utilizador Stock | Nome de usuário para a CLI SVC 
+| Nome de usuário do inventário | Nome de usuário para o SVC CLI 
 
 
-| Palavra-passe de inventário | Senha para a CLI SVC 
+| Senha de inventário | Senha para o SVC CLI 
 |===
 
 
@@ -91,34 +91,34 @@ Observação: Alternativamente, habilite a coleta de dados usando a interface do
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 40 minutos. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário. O padrão é 40 minutos. 
 
 
-| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. O padrão é 300 segundos. 
+| Intervalo de pesquisa de desempenho (seg) | Intervalo entre pesquisas de desempenho. O padrão é 300 segundos. 
 
 
-| Para limpar os arquivos de estatísticas despejados | Marque esta caixa de seleção para limpar os arquivos de estatísticas despejados 
+| Para limpar arquivos de estatísticas despejados | Selecione esta caixa de seleção para limpar arquivos de estatísticas despejados 
 |===
 
 
 == Solução de problemas
 
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
 | Erro: "O comando não pode ser iniciado porque não foi executado no nó de configuração." | O comando deve ser executado no nó de configuração. 
 |===
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
 | Erro: "O comando não pode ser iniciado porque não foi executado no nó de configuração." | O comando deve ser executado no nó de configuração. 
 |===
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

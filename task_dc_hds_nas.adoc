@@ -2,45 +2,45 @@
 sidebar: sidebar 
 permalink: task_dc_hds_nas.html 
 keywords: data collector, HDS HNAS, HDS NAS 
-summary: 'Configurar o coletor de dados do HDS nas (HNAS).' 
+summary: 'Configurando o coletor de dados HDS NAS (HNAS).' 
 ---
-= Configurar o coletor de dados Hitachi Vantara nas
+= Configurando o coletor de dados do NAS Hitachi Vantara
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O coletor de dados Hitachi Vantara nas é um coletor de dados de inventário e configuração que suporta a descoberta de clusters HDS nas. O Data Infrastructure Insights é compatível com a descoberta de compartilhamentos NFS e CIFS, sistemas de arquivos (volumes internos) e vãos (pools de storage).
+O coletor de dados Hitachi Vantara NAS é um coletor de dados de inventário e configuração que oferece suporte à descoberta de clusters HDS NAS.  O Data Infrastructure Insights oferece suporte à descoberta de compartilhamentos NFS e CIFS, sistemas de arquivos (volumes internos) e intervalos (pools de armazenamento).
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados HNAS. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados HNAS.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| Nível | Grupo de discos 
+| Nível | Grupo de Discos 
 
 
-| Cluster | Armazenamento 
+| Conjunto | Armazenar 
 
 
-| Nó | Nó de storage 
+| Nó | Nó de armazenamento 
 
 
-| Extensão | Pool de storage 
+| Extensão | Pool de armazenamento 
 
 
-| Unidade do sistema | LUN de back-end 
+| Unidade do sistema | Lun de backend 
 
 
-| Sistema de ficheiros | Volume interno 
+| Sistema de arquivos | Volume interno 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
@@ -48,8 +48,8 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 
 * Endereço IP do dispositivo
 * Porta 22, protocolo SSH
-* Nome de utilizador e palavra-passe - nível de privilégio: Supervisor
-* Nota: Este coletor de dados é baseado em SSH, então a AU que o hospeda deve ser capaz de iniciar sessões SSH para TCP 22 no próprio HNAS, ou a Unidade de Gerenciamento de sistemas (SMU) à qual o cluster está conetado.
+* Nome de usuário e senha - nível de privilégio: Supervisor
+* Observação: este coletor de dados é baseado em SSH, portanto, a UA que o hospeda deve ser capaz de iniciar sessões SSH para TCP 22 no próprio HNAS ou na Unidade de Gerenciamento de Sistemas (SMU) à qual o cluster está conectado.
 
 
 
@@ -61,13 +61,13 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Host HNAS | Endereço IP ou nome de domínio totalmente qualificado do HNAS Management Host 
+| Anfitrião HNAS | Endereço IP ou nome de domínio totalmente qualificado do Host de Gerenciamento HNAS 
 
 
-| Nome de utilizador | Nome de usuário para HNAS CLI 
+| Nome de usuário | Nome de usuário para HNAS CLI 
 
 
-| Palavra-passe | Senha usada para HNAS CLI 
+| Senha | Senha usada para HNAS CLI 
 |===
 
 
@@ -78,13 +78,13 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 30 minutos. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário. O padrão é 30 minutos. 
 |===
 
 
 == Solução de problemas
 
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
@@ -92,15 +92,15 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
-| "Erro ao conetar-se" com mensagens de erro "erro ao configurar canal de shell:" ou "erro ao abrir canal de shell" | Provavelmente causado por problemas de conetividade de rede ou SSH está mal configurado. Confirme a conexão com o cliente SSH alternativo 
+| “Erro de conexão” com mensagens de erro “Erro ao configurar o canal do shell” ou “Erro ao abrir o canal do shell” | Provavelmente causado por problemas de conectividade de rede ou SSH configurado incorretamente.  Confirme a conexão com o cliente SSH alternativo 
 
 
-| "Timeout" ou "erro ao recuperar dados" com mensagens de erro "Command: XXX expirou." | * Tente o comando com o cliente SSH alternativo * aumente o tempo limite 
+| "Tempo limite" ou "Erro ao recuperar dados" com mensagens de erro "Comando: XXX expirou." | * Tente o comando com um cliente SSH alternativo * Aumente o tempo limite 
 
 
-| "Erro ao conetar " ou "credenciais de login inválidas" com mensagens de erro "não foi possível se comunicar com o dispositivo:" | * Verificar endereço IP * verificar nome de usuário e senha * confirmar conexão com cliente SSH alternativo 
+| "Erro de conexão" ou "Credenciais de login inválidas" com mensagens de erro "Não foi possível se comunicar com o dispositivo": | * Verifique o endereço IP * Verifique o nome de usuário e a senha * Confirme a conexão com o cliente SSH alternativo 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

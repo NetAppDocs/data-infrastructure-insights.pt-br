@@ -14,24 +14,24 @@ keywords: topology, analyze, analysis, map, virtual, vm, vmware
 
 
 [role="lead"]
-Com o *VM Analyzer* da DII, gerenciar seus ativos virtuais se torna mais simples e eficiente. Esta ferramenta poderosa oferece visibilidade de ponta a ponta, mapeando dependências de VMDK/VM para Host, Datastore, Volume Interno/Volume para Armazenamento.
+Com o *VM Analyzer* da DII, gerenciar seus ativos virtuais se torna mais simples e eficiente.  Esta ferramenta poderosa oferece visibilidade de ponta a ponta, mapeando dependências de VMDK/VM para Host, Datastore, Volume Interno/Volume para Armazenamento.
 
-Ao fornecer um mapa de topologia interativo, o VM Analyzer permite identificar problemas, entender alterações e melhorar a compreensão do fluxo de dados. Simplifique o gerenciamento de VMs e aumente sua visibilidade das cargas de trabalho virtuais.
+Ao fornecer um mapa de topologia interativo, o VM Analyzer permite que você identifique problemas, entenda mudanças e melhore a compreensão do fluxo de dados.  Simplifique o gerenciamento de VMs e aumente sua visibilidade das cargas de trabalho virtuais.
 
-image:vm_analyzer_example_with_panel_a.png["Mapa de topologia de um sistema de storage do VM Analyzer"]
+image:vm_analyzer_example_with_panel_a.png["Mapa de topologia do VM Analyzer de um sistema de armazenamento"]
 
 
 
-== Explore as conexões entre seus ativos
+== Explore conexões entre seus ativos
 
-Selecione *Observability > Analyze > VM Analyzer* para visualizar o VM Analyzer. Defina um filtro para Aplicativo, Máquina Virtual, Volume, Volume Interno ou adicione seus próprios filtros. O mapa para os objetos é exibido, mostrando objetos conetados. Passe o Mouse sobre um objeto para exibir métricas de tráfego para essas conexões.
+Selecione *Observabilidade > Analisar > VM Analyzer* para visualizar o VM Analyzer.  Defina um filtro para Aplicativo, Máquina Virtual, Volume, Volume Interno ou adicione seus próprios filtros.  O mapa dos objetos é exibido, mostrando os objetos conectados.  Passe o mouse sobre um objeto para visualizar as métricas de tráfego dessas conexões.
 
 image:vm_analyzer_performance_metrics.png["Exemplo de métricas de desempenho do VM Analyzer"]
 
 
-NOTE: A maioria dos filtros do VM Analyzer (incluindo aqueles que você pode adicionar) são contextuais; quando você seleciona um objeto em um desses filtros, as opções apresentadas nos outros menus suspensos são atualizadas em contexto com o objeto ou objetos selecionados.
+NOTE: A maioria dos filtros do VM Analyzer (incluindo aqueles que você pode adicionar) são contextuais; quando você seleciona um objeto em um desses filtros, as opções apresentadas nos outros menus suspensos de filtros são atualizadas no contexto do(s) objeto(s) selecionado(s).
 
-Clicar em um objeto ou grupo abre um painel deslizante fornecendo detalhes adicionais sobre o objeto e suas conexões. O painel deslizante exibe um resumo, que fornece detalhes sobre o objeto selecionado (por exemplo, taxa de transferência ou utilização, dependendo do tipo de objeto), e gráficos que mostram métricas para o objeto, como latência ou IOPS. Abas adicionais permitem explorar recursos adicionais relacionados ou alterações e alertas. Você pode optar por exibir métricas para os principais objetos correlacionados ou concorrentes nos gráficos, se desejar.
+Clicar em um objeto ou grupo abre um painel deslizante fornecendo detalhes adicionais sobre o objeto e suas conexões.  O painel deslizante exibe um resumo, que fornece detalhes sobre o objeto selecionado (por exemplo, taxa de transferência ou utilização, dependendo do tipo de objeto) e gráficos mostrando métricas para o objeto, como latência ou IOPS.  Guias adicionais permitem que você explore recursos adicionais relacionados ou alterações e alertas.  Você pode optar por exibir métricas para os principais objetos correlacionados ou concorrentes nos gráficos também, se desejar.
 
 
 

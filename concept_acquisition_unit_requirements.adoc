@@ -1,16 +1,16 @@
 ---
 sidebar: sidebar 
 permalink: concept_acquisition_unit_requirements.html 
-summary: O servidor ou VM que você usa como sua Unidade de aquisição deve atender aos requisitos mínimos. 
+summary: O servidor ou VM que você usa como sua Unidade de Aquisição deve atender aos requisitos mínimos. 
 keywords: AU, acquisition unit, requirements, sizing 
 ---
-= Requisitos da Unidade de aquisição
+= Requisitos da Unidade de Aquisição
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Você deve instalar uma Unidade de aquisição (AU) para adquirir informações de seus coletores de dados de infraestrutura (storage, VM, porta, EC2, etc.). Antes de instalar a Unidade de aquisição, você deve garantir que o locatário atenda aos requisitos do sistema operacional, CPU, memória e espaço em disco.
+Você deve instalar uma Unidade de Aquisição (UA) para adquirir informações dos coletores de dados da sua infraestrutura (armazenamento, VM, porta, EC2, etc.).  Antes de instalar a Unidade de Aquisição, você deve garantir que seu locatário atenda aos requisitos de sistema operacional, CPU, memória e espaço em disco.
 
 
 
@@ -19,48 +19,48 @@ Você deve instalar uma Unidade de aquisição (AU) para adquirir informações 
 |===
 
 
-| Componente | Requisito Linux | Requisitos do Windows 
+| Componente | Requisitos do Linux | Requisitos do Windows 
 
 
-| Sistema operacional | Um computador executando uma versão licenciada de um dos seguintes: * AlmaLinux 9.3 a 9.5 * Centos (64 bits): 7.2 a 7.9, 8.1 a 8.4, Stream 8, Stream 9 * Debian (64 bits): 9 a 12 * OpenSUSE Leap 15.1 a 15.6 * Oracle Enterprise Linux (64 bits): 7.5 a 7.9, 8.1 a 8.10, 9.3 a 9.6 * Red Hat (64 bits): 7.2 a 7.9, 8.1 a 8.10, 9.1 a 9.6 * Rocky 9.0 a 9.5 * SUSE Linux Enterprise Server 15, 15 SP2 a 15 SP6 * Ubuntu Server: 18.04, 20.04, 22.04, 24.04 LTS * SELinux nas plataformas acima Este computador não deve executar nenhum outro software de nível de aplicativo. Recomenda-se um servidor dedicado. Se você estiver executando com o SELinux, é recomendável executar os seguintes comandos no sistema de unidade de aquisição: Sudo semanage fcontext -a -t usr_t "/opt/NetApp/cloudinsights(/.*)?" sudo restorecon -R /opt/NetApp/cloudsights | Um computador com uma versão licenciada de um dos seguintes: * Microsoft Windows 10 64-bit * Microsoft Windows 11 * Microsoft Windows Server 2012 * Microsoft Windows Server 2012 R2 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025 este computador não deve estar executando nenhum outro software de nível de aplicativo. Recomenda-se um servidor dedicado. 
+| Sistema operacional | Um computador executando uma versão licenciada de um dos seguintes: * AlmaLinux 9.3 a 9.5 * Centos (64 bits): 7.2 a 7.9, 8.1 a 8.4, Stream 8, Stream 9 * Debian (64 bits): 9 a 12 * OpenSUSE Leap 15.1 a 15.6 * Oracle Enterprise Linux (64 bits): 7.5 a 7.9, 8.1 a 8.10, 9.3 a 9.6 * Red Hat (64 bits): 7.2 a 7.9, 8.1 a 8.10, 9.1 a 9.6 * Rocky 9.0 a 9.5 * SUSE Linux Enterprise Server 15, 15 SP2 a 15 SP6 * Ubuntu Server: 18.04, 20.04, 22.04, 24.04 LTS * SELinux nas plataformas acima Este computador não deve executar nenhum outro software de nível de aplicativo. Um servidor dedicado é recomendado.  Se você estiver executando com SELinux, é recomendável executar os seguintes comandos no sistema da unidade de aquisição: sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?" sudo restorecon -R /opt/netapp/cloudinsights | Um computador executando uma versão licenciada de um dos seguintes: * Microsoft Windows 10 de 64 bits * Microsoft Windows 11 * Microsoft Windows Server 2012 * Microsoft Windows Server 2012 R2 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025 Este computador não deve executar nenhum outro software de nível de aplicativo. Um servidor dedicado é recomendado. 
 
 
-| CPU | 2 núcleos de CPU | O mesmo 
+| CPU | 2 núcleos de CPU | Mesmo 
 
 
-| Memória | 8 GB DE RAM | O mesmo 
+| Memória | 8 GB de RAM | Mesmo 
 
 
-| Espaço disponível em disco | 50 GB (100 GB recomendados) para Linux, o espaço em disco deve ser alocado desta maneira: /Opt/NetApp 10 GB (20 GB para ambientes grandes) /var/log/NetApp 40 GB (80 GB para ambientes grandes) /tmp pelo menos 1 GB disponíveis durante a instalação | 50 GB 
+| Espaço em disco disponível | 50 GB (100 GB recomendado) Para Linux, o espaço em disco deve ser alocado desta maneira: /opt/netapp 10 GB (20 GB para ambientes grandes) /var/log/netapp 40 GB (80 GB para ambientes grandes) /tmp pelo menos 1 GB disponível durante a instalação | 50 GB 
 
 
-| Rede | É necessária uma ligação Ethernet de 100 Mbps/1 Gbps, endereço IP estático e conetividade de porta 80 ou 443 (saída) da Unidade de aquisição para *.cloudinsights.NetApp.com ou o seu inquilino de informações de infra-estrutura de dados (isto é, https://<tenant_id>.C01.cloudsights.NetApp.com). Para obter os requisitos entre a Unidade de aquisição e cada Coletor de dados, consulte as instruções para a link:data_collector_list.html["Coletor de dados"]. Se a sua organização exigir o uso de proxy para acesso à Internet, talvez seja necessário entender o comportamento de proxy da sua organização e buscar certas exceções para que o Data Infrastructure Insights funcione. Por exemplo, sua organização bloqueia o acesso por padrão e só permite o acesso a sites/domínios específicos por exceção? Se assim for, você precisará adicionar o seguinte domínio à lista de exceções: *.cloudinsights.NetApp.com para obter mais informações, leia sobre Proxies link:task_troubleshooting_linux_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["Aqui (Linux)"] ou link:task_troubleshooting_windows_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["Aqui (Windows)"]. Observe que a porta 443 deve ser aberta "de saída" da AU para o Data Infrastructure Insights. | O mesmo 
+| Rede | É necessária uma conexão Ethernet de 100 Mbps/1 Gbps, endereço IP estático e conectividade de porta 80 ou 443 (saída) da Unidade de Aquisição para *.cloudinsights.netapp.com ou seu locatário do Data Infrastructure Insights (ou seja, \https://<tenant_id>.c01.cloudinsights.netapp.com).  Para requisitos entre a Unidade de Aquisição e cada Coletor de Dados, consulte as instruções para olink:data_collector_list.html["Coletor de Dados"] .  Se sua organização exigir o uso de proxy para acesso à Internet, talvez seja necessário entender o comportamento do proxy da sua organização e buscar certas exceções para que o Data Infrastructure Insights funcione.  Por exemplo, sua organização bloqueia o acesso por padrão e só permite acesso a sites/domínios específicos por exceção?  Se for o caso, você precisará adicionar o seguinte domínio à lista de exceções: *.cloudinsights.netapp.com Para obter mais informações, leia sobre Proxieslink:task_troubleshooting_linux_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["aqui (Linux)"] oulink:task_troubleshooting_windows_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["aqui (Windows)"] .  Observe que a porta 443 deve ser aberta "de saída" da AU para o Data Infrastructure Insights. | Mesmo 
 
 
-| Permissões | Permissões sudo no servidor da Unidade de aquisição. /tmp deve ser montado com recursos exec. | Permissões de administrador no servidor da Unidade de aquisição 
+| Permissões | Permissões Sudo no servidor da Unidade de Aquisição.  /tmp deve ser montado com recursos exec. | Permissões de administrador no servidor da Unidade de Aquisição 
 
 
-| Verificação de vírus |  | Durante a instalação, você deve desativar completamente todos os scanners de vírus. Após a instalação, os caminhos utilizados pelo software da Unidade de aquisição têm de ser excluídos da verificação de vírus. 
+| Verificação de vírus |  | Durante a instalação, você deve desabilitar completamente todos os antivírus.  Após a instalação, os caminhos usados pelo software da Unidade de Aquisição devem ser excluídos da verificação de vírus. 
 |===
 
 
 == Recomendações adicionais
 
-* Para uma auditoria precisa e relatórios de dados, é altamente recomendável sincronizar o tempo na máquina da unidade de aquisição usando *Network Time Protocol (NTP)* ou *Simple Network Time Protocol (SNTP)*.
+* Para auditoria e relatórios de dados precisos, é altamente recomendável sincronizar a hora na máquina da Unidade de Aquisição usando *Network Time Protocol (NTP)* ou *Simple Network Time Protocol (SNTP)*.
 
 
 
 
-== Em relação ao dimensionamento
+== Sobre o dimensionamento
 
-Você pode começar a usar uma Unidade de aquisição de dados Infrastructure Insights com apenas 8GB GB de memória e 50GB GB de espaço em disco. No entanto, para ambientes maiores, você deve fazer as seguintes perguntas:
+Você pode começar com uma Unidade de Aquisição de Data Infrastructure Insights com apenas 8 GB de memória e 50 GB de espaço em disco. No entanto, para ambientes maiores, você deve se perguntar o seguinte:
 
 Você espera:
 
-* Descubra mais de 2500 máquinas virtuais ou 10 clusters ONTAP grandes (> 2 nós), Symmetrix ou matrizes HDS/HPE VSP/XP nesta Unidade de aquisição?
-* Implantar 75 ou mais coletores de dados totais nesta Unidade de aquisição?
+* Descubra mais de 2.500 máquinas virtuais ou 10 grandes clusters ONTAP (> 2 nós), Symmetrix ou matrizes HDS/HPE VSP/XP nesta Unidade de Aquisição?
+* Implantar 75 ou mais coletores de dados no total nesta Unidade de Aquisição?
 
 
-Para cada resposta "Sim" acima, recomenda-se adicionar 8 GB de memória e 50 GB de espaço em disco à AU. Então, por exemplo, se você respondeu "Sim" para ambos, você deve implantar um sistema de memória 24GB com 150GBMB ou mais de espaço em disco. No Linux, o espaço em disco a ser adicionado ao local do log.
+Para cada resposta "Sim" acima, é recomendável adicionar 8 GB de memória e 50 GB de espaço em disco à AU.  Então, por exemplo, se você respondeu "Sim" para ambas, você deve implantar um sistema de memória de 24 GB com 150 GB ou mais de espaço em disco.  No Linux, o espaço em disco a ser adicionado ao local do log.
 
-Para perguntas adicionais sobre o dimensionamento, entre em Contato com o suporte da NetApp.
+Para dúvidas adicionais sobre dimensionamento, entre em contato com o Suporte da NetApp .

@@ -2,44 +2,44 @@
 sidebar: sidebar 
 permalink: task_dc_ibm_ds.html 
 keywords: data collector, IBM DS6xxx, IBM DS6xxx, IBM, IBM DS 
-summary: Configurando o System Storage DS8000 Series data Collector. 
+summary: Configurando o coletor de dados do System Storage Série DS8000. 
 ---
-= Coletor de dados IBM System Storage DS8000 Series
+= Coletor de dados IBM System Storage série DS8000
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O coletor de dados IBM DS (CLI) suporta a aquisição de dados de inventário e desempenho para dispositivos DS6xxx e DS8xxx.
+O coletor de dados IBM DS (CLI) oferece suporte à aquisição de dados de inventário e desempenho para dispositivos DS6xxx e DS8xxx.
 
-Os dispositivos DS3xxx, DS4xxx e DS5xxx são suportados pelo link:task_dc_na_eseries.html["Coletor de dados NetApp e-Series"]. Você deve consultar a matriz de suporte do Data Infrastructure Insights para modelos e versões de firmware compatíveis.
+Os dispositivos DS3xxx, DS4xxx e DS5xxx são suportados pelolink:task_dc_na_eseries.html["Coletor de dados NetApp E-Series"] .  Você deve consultar a matriz de suporte do Data Infrastructure Insights para modelos e versões de firmware suportados.
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados IBM DS. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do IBM DS.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
 | Módulo de unidade de disco | Disco 
 
 
-| Imagem de armazenamento | Armazenamento 
+| Imagem de armazenamento | Armazenar 
 
 
-| Fundo de extensão | Nó de storage 
+| Pool de extensão | Nó de armazenamento 
 
 
 | Volume de bloco fixo | Volume 
 
 
-| Iniciador FC do host (mapeado) | Máscara de volume 
+| Iniciador FC Host (Mapeado) | Máscara de Volume 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para esta coleta de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
@@ -47,10 +47,10 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 
 Você precisa do seguinte para configurar este coletor de dados:
 
-* Endereço IP de cada DS array
-* Nome de utilizador e palavra-passe apenas de leitura em cada DS array
+* Endereço IP de cada matriz DS
+* Nome de usuário e senha somente leitura em cada matriz DS
 * Software de terceiros instalado no Data Infrastructure Insights AU: IBM _dscli_
-* Validação de acesso: Execute os comandos _dscli_ usando o nome de usuário e a senha
+* Validação de acesso: execute os comandos _dscli_ usando o nome de usuário e a senha
 * Requisitos de porta: 80, 443 e 1750
 
 
@@ -63,16 +63,16 @@ Você precisa do seguinte para configurar este coletor de dados:
 | Campo | Descrição 
 
 
-| Storage DS | Endereço IP ou nome de domínio totalmente qualificado do dispositivo DS 
+| Armazenamento DS | Endereço IP ou nome de domínio totalmente qualificado do dispositivo DS 
 
 
-| Nome de utilizador | Nome de usuário para a CLI DS 
+| Nome de usuário | Nome de usuário para o DS CLI 
 
 
-| Palavra-passe | Senha para a CLI DS 
+| Senha | Senha para o DS CLI 
 
 
-| _dscli_ caminho executável | Caminho completo para o executável _dscli_ 
+| caminho executável _dscli_ | Caminho completo para o executável _dscli_ 
 |===
 
 
@@ -83,28 +83,28 @@ Você precisa do seguinte para configurar este coletor de dados:
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre pesquisas de inventário (min). A predefinição é 40. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário (min).  O padrão é 40. 
 
 
-| Nome de exibição do armazenamento | Nome do storage array do IBM DS 
+| Nome de exibição do armazenamento | Nome do array de armazenamento do IBM DS 
 
 
-| Inventário Excluir dispositivos | Lista separada por vírgulas de números de série do dispositivo a excluir da coleção de inventário 
+| Dispositivos de exclusão de inventário | Lista separada por vírgulas de números de série de dispositivos a serem excluídos da coleta de inventário 
 
 
-| Intervalo de enquete de desempenho (seg) | A predefinição é 300. 
+| Intervalo de pesquisa de desempenho (seg) | O padrão é 300. 
 
 
-| Tipo de filtro de desempenho | Incluir: Dados coletados apenas de dispositivos na lista. Excluir: Nenhum dado desses dispositivos é coletado 
+| Tipo de filtro de desempenho | Incluir: Dados coletados somente de dispositivos na lista.  Excluir: Nenhum dado desses dispositivos é coletado 
 
 
-| Lista de dispositivos de filtro de desempenho | Lista separada por vírgulas de IDs de dispositivo para incluir ou excluir da coleção de desempenho 
+| Lista de dispositivos de filtro de desempenho | Lista separada por vírgulas de IDs de dispositivos a serem incluídos ou excluídos da coleta de desempenho 
 |===
 
 
 == Solução de problemas
 
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
@@ -112,12 +112,12 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
-| Erro contendo: CMUC00192E, CMUC00191E ou CMUC00190E | * Verifique as credenciais e o endereço IP inseridos. * Tente se comunicar com o array através do console de gerenciamento da Web https://<ip>:8452/DS8000/Console. Substitua o <ip> pelo IP configurado pelo coletor de dados. 
+| Erro contendo: CMUC00192E, CMUC00191E ou CMUC00190E | * Verifique as credenciais e o endereço IP inseridos.  * Tente se comunicar com o array através do console de gerenciamento web \https://<ip>:8452/DS8000/Console.  Substitua <ip> pelo IP configurado do coletor de dados. 
 
 
-| Erro: * Não é possível executar o programa * erro executando o comando | * Da Unidade de aquisição do Data Infrastructure Insights abra um arquivo CMD * abra o arquivo CLI.CFG no diretório inicial da CLI/lib e verifique a propriedade JAVA_INSTALL, edite o valor para corresponder ao seu ambiente * Exibir versão Java instalada nesta máquina, digitando: "java -version" * Ping o endereço IP do dispositivo IBM Storage especificado no comando CLI emitido. * Se todos os itens acima funcionaram bem, então execute manualmente um comando CLI 
+| Erro: * Não é possível executar o programa * Erro ao executar o comando | * Da Unidade de Aquisição do Data Infrastructure Insights Abra um CMD * Abra o arquivo CLI.CFG no diretório/lib inicial do CLI e verifique a propriedade JAVA_INSTALL, edite o valor para corresponder ao seu ambiente * Exiba a versão do Java instalada nesta máquina, digitando: "java -version" * Execute ping no endereço IP do dispositivo IBM Storage especificado no comando CLI emitido.  * Se tudo acima funcionou bem, execute manualmente um comando CLI 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

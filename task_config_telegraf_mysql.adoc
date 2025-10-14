@@ -4,7 +4,7 @@ permalink: task_config_telegraf_mysql.html
 keywords: telegraf, installation, install, mysql 
 summary: Configuração do coletor de dados MySQL 
 ---
-= MySQL Data Collector
+= Coletor de dados MySQL
 :hardbreaks:
 :allow-uri-read: 
 
@@ -16,26 +16,26 @@ O Data Infrastructure Insights usa esse coletor de dados para coletar métricas 
 
 == Instalação
 
-. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha MySQL.
+. Em *Observabilidade > Coletores*, clique em *+Coletor de Dados*.  Escolha MySQL.
 +
-Selecione o sistema operacional ou a plataforma na qual o agente Telegraf está instalado.
+Selecione o sistema operacional ou plataforma na qual o agente Telegraf está instalado.
 
-. Se você ainda não instalou um Agente para coleção ou deseja instalar um Agente para um sistema operacional ou plataforma diferente, clique em _Mostrar instruções_ para expandir as link:task_config_telegraf_agent.html["Instalação do agente"] instruções.
-. Selecione a chave de acesso do agente para uso com este coletor de dados. Você pode adicionar uma nova chave de acesso ao agente clicando no botão * chave de acesso ao agente*. Prática recomendada: Use uma chave de acesso de agente diferente somente quando você quiser agrupar coletores de dados, por exemplo, por SO/Plataforma.
-. Siga as etapas de configuração para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+. Se você ainda não instalou um Agente para coleta ou deseja instalar um Agente para um Sistema Operacional ou Plataforma diferente, clique em _Mostrar Instruções_ para expandir olink:task_config_telegraf_agent.html["Instalação do agente"] instruções.
+. Selecione a Chave de Acesso do Agente para uso com este coletor de dados.  Você pode adicionar uma nova Chave de Acesso do Agente clicando no botão *+ Chave de Acesso do Agente*.  Prática recomendada: use uma chave de acesso de agente diferente somente quando quiser agrupar coletores de dados, por exemplo, por sistema operacional/plataforma.
+. Siga as etapas de configuração para configurar o coletor de dados.  As instruções variam dependendo do tipo de sistema operacional ou plataforma que você está usando para coletar dados.
 
 
 image:MySQLDCConfigWindows.png["Configuração do MySQL"]
 
 
 
-== Configuração
+== Configurar
 
-As informações podem ser encontradas no link:https://dev.mysql.com/doc/["Documentação do MySQL"].
+Informações podem ser encontradas emlink:https://dev.mysql.com/doc/["Documentação do MySQL"] .
 
 
 
-== Objetos e contadores
+== Objetos e Contadores
 
 Os seguintes objetos e seus contadores são coletados:
 
@@ -44,10 +44,10 @@ Os seguintes objetos e seus contadores são coletados:
 | Objeto: | Identificadores: | Atributos: | Pontos de dados: 
 
 
-| MySQL | Servidor de namespace MySQL | Nome do nó IP | Clientes abortados (por seg) conexões abortadas (por seg) bytes RX (por seg) bytes TX (por seg) comandos Admin (por seg) comandos Alter comandos de evento Alter comandos de função Alter comandos de instância Alter comandos de procedimento Alter 
+| MySQL | Servidor MySQL de namespace | IP do nó Nome do nó | Clientes Abortados (por segundo) Conexões Abortadas (por segundo) Bytes RX (por segundo) Bytes TX (por segundo) Comandos Admin (por segundo) Comandos Comandos Alterar Evento Comandos Alterar Função Comandos Alterar Instância Comandos Alterar Procedimento Comandos Alterar Servidor Comandos Alterar Tabela Comandos Alterar Espaço de Tabela Comandos Alterar Usuário Comandos Analisar Comandos Atribuir ao Keycache Comandos Iniciar Comandos Binlog Comandos de Procedimento de Chamada Comandos Alterar BD Comandos Alterar Mestre Comandos Alterar Filtro de Replicação Comandos Verificar Comandos de Soma de Verificação Comandos Confirmar Comandos Criar BD Comandos Criar Evento Comandos Criar Função Comandos Criar Índice Comandos Criar Procedimento Comandos Criar Servidor Comandos Criar Tabela Comandos Criar Comandos de Gatilho Criar Comandos UDF Criar Comandos Usuário Criar Comandos de Exibição Erros de Conexão SQL Desalocar Aceitar Tabelas de Disco Tmp Criadas Erros Atrasados Comandos de Liberação Comprometimento do Manipulador Bytes do Pool de Buffers Innodb Blocos de Chave de Dados Não Liberados Solicitações de Leitura de Chave Solicitações de Gravação de Chave Gravações de Chave Tempo Máximo de Execução Excedeu o máximo de conexões usadas Arquivos abertos Desempenho Esquema Contas perdidas Contagem de Stmt preparada Blocos livres do Qcache Consultas Perguntas Selecione Junção completa Selecione Junção de intervalo completo Selecione Verificação de intervalo Selecione Bloqueios de tabela de varredura Imediato 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página.

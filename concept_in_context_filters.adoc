@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_in_context_filters.html 
-summary: Você pode filtrar objetos que estão relacionados diretamente ao ativo atual. 
+summary: Você pode filtrar por objetos que estão diretamente relacionados ao ativo atual. 
 keywords: Assets, landing page, filtering, context, related 
 ---
 = Filtragem de objetos em contexto
@@ -10,33 +10,33 @@ keywords: Assets, landing page, filtering, context, related
 
 
 [role="lead"]
-Ao configurar um widget na Landing page de um ativo, você pode definir filtros _in-context_ para mostrar apenas objetos diretamente relacionados ao ativo atual. Por padrão, quando você adiciona um widget, _todos_ objetos do tipo selecionado no seu locatário são exibidos. Os filtros de contexto permitem exibir apenas os dados relevantes para o seu ativo atual.
+Ao configurar um widget na página de destino de um ativo, você pode definir filtros _em contexto_ para mostrar apenas objetos diretamente relacionados ao ativo atual.  Por padrão, quando você adiciona um widget, _todos_ os objetos do tipo selecionado no seu locatário são exibidos.  Os filtros de contexto permitem que você exiba apenas os dados relevantes para seu ativo atual.
 
-Na maioria das Landing pages de ativos, os widgets permitem filtrar objetos relacionados ao ativo atual. Em listas suspensas de filtros, os tipos de objetos que exibem um ícone de link podem ser filtrados em contexto para o ativo atual.
+Na maioria das páginas de destino de ativos, os widgets permitem que você filtre objetos relacionados ao ativo atual.  Nos menus suspensos de filtros, os tipos de objetos que exibem um ícone de link podem ser filtrados no contexto do ativo atual.
 
-Por exemplo, em uma página de ativos de armazenamento, você pode adicionar um widget Gráfico de barras para mostrar as principais IOPS em volumes internos somente nesse armazenamento. Por padrão, quando você adiciona um widget, _all_ volumes internos em seu locatário são exibidos.
+Por exemplo, em uma página de ativos de armazenamento, você pode adicionar um widget de gráfico de barras para mostrar os principais IOPS em volumes internos somente naquele armazenamento.  Por padrão, quando você adiciona um widget, _todos_ os volumes internos do seu locatário são exibidos.
 
-Para mostrar apenas volumes internos no ativo de storage atual, faça o seguinte:
+Para mostrar apenas volumes internos no ativo de armazenamento atual, faça o seguinte:
 
 .Passos
-. Abra uma página de ativos para qualquer ativo *Storage*.
+. Abra uma página de ativos para qualquer ativo de *Armazenamento*.
 . Clique em *Editar* para abrir a página de ativos no modo Editar.
-. Clique em *Add Widget* e selecione _Bar Chart_.
-. Selecione *volume interno* para o tipo de objeto a ser exibido no gráfico de barras. Observe que o tipo de objeto de volume interno tem um ícone de link ao lado dele. O ícone "ligado" está ativado por predefinição.
+. Clique em *Adicionar widget* e selecione _Gráfico de barras_.
+. Selecione *Volume interno* para o tipo de objeto a ser exibido no gráfico de barras.  Observe que o tipo de objeto de volume interno tem um ícone de link ao lado.  O ícone "vinculado" é habilitado por padrão.
 +
 image:LinkingObjects.png["volumes do gráfico de barras"]
 
-. Escolha _IOPS - Total_ e defina quaisquer filtros adicionais que você goste.
-. Diminua o campo *Roll Up* clicando no [X] ao lado dele. O campo *Show* é exibido.
-. Escolha para mostrar Top 10.
+. Escolha _IOPS - Total_ e defina quaisquer filtros adicionais que desejar.
+. Recolha o campo *Roll Up* clicando no [X] ao lado dele.  O campo *Mostrar* é exibido.
+. Escolha mostrar o Top 10.
 . Salve o widget.
 +
-O gráfico de barras mostra apenas os volumes internos que residem no ativo de storage atual.
+O gráfico de barras mostra apenas os volumes internos que residem no ativo de armazenamento atual.
 
 
 
-O widget será exibido nas páginas de ativos para todos os objetos de armazenamento. Quando o link no contexto está ativado no widget, o gráfico de barras mostra dados para volumes internos relacionados apenas ao ativo de armazenamento atualmente exibido.
+O widget será exibido nas páginas de ativos para todos os objetos de armazenamento.  Quando o link no contexto é habilitado no widget, o gráfico de barras mostra dados para volumes internos relacionados apenas ao ativo de armazenamento exibido no momento.
 
-Para desvincular os dados do objeto, edite o widget e clique no ícone de link ao lado do tipo de objeto. O link fica desativado e o gráfico exibe dados para objetos _all_ no locatário.
+Para desvincular os dados do objeto, edite o widget e clique no ícone de link ao lado do tipo de objeto.  O link é desabilitado e o gráfico exibe dados para _todos_ os objetos no seu locatário.
 
-Você também pode usar link:concept_dashboard_features.html#variables["* variáveis especiais em widgets*"] para exibir informações relacionadas a ativos em Landing pages.
+Você também pode usarlink:concept_dashboard_features.html#variables["*variáveis especiais em widgets*"] para exibir informações relacionadas a ativos em páginas de destino.

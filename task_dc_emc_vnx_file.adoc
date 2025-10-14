@@ -2,45 +2,45 @@
 sidebar: sidebar 
 permalink: task_dc_emc_vnx_file.html 
 keywords: data collector, Celerra, EMC, DELL, VNX File 
-summary: Configurando o coletor de dados Dell EMC Celerra. 
+summary: Configurando o coletor de dados DELL EMC Celerra. 
 ---
-= Coletor de dados Dell EMC VNX File (antigo Celerra Unified Storage System)
+= Coletor de dados de arquivo DELL EMC VNX (antigo Celerra Unified Storage System)
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Este coletor de dados adquire informações de inventário do sistema de armazenamento de ficheiros VNX. Para configuração, este coletor de dados requer o endereço IP dos processadores de armazenamento e um nome de usuário e senha somente leitura.
+Este coletor de dados adquire informações de inventário do VNX File Storage System.  Para configuração, este coletor de dados requer o endereço IP dos processadores de armazenamento e um nome de usuário e senha somente leitura.
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do arquivo VNX. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do arquivo VNX.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| Celerra Network Server/Celerra Storage Pool | Pool de storage 
+| Servidor de rede Celerra/Pool de armazenamento Celerra | Pool de armazenamento 
 
 
-| Sistema de ficheiros | Volume interno 
+| Sistema de arquivos | Volume interno 
 
 
-| Transferência de dados | Controlador 
+| Movedor de dados | Controlador 
 
 
-| Sistema de arquivos montado em um controlador de dados | Partilha de ficheiros 
+| Sistema de arquivos montado em um movimentador de dados | Compartilhamento de arquivos 
 
 
-| Exportações de CIFS e NFS | Partilhar 
+| Exportações CIFS e NFS | Compartilhar 
 
 
-| Volume do disco | LUN de back-end 
+| Volume do disco | LUN de backend 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
@@ -49,7 +49,7 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 Você precisa do seguinte para configurar este coletor de dados:
 
 * O endereço IP do processador de armazenamento
-* Nome de utilizador e palavra-passe só de leitura
+* Nome de usuário e senha somente leitura
 * Porta SSH 22
 
 
@@ -62,13 +62,13 @@ Você precisa do seguinte para configurar este coletor de dados:
 | Campo | Descrição 
 
 
-| Endereço IP do ficheiro VNX | Endereço IP ou nome de domínio totalmente qualificado do dispositivo VNX File 
+| Endereço IP do arquivo VNX | Endereço IP ou nome de domínio totalmente qualificado do dispositivo de arquivo VNX 
 
 
-| Nome de utilizador | Nome utilizado para iniciar sessão no dispositivo ficheiro VNX 
+| Nome de usuário | Nome usado para efetuar login no dispositivo de arquivo VNX 
 
 
-| Palavra-passe | Palavra-passe utilizada para iniciar sessão no dispositivo ficheiro VNX 
+| Senha | Senha usada para efetuar login no dispositivo de arquivo VNX 
 |===
 
 
@@ -79,13 +79,13 @@ Você precisa do seguinte para configurar este coletor de dados:
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (minutos) | Intervalo entre sondagens de inventário. O padrão é 20 minutos. 
+| Intervalo de pesquisa de inventário (minutos) | Intervalo entre pesquisas de inventário. O padrão é 20 minutos. 
 |===
 
 
 == Solução de problemas
 
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
@@ -93,9 +93,9 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
-| Erro: Não é possível prosseguir com a atualização DART em andamento | Solução possível: Pausar o coletor de dados e aguardar que a atualização DART seja concluída antes de tentar outra solicitação de aquisição. 
+| Erro: Não é possível prosseguir enquanto a atualização do DART está em andamento | Solução possível: pause o coletor de dados e aguarde a conclusão da atualização do DART antes de tentar outra solicitação de aquisição. 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

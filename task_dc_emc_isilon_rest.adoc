@@ -2,45 +2,45 @@
 sidebar: sidebar 
 permalink: task_dc_emc_isilon_rest.html 
 keywords: data collector, isilon, EMC, DELL, PowerScale 
-summary: Configurando o coletor de DADOS REST do Dell EMC Isilon / PowerScale. 
+summary: Configurando o coletor de dados REST do Dell EMC Isilon/PowerScale. 
 ---
-= Coletor de DADOS REST Dell EMC Isilon / PowerScale
+= Coletor de dados REST Dell EMC Isilon / PowerScale
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Data Infrastructure Insights usa o coletor de DADOS REST do Dell EMC Isilon / PowerScale para adquirir dados de inventário e desempenho do armazenamento Dell EMC Isilon ou PowerScale. Este coletor suporta matrizes executando OneFS 8,0.0 ou mais.
+O Data Infrastructure Insights usa o coletor de dados REST do Dell EMC Isilon/PowerScale para adquirir dados de inventário e desempenho do armazenamento do Dell EMC Isilon ou PowerScale.  Este coletor suporta matrizes executando o OneFS 8.0.0+.
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário desse coletor de dados. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário deste coletor de dados.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| Condução | Disco 
+| Dirigir | Disco 
 
 
-| Cluster | Armazenamento 
+| Conjunto | Armazenar 
 
 
-| Nó | Nó de storage 
+| Nó | Nó de armazenamento 
 
 
 | Sistema de arquivos OneFS | Volume interno 
 
 
-| Sistema de arquivos OneFS | Pool de storage 
+| Sistema de arquivos OneFS | Pool de armazenamento 
 
 
 | Qtree | Qtree 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
@@ -48,15 +48,15 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 
 Você precisa das seguintes informações para configurar este coletor de dados:
 
-* Uma conta de usuário e senha. Essa conta NÃO precisa ser admin/root, mas VOCÊ DEVE conceder um número substancial de Privileges somente leitura à sua conta de serviço - consulte a tabela abaixo
+* Uma conta de usuário e senha.  Esta conta NÃO precisa ser de administrador/root, mas você DEVE conceder um número substancial de privilégios somente leitura à sua conta de serviço - veja a tabela abaixo
 * Endereço IP / Nome de domínio totalmente qualificado do cluster Dell EMC Isilon / PowerScale
 * Acesso HTTPS à porta 8080
-* Cluster Isilon / PowerScale executando OneFS 8.0.0 ou superior
+* Cluster Isilon/PowerScale executando OneFS 8.0.0 ou superior
 
 
 [cols="3*"]
 |===
-| Nome do privilégio | Descrição | r (leitura) ou rw (leitura e gravação) 
+| Nome do Privilégio | Descrição | r(leitura) ou rw (leitura+escrita) 
 
 
 | ISI_PRIV_LOGIN_PAPI | API da plataforma | r 
@@ -65,16 +65,16 @@ Você precisa das seguintes informações para configurar este coletor de dados:
 | ISI_PRIV_SYS_TIME | Tempo | r 
 
 
-| ISI_PRIV_AUTH | Auth | r 
+| ISI_PRIV_AUTH | Aut. | r 
 
 
 | ISI_PRIV_ROLE | Privilégio | r 
 
 
-| ISI_PRIV_DEVICES | Dispositivos | r 
+| DISPOSITIVOS_PRIV_ISI | Dispositivos | r 
 
 
-| ISI_PRIV_EVENT | Evento | r 
+| EVENTO_PRIV_ISI | Evento | r 
 
 
 | ISI_PRIV_HDFS | HDFS | r 
@@ -83,31 +83,31 @@ Você precisa das seguintes informações para configurar este coletor de dados:
 | ISI_PRIV_NDMP | NDMP | r 
 
 
-| ISI_PRIV_NETWORK | Rede | r 
+| REDE_PRIV_ISI | Rede | r 
 
 
 | ISI_PRIV_NFS | NFS | r 
 
 
-| ISI_PRIV_PAPI_CONFIG | Configure a API da plataforma | r 
+| ISI_PRIV_PAPI_CONFIG | Configurar API da plataforma | r 
 
 
-| ISI_PRIV_QUOTA | Cota | r 
+| ISI_PRIV_QUOTA | Contingente | r 
 
 
-| ISI_PRIV_SMARTPOOLS | SmartPools | r 
+| ISI_PRIV_SMARTPOOLS | Piscinas Inteligentes | r 
 
 
-| ISI_PRIV_SMB | SMB | r 
+| ISI_PRIV_SMB | PMEs | r 
 
 
-| ISI_PRIV_STATISTICS | Estatísticas | r 
+| ESTATÍSTICAS_PRIV_ISI | Estatísticas | r 
 
 
 | ISI_PRIV_SWIFT | Rápido | r 
 
 
-| ISI_PRIV_JOB_ENGINE | Motor de trabalho | r 
+| ISI_PRIV_JOB_ENGINE | Mecanismo de trabalho | r 
 |===
 
 
@@ -118,13 +118,13 @@ Você precisa das seguintes informações para configurar este coletor de dados:
 | Campo | Descrição 
 
 
-| Endereço IP de Isilon | O endereço IP ou nome de domínio totalmente qualificado do armazenamento Isilon 
+| Endereço IP do Isilon | O endereço IP ou nome de domínio totalmente qualificado do armazenamento Isilon 
 
 
-| Nome de utilizador | Nome de utilizador para o Isilon 
+| Nome de usuário | Nome de usuário para o Isilon 
 
 
-| Palavra-passe | Senha usada para o Isilon 
+| Senha | Senha usada para o Isilon 
 |===
 
 
@@ -135,19 +135,19 @@ Você precisa das seguintes informações para configurar este coletor de dados:
 | Campo | Descrição 
 
 
-| Porta HTTPS | A predefinição é 8080. 
+| Porta HTTPS | O padrão é 8080. 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. A predefinição é 20. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário.  O padrão é 20. 
 
 
-| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. A predefinição é 300. 
+| Intervalo de pesquisa de desempenho (seg) | Intervalo entre pesquisas de desempenho.  O padrão é 300. 
 |===
 
 
 == Solução de problemas
 
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
@@ -155,12 +155,12 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
-| "Credenciais de login inválidas" com mensagens de erro "comandos não habilitados para administração baseada em funções exigem acesso de usuário raiz" | * Verifique se o usuário tem permissões para executar os seguintes comandos no dispositivo: > versão isi osrelease > isi status -q > isi status -n > isi devices -d %s > isi license * Verifique se as credenciais usadas no assistente correspondem às credenciais do dispositivo 
+| “Credenciais de login inválidas” com mensagens de erro “Comandos não habilitados para administração baseada em função exigem acesso de usuário root” | * Verifique se o usuário tem permissões para executar os seguintes comandos no dispositivo: > isi version osrelease > isi status -q > isi status -n > isi devices -d %s > isi license * Verifique se as credenciais usadas no assistente correspondem às credenciais do dispositivo 
 
 
-| "Erro interno" com mensagens de erro "a execução do Command <Your command> falhou com permissão: Problema de permissão de execução do comando sudo" | Verifique se o usuário tem permissões sudo para executar o seguinte comando no dispositivo 
+| "Erro interno" com mensagens de erro “Falha na execução do comando <Seu comando> com permissão: <Sua permissão atual>.  Problema de permissão de execução do comando sudo” | Verifique se o usuário tem permissões sudo para executar o seguinte comando no dispositivo 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

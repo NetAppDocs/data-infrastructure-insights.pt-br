@@ -4,38 +4,38 @@ permalink: task_config_telegraf_kibana.html
 keywords: telegraf, installation, install, kibana 
 summary: Configuração do coletor de dados Kibana 
 ---
-= Kibana Data Collector
+= Coletor de Dados Kibana
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Data Infrastructure Insights usa esse coletor de dados para coletar métricas da Kibana.
+O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do Kibana.
 
 
 
 == Instalação
 
-. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha Kibana.
+. Em *Observabilidade > Coletores*, clique em *+Coletor de Dados*.  Escolha Kibana.
 +
-Selecione o sistema operacional ou a plataforma na qual o agente Telegraf está instalado.
+Selecione o sistema operacional ou plataforma na qual o agente Telegraf está instalado.
 
-. Se você ainda não instalou um Agente para coleção ou deseja instalar um Agente para um sistema operacional ou plataforma diferente, clique em _Mostrar instruções_ para expandir as link:task_config_telegraf_agent.html["Instalação do agente"] instruções.
-. Selecione a chave de acesso do agente para uso com este coletor de dados. Você pode adicionar uma nova chave de acesso ao agente clicando no botão * chave de acesso ao agente*. Prática recomendada: Use uma chave de acesso de agente diferente somente quando você quiser agrupar coletores de dados, por exemplo, por SO/Plataforma.
-. Siga as etapas de configuração para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+. Se você ainda não instalou um Agente para coleta ou deseja instalar um Agente para um Sistema Operacional ou Plataforma diferente, clique em _Mostrar Instruções_ para expandir olink:task_config_telegraf_agent.html["Instalação do agente"] instruções.
+. Selecione a Chave de Acesso do Agente para uso com este coletor de dados.  Você pode adicionar uma nova Chave de Acesso do Agente clicando no botão *+ Chave de Acesso do Agente*.  Prática recomendada: use uma chave de acesso de agente diferente somente quando quiser agrupar coletores de dados, por exemplo, por sistema operacional/plataforma.
+. Siga as etapas de configuração para configurar o coletor de dados.  As instruções variam dependendo do tipo de sistema operacional ou plataforma que você está usando para coletar dados.
 
 
 image:KibanaDCConfigLinux.png["Configuração do Kibana"]
 
 
 
-== Configuração
+== Configurar
 
-As informações podem ser encontradas no link:https://www.elastic.co/guide/index.html["Documentação do Kibana"].
+Informações podem ser encontradas emlink:https://www.elastic.co/guide/index.html["Documentação do Kibana"] .
 
 
 
-== Objetos e contadores
+== Objetos e Contadores
 
 Os seguintes objetos e seus contadores são coletados:
 
@@ -44,10 +44,10 @@ Os seguintes objetos e seus contadores são coletados:
 | Objeto: | Identificadores: | Atributos: | Pontos de dados: 
 
 
-| Kibana | Endereço do namespace | Estado da versão do nome do nó IP do nó | Conexões simultâneas Heap Max Heap usou solicitações por segundo tempo de resposta tempo de resposta tempo de resposta tempo de resposta tempo de resposta máximo de tempo de atividade 
+| Kibana | Endereço do namespace | IP do nó Nome do nó Versão Status | Conexões simultâneas Heap Heap máximo usado Solicitações por segundo Tempo de resposta Tempo médio de resposta Tempo máximo de atividade 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página.

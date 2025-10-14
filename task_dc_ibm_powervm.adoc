@@ -2,42 +2,42 @@
 sidebar: sidebar 
 permalink: task_dc_ibm_powervm.html 
 keywords: IBM, powerVM, 
-summary: Configurando o coletor de dados IBM PowerVM. 
+summary: Configurando o coletor de dados do IBM PowerVM. 
 ---
-= Configurando o coletor de dados IBM PowerVM
+= Configurando o coletor de dados do IBM PowerVM
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O coletor de dados IBM PowerVM (SSH) é usado para coletar informações sobre partições virtuais executadas em instâncias de hardware IBM POWER gerenciadas por um console de gerenciamento de hardware (HMC).
+O coletor de dados IBM PowerVM (SSH) é usado para coletar informações sobre partições virtuais em execução em instâncias de hardware IBM POWER gerenciadas por um console de gerenciamento de hardware (HMC).
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire informações de inventário das partições virtuais executadas em instâncias de hardware IBM POWER. Para cada tipo de ativo adquirido, a terminologia mais comum usada para o ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire informações de inventário das partições virtuais em execução em instâncias de hardware do IBM POWER.  Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para o ativo.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| hdisk | Disco virtual 
+| hdisk | Disco Virtual 
 
 
-| Sistema gerenciado | Host 
+| Sistema Gerenciado | Hospedar 
 
 
-| LPAR, servidor VIO | Máquina virtual 
+| LPAR, Servidor VIO | Máquina Virtual 
 
 
-| Grupo de volume | Armazenamento de dados 
+| Grupo de Volume | Armazenamento de dados 
 
 
-| Volume físico | LUN 
+| Volume Físico | LUN 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
@@ -45,14 +45,14 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 
 Os seguintes requisitos devem ser atendidos para configurar e usar este coletor de dados:
 
-* Endereço IP do Console de Gerenciamento de hardware (HMC)
-* Nome de usuário e senha que fornecem acesso ao hardware Management Console (HMC) por meio de SSH
+* Endereço IP do Hardware Management Console (HMC)
+* Nome de usuário e senha que fornecem acesso ao Hardware Management Console (HMC) por meio de SSH
 * Requisito de porta SSH-22
-* Visualize a permissão em todos os sistemas de gerenciamento e domínios de segurança de partição lógica
+* Permissão de visualização em todos os sistemas de gerenciamento e domínios de segurança de partição lógica
 +
-O usuário também deve ter permissão View em configurações HMC e a capacidade de coletar informações VPD para o agrupamento de segurança do console HMC. O usuário também deve ter permissão de acesso ao comando Virtual IO Server sob o agrupamento de segurança de partição lógica. É uma prática recomendada começar a partir de uma função de operador e depois remover todas as funções. Usuários somente leitura no HMC não têm Privileges para executar comandos proxied em hosts AIX.
+O usuário também deve ter permissão de visualização nas configurações do HMC e a capacidade de coletar informações de VPD para o agrupamento de segurança do console do HMC.  O usuário também deve ter permissão para acessar o comando Virtual IO Server no agrupamento de segurança Partição Lógica.  É uma prática recomendada começar com a função de um operador e depois remover todas as funções.  Usuários somente leitura no HMC não têm privilégios para executar comandos com proxy em hosts AIX.
 
-* A prática recomendada da IBM é ter os dispositivos monitorados por dois ou mais HMCs. Esteja ciente de que isso pode fazer com que o OnCommand Insight relate dispositivos duplicados, portanto, é altamente recomendável adicionar dispositivos redundantes à lista "Excluir dispositivos" na Configuração Avançada para este coletor de dados.
+* A melhor prática da IBM é ter os dispositivos monitorados por dois ou mais HMCs.  Esteja ciente de que isso pode fazer com que o OnCommand Insight relate dispositivos duplicados; portanto, é altamente recomendável adicionar dispositivos redundantes à lista "Excluir dispositivos" na Configuração avançada para este coletor de dados.
 
 
 
@@ -64,13 +64,13 @@ O usuário também deve ter permissão View em configurações HMC e a capacidad
 | Campo | Descrição 
 
 
-| Endereço IP do console de gerenciamento de hardware (HMC) | Endereço IP ou nome de domínio totalmente qualificado do PowerVM hardware Management Console 
+| Endereço IP do console de gerenciamento de hardware (HMC) | Endereço IP ou nome de domínio totalmente qualificado do PowerVM Hardware Management Console 
 
 
-| Utilizador HMC | Nome de usuário do Console de Gerenciamento de hardware 
+| Usuário HMC | Nome de usuário para o console de gerenciamento de hardware 
 
 
-| Palavra-passe | Senha usada para o Console de Gerenciamento de hardware 
+| Senha | Senha usada para o console de gerenciamento de hardware 
 |===
 
 
@@ -81,16 +81,16 @@ O usuário também deve ter permissão View em configurações HMC e a capacidad
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 20 minutos. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário. O padrão é 20 minutos. 
 
 
 | Porta SSH | Porta usada para SSH para o PowerVM 
 
 
-| Palavra-passe | Senha usada para o Console de Gerenciamento de hardware 
+| Senha | Senha usada para o console de gerenciamento de hardware 
 
 
-| Número de geometrias | Número de tentativas de tentativa de inventário 
+| Número de tentativas | Número de tentativas de repetição de inventário 
 
 
 | Excluir dispositivos | Lista separada por vírgulas de IDs de dispositivos ou nomes de exibição a serem excluídos 
@@ -99,4 +99,4 @@ O usuário também deve ter permissão View em configurações HMC e a capacidad
 
 == Solução de problemas
 
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

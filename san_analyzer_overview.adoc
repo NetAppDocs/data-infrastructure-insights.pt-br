@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: san_analyzer_overview.html 
-summary: O SAN Analyzer fornece topologia para ativos no seu locatário 
+summary: O SAN Analyzer fornece topologia para ativos em seu locatário 
 keywords: topology, analyze, analysis, map 
 ---
 = Visão geral do SAN Analyzer
@@ -16,32 +16,32 @@ keywords: topology, analyze, analysis, map
 [role="lead"]
 A SAN desempenha um papel crucial no tratamento de cargas de trabalho vitais, mas sua complexidade pode resultar em interrupções significativas e interrupções para o cliente.  Com o *SAN Analyzer* da DII, o gerenciamento de SAN se torna mais simples e eficiente.  Esta ferramenta poderosa oferece visibilidade de ponta a ponta, mapeando dependências de VM/Host para rede, LUN e armazenamento.  Ao fornecer um mapa de topologia interativo, o SAN Analyzer permite que você identifique problemas, entenda mudanças e melhore a compreensão do fluxo de dados.  Simplifique o gerenciamento de SAN em ambientes de TI complexos com o SAN Analyzer e aumente sua visibilidade das cargas de trabalho em bloco.
 
-image:san_analyzer_example_with_panel.png["Mapa de topologia de um sistema de storage do SAN Analyzer"]
+image:san_analyzer_example_with_panel.png["Mapa de topologia do SAN Analyzer de um sistema de armazenamento"]
 
 
 
-== Explore as conexões entre seus ativos
+== Explore conexões entre seus ativos
 
-Selecione *Observability > Analyze > SAN Analyzer* para visualizar o SAN Analyzer. Defina um filtro para aplicação, host, malha e/ou armazenamento. O mapa para os objetos é exibido, mostrando objetos conetados. Passe o Mouse sobre um objeto para exibir métricas de tráfego para essas conexões.
+Selecione *Observabilidade > Analisar > SAN Analyzer* para visualizar o SAN Analyzer.  Defina um filtro para Aplicativo, Host, Fabric e/ou Armazenamento.  O mapa dos objetos é exibido, mostrando os objetos conectados.  Passe o mouse sobre um objeto para visualizar as métricas de tráfego dessas conexões.
 
-image:san_analyzer_traffic_metrics.png["Exemplo de métricas de tráfego do analisador de SAN"]
+image:san_analyzer_traffic_metrics.png["Exemplo de métricas de tráfego do SAN Analyzer"]
 
 
-NOTE: A maioria dos filtros do SAN Analyzer (incluindo aqueles que você pode adicionar) são contextuais; quando você seleciona um objeto em um desses filtros, as opções apresentadas nos outros menus suspensos são atualizadas em contexto com o objeto ou objetos selecionados. As únicas exceções são a aplicação, a porta e o interrutor; esses filtros não são contextuais.
+NOTE: A maioria dos filtros do SAN Analyzer (incluindo aqueles que você pode adicionar) são contextuais; quando você seleciona um objeto em um desses filtros, as opções apresentadas nos outros menus suspensos de filtros são atualizadas no contexto do(s) objeto(s) selecionado(s).  As únicas exceções a isso são Aplicativo, Porta e Switch; esses filtros não são contextuais.
 
-Clicar em um objeto ou grupo abre um painel deslizante fornecendo detalhes adicionais sobre o objeto e suas conexões. O painel deslizante exibe um resumo, que fornece detalhes sobre o objeto selecionado (por exemplo, IP, hipervisor, malhas conetadas, etc., dependendo do tipo de objeto), e gráficos mostrando métricas para o objeto, como latência ou IOPS, e alterações e alertas, se relevante. Você também pode selecionar para exibir as métricas dos principais objetos correlacionados nos gráficos, se desejado.
+Clicar em um objeto ou grupo abre um painel deslizante fornecendo detalhes adicionais sobre o objeto e suas conexões.  O painel deslizante exibe um resumo, que fornece detalhes sobre o objeto selecionado (por exemplo, IP, Hypervisor, Connected Fabrics, etc., dependendo do tipo de objeto) e gráficos mostrando métricas para o objeto, como latência ou IOPS, além de alterações e alertas, se relevantes.  Você também pode optar por exibir métricas para os principais objetos correlacionados nos gráficos, se desejar.
 
-Além da guia Resumo, o painel deslizante exibe guias para itens como detalhes da porta ou informações de zona, conforme aplicável ao objeto escolhido.
+Além da guia Resumo, o painel deslizante exibe guias para coisas como detalhes da porta ou informações da zona, conforme aplicável ao objeto escolhido.
 
-image:san_analyzer_slideout_example.png["Painel deslizante do analisador SAN"]
+image:san_analyzer_slideout_example.png["Painel deslizante do SAN Analyzer"]
 
 Se o seu ambiente tiver protocolos diferentes, você pode filtrar por iSCSI ou FC:
 
 image:san_analyzer_protocols.png["Protocolos do SAN Analyzer"]
 
-Se o seu ambiente incluir dispositivos iSCSI, passar o Mouse sobre o objeto _iSCSI_ destaca as conexões relacionadas a esses dispositivos iSCSI relevantes.
+Se o seu ambiente incluir dispositivos iSCSI, passar o mouse sobre o objeto _iSCSI_ destacará as conexões relacionadas a esses dispositivos iSCSI relevantes.
 
-image:san_analyzer_iscsi_traffic.png["Tráfego iSCSI realçado"]
+image:san_analyzer_iscsi_traffic.png["Tráfego iSCSI destacado"]
 
 
 
@@ -51,7 +51,7 @@ Algumas coisas que você pode tentar se tiver problemas:
 
 [cols="2*"]
 |===
-| *Problema:* | *Tente isto:* 
+| *Problema:* | *Experimente isto:* 
 
 
 | Vejo <0, =0 ou >0 na legenda para métricas como _trafficUtilization_ ou _trafficRate_. | Isso pode acontecer em casos muito raros, quando os valores métricos estão abaixo de duas casas decimais, como 0,000123.  Expandir a janela de tempo pode ajudar a analisar a métrica de forma mais eficaz. 

@@ -2,25 +2,25 @@
 sidebar: sidebar 
 permalink: task_identify_inactive_devices.html 
 keywords: inactive, device, remove, removing, identify, identifying 
-summary: Identificar dispositivos inativos permite que você escolha excluí-los ou alocá-los a uma função ativa. 
+summary: Identificar dispositivos inativos permite que você escolha excluí-los ou atribuí-los a uma função ativa. 
 ---
-= Identificação de dispositivos inativos
+= Identificando dispositivos inativos
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Identificar os ativos que você tem e quem os está usando é fundamental para "dimensionar corretamente" e liberar uma infraestrutura não utilizada. Você pode facilmente realocar ou desativar recursos subutilizados e evitar compras desnecessárias.
+Identificar os ativos que você tem e quem os está usando é essencial para "dimensionar corretamente" e liberar infraestrutura não utilizada.  Você pode facilmente realocar ou desativar recursos subutilizados e evitar compras desnecessárias.
 
 Use as etapas a seguir para identificar ativos inativos.
 
 .Passos
-* Navegue até *observabilidade > explorar -> Nova consulta métrica*.
-* Selecione _Storage_ na lista suspensa.
+* Navegue até *Observabilidade > Explorar -> +Nova consulta de métrica*.
+* Selecione _Armazenamento_ no menu suspenso.
 * Clique na engrenagem e adicione _isActive_ como uma coluna.
 +
-As linhas que mostram uma verificação estão ativas. "X" indica dispositivos inativos.
+As linhas que mostram uma verificação estão ativas.  "X" indica dispositivos inativos.
 
 
 
-Para remover dispositivos inativos, basta selecionar os dispositivos a serem removidos e, na lista suspensa *ações em massa*, selecione _Excluir dispositivos inativos_.
+Para remover dispositivos inativos, basta selecionar os dispositivos a serem removidos e, no menu suspenso *Ações em massa*, selecionar _Excluir dispositivos inativos_.

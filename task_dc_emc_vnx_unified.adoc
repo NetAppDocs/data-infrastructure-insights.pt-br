@@ -2,58 +2,58 @@
 sidebar: sidebar 
 permalink: task_dc_emc_vnx_unified.html 
 keywords: data collector, VNX, EMC, Dell 
-summary: Configurando o coletor de dados VNX. 
+summary: Configurando o coletor de dados do VNX. 
 ---
-= Configurando o coletor de dados unificado VNX da Dell EMC
+= Configurando o coletor de dados unificado do Dell EMC VNX
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Para configuração, o coletor de dados Dell EMC VNX Unified (SSH) requer o endereço IP da Estação de Controle e um nome de usuário e senha somente leitura.
+Para configuração, o coletor de dados Dell EMC VNX Unified (SSH) requer o endereço IP da Control Station e um nome de usuário e senha somente leitura.
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário desse coletor de dados. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário deste coletor de dados.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
 | Disco | Disco 
 
 
-| Pasta de disco | Grupo de discos 
+| Pasta de disco | Grupo de Discos 
 
 
 | Sistema de arquivos | Volume interno 
 
 
-| Armazenamento | Armazenamento 
+| Armazenar | Armazenar 
 
 
-| Processador de armazenamento | Nó de storage 
+| Processador de armazenamento | Nó de armazenamento 
 
 
-| Pool de armazenamento, grupo RAID | Pool de storage 
+| Pool de armazenamento, grupo RAID | Pool de armazenamento 
 
 
 | LUN | Volume 
 
 
-| Transferência de dados | Controlador 
+| Movedor de dados | Controlador 
 
 
-| Sistema de arquivos montado em um controlador de dados | Partilha de ficheiros 
+| Sistema de arquivos montado em um movimentador de dados | Compartilhamento de arquivos 
 
 
-| Exportações de CIFS e NFS | Partilhar 
+| Exportações CIFS e NFS | Compartilhar 
 
 
-| Volume do disco | LUN de back-end 
+| Volume do disco | LUN de backend 
 |===
 
 
@@ -61,9 +61,9 @@ O Data Infrastructure Insights adquire as seguintes informações de inventário
 
 Você precisa do seguinte para configurar o coletor de dados VNX (SSH):
 
-* Endereço IP VNX e credenciais para a Estação de Controle Celerra.
-* Nome de utilizador e palavra-passe só de leitura.
-* O coletor de dados é capaz de executar comandos Navicli/NaviSecCLI contra o array backend utilizando as cabeças nas DART os
+* Endereço IP do VNX e credenciais para a Celerra Control Station.
+* Nome de usuário e senha somente leitura.
+* O coletor de dados é capaz de executar comandos NaviCLI/NaviSecCLI no array de backend utilizando os cabeçotes NAS do DART OS
 
 
 
@@ -75,13 +75,13 @@ Você precisa do seguinte para configurar o coletor de dados VNX (SSH):
 | Campo | Descrição 
 
 
-| Endereço IP VNX | Endereço IP ou nome de domínio totalmente qualificado da Estação de Controle VNX 
+| Endereço IP do VNX | Endereço IP ou nome de domínio totalmente qualificado da VNX Control Station 
 
 
-| Nome de utilizador | Nome de utilizador para a Estação de controlo VNX 
+| Nome de usuário | Nome de usuário para a estação de controle VNX 
 
 
-| Palavra-passe | Palavra-passe para a Estação de controlo VNX 
+| Senha | Senha para a estação de controle VNX 
 |===
 
 
@@ -92,13 +92,13 @@ Você precisa do seguinte para configurar o coletor de dados VNX (SSH):
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 40 minutos. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário. O padrão é 40 minutos. 
 
 
-| Intervalo de enquete de desempenho (seg). | Intervalo entre sondagens de desempenho. O padrão é 300 segundos. 
+| Intervalo de pesquisa de desempenho (seg). | Intervalo entre pesquisas de desempenho. O padrão é 300 segundos. 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

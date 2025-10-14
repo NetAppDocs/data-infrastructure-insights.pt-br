@@ -16,34 +16,34 @@ O Data Infrastructure Insights usa esse coletor de dados para coletar métricas 
 
 == Instalação
 
-. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha HAProxy.
+. Em *Observabilidade > Coletores*, clique em *+Coletor de Dados*.  Escolha HAProxy.
 +
-Selecione o sistema operacional ou a plataforma na qual o agente Telegraf está instalado.
+Selecione o sistema operacional ou plataforma na qual o agente Telegraf está instalado.
 
-. Se você ainda não instalou um Agente para coleção ou deseja instalar um Agente para um sistema operacional ou plataforma diferente, clique em _Mostrar instruções_ para expandir as link:task_config_telegraf_agent.html["Instalação do agente"] instruções.
-. Selecione a chave de acesso do agente para uso com este coletor de dados. Você pode adicionar uma nova chave de acesso ao agente clicando no botão * chave de acesso ao agente*. Prática recomendada: Use uma chave de acesso de agente diferente somente quando você quiser agrupar coletores de dados, por exemplo, por SO/Plataforma.
-. Siga as etapas de configuração para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
-
-
-image:HAProxyDCConfigLinux.png["Configuração HAProxy"]
+. Se você ainda não instalou um Agente para coleta ou deseja instalar um Agente para um Sistema Operacional ou Plataforma diferente, clique em _Mostrar Instruções_ para expandir olink:task_config_telegraf_agent.html["Instalação do agente"] instruções.
+. Selecione a Chave de Acesso do Agente para uso com este coletor de dados.  Você pode adicionar uma nova Chave de Acesso do Agente clicando no botão *+ Chave de Acesso do Agente*.  Prática recomendada: use uma chave de acesso de agente diferente somente quando quiser agrupar coletores de dados, por exemplo, por sistema operacional/plataforma.
+. Siga as etapas de configuração para configurar o coletor de dados.  As instruções variam dependendo do tipo de sistema operacional ou plataforma que você está usando para coletar dados.
 
 
+image:HAProxyDCConfigLinux.png["Configuração do HAProxy"]
 
-== Configuração
 
-O plugin da Telegraf para HAProxy depende da habilitação do HAProxy Stats. Esta é uma configuração incorporada no HAProxy, mas não está ativada fora da caixa. Quando ativado, o HAProxy irá expor um endpoint HTML que pode ser visualizado no seu navegador ou eliminado para extração do estado de todas as configurações do HAProxy.
+
+== Configurar
+
+O plugin do Telegraf para HAProxy depende da ativação do HAProxy Stats.  Esta é uma configuração incorporada ao HAProxy, mas não vem habilitada de fábrica.  Quando ativado, o HAProxy exporá um ponto de extremidade HTML que pode ser visualizado no seu navegador ou extraído para extração do status de todas as configurações do HAProxy.
 
 
 
 === Compatibilidade:
 
-A configuração foi desenvolvida contra o HAProxy versão 1,9.4.
+A configuração foi desenvolvida na versão 1.9.4 do HAProxy.
 
 
 
 === Configuração:
 
-Para ativar as estatísticas, edite o arquivo de configuração do haproxy e adicione as seguintes linhas após a seção 'defeitos', usando seu próprio usuário/senha e/ou URL do haproprio:
+Para habilitar estatísticas, edite seu arquivo de configuração do haproxy e adicione as seguintes linhas após a seção 'defaults', usando seu próprio usuário/senha e/ou URL do haproxy:
 
 [listing]
 ----
@@ -51,7 +51,7 @@ stats enable
 stats auth myuser:mypassword
 stats uri  /haproxy?stats
 ----
-A seguir está um exemplo simplificado de arquivo de configuração com estatísticas ativadas:
+A seguir está um exemplo simplificado de arquivo de configuração com estatísticas habilitadas:
 
 [listing]
 ----
@@ -84,11 +84,11 @@ backend servers_2
   server server3 10.128.0.57:8080 check ssl verify none
   server server4 10.128.0.58:8080 check ssl verify none
 ----
-Para obter instruções completas e atualizadas, consulte o link:https://cbonte.github.io/haproxy-dconv/1.8/configuration.html#4-stats%20enable["Documentação do HAProxy"].
+Para obter instruções completas e atualizadas, consulte olink:https://cbonte.github.io/haproxy-dconv/1.8/configuration.html#4-stats%20enable["Documentação do HAProxy"] .
 
 
 
-== Objetos e contadores
+== Objetos e Contadores
 
 Os seguintes objetos e seus contadores são coletados:
 
@@ -97,16 +97,16 @@ Os seguintes objetos e seus contadores são coletados:
 | Objeto: | Identificadores: | Atributos: | Pontos de dados: 
 
 
-| HAProxy Frontend | Proxy de endereço de namespace | Nome do nó IP do nó Proxy ID Mode Process id Sessions Rate Limit Server id Sessions Limit Status | Bytes in bytes out Cache Hits Cache Lookups Compression bytes Bypass Compression bytes out Compression bytes out Compression respostas taxa de conexão Max conexões Total de solicitações negadas pela regra de conexão solicitações negadas por preocupações de segurança solicitações negadas por solicitações de regras de sessão erros respostas 1xx 4xx respostas 2xx 5xx respostas 3xx respostas outras solicitações sessões intercetadas sessões Rate Requests Rate Requests Rate Max Total de sessões sessões reescreve 
+| Interface HAProxy | Proxy de endereço de namespace | IP do nó Nome do nó ID do proxy Modo ID do processo Limite de taxa de sessões ID do servidor Limite de sessões Status | Bytes de entrada Bytes de saída Acertos no cache Pesquisas no cache Compressão Bytes ignorados Compressão Bytes de entrada Compressão Bytes de saída Compressão Respostas Taxa de conexão Taxa de conexão Máximo de conexões Total de solicitações negadas pela regra de conexão Solicitações negadas por problemas de segurança Respostas negadas por problemas de segurança Solicitações negadas pela regra de sessão Erros de solicitações Respostas 1xx Respostas 2xx Respostas 3xx Respostas 4xx Respostas 5xx Respostas Outras solicitações Taxa de sessões interceptadas Taxa de sessões Taxa de solicitações Máximo de solicitações Taxa de solicitações Máximo de solicitações Total de sessões Sessões Máximo de sessões Total de solicitações Reescritas 
 
 
-| Servidor HAProxy | Servidor Proxy de Endereço de namespace | Node IP Name Check Time to Finish Check Fall Configuration Check Health Value Check Rise Configuration Check Status ID Proxy ID Last Change Time Last Session Time Process id Server id Status Weight | Servidores ativos servidores de backup bytes em bytes out check Downs Check Fails Cliente aborta conexões tempo médio tempo de inatividade Total respostas negadas erros de conexão respostas 1xx respostas 2xx respostas 3xx respostas 4xx respostas 5xx respostas outro servidor selecionado Total fila atual fila máxima tempo média sessões por segundo sessões por segundo tempo máximo reutilização de conexão tempo média sessões sessões sessões sessões Max transferência de servidor aborta sessões Total de sessões Redespachos pedidos Redespachos pedidos RRecrutamento de solicitações 
+| Servidor HAProxy | Servidor proxy de endereço de namespace | IP do nó Nome do nó Verificar tempo para terminar Verificar configuração de queda Verificar valor de integridade Verificar configuração de ascensão Verificar status ID do proxy Última hora de alteração Última hora da sessão Modo ID do processo ID do servidor Status Peso | Servidores ativos Servidores de backup Bytes de entrada Bytes de saída Verificações de baixa Verificações Falhas de cliente Aborta conexões Tempo médio de conexão Tempo de inatividade Total de respostas negadas Erros de conexão Erros de resposta Respostas 1xx Respostas 2xx Respostas 3xx Respostas 4xx Respostas 5xx Respostas Outro servidor selecionado Fila total Fila atual Tempo médio máximo da fila Sessões por segundo Sessões por segundo Tempo máximo de resposta de reutilização de conexão Média de sessões Sessões Máximas de transferências do servidor Aborta sessões Total de sessões Tempo total Média de solicitações Reenvios Solicitações Tentativas Solicitações Reescritas 
 
 
-| Backend HAProxy | Proxy de endereço de namespace | Nome do nó IP ID do proxy último tempo alteração tempo último modo sessão ID do processo ID do servidor sessões limite peso do estado | Servidores ativos servidores de backup bytes em bytes out Cache Hits Cache Lookups Check Downs Cliente aborta compactação bytes Bypass compactação bytes em compressão bytes out Compression respostas conexões tempo médio tempo de inatividade Total solicitações negadas por preocupações de Segurança respostas negadas por preocupações de Segurança erros de conexão erros de resposta respostas 1xx 4xx respostas 2xx 5xx respostas 3xx respostas 
+| Backend HAProxy | Proxy de endereço de namespace | IP do nó Nome do nó ID do proxy Última hora de alteração Última hora da sessão Modo ID do processo ID do servidor Limite de sessões Status Peso | Servidores ativos Servidores de backup Bytes de entrada Bytes de saída Acertos no cache Pesquisas no cache Verificações de baixa do cliente Abortos de compactação Bytes ignorados Bytes de compactação em compressão Bytes de saída Respostas de compactação Conexões Tempo médio de inatividade Total de solicitações negadas por problemas de segurança Respostas negadas por problemas de segurança Erros de conexão Erros de resposta Respostas 1xx Respostas 2xx Respostas 3xx Respostas 4xx Respostas 5xx Respostas Outro servidor selecionado Fila total Fila atual Tempo médio máximo da fila Sessões por segundo Sessões por segundo Máximo de solicitações Tempo total de resposta de reutilização de conexão Média de sessões Sessões Máximo de abortos de transferência do servidor Sessões Total de sessões Tempo total de solicitações Média de solicitações Reenvios Solicitações Tentativas Solicitações Reescritas 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página.

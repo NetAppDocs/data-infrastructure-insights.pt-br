@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_dc_emc_datadomain.html 
 keywords: data collector, Data Domain, EMC, DELL 
-summary: Configurar o coletor de dados do Dell EMC Data Domain. 
+summary: Configurando o coletor de dados do DELL EMC Data Domain. 
 ---
 = Coletor de dados DELL EMC Data Domain
 :hardbreaks:
@@ -10,37 +10,37 @@ summary: Configurar o coletor de dados do Dell EMC Data Domain.
 
 
 [role="lead"]
-Este coletor de dados reúne informações de inventário e desempenho dos sistemas de armazenamento de dados de deduplicação Dell EMC Data Domain. Para configurar esse coletor de dados, há instruções de configuração específicas e recomendações de uso que você deve seguir.
+Este coletor de dados reúne informações de inventário e desempenho dos sistemas de armazenamento de desduplicação DELL EMC Data Domain.  Para configurar este coletor de dados, há instruções de configuração específicas e recomendações de uso que você deve seguir.
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do Data Domain. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do Data Domain.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
 | Disco | Disco 
 
 
-| Array | Armazenamento 
+| Variedade | Armazenar 
 
 
-| Porta FC | Porta 
+| FC Porto | Porta 
 
 
-| Sistema de ficheiros | Volume interno 
+| Sistema de arquivos | Volume interno 
 
 
-| Cota | Cota 
+| Contingente | Contingente 
 
 
-| Compartilhamento NFS e CIFS | Partilha de ficheiros 
+| Compartilhamento NFS e CIFS | Compartilhamento de arquivos 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
@@ -48,8 +48,8 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 
 Você precisa das seguintes informações para configurar este coletor de dados:
 
-* Endereço IP do dispositivo domínio de dados
-* Nome de usuário somente leitura e senha para o armazenamento do domínio de dados
+* Endereço IP do dispositivo Data Domain
+* Nome de usuário e senha somente leitura para o armazenamento do Data Domain
 * Porta SSH 22
 
 
@@ -62,13 +62,13 @@ Você precisa das seguintes informações para configurar este coletor de dados:
 | Campo | Descrição 
 
 
-| Endereço IP | O endereço IP ou o nome de domínio totalmente qualificado da matriz de armazenamento Data Domain 
+| Endereço IP | O endereço IP ou nome de domínio totalmente qualificado do array de armazenamento do Data Domain 
 
 
-| Nome de utilizador | O nome de usuário para a matriz de armazenamento Data Domain 
+| Nome de usuário | O nome de usuário para o array de armazenamento do Data Domain 
 
 
-| Palavra-passe | A palavra-passe para a matriz de armazenamento Data Domain 
+| Senha | A senha para o array de armazenamento do Data Domain 
 |===
 
 
@@ -79,7 +79,7 @@ Você precisa das seguintes informações para configurar este coletor de dados:
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. A predefinição é 20. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário.  O padrão é 20. 
 
 
 | Porta SSH | Porta de serviço SSH 
@@ -88,4 +88,4 @@ Você precisa das seguintes informações para configurar este coletor de dados:
 
 == Solução de problemas
 
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

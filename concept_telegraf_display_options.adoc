@@ -2,26 +2,26 @@
 sidebar: sidebar 
 permalink: concept_telegraf_display_options.html 
 keywords: telegraf, data, display, 
-summary: Opções de visualização de dados do Telegraf 
+summary: Opções de exibição de dados do Telegraf 
 ---
-= Métricas transformadoras
+= Transformando Métricas
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Insights de infraestrutura de dados fornece diferentes opções *Transform* para determinadas métricas em widgets (especificamente, aquelas métricas chamadas "personalizadas" ou métricas de integração, como do Kubernetes, dados avançados do ONTAP, plugins do Telegraf, etc.), permitindo que você exiba os dados de várias maneiras. Ao adicionar métricas transformáveis a um widget, você é apresentado com uma lista suspensa fornecendo as seguintes opções de transformação:
+O Data Infrastructure Insights fornece diferentes opções de *transformação* para determinadas métricas em widgets (especificamente, aquelas métricas chamadas "Personalizadas" ou Métricas de Integração, como do Kubernetes, ONTAP Advanced Data, plugins Telegraf, etc.), permitindo que você exiba os dados de diversas maneiras.  Ao adicionar métricas transformáveis ​​a um widget, você verá um menu suspenso com as seguintes opções de transformação:
 
-Nenhum: Os dados são exibidos como estão, sem manipulação.
+Nenhum: os dados são exibidos como estão, sem manipulação.
 
 Taxa: Valor atual dividido pelo intervalo de tempo desde a observação anterior.
 
-Cumulativo: A acumulação da soma dos valores anteriores e do valor atual.
+Cumulativo: Acumulação da soma dos valores anteriores e do valor atual.
 
-Delta: A diferença entre o valor de observação anterior e o valor atual.
+Delta: A diferença entre o valor da observação anterior e o valor atual.
 
-Taxa Delta: Valor Delta dividido pelo intervalo de tempo desde a observação anterior.
+Taxa delta: valor delta dividido pelo intervalo de tempo desde a observação anterior.
 
-Taxa acumulada: Valor cumulativo dividido pelo intervalo de tempo desde a observação anterior.
+Taxa cumulativa: valor cumulativo dividido pelo intervalo de tempo desde a observação anterior.
 
-Observe que transformar métricas não altera os dados subjacentes em si, mas apenas a maneira como os dados são exibidos.
+Observe que a transformação de métricas não altera os dados subjacentes em si, mas apenas a maneira como os dados são exibidos.

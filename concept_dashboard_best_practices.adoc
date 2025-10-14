@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_dashboard_best_practices.html 
-summary: Práticas recomendadas para aproveitar ao máximo seus dashboards 
+summary: Melhores práticas para aproveitar ao máximo seus painéis 
 keywords: dashboard, hints, tips, best practice, widgets, metrics, 
 ---
-= Melhores práticas para painéis e Widgets
+= Melhores práticas para painéis e widgets
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,121 +14,121 @@ keywords: dashboard, hints, tips, best practice, widgets, metrics,
 
 
 [role="lead"]
-Dicas e truques para ajudá-lo a aproveitar ao máximo os recursos poderosos de painéis e widgets.
+Dicas e truques para ajudar você a aproveitar ao máximo os recursos poderosos de painéis e widgets.
 
 
 
-== Encontrar a métrica certa
+== Encontrando a métrica certa
 
-O Data Infrastructure Insights adquire contadores e métricas usando nomes que às vezes diferem do coletor de dados para o coletor de dados.
+O Data Infrastructure Insights adquire contadores e métricas usando nomes que às vezes diferem de coletor de dados para coletor de dados.
 
-Ao procurar a métrica ou o contador certo para o widget do seu painel, tenha em mente que a métrica que você deseja pode estar sob um nome diferente daquele que você está pensando. Embora as listas suspensas no Data Infrastructure Insights geralmente sejam alfabéticas, às vezes um termo pode não aparecer na lista onde você acha que deveria. Por exemplo, termos como "capacidade bruta" e "capacidade usada" não aparecem juntos na maioria das listas.
+Ao procurar a métrica ou o contador certo para o widget do seu painel, tenha em mente que a métrica desejada pode ter um nome diferente daquele que você está pensando.  Embora as listas suspensas no Data Infrastructure Insights geralmente sejam em ordem alfabética, às vezes um termo pode não aparecer na lista onde você acha que deveria.  Por exemplo, termos como "capacidade bruta" e "capacidade utilizada" não aparecem juntos na maioria das listas.
 
-*Prática recomendada*: Use o recurso de pesquisa em campos como Filtrar por ou locais como o seletor de colunas para encontrar o que você está procurando. Por exemplo, a busca por "CAP" mostrará todas as métricas com "capacidade" em seus nomes, não importa onde elas ocorram na lista. Em seguida, você pode selecionar facilmente as métricas que deseja nessa lista mais curta.
+*Melhor prática*: use o recurso de pesquisa em campos como Filtrar por ou em locais como o seletor de colunas para encontrar o que você está procurando.  Por exemplo, pesquisar por "cap" mostrará todas as métricas com "capacidade" em seus nomes, não importa onde elas ocorram na lista.  Você pode então selecionar facilmente as métricas desejadas dessa lista menor.
 
-Aqui estão algumas frases alternativas que você pode tentar ao procurar métricas:
+Aqui estão algumas frases alternativas que você pode tentar ao pesquisar métricas:
 
 |===
 
 
-| Quando você quiser encontrar: | Tente também procurar: 
+| Quando você quer encontrar: | Tente também pesquisar por: 
 
 
 | CPU | Processador 
 
 
-| Capacidade | Capacidade bruta utilizada capacidade provisionada capacidade de pools de storage capacidade inferior a outro tipo de ativo> capacidade escrita 
+| Capacidade | Capacidade utilizada Capacidade bruta Capacidade provisionada Capacidade de pools de armazenamento Capacidade de <outro tipo de ativo> Capacidade escrita 
 
 
-| Velocidade do disco | Menor velocidade do disco com menor desempenho do tipo de disco 
+| Velocidade do disco | Menor velocidade de disco Tipo de disco de menor desempenho 
 
 
-| Host | Hosts de hipervisor 
+| Hospedar | Hosts do hipervisor 
 
 
-| Hipervisor | O host é hipervisor 
+| Hipervisor | Host é hipervisor 
 
 
 | Microcódigo | Firmware 
 
 
-| Nome | Alias Nome do hypervisor Nome do armazenamento Nome do arquivo Nome simples Nome do recurso Nome do recurso Alias da estrutura 
+| Nome | Alias Nome do hipervisor Nome do armazenamento Nome do <outro tipo de ativo> Nome simples Nome do recurso Alias de estrutura 
 
 
-| Ler / escrever | IOPS parcial de R/W de gravação pendente - latência de gravação da capacidade escrita - utilização da cache de leitura - leitura 
+| Ler / Escrever | Parcial R/W Gravações pendentes IOPS - Gravação Capacidade de gravação Latência - Leitura Utilização do cache - leitura 
 
 
-| Máquina virtual | VM é virtual 
+| Máquina Virtual | VM é virtual 
 |===
-Esta não é uma lista abrangente. Estes são exemplos de termos de pesquisa possíveis apenas.
+Esta não é uma lista abrangente.  Estes são apenas exemplos de possíveis termos de pesquisa.
 
 
 
-== Encontrar os ativos certos
+== Encontrando os ativos certos
 
-Os ativos que você pode referenciar em filtros de widget e pesquisas variam de tipo de ativo para tipo de ativo.
+Os ativos que você pode referenciar em filtros e pesquisas de widgets variam de acordo com o tipo de ativo.
 
-Em painéis e páginas de ativos, o tipo de ativo em torno do qual você está construindo seu widget determina os outros contadores de tipos de ativos para os quais você pode filtrar ou adicionar uma coluna. Tenha em mente o seguinte ao criar seu widget:
+Em painéis e páginas de ativos, o tipo de ativo em torno do qual você está criando seu widget determina os outros contadores de tipo de ativo para os quais você pode filtrar ou adicionar uma coluna.  Tenha em mente o seguinte ao criar seu widget:
 
 |===
 
 
-| Este tipo de ativo / contador: | Podem ser filtrados para os seguintes ativos: 
+| Este tipo de ativo/contador: | Pode ser filtrado por estes ativos: 
 
 
-| Máquina virtual | VMDK 
+| Máquina Virtual | VMDK 
 
 
-| Datastore(s) | Volume interno VMDK Virtual Machine volume 
+| Armazenamento(s) de dados | Volume interno VMDK Volume da máquina virtual 
 
 
-| Hipervisor | A máquina virtual é o host do hypervisor 
+| Hipervisor | Máquina Virtual é um Host de Hipervisor 
 
 
-| Host(s) | Máquina virtual de host de cluster de volume interno 
+| Anfitrião(s) | Cluster de Volume Interno Host Máquina Virtual 
 
 
-| Malha | Porta 
+| Tecido | Porta 
 |===
 Esta não é uma lista abrangente.
 
-*Prática recomendada*: Se você estiver filtrando para um tipo de ativo específico que não aparece na lista, tente construir sua consulta em torno de um tipo de ativo alternativo.
+*Melhor prática*: se você estiver filtrando por um tipo de ativo específico que não aparece na lista, tente criar sua consulta em torno de um tipo de ativo alternativo.
 
 
 
-== Exemplo de plotagem de dispersão: Conhecendo seu eixo
+== Exemplo de gráfico de dispersão: conhecendo seu eixo
 
-Alterar a ordem dos contadores em um widget de plotagem de dispersão altera os eixos nos quais os dados são exibidos.
+Alterar a ordem dos contadores em um widget de gráfico de dispersão altera os eixos nos quais os dados são exibidos.
 
 .Sobre esta tarefa
 Este exemplo criará um gráfico de dispersão que permitirá que você veja VMs de baixo desempenho que têm alta latência em comparação com IOPS baixo.
 
 .Passos
-. Crie ou abra um painel no modo de edição e adicione um widget *Scatter Plot Chart*.
+. Crie ou abra um painel no modo de edição e adicione um widget *Gráfico de dispersão*.
 . Selecione um tipo de ativo, por exemplo, _Máquina Virtual_.
-. Selecione o primeiro contador que pretende traçar. Para este exemplo, selecione _latência - total_.
+. Selecione o primeiro contador que você deseja plotar.  Para este exemplo, selecione _Latência - Total_.
 +
-_Latência - Total_ é mapeado ao longo do eixo X do gráfico.
+_Latência - Total_ é representada ao longo do eixo X do gráfico.
 
-. Selecione o segundo contador que pretende traçar. Para este exemplo, selecione _IOPS - Total_.
+. Selecione o segundo contador que você deseja plotar.  Para este exemplo, selecione _IOPS - Total_.
 +
-_IOPS - Total_ é mapeado ao longo do eixo Y no gráfico. VMs com maior latência são exibidas no lado direito do gráfico. Apenas as 100 principais VMs de maior latência são exibidas, porque a configuração *Top by X-axis* é atual.
-
-+
-image:ScatterplotExample1.png["Exemplo de gráfico de dispersão 1"]
-
-. Agora inverta a ordem dos contadores definindo o primeiro contador para _IOPS - total_ e o segundo para _latência - total_.
-+
-_Latência- Total_ agora é mapeado ao longo do eixo Y no gráfico, e _IOPS - total_ ao longo do eixo X. As VMs com IOPS mais alto agora são exibidas no lado direito do gráfico.
+_IOPS - Total_ é representado ao longo do eixo Y no gráfico.  VMs com maior latência são exibidas no lado direito do gráfico.  Somente as 100 VMs com maior latência são exibidas, porque a configuração *Principal por eixo X* é a atual.
 
 +
-Observe que, como não alteramos a configuração *Top by X-Axis*, o widget agora exibe as 100 principais VMs de IOPS mais altas, já que é o que está atualmente traçado ao longo do eixo X.
+image:ScatterplotExample1.png["Exemplo 1 de ScatterPlot"]
+
+. Agora inverta a ordem dos contadores definindo o primeiro contador como _IOPS - Total_ e o segundo como _Latência - Total_.
++
+_Latência - Total_ agora é representado no eixo Y do gráfico, e _IOPS - Total_ no eixo X.  VMs com IOPS mais altos agora são exibidas no lado direito do gráfico.
 
 +
-image:ScatterplotExample2.png["Exemplo de gráfico de dispersão 2"]
+Observe que, como não alteramos a configuração *Principais por eixo X*, o widget agora exibe as 100 VMs com maior IOPS, já que é isso que está atualmente plotado ao longo do eixo X.
+
++
+image:ScatterplotExample2.png["Exemplo 2 de ScatterPlot"]
 
 
 
-Você pode optar pelo gráfico para exibir o N superior por eixo X, N superior por eixo Y, N inferior por eixo X ou N inferior por eixo Y. Em nosso exemplo final, o gráfico está exibindo as 100 principais VMs que têm o maior total de IOPS. Se mudarmos para *topo por eixo Y*, o gráfico exibirá novamente as 100 principais VMs que têm a maior latência total.
+Você pode escolher que o gráfico exiba os N superiores pelo eixo X, os N superiores pelo eixo Y, os N inferiores pelo eixo X ou os N inferiores pelo eixo Y.  Em nosso exemplo final, o gráfico exibe as 100 principais VMs que têm o maior IOPS total.  Se alterarmos para *Principais por eixo Y*, o gráfico exibirá novamente as 100 principais VMs com a maior latência total.
 
-Observe que em um gráfico de plotagem de dispersão, você pode clicar em um ponto para detalhar a página de ativos desse recurso.
+Observe que, em um gráfico de dispersão, você pode clicar em um ponto para detalhar a página de ativos daquele recurso.

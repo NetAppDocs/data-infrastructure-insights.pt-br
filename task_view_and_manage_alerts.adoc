@@ -1,41 +1,41 @@
 ---
 sidebar: sidebar 
 permalink: task_view_and_manage_alerts.html 
-summary: Visualização de alertas que foram acionados por monitores 
+summary: Visualizando alertas que foram acionados por monitores 
 keywords: monitor, alert, viewing 
 ---
-= Visualizar e gerir alertas a partir de monitores
+= Visualizando e gerenciando alertas de monitores
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Data Infrastructure Insights exibe alertas quando link:task_create_monitor.html["limites monitorados"]são excedidos.
+O Data Infrastructure Insights exibe alertas quandolink:task_create_monitor.html["limiares monitorados"] são excedidos.
 
 
-TIP: Monitores e alertas estão disponíveis no Data Infrastructure Insights Standard Edition e versões posteriores.
+TIP: Monitores e alertas estão disponíveis no Data Infrastructure Insights Standard Edition e superiores.
 
 
 
-== Visualizar e gerir alertas
+== Visualizando e gerenciando alertas
 
 Para visualizar e gerenciar alertas, faça o seguinte.
 
-. Navegue até a página *Alertas > todos os Alertas*.
-. É apresentada uma lista de até 1.000 alertas mais recentes. Você pode classificar essa lista em qualquer campo clicando no cabeçalho da coluna do campo. A lista apresenta as seguintes informações. Observe que nem todas essas colunas são exibidas por padrão. Você pode selecionar colunas para exibir clicando no ícone "engrenagem":
+. Navegue até a página *Alertas > Todos os alertas*.
+. Uma lista com até 1.000 alertas mais recentes é exibida.  Você pode classificar esta lista em qualquer campo clicando no cabeçalho da coluna do campo.  A lista exibe as seguintes informações.  Observe que nem todas essas colunas são exibidas por padrão.  Você pode selecionar colunas para exibir clicando no ícone de "engrenagem":
 +
-** *ID de alerta*: ID de alerta exclusivo gerado pelo sistema
-** *Hora desencadeada*: A hora em que o Monitor relevante acionou o alerta
-** *Gravidade atual* (guia alertas ativos): A gravidade atual do alerta ativo
-** *Gravidade superior* (guia alertas resolvidos); a gravidade máxima do alerta antes de ser resolvido
-** *Monitor*: O monitor configurado para acionar o alerta
-** *Triggered on*: O objeto no qual o limite monitorado foi violado
-** *Status*: Status de alerta atual, _novo_ ou _em processo_
-** *Status Ativo*: _Ativo_ ou _resolvido_
+** *ID do alerta*: ID de alerta exclusivo gerado pelo sistema
+** *Hora de disparo*: Hora em que o Monitor relevante disparou o alerta
+** *Gravidade atual* (guia Alertas ativos): A gravidade atual do alerta ativo
+** *Gravidade máxima* (guia Alertas resolvidos); A gravidade máxima do alerta antes de ser resolvido
+** *Monitor*: O monitor configurado para disparar o alerta
+** *Acionado em*: O objeto no qual o limite monitorado foi violado
+** *Status*: Status de alerta atual, _Novo_ ou _Em andamento_
+** *Status ativo*: _Ativo_ ou _Resolvido_
 ** *Condição*: A condição limite que acionou o alerta
-** *Metric*: A métrica do objeto na qual o limite monitorado foi violado
-** *Status do monitor*: Status atual do monitor que acionou o alerta
-** *Tem ação corretiva*: O alerta sugeriu ações corretivas. Abra a página de alerta para visualizá-los.
+** *Métrica*: A métrica do objeto na qual o limite monitorado foi violado
+** *Status do monitor*: Status atual do monitor que disparou o alerta
+** *Possui ação corretiva*: O alerta sugeriu ações corretivas.  Abra a página de alertas para visualizá-los.
 
 
 
@@ -43,39 +43,39 @@ Para visualizar e gerenciar alertas, faça o seguinte.
 Você pode gerenciar um alerta clicando no menu à direita do alerta e escolhendo uma das seguintes opções:
 
 * *Em processo* para indicar que o alerta está sob investigação ou precisa ser mantido aberto
-* *Dismiss* para remover o alerta da lista de alertas ativos.
+* *Dispensar* para remover o alerta da lista de alertas ativos.
 
 
-Você pode gerenciar vários alertas selecionando a caixa de seleção à esquerda de cada Alerta e clicando em _alterar Status dos Alertas selecionados_.
+Você pode gerenciar vários alertas marcando a caixa de seleção à esquerda de cada alerta e clicando em _Alterar status dos alertas selecionados_.
 
-Clicar em um ID de alerta abre a página de detalhes de alerta.
+Clicar em um ID de alerta abre a página de detalhes do alerta.
 
 
 
 == Painel de detalhes de alerta
 
-Selecione qualquer linha de alerta para abrir o painel de detalhes do alerta. O painel de detalhes do alerta fornece detalhes adicionais sobre o alerta, incluindo um _Resumo_, uma _Visualização de Especialista_ mostrando gráficos relacionados aos dados do objeto, quaisquer _Ativos Relacionados_ e _Comentários_ inseridos pelos investigadores do alerta.
+Selecione qualquer linha de alerta para abrir o painel de detalhes do alerta.  O painel de detalhes do alerta fornece detalhes adicionais sobre o alerta, incluindo um _Resumo_, uma seção _Desempenho_ mostrando gráficos relacionados aos dados do objeto, quaisquer _Ativos Relacionados_ e _Comentários_ inseridos pelos investigadores do alerta.
 
 image:metric_alert_detail_pane.png["painel de detalhes de alerta métrico"]
 
 
 
-== Alerta quando os dados estão em falta
+== Alertas quando dados estão faltando
 
-Em um sistema em tempo real, como o Data Infrastructure Insights, para acionar a análise de um Monitor para decidir se um Alerta deve ser gerado, contamos com uma de duas coisas:
+Em um sistema em tempo real como o Data Infrastructure Insights, para acionar a análise de um Monitor para decidir se um Alerta deve ser gerado, confiamos em uma de duas coisas:
 
-* a próxima datapoint para chegar
-* um temporizador para disparar quando não há datapoint e você esperou o suficiente
-
-
-Como é o caso com chegada lenta de dados - ou sem chegada de dados - o mecanismo do temporizador precisa assumir o controle, pois a taxa de chegada de dados é insuficiente para acionar alertas em "tempo real". Então, a pergunta geralmente se torna "quanto tempo eu espero antes de fechar a janela de análise e olhar para o que eu tenho?" Se você esperar muito tempo, então você não está gerando os alertas rápido o suficiente para ser útil.
-
-Se você tiver um Monitor com uma janela de 30 minutos que perceba que uma condição é violada pelo último ponto de dados antes de uma perda de dados a longo prazo, um Alerta será gerado porque o Monitor não recebeu outras informações para usar para confirmar uma recuperação da métrica ou notar que a condição persistiu.
+* o próximo ponto de dados a chegar
+* um temporizador para disparar quando não houver nenhum ponto de dados e você tiver esperado o tempo suficiente
 
 
+Como é o caso da chegada lenta de dados (ou da ausência de chegada de dados), o mecanismo de temporizador precisa assumir o controle, pois a taxa de chegada de dados é insuficiente para disparar alertas em "tempo real".  Então a pergunta normalmente se torna: "Quanto tempo devo esperar antes de fechar a janela de análise e ver o que tenho?"  Se você esperar muito tempo, não estará gerando alertas rápido o suficiente para serem úteis.
 
-== Alertas "permanentemente ativos"
+Se você tiver um Monitor com uma janela de 30 minutos que percebe que uma condição foi violada pelo último ponto de dados antes de uma perda de dados de longo prazo, um Alerta será gerado porque o Monitor não recebeu nenhuma outra informação para confirmar uma recuperação da métrica ou perceber que a condição persistiu.
 
-É possível configurar um monitor de tal forma que a condição *Always* exista no objeto monitorado - por exemplo, IOPS > 1 ou latência > 0. Estes são frequentemente criados como monitores de "teste" e depois esquecidos. Esses monitores criam alertas que permanecem permanentemente abertos nos objetos constituintes, o que pode causar problemas de estresse e estabilidade do sistema ao longo do tempo.
 
-Para evitar isso, o Data Infrastructure Insights fechará automaticamente qualquer alerta "permanentemente ativo" após 7 dias. Observe que as condições subjacentes do monitor podem (provavelmente) continuar a existir, fazendo com que um novo alerta seja emitido quase imediatamente, mas esse fechamento de alertas "sempre ativos" alivia algumas das tensões do sistema que podem ocorrer de outra forma.
+
+== Alertas "Permanentemente Ativos"
+
+É possível configurar um monitor de forma que a condição *sempre* exista no objeto monitorado — por exemplo, IOPS > 1 ou latência > 0.  Eles geralmente são criados como monitores de "teste" e depois esquecidos.  Esses monitores criam alertas que ficam permanentemente abertos nos objetos constituintes, o que pode causar estresse no sistema e problemas de estabilidade ao longo do tempo.
+
+Para evitar isso, o Data Infrastructure Insights fechará automaticamente qualquer alerta "permanentemente ativo" após 7 dias.  Observe que as condições subjacentes do monitor podem (provavelmente) continuar a existir, fazendo com que um novo alerta seja emitido quase imediatamente, mas esse fechamento de alertas "sempre ativos" alivia parte do estresse do sistema que pode ocorrer de outra forma.

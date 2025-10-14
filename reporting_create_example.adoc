@@ -1,56 +1,56 @@
 ---
 sidebar: sidebar 
 permalink: reporting_create_example.html 
-summary: Use este procedimento para criar um relatório usando os relatórios predefinidos do Data Infrastructure Insights. 
+summary: Use este procedimento para criar um relatório usando os relatórios predefinidos do Data Infrastructure Insights . 
 keywords: reporting, cognos, data warehouse, dwh, create, report 
 ---
-= Criando um relatório (exemplo)
+= Criando um Relatório (Exemplo)
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Siga as etapas neste exemplo para gerar um relatório simples sobre a capacidade física de pools de armazenamento e armazenamento em vários data centers.
+Use as etapas deste exemplo para gerar um relatório simples sobre a capacidade física de armazenamento e pools de armazenamento em vários data centers.
 
 .Passos
-. Navegue até *Menu > conteúdo > conteúdo da equipe > relatórios*
-. No canto superior direito do ecrã, selecione *[novo]*
+. Navegue até *Menu > Conteúdo > Conteúdo da equipe > Relatórios*
+. No canto superior direito da tela, selecione *[Novo +]*
 . Selecione *Relatório*
 +
 image:Reporting_New_Report.png["Criando um novo relatório"]
 
-. Na guia *Templates*, selecione _blank_
+. Na aba *Modelos*, selecione _Em branco_
 +
-As guias fonte e dados são exibidas
+As guias Fonte e Dados são exibidas
 
-. Abrir *Selecione uma fonte*
-. Em *conteúdo da equipe*, abra *Pacotes*
+. Abrir *Selecione uma fonte +*
+. Em *Conteúdo da equipe*, abra *Pacotes*
 +
-É apresentada uma lista de pacotes disponíveis.
+Uma lista de pacotes disponíveis é exibida.
 
-. Escolha *capacidade do pool de armazenamento e armazenamento* image:Reporting_Select_Source_For_Report.png["Selecionar uma fonte para o relatório"]
-. Selecione *Open*
+. Escolha *Capacidade de armazenamento e pool de armazenamento*image:Reporting_Select_Source_For_Report.png["Selecionando uma fonte para o relatório"]
+. Selecione *Abrir*
 +
-Os estilos disponíveis para o seu relatório são exibidos.
+Os estilos disponíveis para seu relatório são exibidos.
 
 . Selecione *Lista*
 +
-Adicione nomes apropriados para Lista e consulta
+Adicione nomes apropriados para Lista e Consulta
 
 . Selecione *OK*
-. Expanda _capacidade física_
-. Expanda para o nível mais baixo de _Data Center_
-. Arraste _Data Center_ para o Palato de relatórios.
-. Expanda _capacidade (MB)_
-. Arraste _capacidade (MB)_ para o Palato de relatórios.
-. Arraste _Used Capacity (MB)_ para o Palato de relatórios.
-. Execute o relatório selecionando um tipo de saída no menu *Run*.
+. Expandir _Capacidade Física_
+. Expandir para o nível mais baixo do _Data Center_
+. Arraste _Data Center_ para a paleta Relatórios.
+. Expandir _Capacidade (MB)_
+. Arraste _Capacidade (MB)_ para a paleta Relatórios.
+. Arraste _Capacidade Utilizada (MB)_ para a paleta Relatórios.
+. Execute o relatório selecionando um tipo de saída no menu *Executar*.
 +
-image:Reporting_Running_A_Report.png["Selecionar uma saída de relatório"]
+image:Reporting_Running_A_Report.png["Selecionando uma saída de relatório"]
 
 
 
 .Resultado
-É criado um relatório semelhante ao seguinte:
+Um relatório semelhante ao seguinte é criado:
 
 image:Reporting-Example1.png["Exemplo de relatório"]

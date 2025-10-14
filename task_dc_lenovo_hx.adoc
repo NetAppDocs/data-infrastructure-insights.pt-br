@@ -27,14 +27,14 @@ As seguintes informações são necessárias para configurar este coletor de dad
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário e desempenho do coletor de dados Lenovo HX. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário e desempenho do coletor de dados Lenovo HX.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| Pool de storage | Pool de storage 
+| Pool de armazenamento | Pool de armazenamento 
 
 
 | Recipiente | Volume interno 
@@ -43,13 +43,13 @@ O Data Infrastructure Insights adquire as seguintes informações de inventário
 | Nó | Controlador 
 
 
-| Partilhar | Partilha de ficheiros 
+| Compartilhar | Compartilhamento de arquivos 
 
 
-| Nutanix Distributed File System (NDFS) | Partilhar 
+| Sistema de arquivos distribuídos Nutanix (NDFS) | Compartilhar 
 
 
-| Grupo de volume | LUN de back-end 
+| Grupo de Volume | LUN de backend 
 |===
 
 
@@ -60,13 +60,13 @@ O Data Infrastructure Insights adquire as seguintes informações de inventário
 | Campo | Descrição 
 
 
-| Endereço IP externo do prisma | Endereço IP utilizado para ligar ao sistema de armazenamento 
+| Endereço IP externo do Prism | Endereço IP usado para conectar ao sistema de armazenamento 
 
 
-| Nome de utilizador | Nome do usuário para fazer login no sistema de armazenamento. O padrão é admin. 
+| Nome de usuário | Nome de usuário para efetuar login no sistema de armazenamento.  O padrão é admin. 
 
 
-| Palavra-passe | Palavra-passe para o sistema de armazenamento Lenovo HX 
+| Senha | Senha para o sistema de armazenamento Lenovo HX 
 |===
 
 
@@ -77,8 +77,8 @@ O Data Infrastructure Insights adquire as seguintes informações de inventário
 | Campo | Descrição 
 
 
-| Porta TCP | Porta TCP utilizada para ligar ao Lenovo HX. A predefinição é 9440. 
+| Porta TCP | Porta TCP usada para conectar ao Lenovo HX.  O padrão é 9440. 
 
 
-| Intervalo Poll Stock | Intervalo entre sondagens de inventário. O padrão é 60 minutos. 
+| Intervalo de pesquisa de inventário | Intervalo entre pesquisas de inventário. O padrão é 60 minutos. 
 |===

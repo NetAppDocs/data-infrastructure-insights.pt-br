@@ -10,15 +10,15 @@ summary: Configurando o coletor de dados Lenovo.
 
 
 [role="lead"]
-O Data Infrastructure Insights usa o coletor de dados Lenovo para descobrir dados de inventário e desempenho para sistemas de armazenamento Lenovo HX.
+O Data Infrastructure Insights usa o coletor de dados da Lenovo para descobrir dados de inventário e desempenho para sistemas de armazenamento Lenovo HX.
 
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
 == Requisitos
 
-* Endereço IP externo do prisma
+* Endereço IP externo do Prism
 * Nome de usuário e senha do administrador
 * Requisito de porta TCP: 9440
 
@@ -32,13 +32,13 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Endereço IP externo do prisma | O endereço IP dos serviços de dados externos para o cluster 
+| Endereço IP externo do Prism | O endereço IP dos serviços de dados externos para o cluster 
 
 
-| Nome de utilizador | Nome de usuário para a conta de administrador 
+| Nome de usuário | Nome de usuário para a conta de administrador 
 
 
-| Palavra-passe | Palavra-passe para a conta de administrador 
+| Senha | Senha para a conta de administrador 
 |===
 
 
@@ -49,16 +49,16 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Porta de TCP | Porta TCP usada para conetar ao array. A predefinição é 9440. 
+| Porta TCP | Porta TCP usada para conectar ao array.  O padrão é 9440. 
 
 
-| Intervalo de pesquisa de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 60 minutos. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário. O padrão é 60 minutos. 
 
 
-| Intervalo de pesquisa de desempenho (seg) | Intervalo entre sondagens de desempenho. O padrão é 300 segundos. 
+| Intervalo de pesquisa de desempenho (seg) | Intervalo entre pesquisas de desempenho. O padrão é 300 segundos. 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

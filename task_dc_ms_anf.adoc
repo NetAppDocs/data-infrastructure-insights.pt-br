@@ -2,15 +2,15 @@
 sidebar: sidebar 
 permalink: task_dc_ms_anf.html 
 keywords: data collector, azure, Netapp files, anf 
-summary: Configurando o coletor de dados Azure NetApp Files. 
+summary: Configurando o coletor de dados do Azure NetApp Files . 
 ---
-= Configurar o coletor de dados Azure NetApp Files
+= Configurando o coletor de dados do Azure NetApp Files
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Data Infrastructure Insights usa o coletor de dados Azure NetApp Files para adquirir dados de inventário e performance.
+O Data Infrastructure Insights usa o coletor de dados do Azure NetApp Files para adquirir dados de inventário e desempenho.
 
 
 
@@ -19,12 +19,12 @@ O Data Infrastructure Insights usa o coletor de dados Azure NetApp Files para ad
 Você precisa das seguintes informações para configurar este coletor de dados.
 
 * Requisito de porta: 443 HTTPS
-* IP REST do Gerenciamento do Azure (management.azure.com)
-* ID de cliente principal do serviço Azure (conta de utilizador)
-* Chave de autenticação principal do serviço Azure (senha do usuário)
-* Você precisa configurar uma conta do Azure para a descoberta do Data Infrastructure Insights.
+* IP REST de gerenciamento do Azure (management.azure.com)
+* ID do cliente principal do serviço do Azure (conta de usuário)
+* Chave de autenticação principal do serviço do Azure (senha do usuário)
+* Você precisa configurar uma conta do Azure para descoberta do Data Infrastructure Insights .
 +
-Depois que a conta estiver configurada corretamente e você Registrar o aplicativo no Azure, você terá as credenciais necessárias para descobrir a instância do Azure com o Data Infrastructure Insights. O link a seguir descreve como configurar a conta para descoberta:
+Depois que a conta estiver configurada corretamente e você registrar o aplicativo no Azure, você terá as credenciais necessárias para descobrir a instância do Azure com o Data Infrastructure Insights.  O link a seguir descreve como configurar a conta para descoberta:
 
 
 
@@ -41,16 +41,16 @@ Insira os dados nos campos do coletor de dados de acordo com a tabela abaixo:
 | Campo | Descrição 
 
 
-| ID Cliente Principal do Serviço Azure | ID de início de sessão no Azure 
+| ID do cliente principal do serviço do Azure | ID de login no Azure 
 
 
-| ID do Locatário do Azure | ID do Locatário do Azure 
+| ID do locatário do Azure | ID do locatário do Azure 
 
 
-| Chave de autenticação principal do serviço Azure | Chave de autenticação de login 
+| Chave de Autenticação Principal do Serviço do Azure | Chave de autenticação de login 
 
 
-| Eu entendo que a Microsoft me cobra por solicitações de API | Verifique isso para verificar se a Microsoft cobra solicitações de API feitas pela polling do Insight. 
+| Entendo que a Microsoft me cobra por solicitações de API | Marque esta opção para verificar se você entendeu que a Microsoft cobra por solicitações de API feitas pela pesquisa do Insight. 
 |===
 
 
@@ -61,14 +61,14 @@ Insira os dados nos campos do coletor de dados de acordo com a tabela abaixo:
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | A predefinição é 60 
+| Intervalo de pesquisa de inventário (min) | O padrão é 60 
 |===
 
 
 == Solução de problemas
 
-* As credenciais usadas pelo coletor de dados do ANF precisam ter acesso a todas as assinaturas do Azure que contenham volumes do ANF.
-* Se o acesso ao Reader causar falha na coleção de desempenho, tente conceder acesso ao colaborador em um nível de grupo de recursos.
+* As credenciais usadas pelo seu coletor de dados ANF devem ter acesso a quaisquer assinaturas do Azure que contenham volumes ANF.
+* Se o acesso do Leitor causar falha na coleta de desempenho, tente conceder acesso de colaborador em um nível de grupo de recursos.
 
 
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

@@ -14,11 +14,11 @@ summary: Crie monitores para alertar sobre limites de desempenho ou inventário
 
 
 [role="lead"]
-Webhooks permitem que os usuários enviem notificações de alerta para vários aplicativos usando um canal de webhook personalizado.
+Os webhooks permitem que os usuários enviem notificações de alerta para vários aplicativos usando um canal de webhook personalizado.
 
-Muitos aplicativos comerciais suportam webhooks como uma interface de entrada padrão, por exemplo: Slack, PagerDuty, Teams e discord todos suportam webhooks. Ao suportar um canal de webhook genérico e personalizável, o Data Infrastructure Insights pode suportar muitos desses canais de entrega. Informações sobre webhooks podem ser encontradas nesses sites de aplicativos. Por exemplo, o Slack fornece link:https://api.slack.com/messaging/webhooks["este guia útil"]o .
+Muitos aplicativos comerciais oferecem suporte a webhooks como uma interface de entrada padrão, por exemplo: Slack, PagerDuty, Teams e Discord, todos oferecem suporte a webhooks.  Ao oferecer suporte a um canal webhook genérico e personalizável, o Data Infrastructure Insights pode oferecer suporte a muitos desses canais de entrega.  Informações sobre webhooks podem ser encontradas nestes sites de aplicativos.  Por exemplo, o Slack fornecelink:https://api.slack.com/messaging/webhooks["este guia útil"] .
 
-Você pode criar vários canais de webhook, cada canal direcionado para um propósito diferente; aplicativos separados, destinatários diferentes, etc.
+Você pode criar vários canais de webhook, cada canal direcionado a uma finalidade diferente; aplicativos separados, destinatários diferentes, etc.
 
 A instância do canal webhook é composta pelos seguintes elementos:
 
@@ -28,19 +28,19 @@ A instância do canal webhook é composta pelos seguintes elementos:
 | Nome | Nome único 
 
 
-| URL | URL de destino do webhook, incluindo o prefixo _http://_ ou _https://_ junto com os parâmetros de url 
+| URL | URL de destino do webhook, incluindo o prefixo _http://_ ou _https://_ junto com os parâmetros de URL 
 
 
-| Método | GET, POST - o padrão é POST 
+| Método | GET, POST - O padrão é POST 
 
 
-| Cabeçalho personalizado | Especifique aqui quaisquer linhas de cabeçalho personalizadas 
+| Cabeçalho personalizado | Especifique quaisquer linhas de cabeçalho personalizadas aqui 
 
 
 | Corpo da mensagem | Coloque o corpo da sua mensagem aqui 
 
 
-| Parâmetros de alerta predefinidos | Lista os parâmetros padrão para o webhook 
+| Parâmetros de alerta padrão | Lista os parâmetros padrão para o webhook 
 
 
 | Parâmetros e segredos personalizados | Parâmetros e segredos personalizados permitem que você adicione parâmetros exclusivos e elementos seguros, como senhas 
@@ -49,52 +49,52 @@ A instância do canal webhook é composta pelos seguintes elementos:
 
 == Criando um Webhook
 
-Para criar um webhook do Data Infrastructure Insights, vá para *Admin > notificações* e selecione a guia *Webhooks*.
+Para criar um webhook do Data Infrastructure Insights , acesse *Admin > Notificações* e selecione a aba *Webhooks*.
 
 A imagem a seguir mostra um exemplo de webhook configurado para o Slack:
 
 image:Webhook_Example_Slack.png["Exemplo de webhook"]
 
-Introduza as informações adequadas para cada um dos campos e clique em "Guardar" quando terminar.
+Insira as informações apropriadas para cada um dos campos e clique em "Salvar" quando terminar.
 
-Você também pode clicar no botão "testar Webhook" para testar a conexão. Observe que isso enviará o "corpo da mensagem" (sem substituições) para a URL definida de acordo com o método selecionado.
+Você também pode clicar no botão "Testar Webhook" para testar a conexão.  Observe que isso enviará o "Corpo da Mensagem" (sem substituições) para a URL definida de acordo com o Método selecionado.
 
-Os webhooks do Data Infrastructure Insights incluem vários parâmetros padrão. Além disso, você pode criar seus próprios parâmetros personalizados ou segredos.
+Os webhooks do Data Infrastructure Insights compreendem uma série de parâmetros padrão.  Além disso, você pode criar seus próprios parâmetros ou segredos personalizados.
 
-image:Webhook_Default_Parameters.png["Parâmetros padrão do Webhook do Insights de infraestrutura de dados"]
+image:Webhook_Default_Parameters.png["Parâmetros padrão do webhook do Data Infrastructure Insights"]
 
 
 
-=== Parâmetros: O que são e como os utilizo?
+=== Parâmetros: O que são e como usá-los?
 
-Os parâmetros de alerta são valores dinâmicos preenchidos por alerta. Por exemplo, o parâmetro _%%TriggeredOn%%_ será substituído pelo objeto no qual o alerta foi acionado.
+Parâmetros de alerta são valores dinâmicos preenchidos por alerta.  Por exemplo, o parâmetro _%%TriggeredOn%%_ será substituído pelo objeto no qual o alerta foi disparado.
 
-Você pode adicionar qualquer atributo de objeto (por exemplo, nome de armazenamento) como um parâmetro a um webhook. Por exemplo, você pode definir parâmetros para nome de volume e nome de armazenamento em uma descrição de webhook como: "Alta latência para volume: _%%relatedObject.volume.name%%_, armazenamento: _%%relatedObject.storage.name%%_".
+Você pode adicionar qualquer atributo de objeto (por exemplo, nome de armazenamento) como um parâmetro para um webhook.  Por exemplo, você pode definir parâmetros para o nome do volume e o nome do armazenamento em uma descrição de webhook como: "Alta latência para volume: _%%relatedObject.volume.name%%_, Armazenamento: _%%relatedObject.storage.name%%_".
 
-Note que nesta seção, as substituições são _não_ executadas ao clicar no botão "testar Webhook"; o botão envia uma carga útil que mostra as substituições _%_, mas não as substitui por dados.
+Observe que nesta seção, as substituições _não_ são realizadas ao clicar no botão "Testar Webhook"; o botão envia uma carga útil que mostra as _%%_ substituições, mas não as substitui por dados.
 
 
 
 === Parâmetros e segredos personalizados
 
-Nesta seção, você pode adicionar quaisquer parâmetros personalizados e / ou segredos que desejar. Por razões de segurança, se um segredo é definido, apenas o criador do webhook pode modificar este canal do webhook. É somente leitura para os outros. Você pode usar segredos em URL/cabeçalhos como _%%<secret_name>%%_.
+Nesta seção, você pode adicionar quaisquer parâmetros personalizados e/ou segredos que desejar.  Por motivos de segurança, se um segredo for definido, somente o criador do webhook poderá modificar este canal do webhook.  É somente leitura para outros.  Você pode usar segredos em URL/Cabeçalhos como _%%<secret_name>%%_.
 
 
 
-=== Página de Lista de webhooks
+=== Página de lista de webhooks
 
-Na página da lista Webhooks, são exibidos os campos Nome, criado por, criado em, Status, seguro e último relatório.
+Na página da lista Webhooks, são exibidos os campos Nome, Criado por, Criado em, Status, Seguro e Último relatório.
 
 
 
-== Escolhendo a notificação do Webhook em um monitor
+== Escolhendo Notificação de Webhook em um Monitor
 
-Para escolher a notificação do webhook em um link:task_create_monitor.html["monitorar"], vá para *Alertas > Gerenciar monitores* e selecione o monitor desejado ou adicione um novo monitor. Na seção _Configurar notificações da equipe_, escolha _Webhook_ como o método de entrega. Selecione os níveis de alerta (crítico, Aviso, resolvido) e, em seguida, escolha o webhook desejado.
+Para escolher a notificação do webhook em umlink:task_create_monitor.html["monitor"] , vá para *Alertas > Gerenciar Monitores* e selecione o monitor desejado ou adicione um novo monitor.  Na seção _Configurar notificações da equipe_, escolha _Webhook_ como método de entrega.  Selecione os níveis de alerta (Crítico, Aviso, Resolvido) e escolha o webhook desejado.
 
-image:Webhook_Monitor_Notify.png["Notificação do monitor webhook"]
+image:Webhook_Monitor_Notify.png["Notificação do Monitor de Webhook"]
 
 
 
 == Exemplos de webhook:
 
-Webhooks link:task_webhook_example_slack.html["Folga"]para Webhooks para Webhooks link:task_webhook_example_pagerduty.html["PagerDuty"] link:task_webhook_example_teams.html["Equipas"] para link:task_webhook_example_discord.html["Discórdia"]
+Webhooks paralink:task_webhook_example_slack.html["Folga"] Webhooks paralink:task_webhook_example_pagerduty.html["PagerDuty"] Webhooks paralink:task_webhook_example_teams.html["Equipes"] Webhooks paralink:task_webhook_example_discord.html["Discórdia"]

@@ -4,44 +4,44 @@ permalink: task_cs_add_collector_ontap.html
 keywords: data collector, ONTAP, SVM 
 summary: Adicionando coletores de dados 
 ---
-= Configurando o Coletor de dados do NetApp ONTAP
+= Configurando o coletor de dados NetApp ONTAP
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Workload Security usa coletores de dados para coletar dados de acesso de arquivos e usuários de dispositivos. Os dados são fornecidos ao Workload Security para análise.
+O Workload Security usa coletores de dados para coletar dados de acesso de arquivos e usuários de dispositivos.  Os dados são fornecidos ao Workload Security para análise.
 
 .Antes de começar
 Você precisa das seguintes informações para configurar este coletor de dados:
 
 * Um agente deve ser configurado para coletar dados
-* O endereço IP do gerenciamento do SVM
+* O endereço IP de gerenciamento do SVM
 * Um nome de usuário para acessar o SVM
 * A senha para acessar o SVM
 
 
-.Passos para a configuração
-. Inicie sessão como Administrador ou proprietário de conta no ambiente de Segurança de carga de trabalho.
-. Clique em *Observability > Collectors >> Data Collectors*
+.Etapas para configuração
+. Efetue login como Administrador ou Proprietário da conta no seu ambiente de segurança de carga de trabalho.
+. Clique em *Observabilidade > Coletores > +Coletores de Dados*
 +
-O sistema exibe os coletores de dados disponíveis.
+O sistema exibe os Coletores de Dados disponíveis.
 
-. Clique em * Monitor* no bloco NetApp ONTAP.
+. Clique em *+Monitor* no bloco NetApp ONTAP .
 +
-O sistema exibe a página de configuração Adicionar coletor de dados: ONTAP SVM.
+O sistema exibe a página de configuração Adicionar coletor de dados: Ontap SVM.
 
-. Introduza um nome exclusivo para o coletor
-. Selecione o agente que coletará os dados
+. Insira um nome exclusivo para o coletor
+. Selecione o agente que irá coletar os dados
 . Insira o endereço IP de gerenciamento do SVM
-. Insira o nome de usuário para acessar o SVM
-. Insira a senha para acessar o SVM
-. Clique em * Adicionar Coletor*
+. Digite o nome de usuário para acessar o SVM
+. Digite a senha para acessar o SVM
+. Clique em *+Adicionar Coletor*
 
 
-.Depois de terminar
-* Clique em *Workload Security > Collectors* para verificar o status do coletor que você configurou.
+.Depois que você terminar
+* Clique em *Segurança de carga de trabalho > Coletores* para verificar o status do coletor que você configurou.
 +
-Normalmente, existe um atraso antes de o estado do coletor ser apresentado.
+Normalmente há um atraso antes que o status do coletor seja exibido.
 
 

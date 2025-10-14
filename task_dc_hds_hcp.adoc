@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_dc_hds_hcp.html 
 keywords: data collector, Hitachi HDS, HCP 
-summary: Configurar o coletor de dados do HDS. 
+summary: Configurando o coletor de dados HDS. 
 ---
 = Coletor de dados Hitachi HCP
 :hardbreaks:
@@ -10,34 +10,34 @@ summary: Configurar o coletor de dados do HDS.
 
 
 [role="lead"]
-Este coletor de dados suporta a Plataforma de conteúdo Hitachi (HCP) usando a API de Gerenciamento HCP.
+Este coletor de dados oferece suporte à Hitachi Content Platform (HCP) usando a API de gerenciamento do HCP.
 
 
-NOTE: A Hitachi Content Platform é mensurada a uma taxa bruta diferente de TB para Unidade gerenciada. Cada 40 TB de capacidade HCP não formatada é cobrada como 1 link:concept_subscribing_to_cloud_insights.html#pricing["Unidade gerenciada (MU)"].
+NOTE: A Hitachi Content Platform é medida a uma taxa de TB brutos diferente da taxa de unidade gerenciada.  Cada 40 TB de capacidade HCP não formatada é cobrado como 1link:concept_subscribing_to_cloud_insights.html#pricing["Unidade Gerenciada (UM)"] .
 
 
 
 == Terminologia
 
-A Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados Hitachi HCP. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados Hitachi HCP.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| Cluster HCP | Armazenamento 
+| Cluster de HCP | Armazenar 
 
 
-| Locatário | Pool de storage 
+| Inquilino | Pool de armazenamento 
 
 
-|  | Namespace 
+|  | Espaço de nomes 
 
 
 | Volume interno | Nó 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
@@ -46,7 +46,7 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 Você deve ter o seguinte para coletar dados de inventário:
 
 * Endereço IP do servidor HCP
-* Nome de usuário e senha somente leitura para o software HCP e Privileges peer
+* Nome de usuário e senha somente leitura para o software HCP e privilégios de pares
 
 
 
@@ -58,19 +58,19 @@ Você deve ter o seguinte para coletar dados de inventário:
 | Campo | Descrição 
 
 
-| Host HCP | Endereço IP ou nome de domínio totalmente qualificado do host HCP 
+| Anfitrião HCP | Endereço IP ou nome de domínio totalmente qualificado do host HCP 
 
 
-| Porta HCP | A predefinição é 9090 
+| Porto HCP | O padrão é 9090 
 
 
-| ID de utilizador HCP | Nome de usuário para o host HCP. 
+| ID do usuário do HCP | Nome de usuário para o host HCP. 
 
 
-| Palavra-passe HCP | Senha usada para o host HCP. 
+| Senha do HCP | Senha usada para o host HCP. 
 
 
-| Tipo de autenticação HCP | Escolha HCP_local ou ATIVE_DIRECTORY 
+| Tipo de autenticação HCP | Escolha HCP_LOCAL ou ACTIVE_DIRECTORY 
 |===
 
 
@@ -82,9 +82,9 @@ Você deve ter o seguinte para coletar dados de inventário:
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. A predefinição é 60. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário.  O padrão é 60. 
 
 
-| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. A predefinição é 900. 
+| Intervalo de pesquisa de desempenho (seg) | Intervalo entre pesquisas de desempenho.  O padrão é 900. 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

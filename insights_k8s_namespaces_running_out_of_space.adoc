@@ -2,39 +2,39 @@
 sidebar: sidebar 
 permalink: insights_k8s_namespaces_running_out_of_space.html 
 keywords: insight, pv, persistent volume, backend 
-summary: Os insights podem ajudar você a prever quando é provável que os espaços do Kubernetes fiquem cheios. 
+summary: Os insights podem ajudar você a prever quando os espaços do Kubernetes provavelmente ficarão cheios. 
 ---
-= Insights: Namespaces do Kubernetes sem espaço
+= Insights: Namespaces do Kubernetes estão ficando sem espaço
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Ficar sem espaço em seu inquilino nunca é uma boa situação. O Data Infrastructure Insights ajuda a prever o tempo que você fez antes dos volumes persistentes do Kubernetes ficarem cheios.
+Ficar sem espaço no seu inquilino nunca é uma boa situação.  O Data Infrastructure Insights ajuda você a prever o tempo que resta antes que os volumes persistentes do Kubernetes fiquem cheios.
 
-Os namespaces _Kubernetes em execução fora do espaço_ Insight oferecem uma visão das cargas de trabalho nos namespaces do Kubernetes que correm o risco de ficar sem espaço, com uma estimativa do número de dias restantes antes que cada volume persistente fique cheio.
+O _Kubernetes Namespaces Running Out of Space_ Insight fornece uma visão das cargas de trabalho em seus namespaces do Kubernetes que correm o risco de ficar sem espaço, com uma estimativa do número de dias restantes antes que cada volume persistente fique cheio.
 
-Pode visualizar este Insight navegando até *painéis > Insights*.
+Você pode visualizar esse Insight navegando até *Painéis > Insights*.
 
 image:K8sRunningOutOfSpaceWorkloadList.png["Lista de cargas de trabalho em namespaces K8s que correm o risco de ficar sem espaço"]
 
-Clique em uma carga de trabalho para abrir uma página de detalhes do Insight. Nesta página, você verá um gráfico mostrando as tendências de capacidade de carga de trabalho, bem como uma tabela mostrando o seguinte:
+Clique em uma carga de trabalho para abrir uma página de detalhes do Insight.  Nesta página, você verá um gráfico mostrando as tendências de capacidade de carga de trabalho, bem como uma tabela mostrando o seguinte:
 
 * Nome da carga de trabalho
 * Volume persistente afetado
-* Tempo previsto para cheio em dias
+* Tempo previsto para conclusão em dias
 * Capacidade de volume persistente
-* Recurso de armazenamento de backend afetado, com capacidade atual usada fora da capacidade total. Clicar neste link irá opoen a página de destino detalhada para o volume de back-end.
+* Recurso de armazenamento de backend afetado, com capacidade atual utilizada em relação à capacidade total.  Clicar neste link abrirá a página de destino detalhada do volume de backend.
 
 
 image:K8sRunningOutOfSpaceWorkloadTable.png["Tabela de carga de trabalho mostrando detalhes"]
 
 
 
-=== O que posso fazer se estou ficando sem espaço?
+=== O que posso fazer se estiver ficando sem espaço?
 
-Na página Insight, clique em * Mostrar recomendações* para ver possíveis soluções. A opção mais fácil quando ficar sem espaço é sempre adicionar mais capacidade, e o Data Infrastructure Insights mostra a capacidade ideal a ser adicionada para aumentar o tempo de espera para uma previsão de 60 dias. Outras recomendações também são mostradas.
+Na página Insight, clique em *+Mostrar recomendações* para ver possíveis soluções.  A opção mais fácil quando se fica sem espaço é sempre adicionar mais capacidade, e o Data Infrastructure Insights mostra a capacidade ideal para adicionar para aumentar o tempo de disponibilidade total para uma previsão de meta de 60 dias.  Outras recomendações também são mostradas.
 
-image:K8sRunningOutOfSpaceRecommendations.png["Capacidade a adicionar para retornar ao TTF de 60 dias"]
+image:K8sRunningOutOfSpaceRecommendations.png["Capacidade de adicionar retorno ao TTF de 60 dias"]
 
-É aqui também que você pode copiar um link conveniente para este Insight, para marcar a página ou para compartilhar facilmente com sua equipe.
+É aqui também que você pode copiar um link conveniente para este Insight, marcar a página como favorita ou compartilhar facilmente com sua equipe.

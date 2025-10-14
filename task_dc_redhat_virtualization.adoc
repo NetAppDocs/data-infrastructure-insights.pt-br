@@ -4,48 +4,48 @@ permalink: task_dc_redhat_virtualization.html
 keywords: data collector, Red Hat Virtualization 
 summary: Configurando o coletor de dados do Red Hat Virtualization. 
 ---
-= Coletor de dados Red Hat Virtualization
+= Coletor de dados de virtualização Red Hat
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Data Infrastructure Insights usa o coletor de dados Red Hat Virtualization para coletar dados de inventário de cargas de trabalho virtualizadas do Linux e do Microsoft Windows.
+O Data Infrastructure Insights usa o coletor de dados do Red Hat Virtualization para coletar dados de inventário de cargas de trabalho virtualizadas do Linux e do Microsoft Windows.
 
 
 
 == Terminologia
 
-Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| Disco | Disco virtual 
+| Disco | Disco Virtual 
 
 
-| Host | Host 
+| Hospedar | Hospedar 
 
 
-| Máquina virtual | Máquina virtual 
+| Máquina Virtual | Máquina Virtual 
 
 
 | Domínio de armazenamento | Armazenamento de dados 
 
 
-| Unidade lógica | LUN 
+| Unidade Lógica | LUN 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
 == Requisitos
 
 * Endereço IP do servidor RHEV na porta 443 via API REST
-* Nome de utilizador e palavra-passe só de leitura
-* RHEV versão mais recente 3,0
+* Nome de usuário e senha somente leitura
+* RHEV Versão 3.0+
 
 
 
@@ -60,10 +60,10 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Endereço IP do servidor RHEV | Endereço IP do sistema de armazenamento 
 
 
-| Nome de utilizador | Nome de usuário com admin Privileges 
+| Nome de usuário | Nome de usuário com privilégios de administrador 
 
 
-| Senha para a conta privilegiada do administrador | Palavra-passe 
+| Senha para a conta privilegiada de administrador | Senha 
 |===
 
 
@@ -74,7 +74,7 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Porta de comunicação HTTPS | Porta usada para comunicação HTTPS com o RHEV 
+| Porta de comunicação HTTPS | Porta usada para comunicação HTTPS com RHEV 
 
 
 | Intervalo de pesquisa de inventário (min) | O padrão é 20 minutos. 
@@ -83,4 +83,4 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 
 == Solução de problemas
 
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

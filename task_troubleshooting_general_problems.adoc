@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task_troubleshooting_general_problems.html 
-summary: Dicas de solução de problemas de Insights de infraestrutura de dados gerais. 
+summary: Dicas de solução de problemas do General Data Infrastructure Insights . 
 keywords: troubleshooting, problems, browser, login, log in, accessing, access to, Trident, qtree, quota 
 ---
-= Solução de problemas gerais do Data Infrastructure Insights
+= Solução de problemas gerais de Data Infrastructure Insights
 :hardbreaks:
 :allow-uri-read: 
 
@@ -12,35 +12,35 @@ keywords: troubleshooting, problems, browser, login, log in, accessing, access t
 [role="lead"]
 Aqui você encontrará sugestões para solução de problemas do Data Infrastructure Insights.
 
-Consulte também link:task_troubleshooting_linux_acquisition_unit_problems.html["Solução de problemas da Unidade de aquisição do Linux"] e link:task_troubleshooting_windows_acquisition_unit_problems.html["Solução de problemas da Unidade de aquisição do Windows"].
+Veja tambémlink:task_troubleshooting_linux_acquisition_unit_problems.html["Solução de problemas da unidade de aquisição do Linux"] elink:task_troubleshooting_windows_acquisition_unit_problems.html["Solução de problemas da unidade de aquisição do Windows"] .
 
 
 
 == Problemas de login
 
 |===
-| *Problema:* | *Tente isto:* 
+| *Problema:* | *Experimente isto:* 
 
 
-| O Data Infrastructure Insights faz logout automaticamente a cada 6 horas | Isso se deve a cookies de terceiros desativados no navegador. Os usuários podem configurar seu navegador para habilitar todos os cookies de 3rd partes, ou usar uma lista de exceções mais restrita para apenas habilitar aqueles para o Data Infrastructure Insights. Exemplo: Abra as configurações do seu navegador Selecione a opção "permitir todos os cookies". *OR* Selecione "Bloquear cookies de terceiros" e adicione exceções para _[*.]auth0.com_ e _[*.]NetApp.com_. O Microsoft Edge segue o mesmo formato para exceções que o Chrome. No Firefox, as exceções de cookies são designadas simplesmente como _auth0.com_ e _NetApp.com_. 
+| O Data Infrastructure Insights efetua logout automaticamente a cada 6 horas | Isso ocorre devido a cookies de terceiros desabilitados no navegador.  Os usuários podem configurar seus navegadores para habilitar todos os cookies de terceiros ou usar uma lista de exceções mais restrita para habilitar apenas aqueles para o Data Infrastructure Insights.  Exemplo: Abra as configurações do seu navegador Selecione a opção "Permitir todos os cookies".  *OU* Selecione "Bloquear cookies de terceiros" e adicione exceções para _[\*.]auth0.com_ e _[*.]netapp.com_.  O Microsoft Edge segue o mesmo formato de exceções do Chrome.  No Firefox, as exceções de cookies são designadas simplesmente como _auth0.com_ e _netapp.com_. 
 
 
-| Tenho uma conta do Console, mas não consigo fazer login. | Abra um ticket de https://mysupport.netapp.com/site/help[] .  Selecione a categoria console.netapp.com > Problemas de conta/login” ou console.netapp.com > Problemas de federação”.  Elas são específicas para problemas ou perguntas do Console.  Para todos os outros problemas de suporte técnico do Data Infrastructure Insights , entre em contatolink:concept_requesting_support.html["Suporte à NetApp"] . 
+| Tenho uma conta do Console, mas não consigo fazer login. | Abra um ticket de https://mysupport.netapp.com/site/help[] .  Selecione a categoria console.netapp.com > Problemas de conta/login” ou console.netapp.com > Problemas de federação”.  Elas são específicas para problemas ou perguntas do Console.  Para todos os outros problemas de suporte técnico do Data Infrastructure Insights , entre em contatolink:concept_requesting_support.html["Suporte NetApp"] . 
 
 
-| Fui convidado para o Data Infrastructure Insights, mas recebo uma mensagem "não autorizada". | Verifique se você se inscreveu em uma conta do Console ou se sua organização usa login SSO com o Console.  Verifique se o endereço de e-mail do seu perfil do Console corresponde ao endereço de e-mail mostrado no e-mail de boas-vindas do Data Infrastructure Insights .  Se o e-mail não corresponder, solicite um novo convite com o endereço de e-mail correto. 
+| Fui convidado para o Data Infrastructure Insights, mas recebo uma mensagem "não autorizado". | Verifique se você se inscreveu em uma conta do Console ou se sua organização usa login SSO com o Console.  Verifique se o endereço de e-mail do seu perfil do Console corresponde ao endereço de e-mail mostrado no e-mail de boas-vindas do Data Infrastructure Insights .  Se o e-mail não corresponder, solicite um novo convite com o endereço de e-mail correto. 
 
 
-| Saí do Console e fui desconectado automaticamente do Data Infrastructure Insights. | O logon único (SSO) em todos os serviços de nuvem da NetApp faz logout de todas as sessões do Insights de infraestrutura de dados. Se você tiver acesso a várias contas do Data Infrastructure Insights, fazer logout de qualquer uma das sessões ativas. Inicie sessão novamente para aceder à sua conta. 
+| Saí do Console e fui desconectado automaticamente do Data Infrastructure Insights. | O logon único (SSO) no NetApp Cloud Services desconecta todas as sessões do Data Infrastructure Insights .  Se você tiver acesso a várias contas do Data Infrastructure Insights , sair de qualquer uma delas desconectará todas as sessões ativas.  Efetue login novamente para acessar sua conta. 
 
 
-| Eu fui desconetado automaticamente após vários dias. | As contas do NetApp Cloud exigem reautenticação a cada poucos dias (a configuração atual do Console é de 7 dias).  Efetue login novamente para acessar sua conta. 
+| Fui desconectado automaticamente depois de vários dias. | As contas do NetApp Cloud exigem reautenticação a cada poucos dias (a configuração atual do Console é de 7 dias).  Efetue login novamente para acessar sua conta. 
 
 
-| Recebo uma mensagem de erro "já não está autorizado a iniciar sessão". | Entre em contato com o administrador da sua conta para verificar o acesso ao Data Infrastructure Insights.  Verifique se o endereço de e-mail do seu perfil do Console corresponde ao endereço de e-mail mostrado no e-mail de boas-vindas do Data Infrastructure Insights 
+| Recebo uma mensagem de erro “não estou mais autorizado a fazer login”. | Entre em contato com o administrador da sua conta para verificar o acesso ao Data Infrastructure Insights.  Verifique se o endereço de e-mail do seu perfil do Console corresponde ao endereço de e-mail mostrado no e-mail de boas-vindas do Data Infrastructure Insights 
 
 
-| Outros erros de login | Experimente o modo de navegação anônima no Chrome ou limpe o histórico do navegador, os cookies e o cache. Tente com um perfil de navegador diferente (ou seja, Chrome - adicionar pessoa). 
+| Outros erros de login | Experimente o modo de navegação anônima no Chrome ou limpe o histórico do navegador, os cookies e o cache.  Tente com um perfil de navegador diferente (por exemplo, Chrome - adicionar Pessoa). 
 |===
 
 
@@ -49,16 +49,16 @@ Consulte também link:task_troubleshooting_linux_acquisition_unit_problems.html[
 |===
 
 
-| *Pergunta:* | *Resposta:* 
+| *Pergunta:* | *Responder:* 
 
 
-| Minhas cotas duras do Qtree estão sendo exibidas corretamente em consultas, mas minhas cotas suaves estão sendo exibidas como a capacidade total do volume. Está correto? | Somente cotas rígidas -- definidas manualmente ou definidas através do Trident--serão exibidas como as cotas definidas; se nenhuma cota rígida for especificada, a capacidade do Qtree será a capacidade de volume interno. 
+| Minhas cotas rígidas do Qtree estão sendo exibidas corretamente nas consultas, mas minhas cotas flexíveis estão sendo exibidas como a capacidade total do volume.  Isso está correto? | Somente cotas rígidas — definidas manualmente ou pelo Trident— serão exibidas como cotas definidas; se nenhuma cota rígida for especificada, a capacidade do Qtree será a capacidade do volume interno. 
 
 
-| Eu tenho uma cota suave e uma cota rígida manualmente definida no mesmo Qtree, mas a capacidade total exibida é a cota rígida; isso está correto? | Sim, se for especificada uma cota rígida, essa será mostrada como a capacidade total. 
+| Tenho uma cota flexível e uma cota rígida definidas manualmente no mesmo Qtree, mas a capacidade total exibida é a cota rígida; isso está correto? | Sim, se uma cota fixa for especificada, ela será mostrada como capacidade total. 
 
 
-| Ao inserir um horário de programação de relatórios do Cognos, às vezes eu acabo com um "m" extra no horário de programação. Por exemplo, se eu inserir a hora como "02:15 PM", ele pode adicionar um caractere extra: "02:15 PMM" (ou PMM). Quando eu clico fora, ele muda para "2:15 AM". Posso salvar o relatório, mas quando reabro o relatório salvo, a hora do horário aparece como AM (ou seja, manhã), independentemente de eu ter inserido AM ou PM na hora do horário. | Volte a introduzir a hora da programação, tendo o cuidado de não introduzir os carateres "AM" ou "PM" completos; basta introduzir "A" para "AM ou "P" para "PM". Se não for apresentado o caráter extra, a hora de programação será definida corretamente. 
+| Ao inserir um horário de agendamento de relatório do Cognos, às vezes acabo com um "m" extra no horário de agendamento.  Por exemplo, se eu digitar o horário como "02:15 PM", ele poderá adicionar um caractere extra: "02:15 PMM" (ou PMm).  Quando clico fora, ele muda para "2h15".  Consigo salvar o relatório, mas quando o abro novamente, o horário agendado aparece como AM (ou seja, manhã), independentemente de eu ter inserido AM ou PM no horário agendado. | Digite novamente o horário agendado, tomando cuidado para não digitar os caracteres "AM" ou "PM" completos; basta digitar "A" para "AM" ou "P" para "PM".  Se o caractere extra não for exibido, o horário agendado será definido corretamente. 
 |===
 
 
@@ -66,10 +66,10 @@ Consulte também link:task_troubleshooting_linux_acquisition_unit_problems.html[
 
 Dicas adicionais de solução de problemas podem ser encontradas emlink:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs["Base de conhecimento da NetApp"] (é necessário fazer login no suporte).
 
-Informações adicionais de suporte podem ser encontradas na página Insights de infraestrutura de dadoslink:concept_requesting_support.html["Suporte"].
+Informações adicionais de suporte podem ser encontradas no Data Infrastructure Insightslink:concept_requesting_support.html["Apoiar"] página.
 
 Se você tiver uma assinatura ativa do Data Infrastructure Insights, poderá usar estas opções de suporte:
 
 link:https://www.netapp.com/us/contact-us/support.aspx["Telefone"] link:https://mysupport.netapp.com/site/cases/mine/create?serialNumber=95001014387268156333["Ticket de suporte"]
 
-Para obter mais informações, consulte https://docs.netapp.com/us-en/cloudinsights/concept_requesting_support.html["Documentação de suporte do Data Infrastructure Insights"] .
+Para mais informações, consulte o https://docs.netapp.com/us-en/cloudinsights/concept_requesting_support.html["Documentação de suporte do Data Infrastructure Insights"] .

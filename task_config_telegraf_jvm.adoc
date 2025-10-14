@@ -4,7 +4,7 @@ permalink: task_config_telegraf_jvm.html
 keywords: telegraf, installation, install, jvm 
 summary: Configuração do coletor de dados JVM 
 ---
-= Coletor de dados JVM
+= Coletor de dados de JVM
 :hardbreaks:
 :allow-uri-read: 
 
@@ -16,26 +16,26 @@ O Data Infrastructure Insights usa esse coletor de dados para coletar métricas 
 
 == Instalação
 
-. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha JVM.
+. Em *Observabilidade > Coletores*, clique em *+Coletor de Dados*.  Escolha JVM.
 +
-Selecione o sistema operacional ou a plataforma na qual o agente Telegraf está instalado.
+Selecione o sistema operacional ou plataforma na qual o agente Telegraf está instalado.
 
-. Se você ainda não instalou um Agente para coleção ou deseja instalar um Agente para um sistema operacional ou plataforma diferente, clique em _Mostrar instruções_ para expandir as link:task_config_telegraf_agent.html["Instalação do agente"] instruções.
-. Selecione a chave de acesso do agente para uso com este coletor de dados. Você pode adicionar uma nova chave de acesso ao agente clicando no botão * chave de acesso ao agente*. Prática recomendada: Use uma chave de acesso de agente diferente somente quando você quiser agrupar coletores de dados, por exemplo, por SO/Plataforma.
-. Siga as etapas de configuração para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+. Se você ainda não instalou um Agente para coleta ou deseja instalar um Agente para um Sistema Operacional ou Plataforma diferente, clique em _Mostrar Instruções_ para expandir olink:task_config_telegraf_agent.html["Instalação do agente"] instruções.
+. Selecione a Chave de Acesso do Agente para uso com este coletor de dados.  Você pode adicionar uma nova Chave de Acesso do Agente clicando no botão *+ Chave de Acesso do Agente*.  Prática recomendada: use uma chave de acesso de agente diferente somente quando quiser agrupar coletores de dados, por exemplo, por sistema operacional/plataforma.
+. Siga as etapas de configuração para configurar o coletor de dados.  As instruções variam dependendo do tipo de sistema operacional ou plataforma que você está usando para coletar dados.
 
 
 image:JVMDCConfigLinux.png["Configuração JVM"]
 
 
 
-== Configuração
+== Configurar
 
-As informações podem ser encontradas em link:https://docs.oracle.com/javase/specs/jvms/se12/html/index.html["Documentação do JVM"].
+Informações podem ser encontradas emlink:https://docs.oracle.com/javase/specs/jvms/se12/html/index.html["Documentação do JVM"] .
 
 
 
-== Objetos e contadores
+== Objetos e Contadores
 
 Os seguintes objetos e seus contadores são coletados:
 
@@ -44,10 +44,10 @@ Os seguintes objetos e seus contadores são coletados:
 | Objeto: | Identificadores: | Atributos: | Pontos de dados: 
 
 
-| JVM | JVM do namespace | Arquitetura OS Nome do SO versão Runtime especificação Runtime especificação Runtime do fornecedor Runtime especificação versão tempo de execução VM Nome tempo de execução VM Nome tempo de execução VM Vendor Runtime versão VM Nome nó IP | Classe carregada Classe carregada Total Class Unloaded Memory Heap Consolidated Memory Heap Init Memory Heap used Max Memory Heap used Memory Non Heap Consolidated Memory Non Heap Init Memory Non Heap Max Memory Non Heap used Memory Objects Pending G1 Sequence os Processors Available G1 G1 G1 
+| JVM | Espaço para nome JVM | Arquitetura do SO Nome do SO Versão do SO Especificação de tempo de execução Especificação de tempo de execução Fornecedor Especificação de tempo de execução Versão Tempo de atividade Nome da VM de tempo de execução Fornecedor da VM de tempo de execução Versão da VM de tempo de execução Nome do nó IP do nó | Classe carregada Classe carregada Total de classe descarregada Heap de memória comprometido Heap de memória inicial Heap de memória usado Máximo de memória Heap usado Memória não comprometida Memória não iniciada Não heap Memória máxima Não heap usada Objetos de memória Finalização pendente Processadores do SO disponíveis Tamanho da memória virtual comprometida do SO Tamanho da memória física livre do SO Tamanho do espaço de swap livre do SO Contagem máxima de descritores de arquivo do SO Contagem de descritores de arquivo abertos do SO Carga da CPU do processador do SO Tempo de CPU do processador do SO Carga da CPU do sistema SO Carga média do sistema SO Tamanho total da memória física do SO Tamanho total do espaço de swap do SO Contagem do daemon do thread Contagem de pico do thread Contagem de threads Contagem total de threads iniciadas Contagem da coleta de cópias do coletor de lixo Tempo de coleta de cópias do coletor de lixo Contagem da coleta de marcação e varredura do coletor de lixo Tempo de coleta de marcação e varredura do coletor de lixo Contagem da coleta de geração antiga do coletor de lixo G1 Tempo de coleta da geração antiga do coletor de lixo G1 Contagem da coleta da geração jovem do coletor de lixo Coletor de lixo G1 Tempo de coleta da geração jovem simultâneo do coletor de lixo Contagem da coleta de marcação e varredura do coletor de lixo simultâneo Marcar-varrer Coleta Tempo Coletor de Lixo Coleta Paralela Contagem Coletor de Lixo Coleta Paralela Tempo Coletor de Lixo Coleta Paralela Coleta Marcar-varrer Coleta Contagem Coletor de Lixo Coleta Paralela Coleta Marcar-varrer Coleta Tempo Coletor de Lixo Coleta Paralela Contagem Coletor de Lixo Coleta Paralela Tempo 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página.

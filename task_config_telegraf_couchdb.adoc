@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task_config_telegraf_couchdb.html 
 keywords: telegraf, installation, install, couchdb 
-summary: Configuração do coletor de dados CouchDB 
+summary: Configuração do coletor de dados do CouchDB 
 ---
-= CouchDB Data Collector
+= Coletor de dados CouchDB
 :hardbreaks:
 :allow-uri-read: 
 
@@ -16,26 +16,26 @@ O Data Infrastructure Insights usa esse coletor de dados para coletar métricas 
 
 == Instalação
 
-. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha CouchDB.
+. Em *Observabilidade > Coletores*, clique em *+Coletor de Dados*.  Escolha CouchDB.
 +
-Selecione o sistema operacional ou a plataforma na qual o agente Telegraf está instalado.
+Selecione o sistema operacional ou plataforma na qual o agente Telegraf está instalado.
 
-. Se você ainda não instalou um Agente para coleção ou deseja instalar um Agente para um sistema operacional ou plataforma diferente, clique em _Mostrar instruções_ para expandir as link:task_config_telegraf_agent.html["Instalação do agente"] instruções.
-. Selecione a chave de acesso do agente para uso com este coletor de dados. Você pode adicionar uma nova chave de acesso ao agente clicando no botão * chave de acesso ao agente*. Prática recomendada: Use uma chave de acesso de agente diferente somente quando você quiser agrupar coletores de dados, por exemplo, por SO/Plataforma.
-. Siga as etapas de configuração para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+. Se você ainda não instalou um Agente para coleta ou deseja instalar um Agente para um Sistema Operacional ou Plataforma diferente, clique em _Mostrar Instruções_ para expandir olink:task_config_telegraf_agent.html["Instalação do agente"] instruções.
+. Selecione a Chave de Acesso do Agente para uso com este coletor de dados.  Você pode adicionar uma nova Chave de Acesso do Agente clicando no botão *+ Chave de Acesso do Agente*.  Prática recomendada: use uma chave de acesso de agente diferente somente quando quiser agrupar coletores de dados, por exemplo, por sistema operacional/plataforma.
+. Siga as etapas de configuração para configurar o coletor de dados.  As instruções variam dependendo do tipo de sistema operacional ou plataforma que você está usando para coletar dados.
 
 
 image:CouchDBDCConfigLinux.png["Configuração do CouchDB"]
 
 
 
-== Configuração
+== Configurar
 
-As informações podem ser encontradas no link:http://docs.couchdb.org/en/stable/["Documentação do CouchDB"].
+Informações podem ser encontradas emlink:http://docs.couchdb.org/en/stable/["Documentação do CouchDB"] .
 
 
 
-== Objetos e contadores
+== Objetos e Contadores
 
 Os seguintes objetos e seus contadores são coletados:
 
@@ -44,10 +44,10 @@ Os seguintes objetos e seus contadores são coletados:
 | Objeto: | Identificadores: | Atributos: | Pontos de dados: 
 
 
-| CouchDB | Servidor de namespace | IP do nó de nome do nó | Autenticação Cache Hits Autenticação Cache Miss Banco de dados lê Banco de dados escreve bancos de dados abrir arquivos do sistema operacional tempo máximo pedido min tempo de solicitação httpd métodos Copiar httpd Request métodos Excluir httpd Request métodos obter httpd Request métodos Head httpd Request métodos Post httpd Request métodos put Status Codes 200 405 500 Status Codes 304 403 409 Status Codes 400 404 412 Status Codes 401 Status 202 Status Codes 301 Status 201 Status Codes 
+| CouchDB | Servidor de namespace | Nome do nó IP do nó | Acertos do cache de autenticação Acertos do cache de autenticação Leituras do banco de dados Gravações do banco de dados Bancos de dados abertos Arquivos abertos do sistema operacional Tempo máximo de solicitação Tempo mínimo de solicitação Métodos de solicitação HTTP Copiar métodos de solicitação HTTP Excluir métodos de solicitação HTTP Obter métodos de solicitação HTTP Cabeçalho Métodos de solicitação HTTP Postar métodos de solicitação HTTP Colocar códigos de status 200 Códigos de status 201 Códigos de status 202 Códigos de status 301 Códigos de status 304 Códigos de status 400 Códigos de status 401 Códigos de status 403 Códigos de status 404 Códigos de status 405 Códigos de status 409 Códigos de status 412 Códigos de status 500 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página.

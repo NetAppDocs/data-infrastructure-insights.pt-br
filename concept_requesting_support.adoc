@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_requesting_support.html 
-summary: Você pode visualizar artigos da base de conhecimento, conetar-se com a comunidade NetApp, ver vídeos ou abrir um ticket para solicitar suporte. 
+summary: Você pode visualizar artigos da base de conhecimento, conectar-se com a comunidade NetApp , assistir a vídeos ou abrir um tíquete para solicitar suporte. 
 keywords: support, knowledgebase, documentation, community, videos, help, contact 
 ---
-= Solicitação de suporte
+= Solicitando Suporte
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -20,117 +20,117 @@ image:SupportPageExample.png["Página de suporte, largura=600"]
 
 
 
-== Ativação do direito de suporte
+== Ativando o direito ao suporte
 
 O Data Infrastructure Insights oferece autoatendimento e suporte por e-mail quando executado no modo de teste.  Depois de assinar o serviço, é altamente recomendável que você ative o direito ao suporte.  A ativação do direito de suporte permite que você acesse o suporte técnico por meio do sistema de tickets da web e por telefone.  O modo de suporte padrão é autoatendimento até que o registro seja concluído.  Ver<<obtaining-support-information,detalhes>> abaixo.
 
-Durante o processo de assinatura inicial, sua instância do Data Infrastructure Insights gerará um número de série NetApp de 20 dígitos começando com "950". Este número de série do NetApp representa a assinatura do Insights de infraestrutura de dados associada à sua conta. Você deve Registrar o número de série do NetApp para ativar o direito de suporte. Oferecemos duas opções para Registro de suporte:
+Durante o processo de assinatura inicial, sua instância do Data Infrastructure Insights gerará um número de série NetApp de 20 dígitos começando com "950".  Este número de série do NetApp representa a assinatura do Data Infrastructure Insights associada à sua conta.  Você deve registrar o número de série do NetApp para ativar o direito ao suporte.  Oferecemos duas opções para registro de suporte:
 
-. Usuário com conta SSO pré-existente do site de suporte da NetApp (NSS) (por exemplo, cliente atual da NetApp)
-. Novo cliente da NetApp sem conta SSO pré-existente do site de suporte da NetApp (NSS)
-
-
+. Usuário com conta SSO pré-existente do NetApp Support Site (NSS) (por exemplo, cliente atual da NetApp )
+. Novo cliente da NetApp sem conta SSO do NetApp Support Site (NSS) preexistente
 
 
-=== Opção 1: Etapas para um usuário com uma conta SSO pré-existente do site de suporte da NetApp (NSS)
+
+
+=== Opção 1: Etapas para um usuário com uma conta SSO do NetApp Support Site (NSS) preexistente
 
 .Passos
-. Navegue até o site de Registro do NetApp https://register.netapp.com[]
-. Selecione "Eu já estou registrado como Cliente NetApp" e escolha _Insights de infraestrutura de dados_ como linha de Produtos. Selecione seu provedor de faturamento (NetApp ou AWS) e forneça seu número de série e seu nome de assinatura do NetApp ou ID do cliente da AWS consultando o menu "Ajuda > suporte" na interface de usuário do Insights de infraestrutura de dados:
+. Navegue até o site de registro da NetApp https://register.netapp.com[]
+. Selecione “Já estou registrado como cliente da NetApp ” e escolha _Data Infrastructure Insights_ como a Linha de produtos.  Selecione seu provedor de cobrança (NetApp ou AWS) e forneça seu número de série e seu nome de assinatura NetApp ou ID do cliente AWS consultando o menu “Ajuda > Suporte” na interface do usuário do Data Infrastructure Insights :
 +
-image:SupportPage_SN_Section-NA.png["SN_Screen"]
+image:SupportPage_SN_Section-NA.png["Tela SN"]
 
-. Preencha o formulário de Registro de cliente existente e clique em *Enviar*.
+. Preencha o formulário de registro de cliente existente e clique em *Enviar*.
 +
 image:ExistingCustomerRegExample.png["formulário de cliente existente"]
 
-. Se não ocorrerem erros, o usuário será direcionado para uma página "Registro enviado com sucesso". O endereço de e-mail associado ao nome de usuário SSO do NSS usado para Registro receberá um e-mail dentro de alguns minutos informando "seu produto agora está qualificado para suporte".
-. Este é um Registro único para o número de série do Data Infrastructure Insights NetApp.
+. Se não ocorrerem erros, o usuário será direcionado para a página “Registro enviado com sucesso”.  O endereço de e-mail associado ao nome de usuário do NSS SSO usado para registro receberá um e-mail em alguns minutos informando "seu produto agora está qualificado para suporte".
+. Este é um registro único para o número de série do Data Infrastructure Insights NetApp .
 
 
 
 
-=== Opção 2: Etapas para um novo cliente da NetApp sem conta SSO pré-existente do site de suporte da NetApp (NSS)
+=== Opção 2: Etapas para um novo cliente da NetApp sem uma conta SSO do NetApp Support Site (NSS) preexistente
 
 .Passos
-. Navegue até o site de Registro do NetApp https://register.netapp.com[]
-. Selecione "Eu não sou um Cliente NetApp registrado" e preencha as informações necessárias no formulário de exemplo abaixo:
+. Navegue até o site de registro da NetApp https://register.netapp.com[]
+. Selecione “Não sou um cliente registrado da NetApp ” e preencha as informações necessárias no formulário de exemplo abaixo:
 
 
-image:NewCustomerRegExample.png["novo formulário de cliente"]
+image:NewCustomerRegExample.png["formulário para novos clientes"]
 
-. Selecione _Data Infrastructure Insights_ como linha de Produtos. Selecione seu provedor de faturamento (NetApp ou AWS) e forneça seu número de série e seu nome de assinatura do NetApp ou ID do cliente da AWS consultando o menu "Ajuda > suporte" na interface de usuário do Insights de infraestrutura de dados:
+. Selecione _Data Infrastructure Insights_ como a Linha de Produtos.  Selecione seu provedor de cobrança (NetApp ou AWS) e forneça seu número de série e seu nome de assinatura NetApp ou ID do cliente AWS consultando o menu “Ajuda > Suporte” na interface do usuário do Data Infrastructure Insights :
 +
-image:SupportPage_SN_Section-NA.png["SN_Screen"]
+image:SupportPage_SN_Section-NA.png["Tela SN"]
 
-. Se não ocorrerem erros, o usuário será direcionado para uma página "Registro enviado com sucesso". O endereço de e-mail associado ao nome de usuário SSO do NSS usado para Registro receberá um e-mail dentro de algumas horas informando "seu produto agora está qualificado para suporte".
+. Se não ocorrerem erros, o usuário será direcionado para a página “Registro enviado com sucesso”.  O endereço de e-mail associado ao nome de usuário do NSS SSO usado para registro receberá um e-mail dentro de algumas horas informando que "seu produto agora está qualificado para suporte".
 . Como novo cliente da NetApp , você também precisará criar uma conta de usuário no NetApp Support Site (NSS) para registros futuros e acesso ao portal de suporte para suporte técnico e emissão de tickets pela web.  Este link está localizado em https://mysupport.netapp.com/eservice/public/now.do[] .  Você pode fornecer seu número de série do Data Infrastructure Insights recém-registrado para agilizar o processo.
-. Este é um Registro único para o número de série do Data Infrastructure Insights NetApp.
+. Este é um registro único para o número de série do Data Infrastructure Insights NetApp .
 
 
 
 
-== Obtenção de informações de suporte
+== Obtendo informações de suporte
 
-A NetApp fornece suporte ao Data Infrastructure Insights de diversas maneiras.  Há amplas opções gratuitas de autossuporte disponíveis 24 horas por dia, 7 dias por semana, como artigos da base de conhecimento (KB) ou a comunidade NetApp .  Para usuários assinantes do Data Infrastructure Insights, o suporte técnico está disponível por telefone ou por meio de tickets online.  Uma conta SSO do NetApp Support Site (NSS) é necessária para o tíquete da Web e para o gerenciamento de casos.
+A NetApp fornece suporte ao Data Infrastructure Insights de diversas maneiras. Há amplas opções gratuitas de autossuporte disponíveis 24 horas por dia, 7 dias por semana, como artigos da base de conhecimento (KB) ou a comunidade NetApp . Para usuários assinantes do Data Infrastructure Insights, o suporte técnico está disponível por telefone ou por meio de tickets online. Uma conta SSO do NetApp Support Site (NSS) é necessária para o tíquete da Web e para o gerenciamento de casos.
 
 
 
-=== Suporte self-service:
+=== Suporte de autoatendimento:
 
-Estas opções de suporte estão disponíveis no modo de avaliação e estão disponíveis gratuitamente 24x7:
+Essas opções de suporte estão disponíveis no modo de teste e são gratuitas 24 horas por dia, 7 dias por semana:
 
 * * https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs [Base de conhecimento]*
 +
-Clicar nos links nesta seção leva você à base de conhecimento do NetApp, onde você pode pesquisar por artigos relevantes, instruções e muito mais.
+Clicar nos links desta seção leva você à Base de conhecimento da NetApp , onde você pode pesquisar artigos relevantes, instruções e muito mais.
 
-* *link:https://docs.netapp.com/us-en/cloudinsights/["Documentação"]*
+* *link:https://docs.netapp.com/us-en/cloudinsights/["Documentação"] *
 +
 Clicar no link Documentação leva você a este centro de documentação.
 
-* *link:https://community.netapp.com/t5/Cloud-Insights/bd-p/CloudInsights["Comunidade"]*
+* *link:https://community.netapp.com/t5/Cloud-Insights/bd-p/CloudInsights["Comunidade"] *
 +
-Clicar no link da comunidade leva você à comunidade de insights da infraestrutura de dados da NetApp, onde você pode se conetar com colegas e especialistas.
+Clicar no link da comunidade leva você à comunidade NetApp Data Infrastructure Insights , onde você pode se conectar com colegas e especialistas.
 
 
 
-Há também um link para link:mailto:ng-cloudinsights-customerfeedback@netapp.com["*Feedback*"]nos ajudar a melhorar os insights da infraestrutura de dados.
+Há também um link para fornecerlink:mailto:ng-cloudinsights-customerfeedback@netapp.com["*Opinião*"] para nos ajudar a melhorar o Data Infrastructure Insights.
 
 
 
-=== Suporte por assinatura
+=== Suporte de assinatura
 
-Além das opções de suporte autônomo acima, se você tiver uma assinatura do Insights de infraestrutura de dados ou suporte pago para produtos ou serviços monitorados da NetApp, poderá trabalhar com um engenheiro de suporte da NetApp para resolver seu problema.
+Além das opções de autossuporte acima, se você tiver uma assinatura do Data Infrastructure Insights ou suporte pago para produtos ou serviços monitorados da NetApp , poderá trabalhar com um engenheiro de suporte da NetApp para resolver seu problema.
 
 
-NOTE: Você deve se Registrar para <<activating-support-entitlement,ative o suporte>>obter os produtos de nuvem da NetApp. Para se Registrar, vá para NetApp'link:https://register.netapp.com["Registro de suporte de serviços de dados em nuvem"]s .
+NOTE: Você deve se registrar para<<activating-support-entitlement,ativar suporte>> para produtos NetApp Cloud.  Para se registrar, acesse o site da NetApplink:https://register.netapp.com["Registro de Suporte de Serviços de Dados em Nuvem"] .
 
-É altamente recomendável que você marque a caixa para permitir que um engenheiro de suporte da NetApp acesse seu locatário do Insights de infraestrutura de dados durante sua sessão de suporte. Isso permitirá que o engenheiro solucione o problema e o ajudará a resolvê-lo rapidamente. Quando o problema for resolvido ou a sessão de suporte tiver terminado, pode desmarcar a caixa.
+É altamente recomendável que você marque a caixa para permitir que um engenheiro de suporte da NetApp acesse seu locatário do Data Infrastructure Insights durante sua sessão de suporte.  Isso permitirá que o engenheiro solucione o problema e ajude você a resolvê-lo rapidamente.  Quando seu problema for resolvido ou sua sessão de suporte terminar, você pode desmarcar a caixa.
 
-Você pode solicitar suporte por qualquer um dos seguintes métodos. Você precisa ter uma assinatura ativa do Data Infrastructure Insights para usar essas opções de suporte:
+Você pode solicitar suporte por qualquer um dos seguintes métodos.  Você precisa ter uma assinatura ativa do Data Infrastructure Insights para usar estas opções de suporte:
 
 * link:https://www.netapp.com/us/contact-us/support.aspx["*Telefone*"]
-* link:https://mysupport.netapp.com/portal?_nfpb=true&_st=initialPage=true&_pageLabel=submitcase["*Ticket de suporte*"]
+* link:https://mysupport.netapp.com/portal?_nfpb=true&_st=initialPage=true&_pageLabel=submitcase["*Ticket de Suporte*"]
 
 
 Você também pode solicitar suporte de vendas clicando no link *Entrar em contato com vendas*.
 
-O número de série do Data Infrastructure Insights fica visível no serviço no menu *Ajuda > suporte*. Se você tiver problemas ao acessar o serviço e tiver registrado um número de série no NetApp anteriormente, também poderá visualizar sua lista de números de série do Insights de infraestrutura de dados no site de suporte da NetApp da seguinte forma:
+O número de série do Data Infrastructure Insights fica visível no serviço no menu *Ajuda > Suporte*.  Se você estiver enfrentando problemas para acessar o serviço e tiver registrado um número de série com a NetApp anteriormente, também poderá visualizar sua lista de números de série do Data Infrastructure Insights no site de suporte da NetApp da seguinte forma:
 
-* Faça login no mysupport.NetApp.com
-* Na guia Produtos > Meus produtos, use a família de produtos "SaaS Data Infrastructure Insights" para localizar todos os seus números de série registrados:
-
-
-image:Support_View_SN.png["Veja o SN do suporte"]
+* Faça login em mysupport.netapp.com
+* Na guia de menu Produtos > Meus produtos, use a família de produtos “SaaS Data Infrastructure Insights” para localizar todos os seus números de série registrados:
 
 
+image:Support_View_SN.png["Ver Suporte SN"]
 
-== Matriz de suporte do Data Infrastructure Insights Data Collector
 
-Você pode exibir ou baixar informações e detalhes sobre coletores de dados suportados no link:reference_data_collector_support_matrix.html["*Data Infrastructure Insights Data Collector Support Matrix*, função "externo""].
+
+== Matriz de suporte do coletor de dados do Data Infrastructure Insights
+
+Você pode visualizar ou baixar informações e detalhes sobre os coletores de dados suportados nolink:reference_data_collector_support_matrix.html["* Matriz de suporte do coletor de dados do Data Infrastructure Insights *, role="external""] .
 
 
 
 === Centro de Aprendizagem
 
-Independentemente da sua subscrição, *Ajuda > suporte* tem ligações para várias ofertas de cursos da Universidade da NetApp para o ajudar a tirar o máximo partido das informações sobre a infraestrutura de dados. Veja-os!
+Independentemente da sua assinatura, *Ajuda > Suporte* oferece links para diversos cursos da NetApp University para ajudar você a aproveitar ao máximo o Data Infrastructure Insights.  Confira!

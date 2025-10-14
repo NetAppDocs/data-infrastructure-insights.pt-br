@@ -4,56 +4,56 @@ permalink: task_dc_brocade_fc_switch.html
 keywords: data collector, Brocade, FC switch, 
 summary: Configurando o coletor de dados dos switches Brocade FC. 
 ---
-= Coletor de dados do switch Brocade FC
+= Coletor de dados do Brocade FC Switch
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Insights de infraestrutura de dados usa a fonte de dados do switch FC Brocade (SSH) para descobrir o inventário de dispositivos de switch Brocade ou rebranded que executam o firmware do sistema operacional fatorado (FOS) 4,2 e posterior. Os dispositivos nos modos de switch FC e Gateway de acesso são suportados.
+O Data Infrastructure Insights usa a fonte de dados Brocade FC Switch (SSH) para descobrir o inventário de dispositivos Brocade ou switches renomeados que executam o firmware Factored Operating System (FOS) 4.2 e posterior.  Dispositivos nos modos FC switch e Access Gateway são suportados.
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do switch Brocade FC. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do Brocade FC Switch.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| Interrutor | Interrutor 
+| Trocar | Trocar 
 
 
 | Porta | Porta 
 
 
-| Malha virtual, malha física | Malha 
+| Tecido Virtual, Tecido Físico | Tecido 
 
 
 | Zona | Zona 
 
 
-| Comutador lógico | Comutador lógico 
+| Interruptor lógico | Interruptor lógico 
 
 
-| Volume virtual | Volume 
+| Volume Virtual | Volume 
 
 
 | Zona LSAN | Zona IVR 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
 == Requisitos
 
-* A Unidade de aquisição de informações de infraestrutura de dados (AU) iniciará conexões com a porta TCP 22 nos switches Brocade para coletar dados de inventário. A AU também iniciará conexões com a porta UDP 161 para coleta de dados de desempenho.
-* Deve haver conectividade IP para todos os switches na malha. Se você selecionar a caixa de seleção descobrir todos os switches na malha, o Data Infrastructure Insights identificará todos os switches da malha. No entanto, ela precisará de conectividade IP com esses switches adicionais para detectá-los.
-* Globalmente, a mesma conta é necessária em todos os switches da malha. Você pode usar PuTTY (emulador de terminal de código aberto) para confirmar o acesso.
-* As portas 161 e 162 devem estar abertas para todos os switches na malha para polling de desempenho SNMP.
-* Cadeia de Comunidade somente leitura SNMP
+* A Unidade de Aquisição de Data Infrastructure Insights (AU) iniciará conexões com a Porta TCP 22 em switches Brocade para coletar dados de inventário.  A UA também iniciará conexões com a porta UDP 161 para coleta de dados de desempenho.
+* Deve haver conectividade IP para todos os switches na malha.  Se você marcar a caixa de seleção Descobrir todos os switches na malha, o Data Infrastructure Insights identificará todos os switches na malha; no entanto, ele precisará de conectividade IP com esses switches adicionais para descobri-los.
+* A mesma conta é necessária globalmente em todos os switches da malha.  Você pode usar o PuTTY (emulador de terminal de código aberto) para confirmar o acesso.
+* As portas 161 e 162 devem estar abertas para todos os switches na malha para pesquisa de desempenho SNMP.
+* String de comunidade SNMP somente leitura
 
 
 
@@ -65,25 +65,25 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| IP do switch | Endereço IP ou nome de domínio totalmente qualificado do servidor EFC 
+| Mudar IP | Endereço IP ou nome de domínio totalmente qualificado do servidor EFC 
 
 
-| Nome de utilizador | Nome de utilizador do comutador 
+| Nome de usuário | Nome de usuário para o switch 
 
 
-| Palavra-passe | Palavra-passe para o interrutor 
+| Senha | Senha para o switch 
 
 
 | SNMP | Versão SNMP 
 
 
-| SNMP Community String | String de comunidade SNMP somente leitura usada para acessar o switch 
+| String de comunidade SNMP | String de comunidade SNMP somente leitura usada para acessar o switch 
 
 
-| Nome de utilizador SNMP | Nome de utilizador SNMP 
+| Nome de usuário SNMP | Nome de usuário SNMP 
 
 
-| Palavra-passe SNMP | Palavra-passe SNMP 
+| Senha SNMP | Senha SNMP 
 |===
 
 
@@ -94,49 +94,49 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Nome da malha | Nome do tecido a ser informado pelo coletor de dados. Deixe em branco para relatar o nome da tela como WWN. 
+| Nome do tecido | Nome do tecido a ser relatado pelo coletor de dados.  Deixe em branco para informar o nome do tecido como WWN. 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. A predefinição é 15. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário.  O padrão é 15. 
 
 
-| Dispositivos excluídos | Lista separada por vírgulas de IDs de dispositivo a excluir da sondagem 
+| Dispositivos Excluídos | Lista separada por vírgulas de IDs de dispositivos a serem excluídos da pesquisa 
 
 
-| Domínios Admin ativos | Selecione se estiver usando domínios Admin 
+| Domínios de administração ativos | Selecione se estiver usando Domínios de Administração 
 
 
-| Recuperar dados MPR | Selecione para adquirir dados de roteamento do roteador multiprotocolo. 
+| Recuperar dados MPR | Selecione para adquirir dados de roteamento do seu roteador multiprotocolo. 
 
 
-| Ativar trapping | Selecione para ativar a aquisição ao receber uma trap SNMP do dispositivo. Se você selecionar Ativar trapping, você também deve ativar o SNMP. 
+| Habilitar Trapping | Selecione para habilitar a aquisição ao receber uma interceptação SNMP do dispositivo.  Se você selecionar habilitar interceptação, também deverá ativar o SNMP. 
 
 
-| Tempo mínimo entre armadilhas (seg) | Tempo mínimo entre tentativas de aquisição desencadeadas por armadilhas. A predefinição é 10. 
+| Tempo mínimo entre armadilhas (seg) | Tempo mínimo entre tentativas de aquisição acionadas por armadilhas.  O padrão é 10. 
 
 
-| Descubra todos os switches na malha | Selecione para descobrir todos os switches na malha 
+| Descubra todos os interruptores do tecido | Selecione para descobrir todos os switches no fabric 
 
 
-| Escolha favorecendo HBA vs. Aliases de zona | Escolha se prefere HBA ou aliases de zona 
+| Escolha entre HBA e aliases de zona | Escolha se deseja favorecer HBA ou aliases de zona 
 
 
-| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. A predefinição é 300. 
+| Intervalo de pesquisa de desempenho (seg) | Intervalo entre pesquisas de desempenho.  O padrão é 300. 
 
 
-| Protocolo Auth SNMP | Protocolo de autenticação SNMP (apenas SNMP v3) 
+| Protocolo de autenticação SNMP | Protocolo de autenticação SNMP (somente SNMP v3) 
 
 
-| Palavra-passe de privacidade SNMP | Palavra-passe de privacidade SNMP (apenas SNMP v3) 
+| Senha de privacidade SNMP | Senha de privacidade SNMP (somente SNMP v3) 
 
 
-| Geometrias SNMP | Número de tentativas de tentativa SNMP 
+| Tentativas SNMP | Número de tentativas de repetição SNMP 
 |===
 
 
 == Solução de problemas
 
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
@@ -144,22 +144,22 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
-| A aquisição de inventário da fonte de dados Brocade falha com o erro: <date> <time> ERROR [com.onaro.SANscreen.acquisition.framework.datasource.BaseDataSource] erro 2 de 2: <datasource name> [erro interno] - não é possível gerar o modelo para <IP> de dispositivo. Erro ao detetar prompt ([Nome do dispositivo <name>]: Não é possível gerar o modelo para o <IP> do dispositivo. Aviso de deteção de erro) | O problema pode ser causado quando o switch Brocade leva muito tempo para retornar com um prompt, excedendo o tempo limite padrão de 5 segundos. Nas configurações de Configuração Avançada do coletor de dados em Insights de infraestrutura de dados, tente aumentar o tempo limite de espera da faixa _SSH (seg)_ para um valor mais alto. 
+| A aquisição de inventário da fonte de dados Brocade falha com o erro: <data> <hora> ERRO [com.onaro.sanscreen.acquisition.framework.datasource.BaseDataSource] Erro 2 de 2: <nome da fonte de dados> [Erro interno] - Não é possível gerar o modelo para o dispositivo <IP>.  Erro ao detectar prompt ([Nome do dispositivo <nome>]: Não é possível gerar o modelo para o dispositivo <IP>.  Erro ao detectar prompt) | O problema pode ser causado quando o switch Brocade demora muito para retornar com um prompt, excedendo o tempo limite padrão de 5 segundos.  Nas configurações avançadas do coletor de dados no Data Infrastructure Insights, tente aumentar o _Tempo limite de espera do banner SSH (seg)_ para um valor mais alto. 
 
 
-| Erro: "Dados Infrastructure Insights receberam função de chassi inválida" | Verifique se o usuário configurado nesta fonte de dados recebeu a permissão de função de chassi. 
+| Erro: “O Data Infrastructure Insights recebeu uma função de chassi inválida” | Verifique se o usuário configurado nesta fonte de dados recebeu a permissão de função de chassi. 
 
 
-| Erro: "Endereço IP do chassis incorreto" | Como regra geral, o DII NÃO suporta Tradução de Endereço de Rede ou Tradução de Endereço de Porta entre a Unidade de Aquisição e os dispositivos. O DII pode estar detectando que o nome do host/endereço IP na configuração do coletor NÃO corresponde a nenhum dos endereços que o dispositivo acredita possuir. 
+| Erro: "Endereço IP do chassi incompatível" | O DII NÃO oferece suporte à tradução de endereços de rede ou tradução de endereços de porta entre a unidade de aquisição e os dispositivos como regra geral.  O DII pode estar detectando que o nome do host/endereço IP na configuração do coletor NÃO corresponde a nenhum dos endereços que o dispositivo acredita ter. 
 
 
-| Receba uma mensagem informando que mais de 1 nó está conetado à porta do Gateway de acesso | Verifique se o dispositivo NPV está funcionando corretamente e se todas as WWNs conetadas são esperadas. Não adquira diretamente o dispositivo NPV. Em vez disso, a aquisição do switch de malha central coletará os dados do dispositivo NPV. 
+| Receber uma mensagem de que mais de 1 nó está conectado à porta do Access Gateway | Verifique se o dispositivo NPV está operando corretamente e se todos os WWNs conectados são esperados.  Não adquira o dispositivo NPV diretamente.  Em vez disso, a aquisição do switch de tecido central coletará os dados do dispositivo NPV. 
 
 
-| Erro: ....Máximo de sessões remotas para login... | O FOS possui limites diferentes para o número de sessões SSH simultâneas suportadas por função de usuário. A sessão SSH da DII para este dispositivo está sendo rejeitada no login por violar esses limites. Isso pode ser um sinal de que coletores duplicados estão descobrindo o mesmo ativo, o que deve ser evitado. 
+| Erro: ....Máximo de sessões remotas para login... | O FOS tem limites diferentes para o número de sessões SSH simultâneas suportadas por função de usuário.  A sessão SSH do DII para este dispositivo está sendo rejeitada no login por violar esses limites.  Isso pode ser um sinal de que você tem coletores duplicados descobrindo o mesmo ativo, o que deve ser evitado 
 |===
 
 
@@ -167,24 +167,24 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
-| A coleção de desempenho falha com "tempo limite durante o envio de solicitação SNMP". | Dependendo das variáveis de consulta e da configuração do switch, algumas consultas podem exceder o tempo limite padrão. link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["Saiba mais"] . 
+| A coleta de desempenho falha com "Tempo limite esgotado durante o envio da solicitação SNMP". | Dependendo das variáveis de consulta e da configuração do switch, algumas consultas podem exceder o tempo limite padrão. link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["Saber mais"] . 
 
 
-| A coleta de desempenho falha com ...Duplicatas de linha encontradas na tabela SNMP... | O DII detectou respostas SNMP incorretas. Você provavelmente está executando o FOS 8.2.3e. Atualize para a versão 8.2.3e2 ou superior. 
+| A coleta de desempenho falha com ...Duplicatas de linha encontradas na tabela SNMP... | O DII detectou respostas SNMP ruins.  Provavelmente você está executando o FOS 8.2.3e.  Atualize para 8.2.3e2 ou superior. 
 
 
-| As coletas de desempenho falham com ...Nome de usuário desconhecido... | Você configurou seu coletor DII com um valor "Nome de Usuário SNMP" que não está alocado em um dos slots de usuário SNMPv3. A simples criação de um usuário no Brocade FOS NÃO o habilita necessariamente como um usuário SNMPv3 — você deve atribuí-lo a um dos slots de usuário v3. 
+| As coletas de desempenho falham com ...Nome de usuário desconhecido... | Você configurou seu coletor DII com um valor "Nome de usuário SNMP" que não está alocado em um dos slots de usuário SNMPv3.  Simplesmente criar um usuário no Brocade FOS NÃO o habilita necessariamente como um usuário SNMPv3 - você deve colocá-lo em um dos slots de usuário v3. 
 
 
 | As coletas de desempenho falham com ...Nível de segurança sem suporte... | Você configurou seu coletor DII para usar SNMPv3, mas com criptografia (também conhecida como privacidade) e/ou configurações de autorização que não estão habilitadas no dispositivo em questão. 
 
 
-| A coleta de desempenho falha com ...A senha de privacidade vazia é permitida apenas para o Protocolo de Privacidade NENHUM | Você configurou seu coletor DII para usar SNMPv3, com uma criptografia também conhecida como protocolo de privacidade (AES, etc.), mas você tem um valor "SNMP Privacy Password" vazio, então o DII não pode negociar fluxos de dados SNMPv3 criptografados com este dispositivo 
+| A coleta de desempenho falha com ...A senha de privacidade vazia é permitida somente para o Protocolo de Privacidade NENHUM | Você configurou seu coletor DII para usar SNMPv3, com uma criptografia também conhecida como protocolo de privacidade (AES, etc.), mas você tem um valor "SNMP Privacy Password" vazio, então o DII não pode negociar fluxos de dados SNMPv3 criptografados com este dispositivo 
 
 
-| A coleta de desempenho falha com .....VF:nn, erro: Sem acesso... | Você configurou seu coletor DII para usar SNMPv3 em um dispositivo com vários Fabrics Virtuais habilitados, mas o usuário SNMPv3 NÃO possui direitos para a VF NN. O DII não oferece suporte à descoberta parcial de um ativo físico. Você deve sempre conceder acesso ao DII a todos os 128 VFs possíveis de forma proativa, pois o DII sempre tentará recuperar dados de desempenho para qualquer VF existente em um determinado dispositivo físico. 
+| A coleta de desempenho falha com .....VF:nn, erro: Sem acesso... | Você configurou seu coletor DII para usar SNMPv3 em um dispositivo com vários Virtual Fabrics habilitados, mas o usuário SNMPv3 NÃO tem direitos para VF NN.  O DII não oferece suporte à descoberta parcial de um ativo físico - você deve sempre conceder acesso ao DII a todos os 128 VFs possíveis de forma proativa, pois o DII sempre tentará recuperar dados de desempenho para qualquer VF existente em um determinado dispositivo físico. 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

@@ -4,92 +4,92 @@ permalink: infrastructure_change_analytics.html
 keywords: changes, management, analysis, infra, infrastructure 
 summary: O Data Infrastructure Insights rastreia mudanças na infraestrutura para facilitar a análise e a solução de problemas. 
 ---
-= Análise de mudança de infraestrutura
+= Análise de Mudanças de Infraestrutura
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-A análise de mudança de infraestrutura fornece uma visão geral das mudanças recentes na infraestrutura (armazenamento, switch, etc.) no seu locatário. Com o Change Analysis, você pode acompanhar as alterações de configuração e analisar os problemas esperados e inesperados.
+A Análise de Mudanças de Infraestrutura fornece uma visão completa das mudanças recentes na infraestrutura (armazenamento, switch, etc.) do seu locatário.  Com a Análise de Mudanças, você pode rastrear alterações de configuração e detalhar problemas esperados e inesperados.
 
 
 
-== Como a análise de mudança de infraestrutura ajuda?
+== Como a Análise de Mudanças de Infraestrutura ajuda?
 
-Em qualquer ambiente, mudanças nos seus recursos podem acontecer devido a alterações mal configuradas, perda de energia, etc. a análise de alterações ajuda fornecendo um único painel para visualizar e correlacionar a integridade dos seus recursos com interrupções ou alterações planejadas. As alterações são calculadas com cada enquete de inventário (seguindo a primeira enquete em um novo coletor).
+Em qualquer ambiente, alterações em seus recursos podem ocorrer devido a alterações mal configuradas, perda de energia, etc. A Análise de Mudanças ajuda fornecendo um único painel para visualizar e correlacionar a integridade de seus recursos com interrupções ou alterações planejadas.  As alterações são calculadas a cada pesquisa de inventário (após a primeira pesquisa em um novo coletor).
 
-Para analisar as alterações de infraestrutura, navegue até *observabilidade > análise de alterações*. São listados alertas e alterações de configuração para o intervalo de tempo atual. As linhas de alerta mostram o status de alerta atual (ativo ou resolvido).
+Para analisar mudanças na infraestrutura, navegue até *Observabilidade > Análise de mudanças*.  Alertas e alterações de configuração para o intervalo de tempo atual são listados.  As linhas de alerta mostram o status atual do alerta (ativo ou resolvido).
 
-Você também pode navegar para uma Landing page para obter um recurso. Se tiverem ocorrido alterações a esse código fonte ou recursos relacionados, estas serão apresentadas na secção Vista de especialistas da página. Aumente o zoom para investigar alterações individuais ou deixe a vista ampla para ver todas as alterações dentro do intervalo de tempo selecionado. Passar o Mouse sobre uma mudança lhe dará um resumo da mudança. Ao clicar nessa alteração, a visão do especialista será focada no momento dessa alteração.
+Você também pode navegar até uma página de destino de um recurso.  Se ocorrerem alterações nesse recurso ou em recursos relacionados, elas serão mostradas na seção Desempenho da página.  Aumente o zoom para investigar alterações individuais ou deixe a visualização ampla para ver todas as alterações dentro do intervalo de tempo selecionado.  Passar o mouse sobre uma alteração exibirá um resumo dela.  Clicar nessa alteração focará o desempenho no momento da alteração.
 
-image:change_analysis_on_a_landing_page.png["Alterar análise em uma Landing page"]
+image:change_analysis_on_a_landing_page.png["Análise de mudanças em uma landing page"]
 
-A seleção de um item na lista abrirá um painel de deslizamento, fornecendo mais detalhes sobre o alerta ou alteração.
+Selecionar um item na lista abrirá um painel deslizante com mais detalhes sobre o alerta ou alteração.
 
 
 
 == Filtragem
 
-Assim como em todos os recursos do Cloud Insights, filtrar a lista de alterações é intuitivo: Na parte superior da página, você pode filtrar para tipos de ativos específicos (_dispoled on:type_) e/ou filtrar apenas para ativos com nomes específicos, se desejado (_dispoled on:name_), ou adicionar seus próprios filtros selecionando o botão.
+Assim como acontece com todos os recursos do Cloud Insights, a filtragem da lista de alterações é intuitiva: na parte superior da página, você pode filtrar por tipos de ativos específicos (_Triggered On:type_) e/ou filtrar apenas por ativos com nomes específicos, se desejar (_Triggered On:name_), ou adicionar seus próprios filtros selecionando o botão {+].
 
-image:infraChange_filter_dropdown.png["Lista suspensa filtragem de mudança de infraestrutura"]
+image:infraChange_filter_dropdown.png["Menu suspenso de filtragem de alterações de infraestrutura"]
 
-Você também pode ir diretamente para alertas de teclas ou alterações na seção de status abaixo das configurações de filtro, incluindo os três principais recursos atuais com mais alertas.
+Você também pode ir diretamente para os principais Alertas ou Alterações na seção de status abaixo das configurações de filtro, incluindo os três principais recursos atuais com mais alertas.
 
 image:Change_Analysis_filters_and_status.png["status e links rápidos para alertas e alterações"]
 
 
 
-== Quais objetos são analisados para mudanças?
+== Quais objetos são analisados para verificar alterações?
 
-A tabela a seguir lista os objetos e atributos incluídos na análise de mudança de infraestrutura.
+A tabela a seguir lista os objetos e atributos incluídos na análise de mudanças de infraestrutura.
 
 |===
 
 
-| Tipo Objeto | Atributos 
+| Tipo de objeto | Atributos 
 
 
-| Disco | DiskSize.Total islocalização do tipo de velocidade do grupo de discos virtuais SerialNumber status da função do fornecedor modelo storage.name storagePools.name nome isEncriptado 
+| Disco | diskSize.total isVirtual diskGroup velocidade tipo localização serialNumber função status fornecedor modelo storage.name storagePools.name nome isEncrypted 
 
 
-| Armazenamento | Família ip isative microcodeVersion model name protocols SerialNumber vendor 
+| Armazenar | família ip isActive microcódigoVersão modelo nome protocolos serialNumber fornecedor 
 
 
-| StorageNode | Nome storage.name nodeVersion model SerialNumber numberOfProcessors State partner.name cache memory managementIpAddresses parentSerialNumber SiteName 
+| Nó de armazenamento | nome storage.name nodeVersion modelo serialNumber numberOfProcessors estado partner.name cache memória managementIpAddresses parentSerialNumber siteName 
 
 
-| StoragePool | Tipo de nome isAutoCategorização éredundância virtual vendorTier usesFlashPools storage.vendor storage.ip storage.model storage.family storage.name storageNodes.name Capacity.Total (Dynamic attribute) isCompactionSavingEnabled Enabled objectStoreName objectStoreProviderType objectStoreSizeLimit objectStoreLimit objectStoreTieringFullnessThresThresThresThresThresThresThreshold objectStoreS3Name 
+| Pool de armazenamento | nome tipo isAutoTiering isVirtual redundância vendorTier usaFlashPools storage.vendor storage.ip storage.model storage.family storage.name storageNodes.name capacity.total (atributo dinâmico) isCompactionSavingsEnabled isEncrypted objectStoreName objectStoreProviderType objectStoreSizeLimit objectStoreTieringFullnessThreshold objectStoreS3Name objectStoreServer 
 
 
-| Qtree | Digite securityStyle isOplockEnabled shares.name storage.name internalVolume.name storageVirtualMachine.name simpleName statusNome do texto 
+| Qtree | tipo securityStyle isOplocksEnabled shares.name storage.name internalVolume.name storageVirtualMachine.name simpleName statusText name 
 
 
-| StorageVirtualMachine | Nome storage.name tipo de estado ipSpace protocolos internalVolumeLimit 
+| Máquina Virtual de Armazenamento | nome armazenamento.nome estado tipo ipSpace protocolos internalVolumeLimit 
 
 
-| Volume | Nome simpleName label type storage.name storage.vendor storage.ip storage.model storage.family isAutoCategorização isThinProvisMainframe isMeta isReplicaSource isReplicaTarget isSnapshot isVirtual internalVolume.name internalvolume.virtualStorage storageNodes.name storageNodes.partner.name storagePools.name storageVirtualMachine.name storageGroups isEncripted isPresented IOPS EnquosLimqosLimitqosLimitMBPS Policy 
+| Volume | nome simpleName rótulo tipo storage.name storage.vendor storage.ip storage.model storage.family isAutoTiering isThinProvisioned diskGroup isMainframe isMeta isReplicaSource isReplicaTarget isSnapshot isVirtual internalVolume.name internalVolume.virtualStorage storageNodes.name storageNodes.partner.name storagePools.name storageVirtualMachine.name storageGroups isEncrypted isCompressionEnabled qosBurstIOPS qosLimitIOPS qosLimitMBPS qosMinIOPS qosPolicy qosLimitRaw 
 
 
-| Internalvolume | FlashPoolEligibility name simpleName spaceGuarantee status type virtualStorage replicaSources.name storageNodes.name storageNodes.partner.name storage.name storage.vendor storage.ip storage.model storage.family storageVirtualMachine.name storagePool.name capacity.isThinProvisPolicy qosLimitRaw qosLimitIOPS qosLimitMBPS isLimitMBPS isEncripted adaptiveQosPolicy junctionPath objectTieringMinimumCoolingDays 
+| Volume interno | flashPoolEligibility nome simpleName espaçoGarantia status tipo virtualStorage replicaSources.name storageNodes.name storageNodes.partner.name storage.name storage.vendor storage.ip storage.model storage.family storageVirtualMachine.name storagePool.name capacity.isThinProvisioned qosPolicy qosLimitRaw qosLimitIOPS qosLimitMBPS isEncrypted adaptiveQosPolicy junctionPath objectStoreTieringPolicy tieringMinimumCoolingDays 
 
 
-| VirtualMachine | Nome dnsname IP os processadores de memória guestState powerState host.name host.clusterName host.ip host.os dataStore.name instanceType publicIps securityGroups virtualCenterIp 
+| Máquina Virtual | nome dnsName ip os memória processadores guestState powerState host.name host.clusterName host.ip host.os dataStore.name instanceType publicIps securityGroups virtualCenterIp 
 
 
-| Armazenamento de dados | Nome virtualCenterIp tipo 
+| Armazenamento de dados | nome virtualCenterIp tipo 
 
 
-| Host | Nome modelo IP isActive os fabricante cpuCount memory isHypervisor clusterName virtualCenterIp 
+| Hospedar | nome modelo ip isActive os fabricante cpuCount memória isHypervisor clusterName virtualCenterIp 
 
 
-| vmdk(VirtualMachineDisk) | Tipo de nome dataStore.name isRdm virtualMachine.host.name virtualMachine.name isSnapshot 
+| vmdk(Disco de Máquina Virtual) | nome tipo dataStore.name isRdm virtualMachine.host.name virtualMachine.name isSnapshot 
 
 
-| Porta | Nome isActive wwn tipo portIndex velocidade da lâmina gbicType connectedPorts.device.name connectedPorts.device.type connectedPorts.name connectedPorts.nodeWwn connectedPorts.wwn controlador device.name device.type fabrics.name Fabrics.vsanId nodeWwn descrição 
+| Porta | nome éActive wwn tipo portIndex velocidade da lâmina gbicType connectedPorts.device.name connectedPorts.device.type connectedPorts.name connectedPorts.nodeWwn connectedPorts.wwn controlador device.name device.type fabrics.name fabrics.vsanId nodeWwn descrição 
 |===
-"Análise de mudança" rastreia alertas para os seguintes casos:
+“Análise de Mudanças” rastreia alertas para os seguintes casos:
 
-* Alertas de monitores de log nos tipos de log de _logs.VMware.events_ e _logs.NetApp.ems_.
-* Alertas de monitores de métricas nos tipos de objeto acima; eles devem ser selecionados no campo _Group by_ para que a análise de mudança os rastreie.
+* Alertas de monitores de log nos tipos de log _logs.vmware.events_ e _logs.netapp.ems_.
+* Alertas de monitores de métricas nos tipos de objetos acima; eles devem ser selecionados no campo _Agrupar por_ para que a Análise de Mudanças os rastreie.
 

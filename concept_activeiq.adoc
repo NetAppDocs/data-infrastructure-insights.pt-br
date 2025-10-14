@@ -2,49 +2,49 @@
 sidebar: sidebar 
 permalink: concept_activeiq.html 
 keywords: Active IQ, risks, svm, AIQ, risk, ADigital Advisor 
-summary: 'Os insights de infraestrutura de dados coletam dados de risco do consultor digital da NetApp Active IQ (também conhecido como consultor digital)' 
+summary: 'O Data Infrastructure Insights coleta dados de risco do NetApp Active IQ Digital Advisor (também conhecido como Digital Advisor)' 
 ---
-= Consultor digital da Active IQ
+= Digital Advisor Active IQ
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
 
 
 [role="lead"]
-O NetApp link:https://docs.netapp.com/us-en/active-iq/["Consultor digital da Active IQ"](também conhecido como consultor digital) fornece uma série de visualizações, análises e outros serviços relacionados ao suporte aos clientes da NetApp para seus sistemas de hardware / software. Os dados relatados pelo Digital Advisor podem melhorar a solução de problemas do sistema e também fornecer informações sobre otimização e análise preditiva relacionadas aos seus dispositivos.
+NetApplink:https://docs.netapp.com/us-en/active-iq/["Digital Advisor Active IQ"] (também conhecido como Digital Advisor) fornece uma série de visualizações, análises e outros serviços relacionados ao suporte aos clientes da NetApp para seus sistemas de hardware/software.  Os dados relatados pelo Digital Advisor podem melhorar a solução de problemas do sistema e também fornecer insights sobre otimização e análise preditiva relacionadas aos seus dispositivos.
 
-O Insights de infraestrutura de dados coleta os *riscos* para qualquer sistema de storage NetApp Clustered Data ONTAP que é monitorado e reportado pelo consultor digital. Os riscos relatados para os sistemas de storage são coletados automaticamente pelo Data Infrastructure Insights como parte de sua coleta de dados desses dispositivos. Você deve adicionar o coletor de dados apropriado ao Data Infrastructure Insights para coletar informações de risco do Digital Advisor.
+O Data Infrastructure Insights coleta os *Riscos* para qualquer sistema de armazenamento NetApp Clustered Data ONTAP monitorado e relatado pelo Digital Advisor.  Os riscos relatados para os sistemas de armazenamento são coletados automaticamente pelo Data Infrastructure Insights como parte da coleta de dados desses dispositivos.  Você deve adicionar o coletor de dados apropriado ao Data Infrastructure Insights para coletar informações de risco do Digital Advisor .
 
-Os insights de infraestrutura de dados não mostrarão dados de risco para sistemas ONTAP que não sejam monitorados e relatados pelo consultor digital.
+O Data Infrastructure Insights não mostrará dados de risco para sistemas ONTAP que não sejam monitorados e relatados pelo Digital Advisor.
 
-Os riscos relatados são mostrados em Data Infrastructure Insights nas páginas de destino de ativos _storage_ e _storage node_, na tabela "riscos". A tabela mostra Detalhes do risco, Categoria de risco e impacto potencial do risco e também fornece um link para a página do Consultor Digital resumindo todos os riscos para o nó de armazenamento (logon da conta de suporte da NetApp necessário).
+Os riscos relatados são mostrados no Data Infrastructure Insights nas páginas de destino dos ativos _storage_ e _storage node_, na tabela "Riscos".  A tabela mostra detalhes do risco, categoria do risco e impacto potencial do risco, e também fornece um link para a página do Digital Advisor resumindo todos os riscos para o nó de armazenamento (é necessário fazer login na conta de suporte da NetApp ).
 
-image:AIQ_Risks_Table_Example.png["Tabela de riscos do consultor digital"]
+image:AIQ_Risks_Table_Example.png["Tabela de Riscos do Digital Advisor"]
 
-Uma contagem de riscos relatados também é mostrada no widget Summary da página de destino, com um link para a página apropriada do Digital Advisor. Em uma Landing page _storage_, a contagem é uma soma de riscos de todos os nós de storage subjacentes.
+Uma contagem de riscos relatados também é mostrada no widget Resumo da página de destino, com um link para a página apropriada do Digital Advisor .  Em uma landing page de _armazenamento_, a contagem é uma soma de riscos de todos os nós de armazenamento subjacentes.
 
-image:AIQ_Summary_Example.png["Resumo da Página de armazenamento"]
-
-
-
-== Abrindo a página Digital Advisor
-
-Ao clicar no link para uma página do Digital Advisor, se você não estiver conetado atualmente à sua conta do Digital Advisor, execute as etapas a seguir para exibir a página do Digital Advisor para o nó de armazenamento.
-
-. Na tabela de Resumo de Insights de infraestrutura de dados ou riscos, clique no link "Digital Advisor".
-. Inicie sessão na sua conta de suporte da NetApp. Você é direcionado diretamente para a página do nó de storage no Digital Advisor.
+image:AIQ_Summary_Example.png["Resumo da página de armazenamento"]
 
 
 
+== Abrindo a página do Digital Advisor
 
-== Buscando riscos
+Ao clicar no link para uma página do Digital Advisor , se você não estiver conectado à sua conta do Digital Advisor , execute as seguintes etapas para visualizar a página do Digital Advisor para o nó de armazenamento.
 
-No Data Infrastructure Insights, você pode adicionar a coluna *Monitoring.count* a uma consulta de nó de armazenamento ou armazenamento. Se o resultado retornado incluir sistemas de armazenamento monitorados pelo Digital Advisor, a coluna Monitoring.count exibirá o número de riscos para o sistema de armazenamento ou nó.
+. No widget Resumo do Data Infrastructure Insights ou na tabela Riscos, clique no link "Digital Advisor".
+. Sign in na sua conta de suporte da NetApp .  Você é levado diretamente para a página do nó de armazenamento no Digital Advisor.
 
 
 
-== Dashboards
 
-Você pode criar widgets (por exemplo, gráfico de pizza, widget de tabela, barra, coluna, gráfico de dispersão e widgets de valor único) para visualizar riscos de objetos para nós de armazenamento e armazenamento para sistemas Data ONTAP agrupados NetApp monitorados pelo consultor digital. Os "riscos do objeto" podem ser selecionados como uma coluna ou métrica nestes widgets onde Storage ou Storage Node é o objeto de foco.
+== Consultando Riscos
 
-image:ObjectRiskWidgets.png["Riscos de objetos em Widgets"]
+No Data Infrastructure Insights, você pode adicionar a coluna *monitoring.count* a uma consulta de armazenamento ou nó de armazenamento.  Se o resultado retornado incluir Digital Advisor- Sistemas de armazenamento monitorados, a coluna monitoring.count exibirá o número de riscos para o sistema de armazenamento ou nó.
+
+
+
+== Painéis
+
+Você pode criar widgets (por exemplo, gráfico de pizza, widget de tabela, barra, coluna, gráfico de dispersão e widgets de valor único) para visualizar riscos de objetos para armazenamento e nós de armazenamento para sistemas NetApp Clustered Data ONTAP monitorados pelo Digital Advisor.  "Riscos de objeto" pode ser selecionado como uma coluna ou métrica nesses widgets onde Armazenamento ou Nó de armazenamento é o objeto de foco.
+
+image:ObjectRiskWidgets.png["Riscos de objetos em widgets"]

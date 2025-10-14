@@ -2,42 +2,42 @@
 sidebar: sidebar 
 permalink: task_dc_emc_vnx_block.html 
 keywords: data collector, EMC, clariion, VNX block 
-summary: 'Configurar o armazenamento de bloco VNX DA Dell EMC (anteriormente CLARiiON).' 
+summary: 'Configurando o DELL EMC VNX Block Storage (antigo CLARiiON).' 
 ---
-= Coletor de dados Dell EMC VNX Block Storage (Navicli)
+= Coletor de dados Dell EMC VNX Block Storage (NaviCLI)
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Data Infrastructure Insights usa o coletor de dados Dell EMC VNX Block Storage (NaviSec) (anteriormente CLARiiON) para adquirir dados de inventário e desempenho.
+O Data Infrastructure Insights usa o coletor de dados Dell EMC VNX Block Storage (NaviSec) (antigo CLARiiON) para adquirir dados de inventário e desempenho.
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados EMC VNX Block Storage. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do EMC VNX Block Storage.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
 | Disco | Disco 
 
 
-| Armazenamento | Armazenamento 
+| Armazenar | Armazenar 
 
 
-| Processador de armazenamento | Nó de storage 
+| Processador de armazenamento | Nó de armazenamento 
 
 
-| Este pool, RAID Group | Pool de storage 
+| Este Pool, Grupo RAID | Pool de armazenamento 
 
 
 | LUN | Volume 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para esta fonte de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos desta fonte de dados.
 
 
 
@@ -45,20 +45,20 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 
 Os seguintes requisitos devem ser atendidos para coletar dados:
 
-* Um endereço IP de cada processador de armazenamento de bloco VNX
-* Nome de usuário e senha do Navisphere somente leitura para os storages de armazenamento de bloco VNX
+* Um endereço IP de cada processador de armazenamento em bloco VNX
+* Nome de usuário e senha do Navisphere somente leitura para os arrays de armazenamento em bloco do VNX
 * O NaviSecCli deve ser instalado no Data Infrastructure Insights AU
-* Validação de acesso: Execute o NaviSecCLI a partir do Data Infrastructure Insights AU para cada array usando o nome de usuário e a senha.
-* Requisitos do porto: 80, 443
-* A versão NaviSecCLI deve corresponder com o código FLARE mais recente em sua matriz
-* Para obter desempenho, o registo de estatísticas tem de estar ativado.
+* Validação de acesso: execute o NaviSecCLI do Data Infrastructure Insights AU para cada matriz usando o nome de usuário e a senha.
+* Requisitos da porta: 80.443
+* A versão do NaviSecCLI deve corresponder ao código FLARE mais recente em seu array
+* Para melhor desempenho, o registro de estatísticas deve estar habilitado.
 
 
 
 
-== Sintaxe de interface de linha de comando Navisphere
+== Sintaxe da interface de linha de comando do NaviSphere
 
-naviseccli.exe -h <IP address> -user <user> -password <password> -scope,use 0 for global scope> -port [use 443 by default> comando
+naviseccli.exe -h <endereço IP> -user <usuário> -password <senha> -scope <escopo, use 0 para escopo global> -port <use 443 por padrão> comando
 
 
 
@@ -69,13 +69,13 @@ naviseccli.exe -h <IP address> -user <user> -password <password> -scope,use 0 fo
 | Campo | Descrição 
 
 
-| Endereço IP de armazenamento de bloco VNX | Endereço IP ou nome de domínio totalmente qualificado do armazenamento de blocos VNX 
+| Endereço IP do armazenamento em bloco VNX | Endereço IP ou nome de domínio totalmente qualificado do armazenamento em bloco VNX 
 
 
-| Nome de utilizador | Nome utilizado para iniciar sessão no dispositivo de armazenamento de bloco VNX. 
+| Nome de usuário | Nome usado para efetuar login no dispositivo de armazenamento em bloco VNX. 
 
 
-| Palavra-passe | Palavra-passe utilizada para iniciar sessão no dispositivo de armazenamento de bloco VNX. 
+| Senha | Senha usada para efetuar login no dispositivo de armazenamento em bloco VNX. 
 
 
 | Caminho CLI para naviseccli.exe | Caminho completo para a pasta que contém o executável _naviseccli.exe_ 
@@ -89,19 +89,19 @@ naviseccli.exe -h <IP address> -user <user> -password <password> -scope,use 0 fo
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é de 40 minutos. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário.  O padrão é 40 minutos. 
 
 
-| Âmbito de aplicação | O escopo seguro do cliente. O padrão é Global. 
+| Escopo | O escopo do cliente seguro.  O padrão é Global. 
 
 
-| Intervalo de enquete de desempenho (seg) | Intervalo entre sondagens de desempenho. O padrão é 300 segundos. 
+| Intervalo de pesquisa de desempenho (seg) | Intervalo entre pesquisas de desempenho. O padrão é 300 segundos. 
 |===
 
 
 == Solução de problemas
 
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
@@ -109,26 +109,26 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2a, 2a"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
  a| 
 Erro:
 
-* O agente não está em execução
+* Agente não está em execução
 * Falha ao encontrar naviseccli
 * Falha ao executar qualquer comando
 
  a| 
-* Confirme se o Navisphere CLI está instalado na Unidade de aquisição do Cloud Insight
-* Você não selecionou a opção "usar cliente seguro" no assistente de configuração do coletor de dados e não tem uma versão não segura do Naviphere CLI instalada.
-* Confirme se o diretório de instalação do Navisphere CLI está correto na configuração do coletor de dados
-* Confirme se o IP do armazenamento de blocos VNX está correto na configuração do coletor de dados:
-* Na unidade de aquisição do Data Infrastructure Insights:
+* Confirme se o NaviSphere CLI está instalado na Unidade de Aquisição do Cloud Insight
+* Você não selecionou a opção "Usar cliente seguro" no assistente de configuração do coletor de dados e não tem uma versão não segura do Naviphere CLI instalada.
+* Confirme se o diretório de instalação do NaviSphere CLI está correto na configuração do coletor de dados
+* Confirme se o IP do armazenamento em bloco do VNX está correto na configuração do coletor de dados:
+* Da Unidade de Aquisição de Data Infrastructure Insights :
 +
-** Abra um cmd.
+** Abra um CMD.
 ** Altere o diretório para o diretório de instalação configurado
-** Tente fazer uma conexão com o dispositivo de armazenamento de bloco VNX digitando "navicli -h ip getagent" (substitua o ip pelo IP real)
+** Tente fazer uma conexão com o dispositivo de armazenamento em bloco VNX digitando “navicli -h {ip} getagent” (substitua o {ip} pelo IP real)
 
 
 
@@ -136,41 +136,41 @@ Erro:
 
 
  a| 
-Erro: 4,29 emc235848 emc241018 getall falhou ao analisar informações de alias do host
+Erro: 4.29 emc235848 emc241018 getall Falha ao analisar informações do alias do host
  a| 
-Isso provavelmente é causado por um problema de corrupção do FLARE 29 do banco de dados do iniciador do host no próprio array. Consulte os artigos da base de conhecimento EMC: emc235848, emc241018. Você também pode verificar https://now.netapp.com/Knowledgebase/solutionarea.asp?id=kb58128[]
-
-
-
- a| 
-Erro: Não foi possível recuperar meta LUNs. Erro ao executar o Java -jar navicli.jar
- a| 
-* Modificar a configuração do coletor de dados para usar o cliente seguro (recomendado)
-* Instale o navicli.jar no caminho CLI para navicli.exe OU naviseccli.exe
-* Nota: O navicli.jar está obsoleto a partir do EMC Navisphere versão 6,26
-* O navicli.jar pode estar disponível no \http://powerlink.emc.com
-
+Isso provavelmente é causado por um problema de corrupção do FLARE 29 no banco de dados do iniciador do host no próprio array.  Consulte os artigos da base de conhecimento da EMC: emc235848, emc241018.  Você também pode verificar https://now.netapp.com/Knowledgebase/solutionarea.asp?id=kb58128[]
 
 
 
  a| 
-Erro: Os pools de armazenamento não reportam discos no processador de serviço no endereço IP configurado
+Erro: Não é possível recuperar Meta LUNs.  Erro ao executar java -jar navicli.jar
  a| 
-Configure o coletor de dados com ambos os IPs do processador de serviço, separados por uma vírgula
+* Modifique a configuração do coletor de dados para usar o cliente seguro (recomendado)
+* Instale navicli.jar no caminho CLI para navicli.exe OU naviseccli.exe
+* Observação: navicli.jar está obsoleto a partir do EMC Navisphere versão 6.26
+* O navicli.jar pode estar disponível em \ http://powerlink.emc.com
+
+
+
+
+ a| 
+Erro: Os pools de armazenamento não estão relatando discos no processador de serviço no endereço IP configurado
+ a| 
+Configure o coletor de dados com ambos os IPs do Processador de Serviço, separados por vírgula
 
 
 
  a| 
 Erro: Erro de incompatibilidade de revisão
  a| 
-* Isso geralmente é causado pela atualização do firmware no dispositivo de armazenamento de bloco VNX, mas não pela atualização da instalação do Navicli.exe. Isso também pode ser causado por ter dispositivos diferentes com firmwares diferentes, mas apenas uma CLI instalada (com uma versão de firmware diferente).
+* Isso geralmente é causado pela atualização do firmware no dispositivo de armazenamento em bloco VNX, mas não pela atualização da instalação do NaviCLI.exe.  Isso também pode ser causado por ter dispositivos diferentes com firmwares diferentes, mas apenas uma CLI instalada (com uma versão de firmware diferente).
 * Verifique se o dispositivo e o host estão executando versões idênticas do software:
 +
-** Na Unidade de aquisição do Data Infrastructure Insights, abra uma janela de linha de comando
+** Na Unidade de Aquisição de Data Infrastructure Insights , abra uma janela de linha de comando
 ** Altere o diretório para o diretório de instalação configurado
-** Faça uma conexão com o dispositivo CLARiiON digitando "navicli -h <ip> getagent"
-** Procure o número da versão nas primeiras linhas. Exemplo: "Agente Rev: 6.16.2 (0,1)"
-** Procure e compare a versão na primeira linha. Exemplo: "Navisphere CLI Revisão 6.07.00.04.07"
+** Estabeleça uma conexão com o dispositivo CLARiiON digitando “navicli -h <ip> getagent”
+** Procure o número da versão nas primeiras linhas.  Exemplo: “Agente Rev: 6.16.2 (0.1)”
+** Procure e compare a versão na primeira linha.  Exemplo: “Navisphere CLI Revisão 6.07.00.04.07”
 
 
 
@@ -178,9 +178,9 @@ Erro: Erro de incompatibilidade de revisão
 
 
  a| 
-Erro: Configuração não suportada - sem portas Fibre Channel
+Erro: Configuração não suportada - Sem portas Fibre Channel
  a| 
-O dispositivo não está configurado com nenhuma porta Fibre Channel. Atualmente, apenas configurações de FC são compatíveis. Verifique se esta versão/firmware é suportada.
+O dispositivo não está configurado com nenhuma porta Fibre Channel.  Atualmente, apenas configurações FC são suportadas.  Verifique se esta versão/firmware é compatível.
 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

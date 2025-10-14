@@ -4,62 +4,62 @@ permalink: task_dc_emc_vnxe.html
 keywords: data collector, VNXe, EMC 
 summary: Configurando o coletor de dados VNXe. 
 ---
-= Configurar o coletor de dados EMC VNXe
+= Configurando o coletor de dados EMC VNXe
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O coletor de dados Dell EMC VNXe fornece suporte de inventário para matrizes de armazenamento unificadas VNXe. O Data Infrastructure Insights atualmente oferece suporte aos protocolos iSCSI e nas.
+O coletor de dados DELL EMC VNXe fornece suporte de inventário para matrizes de armazenamento unificado VNXe.  O Data Infrastructure Insights atualmente oferece suporte aos protocolos iSCSI e NAS.
 
 
 
 == Requisitos
 
-* O coletor de dados VNXe é baseado na CLI; você deve instalar o Unisphere para VNXe CLI (uemcli.exe) na unidade de aquisição onde reside o coletor de dados VNXe.
-* O uemcli.exe utiliza HTTPS como protocolo de transporte, pelo que a unidade de aquisição terá de ser capaz de iniciar ligações HTTPS com o VNXe.
+* O coletor de dados VNXe é baseado em CLI; você deve instalar o Unisphere for VNXe CLI (uemcli.exe) na unidade de aquisição onde seu coletor de dados VNXe reside.
+* uemcli.exe usa HTTPS como protocolo de transporte, portanto, a unidade de aquisição precisará ser capaz de iniciar conexões HTTPS com o VNXe.
 * Endereço IP ou nome de domínio totalmente qualificado do dispositivo VNXe
 * Você deve ter pelo menos um usuário somente leitura para uso pelo coletor de dados.
-* Endereço IP do servidor facilitador de soluções de gerenciamento.
+* Endereço IP do servidor habilitador de soluções de gerenciamento.
 * HTTPS na porta 443 é necessário
-* O coletor de dados EMC VNXe fornece suporte nas e iSCSI para inventário; volumes de canal de fibra serão descobertos, mas o Data Infrastructure Insights não relata portas de mapeamento, mascaramento ou armazenamento FC.
+* O coletor de dados EMC VNXe fornece suporte NAS e iSCSI para inventário; volumes de canal de fibra serão descobertos, mas o Data Infrastructure Insights não relata mapeamento de FC, mascaramento ou portas de armazenamento.
 
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados VNXe. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados VNXe.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
 | Disco | Disco 
 
 
-| Storage array | Armazenamento 
+| Matriz de armazenamento | Armazenar 
 
 
-| Processador | Nó de storage 
+| Processador | Nó de armazenamento 
 
 
-| Pool de storage | Pool de storage 
+| Pool de armazenamento | Pool de armazenamento 
 
 
-| Informações gerais do bloco iSCSI, VMware VMFS | Partilhar 
+| Informações gerais sobre o bloco iSCSI, VMware VMFS | Compartilhar 
 
 
-| Sistema remoto de replicação | Sincronização 
+| Sistema Remoto de Replicação | Sincronização 
 
 
 | Nó iSCSI | Nó de destino iSCSI 
 
 
-| Iniciador iSCSI | Iniciador iSCSI Target 
+| Iniciador iSCSI | Iniciador de destino iSCSI 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para esta fonte de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos desta fonte de dados.
 
 
 
@@ -73,10 +73,10 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Armazenamento VNXe | Endereço IP ou nome de domínio totalmente qualificado do dispositivo VNXe 
 
 
-| Nome de utilizador | Nome de utilizador para o dispositivo VNXe 
+| Nome de usuário | Nome de usuário para o dispositivo VNXe 
 
 
-| Palavra-passe | Palavra-passe para o dispositivo VNXe 
+| Senha | Senha para o dispositivo VNXe 
 |===
 
 
@@ -87,19 +87,19 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 40 minutos 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário.  O padrão é 40 minutos 
 
 
-| Porta CLI | Porta usada para a CLI VNXe 
+| Porta CLI | Porta usada para o VNXe CLI 
 
 
-| Intervalo de pesquisa de desempenho (seg) | A predefinição é 300. 
+| Intervalo de pesquisa de desempenho (seg) | O padrão é 300. 
 |===
 
 
 == Solução de problemas
 
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
@@ -107,9 +107,9 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
-| "Falha ao executar utilitário externo" com mensagens de erro "Falha ao encontrar o executável do Unisphere uemcli" | * Verifique o endereço IP, nome de usuário e senha corretos * Confirme se a Unisphere CLI está instalada na Unidade de aquisição do Data Infrastructure Insights * Confirme se o diretório de instalação da Unisphere CLI está correto na configuração da fonte de dados * Confirme se o IP do VNXe está correto na configuração da fonte de dados. Na Unidade de aquisição do Data Infrastructure Insights, abra um CMD e mude para o diretório de instalação configurado: Tente fazer uma conexão com o dispositivo VNXe digitando: Uemcli -d <Your IP> -u <Your ID> /sys/general show 
+| "Falha ao executar utilitário externo" com mensagens de erro "Falha ao encontrar o executável Unisphere uemcli" | * Verifique o endereço IP, nome de usuário e senha corretos * Confirme se o Unisphere CLI está instalado na Data Infrastructure Insights Acquisition Unit * Confirme se o diretório de instalação do Unisphere CLI está correto na configuração da fonte de dados * Confirme se o IP do VNXe está correto na configuração da fonte de dados.  Na Unidade de Aquisição do Data Infrastructure Insights , abra um CMD e vá para o diretório de instalação configurado: ${INSTALLDIR.  Tente fazer uma conexão com o dispositivo VNXe digitando: uemcli -d <Seu IP> -u <Seu ID> /sys/general show 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

@@ -1,31 +1,31 @@
 ---
 sidebar: sidebar 
 permalink: concept_asset_alerts_section.html 
-summary: Visão geral da seção Alertas relacionados à página de ativos em Insights de infraestrutura de dados. 
+summary: Visão geral da seção Alertas relacionados da página de ativos no Data Infrastructure Insights. 
 keywords: asset, landing page, violations, Alerts, 
 ---
-= Seção Alertas relacionados à Página de ativos
+= Seção de alertas relacionados à página de ativos
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Você pode usar a seção Alertas relacionados de uma página de ativo para ver quaisquer alertas que ocorram no seu locatário como resultado de um monitor atribuído a um ativo. Os monitores geram alertas com base nas condições definidas e permitem identificar a implicação e analisar o impactos e a causa raiz do problema de uma forma que permita uma correção rápida e eficaz.
+Você pode usar a seção Alertas relacionados de uma página de ativo para ver quaisquer alertas que ocorram no seu locatário como resultado de um monitor atribuído a um ativo.  Os monitores geram alertas com base nas condições definidas por você e permitem que você identifique a implicação e analise o impacto e a causa raiz do problema de uma maneira que permita uma correção rápida e eficaz.
 
-O exemplo a seguir mostra uma seção típica de Alertas relacionados que é exibida em uma página de ativos:
+O exemplo a seguir mostra uma seção típica de Alertas Relacionados que é exibida em uma página de ativos:
 
-image:Alerts_on_Landing_Page.png["Tabela de alertas relacionados"]
+image:Alerts_on_Landing_Page.png["Tabela de Alertas Relacionados"]
 
-A seção Alertas relacionados permite visualizar e gerenciar os alertas que ocorrem em sua rede como resultado das condições de monitoramento atribuídas a um ativo.
+A seção Alertas relacionados permite que você visualize e gerencie os alertas que ocorrem na sua rede como resultado das condições do monitor atribuídas a um ativo.
 
 .Passos
-* Localize uma página de ativo fazendo qualquer um dos seguintes procedimentos:
+* Localize uma página de ativos executando qualquer um dos seguintes procedimentos:
 +
-** Digite o nome do ativo na área pesquisar e, em seguida, selecione o ativo na lista.
-** Em um widget de painel, clique no nome de um ativo.
-** Consulte um conjunto de ativos e selecione ligado na lista de resultados.
+** Digite o nome do ativo na área de pesquisa e selecione o ativo na lista.
+** Em um widget do painel, clique no nome de um ativo.
+** Consulte um conjunto de ativos e selecione um na lista de resultados.
 
 
 
 
-A página de ativos é exibida. A seção Alertas relacionados exibe a hora em que o alerta foi acionado, bem como o status atual do alerta e do monitor que o acionou. Você pode clicar no ID de alerta para abrir a página de destino do alerta para mais investigação.
+A página de ativos é exibida.  A seção Alertas relacionados exibe a hora em que o alerta foi disparado, bem como o status atual do alerta e o monitor que o disparou.  Você pode clicar no ID do alerta para abrir a página inicial do alerta para investigação posterior.

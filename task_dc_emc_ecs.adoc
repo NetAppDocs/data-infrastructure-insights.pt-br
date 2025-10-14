@@ -2,34 +2,34 @@
 sidebar: sidebar 
 permalink: task_dc_emc_ecs.html 
 keywords: data collector, ecs, EMC 
-summary: Configurar o coletor de dados ECS. 
+summary: Configurando o coletor de dados do ECS. 
 ---
-= Configurar o coletor de dados EMC ECS
+= Configurando o coletor de dados EMC ECS
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Este coletor de dados adquire dados de inventário e desempenho dos sistemas de armazenamento EMC ECS. Para a configuração, o coletor de dados requer um endereço IP ou nome de host do cluster ECS e um nome de usuário e senha.
+Este coletor de dados adquire dados de inventário e desempenho dos sistemas de armazenamento EMC ECS.  Para configuração, o coletor de dados requer um endereço IP ou nome de host do cluster ECS e um nome de usuário e senha.
 
 
-NOTE: O Dell EMC ECS é medido a uma taxa bruta de TB para Unidade gerenciada diferente. Cada 40 TB de capacidade ECS não formatada é cobrada como 1 link:concept_subscribing_to_cloud_insights.html#pricing["Unidade gerenciada (MU)"].
+NOTE: O Dell EMC ECS é medido a uma taxa de TB brutos diferente da taxa de unidade gerenciada.  Cada 40 TB de capacidade ECS não formatada é cobrado como 1link:concept_subscribing_to_cloud_insights.html#pricing["Unidade Gerenciada (UM)"] .
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados ECS. Para cada tipo de ativo adquirido, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do ECS.  Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para esse ativo.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| Cluster | Armazenamento 
+| Conjunto | Armazenar 
 
 
-| Locatário | Pool de storage 
+| Inquilino | Pool de armazenamento 
 
 
 | Balde | Volume interno 
@@ -37,15 +37,15 @@ O Data Infrastructure Insights adquire as seguintes informações de inventário
 
 | Disco | Disco 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
 == Requisitos
 
 * Um endereço IP ou nome de host do cluster ECS
-* Um nome de utilizador e uma palavra-passe para o sistema ECS
-* Porta 4443 (HTTPS). Requer conetividade de saída à porta TCP 4443 no sistema ECS.
+* Um nome de usuário e uma senha para o sistema ECS
+* Porta 4443 (HTTPS).  Requer conectividade de saída para a porta TCP 4443 no sistema ECS.
 
 
 
@@ -57,16 +57,16 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Anfitrião ECS | Endereço IP ou nome de domínio totalmente qualificado do sistema ECS 
+| Host ECS | Endereço IP ou nome de domínio totalmente qualificado do sistema ECS 
 
 
-| Porta de host ECS | Porta utilizada para comunicação com o ECS Host 
+| Porta do host ECS | Porta usada para comunicação com o host ECS 
 
 
-| ID de utilizador ECS | ID de utilizador para ECS 
+| ID do usuário ECS | ID do usuário para ECS 
 
 
-| Palavra-passe | Palavra-passe utilizada para ECS 
+| Senha | Senha usada para ECS 
 |===
 
 
@@ -77,13 +77,13 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | O padrão é 360 minutos. 
+| Intervalo de pesquisa de inventário (min) | O padrão é 360 minutos. 
 |===
 
 
 == Solução de problemas
 
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
@@ -91,10 +91,10 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
-| Erro: Falha na autenticação do utilizador. | Certifique-se de que as suas credenciais para este dispositivo estão corretas. 
+| Erro: Falha na autenticação do usuário. | Certifique-se de que suas credenciais para este dispositivo estejam corretas. 
 |===
 
 
@@ -102,12 +102,12 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
-| Erro: Não foram recolhidos dados suficientes. | * Verifique o registro de data e hora da coleta no arquivo de log e modifique o intervalo de pesquisa de acordo. * Aguarde mais tempo. 
+| Erro: Não foram coletados dados suficientes. | * Verifique o registro de data e hora da coleta no arquivo de log e modifique o intervalo de pesquisa de acordo. * Aguarde mais tempo. 
 
 
-| Erro: O intervalo de polling de desempenho é muito grande. | Verifique o timestamp da coleção no arquivo de log e modifique o intervalo de polling em conformidade 
+| Erro: O intervalo de pesquisa de desempenho é muito grande. | Verifique o registro de data e hora da coleta no arquivo de log ${logfile} e modifique o intervalo de pesquisa de acordo 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

@@ -4,49 +4,49 @@ permalink: task_config_telegraf_node.html
 keywords: telegraf, installation, install, node, host 
 summary: Configuração do coletor de dados Flink 
 ---
-= Coleta de dados de nó
+= Coleta de dados do nó
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Data Infrastructure Insights reúne métricas do nó no qual você instala um agente.
+O Data Infrastructure Insights coleta métricas do nó no qual você instala um agente.
 
 
 
 == Instalação
 
-. A partir de *Observability > Collectors*, escolha um sistema operacional/plataforma. Observe que a instalação de qualquer coletor de dados de integração (Kubernetes, Docker, Apache, etc.) também configurará a coleta de dados de nós.
-. Siga as instruções para configurar o agente. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
+. Em *Observabilidade > Coletores*, escolha um sistema operacional/plataforma.  Observe que a instalação de qualquer coletor de dados de integração (Kubernetes, Docker, Apache, etc.) também configurará a coleta de dados do nó.
+. Siga as instruções para configurar o agente.  As instruções variam dependendo do tipo de sistema operacional ou plataforma que você está usando para coletar dados.
 
 
 
 
-== Objetos e contadores
+== Objetos e Contadores
 
-Os seguintes objetos e seus contadores são coletados como métricas do Node:
+Os seguintes objetos e seus contadores são coletados como métricas do nó:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: | Pontos de dados: 
 
 
-| Sistema de ficheiros do nó | Tipo caminho dispositivo UUUID nó | Nome do nó IP do nó modo de SO do nó | Livres inodes livres inodes totais usados Total usado Total usado usado 
+| Sistema de arquivos Node | Tipo de caminho do dispositivo UUID do nó | IP do nó Nome do nó Modo do sistema operacional do nó | Inodes livres Inodes livres Total de inodes usados Total usado Total usado 
 
 
-| Disco do nó | Disco UUUID nó | Nome do nó IP do nó os do nó | Tempo de e/S Total IOPS em andamento ler bytes (por seg) tempo de leitura Total leituras (por seg) tempo de e/S ponderado Total de bytes de gravação (por seg) tempo de gravação Total de gravações (por seg) tempo de gravação tempo de leitura tempo de e/S 
+| Disco de nó | Disco UUID do nó | IP do nó Nome do nó SO do nó | Tempo de E/S Total de IOPS em andamento Bytes de leitura (por segundo) Tempo de leitura Total de leituras (por segundo) Tempo de E/S ponderado Total de bytes de gravação (por segundo) Tempo de gravação Total de gravações (por segundo) Comprimento da fila de disco atual Tempo de gravação Tempo de leitura Tempo de E/S 
 
 
-| CPU de nó | CPU UUUID nó | Nome do nó IP do nó os do nó | Uso da CPU do usuário uso da CPU ocioso uso da CPU processador CPU interrupção uso da CPU uso da CPU DPC CPU uso 
+| CPU do nó | UUID da CPU do nó | IP do nó Nome do nó SO do nó | Uso da CPU do sistema Uso da CPU do usuário Uso da CPU ociosa Uso da CPU do processador Uso da CPU de interrupção Uso da CPU do DPC 
 
 
-| Nó | UUID de nó | Nome do nó IP do nó os do nó | Kernel tempo de inicialização Kernel Context switches (por seg) Kernel Entropy available Kernel interrupts (por seg) Kernel processes forked (por seg) memória ativa disponível memória Total memória disponível memória Buffered 
+| Nó | UUID do nó | IP do nó Nome do nó SO do nó | Tempo de inicialização do kernel Trocas de contexto do kernel (por segundo) Entropia do kernel disponível Interrupções do kernel (por segundo) Processos do kernel bifurcados (por segundo) Memória Memória ativa disponível Memória total disponível Memória em buffer Memória em cache Limite de confirmação Memória confirmada como memória Memória suja Memória livre Memória livre alta Memória livre alta Memória total Tamanho de página enorme Memória Páginas enormes Memória livre Páginas enormes Total de memória Memória baixa Memória livre baixa Memória total Memória mapeada Tabelas de páginas Memória Memória compartilhada Memória slab Troca Memória em cache Troca Memória livre Troca Memória total Memória total usada Memória total usada Memória Vmalloc Fragmento de memória Vmalloc Memória total usada por Vmalloc Writeback de memória total Writeback de memória Tmp Falhas de cache de memória Demanda de memória Falhas zero Falhas de página de memória Páginas de memória Memória não paginada Memória paginada Cache de memória principal Cache de espera Memória normal Cache de espera Memória de reserva Falhas de transição Processos Processos bloqueados Processos inativos Processos ociosos Processos de paginação Processos em execução Processos em suspensão Processos parados Total de processos Total de threads Processos desconhecidos Processos Zumbis Processador Comprimento da Fila Swap Livre Swap Total Swap Usado Total Swap Usado Swap In Swap Out Tempo de Atividade do Sistema Número do Sistema CPU Número do Sistema Usuários Chamadas do Sistema 
 
 
-| Rede de nós | UUID do nó de interface de rede | Nó Nome nó IP nó os | Bytes recebidos bytes recebidos Pacotes enviados Outboud Pacotes descartados erros Outboud Pacotes recebidos Pacotes descartados Pacotes recebidos erros recebidos Pacotes recebidos pacotes recebidos pacotes enviados 
+| Rede de nós | UUID do nó da interface de rede | Nome do nó IP do nó SO do nó | Bytes recebidos Bytes enviados Pacotes enviados Pacotes descartados Erros de saída Pacotes recebidos Pacotes descartados Erros recebidos Pacotes recebidos Pacotes enviados 
 |===
 
 
-== Configuração
+== Configurar
 
-As informações de configuração e resolução de problemas podem ser encontradas link:task_config_telegraf_agent.html["Configurando um Agente"]na página.
+Informações sobre configuração e solução de problemas podem ser encontradas nolink:task_config_telegraf_agent.html["Configurando um Agente"] página.

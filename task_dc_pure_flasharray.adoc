@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_dc_pure_flasharray.html 
 keywords: data collector, Pure Storage, pure 
-summary: Configuração do coletor de dados Pure Storage. 
+summary: Configurando o coletor de dados do Pure Storage. 
 ---
 = Coletor de dados Pure Storage FlashArray
 :hardbreaks:
@@ -10,44 +10,44 @@ summary: Configuração do coletor de dados Pure Storage.
 
 
 [role="lead"]
-O Data Infrastructure Insights usa o coletor de dados Pure Storage FlashArray para coletar dados de inventário e performance.
+O Data Infrastructure Insights usa o coletor de dados Pure Storage FlashArray para coletar dados de inventário e desempenho.
 
 
 
 == Terminologia
 
-Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
 | Unidade (SSD) | Disco 
 
 
-| Array | Armazenamento 
+| Variedade | Armazenar 
 
 
-| Controlador | Nó de storage 
+| Controlador | Nó de armazenamento 
 
 
 | Volume | Volume 
 
 
-| Mapa LUN | Mapa de volume 
+| Mapa LUN | Mapa de Volume 
 
 
-| Iniciador, alvo | Máscara de volume 
+| Iniciador, Alvo | Máscara de Volume 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
 == Requisitos
 
 * Endereço IP do sistema de armazenamento
-* Nome de utilizador e palavra-passe da conta de administrador do sistema de armazenamento Pure.
+* Nome de usuário e senha para a conta de administrador do sistema de armazenamento Pure.
 * Requisito de porta: HTTP/HTTPS 80/443
 
 
@@ -63,10 +63,10 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Endereço IP do host FlashArray | Endereço IP do sistema de armazenamento 
 
 
-| Nome de utilizador | Nome de usuário com admin Privileges 
+| Nome de usuário | Nome de usuário com privilégios de administrador 
 
 
-| Senha para a conta privilegiada do administrador | Palavra-passe 
+| Senha para a conta privilegiada de administrador | Senha 
 |===
 
 
@@ -77,22 +77,22 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Tipo de ligação | Escolha HTTP ou HTTPS. Também exibe a porta padrão. 
+| Tipo de conexão | Escolha HTTP ou HTTPS.  Também exibe a porta padrão. 
 
 
-| Substituir a porta TCP | Se estiver em branco, use a porta padrão no campo tipo de conexão; caso contrário, insira a porta de conexão a ser usada 
+| Substituir porta TCP | Se estiver em branco, use a porta padrão no campo Tipo de conexão, caso contrário, insira a porta de conexão a ser usada 
 
 
 | Intervalo de pesquisa de inventário (min) | O padrão é 60 minutos 
 
 
-| Intervalo de enquete de desempenho (seg) | A predefinição é 300 
+| Intervalo de pesquisa de desempenho (seg) | O padrão é 300 
 |===
 
 
 == Solução de problemas
 
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
@@ -100,9 +100,9 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
-| "Credenciais de login inválidas" com mensagens de erro "a política não permite" ou "você não está autorizado" | Valide a conta de usuário e a senha da Pure através da interface http da Pure 
+| “Credenciais de login inválidas” com mensagens de erro “A política não permite” ou “Você não está autorizado” | Validar conta de usuário e senha Pure via interface http Pure 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

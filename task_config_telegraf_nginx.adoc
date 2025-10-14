@@ -2,42 +2,42 @@
 sidebar: sidebar 
 permalink: task_config_telegraf_nginx.html 
 keywords: telegraf, installation, install, nginx 
-summary: Configuração do coletor de dados nginx 
+summary: Configuração do coletor de dados Nginx 
 ---
-= Nginx Data Collector
+= Coletor de dados Nginx
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do nginx.
+O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do Nginx.
 
 
 
 == Instalação
 
-. A partir de *Observability > Collectors*, clique em * Data Collector*. Escolha nginx.
+. Em *Observabilidade > Coletores*, clique em *+Coletor de Dados*.  Escolha Nginx.
 +
-Selecione o sistema operacional ou a plataforma na qual o agente Telegraf está instalado.
+Selecione o sistema operacional ou plataforma na qual o agente Telegraf está instalado.
 
-. Se você ainda não instalou um Agente para coleção ou deseja instalar um Agente para um sistema operacional ou plataforma diferente, clique em _Mostrar instruções_ para expandir as link:task_config_telegraf_agent.html["Instalação do agente"] instruções.
-. Selecione a chave de acesso do agente para uso com este coletor de dados. Você pode adicionar uma nova chave de acesso ao agente clicando no botão * chave de acesso ao agente*. Prática recomendada: Use uma chave de acesso de agente diferente somente quando você quiser agrupar coletores de dados, por exemplo, por SO/Plataforma.
-. Siga as etapas de configuração para configurar o coletor de dados. As instruções variam dependendo do tipo de sistema operacional ou Plataforma que você está usando para coletar dados.
-
-
-image:NginxDCConfigLinux-1.png["Configuração do Linux nginx"] image:NginxDCConfigLinux-2.png["Configuração do Linux nginx"]
+. Se você ainda não instalou um Agente para coleta ou deseja instalar um Agente para um Sistema Operacional ou Plataforma diferente, clique em _Mostrar Instruções_ para expandir olink:task_config_telegraf_agent.html["Instalação do agente"] instruções.
+. Selecione a Chave de Acesso do Agente para uso com este coletor de dados.  Você pode adicionar uma nova Chave de Acesso do Agente clicando no botão *+ Chave de Acesso do Agente*.  Prática recomendada: use uma chave de acesso de agente diferente somente quando quiser agrupar coletores de dados, por exemplo, por sistema operacional/plataforma.
+. Siga as etapas de configuração para configurar o coletor de dados.  As instruções variam dependendo do tipo de sistema operacional ou plataforma que você está usando para coletar dados.
 
 
-
-== Configuração
-
-A coleção de métricas nginx requer que o nginx link:http://nginx.org/en/docs/http/ngx_http_stub_status_module.html["http_stub_status_module"] seja ativado.
-
-Informações adicionais podem ser encontradas no link:http://nginx.org/en/docs/["Documentação do nginx"].
+image:NginxDCConfigLinux-1.png["Configuração do Linux Nginx"] image:NginxDCConfigLinux-2.png["Configuração do Linux Nginx"]
 
 
 
-== Objetos e contadores
+== Configurar
+
+A coleta de métricas do Nginx requer que o Nginxlink:http://nginx.org/en/docs/http/ngx_http_stub_status_module.html["http_stub_status_module"] ser habilitado.
+
+Informações adicionais podem ser encontradas emlink:http://nginx.org/en/docs/["Documentação do Nginx"] .
+
+
+
+== Objetos e Contadores
 
 Os seguintes objetos e seus contadores são coletados:
 
@@ -46,10 +46,10 @@ Os seguintes objetos e seus contadores são coletados:
 | Objeto: | Identificadores: | Atributos: | Pontos de dados: 
 
 
-| Nginx | Servidor de namespace | Porta de nome do nó IP do nó | Aceita solicitações de leitura tratadas ativas aguardando escrita 
+| Nginx | Servidor de namespace | IP do nó Nome do nó Porta | Aceita solicitações de leitura ativas aguardando escrita 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"]página.
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página.

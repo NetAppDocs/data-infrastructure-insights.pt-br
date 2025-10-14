@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_ws_integration_with_ontap_access_denied.html 
-summary: A segurança do workload se integra ao ONTAP para receber eventos de acesso negado e fornecer uma camada adicional de análise e respostas automáticas. 
+summary: O Workload Security integra-se ao ONTAP para receber eventos de acesso negado e fornecer uma camada adicional de análise e respostas automáticas. 
 keywords: ransomware, ARP, Protection, Security, access 
 ---
-= Integração com o ONTAP Access negada
+= Integração com ONTAP Acesso negado
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,40 +14,40 @@ keywords: ransomware, ARP, Protection, Security, access
 
 
 [role="lead"]
-O recurso Acesso negado do ONTAP usa análise de workload em ambientes nas (NFS e SMB) para detectar e avisar proativamente sobre operações de arquivos com falha (ou seja, um usuário tentando executar uma operação para a qual não tenha permissão). Essas notificações falhadas de operação de arquivos - especialmente em casos de falhas relacionadas à segurança - ajudarão a bloquear ataques internos nos estágios iniciais.
+O recurso ONTAP Access Denied usa análise de carga de trabalho em ambientes NAS (NFS e SMB) para detectar e alertar proativamente sobre operações de arquivo com falha (ou seja, um usuário tentando executar uma operação para a qual não tem permissão).  Essas notificações de falha na operação de arquivos — especialmente em casos de falhas relacionadas à segurança — ajudarão ainda mais a bloquear ataques internos nos estágios iniciais.
 
-A segurança de workload se integra ao ONTAP para receber eventos de acesso negado e fornecer uma camada de resposta automática e analítica adicional.
+O Data Infrastructure Insights Workload Security integra-se ao ONTAP para receber eventos de acesso negado e fornecer uma camada adicional de resposta analítica e automática.
 
 
 
 == Pré-requisitos
 
-* Versão mínima do ONTAP: 9.13.0.
-* Um administrador de Segurança de carga de trabalho deve habilitar o recurso Acesso negado ao adicionar um novo coletor ou editar um coletor existente, selecionando a caixa de seleção _Monitor Access Neged Events_ em Configuração Avançada.
+* Versão mínima do ONTAP : 9.13.0.
+* Um administrador de segurança de carga de trabalho deve habilitar o recurso Acesso negado ao adicionar um novo coletor ou editar um coletor existente, marcando a caixa de seleção _Monitorar eventos de acesso negado_ em Configuração avançada.
 
 
-image:WS_Access_Denied_Enable_in_Collector.png["Ativar acesso negado na Configuração Avançada do ONTAP Collector"]
+image:WS_Access_Denied_Enable_in_Collector.png["Habilitar acesso negado na configuração avançada do coletor ONTAP"]
 
 
 
 == Permissões de usuário necessárias
 
-Se o Data Collector for adicionado usando credenciais de administração de cluster, nenhuma nova permissão será necessária.
+Se o Coletor de Dados for adicionado usando credenciais de administração de cluster, nenhuma nova permissão será necessária.
 
-Se o Coletor for adicionado usando um usuário personalizado (por exemplo, _csuser_) com permissões dadas ao usuário, siga as etapas abaixo para dar à Segurança da carga de trabalho a permissão necessária para se Registrar para eventos de acesso negado com o ONTAP.
+Se o Collector for adicionado usando um usuário personalizado (por exemplo, _csuser_) com permissões dadas ao usuário, siga as etapas abaixo para dar ao Workload Security a permissão necessária para registrar eventos de Acesso Negado com o ONTAP.
 
-Para csuser com credenciais _cluster_, execute os seguintes comandos a partir da linha de comando ONTAP. Note que esta permissão pode já existir.
+Para csuser com credenciais _cluster_, execute os seguintes comandos na linha de comando do ONTAP .  Observe que essa permissão pode já existir.
 
  security login role create -role csrole -cmddirname "vserver fpolicy" -access all
-Para csuser com credenciais _SVM_, execute os seguintes comandos a partir da linha de comando ONTAP. Note que esta permissão pode já existir.
+Para csuser com credenciais _SVM_, execute os seguintes comandos na linha de comando do ONTAP .  Observe que essa permissão pode já existir.
 
  security login role create -vserver <vservername> -role csrole -cmddirname "vserver fpolicy" -access all
-Leia mais sobre como configurar outro link:task_add_collector_svm.html["Permissões da ONTAP"].
+Leia mais sobre como configurar outroslink:task_add_collector_svm.html["Permissões da ONTAP"] .
 
 
 
-== Acesso negado eventos
+== Eventos de acesso negado
 
-Uma vez que os eventos tenham sido adquiridos do sistema ONTAP, a página Forensics de Segurança de carga de trabalho mostrará eventos de Acesso negado. Além das informações exibidas, você pode visualizar as permissões de usuário ausentes para uma determinada operação adicionando a coluna _atividade desejada_ à tabela a partir do ícone de engrenagem.
+Depois que os eventos forem adquiridos do sistema ONTAP , a página Análise Forense de Segurança de Carga de Trabalho mostrará eventos de Acesso Negado.  Além das informações exibidas, você pode visualizar as permissões de usuário ausentes para uma operação específica adicionando a coluna _Atividade desejada_ à tabela no ícone de engrenagem.
 
-image:WS_Access_Denied_Example_Event_1.png["Exemplo Acesso negado evento"]
+image:WS_Access_Denied_Example_Event_1.png["Exemplo de evento de acesso negado"]

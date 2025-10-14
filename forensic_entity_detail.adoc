@@ -4,7 +4,7 @@ permalink: forensic_entity_detail.html
 keywords: Forensic, entity, entity overview, entity behavior, entities 
 summary: Página de entidades forenses 
 ---
-= Página de entidades forenses
+= Página de Entidades Forenses
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,18 +14,18 @@ summary: Página de entidades forenses
 
 
 [role="lead"]
-A página entidades Forensics fornece informações detalhadas sobre a atividade da entidade no seu inquilino.
+A página Entidades Forenses fornece informações detalhadas sobre a atividade da entidade no seu locatário.
 
 
 
 == Examinando informações da entidade
 
-Clique em *Forensics > Activity Forensics* e clique na guia _entities_ para acessar a página entidades.
+Clique em *Forense > Forense de atividades* e clique na aba _Entidades_ para acessar a página Entidades.
 
-Esta página fornece uma visão geral da atividade da entidade no seu inquilino, destacando as seguintes informações: * Um gráfico mostrando _entidades únicas_ acessadas por minuto * Um gráfico de _tipos de entidade acessados_ * um detalhamento dos _caminhos comuns_ * Uma lista das _principais 50 entidades_ do número total de entidades
+Esta página fornece uma visão geral da atividade da entidade em seu locatário, destacando as seguintes informações: * Um gráfico mostrando _Entidades Únicas_ acessadas por minuto * Um gráfico de _Tipos de Entidades Acessadas_ * Uma análise dos _Caminhos Comuns_ * Uma lista das _50 Principais Entidades_ do número total de entidades
 
-image:CS-Entities-Page.png["Página entidades"]
+image:CS-Entities-Page.png["Página de Entidades"]
 
-Clicar em uma entidade na lista abre uma página de visão geral para a entidade, mostrando um perfil da entidade com detalhes como nome, tipo, nome do dispositivo, IP de localização mais acessada e caminho, bem como o comportamento da entidade, como o usuário, IP e hora em que a entidade foi acessada pela última vez.
+Clicar em uma entidade na lista abre uma página de visão geral da entidade, mostrando um perfil da entidade com detalhes como nome, tipo, nome do dispositivo, IP do local mais acessado e caminho, bem como o comportamento da entidade, como usuário, IP e hora em que a entidade foi acessada pela última vez.
 
-image:CS-entity-detail-page.png["Página de Visão Geral da entidade"]
+image:CS-entity-detail-page.png["Página de Visão Geral da Entidade"]

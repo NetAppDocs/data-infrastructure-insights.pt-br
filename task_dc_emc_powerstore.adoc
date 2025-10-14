@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_dc_emc_powerstore.html 
 keywords: data collector, PowerStore, EMC, DELL 
-summary: Configurar o coletor de dados Dell EMC PowerStore. 
+summary: Configurando o coletor de dados DELL EMC PowerStore. 
 ---
 = Coletor de dados Dell EMC PowerStore
 :hardbreaks:
@@ -10,37 +10,37 @@ summary: Configurar o coletor de dados Dell EMC PowerStore.
 
 
 [role="lead"]
-O coletor de dados EMC PowerStore reúne informações de inventário do armazenamento EMC PowerStore. Para a configuração, o coletor de dados requer o endereço IP dos processadores de armazenamento e um nome de usuário e senha somente leitura.
+O coletor de dados do EMC PowerStore reúne informações de inventário do armazenamento do EMC PowerStore.  Para configuração, o coletor de dados requer o endereço IP dos processadores de armazenamento e um nome de usuário e senha somente leitura.
 
-O coletor de dados EMC PowerStore reúne as relações de replicação de volume para volume que o PowerStore coordena em outros arrays de armazenamento. O Data Infrastructure Insights mostra um storage array para cada cluster do PowerStore e coleta dados de inventário para nós e portas de storage nesse cluster. Nenhum pool de armazenamento ou dados de volume são coletados.
+O coletor de dados do EMC PowerStore reúne os relacionamentos de replicação de volume para volume que o PowerStore coordena em outros arrays de armazenamento.  O Data Infrastructure Insights mostra uma matriz de armazenamento para cada cluster do PowerStore e coleta dados de inventário para nós e portas de armazenamento nesse cluster.  Nenhum dado de pool de armazenamento ou volume é coletado.
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário desse coletor de dados. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário deste coletor de dados.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| host | host 
+| hospedar | hospedar 
 
 
-| host_volume_mapping | host_volume_mapping 
+| mapeamento_de_volume_do_host | mapeamento_de_volume_do_host 
 
 
-| Hardware (ele tem unidades sob "extra_details" objeto): Drives | Disco 
+| hardware (tem Drives no objeto "extra_details"): Drives | Disco 
 
 
-| Aparelho | StoragePool 
+| Eletrodoméstico | Pool de armazenamento 
 
 
-| Cluster | Storage array 
+| Conjunto | Matriz de armazenamento 
 
 
-| Nó | StorageNode 
+| Nó | Nó de armazenamento 
 
 
 | fc_port | Porta 
@@ -49,9 +49,9 @@ O Data Infrastructure Insights adquire as seguintes informações de inventário
 | volume | Volume 
 
 
-| Internalvolume | file_system (sistema_ficheiro) 
+| Volume interno | sistema de arquivos 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
@@ -60,7 +60,7 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 As seguintes informações são necessárias para configurar este coletor de dados:
 
 * Endereço IP ou nome de domínio totalmente qualificado do processador de armazenamento
-* Nome de utilizador e palavra-passe só de leitura
+* Nome de usuário e senha somente leitura
 
 
 
@@ -75,10 +75,10 @@ As seguintes informações são necessárias para configurar este coletor de dad
 | Gateway(s) PowerStore | Endereços IP ou nomes de domínio totalmente qualificados do armazenamento PowerStore 
 
 
-| Nome de utilizador | Nome de utilizador para PowerStore 
+| Nome de usuário | Nome de usuário para PowerStore 
 
 
-| Palavra-passe | Palavra-passe utilizada para PowerStore 
+| Senha | Senha usada para PowerStore 
 |===
 
 
@@ -89,15 +89,15 @@ As seguintes informações são necessárias para configurar este coletor de dad
 | Campo | Descrição 
 
 
-| Porta HTTPS | A predefinição é 443 
+| Porta HTTPS | O padrão é 443 
 
 
-| Intervalo de enquete de inventário (minutos) | Intervalo entre sondagens de inventário. O padrão é 60 minutos. 
+| Intervalo de pesquisa de inventário (minutos) | Intervalo entre pesquisas de inventário. O padrão é 60 minutos. 
 |===
-A coleção de desempenho PowerStore do Cloud Insight utiliza os dados de origem de granularidade de 5 minutos do PowerStore. Como tal, o Data Infrastructure Insights pesquisa esses dados a cada cinco minutos, e isso não é configurável.
+A coleta de desempenho do PowerStore do Cloud Insight utiliza dados de origem de granularidade de 5 minutos do PowerStore.  Dessa forma, o Data Infrastructure Insights pesquisa esses dados a cada cinco minutos, e isso não é configurável.
 
 
 
 == Solução de problemas
 
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

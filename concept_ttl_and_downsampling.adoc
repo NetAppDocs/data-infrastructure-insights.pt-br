@@ -1,16 +1,16 @@
 ---
 sidebar: sidebar 
 permalink: concept_ttl_and_downsampling.html 
-summary: Explicação dos tempos de retenção de dados e downsampling 
+summary: Tempos de retenção de dados e redução de amostragem explicados 
 keywords: time-to-live, TTL, downsampling, downsample, retention 
 ---
-= Retenção de dados e dados downsampled
+= Retenção de dados e dados subamostrados
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Data Infrastructure Insights retém dados por períodos que variam de 7 dias a 13 meses, dependendo da sua assinatura.  Ao exibir grandes conjuntos de dados, os dados podem ser reduzidos para garantir que gráficos e tabelas sejam carregados de forma eficiente, mantendo a precisão estatística.
+O Data Infrastructure Insights retém dados por períodos que variam de 7 dias a 13 meses, dependendo da sua assinatura. Ao exibir grandes conjuntos de dados, os dados podem ser reduzidos para garantir que gráficos e tabelas sejam carregados de forma eficiente, mantendo a precisão estatística.
 
 
 
@@ -31,55 +31,55 @@ Para obter informações detalhadas sobre os recursos e opções de preços do D
 
 
 
-== Downsampling de dados
+== Redução da amostragem de dados
 
-*Downsampling* fornece uma aproximação estatística de seus dados em gráficos, dando-lhe uma visão geral eficiente dos dados sem ter que exibir cada ponto de dados, mantendo uma visão precisa de seus dados coletados.
-
-
-
-=== Por que é necessário fazer downsampling?
-
-Como uma grande quantidade de processamento é necessária para preparar dados para exibição em gráficos e gráficos, a fim de permitir que gráficos sejam exibidos de forma rápida e eficiente, os dados podem ser reduzidos de uma maneira que mantenha a forma geral de um gráfico sem a necessidade de processar cada ponto de dados para esse gráfico.
-
-Nota: Nenhum dado real é perdido durante o downsampling. Você pode optar por exibir dados reais para o seu gráfico em vez de dados downsampled seguindo as etapas ilustradas abaixo.
+*A redução da amostragem* fornece uma aproximação estatística dos seus dados em gráficos, dando a você uma visão geral eficiente dos dados sem precisar exibir cada ponto de dados, ao mesmo tempo em que mantém uma visão precisa dos dados coletados.
 
 
 
-=== Como funciona o downsampling
+=== Por que a redução da amostragem é necessária?
 
-Os dados são reduzidos nas seguintes condições:
+Como uma grande quantidade de processamento é necessária para preparar dados para exibição em gráficos e tabelas, para permitir que os gráficos sejam exibidos de forma rápida e eficiente, os dados podem ser reduzidos de forma a manter o formato geral de um gráfico sem precisar processar cada ponto de dados desse gráfico.
 
-* Quando o intervalo de tempo selecionado incluir 7 dias de dados ou menos, não ocorre uma redução de amostragem. Os gráficos exibem dados reais.
-* Quando o intervalo de tempo selecionado inclui mais de 7 dias de dados, mas menos de 1.000 pontos de dados, não ocorre uma redução de amostragem. Os gráficos exibem dados reais.
-* Quando o intervalo de tempo selecionado incluir mais de 7 dias de dados e mais de 1.000 pontos de dados, os dados são reduzidos. Os gráficos exibem dados aproximados.
-
-
-Os exemplos a seguir mostram downsampling em ação. A primeira ilustração mostra gráficos de latência e IOPS em uma página de ativos do datastore por um período de 24 horas, como mostrado selecionando 24h no seletor de tempo da página de ativos. Você também pode ver os mesmos dados selecionando Personalizar e definindo o intervalo de tempo para o mesmo período de 24 horas.
-
-Como estamos escolhendo um intervalo de tempo inferior a 7 dias e temos menos de 1.000 pontos de dados para o gráfico, os dados exibidos são dados reais. Não ocorre uma amostragem descendente.
-
-image:Charts_NoDownsample.png["Sem downsampling"]
-
-No entanto, se você estiver visualizando dados escolhendo 30d no seletor de tempo da página de ativos ou definindo um intervalo de tempo personalizado de mais de 7 dias (ou no caso de o Data Infrastructure Insights ter coletado mais de 1.000 amostras de dados para o período de tempo escolhido), os dados serão baixados antes de serem exibidos. Quando você amplia um gráfico de redução, o visor continua a mostrar os dados aproximados.
-
-
-NOTE: Quando você faz zoom em um gráfico de redução, o zoom é um zoom digital. O visor continua a mostrar os dados aproximados.
-
-Você pode ver isso na ilustração a seguir, onde o intervalo de tempo é definido primeiro para 30d, e o gráfico é então ampliado para mostrar o mesmo período de 24 horas como acima.
-
-image:Charts_Downsampled.png["Downsampling"]
-
-Os gráficos downsampled estão mostrando o mesmo período de 24 horas que os gráficos "reais" acima, de modo que as linhas seguem a mesma forma geral, permitindo que você rapidamente detetar picos ou vales interessantes em seus dados de desempenho.
-
-
-NOTE: Devido à forma como os dados são aproximados para downsampling, as linhas do gráfico podem estar ligeiramente desconetadas ao comparar dados downsampled vs. Reais, para permitir um melhor alinhamento nos gráficos. No entanto, a diferença é mínima e não afeta a precisão geral dos dados exibidos.
+Observação: nenhum dado real é perdido durante a redução da amostragem.  Você pode optar por visualizar dados reais do seu gráfico em vez de dados reduzidos seguindo as etapas ilustradas abaixo.
 
 
 
-=== Violações em gráficos downsampled
+=== Como funciona a redução de amostragem
 
-Ao visualizar gráficos downsampled, esteja ciente de que as violações não são mostradas. Para ver violações, você pode fazer uma de duas coisas:
+Os dados são reduzidos sob as seguintes condições:
 
-* Visualize os dados reais desse intervalo de tempo selecionando Personalizar no seletor de tempo da página de ativos e inserindo um intervalo de tempo inferior a 7 dias. Passe o Mouse sobre cada ponto vermelho. A dica de ferramenta mostrará a violação que ocorreu.
-* Observe o intervalo de tempo e encontre a(s) violação(ões) no Painel de violação.
+* Quando o intervalo de tempo selecionado inclui 7 dias de dados ou menos, não ocorre subamostragem.  Os gráficos exibem dados reais.
+* Quando o intervalo de tempo selecionado inclui mais de 7 dias de dados, mas menos de 1.000 pontos de dados, não ocorre subamostragem.  Os gráficos exibem dados reais.
+* Quando o intervalo de tempo selecionado inclui mais de 7 dias de dados e mais de 1.000 pontos de dados, os dados são reduzidos.  Os gráficos exibem dados aproximados.
+
+
+Os exemplos a seguir mostram a redução da amostragem em ação.  A primeira ilustração mostra gráficos de latência e IOPS em uma página de ativos do Datastore para um período de 24 horas, conforme mostrado ao selecionar 24h no seletor de tempo da página de ativos.  Você também pode ver os mesmos dados selecionando Personalizado e definindo o intervalo de tempo para o mesmo período de 24 horas.
+
+Como estamos escolhendo um intervalo de tempo de menos de 7 dias e temos menos de 1.000 pontos de dados para representar graficamente, os dados exibidos são dados reais.  Não ocorre subamostragem.
+
+image:Charts_NoDownsample.png["Sem subamostragem"]
+
+No entanto, se você estiver visualizando dados escolhendo 30d no seletor de tempo da página de ativos ou definindo um intervalo de tempo personalizado de mais de 7 dias (ou caso o Data Infrastructure Insights tenha coletado mais de 1.000 amostras de dados para o período de tempo escolhido), os dados serão reduzidos antes de serem exibidos.  Ao aumentar o zoom em um gráfico com redução de amostragem, a tela continua mostrando os dados aproximados.
+
+
+NOTE: Quando você aumenta o zoom em um gráfico com redução de amostragem, o zoom é um zoom digital.  O visor continua mostrando os dados aproximados.
+
+Você pode ver isso na ilustração a seguir, onde o intervalo de tempo é primeiro definido como 30 dias e o gráfico é então ampliado para mostrar o mesmo período de 24 horas acima.
+
+image:Charts_Downsampled.png["Redução da amostragem"]
+
+Os gráficos com redução de amostragem mostram o mesmo período de 24 horas que os gráficos "reais" acima, então as linhas seguem o mesmo formato geral, permitindo que você identifique rapidamente picos ou vales interessantes em seus dados de desempenho.
+
+
+NOTE: Devido à forma como os dados são aproximados para redução da amostragem, as linhas do gráfico podem estar ligeiramente desviadas ao comparar dados reduzidos com dados reais, para permitir um melhor alinhamento nos gráficos.  No entanto, a diferença é mínima e não afeta a precisão geral dos dados exibidos.
+
+
+
+=== Violações em gráficos subamostrados
+
+Ao visualizar gráficos com redução de amostragem, esteja ciente de que as violações não são mostradas.  Para ver as violações, você pode fazer uma das duas coisas:
+
+* Veja os dados reais para esse intervalo de tempo selecionando Personalizado no seletor de tempo da página de ativos e inserindo um intervalo de tempo inferior a 7 dias.  Passe o mouse sobre cada ponto vermelho.  A dica de ferramenta mostrará a violação que ocorreu.
+* Observe o intervalo de tempo e encontre a(s) violação(ões) no Painel de Violações.
 

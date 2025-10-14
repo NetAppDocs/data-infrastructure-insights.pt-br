@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_dashboards_overview.html 
-summary: Visão geral dos dashboards no Data Infrastructure Insights. 
+summary: Visão geral dos painéis no Data Infrastructure Insights. 
 keywords: dashboard, widget, custom, view, data 
 ---
 = Visão geral dos painéis
@@ -14,19 +14,19 @@ keywords: dashboard, widget, custom, view, data
 
 
 [role="lead"]
-O Data Infrastructure Insights oferece aos usuários a flexibilidade para criar visualizações operacionais de dados de infraestrutura, permitindo que você crie painéis personalizados com uma variedade de widgets, cada um dos quais oferece ampla flexibilidade na exibição e criação de gráficos de seus dados.
+O Data Infrastructure Insights oferece aos usuários a flexibilidade de criar visualizações operacionais de dados de infraestrutura, permitindo que você crie painéis personalizados com uma variedade de widgets, cada um dos quais fornece ampla flexibilidade na exibição e no mapeamento de seus dados.
 
 
-IMPORTANT: Os exemplos nestas seções são apenas para fins de explicação e não cobrem todos os cenários possíveis. Os conceitos e etapas aqui podem ser usados para criar seus próprios painéis para destacar os dados específicos para suas necessidades específicas.
+IMPORTANT: Os exemplos nestas seções são apenas para fins explicativos e não abrangem todos os cenários possíveis.  Os conceitos e etapas aqui descritos podem ser usados para criar seus próprios painéis para destacar dados específicos para suas necessidades particulares.
 
 
 
-== Criando um Dashboard
+== Criando um painel
 
-Você cria um novo dashboard em um de dois lugares:
+Você cria um novo painel em um dos dois lugares:
 
-* *Dashboards > novo painel]*
-* *Painéis > Mostrar todos os painéis >* clique no botão *[-Painel]*
+* *Painéis > [+Novo painel]*
+* *Painéis > Mostrar todos os painéis >* clique no botão *[+Painel]*
 
 
 
@@ -37,80 +37,80 @@ link:https://media.netapp.com/video-detail/5a293f3c-c655-5879-9133-1a32aaa140e8[
 
 
 
-== Controlos do tablier
+== Controles do painel
 
-O ecrã Painel de instrumentos tem vários controlos:
+A tela do Painel tem vários controles:
 
-* * Time seletor*: Permite visualizar os dados do painel durante um intervalo de tempo, desde os últimos 15 minutos até os últimos 30 dias, ou um intervalo de tempo personalizado de até 31 dias. Você pode optar por substituir esse intervalo de tempo global em widgets individuais.
+* *Seletor de tempo*: permite que você visualize dados do painel por um intervalo de tempo dos últimos 15 minutos aos últimos 30 dias, ou um intervalo de tempo personalizado de até 31 dias.  Você pode optar por substituir esse intervalo de tempo global em widgets individuais.
 * Botão *Salvar*: Permite salvar ou excluir o painel.
 +
 Você pode renomear o painel atual clicando em *Renomear* no menu Salvar.
 
-* O botão Add Widget* permite que você adicione qualquer número de tabelas, gráficos ou outros widgets ao painel.
+* Botão *+ Adicionar widget*, que permite adicionar qualquer número de tabelas, gráficos ou outros widgets ao painel.
 +
-Os widgets podem ser redimensionados e realocados para diferentes posições dentro do painel de controle, para lhe dar a melhor visualização de seus dados de acordo com suas necessidades atuais.
+Os widgets podem ser redimensionados e realocados para diferentes posições dentro do painel, para lhe dar a melhor visualização dos seus dados de acordo com suas necessidades atuais.
 
-* Botão Adicionar variável*, que permite que você use variáveis para filtrar ativamente os dados do painel.
-
-
+* Botão *+ Adicionar variável*, que permite usar variáveis para filtrar ativamente os dados do painel.
 
 
-== Tipos de widget
+
+
+== Tipos de widgets
 
 Você pode escolher entre os seguintes tipos de widget:
 
-* * Widget de tabela*: Uma tabela exibindo dados de acordo com filtros e colunas que você escolher. Os dados da tabela podem ser combinados em grupos que podem ser colapsados e expandidos.
+* *Widget de tabela*: Uma tabela que exibe dados de acordo com filtros e colunas que você escolher.  Os dados da tabela podem ser combinados em grupos que podem ser recolhidos e expandidos.
 +
 image:TableWidgetPerformanceData.png["Widget de tabela"]
 
-* *Gráficos de linha, spline, Area, Stacked Area*: São widgets de gráficos de séries temporais nos quais você pode exibir desempenho e outros dados ao longo do tempo.
+* *Gráficos de linha, spline, área e área empilhada*: são widgets de gráfico de série temporal nos quais você pode exibir desempenho e outros dados ao longo do tempo.
 +
-image:Time-SeriesCharts.png["Área, Área empilhada, linha, gráficos de estrias"]
+image:Time-SeriesCharts.png["Gráficos de área, área empilhada, linha e spline"]
 
-* * Widget de valor único*: Um widget que permite exibir um único valor que pode ser derivado diretamente de um contador ou calculado usando uma consulta ou expressão. Você pode definir limites de formatação de cores para mostrar se o valor está no intervalo esperado, aviso ou crítico.
+* *Widget de valor único*: um widget que permite exibir um único valor que pode ser derivado diretamente de um contador ou calculado usando uma consulta ou expressão.  Você pode definir limites de formatação de cores para mostrar se o valor está no intervalo esperado, de aviso ou crítico.
 +
 image:Single-ValueWidgets.png["Widgets de valor único com e sem formatação"]
 
-* * Widget de calibre*: Exibe dados de valor único em um medidor tradicional (sólido) ou calibre de bala, com cores baseadas em valores "Aviso" ou "crítico" você link:concept_dashboard_features.html#formatting-gauge-widgets["personalizar"].
+* *Widget de medidor*: exibe dados de valor único em um medidor tradicional (sólido) ou em um medidor de marcadores, com cores baseadas em valores de "Aviso" ou "Críticos" que vocêlink:concept_dashboard_features.html#formatting-gauge-widgets["personalizar"] .
 +
-image:GaugeWidgets.png["Único-valor com formatação, calibre tradicional, calibre de bala"]
+image:GaugeWidgets.png["Valor único com formatação, medidor tradicional, medidor de marcadores"]
 
-* *Bar, gráficos de colunas*: Exibe valores N superiores ou inferiores, por exemplo, armazenamentos Top 10 por capacidade ou volumes 5 inferiores por IOPS.
+* *Gráficos de barras e colunas*: exibem os valores N superiores ou inferiores, por exemplo, os 10 principais armazenamentos por capacidade ou os 5 últimos volumes por IOPS.
 +
 image:BarandColumnCharts.png["Gráficos de barras e colunas"]
 
-* * Gráfico de Gráfico de caixa*: Um gráfico do mínimo, máximo, mediana e o intervalo entre quartil inferior e superior de dados em um único gráfico.
+* *Gráfico de caixa*: Um gráfico do mínimo, máximo, mediana e do intervalo entre o quartil inferior e superior dos dados em um único gráfico.
 +
 image:BoxPlot.png["Gráfico de caixa"]
 
-* *Gráfico de plotagem de dispersão*: Gráficos de dados relacionados como pontos, por exemplo, IOPS e latência. Neste exemplo, você pode localizar rapidamente ativos com alta taxa de transferência e IOPS baixo.
+* *Gráfico de dispersão*: plota dados relacionados como pontos, por exemplo, IOPS e latência.  Neste exemplo, você pode localizar rapidamente ativos com alto rendimento e baixo IOPS.
 +
 image:ScatterPlot.png["Gráfico de dispersão"]
 
-* *Gráfico de pizza*: Um gráfico de pizza tradicional para exibir dados como um pedaço do total.
+* *Gráfico de pizza*: um gráfico de pizza tradicional para exibir dados como uma parte do total.
 +
 image:PieChart.png["Gráfico de pizza"]
 
-* * Observação widget*: Até 1000 carateres de texto livre.
+* *Widget de nota*: Até 1000 caracteres de texto livre.
 +
 image:NoteWidget.png["Widget de nota"]
 
-* *Gráfico da barra de tempo*: Exibe dados de log ou métrica ao longo do tempo.
+* *Gráfico de barras de tempo*: exibe dados de log ou métricos ao longo do tempo.
 
 
-image:time_bar_chart.png["exemplo de gráfico de barras de tempo mostrando dados de log, largura de 200 mm"]
+image:time_bar_chart.png["exemplo de gráfico de barras de tempo mostrando dados de log, largura=200"]
 
 * *Tabela de alertas*: Exibe até os últimos 1.000 alertas.
 
 
-Para obter explicações mais detalhadas sobre esses e outros recursos do Dashboardlink:concept_dashboard_features.html["clique aqui"], .
+Para explicações mais detalhadas sobre estes e outros recursos do painel,link:concept_dashboard_features.html["Clique aqui"] .
 
 
 
-== Configurando um Dashboard como sua Home Page
+== Definir um painel como sua página inicial
 
-Você pode escolher qual painel definir como a *home page* do seu locatário usando um dos seguintes métodos:
+Você pode escolher qual painel definir como a *página inicial* do seu locatário usando um dos seguintes métodos:
 
-* Vá para *painéis > Mostrar todos os painéis* para exibir a lista de painéis no locatário. Clique no menu de opções à direita do painel desejado e selecione *Definir como Página Inicial*.
-* Clique em um painel na lista para abrir o painel. Clique no menu suspenso no canto superior e selecione *Definir como Página Inicial*.
+* Acesse *Painéis > Mostrar todos os painéis* para exibir a lista de painéis do seu locatário.  Clique no menu de opções à direita do painel desejado e selecione *Definir como página inicial*.
+* Clique em um painel da lista para abri-lo.  Clique no menu suspenso no canto superior e selecione *Definir como página inicial*.
 

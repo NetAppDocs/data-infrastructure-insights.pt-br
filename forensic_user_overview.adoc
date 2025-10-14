@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: forensic_user_overview.html 
 keywords: Forensic, user, user, activity 
-summary: detalhe do utilizador forense 
+summary: detalhes do usuário forense 
 ---
-= Visão geral do utilizador forense
+= Visão geral do usuário forense
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,37 +14,37 @@ summary: detalhe do utilizador forense
 
 
 [role="lead"]
-As informações para cada usuário são fornecidas na Visão geral do usuário. Use essas visualizações para entender as caraterísticas do usuário, entidades associadas e atividades recentes.
+Informações para cada usuário são fornecidas na Visão Geral do Usuário.  Use essas visualizações para entender as características do usuário, entidades associadas e atividades recentes.
 
 
 
-== Perfil de utilizador
+== Perfil do usuário
 
-As informações do perfil de usuário incluem informações de Contato e localização do usuário. O perfil fornece as seguintes informações:
+As informações do perfil do usuário incluem informações de contato e localização do usuário.  O perfil fornece as seguintes informações:
 
-* Nome do utilizador
+* Nome do usuário
 * Endereço de e-mail do usuário
-* Gestor do utilizador
-* Contacto telefónico para o utilizador
-* Localização do utilizador
+* Gerenciador de usuários
+* Contato telefônico do usuário
+* Localização do usuário
 
 
 
 
 == Comportamento do usuário
 
-As informações de comportamento do usuário identificam atividades e operações recentes realizadas pelo usuário. Esta informação inclui:
+As informações de comportamento do usuário identificam atividades e operações recentes realizadas pelo usuário.  Essas informações incluem:
 
 * Atividade recente
 +
-** Localização do último acesso
+** Último local de acesso
 ** Gráfico de atividade
 ** Alertas
 
 
 
 
-* Operações nos últimos sete dias
+* Operações dos últimos sete dias
 +
 ** Número de operações
 
@@ -55,10 +55,10 @@ As informações de comportamento do usuário identificam atividades e operaçõ
 
 == Intervalo de atualização
 
-A lista de utilizadores é atualizada a cada 12 horas.
+A lista de usuários é atualizada a cada 12 horas.
 
 
 
 == Política de retenção
 
-Se não for atualizada novamente, a lista de utilizadores é mantida durante 13 meses. Após 13 meses, os dados serão apagados. Se o ambiente do Workload Security for excluído, todos os dados associados ao ambiente serão excluídos.
+Se não for atualizada novamente, a lista de usuários será mantida por 13 meses.  Após 13 meses, os dados serão excluídos.  Se o seu ambiente de segurança de carga de trabalho for excluído, todos os dados associados ao ambiente serão excluídos.

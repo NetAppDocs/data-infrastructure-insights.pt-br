@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_na_cloud_volumes_ontap.html 
-summary: Configurar o coletor de dados NetApp Cloud Volumes ONTAP 
+summary: Configurar o coletor de dados ONTAP do NetApp Cloud Volumes ONTAP 
 keywords: data collector, NetApp, Cloud, ONTAP 
 ---
 = Coletor de dados NetApp Cloud Volumes ONTAP
@@ -10,7 +10,7 @@ keywords: data collector, NetApp, Cloud, ONTAP
 
 
 [role="lead"]
-Este coletor de dados suporta a coleta de inventário a partir de configurações do Cloud Volumes ONTAP.
+Este coletor de dados oferece suporte à coleta de inventário de configurações do Cloud Volumes ONTAP .
 
 
 
@@ -21,13 +21,13 @@ Este coletor de dados suporta a coleta de inventário a partir de configuraçõe
 | Campo | Descrição 
 
 
-| Endereço IP de gerenciamento do NetApp | Endereço IP para Cloud Volumens ONTAP 
+| Endereço IP de gerenciamento da NetApp | Endereço IP para Cloud Volumens ONTAP 
 
 
-| Nome de utilizador | Nome de usuário para Cloud Volumes ONTAP 
+| Nome de usuário | Nome de usuário para Cloud Volumes ONTAP 
 
 
-| Palavra-passe | Senha para o usuário acima 
+| Senha | Senha para o usuário acima 
 |===
 
 
@@ -38,43 +38,43 @@ Este coletor de dados suporta a coleta de inventário a partir de configuraçõe
 | Campo | Descrição 
 
 
-| Tipo de ligação | HTTPS recomendado. Também mostra a porta padrão. 
+| Tipo de conexão | HTTPS recomendado.  Também mostra a porta padrão. 
 
 
-| Substituir porta de comunicação | Porta a usar se não for padrão. 
+| Substituir porta de comunicação | Porta a ser usada se não for padrão. 
 
 
-| Intervalo de enquete de inventário (min) | O padrão é de 60 minutos. 
+| Intervalo de pesquisa de inventário (min) | O padrão é 60 minutos. 
 
 
-| Contagem de threads concorrente Stock | Número de threads simultâneos. 
+| Contagem de threads simultânea de inventário | Número de threads simultâneos. 
 
 
-| Forçar TLS para HTTPS | Forçar TLS em HTTPS 
+| Forçar TLS para HTTPS | Forçar TLS sobre HTTPS 
 
 
-| Procurar automaticamente Netgroups | Procurar automaticamente Netgroups 
+| Pesquisar Netgroups Automaticamente | Pesquisar Netgroups Automaticamente 
 
 
-| Expansão do netgroup | Selecione Shell ou Arquivo 
+| Expansão do Netgroup | Selecione Shell ou Arquivo 
 
 
-| HTTP read timeout segundos | O padrão é de 30 segundos 
+| Tempo limite de leitura HTTP em segundos | O padrão é 30 segundos 
 
 
-| Forçar respostas como UTF-8 | Forçar respostas como UTF-8 
+| Respostas de força como UTF-8 | Respostas de força como UTF-8 
 
 
-| Intervalo de enquete de desempenho (min) | O padrão é de 900 segundos. 
+| Intervalo de pesquisa de desempenho (min) | O padrão é 900 segundos. 
 
 
-| Contagem de threads concorrente de desempenho | Número de threads simultâneos. 
+| Contagem de threads simultâneos de desempenho | Número de threads simultâneos. 
 
 
-| Coleta avançada de dados de contador | Verifique isso para que o Data Infrastructure Insights colete as métricas avançadas da lista abaixo. 
+| Coleta Avançada de Dados de Contagem | Marque esta opção para que o Data Infrastructure Insights colete as métricas avançadas da lista abaixo. 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

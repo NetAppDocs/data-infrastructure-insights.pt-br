@@ -19,14 +19,14 @@ O Data Infrastructure Insights usa o coletor de dados de computação do Azure p
 Você precisa das seguintes informações para configurar este coletor de dados.
 
 * Requisito de porta: 443 HTTPS
-* URI de redirecionamento do Azure OAuth 2,0 (login.microsoftonline.com)
-* IP REST do Gerenciamento do Azure (management.azure.com)
-* IP do Azure Resource Manager (management.core.windows.net)
-* ID da aplicação principal do serviço do Azure (Cliente) (função de leitor necessária)
-* Chave de autenticação principal do serviço Azure (senha do usuário)
-* Você precisa configurar uma conta do Azure para a descoberta do Data Infrastructure Insights.
+* URI de redirecionamento do Azure OAuth 2.0 (login.microsoftonline.com)
+* IP REST de gerenciamento do Azure (management.azure.com)
+* IP do Gerenciador de Recursos do Azure (management.core.windows.net)
+* ID do aplicativo principal do serviço do Azure (cliente) (função de leitor necessária)
+* Chave de autenticação principal do serviço do Azure (senha do usuário)
+* Você precisa configurar uma conta do Azure para descoberta do Data Infrastructure Insights .
 +
-Depois que a conta estiver configurada corretamente e você Registrar o aplicativo no Azure, você terá as credenciais necessárias para descobrir a instância do Azure com o Data Infrastructure Insights. O link a seguir descreve como configurar a conta para descoberta. https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal[]
+Depois que a conta estiver configurada corretamente e você registrar o aplicativo no Azure, você terá as credenciais necessárias para descobrir a instância do Azure com o Data Infrastructure Insights.  O link a seguir descreve como configurar a conta para descoberta.https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal[]
 
 
 
@@ -41,16 +41,16 @@ Insira os dados nos campos do coletor de dados de acordo com a tabela abaixo:
 | Campo | Descrição 
 
 
-| ID da aplicação principal do serviço do Azure (Cliente) (função de leitor necessária) | ID de início de sessão no Azure. Requer acesso à função Reader. 
+| ID do aplicativo principal do serviço do Azure (cliente) (função de leitor necessária) | ID de login no Azure.  Requer acesso à função de leitor. 
 
 
-| ID de locatário do Azure | ID de locatário da Microsoft 
+| ID do locatário do Azure | ID do locatário da Microsoft 
 
 
-| Chave de autenticação principal do serviço Azure | Chave de autenticação de login 
+| Chave de Autenticação Principal do Serviço do Azure | Chave de autenticação de login 
 
 
-| Eu entendo que a Microsoft me cobra por solicitações de API | Verifique isso para verificar se a Microsoft cobra solicitações de API feitas pela polling do Insight. 
+| Entendo que a Microsoft me cobra por solicitações de API | Marque esta opção para verificar se você entendeu que a Microsoft cobra por solicitações de API feitas pela pesquisa do Insight. 
 |===
 
 
@@ -61,19 +61,19 @@ Insira os dados nos campos do coletor de dados de acordo com a tabela abaixo:
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | A predefinição é 60 
+| Intervalo de pesquisa de inventário (min) | O padrão é 60 
 
 
-| Escolha 'Excluir' ou 'incluir' para aplicar ao filtro de VMs por Tags | Especifique se deve incluir ou excluir VM por Tags ao coletar dados. Se a opção "incluir" estiver selecionada, o campo chave da etiqueta não pode estar vazio. 
+| Selecione 'Excluir' ou 'Incluir' para aplicar ao filtro VMs por tags | Especifique se deseja incluir ou excluir VMs por tags ao coletar dados.  Se "Incluir" for selecionado, o campo Chave da tag não poderá ficar vazio. 
 
 
-| Marque chaves e valores nos quais filtrar VMs | Clique em * Tag de filtro* para escolher quais VMs (e discos associados) incluir/excluir filtrando chaves e valores que correspondem a chaves e valores de tags na VM. A chave da etiqueta é necessária, o valor da etiqueta é opcional. Quando o valor Tag está vazio, a VM é filtrada desde que corresponda à chave Tag. 
+| Chaves e valores de tags para filtrar VMs | Clique em *+ Filtrar tag* para escolher quais VMs (e discos associados) incluir/excluir, filtrando por chaves e valores que correspondem às chaves e valores das tags na VM.  A chave da tag é obrigatória, o valor da tag é opcional.  Quando o valor da tag estiver vazio, a VM será filtrada, desde que corresponda à chave da tag. 
 
 
-| Intervalo de enquete de desempenho (seg) | A predefinição é 300 
+| Intervalo de pesquisa de desempenho (seg) | O padrão é 300 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

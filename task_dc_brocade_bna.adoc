@@ -2,48 +2,48 @@
 sidebar: sidebar 
 permalink: task_dc_brocade_bna.html 
 keywords: data collector, Brocade, BNA 
-summary: Configurar o coletor Brocade BNA. 
+summary: Configurando o coletor Brocade BNA. 
 ---
-= Coletor de dados do consultor de rede Brocade
+= Coletor de dados do Brocade Network Advisor
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Insights de infraestrutura de dados usa o coletor de dados do consultor de rede da Brocade para adquirir dados de inventário e desempenho de switches Brocade.
+O Data Infrastructure Insights usa o coletor de dados do Brocade Network Advisor para adquirir dados de inventário e desempenho de switches Brocade .
 
 
 
 == Terminologia
 
-Informações de infraestrutura de dados adquire as seguintes informações de inventário do coletor de dados do consultor de rede da Brocade. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do Brocade Network Advisor.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| Interrutor | Interrutor 
+| Trocar | Trocar 
 
 
 | Porta | Porta 
 
 
-| Malha virtual, malha física | Malha 
+| Tecido Virtual, Tecido Físico | Tecido 
 
 
-| Comutador lógico | Comutador lógico 
+| Interruptor lógico | Interruptor lógico 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
 == Requisitos
 
-Para configurar este coletor de dados, são necessários os seguintes itens:
+Os seguintes itens são necessários para configurar este coletor de dados:
 
-* A Unidade de aquisição do Data Infrastructure Insights initará conexões à porta TCP 443 no servidor BNA. O servidor BNA deve estar executando a versão 14.2.1 ou superior.
-* Endereço IP do servidor do consultor de rede Brocade
+* A Unidade de Aquisição de Data Infrastructure Insights iniciará conexões com a porta TCP 443 no servidor BNA.  O servidor BNA deve estar executando a versão 14.2.1 ou superior.
+* Endereço IP do servidor Brocade Network Advisor
 * Nome de usuário e senha para uma conta de administrador
 * Requisito de porta: HTTP/HTTPS 443
 
@@ -57,16 +57,16 @@ Para configurar este coletor de dados, são necessários os seguintes itens:
 | Campo | Descrição 
 
 
-| IP do servidor do consultor de rede Brocade | Endereço IP do servidor do Network Advisor 
+| IP do servidor Brocade Network Advisor | Endereço IP do servidor Network Advisor 
 
 
-| Nome de utilizador | Nome de utilizador do comutador 
+| Nome de usuário | Nome de usuário para o switch 
 
 
-| Nome de utilizador | Nome de usuário do administrador 
+| Nome de usuário | Nome de usuário do administrador 
 
 
-| Palavra-passe | Senha do administrador 
+| Senha | Senha do administrador 
 |===
 
 
@@ -77,28 +77,28 @@ Para configurar este coletor de dados, são necessários os seguintes itens:
 | Campo | Descrição 
 
 
-| Tipo de ligação | HTTPS (porta padrão 443) ou HTTP (porta padrão 80) 
+| Tipo de conexão | HTTPS (porta padrão 443) ou HTTP (porta padrão 80) 
 
 
-| Substituir porta de ligação | Se estiver em branco, use a porta padrão no campo tipo de conexão; caso contrário, insira a porta de conexão a ser usada 
+| Substituir porta de conexão | Se estiver em branco, use a porta padrão no campo Tipo de conexão, caso contrário, insira a porta de conexão a ser usada 
 
 
-| Palavra-passe | Palavra-passe para o interrutor 
+| Senha | Senha para o switch 
 
 
-| Intervalo de pesquisa de inventário (min) | A predefinição é 40 
+| Intervalo de pesquisa de inventário (min) | O padrão é 40 
 
 
-| Gateway de acesso de relatório | Verifique para incluir dispositivos no modo Gateway de acesso 
+| Relatório Gateway de Acesso | Marque para incluir dispositivos no modo Access Gateway 
 
 
-| Intervalo de enquete de desempenho (seg) | A predefinição é 1800 
+| Intervalo de pesquisa de desempenho (seg) | O padrão é 1800 
 |===
 
 
 == Solução de problemas
 
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
@@ -106,9 +106,9 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
-| Receba uma mensagem informando que mais de 1 nó está conetado à porta do Gateway de acesso ou que o coletor de dados não consegue detetar o dispositivo Gateway de acesso. | Verifique se o dispositivo NPV está funcionando corretamente e se todas as WWNs conetadas são esperadas. Não adquira diretamente o dispositivo NPV. Em vez disso, a aquisição do switch de malha central coletará os dados do dispositivo NPV. 
+| Receba uma mensagem de que mais de um nó está conectado à porta do Access Gateway ou que o coletor de dados não consegue descobrir o dispositivo do Access Gateway. | Verifique se o dispositivo NPV está operando corretamente e se todos os WWNs conectados são esperados.  Não adquira o dispositivo NPV diretamente.  Em vez disso, a aquisição do switch de tecido central coletará os dados do dispositivo NPV. 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

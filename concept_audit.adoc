@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept_audit.html 
 keywords: audit, users, activities 
-summary: A auditoria fornece uma visão das atividades do sistema e do usuário no sistema Data Infrastructure Insights. 
+summary: A auditoria fornece uma visão das atividades do sistema e do usuário no sistema Data Infrastructure Insights . 
 ---
 = Auditoria
 :hardbreaks:
@@ -14,20 +14,20 @@ summary: A auditoria fornece uma visão das atividades do sistema e do usuário 
 
 
 [role="lead"]
-Para identificar as alterações esperadas (para rastreamento) ou inesperadas (para solução de problemas), você pode visualizar uma trilha de auditoria dos eventos do sistema Data Infrastructure Insights e das atividades do usuário.
+Para identificar alterações esperadas (para rastreamento) ou inesperadas (para solução de problemas), você pode visualizar uma trilha de auditoria dos eventos do sistema Data Infrastructure Insights e das atividades do usuário.
 
 
 
-== Visualizar eventos auditados
+== Visualizando eventos auditados
 
-Para visualizar a página Auditoria, clique em *Admin > Auditoria* no menu. A página Auditoria é exibida, fornecendo os seguintes detalhes para cada entrada de auditoria:
+Para visualizar a página Auditoria, clique em *Admin > Auditoria* no menu.  A página Auditoria é exibida, fornecendo os seguintes detalhes para cada entrada de auditoria:
 
 * *Hora* - Data e hora do evento ou atividade
-* *Usuário* - o Usuário que iniciou a atividade
-* *Função* - a função do usuário no Data Infrastructure Insights (convidado, usuário, administrador)
-* *IP* - o endereço IP associado ao evento
-* *Ação* - tipo de atividade, por exemplo Login, criar, Atualizar
-* *Categoria* - a categoria de atividade
+* *Usuário* - O usuário que iniciou a atividade
+* *Função* - A função do usuário no Data Infrastructure Insights (convidado, usuário, administrador)
+* *IP* - O endereço IP associado ao evento
+* *Ação* - Tipo de atividade, por exemplo Login, Criar, Atualizar
+* *Categoria* - A categoria de atividade
 * *Detalhes* - Detalhes da atividade
 
 
@@ -35,14 +35,14 @@ Para visualizar a página Auditoria, clique em *Admin > Auditoria* no menu. A p�
 
 == Exibindo entradas de auditoria
 
-Existem várias formas diferentes de ver entradas de auditoria:
+Há várias maneiras diferentes de visualizar entradas de auditoria:
 
 * Você pode exibir entradas de auditoria escolhendo um período de tempo específico (1 hora, 24 horas, 3 dias, etc.).
-* Você pode alterar a ordem de classificação das entradas para ascendente (seta para cima) ou descendente (seta para baixo) clicando na seta no cabeçalho da coluna.
+* Você pode alterar a ordem de classificação das entradas para crescente (seta para cima) ou decrescente (seta para baixo) clicando na seta no cabeçalho da coluna.
 +
 Por padrão, a tabela exibe as entradas em ordem decrescente de tempo.
 
-* Você pode usar os campos de filtro para mostrar apenas as entradas desejadas na tabela. Clique no botão para adicionar filtros adicionais.
+* Você pode usar os campos de filtro para mostrar apenas as entradas que deseja na tabela.  Clique no botão [+] para adicionar filtros adicionais.
 +
 image:Audit_Filters.png["Filtros de auditoria"]
 
@@ -57,84 +57,84 @@ Você pode usar qualquer um dos seguintes para refinar seu filtro:
 |===
 
 
-| Filtro | O que faz | Exemplo | Resultado 
+| Filtro | O que ele faz | Exemplo | Resultado 
 
 
-| * (Asterisco) | permite-lhe procurar tudo | vol*rhel | retorna todos os recursos que começam com "vol" e terminam com "rhel" 
+| * (Asterisco) | permite que você pesquise tudo | vol*rhel | retorna todos os recursos que começam com "vol" e terminam com "rhel" 
 
 
-| ? (ponto de interrogação) | permite-lhe procurar um número específico de carateres | BOS-PRD??-S12 | Retorna BOS-PRD**__12_**-S12, BOS-PRD**__23_**-S12, e assim por diante 
+| ?  (ponto de interrogação) | permite que você pesquise um número específico de caracteres | BOS-PRD??-S12 | retorna BOS-PRD**__12__**-S12, BOS-PRD**__23__**-S12 e assim por diante 
 
 
-| OU | permite especificar várias entidades | FAS2240 OU CX600 OU FAS3270 | Retorna qualquer um de FAS2440, CX600 ou FAS3270 
+| OU | permite que você especifique múltiplas entidades | FAS2240 OU CX600 OU FAS3270 | retorna qualquer um dos FAS2440, CX600 ou FAS3270 
 
 
-| NÃO | permite excluir texto dos resultados da pesquisa | NÃO EMC* | Retorna tudo o que não começa com "EMC" 
+| NÃO | permite que você exclua texto dos resultados da pesquisa | NÃO EMC* | retorna tudo que não começa com "EMC" 
 
 
-| _Nenhum_ | Procura em branco/NULL/None em qualquer campo selecionado | _Nenhum_ | retorna resultados em que o campo de destino não está vazio 
+| _Nenhum_ | procura por blank/NULL/None em qualquer campo onde selecionado | _Nenhum_ | retorna resultados onde o campo de destino não está vazio 
 
 
-| Não * | Como em _None_ acima, mas você também pode usar este formulário para procurar valores NULL em campos _text-only_ | Não * | retorna resultados em que o campo de destino não está vazio. 
+| Não * | como com _None_ acima, mas você também pode usar este formulário para pesquisar valores NULL em campos _somente texto_ | Não * | retorna resultados onde o campo de destino não está vazio. 
 
 
-| "" | procura uma correspondência exata | "NetApp*" | Retorna resultados contendo a string literal exata _NetApp*_ 
+| "" | procura por uma correspondência exata | "NetApp*" | retorna resultados contendo a string literal exata _NetApp*_ 
 |===
-Se você incluir uma string de filtro em aspas duplas, o Insight trata tudo entre a primeira e a última citação como uma correspondência exata. Quaisquer carateres especiais ou operadores dentro das aspas serão tratados como literais. Por exemplo, a filtragem para "*" retornará resultados que são um asterisco literal; o asterisco não será Tratado como um curinga neste caso. Os operadores OU E NÃO também serão tratados como strings literais quando incluídos em aspas duplas.
+Se você colocar uma sequência de filtro entre aspas duplas, o Insight tratará tudo entre a primeira e a última aspas como uma correspondência exata.  Quaisquer caracteres especiais ou operadores dentro das aspas serão tratados como literais.  Por exemplo, filtrar por "*" retornará resultados que são um asterisco literal; o asterisco não será tratado como um curinga neste caso.  Os operadores OR e NOT também serão tratados como strings literais quando colocados entre aspas duplas.
 
 
 
-== Eventos e ações auditadas
+== Eventos e Ações Auditados
 
 Os eventos e ações auditados pelo Data Infrastructure Insights podem ser categorizados nas seguintes áreas amplas:
 
 * *Conta de usuário*: Login, logout, mudança de função, etc.
-* *Unidade de aquisição*: Criar, excluir, etc.
+* *Unidade de Aquisição*: criar, excluir, etc.
 +
 Exemplo: _Unidade de aquisição *AU-Boston-1* removida_.
 
-* *Coletor de dados*: Adicionar, remover, modificar, adiar/retomar, alterar unidade de aquisição, iniciar/parar, etc.
+* *Coletor de dados*: adicionar, remover, modificar, adiar/retomar, alterar unidade de aquisição, iniciar/parar, etc.
 +
-Exemplo: _Datasource *Laboratório FlexPod* removido, fornecedor *NetApp*, modelo *Software de gerenciamento de dados ONTAP*, ip *192.168.106.5_*.
+Exemplo: _Datasource * FlexPod Lab* removido, fornecedor * NetApp*, modelo * ONTAP Data Management Software*, ip *192.168.106.5_*.
 
-* * Aplicação*: Adicionar, atribuir a objeto, remover, etc.
+* *Aplicação*: adicionar, atribuir ao objeto, remover, etc.
 +
 Exemplo: _Volume interno *ocisedev:t1appSVM01:t1appFlexVol01* adicionado ao aplicativo *Test App_*.
 
-* *Anotação*: Adicionar, atribuir, remover, ações de regra de anotação, alterações de valor de anotação, etc.
+* *Anotação*: adicionar, atribuir, remover, ações de regras de anotação, alterações de valores de anotação, etc.
 +
 Exemplo: _Valor de anotação *Boston* adicionado ao tipo de anotação *SalesOffice_*.
 
-* *Consulta*: Adicionar, remover, etc.
+* *Consulta*: adicionar, remover, etc.
 +
-Exemplo: _Query *TL Sales Query* é adicionado_.
+Exemplo: _Consulta *TL Sales Query* é adicionada_.
 
-* *Monitor*: Adicionar, remover, etc.
+* *Monitorar*: adicionar, remover, etc.
 +
-Exemplo: Monitor _tamanho do Aggr - CI Alertas notificações Dev_ atualizado
+Exemplo: Monitor _Aggr Size - CI Alerts Notifications Dev_ atualizado
 
-* *Notificação*: Alterar e-mail, etc.
+* *Notificação*: alterar e-mail, etc.
 +
-Exemplo: Destinatário _CI-alerts-notifications-dl_ criado
+Exemplo: Destinatário _ci-alerts-notifications-dl_ criado
 
 
 
 
 
-== Exportar eventos de auditoria
+== Exportando eventos de auditoria
 
-Você pode exportar os resultados da exibição Auditoria para um arquivo .CSV, que permitirá analisar os dados ou importá-los para outro aplicativo.
+Você pode exportar os resultados da sua exibição de auditoria para um arquivo .CSV, o que permitirá que você analise os dados ou importe-os para outro aplicativo.
 
 .Passos
-. Na página Auditoria, defina o intervalo de tempo desejado e os filtros desejados. O Data Infrastructure Insights exportará apenas as entradas de Auditoria que correspondem à filtragem e ao intervalo de tempo que você definiu.
-. Clique no botão _Export_ image:ExportButton.png["Botão Export (Exportar)"]no canto superior direito da tabela.
+. Na página Auditoria, defina o intervalo de tempo desejado e os filtros desejados.  O Data Infrastructure Insights exportará apenas as entradas de auditoria que correspondem à filtragem e ao intervalo de tempo que você definiu.
+. Clique no botão _Exportar_image:ExportButton.png["Botão Exportar"] no canto superior direito da tabela.
 
 
-Os eventos de auditoria exibidos serão exportados para um arquivo .CSV, até um máximo de 10.000 linhas.
+Os eventos de auditoria exibidos serão exportados para um arquivo .CSV, com no máximo 10.000 linhas.
 
 
 
-== Retenção de dados de auditoria
+== Retenção de Dados de Auditoria
 
 O período durante o qual o Data Infrastructure Insights retém os dados de auditoria depende da sua assinatura:
 
@@ -142,21 +142,21 @@ O período durante o qual o Data Infrastructure Insights retém os dados de audi
 * Ambientes assinados: os dados de auditoria são retidos por 1 ano mais 1 dia
 
 
-As entradas de auditoria mais antigas do que o tempo de retenção são automaticamente eliminadas. Nenhuma interação do usuário é necessária.
+Entradas de auditoria mais antigas que o tempo de retenção são automaticamente eliminadas.  Não é necessária nenhuma interação do usuário.
 
-As entradas de auditoria mais antigas do que o tempo de retenção são automaticamente eliminadas. Nenhuma interação do usuário é necessária.
+Entradas de auditoria mais antigas que o tempo de retenção são automaticamente eliminadas.  Não é necessária nenhuma interação do usuário.
 
 
 
 == Solução de problemas
 
-Aqui você encontrará sugestões para solucionar problemas com a Auditoria.
+Aqui você encontrará sugestões para solucionar problemas com o Audit.
 
 |===
 
 
-| *Problema:* | *Tente isto:* 
+| *Problema:* | *Experimente isto:* 
 
 
-| Vejo mensagens de auditoria me informando que um monitor foi exportado. | A exportação de uma configuração de monitor personalizada geralmente é usada por engenheiros da NetApp durante o desenvolvimento e teste de novos recursos. Se você não esperava ver essa mensagem, considere explorar as ações do usuário nomeado na ação auditada ou entre em Contato com o suporte. 
+| Vejo mensagens de auditoria informando que um monitor foi exportado. | A exportação de uma configuração de monitor personalizada normalmente é usada pelos engenheiros da NetApp durante o desenvolvimento e teste de novos recursos.  Se você não esperava ver esta mensagem, considere explorar as ações do usuário nomeado na ação auditada ou entre em contato com o suporte. 
 |===

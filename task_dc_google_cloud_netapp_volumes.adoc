@@ -14,15 +14,15 @@ keywords: data collector, queries, create, google, cloud, volumes,
 
 
 [role="lead"]
-Este coletor de dados oferece suporte à coleta de inventário e desempenho das configurações do Google Cloud NetApp Volumes . O coletor descobre volumes e recursos de armazenamento do NetApp em todos os projetos de uma organização do Google. Se você tiver várias organizações do Google que deseja monitorar com o Data Infrastructure Insights, implante um coletor por organização.
+Este coletor de dados oferece suporte à coleta de inventário e desempenho das configurações do Google Cloud NetApp Volumes .  O coletor descobre volumes e recursos de armazenamento do NetApp em todos os projetos dentro de uma organização do Google.  Se você tiver várias organizações do Google que deseja monitorar com o Data Infrastructure Insights, implante um coletor por organização.
 
 
 
 == Requisitos da conta de serviço
 
-* Você deve criar uma conta de serviço seguindo as instruções em link:https://cloud.google.com/iam/docs/creating-managing-service-accounts["Criando/gerenciando contas de serviço"]. Esta conta de serviço é identificada por um ID exclusivo, conhecido como _clientId_, que será usado como nome de usuário.
-* Além disso, crie uma chave de conta de serviço seguindo as instruções em link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys["Criando/gerenciando chaves de conta de serviço"]. Essa chave pode ser baixada como um arquivo json, cujo conteúdo será usado como senha.
-* A conta de serviço deve ter escopo para _Compute.readonly_, _monitoring.read_ e _cloud-Platform_.
+* Você deve criar uma conta de serviço seguindo as instruções emlink:https://cloud.google.com/iam/docs/creating-managing-service-accounts["Criação/Gerenciamento de Contas de Serviço"] .  Esta conta de serviço é identificada por um ID exclusivo, conhecido como _clientId_, que será usado como nome de usuário.
+* Além disso, crie uma chave de conta de serviço seguindo as instruções emlink:https://cloud.google.com/iam/docs/creating-managing-service-account-keys["Criação/gerenciamento de chaves de conta de serviço"] .  Esta chave pode ser baixada como um arquivo json, cujo conteúdo será usado como uma senha.
+* A conta de serviço deve ter escopo para _compute.readonly_, _monitoring.read_ e _cloud-platform_.
 
 
 
@@ -34,22 +34,22 @@ Este coletor de dados oferece suporte à coleta de inventário e desempenho das 
 | Campo | Descrição 
 
 
-| Código Organização | O ID da organização que você deseja descobrir com este coletor. Este campo é obrigatório se a sua conta de serviço for capaz de ver mais de uma organização 
+| ID da organização | O ID da organização que você deseja descobrir com este coletor.  Este campo é obrigatório se sua conta de serviço puder ver mais de uma organização 
 
 
-| Escolha 'Excluir' ou 'incluir' para filtrar ativos GCNV por local | Este padrão é excluído, já que este coletor por padrão pretende descobrir todos os volumes GCNV em todo o mundo dentro de sua organização. 
+| Selecione 'Excluir' ou 'Incluir' para filtrar ativos GCNV por localização | O padrão é Excluir, pois esse coletor, por padrão, pretende descobrir todos os volumes GCNV em todo o mundo dentro da sua organização. 
 
 
-| GCNV Excluir/incluir localizações | O padrão é vazio e é usado em conjunto com a opção "Escolher 'Excluir' ou 'Incluir'". Se você deseja descobrir ativos apenas em determinadas regiões, use essas duas opções para limitar o escopo deste coletor. 
+| Locais de exclusão/inclusão do GCNV | O padrão é vazio e é usado em conjunto com a opção "Escolher 'Excluir' ou 'Incluir'".  Se você quiser descobrir ativos apenas em determinadas regiões, use estas duas opções para limitar o escopo deste coletor. 
 
 
-| IDs de projeto | A lista de IDs de projeto que você deseja filtrar dentro ou fora da descoberta, dependendo do valor do valor "escolha 'Excluir'....". A lista padrão está vazia 
+| IDs do projeto | A lista de IDs de projeto que você deseja filtrar para dentro ou para fora da descoberta, dependendo do valor do valor "Escolher 'Excluir'....".  A lista padrão está vazia 
 
 
 | ID do cliente | ID do cliente para a configuração do Google Cloud Platform 
 
 
-| Copie e cole o conteúdo do seu arquivo de credencial do Google aqui | Copie suas credenciais do Google para a conta do Cloud Platform para este campo 
+| Copie e cole o conteúdo do seu arquivo de credenciais do Google aqui | Copie suas credenciais do Google para a conta do Cloud Platform para este campo 
 |===
 
 
@@ -60,19 +60,19 @@ Este coletor de dados oferece suporte à coleta de inventário e desempenho das 
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | O padrão é de 60 minutos 
+| Intervalo de pesquisa de inventário (min) | O padrão é 60 minutos 
 
 
-| Use o proxy AU para chamadas de API REST | Selecione esta opção para que o coletor use o mesmo proxy da Unidade de Aquisição na qual o coletor reside. Por padrão, esta opção está desabilitada, o que significa que o coletor tenta enviar chamadas de API HTTPS diretamente para o Google. 
+| Use o proxy AU para chamadas de API REST | Selecione esta opção para que o coletor use o mesmo proxy que a Unidade de Aquisição na qual o coletor reside.  Por padrão, isso está desabilitado, o que significa que o coletor tenta enviar chamadas de API HTTPS diretamente para o Google. 
 
 
-| Rotule chaves e valores nos quais filtrar VMs | Clique em * rótulo de filtro* para escolher quais VMs (e discos associados) incluir/excluir filtrando chaves e valores que correspondem a chaves e valores de rótulos na VM. A chave da etiqueta é necessária, o valor da etiqueta é opcional. Quando o valor de rótulo está vazio, a VM é filtrada desde que corresponda à chave de rótulo. 
+| Chaves e valores de rótulos para filtrar VMs | Clique em *+ Filtrar rótulo* para escolher quais VMs (e discos associados) incluir/excluir, filtrando por chaves e valores que correspondem às chaves e valores dos rótulos na VM.  A chave do rótulo é obrigatória, o valor do rótulo é opcional.  Quando o Valor do Rótulo estiver vazio, a VM será filtrada desde que corresponda à Chave do Rótulo. 
 
 
-| Intervalo de enquete de desempenho (seg) | O padrão é de 300 segundos 
+| Intervalo de pesquisa de desempenho (seg) | O padrão é 300 segundos 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

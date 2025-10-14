@@ -1,26 +1,26 @@
 ---
 sidebar: sidebar 
 permalink: dashboard_access_management.html 
-summary: Você determina se um dashboard criado é público ou privado. 
+summary: Você determina se um painel criado é público ou privado. 
 keywords: dashboard, public, shared, private 
 ---
-= Gerenciamento de acesso ao dashboard
+= Gerenciamento de acesso ao painel
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
 
 
 [role="lead"]
-O Data Infrastructure Insights agora oferece maior controle sobre o acesso aos painéis que você cria. Você escolhe quem pode modificar seus gráficos. Você controla a exposição a informações potencialmente confidenciais. Manter um painel privado permite que você finalize suas visualizações até que elas estejam prontas para serem consumidas por outras pessoas em sua organização.
+O Data Infrastructure Insights agora oferece maior controle sobre o acesso aos painéis que você cria.  Você escolhe quem pode modificar seus gráficos.  Você controla a exposição a informações potencialmente confidenciais.  Manter um painel privado permite que você finalize suas visualizações até que elas estejam prontas para serem consumidas por outras pessoas na sua organização.
 
-image:Dashboard_Sharing_Options.png["opções de compartilhamento de painel, largura de 300 mm"]
+image:Dashboard_Sharing_Options.png["opções de compartilhamento do painel, largura=300"]
 
-Por padrão, quando você cria um novo painel, esse painel só é visível para você, o criador. Nenhum outro usuário pode ver ou modificar o painel.
+Por padrão, quando você cria um novo painel, ele fica visível somente para você, o criador.  Nenhum outro usuário pode ver ou modificar o painel.
 
-Depois de finalizar seu painel, você pode optar por permitir que outras pessoas da sua organização o visualizem. Para compartilhar um painel, na lista de painéis, selecione _share_ no menu à direita.
+Quando você finalizar seu painel, poderá permitir que outras pessoas na sua organização o visualizem.  Para compartilhar um painel, na lista de painéis, selecione _Compartilhar_ no menu à direita.
 
-image:dashboard_access_share_menu.png["partilha de acesso ao painel a partir do menu"]
+image:dashboard_access_share_menu.png["acesso ao painel de compartilhamento no menu"]
 
-Você pode optar por compartilhar o painel com todos ou selecionar usuários, com permissões Editar ou somente leitura.
+Você pode optar por compartilhar o painel com todos ou selecionar usuários com permissões de edição ou somente leitura.
 
-image:dashboard_access_share_drop-down.png["Drop-Downs para compartilhar um painel com a permissão Editar ou ler"]
+image:dashboard_access_share_drop-down.png["Menus suspensos para compartilhar um painel com permissão de edição ou leitura"]

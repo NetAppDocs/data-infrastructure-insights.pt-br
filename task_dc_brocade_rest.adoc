@@ -2,64 +2,64 @@
 sidebar: sidebar 
 permalink: task_dc_brocade_rest.html 
 keywords: data collector, Brocade, FC switch, FOS, Rest 
-summary: Configurando o coletor de DADOS REST do Brocade FOS. 
+summary: Configurando o coletor de dados Brocade FOS REST. 
 ---
-= Coletor de DADOS REST do Brocade FOS
+= Coletor de dados Brocade FOS REST
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Insights de infraestrutura de dados usa o coletor REST do Brocade FOS para descobrir o inventário e o desempenho dos dispositivos de switch Brocade que executam o firmware 8,2 e posterior do FabricOS. Observe que as primeiras versões do FOS 8.2 podem ter bugs na API REST; é altamente recomendável executar a versão mais recente possível do FOS suportada pela sua plataforma.
+O Data Infrastructure Insights usa o coletor Brocade FOS REST para descobrir inventário e desempenho para dispositivos de switch Brocade executando firmware FabricOS (FOS) 8.2 e posterior.  Observe que as primeiras versões do FOS 8.2 podem ter bugs na API REST; é altamente recomendável executar a versão mais recente possível do FOS suportada pela sua plataforma.
 
-Observação: O nível padrão DE "usuário" DO FOS não é suficientemente poderoso para que o Data Infrastructure Insights visualize todos os aspetos lógicos de um dispositivo - precisamos de uma conta de usuário com a "função de chassi" ativada, bem como permissões em todas as estruturas virtuais configuradas em um switch.
+Observação: o nível de "usuário" padrão do FOS não é suficientemente poderoso para que o Data Infrastructure Insights visualize todos os aspectos lógicos de um dispositivo. Precisamos de uma conta de usuário com a "Função de chassi" ativada, bem como permissões em todos os Virtual Fabrics configurados em um switch.
 
-Aqui está um exemplo de como você pode criar uma conta de usuário "menos privilégio" para uso do Data Infrastructure Insights em uma sessão SSH para um dispositivo FOS:
+Aqui está um exemplo de como você pode criar uma conta de usuário de "privilégio mínimo" para uso do Data Infrastructure Insights em uma sessão SSH para um dispositivo FOS:
 
-UserConfig --add NetAppCIUser -r user -l 1-128 -c user -p Qwerty!
+userConfig --add NetAppCIUser -r usuário -l 1-128 -c usuário -p Qwerty!
 
-Isso criará um usuário "NetAppCIUser" com uma senha de "Qwerty!". Esse usuário tem a função "usuário" (-r) em todas as 128 malhas virtuais possíveis ( -l ). Esse usuário também tem a função "chassis" necessária ( -c) com acesso ao nível do usuário atribuído.
+Isso criará um usuário “NetAppCIUser” com a senha “Qwerty!”.  Este usuário tem a função de “usuário” (-r) em todos os 128 tecidos virtuais possíveis (-l).  Este usuário também tem a função necessária “Chassis” (-c) com acesso de nível de usuário atribuído.
 
-Por padrão, este coletor tentará descobrir todos os dispositivos FOS que fazem parte de todas as malhas das quais o switch faz parte.
+Por padrão, este coletor tentará descobrir todos os dispositivos FOS que fazem parte de todas as estruturas das quais o switch faz parte.
 
-Observação: O usuário padrão somente leitura DO FOS "user" NÃO tem permissões de visualização em todas as telas virtuais, nem tem permissões de "função de chassi". Isso significa que você terá uma baixa probabilidade de sucesso usando o "usuário" com o Data Infrastructure Insights, que precisa entender tanto a configuração física quanto lógica do dispositivo FOS.
+Observação: o usuário padrão somente leitura do FOS "user" NÃO tem permissões de visualização em todos os Virtual Fabrics, nem tem permissões de "chassis role".  Isso significa que você terá uma baixa probabilidade de sucesso usando "usuário" com o Data Infrastructure Insights, que precisa entender a configuração física e lógica do dispositivo FOS.
 
 
 
 == Terminologia
 
-O Insights de infraestrutura de dados adquire as seguintes informações de inventário do coletor de DADOS REST do Brocade FOS. Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados Brocade FOS REST.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| Interrutor | Interrutor 
+| Trocar | Trocar 
 
 
 | Porta | Porta 
 
 
-| Malha virtual, malha física | Malha 
+| Tecido Virtual, Tecido Físico | Tecido 
 
 
 | Zona | Zona 
 
 
-| Comutador lógico | Comutador lógico 
+| Interruptor lógico | Interruptor lógico 
 
 
 | Zona LSAN | Zona IVR 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
 == Requisitos
 
-* Deve haver conectividade TCP para todos os switches na malha. Esse tipo de coletor de dados experimentará perfeitamente HTTP e HTTPS para cada dispositivo na malha. Se você selecionar a caixa de seleção _descobrir todos os switches na estrutura_, o Data Infrastructure Insights identificará todos os switches na malha; no entanto, ele precisará de conectividade TCP a esses switches adicionais para detectá-los.
-* Globalmente, a mesma conta é necessária em todos os switches da malha. Pode utilizar a interface Web do dispositivo para confirmar o acesso.
+* Deve haver conectividade TCP com todos os switches na malha.  Este tipo de coletor de dados tentará perfeitamente HTTP e HTTPS para cada dispositivo na malha.  Se você marcar a caixa de seleção _Descobrir todos os switches na malha_, o Data Infrastructure Insights identificará todos os switches na malha; no entanto, ele precisa de conectividade TCP com esses switches adicionais para descobri-los.
+* A mesma conta é necessária globalmente em todos os switches da malha.  Você pode usar a interface Web do dispositivo para confirmar o acesso.
 
 
 
@@ -71,13 +71,13 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| IP do switch | Endereço IP ou nome de domínio totalmente qualificado do switch FOS 
+| Mudar IP | Endereço IP ou nome de domínio totalmente qualificado do switch FOS 
 
 
-| Nome de utilizador | Nome de utilizador do comutador 
+| Nome de usuário | Nome de usuário para o switch 
 
 
-| Palavra-passe | Palavra-passe para o interrutor 
+| Senha | Senha para o switch 
 |===
 
 
@@ -88,31 +88,31 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Dispositivos excluídos | Lista separada por vírgulas dos endereços do dispositivo IPv4 a excluir da sondagem. 
+| Dispositivos Excluídos | Lista separada por vírgulas de endereços IPv4 de dispositivos a serem excluídos da pesquisa. 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. A predefinição é 60. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário.  O padrão é 60. 
 
 
-| Descubra todos os switches na malha | Selecione para descobrir todos os switches na malha. 
+| Descubra todos os interruptores do tecido | Selecione para descobrir todos os switches na malha. 
 
 
-| Escolha favorecendo HBA vs. Aliases de zona | Escolha se prefere HBA ou aliases de zona. 
+| Escolha entre HBA e aliases de zona | Escolha se deseja favorecer HBA ou aliases de zona. 
 
 
-| Tipo de ligação | HTTP ou HTTPS. 
+| Tipo de conexão | HTTP ou HTTPS. 
 
 
-| Observe que essa configuração somente altera o IC de protocolo que tenta usar primeiro por dispositivo - IC tentará o protocolo oposto automaticamente se o padrão falhar | Substituir a porta TCP 
+| Observe que esta configuração apenas altera qual protocolo o CI tenta usar por dispositivo primeiro - o CI tentará o protocolo oposto automaticamente se o padrão falhar | Substituir porta TCP 
 
 
-| Especifique uma porta se não estiver usando o padrão. | Intervalo de enquete de desempenho (seg) 
+| Especifique uma porta se não estiver usando a padrão. | Intervalo de pesquisa de desempenho (seg) 
 |===
 
 
 == Solução de problemas
 
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
@@ -120,21 +120,21 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
-| O recurso Teste me avisa que um protocolo está inacessível | Um determinado dispositivo Brocade FOS 8,2 só vai querer falar em HTTP ou HTTPS - se um switch tiver um certificado digital instalado, o switch irá lançar erros HTTP se alguém tentar se comunicar com ele com HTTP não criptografado versus HTTPS. O recurso de teste tenta a comunicação com HTTP e HTTPS - se o Teste disser que um protocolo passa, você pode salvar o coletor com segurança e não se preocupar que o outro protocolo não foi bem-sucedido - o coletor tentará ambos os protocolos durante a coleta, e só falhará se nenhum deles funcionar. 
+| O recurso de teste me avisa que um protocolo está inacessível | Um determinado dispositivo Brocade FOS 8.2+ só vai querer falar em HTTP ou HTTPS. Se um switch tiver um certificado digital instalado, o switch lançará erros de HTTP se alguém tentar se comunicar com ele com HTTP não criptografado em vez de HTTPS.  O recurso de teste tenta comunicação com HTTP e HTTPS. Se o teste informar que um protocolo foi aprovado, você pode salvar o coletor com segurança e não se preocupar se o outro protocolo não foi bem-sucedido. O coletor tentará ambos os protocolos durante a coleta e só falhará se nenhum deles funcionar. 
 
 
-| Erro: O inventário falha com 401 Não autorizado...Chave de sessão inválida... | Este é um bug distinto de algumas versões iniciais do FOS 8.2, como a 8.2.1c, que NÃO oferecem suporte adequado à autenticação básica HTTP. Atualize para uma versão posterior, 8.2 ou 9.*. 
+| Erro: O inventário falha com 401 Não autorizado...Chave de sessão inválida... | Este é um bug distinto de algumas versões iniciais do 8.2 FOS, como a 8.2.1c, que NÃO oferecem suporte adequado à autenticação básica HTTP.  Atualize para uma versão posterior 8.2 ou 9.* 
 
 
-| Erro: "Dados Infrastructure Insights receberam função de chassi inválida" | Verifique se o usuário configurado nesta fonte de dados recebeu a permissão de função de chassi. 
+| Erro: “O Data Infrastructure Insights recebeu uma função de chassi inválida” | Verifique se o usuário configurado nesta fonte de dados recebeu a permissão de função de chassi. 
 
 
-| Erro: "Endereço IP do chassis incorreto" | Altere a configuração da fonte de dados para usar o endereço IP do chassi. 
+| Erro: "Endereço IP do chassi incompatível" | Altere a configuração da fonte de dados para usar o endereço IP do chassi. 
 
 
-| Inventário falha com um 403 proibido | Isso pode ser simplesmente credenciais ruins, ou pode ser indicativo de que você está tentando usar uma função insuficientemente poderosa - lembre-se de que os usuários de nível "usuário" NÃO têm o direito de "função de chassi" necessário, ou visualizar o acesso a telas virtuais não padrão. 
+| Falha no inventário com um 403 Proibido | Isso pode ser simplesmente credenciais incorretas ou pode ser um indicativo de que você está tentando usar uma função insuficientemente poderosa. Lembre-se de que usuários de nível "usuário" NÃO têm o direito necessário de "Função de chassi" ou acesso de visualização a malhas virtuais não padrão. 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

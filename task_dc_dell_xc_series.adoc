@@ -2,15 +2,15 @@
 sidebar: sidebar 
 permalink: task_dc_dell_xc_series.html 
 keywords: data collector, Dell, EMC, xc 
-summary: Configurar o coletor de dados da série XC da Dell EMC. 
+summary: Configurando o coletor de dados Dell EMC Série XC. 
 ---
-= Coletor de dados da série XC da Dell EMC
+= Coletor de dados Dell EMC Série XC
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Data Infrastructure Insights usa esse coletor de dados para descobrir informações de inventário e desempenho para os storages de armazenamento da série XC da Dell EMC.
+O Data Infrastructure Insights usa esse coletor de dados para descobrir informações de inventário e desempenho para os arrays de armazenamento Dell EMC Série XC.
 
 
 
@@ -21,13 +21,13 @@ O Data Infrastructure Insights usa esse coletor de dados para descobrir informa�
 | Campo | Descrição 
 
 
-| Endereço IP externo do prisma | Endereço IP do servidor XC 
+| Endereço IP externo do Prism | Endereço IP do servidor XC 
 
 
-| Nome de utilizador | Nome de usuário para o servidor XC 
+| Nome de usuário | Nome de usuário para o servidor XC 
 
 
-| Palavra-passe | Senha usada para o servidor XC 
+| Senha | Senha usada para o servidor XC 
 |===
 
 
@@ -41,13 +41,13 @@ O Data Infrastructure Insights usa esse coletor de dados para descobrir informa�
 | Porta TCP | Porta usada para comunicação TCP com o servidor XC 
 
 
-| Intervalo de enquete de inventário (min) | Intervalo entre sondagens de inventário. O padrão é 60 minutos. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário. O padrão é 60 minutos. 
 
 
-| Intervalo de enquete de desempenho (min) | Intervalo entre sondagens de desempenho. O padrão é 300 segundos. 
+| Intervalo de pesquisa de desempenho (min) | Intervalo entre pesquisas de desempenho. O padrão é 300 segundos. 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

@@ -10,45 +10,45 @@ summary: Coletor de dados IBM TotalStorage DS4000
 
 
 [role="lead"]
-Este coletor de dados adquire informações de inventário e desempenho do sistema de armazenamento IBM DS4000. Existem duas configurações possíveis (firmware 6.x e firmware 7.x), e ambas têm os mesmos valores.
+Este coletor de dados adquire informações de inventário e desempenho do sistema de armazenamento IBM DS4000.  Há duas configurações possíveis (firmware 6.x e firmware 7.x+), e ambas têm os mesmos valores.
 
 
 
 == Terminologia
 
-O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados IBM DS4000. Para cada tipo de ativo adquirido, a terminologia mais comum usada para esse ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados IBM DS4000.  Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para esse ativo.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
 | Disco | Disco 
 
 
-| Grupo de volume | Grupo de discos 
+| Grupo de Volume | Grupo de Discos 
 
 
-| Storage array | Armazenamento 
+| Matriz de armazenamento | Armazenar 
 
 
-| Controlador | Nó de storage 
+| Controlador | Nó de armazenamento 
 
 
-| Grupo de volume | Pool de storage 
+| Grupo de Volume | Pool de armazenamento 
 
 
 | Volume | Volume 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
 == Requisitos
 
 * Endereço IP de cada matriz DS5 ou FAStT
-* Validação de acesso fazendo ping no endereço IP de ambos os controladores no array
-* Requisitos do porto: 2463
+* Validação de acesso por ping no endereço IP de ambos os controladores no array
+* Requisitos de porta: 2463
 
 
 
@@ -60,7 +60,7 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Lista separada por vírgulas de IPs do controlador SANtricity da matriz | Endereços IP e/ou nomes de domínio totalmente qualificados para os controladores de matriz 
+| Lista separada por vírgulas de IPs do Array SANtricity Controller | Endereços IP e/ou nomes de domínio totalmente qualificados para os controladores de matriz 
 |===
 
 
@@ -71,13 +71,13 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Intervalo de enquete de inventário (min) | O padrão é de 30 minutos 
+| Intervalo de pesquisa de inventário (min) | O padrão é 30 minutos 
 
 
-| Intervalo de enquete de desempenho até 3600 segundos | O padrão é de 300 segundos 
+| Intervalo de pesquisa de desempenho de até 3600 segundos | O padrão é 300 segundos 
 |===
 
 
 == Solução de problemas
 
-Informações adicionais sobre este Coletor de dados podem ser encontradas link:concept_requesting_support.html["Suporte"]na página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

@@ -14,67 +14,67 @@ summary: O Workload Security inclui uma API poderosa para integração com outro
 
 
 [role="lead"]
-A API de segurança de carga de trabalho permite que clientes da NetApp e fornecedores de software independentes (ISVs) integrem a segurança de carga de trabalho com outros aplicativos, como CMDB ou outros sistemas de emissão de tíquetes.
+A API de segurança de carga de trabalho permite que clientes da NetApp e fornecedores independentes de software (ISVs) integrem o Workload Security com outros aplicativos, como CMDBs ou outros sistemas de emissão de tickets.
 
 Requisitos para acesso à API:
 
-* Um modelo de token de acesso à API é usado para conceder acesso.
-* O gerenciamento de token de API é realizado por usuários do Workload Security com a função Administrador.
+* Um modelo de token de acesso de API é usado para conceder acesso.
+* O gerenciamento do token de API é realizado por usuários do Workload Security com a função de administrador.
 
 
 
 
 == Documentação da API (Swagger)
 
-As informações mais recentes da API são encontradas efetuando login no Workload Security e navegando até *Admin > API Access*. Clique no link *Documentação da API*. A Documentação da API é baseada no Swagger, que fornece uma breve descrição e informações de uso para a API e permite que você experimente no seu locatário.
+As informações mais recentes da API podem ser encontradas fazendo login no Workload Security e navegando até *Admin > Acesso à API*.  Clique no link *Documentação da API*.  A documentação da API é baseada no Swagger, que fornece uma breve descrição e informações de uso da API e permite que você a experimente em seu locatário.
 
 
-NOTE: Ao chamar a API de atividade Forensics, use a API cloudsecure_forensics.Activities.*v2* API. Se você estiver fazendo várias chamadas para essa API, verifique se as chamadas ocorrem sequencialmente, não em paralelo. Várias chamadas paralelas podem fazer com que a API termine o tempo limite.
+NOTE: Se estiver chamando a API de atividade forense, use a API cloudsecure_forensics.activities.*v2*.  Se você estiver fazendo várias chamadas para esta API, certifique-se de que as chamadas ocorram sequencialmente, não em paralelo.  Várias chamadas paralelas podem causar tempo limite na API.
 
 
 
 == Tokens de acesso à API
 
-Antes de usar a API Workload Security, você deve criar um ou mais *tokens de acesso à API*. Os tokens de acesso concedem permissões de leitura. Você também pode definir a expiração para cada token de acesso.
+Antes de usar a API de segurança de carga de trabalho, você deve criar um ou mais *Tokens de acesso à API*.  Os tokens de acesso concedem permissões de leitura.  Você também pode definir a expiração de cada token de acesso.
 
-Para criar um token de acesso:
+Para criar um Token de Acesso:
 
-* Clique em *Admin > API Access*
-* Clique em * API Access Token*
+* Clique em *Admin > Acesso à API*
+* Clique em *+Token de acesso à API*
 * Digite *Nome do Token*
-* Especifique *validade do token*
+* Especifique *Expiração do Token*
 
 
 
-NOTE: Seu token só estará disponível para copiar para a área de transferência e salvar durante o processo de criação. Os tokens não podem ser recuperados depois que são criados, por isso é altamente recomendável copiar o token e salvá-lo em um local seguro. Você será solicitado a clicar no botão Copiar token de acesso à API antes de fechar a tela de criação de token.
+NOTE: Seu token só estará disponível para ser copiado para a área de transferência e salvo durante o processo de criação.  Os tokens não podem ser recuperados depois de criados, por isso é altamente recomendável copiar o token e salvá-lo em um local seguro.  Você será solicitado a clicar no botão Copiar token de acesso à API antes de fechar a tela de criação do token.
 
-Você pode desativar, ativar e revogar tokens. Os tokens que estão desativados podem ser ativados.
+Você pode desabilitar, habilitar e revogar tokens.  Tokens que estão desabilitados podem ser habilitados.
 
-Os tokens concedem acesso de propósito geral às APIs da perspetiva do cliente, gerenciando o acesso às APIs no escopo de seu próprio locatário.
+Os tokens concedem acesso de propósito geral às APIs da perspectiva do cliente, gerenciando o acesso às APIs no escopo de seu próprio locatário.
 
-O aplicativo recebe um token de acesso depois que um usuário autentica e autoriza o acesso com êxito e passa o token de acesso como uma credencial quando chama a API de destino. O token passado informa à API que o portador do token foi autorizado a acessar a API e executar ações específicas com base no escopo que foi concedido durante a autorização.
+O aplicativo recebe um Token de Acesso depois que um usuário autentica e autoriza o acesso com sucesso e, em seguida, passa o Token de Acesso como uma credencial quando chama a API de destino.  O token passado informa à API que o portador do token foi autorizado a acessar a API e executar ações específicas com base no escopo concedido durante a autorização.
 
 O cabeçalho HTTP onde o token de acesso é passado é *X-CloudInsights-ApiKey:*
 
 Por exemplo, use o seguinte para recuperar ativos de armazenamento:
 
  curl https://<Workload Security tenant>/rest/v1/cloudsecure/activities -H 'X-CloudInsights-ApiKey: <API_Access_Token>'
-Onde _<API_Access_Token>_ é o token que você salvou durante a criação da chave de acesso da API e _<Workload Security Tenant>_ é o URL do locatário do seu ambiente de Workload Security.
+Onde _<API_Access_Token>_ é o token que você salvou durante a criação da chave de acesso à API e _<Workload Security Tenant>_ é a URL do locatário do seu ambiente de Workload Security.
 
-Informações detalhadas podem ser encontradas no link _API Documentation_ em *Admin > API Access*.
+Informações detalhadas podem ser encontradas no link _Documentação da API_ em *Administrador > Acesso à API*.
 
 
 
-== Script para extrair dados através da API
+== Script para extrair dados via API
 
-Os agentes de segurança de carga de trabalho incluem um script de exportação para facilitar chamadas paralelas para a API v2 dividindo o intervalo de tempo solicitado em lotes menores.
+Os agentes de segurança de carga de trabalho incluem um script de exportação para facilitar chamadas paralelas à API v2, dividindo o intervalo de tempo solicitado em lotes menores.
 
-O script está localizado em _/opt/NetApp/cloudsecure/Agent/export-script_. Um arquivo README no mesmo diretório fornece instruções de uso.
+O script está localizado em _/opt/netapp/cloudsecure/agent/export-script_.  Um arquivo README no mesmo diretório fornece instruções de uso.
 
-Aqui está um comando de exemplo para invocar o script:
+Aqui está um exemplo de comando para invocar o script:
 
 [source]
 ----
 python3 data-export.py --tenant_url <Workload Security tenant> --access_key %ACCESS_KEY% --path_filter "<dir path>" --user_name "<user>" --from_time "01-08-2024 00:00:00" --to_time "31-08-2024 23:59:59" --iteration_interval 12 --num_workers 3
 ----
-Parâmetros-chave: - `--iteration_interval 12`: Divide o intervalo de tempo solicitado em intervalos de 12 horas. - `--num_workers 3`: Fetches esses intervalos em paralelo usando 3 threads.
+Parâmetros principais: - `--iteration_interval 12` : Divide o intervalo de tempo solicitado em intervalos de 12 horas.  - `--num_workers 3` : Busca esses intervalos em paralelo usando 3 threads.

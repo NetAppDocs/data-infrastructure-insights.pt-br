@@ -1,123 +1,123 @@
 ---
 sidebar: sidebar 
 permalink: concept_searching_assets.html 
-summary: a techniquest pode ajudá-lo a localizar os ativos que você está procurando. 
+summary: Técnicas de pesquisa avançada podem ajudar você a localizar os ativos que está procurando. 
 keywords: asset page, objects, search, advanced, alerts 
 ---
-= Dicas e dicas para pesquisar ativos e alertas
+= Dicas e sugestões para pesquisar ativos e alertas
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Várias técnicas de pesquisa podem ser usadas para pesquisar dados ou objetos em seu ambiente monitorado.
+Várias técnicas de pesquisa podem ser usadas para procurar dados ou objetos no seu ambiente monitorado.
 
-* * Pesquisa de curinga*
+* *Pesquisa curinga*
 +
-Você pode realizar a pesquisa de carateres curinga múltiplos usando o caractere *. Por exemplo, _applic*n_ retornaria _application_.
+Você pode realizar uma pesquisa com vários caracteres curinga usando o caractere *.  Por exemplo, _applic*n_ retornaria _application_.
 
-* *Frases usadas na busca*
+* *Frases usadas na pesquisa*
 +
-Uma frase é um grupo de palavras cercado por aspas duplas; por exemplo, "VNX LUN 5". Você pode usar aspas duplas para procurar documentos que contenham espaços em seus nomes ou atributos.
+Uma frase é um grupo de palavras entre aspas duplas; por exemplo, "VNX LUN 5".  Você pode usar aspas duplas para pesquisar documentos que contenham espaços em seus nomes ou atributos.
 
 * *Operadores booleanos*
 +
-Usando operadores booleanos OU, E, e NÃO, você pode combinar vários termos para formar uma consulta mais complexa.
+Usando os operadores booleanos OR, AND e NOT, você pode combinar vários termos para formar uma consulta mais complexa.
 
 +
 OU
 
 +
-O OPERADOR OU é o operador de conjunção predefinido.
+O operador OR é o operador de conjunção padrão.
 
 +
-Se não houver um operador booleano entre dois termos, o OPERADOR OR será usado.
+Se não houver operador booleano entre dois termos, o operador OR será usado.
 
 +
-O OPERADOR OR vincula dois termos e encontra um documento correspondente se algum dos termos existir em um documento.
+O operador OR vincula dois termos e encontra um documento correspondente se qualquer um dos termos existir em um documento.
 
 +
-Por exemplo, _storage OU NetApp_ procura documentos que contenham _storage_ ou _NetApp_.
+Por exemplo, _storage OR netapp_ pesquisa documentos que contêm _storage_ ou _netapp_.
 
 +
-Pontuações altas são dadas a documentos que correspondem à maioria dos termos.
+Pontuações altas são dadas aos documentos que correspondem à maioria dos termos.
 
 +
 E
 
 +
-Pode utilizar o operador E para localizar documentos nos quais existem ambos os termos de pesquisa num único documento. Por exemplo, _storage E NetApp_ procura documentos que contenham _storage_ e _NetApp_.
+Você pode usar o operador AND para encontrar documentos nos quais ambos os termos de pesquisa existem em um único documento.  Por exemplo, _storage AND netapp_ pesquisa documentos que contêm _storage_ e _netapp_.
 
 +
-Pode utilizar o símbolo *&&* em vez da palavra e.
+Você pode usar o símbolo *&&* em vez da palavra AND.
 
 +
 NÃO
 
 +
-Quando você usa o operador NOT, todos os documentos que contêm o termo depois DE NÃO são excluídos dos resultados da pesquisa. Por exemplo, _storage NOT NetApp_ procura documentos que contenham apenas _storage_ e não _NetApp_.
+Quando você usa o operador NOT, todos os documentos que contêm o termo depois de NOT são excluídos dos resultados da pesquisa.  Por exemplo, _storage NOT netapp_ pesquisa documentos que contêm apenas _storage_ e não _netapp_.
 
 +
-Você pode usar o símbolo *!* em vez da palavra NÃO.
+Você pode usar o símbolo *!* em vez da palavra NOT.
 
 
 
-A pesquisa é insensível a maiúsculas e minúsculas.
+A pesquisa não diferencia maiúsculas de minúsculas.
 
 
 
 == Pesquisar usando termos indexados
 
-Pesquisas que correspondem a mais dos termos indexados resultam em pontuações mais altas.
+Pesquisas que correspondem a mais termos indexados resultam em pontuações mais altas.
 
-A cadeia de pesquisa é dividida em termos de pesquisa separados por espaço. Por exemplo, a cadeia de pesquisa "storage aurora NetApp" é dividida em três palavras-chave: "Storage", "aurora" e "NetApp". A pesquisa é realizada usando todos os três termos. Os documentos que correspondem à maioria destes termos terão a pontuação mais alta. Quanto mais informações você fornecer, melhores são os resultados da pesquisa. Por exemplo, você pode procurar um armazenamento pelo nome e modelo.
+A sequência de pesquisa é dividida em termos de pesquisa separados por espaço.  Por exemplo, a sequência de pesquisa "storage aurora netapp" é dividida em três palavras-chave: "storage", "aurora" e "netapp".  A pesquisa é realizada usando todos os três termos.  Os documentos que corresponderem à maioria desses termos terão a pontuação mais alta.  Quanto mais informações você fornecer, melhores serão os resultados da pesquisa.  Por exemplo, você pode procurar um armazenamento pelo nome e modelo.
 
-A IU exibe os resultados da pesquisa entre categorias, com os três melhores resultados por categoria. Se você não encontrou um objeto que estava esperando, você pode incluir mais termos na cadeia de carateres de pesquisa para melhorar os resultados da pesquisa.
+A interface do usuário exibe os resultados da pesquisa em todas as categorias, com os três principais resultados por categoria.  Se você não encontrou o objeto que esperava, pode incluir mais termos na sequência de pesquisa para melhorar os resultados da pesquisa.
 
-A tabela a seguir fornece uma lista de termos indexados que podem ser adicionados à cadeia de carateres de pesquisa.
+A tabela a seguir fornece uma lista de termos indexados que podem ser adicionados à sequência de pesquisa.
 
 |===
 | Categoria | Termos indexados 
 
 
-| Armazenamento | modelo de fornecedor de nomes "storage" 
+| Armazenar | modelo de fornecedor de nome de "armazenamento" 
 
 
-| StoragePool | Nome "storagepool" dos endereços IP de armazenamento do número de série de armazenamento dos nomes de modelo de armazenamento de dados do fornecedor de armazenamento para todos os nomes de volumes internos associados para todos os discos associados 
+| Pool de armazenamento | nome do "storagepool" nome do armazenamento endereços IP do armazenamento número de série do armazenamento fornecedor do armazenamento nomes do modelo de armazenamento para todos os volumes internos associados nomes para todos os discos associados 
 
 
-| Volume interno | Nome "internalvolume" dos endereços IP de armazenamento do número de série de armazenamento do nome do modelo de armazenamento do fornecedor de armazenamento dos nomes do conjunto de armazenamento de todos os nomes de partilha associados de todas as aplicações associadas 
+| Volume interno | nome "internalvolume" nome do armazenamento endereços IP do armazenamento número de série do armazenamento fornecedor de armazenamento modelo de armazenamento nome do pool de armazenamento nomes de todos os compartilhamentos associados nomes de todos os aplicativos associados 
 
 
-| Volume | Nomes de etiquetas de nome "volume" de todos os volumes internos nome do conjunto de armazenamento nome dos endereços IP de armazenamento do número de série de armazenamento do modelo de armazenamento de dados do fornecedor de armazenamento 
+| Volume | rótulo de nome de "volume" nomes de todos os volumes internos nome do pool de armazenamento nome do armazenamento endereços IP do armazenamento número de série do armazenamento fornecedor do armazenamento modelo de armazenamento 
 
 
-| Nó de storage | Nome "storagenode" dos endereços IP de armazenamento do número de série de armazenamento do modelo de armazenamento do fornecedor de armazenamento 
+| Nó de armazenamento | nome "storagenode" nome do armazenamento endereços IP do armazenamento número de série do armazenamento fornecedor de armazenamento modelo de armazenamento 
 
 
-| Host | Nomes de endereços IP de nome "host" de todos os aplicativos associados 
+| Hospedar | nome do "host" endereços IP nomes de todos os aplicativos associados 
 
 
-| Armazenamento de dados | Nome "datastore" nomes IP do centro virtual de todos os nomes de volumes de todos os volumes internos 
+| Armazenamento de dados | nome do "datastore" centro virtual nomes de IP de todos os volumes nomes de todos os volumes internos 
 
 
-| Máquinas virtuais | Nome "virtualmachine" Nome DNS endereços IP nome dos endereços IP do host dos nomes de host de todos os nomes de datastores de todos os aplicativos associados 
+| Máquinas Virtuais | nome "virtualmachine" nome DNS endereços IP nome do host endereços IP do host nomes de todos os datastores nomes de todos os aplicativos associados 
 
 
-| Interrutores (regular e NPV) | Endereço IP "switch" Nome wwn nome de série modelo nome de domínio ID nome da estrutura wwn da estrutura 
+| Interruptores (regular e VPL) | endereço IP do "switch" nome wwn número de série modelo ID de domínio nome do fabric wwn do fabric 
 
 
-| Aplicação | linha de inquilino de nome "aplicação" do projeto de unidade de negócio 
+| Aplicativo | "aplicativo" nome inquilino linha de negócios unidade de negócios projeto 
 
 
-| Fita | Fornecedor do número de série do nome do endereço IP "TAPE" 
+| Fita | "fita" endereço IP nome número de série fornecedor 
 
 
-| Porta | nome wwn "port" 
+| Porta | nome wwn "porta" 
 
 
-| Malha | nome wwn "tecido" 
+| Tecido | nome wwn "tecido" 
 
 
-| Máquina de Storage Virtual (SVM) | Nome "storagevirtualmachine" UUUID 
+| Máquina Virtual de Armazenamento (SVM) | UUID do nome "storagevirtualmachine" 
 |===

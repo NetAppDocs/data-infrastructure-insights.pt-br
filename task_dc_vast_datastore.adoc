@@ -2,71 +2,71 @@
 sidebar: sidebar 
 permalink: task_dc_vast_datastore.html 
 keywords: data collector, VAST storage, VAST data 
-summary: Configurando o coletor de dados de armazenamento de dados do armazenamento de dados do VAST Data. 
+summary: Configurando o coletor de dados de armazenamento VAST Data DataStore. 
 ---
-= Coletor de dados do VASTO datastore
+= Coletor de dados VAST DataStore
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-O Data Infrastructure Insights usa o coletor de dados do VAST datastore para coletar dados de inventário e performance.
+O Data Infrastructure Insights usa o coletor de dados VAST DataStore para coletar dados de inventário e desempenho.
 
 
 
 == Terminologia
 
-Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada. Ao visualizar ou solucionar problemas desse coletor de dados, tenha em mente a seguinte terminologia:
+Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===
-| Termo do fornecedor/modelo | Termo do Insights de infraestrutura de dados 
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
 
-| Transportadoras | Discos (parte do compartimento de disco do campo de localização) 
+| Transportadoras | Discos (parte da prateleira de disco do campo de localização) 
 
 
-| Cluster | Armazenamento 
+| Conjunto | Armazenar 
 
 
-| CNodes | StorageNode (tipo cnode) 
+| CNodes | StorageNode (tipo = cnode) 
 
 
-| DNodes | StorageNode (tipo dnode) 
+| DNodes | StorageNode (tipo = dnode) 
 
 
 | NVRAMs | Discos 
 
 
-| Caminhos protegidos | Sincronização interna do volume 
+| Caminhos Protegidos | Sincronização de volume interno 
 
 
-| Políticas DE QoS | Volume interno (limites DE QOS) 
+| Políticas de QoS | Volume interno (limites de QOS) 
 
 
-| Quotas | Cota 
+| Cotas | Contingente 
 
 
 | SSDs | Discos 
 
 
-| Inquilinos | Storage Virtual Machine 
+| Inquilinos | Máquina Virtual de Armazenamento 
 
 
-| ViewPolicies | FileShare (para permissões) 
+| VerPolíticas | FileShare (para permissões) 
 
 
-| Vistas | Volume interno 
+| Visualizações | Volume interno 
 |===
-Nota: Estes são apenas mapeamentos de terminologia comuns e podem não representar todos os casos para este coletor de dados.
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 
 
 
 == Requisitos
 
-* Endereço IP do sistema de armazenamento de dados VASTO ou nome de domínio totalmente qualificado
-* Username / Password para aceder ao VASTO sistema
-* Requisito de porta: HTTPS 443
+* Endereço IP do sistema VAST DataStore ou nome de domínio totalmente qualificado
+* Nome de usuário/senha para acessar o sistema VAST
+* Requisito de porta: HTTPs 443
 
 
 
@@ -78,13 +78,13 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Armazenamento de dados VAST IP/nome de host | Endereço IP ou FQDN do sistema de armazenamento 
+| IP/nome do host de armazenamento do VAST DataStore | Endereço IP ou FQDN do sistema de armazenamento 
 
 
-| Utilizador | Nome de utilizador do armazenamento VASTO 
+| Usuário | Nome de usuário do armazenamento VAST 
 
 
-| Palavra-passe | Senha de armazenamento VASTO 
+| Senha | Senha de armazenamento VAST 
 |===
 
 
@@ -95,22 +95,22 @@ Nota: Estes são apenas mapeamentos de terminologia comuns e podem não represen
 | Campo | Descrição 
 
 
-| Tipo de ligação | Escolha HTTP ou HTTPS. Também exibe a porta padrão. 
+| Tipo de conexão | Escolha HTTP ou HTTPS.  Também exibe a porta padrão. 
 
 
-| Substituir a porta TCP | Se estiver em branco, use a porta padrão no campo tipo de conexão; caso contrário, insira a porta de conexão a ser usada 
+| Substituir porta TCP | Se estiver em branco, use a porta padrão no campo Tipo de conexão, caso contrário, insira a porta de conexão a ser usada 
 
 
 | Intervalo de pesquisa de inventário (min) | O padrão é 60 minutos 
 
 
-| Intervalo de enquete de desempenho (seg) | A predefinição é 300 
+| Intervalo de pesquisa de desempenho (seg) | O padrão é 300 
 |===
 
 
 == Solução de problemas
 
-Algumas coisas para tentar se você encontrar problemas com este coletor de dados:
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
@@ -118,9 +118,9 @@ Algumas coisas para tentar se você encontrar problemas com este coletor de dado
 
 [cols="2*"]
 |===
-| Problema: | Tente isto: 
+| Problema: | Experimente isto: 
 
 
-| "Credenciais de login inválidas" com mensagens de erro "a política não permite" ou "você não está autorizado" | Valide a conta de usuário e a senha da Pure através da interface http da Pure 
+| “Credenciais de login inválidas” com mensagens de erro “A política não permite” ou “Você não está autorizado” | Validar conta de usuário e senha Pure via interface http Pure 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

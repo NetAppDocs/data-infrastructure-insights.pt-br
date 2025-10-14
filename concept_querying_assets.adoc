@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_querying_assets.html 
-summary: Consultar Visão geral 
+summary: Visão geral da consulta 
 keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, Host, Internal Volume, iSCSI, Network, Portal, Path, Port, Qtree, Quota, Share, Storage, Node, Pool, SVM, Switch, Tape, VMDK, Virtual Machine, VM, Volume, Zone, Member 
 ---
 = Ativos usados em consultas
@@ -10,49 +10,49 @@ keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, 
 
 
 [role="lead"]
-As consultas permitem que você monitore e solucione problemas de sua rede pesquisando os ativos e as métricas do locatário em um nível granular com base em critérios selecionados pelo usuário (por exemplo, anotações).
+As consultas permitem que você monitore e solucione problemas na sua rede pesquisando os ativos e as métricas do seu locatário em um nível granular com base em critérios selecionados pelo usuário (por exemplo, anotações).
 
-Observe que as regras de anotação, que atribuem automaticamente anotações a ativos, _require_ uma consulta.
+Observe que as regras de anotação, que atribuem anotações automaticamente aos ativos, _exigem_ uma consulta.
 
-Você pode consultar os ativos de inventário físico ou virtual (e suas métricas associadas) no seu locatário ou as métricas fornecidas com integração, como Kubernetes ou dados avançados do ONTAP.
+Você pode consultar os ativos de inventário físico ou virtual (e suas métricas associadas) no seu locatário ou as métricas fornecidas com integração, como Kubernetes ou ONTAP Advanced Data.
 
 
 
-== Ativos de inventário
+== Ativos de estoque
 
-Os seguintes tipos de ativos podem ser usados em consultas, widgets de painel e Landing pages de ativos personalizados. Os campos e contadores disponíveis para filtros, expressões e exibição variam entre os tipos de ativos. Nem todos os ativos podem ser usados em todos os tipos de widget.
+Os seguintes tipos de ativos podem ser usados em consultas, widgets de painel e páginas de destino de ativos personalizadas.  Os campos e contadores disponíveis para filtros, expressões e exibição variam entre os tipos de ativos.  Nem todos os ativos podem ser usados em todos os tipos de widgets.
 
-* Aplicação
+* Aplicativo
 * Armazenamento de dados
 * Disco
-* Malha
+* Tecido
 * Dispositivo genérico
-* Host
+* Hospedar
 * Volume interno
 * Sessão iSCSI
 * Portal de rede iSCSI
 * Caminho
 * Porta
 * Qtree
-* Cota
-* Partilhar
-* Armazenamento
-* Nó de storage
-* Pool de storage
-* Máquina de Storage Virtual (SVM)
-* Interrutor
+* Contingente
+* Compartilhar
+* Armazenar
+* Nó de armazenamento
+* Pool de armazenamento
+* Máquina Virtual de Armazenamento (SVM)
+* Trocar
 * Fita
 * VMDK
-* Máquina virtual
+* Máquina Virtual
 * Volume
 * Zona
-* Membro da zona
+* Membro da Zona
 
 
 
 
-== Métricas de integração
+== Métricas de Integração
 
-Além de consultar ativos de inventário e suas métricas de desempenho associadas, você também pode consultar métricas de *dados de integração*, como as geradas pelo Kubernetes ou Docker, ou fornecidas com métricas avançadas do ONTAP.
+Além de consultar ativos de inventário e suas métricas de desempenho associadas, você também pode consultar métricas de *dados de integração*, como aquelas geradas pelo Kubernetes ou Docker, ou fornecidas com o ONTAP Advanced Metrics.
 
 image:QueryPageFilter.png["Exemplo de filtro de consulta de integração"]

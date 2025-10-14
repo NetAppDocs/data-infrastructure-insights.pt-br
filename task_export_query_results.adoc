@@ -4,61 +4,61 @@ permalink: task_export_query_results.html
 summary: Como exportar os resultados de uma consulta para um arquivo .csv 
 keywords: query, queries, export, csv 
 ---
-= Exportar resultados da consulta para um arquivo .CSV
+= Exportando resultados de consulta para um arquivo .CSV
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Você pode exportar os resultados de qualquer consulta para um arquivo .CSV, que permitirá analisar os dados ou importá-los para outro aplicativo.
+Você pode exportar os resultados de qualquer consulta para um arquivo .CSV, o que permitirá analisar os dados ou importá-los para outro aplicativo.
 
 .Passos
 . Faça login no Data Infrastructure Insights.
-. Clique em *consultas* e selecione *Mostrar todas as consultas*.
+. Clique em *Consultas* e selecione *Mostrar todas as consultas*.
 +
-A página consultas é exibida.
+A página Consultas é exibida.
 
 . Clique em uma consulta.
-. Clique image:ExportButton.png["Botão Export (Exportar)"] para exportar os resultados da consulta para um arquivo .CSV.
+. Cliqueimage:ExportButton.png["Botão Exportar"] para exportar os resultados da consulta para um arquivo .CSV.
 
 
 
-NOTE: Exportar para .CSV também está disponível no menu "três pontos" nos widgets da tabela do painel, bem como na maioria das tabelas da página de destino.
+NOTE: A exportação para .CSV também está disponível no menu "três pontos" nos widgets de tabela do painel, bem como na maioria das tabelas de landing pages.
 
 
 
 == Exportação assíncrona
 
-Exportar dados para .CSV pode levar de alguns segundos a um número de horas, dependendo da quantidade de dados a exportar. O Data Infrastructure Insights exporta esses dados de forma assíncrona, para que você possa continuar trabalhando enquanto o .CSV está sendo compilado.
+Exportar dados para .CSV pode levar de alguns segundos a algumas horas, dependendo da quantidade de dados a serem exportados.  O Data Infrastructure Insights exporta esses dados de forma assíncrona, para que você possa continuar trabalhando enquanto o .CSV está sendo compilado.
 
 Visualize e baixe suas exportações .CSV selecionando o ícone "Sino" na barra de ferramentas superior direita.
 
 image:csv_export_async.png["ícone de sino com lista de exportações .csv prontas para download, largura=400"]
 
-Os dados exportados refletirão os nomes atuais de filtragem, colunas e colunas exibidos.
+Os dados exportados refletirão a filtragem atual, as colunas e os nomes das colunas exibidos.
 
 
 
 == Vírgulas em nomes de ativos
 
-Observação: Quando uma vírgula aparece em um nome de ativo, a exportação encerra o nome em aspas, preservando o nome do ativo e o formato .csv adequado.
+Observação: quando uma vírgula aparece no nome de um ativo, a exportação coloca o nome entre aspas, preservando o nome do ativo e o formato .csv adequado.
 
 
 
 == Formato de hora ou não formato de hora?
 
-Ao abrir um arquivo .CSV exportado com o Excel, se você tiver um nome de objeto ou outro campo que esteja no formato NN:NN (dois dígitos seguidos por dois pontos seguidos por mais dois dígitos), o Excel às vezes interpretará esse nome como um formato de hora, em vez de formato de texto. Isso pode resultar na exibição de valores incorretos no Excel nessas colunas. Por exemplo, um objeto chamado "81:45" seria exibido no Excel como "81:45:00".
+Ao abrir um arquivo .CSV exportado com o Excel, se você tiver um nome de objeto ou outro campo que esteja no formato NN:NN (dois dígitos seguidos por dois pontos seguidos por mais dois dígitos), o Excel às vezes interpretará esse nome como um formato de hora, em vez de um formato de texto.  Isso pode fazer com que o Excel exiba valores incorretos nessas colunas.  Por exemplo, um objeto chamado "81:45" seria exibido no Excel como "81:45:00".
 
 Para contornar isso, importe o .CSV para o Excel usando as seguintes etapas:
 
-. Abra uma nova folha no Excel.
-. Na guia "dados", escolha "de texto".
+. Abra uma nova planilha no Excel.
+. Na aba "Dados", escolha "Do Texto".
 . Localize o arquivo .CSV desejado e clique em "Importar".
-. No assistente Importar, escolha "delimitado" e clique em Avançar.
-. Escolha "vírgula" para o delimitador e clique em Avançar.
-. Selecione as colunas desejadas e escolha "texto" para o formato de dados da coluna.
-. Clique em concluir.
+. No assistente de importação, escolha "Delimitado" e clique em Avançar.
+. Escolha "Vírgula" como delimitador e clique em Avançar.
+. Selecione as colunas desejadas e escolha "Texto" para o formato de dados da coluna.
+. Clique em Concluir.
 +
-Seus objetos devem ser exibidos no Excel no formato adequado.
+Seus objetos devem aparecer no Excel no formato correto.
 
 

@@ -10,7 +10,7 @@ summary: detalhes do alerta
 
 
 [role="lead"]
-Clicar na sinopse para um alerta abre a página fornecendo informações detalhadas para o usuário e o alerta que ele levantou.
+Clicar na sinopse de um alerta abre a página que fornece informações detalhadas sobre o usuário e o alerta que ele gerou.
 
 
 
@@ -19,43 +19,43 @@ Clicar na sinopse para um alerta abre a página fornecendo informações detalha
 Detalhes do alerta fornece informações para o alerta selecionado na página Alertas.
 
 * A gravidade do alerta
-* O utilizador que levantou o alerta e o tipo de alerta:
+* O usuário que gerou o alerta e o tipo de alerta:
 +
-** Acesso anormal pelo utilizador
-** Acesso anormal pela Comunidade
-** Acesso anormal por Usuário na Comunidade
-** Usuário juntou-se a muitas comunidades
+** Acesso anormal pelo usuário
+** Acesso anormal por comunidade
+** Acesso anormal por usuário na comunidade
+** O usuário se juntou a muitas comunidades
 
 
-* Data e hora em que o alerta foi detetado
+* Data e hora em que o alerta foi detectado
 * A ação tomada
 +
 ** Em quarentena
-** Outros
-** Outros
+** Outro
+** Outro
 
 
-* O estado do alerta
+* O status do alerta
 +
 ** Novo
-** Em curso
+** Em andamento
 ** Demitido
 ** Resolvido
 
 
-* Alteração da taxa de atividade do utilizador
+* Alteração na taxa de atividade do usuário
 +
 ** Atividades típicas por hora
-** Atividades por hora em que o alerta foi levantado.
-** Percentagem de alteração da taxa que causou o alerta.
+** Atividades por hora quando o alerta foi acionado.
+** Porcentagem de alteração de taxa que causou o alerta.
 
 
-* Um gráfico que mostra a taxa de atividade média histórica e a taxa de atividade que resultou no alerta.
+* Um gráfico mostrando a taxa média histórica de atividade e a taxa de atividade que resultou no alerta.
 
 
 
 
-=== Utilizador relacionado
+=== Usuário relacionado
 
 * Nome de usuário e título
 * Departamento
@@ -69,12 +69,12 @@ Detalhes do alerta fornece informações para o alerta selecionado na página Al
 
 === Atividade
 
-Mostra a atividade do utilizador nos últimos 7 dias e a última localização a partir da qual o utilizador acedeu.
+Mostra a atividade do usuário nos últimos 7 dias e o último local de onde o usuário acessou.
 
 * Atividades:
 +
-** Leia
-** Outros
+** Ler
+** Outro
 ** Criar
 
 
@@ -82,4 +82,4 @@ Mostra a atividade do utilizador nos últimos 7 dias e a última localização a
 * Número total de atividades nos últimos 7 dias.
 
 
-Clique em *Exibir Detalhe da atividade* para acessar link:forensic_activity_history["Histórico da atividade"]o do usuário que está sendo examinado.
+Clique em *Ver detalhes da atividade* para acessar olink:forensic_activity_history["Histórico de atividades"] do usuário que está sendo examinado.

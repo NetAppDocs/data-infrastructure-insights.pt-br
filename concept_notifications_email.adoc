@@ -1,82 +1,82 @@
 ---
 sidebar: sidebar 
 permalink: concept_notifications_email.html 
-summary: Adicionar endereços de e-mail para notificações. 
+summary: Adicionando endereços de e-mail para notificações. 
 keywords: email, notifications, signature, recipient, list, subscription 
 ---
-= Configurar notificações por e-mail
+= Configurando notificações por e-mail
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Você pode configurar uma lista de e-mail para notificações relacionadas a assinatura, bem como uma lista global de destinatários para notificação de violações de limite de política de desempenho.
+Você pode configurar uma lista de e-mail para notificações relacionadas à assinatura, bem como uma lista global de e-mail de destinatários para notificação de violações de limites de política de desempenho.
 
-Para configurar as configurações do destinatário de e-mail de notificação, vá para a página *Admin > notificações* e selecione a guia _e-mail_.
+Para configurar as definições do destinatário do e-mail de notificação, acesse a página *Admin > Notificações* e selecione a aba _E-mail_.
 
 [role="thumb"]
 image:Notifications_email_list.png["Notificações por e-mail"]
 
 
 
-== Destinatários da notificação de assinatura
+== Destinatários de Notificação de Assinatura
 
-Para configurar os destinatários para notificações de eventos relacionadas à assinatura, vá para a seção "destinatários de notificação de assinatura". Você pode optar por enviar notificações por e-mail para eventos relacionados à assinatura para qualquer um ou todos os seguintes destinatários:
+Para configurar destinatários para notificações de eventos relacionadas à assinatura, vá para a seção "Destinatários de notificação de assinatura".  Você pode optar por receber notificações por e-mail sobre eventos relacionados à assinatura para qualquer um ou todos os seguintes destinatários:
 
 * Todos os proprietários de contas
-* Todos os administradores _Monitor & Otimize_
+* Todos os administradores de _Monitoramento e Otimização_
 * Endereços de e-mail adicionais que você especificar
 
 
-A seguir estão exemplos dos tipos de notificações que podem ser enviadas e as ações do usuário que você pode executar.
+A seguir estão alguns exemplos dos tipos de notificações que podem ser enviadas e ações do usuário que você pode realizar.
 
 |===
 
 
-| *Notificação:* | *Ação do Usuário:* 
+| *Notificação:* | *Ação do usuário:* 
 
 
-| A versão de avaliação ou subscrição foi atualizada | Reveja os detalhes da subscrição link:concept_subscribing_to_cloud_insights.html["Subscrição"]na página 
+| O teste ou assinatura foi atualizado | Revise os detalhes da assinatura emlink:concept_subscribing_to_cloud_insights.html["Subscrição"] página 
 
 
-| A assinatura expirará em 90 dias. A assinatura expirará em 30 dias | Nenhuma ação necessária se a "renovação automática" estiver ativada entre em Contato com as vendas da NetApp para renovar a assinatura 
+| A assinatura expirará em 90 dias A assinatura expirará em 30 dias | Nenhuma ação necessária se a “Renovação Automática” estiver habilitada. Entre em contato com as vendas da NetApp para renovar a assinatura. 
 
 
-| O teste termina em 2 dias | Renove o teste a partir link:concept_subscribing_to_cloud_insights.html["Subscrição"]da página. Você pode renovar um teste uma vez. Entre em Contato com a NetApp Sales para comprar uma assinatura 
+| O julgamento termina em 2 dias | Renovar o julgamento dolink:concept_subscribing_to_cloud_insights.html["Subscrição"] página.  Você pode renovar um teste uma vez.  Entre em contato com a equipe de vendas da NetApp para adquirir uma assinatura 
 
 
-| A conta de teste ou assinatura expirou deixará de coletar dados em 48 horas a conta será excluída após 48 horas | Entre em Contato com a NetApp Sales para comprar uma assinatura 
+| O teste ou a assinatura expirou. A conta deixará de coletar dados em 48 horas. A conta será excluída após 48 horas. | Entre em contato com a equipe de vendas da NetApp para adquirir uma assinatura 
 |===
 [NOTE]
 ====
-Para garantir que seus destinatários recebam notificações do Data Infrastructure Insights, adicione os seguintes endereços de e-mail a qualquer lista de "permitir":
+Para garantir que seus destinatários recebam notificações do Data Infrastructure Insights, adicione os seguintes endereços de e-mail a quaisquer listas de "permissão":
 
-* accounts@service.cloudinsights.netapp.com
-* DoNotReply@cloudinsights.netapp.com
+* \accounts@service.cloudinsights.netapp.com
+* \DoNotReply@cloudinsights.netapp.com
 
 
 ====
 
 
-== Lista de destinatários globais para alertas
+== Lista global de destinatários para alertas
 
-As notificações por e-mail de alertas são enviadas para a lista de destinatários de alerta para cada ação no alerta. Você pode optar por enviar notificações de alerta para uma lista global de destinatários.
+Notificações por e-mail de alertas são enviadas para a lista de destinatários do alerta para cada ação no alerta.  Você pode optar por enviar notificações de alerta para uma lista global de destinatários.
 
-Para configurar destinatários de alerta global, escolha os destinatários desejados na seção *destinatários de notificação do Monitor Global*.
+Para configurar destinatários de alertas globais, escolha os destinatários desejados na seção *Destinatários de notificação do Global Monitor*.
 
-Você sempre pode substituir a lista de destinatários globais de um monitor individual ao criar ou modificar o monitor.
+Você sempre pode substituir a lista global de destinatários de um monitor individual ao criar ou modificar o monitor.
 
 
-NOTE: As notificações do ONTAP Data Collector têm precedência sobre quaisquer notificações específicas do Monitor que sejam relevantes para o cluster/coletor de dados. A lista de destinatários definida para o coletor de dados receberá os alertas do coletor de dados. Se não houver alertas ativos do coletor de dados, os alertas gerados pelo monitor serão enviados para destinatários específicos do monitor.
+NOTE: As notificações do ONTAP Data Collector têm precedência sobre quaisquer notificações específicas do Monitor que sejam relevantes para o cluster/coletor de dados.  A lista de destinatários que você definiu para o próprio Coletor de Dados receberá os alertas do coletor de dados.  Se não houver alertas ativos do coletor de dados, os alertas gerados pelo monitor serão enviados para destinatários específicos do monitor.
 
 
 
 == Editando notificações para ONTAP
 
-Você pode modificar notificações para clusters do ONTAP selecionando _Editar notificações_ na lista suspensa superior direita em uma página inicial do armazenamento.
+Você pode modificar notificações para clusters ONTAP selecionando _Editar notificações_ no menu suspenso superior direito em uma página inicial de armazenamento.
 
 image:EditONTAPNotifications.png["Notificações de edição do ONTAP"]
 
-A partir daqui, você pode definir notificações para alertas críticos, de aviso, informativos e/ou resolvidos. Cada cenário pode notificar a lista de destinatários globais ou outros destinatários que você escolher.
+A partir daqui, você pode definir notificações para alertas Críticos, de Aviso, Informativos e/ou Resolvidos.  Cada cenário pode notificar a lista de destinatários globais ou outros destinatários que você escolher.
 
-image:EditONTAPNotifications_MultipleScenarios.png["Notificações do ONTAP para diferentes cenários"]
+image:EditONTAPNotifications_MultipleScenarios.png["Notificações ONTAP para diferentes cenários"]

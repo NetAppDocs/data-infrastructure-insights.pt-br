@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task_dc_na_db_host.html 
 keywords: data collector, generic db 
-summary: Generic DB Host Resolver Collector 
+summary: Coletor genérico do DB Host Resolver 
 ---
-= NetApp resolvedor de host de banco de dados genérico
+= Resolvedor de host de banco de dados genérico da NetApp
 :hardbreaks:
 :allow-uri-read: 
 
@@ -16,7 +16,7 @@ Este coletor de dados adquire inventário
 
 == Terminologia
 
-O Data Infrastructure Insights adquire o inventário desse coletor.
+O Data Infrastructure Insights adquire inventário deste coletor.
 
 
 
@@ -27,13 +27,13 @@ O Data Infrastructure Insights adquire o inventário desse coletor.
 | Campo | Descrição 
 
 
-| Endereço IP do servidor DB | Endereço IP do servidor DB 
+| Endereço IP do servidor de banco de dados | Endereço IP do servidor de banco de dados 
 
 
-| Porta do servidor DB | a predefinição é 3306 
+| Porta do servidor DB | o padrão é 3306 
 
 
-| Nome da classe de condutor qualificado | Nome da classe para o motorista. 
+| Nome da classe de motorista qualificado | Nome da classe para o driver. 
 
 
 | URL do driver JDBC | URL para o driver 
@@ -50,12 +50,12 @@ O Data Infrastructure Insights adquire o inventário desse coletor.
 | Campo | Descrição 
 
 
-| Intervalo da enquete de inventário (min) | O padrão é de 60 minutos 
+| Intervalo de pesquisa de inventário (min) | O padrão é 60 minutos 
 
 
-| Ativar a ligação SSL | Selecione para ativar a ligação via SSL 
+| Habilitar conexão SSL | Selecione para habilitar a conexão via SSL 
 
 
-| Denunciar WWN Alias | Selecione para relatar o alias WWN 
+| Denunciar alias WWN | Selecione para relatar o alias WWN 
 |===
-Informações adicionais podem ser encontradas na link:concept_requesting_support.html["Suporte"] página ou no link:reference_data_collector_support_matrix.html["Matriz de suporte do Data Collector"].
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept_about_applications.html 
 keywords: applications, asset, cost 
-summary: Compreender as aplicações utilizadas no ambiente da sua empresa ajuda-o a controlar a utilização e os custos dos ativos. 
+summary: Entender os aplicativos usados no ambiente da sua empresa ajuda você a controlar o uso de ativos e custos. 
 ---
-= Rastreamento do uso de ativos por aplicativo
+= Acompanhamento do uso de ativos por aplicativo
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,35 +14,35 @@ summary: Compreender as aplicações utilizadas no ambiente da sua empresa ajuda
 
 
 [role="lead"]
-Compreender os aplicativos usados no ambiente da sua empresa ajuda você a acompanhar o uso e o custo dos ativos.
+Entender os aplicativos usados no ambiente da sua empresa ajuda você a controlar o uso e o custo dos ativos.
 
-Antes de rastrear dados associados aos aplicativos em execução no locatário, primeiro é necessário definir esses aplicativos e associá-los aos ativos apropriados. Você pode associar aplicativos aos seguintes ativos: Hosts, máquinas virtuais, volumes, volumes internos, qtrees, compartilhamentos e hipervisores.
+Antes de poder rastrear dados associados aos aplicativos em execução no seu locatário, você deve primeiro definir esses aplicativos e associá-los aos ativos apropriados.  Você pode associar aplicativos aos seguintes ativos: hosts, máquinas virtuais, volumes, volumes internos, qtrees, compartilhamentos e hipervisores.
 
 Este tópico fornece um exemplo de rastreamento do uso de máquinas virtuais que a equipe de marketing usa para seu e-mail do Exchange.
 
-Talvez você queira criar uma tabela semelhante à seguinte para identificar aplicativos usados no locatário e observar o grupo ou a unidade de negócios usando cada aplicativo.
+Talvez você queira criar uma tabela semelhante à seguinte para identificar os aplicativos usados no seu locatário e anotar o grupo ou unidade de negócios que usa cada aplicativo.
 
 [cols="5*"]
 |===
 
 
-| Locatário | Linha de negócio | Unidade de negócio | Projeto | Aplicações 
+| Inquilino | Linha de negócios | Unidade de Negócios | Projeto | Aplicações 
 
 
-| NetApp | Storage de dados | Legal | Patentes | Oracle Identity Manager, Oracle On Demand, PatentWiz 
+| NetApp | Armazenamento de dados | Jurídico | Patentes | Gerenciador de Identidade Oracle, Oracle On Demand, PatentWiz 
 
 
-| NetApp | Storage de dados | Marketing | Eventos de vendas | Exchange, Oracle Shared Database, Blastoff Event Planner 
+| NetApp | Armazenamento de dados | Marketing | Eventos de vendas | Exchange, Oracle Shared DataBase, Planejador de Eventos BlastOff 
 |===
-A tabela mostra que a equipe de marketing usa o aplicativo Exchange. Queremos acompanhar a utilização da máquina virtual para o Exchange, para que possamos prever quando precisaremos adicionar mais armazenamento. Podemos associar o aplicativo Exchange a todas as máquinas virtuais de Marketing:
+A tabela mostra que a equipe de marketing usa o aplicativo Exchange.  Queremos rastrear a utilização da máquina virtual para o Exchange, para que possamos prever quando precisaremos adicionar mais armazenamento.  Podemos associar o aplicativo Exchange a todas as máquinas virtuais do Marketing:
 
 . Crie um aplicativo chamado _Exchange_
-. Vá para *consultas > Nova consulta* para criar uma nova consulta para máquinas virtuais (ou selecione uma consulta de VM existente, se aplicável).
+. Acesse *Consultas > +Nova Consulta* para criar uma nova consulta para máquinas virtuais (ou selecione uma consulta de VM existente, se aplicável).
 +
-Supondo que as VMs da equipe de Marketing tenham um nome contendo a string "*mkt*", crie sua consulta para filtrar o nome da VM para "mkt".
+Supondo que todas as VMs da equipe de marketing tenham um nome contendo a string “*mkt*”, crie sua consulta para filtrar o nome da VM para “mkt”.
 
 . Selecione as VMs.
-. Associe as VMs ao aplicativo _Exchange_ usando *ações em massa > Adicionar aplicativos*.
+. Associe as VMs ao aplicativo _Exchange_ usando *Ações em massa > Adicionar aplicativos*.
 . Selecione o aplicativo desejado e clique em *Salvar*.
-. Quando terminar, *Salvar* a consulta.
+. Quando terminar, *Salve* a consulta.
 
