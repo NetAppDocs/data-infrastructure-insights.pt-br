@@ -7,6 +7,10 @@ summary: O Data Infrastructure Insights rastreia mudanças na infraestrutura par
 = Análise de Mudanças de Infraestrutura
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -37,6 +41,12 @@ image:infraChange_filter_dropdown.png["Menu suspenso de filtragem de alteraçõe
 Você também pode ir diretamente para os principais Alertas ou Alterações na seção de status abaixo das configurações de filtro, incluindo os três principais recursos atuais com mais alertas.
 
 image:Change_Analysis_filters_and_status.png["status e links rápidos para alertas e alterações"]
+
+
+
+== Uma nota sobre alertas de longo prazo
+
+Observe que os alertas que permanecerem ativos por mais de 24 horas ficarão visíveis na lista Alertas e Alterações uma vez a cada 24 horas, portanto, você poderá notar o mesmo alerta listado várias vezes. Cada um desses alertas terá o mesmo ID de alerta, mesma hora de início, etc., e terá o status "Alerta" até que o alerta seja resolvido.
 
 
 

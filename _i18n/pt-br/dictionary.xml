@@ -5577,7 +5577,6 @@
   <block id="6a0fb4ccd9df37a4928d666f900fc111" category="list-text">9.11.1P7</block>
   <block id="ee297c3ee4d46f935bc45d0d064be8f4" category="list-text">9.11.1P8</block>
   <block id="ac844c749ee94b582ae244c828b00311" category="list-text">9.11.1P9</block>
-  <block id="b50ef0c82f2cb86e10106d6dcf4be872" category="list-text">9.11.1X12</block>
   <block id="eba1f3287bdc33dfa25c084b5e15a4c5" category="list-text">9.12.1</block>
   <block id="b5c4301816e6af2bf88c788518733eb7" category="list-text">9.12.1P1</block>
   <block id="8f54fbf368765fd506959c0f94135922" category="list-text">9.12.1P10</block>
@@ -5630,9 +5629,6 @@
   <block id="ebbe4cbae17517c84e54eba083c8da4b" category="list-text">9.14.1P8</block>
   <block id="d73363717d834d4a2ab99eeb68453131" category="list-text">9.14.1P8D5</block>
   <block id="f8a8cd0923816d5b6d78f88100eeeb74" category="list-text">9.14.1P9</block>
-  <block id="86259c42e39aca9d604557fc0df7cdfd" category="list-text">9.14.1X14</block>
-  <block id="e2a6950e117d892956cab85ead3b8f5f" category="list-text">9.14.1X20</block>
-  <block id="2f550d4ca52f3cf0205b3dc3813685a1" category="list-text">9.14.1X24</block>
   <block id="d9df468f7ec059062fe27406e7e15237" category="list-text">9.15.0P1</block>
   <block id="d8fde17f7482290d3fc56b981fe6e5f3" category="list-text">9.15.0P2</block>
   <block id="120ae360daecd24b580b71f9f2766bbc" category="list-text">9.15.1</block>
@@ -5646,15 +5642,9 @@
   <block id="a94def7bd8645fffeb7856a0b730acfb" category="list-text">9.15.1P7</block>
   <block id="cc1e51f6714a9a4de877bfe5d6abc663" category="list-text">9.15.1P7D4</block>
   <block id="fd43304224fcabc307d59c5ec05b2dec" category="list-text">9.15.1P8</block>
-  <block id="988a2f8f75724c92369ef7cf6c1af9c3" category="list-text">9.15.1X19</block>
-  <block id="398a2f5fbfe6d752b77067052fc148f5" category="list-text">9.15.1X27</block>
   <block id="0bd0e673df4c14cae45a11fac30c530b" category="list-text">9.16.1</block>
   <block id="5329b0514f6808bed8f7ea91aa5dfffe" category="list-text">9.16.1P1</block>
-  <block id="38581ea3df1d6327e2ef6aa30a992d3d" category="list-text">9.16.1X16</block>
-  <block id="309cc4b6e6becf1dabfbf424307d63a3" category="list-text">9.16.1X26</block>
-  <block id="abcfd7456fda735d64d7072f1f14b7a9" category="list-text">9.16.1X29</block>
   <block id="81e76ca235a16e1d875f94529d326de0" category="list-text">9.17.1</block>
-  <block id="c4e97bb93085dd52655d04ae6039f80d" category="list-text">9.17.1X7</block>
   <block id="ede0f5d55262ef3a8fefabdc493d497d" category="list-text">9.2.0P3</block>
   <block id="db3defc5982e5a3ab1c7c23c3b9bd186" category="list-text">9.2.0P4</block>
   <block id="b7cc677864a8a148a8f6712077c927d6" category="list-text">9.3.0P15</block>
@@ -5707,7 +5697,6 @@
   <block id="300af83339932c117e40a26058e99342" category="list-text">9.7.0P7</block>
   <block id="7bf36aff015b9cae71de886282513b8d" category="list-text">9.7.0P8</block>
   <block id="ce901682465ebe915d94307190f673c8" category="list-text">9.7.0P9</block>
-  <block id="3944340f50ba82bd002202199d7abe5e" category="list-text">9.7.0X17</block>
   <block id="b986ed6de4db8c07091d6f0b537ea702" category="list-text">9.8.0</block>
   <block id="da6f3108688381d819a41aa913cf1e19" category="list-text">9.8.0P1</block>
   <block id="deb8a9119a167f8fa049b82613624fbc" category="list-text">9.8.0P10</block>
@@ -5715,7 +5704,6 @@
   <block id="85c61f496ad4ea3c959fecea506ac58e" category="list-text">9.8.0P12</block>
   <block id="3c92472032750ed4a2c0e27d1800b25e" category="list-text">9.8.0P13</block>
   <block id="7f9b4710e7cd1de83b1d2aacebadcc53" category="list-text">9.8.0P14</block>
-  <block id="0125e3652c60c88a180594ab60564bba" category="list-text">9.8.0P14X5</block>
   <block id="8c5f541323d4aa6813a524fbf9dd59a8" category="list-text">9.8.0P15</block>
   <block id="4a6dae456f8b918b4c60072a72969636" category="list-text">9.8.0P16</block>
   <block id="8a3155dbb9a7e427a5aefa328145b791" category="list-text">9.8.0P17</block>
@@ -5745,7 +5733,6 @@
   <block id="f42881361c9c6865d49fd05bf347146a" category="list-text">9.9.1P2</block>
   <block id="d4960421bee21c61ebf8d27b38d6080a" category="list-text">9.9.1P20</block>
   <block id="7d6a08d11ebcd453bf13060310fcfeeb" category="list-text">9.9.1P3</block>
-  <block id="f9d157259fbe48b272c368d76bb54049" category="list-text">9.9.1P5X2</block>
   <block id="baf935f699cf2fba569f01e21467a7d7" category="list-text">9.9.1P6</block>
   <block id="5c5ab1439f6ac62d53efee3758d3c999" category="list-text">9.9.1P7</block>
   <block id="f6d334c5abfc986211c0472ba79714a7" category="list-text">9.9.1P9</block>
@@ -5787,9 +5774,6 @@
   <block id="7fdbd16e1ff751fad04600d723d8011d" category="list-text">Versão 9.16.1 da NetApp : sábado, 18 de janeiro, 19:31:15 UTC de 2025</block>
   <block id="88021ecf50f7541d3d24492a191e471b" category="list-text">Versão 9.16.1P1 da NetApp : Sexta-feira, 14 de fevereiro, 03:53:50 UTC de 2025</block>
   <block id="652755e90249a76ef63d7204d6ab39ec" category="list-text">Versão 9.16.1RC1 da NetApp : Seg, 4 de Nov de 2024, 10:39:46 UTC</block>
-  <block id="e47d8be37475d6721d2595b43299102a" category="list-text">Versão 9.16.1X26 da NetApp : Seg, 09 de Dez de 2024, 10:27:42 UTC</block>
-  <block id="7faf1c14f22abc4af287a0938e0e11d4" category="list-text">Versão 9.16.1X29 da NetApp : domingo, 12 de janeiro, 11h18min25s UTC de 2025</block>
-  <block id="047366cbe3a752b392b76ee3de5a0693" category="list-text">Versão 9.17.1X7 da NetApp : Sexta-feira, 14 de fevereiro, 11:21:52 UTC de 2025</block>
   <block id="7012035b5539239acce1eeb19262a908" category="list-text">Lançamento do NetApp Clawhammer__9.14.1: Sáb, 18 de maio, 09:23:49 UTC 2024</block>
   <block id="85d028d27872290fedf829049ad47f51" category="list-text">Lançamento do NetApp Cloudstream__9.16.1: Seg, 4 de Nov de 2024, 05:51:46 UTC</block>
   <block id="efb74c609c847e1c896c8b72027c2404" category="list-text">Lançamento do NetApp Cloudstream__9.16.1: qui, 13 de março de 2025, 20:55:54 UTC</block>
@@ -8235,7 +8219,6 @@
   <block id="46152eb4e0d7febe5ed5ec5aa51b068f" category="admonition">Para ambientes com grandes quantidades de ativos relacionados, a herança de atribuições de aplicativos para esses ativos pode levar vários minutos.  Se você tiver muitos bens relacionados, reserve mais tempo para que a herança ocorra.</block>
   <block id="f64880272c45a077dc9152ab7dd2f24a" category="paragraph">Depois de atribuir o host ao aplicativo, você pode atribuir os ativos restantes ao aplicativo.  Para acessar a página inicial do aplicativo, clique em *Gerenciar &gt; Aplicativo* e selecione o aplicativo que você criou.</block>
   <block id="91771bf0d5be307a250d706e57df1eb1" category="summary">Crie monitores para alertar sobre limites de desempenho ou inventário, bem como condições de métricas ou logs.</block>
-  <block id="3c86c080f12d925b5a5ec1ad14563f65" category="paragraph">Configure monitores para rastrear limites de desempenho, registrar eventos e anomalias em seus recursos de infraestrutura. Crie alertas personalizados para métricas como latência de gravação de nó, capacidade de armazenamento ou desempenho do aplicativo e receba notificações quando tais condições forem atendidas.</block>
   <block id="3f5fb2a45a144339f9591a104342f79b" category="paragraph">Os monitores permitem que você defina limites para métricas geradas por objetos de "infraestrutura", como armazenamento, VM, EC2 e portas, bem como para dados de "integração", como aqueles coletados para Kubernetes, métricas avançadas do ONTAP e plug-ins do Telegraf.  Esses monitores _métricos_ alertam você quando limites de nível de alerta ou nível crítico são ultrapassados.</block>
   <block id="e730b9c349889018dc9deaccaa5a438b" category="paragraph">Você também pode criar monitores para disparar alertas de nível de aviso, crítico ou informativo quando _eventos de log_ especificados forem detectados.</block>
   <block id="b18c8095ec7b7cd0c63a4e28b715f6c1" category="inline-link-macro">Monitores definidos pelo sistema</block>
@@ -8257,13 +8240,11 @@
   <block id="313acdf9633421e44aea4a9be12b5071" category="list-text">No menu suspenso, pesquise e escolha um tipo de objeto e uma métrica para monitorar.</block>
   <block id="0afd1ac0e8283e24d8739752316dccba" category="paragraph">Você pode definir filtros para restringir quais atributos ou métricas de objeto monitorar.</block>
   <block id="02421e310193c48e3a305e97cbba58c2" category="paragraph"><block ref="02421e310193c48e3a305e97cbba58c2" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="8ce06b1a529052723e1fb36a1c2f1a25" category="admonition">Para criar um monitor multicondição (por exemplo, IOPS &gt; X e latência &gt; Y), defina a primeira condição como um limite e a segunda condição como um filtro.</block>
   <block id="9ef1d5830a24b9e150ec53e978038289" category="section-title">Defina as condições do monitor.</block>
   <block id="2e75e9aa28dbca090ee157cf8d539e66" category="list-text">Depois de escolher o objeto e a métrica a serem monitorados, defina os limites de nível de aviso e/ou nível crítico.</block>
   <block id="734f668bd72716899c84bbaedc8d2564" category="list-text">Para o nível _Warning_, insira 200 para nosso exemplo.  A linha tracejada que indica este nível de alerta é exibida no gráfico de exemplo.</block>
   <block id="a86a316c20ed3c30474a8a9bcbca7f2f" category="list-text">Para o nível _Crítico_, insira 400.  A linha tracejada que indica esse nível crítico é exibida no gráfico de exemplo.</block>
   <block id="d00ff899ed7e3bcc490e418870ed0ce4" category="paragraph">O gráfico exibe dados históricos.  As linhas de nível de Aviso e Crítico no gráfico são uma representação visual do Monitor, para que você possa ver facilmente quando o Monitor pode disparar um alerta em cada caso.</block>
-  <block id="390f4b7f0b6066d4e61aa66cd61b3e6c" category="list-text">Para o intervalo de ocorrência, escolha _Continuamente_ por um período de _15 minutos_.</block>
   <block id="750f553c0f9776809a020b980f3dc25a" category="paragraph">Você pode optar por disparar um alerta no momento em que um limite for violado ou esperar até que o limite esteja em violação contínua por um período de tempo.  Em nosso exemplo, não queremos ser alertados sempre que o IOPS total atingir o pico acima do nível de Aviso ou Crítico, mas apenas quando um objeto monitorado exceder continuamente um desses níveis por pelo menos 15 minutos.</block>
   <block id="812faed524486085f300f8e0bdba77fe" category="inline-image-macro">Defina as condições do monitor</block>
   <block id="be0ee88944c0674ffaad4c460224553f" category="paragraph"><block ref="be0ee88944c0674ffaad4c460224553f" category="inline-image-macro-rx" type="image"></block></block>
@@ -12791,4 +12772,18 @@
   <block id="399bd1ee587245ecac6f39beaa99886f" category="sidebar">PostgreSQL</block>
   <block id="14590850b4107a6f92feb1af739b82eb" category="sidebar">Fantoche</block>
   <block id="15ec8934d96530d4c5f4a3b0f701f745" category="sidebar">RepensarDB</block>
+  <block id="b6c4679bc199e5db8f88b60803f5ca85" category="section-title">Uma nota sobre alertas de longo prazo</block>
+  <block id="83e49813b50f1fc5e03ffde57c985102" category="paragraph">Observe que os alertas que permanecerem ativos por mais de 24 horas ficarão visíveis na lista Alertas e Alterações uma vez a cada 24 horas, portanto, você poderá notar o mesmo alerta listado várias vezes. Cada um desses alertas terá o mesmo ID de alerta, mesma hora de início, etc., e terá o status "Alerta" até que o alerta seja resolvido.</block>
+  <block id="079090a1dc96bbd4e45426ceeedd592f" category="summary">Crie métricas personalizadas e monitores de log para rastrear proativamente o desempenho da infraestrutura, limites de capacidade e eventos críticos com alertas e notificações automatizados.</block>
+  <block id="883d09869adb0b8fae6c4387af23b6d4" category="paragraph">Configure monitores para rastrear limites de desempenho, registrar eventos e anomalias em seus recursos de infraestrutura. Crie alertas personalizados para métricas como latência de gravação de nó, capacidade de armazenamento ou desempenho do aplicativo e receba notificações quando essas condições forem atendidas.</block>
+  <block id="a7cd6a99f9ca0fccc58590218d395239" category="paragraph">Os monitores de métricas se aplicam a objetos de inventário, como armazenamento, switch, host, VM, etc., bem como a métricas de integração, como dados do ONTAP Advanced ou do Kubernetes. Ao monitorar objetos de inventário, observe que você não pode selecionar um método "Agrupar por". Entretanto, o agrupamento _é_ permitido ao monitorar dados de integração.</block>
+  <block id="70b37ea4cf45e401178bb71faa1e50fe" category="section-title">Monitores multicondições</block>
+  <block id="6e8d7620a4a0bc7614ae9936242cc79e" category="paragraph">Você pode optar por refinar ainda mais seu monitor métrico adicionando uma segunda condição. Basta expandir o prompt "+Adicionar condição métrica secundária" e configurar a condição adicional.</block>
+  <block id="c7c9e436435c4770e86c98098336f9a2" category="inline-image-macro">defina a segunda condição</block>
+  <block id="8047e4ba43998007d5db74d70e51011b" category="paragraph"><block ref="8047e4ba43998007d5db74d70e51011b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="53cd31c5f3906e17dd7f8643c332ec08" category="paragraph">O monitor emitirá um alerta se ambas as condições forem atendidas.</block>
+  <block id="440695f7e9d74e3d3294a5cd9405bf75" category="paragraph">Observe que você só pode usar "E" uma segunda condição; você não pode escolher alertar sobre uma condição OU sobre a outra.</block>
+  <block id="f5efcf93de96054f67b29d58662ad5c6" category="list-text">Para o intervalo de ocorrência, escolha _Continuamente_ por um período de _15 minutos_.</block>
+  <block id="95e94216ef8b85a76727809c3dfcbcc0" category="inline-link-macro">Gerenciamento de Dados ONTAP</block>
+  <block id="2520cfbb37bc8bbd2fc91278c73eb838" category="list-text">Observe que as métricas do Fpolicy não são suportadas no coletor ONTAP REST (os coletores de dados do Workload Security usam servidores FPolicy, e as métricas FPolicy permitem monitorar a atividade de coleta de dados do Workload Security). Para dar suporte às métricas do Fpolicy, use o <block ref="5887f651a571af9233df120cb7d32347" category="inline-link-macro-rx"></block> coletor.</block>
 </blocks>

@@ -32,6 +32,7 @@ A seguir estão os requisitos para configurar e usar este coletor de dados:
 
 * ONTAP versão 9.14.1 ou superior.
 * Requisitos da porta: 443
+* Observe que as métricas do Fpolicy não são suportadas no coletor ONTAP REST (os coletores de dados do Workload Security usam servidores FPolicy, e as métricas FPolicy permitem monitorar a atividade de coleta de dados do Workload Security). Para dar suporte às métricas do Fpolicy, use o link:task_dc_na_cdot.html["Gerenciamento de Dados ONTAP"] coletor.
 
 
 
