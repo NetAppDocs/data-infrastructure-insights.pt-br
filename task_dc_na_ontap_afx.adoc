@@ -1,0 +1,259 @@
+---
+sidebar: sidebar 
+permalink: task_dc_na_ontap_afx.html 
+keywords: data collector, ontap, afx 
+summary: Colecionador ONTAP AFX 
+---
+= Coletor de dados NetApp ONTAP AFX
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Este coletor de dados adquire inventário, logs de EMS e dados de desempenho de sistemas de armazenamento que executam o ONTAP 9.16.0 e superior usando chamadas de API REST.
+
+
+
+== Requisitos
+
+A seguir estão os requisitos para configurar e usar este coletor de dados:
+
+* Você deve ter acesso a uma conta de usuário com o nível de acesso necessário.  Observe que permissões de administrador são necessárias ao criar um novo usuário/função REST.
++
+** Funcionalmente, o Data Infrastructure Insights faz principalmente solicitações de leitura, mas algumas permissões de gravação são necessárias para que o Data Infrastructure Insights se registre no array ONTAP .  Veja a _Nota sobre permissões_ logo abaixo.
+
+
+* ONTAP versão 9.16.0 ou superior.
+* Requisitos da porta: 443
+
+
+
+
+== Uma nota sobre permissões
+
+Como vários painéis ONTAP do Data Infrastructure Insights dependem de contadores ONTAP avançados, você deve manter *Habilitar coleta avançada de dados de contadores* ativado na seção Configuração avançada do coletor de dados.
+
+Para criar uma conta local para o Data Infrastructure Insights no nível do cluster, faça login no ONTAP com o nome de usuário/senha do Administrador de gerenciamento do cluster e execute os seguintes comandos no servidor ONTAP :
+
+. Antes de começar, você deve estar conectado ao ONTAP com uma conta de _Administrador_ e os _comandos de nível de diagnóstico_ devem estar habilitados.
+. Recupere o nome do vserver que é do tipo _admin_.  Você usará esse nome em comandos subsequentes.
++
+ vserver show -type admin
+. Crie uma função usando os seguintes comandos:
++
+....
+security login rest-role create -role {role name} -api /api -access readonly
+security login rest-role create -role {role name} -api /api/cluster/agents -access all
+vserver services web access create -name spi -role {role name} -vserver {vserver name as retrieved above}
+security login create -user-or-group-name {username} -application http -authentication-method password -role {role name}
+....
+. Crie o usuário somente leitura usando o seguinte comando.  Depois de executar o comando create, você será solicitado a digitar uma senha para este usuário.
++
+ security login create -username ci_user -application http -authentication-method password -role ci_readonly
+
+
+Se a conta AD/LDAP for usada, o comando deve ser
+
+ security login create -user-or-group-name DOMAIN\aduser/adgroup -application http -authentication-method domain -role ci_readonly
+A função e o login do usuário resultantes serão semelhantes aos seguintes.  Sua produção real pode variar:
+
+[listing]
+----
+security login rest-role show -vserver <vserver name> -role restRole
+
+               Role                                    Access
+Vserver        Name            API                     Level
+----------     -------------   -------------------     ------
+<vserver name> restRole        /api                    readonly
+                               /api/cluster/agents     all
+2 entries were displayed.
+
+security login show -vserver <vserver name> -user-or-group-name restUser
+
+Vserver: <vserver name>
+                                                                 Second
+User/Group                 Authentication                 Acct   Authentication
+Name           Application Method        Role Name        Locked Method
+-------------- ----------- ------------- ---------------- ------ --------------
+restUser       http        password      restRole         no     none
+----
+
+
+== Migração
+
+Para migrar de um coletor de dados ONTAP (ontapi) anterior para o coletor ONTAP REST mais recente, faça o seguinte:
+
+. Adicione o coletor REST.  É recomendável inserir informações para um usuário diferente daquele configurado para o coletor anterior.  Por exemplo, use o usuário indicado na seção Permissões acima.
+. Pause o coletor anterior para que ele não continue coletando dados.
+. Deixe o novo coletor REST adquirir dados por pelo menos 30 minutos.  Ignore quaisquer dados durante esse período que não pareçam "normais".
+. Após o período de descanso, você deverá ver seus dados se estabilizarem à medida que o coletor REST continua a aquisição.
+
+
+Você pode usar o mesmo processo para retornar ao coletor anterior, se desejar.
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP de gerenciamento ONTAP | Endereço IP ou nome de domínio totalmente qualificado do cluster NetApp .  Deve ser IP/FQDN de gerenciamento de cluster. 
+
+
+| Nome de usuário ONTAP REST | Nome de usuário para cluster NetApp 
+
+
+| Senha ONTAP REST | Senha para cluster NetApp 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de pesquisa de inventário (min) | O padrão é 60 minutos. 
+
+
+| Intervalo de pesquisa de desempenho (seg) | O padrão é 60 segundos. 
+
+
+| Coleta Avançada de Dados de Contagem | Selecione esta opção para incluir dados do contador avançado ONTAP nas pesquisas. Ativado por padrão. 
+
+
+| Habilitar coleta de eventos EMS | Selecione esta opção para incluir dados de eventos de log do ONTAP EMS. Ativado por padrão. 
+
+
+| Intervalo de pesquisa EMS (seg) | O padrão é 60 segundos. 
+|===
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire dados de inventário, logs e desempenho do coletor de dados ONTAP .  Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para o ativo.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
+
+
+| Conjunto | Armazenar 
+
+
+| Nó | Nó de armazenamento 
+
+
+| Volume/ FlexVol/ FlexGroup | Volume interno 
+
+
+| Qtree/FlexTree | Qtree (tipo: Explixit/Padrão) 
+
+
+| Balde S3 | Qtree (tipo: Bucket) 
+
+
+| StoragePod/Zona de Disponibilidade de Armazenamento | Pool de armazenamento 
+
+
+| Compartilhar | Compartilhar 
+
+
+| Contingente | Contingente 
+
+
+| SVM (Máquina Virtual de Armazenamento) | Máquina Virtual de Armazenamento 
+|===
+
+
+== Terminologia de gerenciamento de dados ONTAP
+
+Os termos a seguir se aplicam a objetos ou referências que você pode encontrar nas páginas de destino de ativos de armazenamento do ONTAP Data Management.  Muitos desses termos também se aplicam a outros coletores de dados.
+
+
+
+=== Armazenar
+
+* Modelo – Uma lista delimitada por vírgulas de nomes exclusivos e discretos de modelos de nós dentro deste cluster.  Se todos os nós nos clusters forem do mesmo tipo de modelo, apenas um nome de modelo aparecerá.
+* Fornecedor – o mesmo nome de fornecedor que você veria se estivesse configurando uma nova fonte de dados.
+* Número de série – O UUID da matriz
+* IP – geralmente será o(s) IP(s) ou nome(s) de host conforme configurado na fonte de dados.
+* Versão do microcódigo – firmware.
+* Capacidade bruta – soma de base 2 de todos os discos físicos no sistema, independentemente de sua função.
+* Latência – uma representação do que as cargas de trabalho do host estão enfrentando, tanto em leituras quanto em gravações.  O ideal seria que o Data Infrastructure Insights obtivesse esse valor diretamente, mas isso nem sempre acontece.  Em vez de a matriz oferecer isso, o Data Infrastructure Insights geralmente executa um cálculo ponderado por IOPs derivado das estatísticas dos volumes internos individuais.
+* Taxa de transferência – agregada de volumes internos.  Gerenciamento – pode conter um hiperlink para a interface de gerenciamento do dispositivo.  Criado programaticamente pela fonte de dados do Data Infrastructure Insights como parte do relatório de inventário.
+
+
+
+
+=== Pool de armazenamento
+
+* Armazenamento – em qual matriz de armazenamento esse pool reside.  Obrigatório.
+* Tipo – um valor descritivo de uma lista de possibilidades enumeradas.  O mais comum será “Agregado” ou “Grupo RAID”.
+* Nó – se a arquitetura deste conjunto de armazenamento for tal que os pools pertençam a um nó de armazenamento específico, seu nome será visto aqui como um hiperlink para sua própria página de destino.
+* Utiliza Flash Pool – Valor Sim/Não – este pool baseado em SATA/SAS tem SSDs usados para aceleração de cache?
+* Redundância – nível RAID ou esquema de proteção.  RAID_DP é paridade dupla, RAID_TP é paridade tripla.
+* Capacidade – os valores aqui são a capacidade lógica utilizada, a capacidade utilizável e a capacidade lógica total, além da porcentagem utilizada entre elas.
+* Capacidade superalocada – Se, ao usar tecnologias de eficiência, você tiver alocado uma soma total de capacidades de volume ou volume interno maior que a capacidade lógica do pool de armazenamento, o valor percentual aqui será maior que 0%.
+* Snapshot – capacidades de snapshot usadas e totais, se a arquitetura do seu pool de armazenamento dedicar parte de sua capacidade a áreas de segmentos exclusivamente para snapshots.  ONTAP em configurações MetroCluster provavelmente exibirá isso, enquanto outras configurações ONTAP são menos propensas a isso.
+* Utilização – um valor percentual que mostra a maior porcentagem de ocupação de disco de qualquer disco que contribui com capacidade para este pool de armazenamento.  A utilização do disco não tem necessariamente uma forte correlação com o desempenho do array – a utilização pode ser alta devido a reconstruções de disco, atividades de desduplicação, etc. na ausência de cargas de trabalho controladas pelo host.  Além disso, muitas implementações de replicação de matrizes podem direcionar a utilização do disco sem serem exibidas como volume interno ou carga de trabalho de volume.
+* IOPS – a soma de IOPS de todos os discos que contribuem com capacidade para este pool de armazenamento.  Taxa de transferência – a soma da taxa de transferência de todos os discos que contribuem com capacidade para esse pool de armazenamento.
+
+
+
+
+=== Nó de armazenamento
+
+* Armazenamento – de qual matriz de armazenamento esse nó faz parte.  Obrigatório.
+* Parceiro HA – em plataformas onde um nó fará failover para apenas um outro nó, geralmente será visto aqui.
+* Estado – saúde do nó.  Disponível somente quando o array estiver saudável o suficiente para ser inventariado por uma fonte de dados.
+* Modelo – nome do modelo do nó.
+* Versão – nome da versão do dispositivo.
+* Número de série – O número de série do nó.
+* Memória – memória base 2, se disponível.
+* Utilização – No ONTAP, este é um índice de estresse do controlador de um algoritmo proprietário.  Em cada pesquisa de desempenho, um número entre 0 e 100% será relatado, que é o maior entre a contenção de disco WAFL ou a utilização média da CPU.  Se você observar valores sustentados > 50%, isso é indicativo de subdimensionamento – possivelmente um controlador/nó não grande o suficiente ou discos giratórios insuficientes para absorver a carga de trabalho de gravação.
+* IOPS – Derivado diretamente de chamadas REST ONTAP no objeto de nó.
+* Latência – Derivada diretamente de chamadas REST ONTAP no objeto de nó.
+* Taxa de transferência – Derivada diretamente de chamadas REST ONTAP no objeto de nó.
+* Processadores – contagem de CPU.
+
+
+
+
+== Métricas de potência ONTAP
+
+Vários modelos ONTAP fornecem métricas de energia para o Data Infrastructure Insights que podem ser usadas para monitoramento ou alertas.  As listas de modelos suportados e não suportados abaixo não são abrangentes, mas devem fornecer alguma orientação; em geral, se um modelo estiver na mesma família de um na lista, o suporte deve ser o mesmo.
+
+Modelos suportados:
+
+A200 A220 A250 A300 A320 A400 A700 A700s A800 A900 C190 FAS2240-4 FAS2552 FAS2650 FAS2720 FAS2750 FAS8200 FAS8300 FAS8700 FAS9000
+
+Modelos não suportados:
+
+FAS2620 FAS3250 FAS3270 FAS500f FAS6280 FAS/ AFF 8020 FAS/ AFF 8040 FAS/ AFF 8060 FAS/ AFF 8080
+
+
+
+== Solução de problemas
+
+Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
+
+[cols="2*"]
+|===
+| Problema: | Experimente isto: 
+
+
+| Ao tentar criar um coletor de dados ONTAP REST, um erro como o seguinte é visto: Configuração: 10.193.70.14: API ONTAP REST em 10.193.70.14 não está disponível: 10.193.70.14 falhou ao GET /api/cluster: 400 Solicitação inválida | Isso provavelmente se deve a um array ONTAP mais antigo (por exemplo, ONTAP 9.6), que não tem recursos de API REST.  ONTAP 9.14.1 é a versão mínima do ONTAP suportada pelo coletor ONTAP REST.  Respostas "400 Bad Request" devem ser esperadas em versões pré-REST ONTAP .  Para versões do ONTAP que oferecem suporte a REST, mas não são 9.14.1 ou posterior, você pode ver a seguinte mensagem semelhante: Configuração: 10.193.98.84: A API REST do ONTAP em 10.193.98.84 não está disponível: 10.193.98.84: A API REST do ONTAP em 10.193.98.84 está disponível: cheryl5-cluster-2 9.10.1 a3cb3247-3d3c-11ee-8ff3-005056b364a7, mas não é da versão mínima 9.14.1. 
+
+
+| Vejo métricas vazias ou "0" onde o coletor ONTAP ontapi mostra dados. | O ONTAP REST não relata métricas que são usadas internamente somente no sistema ONTAP .  Por exemplo, os agregados do sistema não serão coletados pelo ONTAP REST, apenas SVMs do tipo "dados" serão coletados.  Outros exemplos de métricas ONTAP REST que podem relatar dados zero ou vazios: InternalVolumes: REST não relata mais vol0.  Agregados: REST não relata mais aggr0.  Armazenamento: a maioria das métricas é um acúmulo das métricas de Volume Interno e será impactada pelas métricas acima.  Máquinas virtuais de armazenamento: REST não relata mais SVMs de tipos diferentes de 'dados' (por exemplo, 'cluster', 'mgmt', 'node').  Você também pode notar uma mudança na aparência dos gráficos que contêm dados, devido à alteração no período de pesquisa de desempenho padrão de 15 minutos para 5 minutos.  Pesquisas mais frequentes significam mais pontos de dados para plotar. 
+|===
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

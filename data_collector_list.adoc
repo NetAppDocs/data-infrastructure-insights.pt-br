@@ -247,6 +247,9 @@ Lista alfabética de coletores de dados suportados pelo Data Infrastructure Insi
 | link:task_dc_na_ontap_rest.html["Coletor NetApp ONTAP REST"] | Infraestrutura 
 
 
+| link:task_dc_na_ontap_afx.html["NetApp ONTAP AFX"] | Infraestrutura 
+
+
 | link:task_dc_na_ontap_all_san_array.html["Coletor NetApp ONTAP ASA r2 (All-SAN Array)"] | Infraestrutura 
 
 

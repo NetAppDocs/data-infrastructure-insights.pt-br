@@ -12776,7 +12776,6 @@
   <block id="83e49813b50f1fc5e03ffde57c985102" category="paragraph">Observe que os alertas que permanecerem ativos por mais de 24 horas ficarão visíveis na lista Alertas e Alterações uma vez a cada 24 horas, portanto, você poderá notar o mesmo alerta listado várias vezes. Cada um desses alertas terá o mesmo ID de alerta, mesma hora de início, etc., e terá o status "Alerta" até que o alerta seja resolvido.</block>
   <block id="079090a1dc96bbd4e45426ceeedd592f" category="summary">Crie métricas personalizadas e monitores de log para rastrear proativamente o desempenho da infraestrutura, limites de capacidade e eventos críticos com alertas e notificações automatizados.</block>
   <block id="883d09869adb0b8fae6c4387af23b6d4" category="paragraph">Configure monitores para rastrear limites de desempenho, registrar eventos e anomalias em seus recursos de infraestrutura. Crie alertas personalizados para métricas como latência de gravação de nó, capacidade de armazenamento ou desempenho do aplicativo e receba notificações quando essas condições forem atendidas.</block>
-  <block id="a7cd6a99f9ca0fccc58590218d395239" category="paragraph">Os monitores de métricas se aplicam a objetos de inventário, como armazenamento, switch, host, VM, etc., bem como a métricas de integração, como dados do ONTAP Advanced ou do Kubernetes. Ao monitorar objetos de inventário, observe que você não pode selecionar um método "Agrupar por". Entretanto, o agrupamento _é_ permitido ao monitorar dados de integração.</block>
   <block id="70b37ea4cf45e401178bb71faa1e50fe" category="section-title">Monitores multicondições</block>
   <block id="6e8d7620a4a0bc7614ae9936242cc79e" category="paragraph">Você pode optar por refinar ainda mais seu monitor métrico adicionando uma segunda condição. Basta expandir o prompt "+Adicionar condição métrica secundária" e configurar a condição adicional.</block>
   <block id="c7c9e436435c4770e86c98098336f9a2" category="inline-image-macro">defina a segunda condição</block>
@@ -12786,4 +12785,16 @@
   <block id="f5efcf93de96054f67b29d58662ad5c6" category="list-text">Para o intervalo de ocorrência, escolha _Continuamente_ por um período de _15 minutos_.</block>
   <block id="95e94216ef8b85a76727809c3dfcbcc0" category="inline-link-macro">Gerenciamento de Dados ONTAP</block>
   <block id="2520cfbb37bc8bbd2fc91278c73eb838" category="list-text">Observe que as métricas do Fpolicy não são suportadas no coletor ONTAP REST (os coletores de dados do Workload Security usam servidores FPolicy, e as métricas FPolicy permitem monitorar a atividade de coleta de dados do Workload Security). Para dar suporte às métricas do Fpolicy, use o <block ref="5887f651a571af9233df120cb7d32347" category="inline-link-macro-rx"></block> coletor.</block>
+  <block id="b2422fa602be830d9f1a2469dd70ca20" category="inline-link-macro">NetApp ONTAP AFX</block>
+  <block id="83cd27100a931554f0e05219011edf39" category="cell"><block ref="83cd27100a931554f0e05219011edf39" category="inline-link-macro-rx"></block></block>
+  <block id="14ec544dd26342f2315dc51923b34e66" category="summary">Colecionador ONTAP AFX</block>
+  <block id="aaab7580be4232835e9f12e5691f118f" category="doc">Coletor de dados NetApp ONTAP AFX</block>
+  <block id="e395c9addcba424f5bda562994dfecbe" category="cell">Volume/ FlexVol/ FlexGroup</block>
+  <block id="1574b47ca9477a3fc7635017b8f4ca0b" category="cell">Qtree/FlexTree</block>
+  <block id="16aac8a4d65f63c39da98362e32e250d" category="cell">Qtree (tipo: Explixit/Padrão)</block>
+  <block id="84ace9fb8e132c96d1dfcd31447efedc" category="cell">Balde S3</block>
+  <block id="1143dbaa613581e6f7e9245d88a5a30d" category="cell">Qtree (tipo: Bucket)</block>
+  <block id="26beb8e28a6498b161cc513e4d05c9f5" category="cell">StoragePod/Zona de Disponibilidade de Armazenamento</block>
+  <block id="474d2ef9225b003245e9f5a40297e1e8" category="cell">SVM (Máquina Virtual de Armazenamento)</block>
+  <block id="07ab2cfb4a15dea7a3c4679e886966f3" category="sidebar">ONTAP AFX</block>
 </blocks>
