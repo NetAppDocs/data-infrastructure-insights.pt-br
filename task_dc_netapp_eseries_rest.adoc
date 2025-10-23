@@ -10,13 +10,13 @@ summary: Configurando o coletor de dados REST do NetApp E-Series.
 
 
 [role="lead"]
-O coletor de dados REST do NetApp E-Series reúne dados de inventário e desempenho.  O coletor suporta firmware 7.x+ usando as mesmas configurações e relatando os mesmos dados.  O coletor REST monitora o status de criptografia dos pools de armazenamento, bem como o status de criptografia dos discos e volumes relacionados, e fornece a Utilização da CPU do nó de armazenamento como contadores de desempenho — funcionalidade não fornecida no coletor SANtricity E-Series legado.
+O coletor de dados REST da série E da NetApp reúne dados de inventário, logs e desempenho. O coletor suporta firmware 7.x+ usando as mesmas configurações e relatando os mesmos dados.  O coletor REST monitora o status de criptografia de pools de armazenamento, discos e volumes, a utilização da CPU do nó de armazenamento, bem como registra a funcionalidade não fornecida no coletor SANtricity E-Series legado.
 
 
 
 == Terminologia
 
-O Cloud Insight adquire as seguintes informações de inventário do NetApp E-Series, usando REST.  Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para esse ativo.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
+O Data Infrastructure Insights adquire as seguintes informações de inventário do NetApp E-Series, usando REST. Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para esse ativo. Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
 [cols="2*"]
 |===

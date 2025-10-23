@@ -1,12 +1,16 @@
 ---
 sidebar: sidebar 
 permalink: data_collector_list.html 
-summary: Lista de coletores de dados suportados. 
+summary: Lista de referência alfabética de todos os coletores de dados suportados pelo Data Infrastructure Insights, organizados por infraestrutura e tipos de serviço. 
 keywords: data collector, vendor, infrastructure, integration, service 
 ---
-= Lista de coletores de dados do Data Infrastructure Insights
+= Lista de referência do coletor de dados do Data Infrastructure Insights
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -218,9 +222,6 @@ Lista alfabética de coletores de dados suportados pelo Data Infrastructure Insi
 
 
 | link:task_dc_na_cloud_volumes_ontap.html["NetApp Cloud Volumes ONTAP"] | Infraestrutura 
-
-
-| link:task_dc_na_cloud_volumes.html["Serviços NetApp Cloud Volumes para AWS"] | Infraestrutura 
 
 
 | link:task_dc_na_cloud_connection.html["Conexão NetApp Cloud para ONTAP 9.9+"] | Infraestrutura 

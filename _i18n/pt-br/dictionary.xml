@@ -3882,8 +3882,6 @@
   <block id="16442b20a2319083af65dedb2d7e942e" category="paragraph">Você pode optar por compartilhar o painel com todos ou selecionar usuários com permissões de edição ou somente leitura.</block>
   <block id="1dcba5cd7d6049883623c0653a2031f6" category="inline-image-macro">Menus suspensos para compartilhar um painel com permissão de edição ou leitura</block>
   <block id="ac0466f21ebde71eed9f3673b4c7da1b" category="paragraph"><block ref="ac0466f21ebde71eed9f3673b4c7da1b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3305ac26b15ec00c4372c85a08bb7042" category="summary">Lista de coletores de dados suportados.</block>
-  <block id="3a6b9b02361ff37889bb4453f5ce5933" category="doc">Lista de coletores de dados do Data Infrastructure Insights</block>
   <block id="4a67aaff87a4b62a93d49b26e8eab486" category="paragraph">O Data Infrastructure Insights oferece suporte a uma variedade de coletores de dados de muitos fornecedores e serviços.</block>
   <block id="247727b698ccc6204ad7466cac97b566" category="paragraph">Os coletores de dados são categorizados por estes tipos:</block>
   <block id="3688337d7dae83e1ae45c29303993fc2" category="list-text">Infraestrutura: adquirida de dispositivos de fornecedores, como matrizes de armazenamento, switches, hipervisores ou dispositivos de backup.</block>
@@ -4022,8 +4020,6 @@
   <block id="4d9746bceefe2b6bd2586d1c3e4d2733" category="cell"><block ref="4d9746bceefe2b6bd2586d1c3e4d2733" category="inline-link-macro-rx"></block></block>
   <block id="b988e43525055930d8d214d3116d4c04" category="inline-link-macro">NetApp Cloud Volumes ONTAP</block>
   <block id="ecf8390ebf4bfbf85b7308b7ca58aaa1" category="cell"><block ref="ecf8390ebf4bfbf85b7308b7ca58aaa1" category="inline-link-macro-rx"></block></block>
-  <block id="91cd47436c04c106182959241ee93b9d" category="inline-link-macro">Serviços NetApp Cloud Volumes para AWS</block>
-  <block id="3d569988d784be7b4a432df70e13153d" category="cell"><block ref="3d569988d784be7b4a432df70e13153d" category="inline-link-macro-rx"></block></block>
   <block id="acb242e4a47b7f1537825e1c4eacc87a" category="inline-link-macro">Conexão NetApp Cloud para ONTAP 9.9+</block>
   <block id="32b322f0c18e116c5d878598d8fedae2" category="cell"><block ref="32b322f0c18e116c5d878598d8fedae2" category="inline-link-macro-rx"></block></block>
   <block id="995d9995da501d3734932d95524f1a35" category="inline-link-macro">NetApp Data ONTAP 7-Mode</block>
@@ -10162,17 +10158,6 @@
   <block id="34727dd01aaa3e0d53fd68d429bbff53" category="doc">NetApp Cloud Connection para coletor de dados ONTAP 9.9+</block>
   <block id="0803ffc49bb5d009027ad578d29858b8" category="paragraph">Este coletor de dados cria uma conexão em nuvem para dar suporte à coleta de dados dos sistemas ONTAP 9.9+ CVO, AFF e FAS .</block>
   <block id="fb915b764f3baecfa629ff22686e14ee" category="admonition">Este coletor de dados não estará mais disponível para instalação no Data Infrastructure Insights a partir de 4 de abril de 2023 e será removido de todas as instalações do Data Infrastructure Insights em julho de 2023.</block>
-  <block id="aa660f33d4c20ae2b92aa73acb4c5828" category="summary">Configurar o NetApp Cloud Volumes Services para o coletor de dados da AWS</block>
-  <block id="6d719c7976115879cdcafb7922e7e5fd" category="doc">Coletor de dados do NetApp Cloud Volumes Services para AWS</block>
-  <block id="85930060216df642a21fd8c262d1cc6c" category="paragraph">Este coletor de dados oferece suporte à coleta de inventário do NetApp Cloud Volumes Services para configurações da AWS.</block>
-  <block id="4aacf3bc449dad1d249c2fd81ea2e532" category="cell">Região de volumes de nuvem</block>
-  <block id="4378310503f4a4c4ba83139f38afb7b2" category="cell">Região dos Serviços NetApp Cloud Volumes para AWS</block>
-  <block id="d876ff8da67c3731ae25d8335a4168b4" category="cell">Chave de API</block>
-  <block id="66859c6a7a598a12f20c8244126d4b34" category="cell">Chave de API do Cloud Volumes</block>
-  <block id="5eb6bb157528b365f84c27bb4784031b" category="cell">Chave Secreta</block>
-  <block id="9447267c06cce84dba179c481872fb16" category="cell">Chave secreta do Cloud Volumes</block>
-  <block id="36d35d8bdb33f254c1406a404bc7c125" category="cell">Recebi um erro semelhante a este: 'Falha ao executar a solicitação: Conectar a &lt;ponto de extremidade da região da AWS&gt;:8080 [&lt;ponto de extremidade da região da AWS&gt;/IP do ponto de extremidade da região da AWS&gt;] falhou: tempo limite de conexão esgotado: GET \https://&lt;FQDN do ponto de extremidade da região da AWS&gt;:8080/v1/Storage/IPRanges HTTP/1.1'</block>
-  <block id="f51fb2108c9628f317aa92174475a004" category="cell">O<block ref="588cebdad26ee4a9a3bb08c290310eb7" category="inline-link-macro-rx"></block> usado pelo Data Infrastructure Insights para se comunicar com a Unidade de Aquisição não se comunica entre o Data Infrastructure Insights e o próprio Coletor de Dados.  Aqui estão algumas coisas que você pode tentar: Certifique-se de que a unidade de aquisição seja capaz de resolver o fqdn e alcançar a porta necessária.  Confirme se um proxy não é necessário para alcançar o ponto de extremidade especificado na mensagem de erro.  O Curl pode ser usado para testar a comunicação entre a unidade de aquisição e o ponto final.  Certifique-se de que você *não* está usando um proxy para este teste.  Exemplo: root@acquisitionunit# curl -s -H accept:application/json -H "Content-type: application/json" -H api-key:&lt;chave de API usada nas credenciais do coletor de dados -H secret-key:&lt;chave secreta usada nas credenciais do coletor de dados&gt; -X GET \https://&lt;AWS Regional Endpoint&gt;:8080/v1/Storage/IPRanges</block>
   <block id="47407ceeb441f7c5d1eac8ca6060c4b7" category="summary">Configurar o coletor de dados ONTAP do NetApp Cloud Volumes ONTAP</block>
   <block id="a7544b3f9e0cc7c642c8b55af45cc192" category="doc">Coletor de dados NetApp Cloud Volumes ONTAP</block>
   <block id="2285e08ef18a1a3f2e02b335409147d7" category="paragraph">Este coletor de dados oferece suporte à coleta de inventário de configurações do Cloud Volumes ONTAP .</block>
@@ -10391,8 +10376,6 @@
   <block id="bca66716b9ca2d13a4c28be69b276777" category="cell">3,3</block>
   <block id="caab88a7f89273838ab79f84c1c8a49d" category="summary">Configurando o coletor de dados REST do NetApp E-Series.</block>
   <block id="7d9a2bf43caef4a2c2ccab31b58ad1fb" category="doc">Coletor de dados REST da série E da NetApp</block>
-  <block id="02bbac9de1d6cf62350e13b0ebc66279" category="paragraph">O coletor de dados REST do NetApp E-Series reúne dados de inventário e desempenho.  O coletor suporta firmware 7.x+ usando as mesmas configurações e relatando os mesmos dados.  O coletor REST monitora o status de criptografia dos pools de armazenamento, bem como o status de criptografia dos discos e volumes relacionados, e fornece a Utilização da CPU do nó de armazenamento como contadores de desempenho — funcionalidade não fornecida no coletor SANtricity E-Series legado.</block>
-  <block id="06026757f9dde1467a9d040a8e0ca5e8" category="paragraph">O Cloud Insight adquire as seguintes informações de inventário do NetApp E-Series, usando REST.  Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para esse ativo.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:</block>
   <block id="199cdaad4b2e2da65f3c12904a570c15" category="inline-link-macro">API SANtricity da série E</block>
   <block id="025b66c3feb7622d3e2d83b097539fc0" category="list-text">Este coletor suporta apenas matrizes de modelos da Série E com *recursos nativos de API REST*.  A organização E-Series envia uma distribuição de API REST instalável e fora do array para arrays E-Series mais antigos: este coletor não oferece suporte a esse cenário.  Usuários com matrizes mais antigas devem continuar a usar o Data Infrastructure Insights<block ref="1e9e2e04984e423436b9d1423e41c8ce" category="inline-link-macro-rx"></block> coletor.</block>
   <block id="1dec37be48852b1e80d1d4ddd48a1698" category="list-text">O campo "Endereços IP do controlador da série E" suporta uma sequência delimitada por vírgulas de 2 IPs/nomes de host; o coletor tentará de forma inteligente o segundo IP/nome de host se o primeiro estiver inacessível.</block>
@@ -12743,7 +12726,6 @@
   <block id="140864078aeca1c7c35b4beb33c53c34" category="sidebar">Microsoft</block>
   <block id="c5865855c43d734069987786177edd98" category="sidebar">Hyper-V</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="sidebar">Cloud Volumes ONTAP</block>
-  <block id="b81efc5684c71c82d1f7592812e5af66" category="sidebar">Serviços de volumes em nuvem para AWS</block>
   <block id="d97291003c6a6e6615571bf02531ca30" category="sidebar">ONTAP ASA (matriz All-SAN) r2</block>
   <block id="9c58e11f96200548fd2f5932b391509a" category="sidebar">Software de gerenciamento de dados ONTAP</block>
   <block id="bf9973f393dbc9824e3e96f831e12c25" category="sidebar">Coletor ONTAP REST</block>
@@ -12797,4 +12779,9 @@
   <block id="26beb8e28a6498b161cc513e4d05c9f5" category="cell">StoragePod/Zona de Disponibilidade de Armazenamento</block>
   <block id="474d2ef9225b003245e9f5a40297e1e8" category="cell">SVM (Máquina Virtual de Armazenamento)</block>
   <block id="07ab2cfb4a15dea7a3c4679e886966f3" category="sidebar">ONTAP AFX</block>
+  <block id="8a3c7a91b37c85b11fcedc99bf01705d" category="summary">Lista de referência alfabética de todos os coletores de dados suportados pelo Data Infrastructure Insights, organizados por infraestrutura e tipos de serviço.</block>
+  <block id="3f98097ad0f17344bf7bd5127344ba03" category="doc">Lista de referência do coletor de dados do Data Infrastructure Insights</block>
+  <block id="a7cd6a99f9ca0fccc58590218d395239" category="paragraph">Os monitores de métricas se aplicam a objetos de inventário, como armazenamento, switch, host, VM, etc., bem como a métricas de integração, como dados do ONTAP Advanced ou do Kubernetes. Ao monitorar objetos de inventário, observe que você não pode selecionar um método "Agrupar por". Entretanto, o agrupamento _é_ permitido ao monitorar dados de integração.</block>
+  <block id="c712dc09bb9c9243894a5127306517ba" category="paragraph">O coletor de dados REST da série E da NetApp reúne dados de inventário, logs e desempenho. O coletor suporta firmware 7.x+ usando as mesmas configurações e relatando os mesmos dados.  O coletor REST monitora o status de criptografia de pools de armazenamento, discos e volumes, a utilização da CPU do nó de armazenamento, bem como registra a funcionalidade não fornecida no coletor SANtricity E-Series legado.</block>
+  <block id="e997ccbcc3dc041951b04d1a57ba2999" category="paragraph">O Data Infrastructure Insights adquire as seguintes informações de inventário do NetApp E-Series, usando REST. Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para esse ativo. Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:</block>
 </blocks>
