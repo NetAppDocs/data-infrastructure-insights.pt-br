@@ -18,6 +18,27 @@ A NetApp está continuamente melhorando e aprimorando seus produtos e serviços.
 
 
 
+== Novembro de 2025
+
+
+
+=== Configure sua página inicial personalizada.
+
+Simplifique seu fluxo de trabalho de monitoramento diário definindo _qualquer_ página do Data Infrastructure Insights como sua página inicial personalizada. Cada usuário pode selecionar uma página inicial diferente para se concentrar no que é importante para ele: um painel de controle crítico, alertas, integridade da infraestrutura, segurança da carga de trabalho ou mais.
+
+image:home_page_set.png["Definindo uma página inicial, largura=300"]
+
+
+
+=== Mantenha-se organizado com o agrupamento automático de painéis.
+
+Transforme a sua experiência com dashboards usando o agrupamento inteligente, que organiza automaticamente os dashboards importados da Galeria em categorias lógicas. O novo recurso de agrupamento facilita a importação de dashboards e coloca cada dashboard no grupo apropriado com base em sua função e relevância para o seu ambiente.
+
+image:dashboard_gallery_groups.png["grupos de galerias durante a importação, largura=500"]
+
+'''
+
+
 == Outubro de 2025
 
 
