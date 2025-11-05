@@ -7,6 +7,10 @@ summary: Um resumo.
 = Gerenciando coletores de dados configurados
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
