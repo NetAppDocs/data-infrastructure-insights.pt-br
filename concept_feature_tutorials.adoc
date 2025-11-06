@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_feature_tutorials.html 
-summary: O Data Infrastructure Insights tem tutoriais para mostrar como executar muitas tarefas. 
+summary: Tutoriais em vídeo passo a passo ajudam você a dominar os recursos do Data Infrastructure Insights, como painéis, consultas, monitoramento e solução de problemas. 
 keywords: onboarding, getting started, video, tutorial, resolution, dashboard, query, troubleshooting 
 ---
-= Tutoriais de recursos
+= Primeiros passos com tutoriais em vídeo
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ keywords: onboarding, getting started, video, tutorial, resolution, dashboard, q
 
 
 [role="lead"]
-O Data Infrastructure Insights está repleto de recursos úteis que permitem solucionar problemas de forma rápida e fácil, além de fornecer insights sobre seu ambiente corporativo.  Encontre dados facilmente com consultas poderosas, visualize dados em painéis e envie alertas por e-mail para os limites de dados que você definir.
+Aprenda Data Infrastructure Insights de forma eficiente com nossos tutoriais em vídeo passo a passo e uma lista de verificação de progresso.  Domine habilidades essenciais como criar painéis de controle, elaborar consultas, configurar monitoramento e solucionar problemas por meio de tutoriais práticos elaborados para que você se torne produtivo rapidamente.
 
 
 
@@ -38,3 +38,19 @@ NOTE: Você pode visualizar os tutoriais na ordem que quiser, quantas vezes quis
 === Descartando a lista de verificação
 
 A lista de verificação de inicialização é exibida até você clicar no link _Não mostrar isso novamente_ na parte inferior da lista de verificação.  Mesmo depois de descartar a lista de verificação, os tutoriais ainda estarão disponíveis em cada página apropriada do Data Infrastructure Insights até que você descarte cada um deles da barra de cabeçalho da mensagem.
+
+
+
+== Tutoriais em vídeo
+
+Assista aos vídeos a seguir para saber mais.
+
+link:https://media.netapp.com/video-detail/248621bd-6619-5dc8-9718-5d78d0fd21da/turn-raw-data-into-actionable-insights["Transforme dados brutos em insights acionáveis."^]
+
+link:https://media.netapp.com/video-detail/5a293f3c-c655-5879-9133-1a32aaa140e8/create-powerful-dashboards-with-netapp["Crie dashboards poderosos com o NetApp."^]
+
+link:https://media.netapp.com/video-detail/0e62b784-8456-5ef7-8879-f0352135a0f1/simplified-troubleshooting-with-vm-analyzer["Solução de problemas simplificada com o VM Analyzer"^]
+
+link:https://media.netapp.com/video-detail/d0530e0b-a222-52e7-92b1-dbeeee41b712/explore-and-analyze-with-queries-in-data-infrastructure-insights["Explore e analise com consultas no Data Infrastructure Insights."^]
+
+link:https://media.netapp.com/video-detail/43497a8e-f648-56b7-9bc7-8d5d4274510f/proactive-infrastructure-monitoring-with-alerts-and-monitors["Monitoramento proativo da infraestrutura com alertas e monitoramento."^]

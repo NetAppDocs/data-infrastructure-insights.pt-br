@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_cs_getting_started.html 
-keywords: collectors, data collectors, configure, introduction, browsers , Cloud Secure 
-summary: Algumas etapas simples farão com que você comece a usar o Workload Security 
+keywords: collectors, data collectors, configure, introduction, browsers, Cloud Secure 
+summary: Implante agentes de segurança de carga de trabalho e coletores de dados para monitorar a atividade do usuário e detectar ameaças à segurança. 
 ---
 = Introdução à segurança da carga de trabalho
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Há tarefas de configuração que precisam ser concluídas antes que você possa começar a usar o Workload Security para monitorar a atividade do usuário.
+O Workload Security ajuda você a monitorar a atividade do usuário e detectar possíveis ameaças à segurança em seu ambiente de armazenamento.  Antes de iniciar o monitoramento, é necessário configurar agentes, coletores de dados e serviços de diretório para estabelecer a base para um monitoramento de segurança abrangente.
 
 O sistema de segurança de carga de trabalho usa um agente para coletar dados de acesso de sistemas de armazenamento e informações de usuários de servidores de serviços de diretório.
 
@@ -28,19 +32,14 @@ link:concept_cs_agent_requirements.html["Requisitos do agente"]
 
 link:task_cs_add_agent.html["Adicionar agente"]
 
-link:https://netapp.hubs.vidyard.com/watch/Lce7EaGg7NZfvCUw4Jwy5P?["*Vídeo*: Implantação do Agente"]
 
 
+| Configurar um conector de diretório de usuário | link:task_config_user_dir_connect.html["Adicionar conector de diretório de usuário"] 
 
-| Configurar um conector de diretório de usuário | link:task_config_user_dir_connect.html["Adicionar conector de diretório de usuário"] link:https://netapp.hubs.vidyard.com/watch/NEmbmYrFjCHvPps7QMy8me?["*Vídeo*: Conexão do Active Directory"] 
 
-
-| Configurar coletores de dados | Clique em *Segurança de carga de trabalho > Coletores* Clique no coletor de dados que deseja configurar.  Consulte a seção Referência do fornecedor do coletor de dados da documentação.link:https://netapp.hubs.vidyard.com/watch/YSQrcYA7DKXbj1UGeLYnSF?["*Vídeo*: Conexão ONTAP SVM"] 
+| Configurar coletores de dados | Clique em *Segurança de carga de trabalho > Coletores* Clique no coletor de dados que deseja configurar. Consulte a seção "Referência do Fornecedor do Coletor de Dados" na documentação para obter informações sobre o coletor. 
 
 
 | Criar contas de usuários | link:concept_user_roles.html["Gerenciar contas de usuário"] 
-
-
-| Solução de problemas | link:https://netapp.hubs.vidyard.com/watch/Fs8N2w9wBtsFGrhRH9X85U?["*Vídeo*: Solução de problemas"] 
 |===
 O Workload Security também pode ser integrado a outras ferramentas.  Por exemplo,link:http://docs.netapp.com/us-en/cloudinsights/CloudInsights_CloudSecure_Splunk_integration_guide.pdf["veja este guia"] sobre integração com o Splunk.
