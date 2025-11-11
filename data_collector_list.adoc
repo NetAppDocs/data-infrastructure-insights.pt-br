@@ -173,9 +173,6 @@ Lista alfabética de coletores de dados suportados pelo Data Infrastructure Insi
 | link:task_dc_ibm_cs.html["Série IBM CS"] | Infraestrutura 
 
 
-| link:task_dc_ibm_powervm.html["IBM PowerVM"] | Infraestrutura 
-
-
 | link:task_dc_ibm_svc.html["Controlador de Volume IBM SAN (SVC)"] | Infraestrutura 
 
 
