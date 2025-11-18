@@ -2,15 +2,19 @@
 sidebar: sidebar 
 permalink: task_cs_add_agent.html 
 keywords: agent, Workload Security, installation, Cloud Secure 
-summary: Adicionando agentes de segurança de carga de trabalho 
+summary: Os agentes de segurança de carga de trabalho monitoram a atividade do usuário e detectam ameaças à segurança em seu ambiente de armazenamento. 
 ---
-= Instalação do agente de segurança de carga de trabalho
+= Implantar Agentes de Segurança de Carga de Trabalho
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-O Workload Security (anteriormente Cloud Secure) coleta dados de atividade do usuário usando um ou mais agentes.  Os agentes se conectam aos dispositivos do seu locatário e coletam dados que são enviados à camada SaaS de segurança de carga de trabalho para análise.  Verlink:concept_cs_agent_requirements.html["Requisitos do agente"] para configurar uma VM de agente.
+Os agentes de segurança de carga de trabalho são essenciais para monitorar a atividade do usuário e detectar possíveis ameaças à segurança em toda a sua infraestrutura de armazenamento. Este guia fornece instruções passo a passo para implantar agentes em seu ambiente. Antes de começar, certifique-se de que seu servidor de agentes atenda aos requisitos. link:concept_cs_agent_requirements.html["requisitos do sistema"].
 
 
 
@@ -22,8 +26,23 @@ O Workload Security (anteriormente Cloud Secure) coleta dados de atividade do us
 
 
 
-NOTE: Mudanças globais podem ter um impacto potencial em seus sistemas ONTAP . É altamente recomendável fazer alterações que afetem um grande número de coletores de dados fora dos horários de pico.
 
+== Melhores práticas
+
+Antes de configurar seu agente do Workload Security, leve em consideração o seguinte.
+
+[cols="1,3"]
+|===
+
+
+| Pausar e retomar | Pausa: Remove as políticas do ONTAP. Normalmente utilizado quando os clientes realizam atividades de manutenção prolongadas que podem levar um tempo considerável, como reinicializações de máquinas virtuais de agentes ou substituições de armazenamento. Resumo: Adiciona fpolicies de volta ao ONTAP. 
+
+
+| Fixar e desafixar | O Unpin busca imediatamente a versão mais recente (se disponível) e atualiza o agente e o coletor. Durante esta atualização, o fpolicies será desconectado e reconectado. Essa funcionalidade foi desenvolvida para clientes que desejam controlar o momento das atualizações automáticas. 
+
+
+| Abordagem recomendada | Para configurações grandes, é aconselhável usar Pin e Unpin em vez de pausar os coletores. Não é necessário pausar e retomar ao usar as funções de desafixar e reposicionar. Os clientes podem manter seus agentes e coletores atualizados e, ao receberem uma notificação por e-mail sobre uma nova versão, têm um prazo de 30 dias para atualizar os agentes seletivamente, um por um. Essa abordagem minimiza o impacto da latência nas fpolicies e proporciona maior controle sobre o processo de atualização. 
+|===
 
 
 == Etapas para instalar o agente
@@ -34,7 +53,7 @@ NOTE: Mudanças globais podem ter um impacto potencial em seus sistemas ONTAP . 
 O sistema exibe a página Adicionar um Agente:
 
 +
-image:Add-agent-1.png["Adicionando um agente de segurança de carga de trabalho"]
+image::Add-agent-1.png[Adicionando um agente de segurança de carga de trabalho]
 
 . Verifique se o servidor do agente atende aos requisitos mínimos do sistema.
 . Para verificar se o servidor do agente está executando uma versão compatível do Linux, clique em _Versões compatíveis (i)_.
@@ -46,7 +65,7 @@ image:CloudSecureAgentWithProxy_Instructions.png["Instalação do agente com not
 . Execute o comando de instalação em uma janela de terminal.
 . O sistema exibe a seguinte mensagem quando a instalação é concluída com sucesso:
 +
-image:new-agent-detect.png["Mensagem para instalação bem-sucedida do agente"]
+image::new-agent-detect.png[Mensagem para instalação bem-sucedida do agente]
 
 
 
