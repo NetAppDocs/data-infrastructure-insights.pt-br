@@ -38,10 +38,10 @@ Antes de configurar seu agente do Workload Security, leve em consideração o se
 | Pausar e retomar | Pausa: Remove as políticas do ONTAP. Normalmente utilizado quando os clientes realizam atividades de manutenção prolongadas que podem levar um tempo considerável, como reinicializações de máquinas virtuais de agentes ou substituições de armazenamento. Resumo: Adiciona fpolicies de volta ao ONTAP. 
 
 
-| Fixar e desafixar | O Unpin busca imediatamente a versão mais recente (se disponível) e atualiza o agente e o coletor. Durante esta atualização, o fpolicies será desconectado e reconectado. Essa funcionalidade foi desenvolvida para clientes que desejam controlar o momento das atualizações automáticas. 
+| Fixar e desafixar | O Unpin busca imediatamente a versão mais recente (se disponível) e atualiza o agente e o coletor. Durante esta atualização, o fpolicies será desconectado e reconectado. Essa funcionalidade foi desenvolvida para clientes que desejam controlar o momento das atualizações automáticas. Veja abaixo para<<pinning-an-agent-at-the-current-version,instruções de fixação/desfixação>> . 
 
 
-| Abordagem recomendada | Para configurações grandes, é aconselhável usar Pin e Unpin em vez de pausar os coletores. Não é necessário pausar e retomar ao usar as funções de desafixar e reposicionar. Os clientes podem manter seus agentes e coletores atualizados e, ao receberem uma notificação por e-mail sobre uma nova versão, têm um prazo de 30 dias para atualizar os agentes seletivamente, um por um. Essa abordagem minimiza o impacto da latência nas fpolicies e proporciona maior controle sobre o processo de atualização. 
+| Abordagem recomendada | Para configurações grandes, é aconselhável usar Pin e Unpin em vez de pausar os coletores. Não é necessário pausar e retomar ao usar as funções de fixar e desafixar. Os clientes podem manter seus agentes e coletores atualizados e, ao receberem uma notificação por e-mail sobre uma nova versão, têm um prazo de 30 dias para atualizar os agentes seletivamente, um por um. Essa abordagem minimiza o impacto da latência nas fpolicies e proporciona maior controle sobre o processo de atualização. 
 |===
 
 
