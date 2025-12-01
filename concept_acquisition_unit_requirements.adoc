@@ -5,8 +5,17 @@ summary: O servidor ou VM que você usa como sua Unidade de Aquisição deve ate
 keywords: AU, acquisition unit, requirements, sizing 
 ---
 = Requisitos da Unidade de Aquisição
+:toc: macro
 :hardbreaks:
+:toclevels: 1
 :allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
 
 
 [role="lead"]
@@ -22,7 +31,7 @@ Você deve instalar uma Unidade de Aquisição (UA) para adquirir informações 
 | Componente | Requisitos do Linux | Requisitos do Windows 
 
 
-| Sistema operacional | Um computador executando uma versão licenciada de um dos seguintes: * AlmaLinux 9.3 a 9.5 * Centos (64 bits): 7.2 a 7.9, 8.1 a 8.4, Stream 8, Stream 9 * Debian (64 bits): 9 a 12 * OpenSUSE Leap 15.1 a 15.6 * Oracle Enterprise Linux (64 bits): 7.5 a 7.9, 8.1 a 8.10, 9.3 a 9.6 * Red Hat (64 bits): 7.2 a 7.9, 8.1 a 8.10, 9.1 a 9.6 * Rocky 9.0 a 9.5 * SUSE Linux Enterprise Server 15, 15 SP2 a 15 SP6 * Ubuntu Server: 18.04, 20.04, 22.04, 24.04 LTS * SELinux nas plataformas acima Este computador não deve executar nenhum outro software de nível de aplicativo. Um servidor dedicado é recomendado.  Se você estiver executando com SELinux, é recomendável executar os seguintes comandos no sistema da unidade de aquisição: sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?" sudo restorecon -R /opt/netapp/cloudinsights | Um computador executando uma versão licenciada de um dos seguintes: * Microsoft Windows 10 de 64 bits * Microsoft Windows 11 * Microsoft Windows Server 2012 * Microsoft Windows Server 2012 R2 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025 Este computador não deve executar nenhum outro software de nível de aplicativo. Um servidor dedicado é recomendado. 
+| Sistema operacional | Um computador executando uma versão licenciada de um dos seguintes: * AlmaLinux 9.3 a 9.5 * Centos (64 bits): 7.2 a 7.9, 8.1 a 8.4, Stream 8, Stream 9 * Debian (64 bits): 9 a 12 * OpenSUSE Leap 15.1 a 15.6 * Oracle Enterprise Linux (64 bits): 7.5 a 7.9, 8.1 a 8.10, 9.3 a 9.6 * Red Hat (64 bits): 7.2 a 7.9, 8.1 a 8.10, 9.1 a 9.6 * Rocky 9.0 a 9.5 * SUSE Linux Enterprise Server 15, 15 SP2 a 15 SP6 * Ubuntu Server: 18.04, 20.04, 22.04, 24.04 LTS * SELinux nas plataformas acima Este computador não deve executar nenhum outro software de nível de aplicativo. Um servidor dedicado é recomendado.  Se você estiver executando com SELinux, é recomendável executar os seguintes comandos no sistema da unidade de aquisição: sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?" sudo restorecon -R /opt/netapp/cloudinsights | Um computador executando uma versão licenciada de um dos seguintes sistemas operacionais: * Microsoft Windows 11 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025. Este computador não deve estar executando nenhum outro software de nível de aplicativo. Um servidor dedicado é recomendado. 
 
 
 | CPU | 2 núcleos de CPU | Mesmo 
@@ -34,7 +43,7 @@ Você deve instalar uma Unidade de Aquisição (UA) para adquirir informações 
 | Espaço em disco disponível | 50 GB (100 GB recomendado) Para Linux, o espaço em disco deve ser alocado desta maneira: /opt/netapp 10 GB (20 GB para ambientes grandes) /var/log/netapp 40 GB (80 GB para ambientes grandes) /tmp pelo menos 1 GB disponível durante a instalação | 50 GB 
 
 
-| Rede | É necessária uma conexão Ethernet de 100 Mbps/1 Gbps, endereço IP estático e conectividade de porta 80 ou 443 (saída) da Unidade de Aquisição para *.cloudinsights.netapp.com ou seu locatário do Data Infrastructure Insights (ou seja, \https://<tenant_id>.c01.cloudinsights.netapp.com).  Para requisitos entre a Unidade de Aquisição e cada Coletor de Dados, consulte as instruções para olink:data_collector_list.html["Coletor de Dados"] .  Se sua organização exigir o uso de proxy para acesso à Internet, talvez seja necessário entender o comportamento do proxy da sua organização e buscar certas exceções para que o Data Infrastructure Insights funcione.  Por exemplo, sua organização bloqueia o acesso por padrão e só permite acesso a sites/domínios específicos por exceção?  Se for o caso, você precisará adicionar o seguinte domínio à lista de exceções: *.cloudinsights.netapp.com Para obter mais informações, leia sobre Proxieslink:task_troubleshooting_linux_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["aqui (Linux)"] oulink:task_troubleshooting_windows_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["aqui (Windows)"] .  Observe que a porta 443 deve ser aberta "de saída" da AU para o Data Infrastructure Insights. | Mesmo 
+| Rede | É necessária uma conexão Ethernet de 100 Mbps/1 Gbps, um endereço IP estático e conectividade na porta 80 ou 443 (saída) da Unidade de Aquisição para *.cloudinsights.netapp.com ou para o seu tenant do Data Infrastructure Insights (ou seja, https://<tenant_id>.c01.cloudinsights.netapp.com).  Para requisitos entre a Unidade de Aquisição e cada Coletor de Dados, consulte as instruções para olink:data_collector_list.html["Coletor de Dados"] . Se sua organização exigir o uso de proxy para acesso à Internet, talvez seja necessário entender o comportamento do proxy da sua organização e buscar certas exceções para que o Data Infrastructure Insights funcione. Por exemplo, sua organização bloqueia o acesso por padrão e só permite acesso a sites/domínios específicos por exceção?  Nesse caso, você precisará adicionar o seguinte domínio à lista de exceções: *.cloudinsights.netapp.com Para obter mais informações, leia sobre Proxies.link:task_troubleshooting_linux_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["aqui (Linux)"] oulink:task_troubleshooting_windows_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["aqui (Windows)"] . | Mesmo 
 
 
 | Permissões | Permissões Sudo no servidor da Unidade de Aquisição.  /tmp deve ser montado com recursos exec. | Permissões de administrador no servidor da Unidade de Aquisição 
