@@ -2211,7 +2211,6 @@
   <block id="e3afed0047b08059d0fada10f400c1e5" category="cell">Administrador</block>
   <block id="305de530147912d72a50568ee4d65d26" category="cell">Proprietário da conta</block>
   <block id="ab0ef3e5340f5400b9f95e43d3b79222" category="cell">O mesmo que Administrador</block>
-  <block id="631b24afac365e771fc775aeb7fec0ad" category="cell">O mesmo que Administrador, além de gerenciar a autenticação SSO e a configuração da Federação de Identidade.  Também é possível atribuir proprietários adicionais.</block>
   <block id="7b7bc2512ee1fedcd76bdc68926d4f7b" category="cell">Administrador</block>
   <block id="3e2b646677d9c80b1923b7be8d77407e" category="cell">Pode executar todas as funções de Observabilidade, bem como o gerenciamento de coletores de dados.</block>
   <block id="364b5d76e543eea85436eecd771ddf9b" category="cell">Pode executar todas as funções de segurança, incluindo aquelas para alertas, análises forenses, coletores de dados, políticas de resposta automatizadas e tokens de API para segurança.  Um administrador também pode convidar outros usuários, mas só pode atribuir funções de segurança.</block>
@@ -12774,4 +12773,5 @@
   <block id="15944853c960b4d108dec6e022392050" category="paragraph"><block ref="15944853c960b4d108dec6e022392050" category="inline-link-macro-rx"></block></block>
   <block id="7d7c3dfbfa0b1113cc98af5bc93293c2" category="inline-link-macro">Aviso para Segurança de Carga de Trabalho (anteriormente Cloud Secure), janela=_blank</block>
   <block id="c69944d365e084328c890394ddd7fec5" category="paragraph"><block ref="c69944d365e084328c890394ddd7fec5" category="inline-link-macro-rx"></block></block>
+  <block id="f17c7e32a4fcdb4c787f412cf3181bea" category="cell">O mesmo que Administrador, além de gerenciar a autenticação SSO e a configuração da Federação de Identidade. Também é possível atribuir proprietários adicionais, bem como adicionar clientes ao locatário principal do Provedor de Serviços Gerenciados (MSP).</block>
 </blocks>
