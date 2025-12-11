@@ -24,10 +24,8 @@ image:CS_Data_Collector_Error.png["Erro do Coletor de Segurança de Carga de Tra
 
 Problemas conhecidos e suas soluções são descritos abaixo.
 
-****
-*Problema:* O Data Collector é executado por algum tempo e para após um tempo aleatório, falhando com: "Mensagem de erro: O conector está em estado de erro.  Nome do serviço: auditoria.  Motivo da falha: Servidor fpolicy externo sobrecarregado."
-
-*Tente isto:* A taxa de eventos do ONTAP era muito maior do que a caixa do Agente pode suportar.  Por isso a conexão foi encerrada.
+'''
+*Problema:* O Data Collector é executado por algum tempo e para após um tempo aleatório, falhando com: "Mensagem de erro: O conector está em estado de erro. Nome do serviço: auditoria. Motivo da falha: Servidor fpolicy externo sobrecarregado." *Tente isto:* A taxa de eventos do ONTAP era muito maior do que a caixa do Agente pode suportar. Por isso a conexão foi encerrada.
 
 Verifique o pico de tráfego no CloudSecure quando a desconexão ocorreu.  Você pode verificar isso na página *CloudSecure > Análise forense de atividades > Todas as atividades*.
 
@@ -42,7 +40,10 @@ sysctl -p
 ....
 Reinicie o coletor pela interface do usuário após o redimensionamento.
 
+{vazio}
+
 ****
+
 ****
 *Problema:* O coletor relata a mensagem de erro: “Nenhum endereço IP local encontrado no conector que possa alcançar as interfaces de dados do SVM”.  *Tente isto:* Isso provavelmente ocorre devido a um problema de rede no lado do ONTAP .  Siga estes passos:
 
@@ -76,16 +77,18 @@ Se não for possível fazer ping, certifique-se de que as configurações de red
 . Se nenhuma das opções acima resolver o problema, abra um caso comlink:concept_requesting_support.html["Suporte Netapp"] para obter mais assistência.
 
 
-****
-****
+{vazio}
+
+'''
 *Problema:* Mensagem: "Falha ao determinar o tipo ONTAP para [nome do host: <Endereço IP>.  Motivo: Erro de conexão com o Sistema de Armazenamento <Endereço IP>: Host inacessível (Host inacessível)" *Tente isto:*
 
 . Verifique se o endereço IP de gerenciamento do SVM ou o IP de gerenciamento do cluster correto foi fornecido.
 . SSH para o SVM ou o cluster ao qual você pretende se conectar.  Depois de conectado, certifique-se de que o nome do SVM ou do cluster esteja correto.
 
 
-****
-****
+{vazio}
+
+'''
 *Problema:* Mensagem de erro: "O conector está em estado de erro.  Nome do serviço: auditoria.  Motivo da falha: Servidor fpolicy externo encerrado."  *Experimente isto:*
 
 . É mais provável que um firewall esteja bloqueando as portas necessárias na máquina do agente.  Verifique se o intervalo de portas 35000-55000/tcp está aberto para que a máquina do agente se conecte ao SVM.  Certifique-se também de que não haja firewalls habilitados no lado do ONTAP bloqueando a comunicação com a máquina do agente.
@@ -120,8 +123,9 @@ Basicamente, em um locatário, 1 SVM deve ser adicionado apenas uma vez, por mei
 . Esse erro também pode ocorrer se as políticas de serviço não estiverem configuradas corretamente.  Com o ONTAP 9.8 ou posterior, para se conectar ao Data Source Collector, o serviço data-fpolicy-client é necessário junto com o serviço de dados data-nfs e/ou data-cifs.  Além disso, o serviço data-fpolicy-client deve ser associado ao(s) data lif(s) do SVM monitorado.
 
 
-****
-****
+{vazio}
+
+'''
 *Problema:* Nenhum evento visto na página de atividades.  *Experimente isto:*
 
 . Verifique se o coletor ONTAP está no estado “RUNNING”.  Em caso afirmativo, certifique-se de que alguns eventos cifs estejam sendo gerados nas VMs do cliente cifs abrindo alguns arquivos.
@@ -139,7 +143,10 @@ Verifique se a política fpolicy nomeada com prefixo “cloudsecure_” foi defi
 
 
 
+{vazio}
+
 ****
+
 ****
 *Problema:* O coletor de dados SVM está em estado de erro e a mensagem de erro é “O agente falhou ao conectar ao coletor” *Tente isto:*
 
@@ -149,8 +156,9 @@ Verifique se a política fpolicy nomeada com prefixo “cloudsecure_” foi defi
 . Se o número de atividades por segundo for significativamente alto, instale outro Agente e mova alguns dos Coletores de Fonte de Dados para o novo Agente.
 
 
-****
-****
+{vazio}
+
+'''
 *Problema:* O SVM Data Collector exibe a mensagem de erro "fpolicy.server.connectError: O nó falhou ao estabelecer uma conexão com o servidor FPolicy "12.195.15.146" (motivo: "Tempo limite de seleção esgotado")" *Tente isto:* O firewall está habilitado no SVM/Cluster.  Portanto, o mecanismo fpolicy não consegue se conectar ao servidor fpolicy.  Os CLIs no ONTAP que podem ser usados ​​para obter mais informações são:
 
 ....
@@ -159,12 +167,16 @@ event log show -source fpolicy -fields event,action,description which shows more
 ....
 link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nmg%2FGUID-969851BB-4302-4645-8DAC-1B059D81C5B2.html["Verifique os comandos do firewall"]no lado ONTAP .
 
+{vazio}
+
 ****
+
 ****
 *Problema:* Mensagem de erro: “O conector está em estado de erro.  Nome do serviço: auditoria.  Motivo da falha: Nenhuma interface de dados válida (função: dados, protocolos de dados: NFS ou CIFS ou ambos, status: ativo) encontrada no SVM.”  *Tente isto:* Certifique-se de que haja uma interface operacional (com função de dados e protocolo de dados como CIFS/NFS).
 
-****
-****
+{vazio}
+
+'''
 *Problema:* O coletor de dados entra no estado de erro e depois entra no estado de execução após algum tempo, e depois volta ao estado de erro novamente.  Este ciclo se repete.  *Tente isto:* Isso normalmente acontece no seguinte cenário:
 
 . Vários coletores de dados foram adicionados.
@@ -173,14 +185,16 @@ link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-nm
 . Exclua os outros coletores de dados que estão conectados ao mesmo SVM.
 
 
-****
-****
+{vazio}
+
+'''
 *Problema:* O conector está em estado de erro.  Nome do serviço: auditoria.  Motivo da falha: Falha na configuração (política no SVM svmname.  Motivo: Valor inválido especificado para o elemento 'shares-to-include' em 'fpolicy.policy.scope-modify: "Federal' *Tente isto:* *Os nomes dos compartilhamentos precisam ser fornecidos sem aspas.  Edite a configuração do ONTAP SVM DSC para corrigir os nomes de compartilhamento.
 
 _Incluir e excluir compartilhamentos_ não se destina a uma longa lista de nomes de compartilhamentos.  Em vez disso, use a filtragem por volume se você tiver um grande número de compartilhamentos para incluir ou excluir.
 
-****
-****
+{vazio}
+
+'''
 *Problema:* Há fpolicies existentes no Cluster que não estão sendo utilizadas.  O que deve ser feito com eles antes da instalação do Workload Security?  *Tente isto:* É recomendável excluir todas as configurações fpolicy existentes e não utilizadas, mesmo que estejam em estado desconectado.  O Workload Security criará fpolicy com o prefixo "cloudsecure_".  Todas as outras configurações fpolicy não utilizadas podem ser excluídas.
 
 Comando CLI para mostrar a lista fpolicy:
@@ -195,36 +209,40 @@ fpolicy policy delete -vserver <svmname> -policy-name <policy_name>
 fpolicy policy event delete -vserver <svmname> -event-name <event_list>
 fpolicy policy external-engine delete -vserver <svmname> -engine-name <engine_name>
 ....
-|Após habilitar a Segurança de Carga de Trabalho, o desempenho do ONTAP é afetado: a latência se torna esporadicamente alta, os IOPs se tornam esporadicamente baixos.  |Ao usar o ONTAP com o Workload Security, às vezes podem ser observados problemas de latência no ONTAP.  Há uma série de razões possíveis para isso, conforme observado a seguir:link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1372994["1372994"] , https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1415152["1415152"] , https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1438207["1438207"] , https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1479704["1479704"] , https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1354659["1354659"] .  Todos esses problemas foram corrigidos no ONTAP 9.13.1 e posteriores; é altamente recomendável usar uma dessas versões posteriores.
+{vazio}
 
-****
-****
-*Problema:* O coletor de dados está com erro, exibe esta mensagem de erro.  “Erro: O conector está em estado de erro.  Nome do serviço: auditoria.  Motivo da falha: Falha ao configurar a política no SVM svm_test.  Motivo: Valor ausente para o campo zapi: eventos.  “*Experimente isto:*
+'''
+*Problema:* Após habilitar a Segurança de Carga de Trabalho, o desempenho do ONTAP é afetado: a latência torna-se esporadicamente alta e o número de operações de entrada/saída (IOPS) torna-se esporadicamente baixo.  *Experimente isto:* Ao usar o ONTAP com Segurança de Carga de Trabalho, às vezes podem ocorrer problemas de latência no ONTAP.  Existem diversas razões possíveis para isso, conforme observado a seguir:link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1372994["1372994"] , https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1415152["1415152"] , https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1438207["1438207"] , https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1479704["1479704"] , https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1354659["1354659"] . Todos esses problemas foram corrigidos no ONTAP 9.13.1 e posteriores; é altamente recomendável usar uma dessas versões posteriores.
 
-. Comece com um novo SVM com apenas o serviço NFS configurado.
-. Adicione um coletor de dados ONTAP SVM no Workload Security.  O CIFS é configurado como um protocolo permitido para o SVM ao adicionar o ONTAP SVM Data Collector no Workload Security.
-. Aguarde até que o coletor de dados no Workload Security mostre um erro.
-. Como o servidor CIFS NÃO está configurado no SVM, esse erro, conforme mostrado à esquerda, é exibido pelo Workload Security.
-. Edite o coletor de dados ONTAP SVM e desmarque CIFs como protocolo permitido.  Salve o coletor de dados.  Ele começará a ser executado somente com o protocolo NFS habilitado.
+{vazio}
 
-
-****
-****
+'''
 *Problema:* O Data Collector mostra a mensagem de erro: “Erro: Falha ao determinar a integridade do coletor em 2 tentativas, tente reiniciar o coletor novamente (Código de erro: AGENT008)”.  *Experimente isto:*
 
 . Na página Coletores de dados, role para a direita do coletor de dados que está apresentando o erro e clique no menu de 3 pontos.  Selecione _Editar_.  Digite a senha do coletor de dados novamente.  Salve o coletor de dados pressionando o botão _Salvar_.  O Data Collector será reiniciado e o erro deverá ser resolvido.
 . A máquina do agente pode não ter espaço suficiente para CPU ou RAM, e é por isso que os DSCs estão falhando.  Verifique o número de Coletores de Dados adicionados ao Agente na máquina.  Se for maior que 20, aumente a capacidade da CPU e da RAM da máquina do agente.  Quando a CPU e a RAM forem aumentadas, os DSCs entrarão no estado Inicializando e depois em Execução automaticamente.  Consulte o guia de tamanhos emlink:concept_cs_event_rate_checker.html["esta página"] .
 
 
-****
-****
+{vazio}
+
+'''
 *Problema:* O coletor de dados está apresentando erro quando o modo SVM é selecionado.  *Tente isto:* Ao conectar no modo SVM, se o IP de gerenciamento do cluster for usado para conectar em vez do IP de gerenciamento do SVM, a conexão falhará.  Certifique-se de que o IP SVM correto seja usado.
 
-****
-****
+{vazio}
+
+'''
 *Problema:* O coletor de dados mostra uma mensagem de erro quando o recurso Acesso negado está habilitado: "O conector está em estado de erro.  Nome do serviço: auditoria.  Motivo da falha: Falha ao configurar fpolicy no SVM test_svm.  Motivo: O usuário não está autorizado."  *Tente isto:* O usuário pode não ter as permissões REST necessárias para o recurso Acesso negado.  Por favor, siga as instruções emlink:concept_ws_integration_with_ontap_access_denied.html["esta página"] para definir as permissões.
 
 Reinicie o coletor depois que as permissões forem definidas.
 
-****
+{vazio}
+
+'''
+*Problema:* O coletor está em estado de erro com a mensagem: O conector está em estado de erro.  Motivo da falha: Falha ao configurar o armazenamento persistente na SVM <Nome da SVM>.  Motivo: Não foi possível encontrar um agregado adequado para o volume "<volumeName>" na SVM "<SVM Name>".  Motivo: As informações de desempenho para o agregado "<aggregateName>" não estão disponíveis no momento.  Aguarde alguns minutos e tente o comando novamente. Nome do serviço: auditoria. Motivo da falha: Falha ao configurar o armazenamento persistente no SVM<SVM name="">.</SVM> Motivo: Não foi possível encontrar um agregado adequado para o volume "<volumeName>" no SVM "<SVM name="">".</SVM></volumeName> Motivo: as informações de desempenho para a agregação "<aggregateName>" não estão disponíveis no momento.</aggregateName> Aguarde alguns minutos e tente o comando novamente.
+
+*Experimente isto:* Aguarde alguns minutos e reinicie o Collector.
+
+{vazio}
+
+'''
 Se você ainda estiver enfrentando problemas, entre em contato com os links de suporte mencionados na página *Ajuda > Suporte*.
