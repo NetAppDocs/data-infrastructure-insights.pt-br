@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: reporting_publishing_annotations.html 
+summary: Aprenda como publicar e cancelar a publicação de anotações para uso em relatórios. 
+keywords: reporting, annotations, publish, unpublish, data warehouse, dwh 
+---
+= Publicação e despublicação de anotações para relatórios
+:allow-uri-read: 
+
+
+
+
+== Publicação e despublicação de anotações para relatórios
+
+[role="lead"]
+Aprenda como publicar anotações para uso em relatórios e no Data Warehouse, e como remover corretamente as anotações quando elas não forem mais necessárias.
+
+
+
+== Publicação de anotações para relatórios
+
+Depois de criar anotações no Data Infrastructure Insights, você pode publicá-las para uso em relatórios.
+
+
+
+=== Passos para publicar anotações
+
+. Acesse a página *Observabilidade > Enriquecer > Anotações e selecione a guia _Anotações para Relatórios_.
+. Localize a anotação que deseja publicar.
+. Selecione a anotação e selecione _Publicar em Relatórios_.  Você também pode optar por aplicá-la a dados históricos, permitindo que a anotação seja usada ao executar relatórios históricos.
+. Após a publicação, a anotação fica disponível para uso em relatórios.
+. As anotações são publicadas para uso em relatórios após a próxima execução do ETL.
+
+
+[NOTE]
+====
+Qualquer relatório que faça referência à anotação utilizará os valores publicados.  Se você modificar uma anotação após a publicação, poderá ser necessário republicá-la para que as alterações entrem em vigor nos relatórios.
+
+====
+
+
+== Removendo anotações de publicação para relatórios
+
+Pode haver momentos em que você precise remover ou cancelar a publicação de anotações, para que elas não sejam mais usadas nos relatórios.  Por exemplo, uma anotação pode não ser mais necessária ou pode conter informações desatualizadas que não deveriam aparecer nos relatórios.
+
+
+
+=== Passos para remover anotações da publicação
+
+Antes de remover uma anotação da publicação, esteja ciente de que essa ação afetará todos os relatórios existentes que utilizam essa anotação.  Os relatórios podem exigir edição ou assistência de serviços profissionais para remover as referências de anotação.
+
+. Na interface do usuário do Data Infrastructure Insights , navegue até a guia _Anotações para Relatórios_.
+. Localize a anotação que deseja remover da publicação.
+. Para cada objeto onde a anotação foi publicada, desmarque a anotação e selecione _Salvar_.
+. Remova quaisquer consultas ou regras que ainda façam referência à anotação para garantir que ela não seja marcada como "em uso".
+. As anotações são despublicadas após a próxima execução do ETL.
+. Após a conclusão do processo ETL, a anotação pode ser excluída da lista de anotações, caso não seja mais necessária para o cliente.
+
+
+[IMPORTANT]
+====
+As anotações continuarão a aparecer no Data Warehouse até que sejam devidamente removidas do registro.  A simples exclusão de uma anotação da página de Anotações, sem antes cancelar a publicação, deixará dados obsoletos que poderão aparecer em relatórios existentes.  Siga os passos acima para cancelar a publicação e garantir a remoção completa.
+
+====
+
+
+== Impacto nos relatórios existentes
+
+A remoção ou despublicação de anotações pode exigir modificações em relatórios existentes que fazem referência a essas anotações. Considere o seguinte:
+
+* Os relatórios que utilizam a anotação como filtro ou dimensão precisarão ser atualizados.
+* Se uma anotação for removida sem que os relatórios dependentes sejam atualizados, esses relatórios poderão retornar erros ou resultados inesperados.
+* Em cenários complexos, pode ser necessário recorrer a serviços profissionais para auxiliar na correção de relatórios.
+
+
+Recomenda-se revisar todos os relatórios que dependem de uma anotação antes de removê-los da publicação.
