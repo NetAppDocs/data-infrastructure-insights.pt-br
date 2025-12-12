@@ -43,9 +43,9 @@ Navegue até *Análise e Controle > Observabilidade* para saber mais sobre o Dat
 
 == Iniciando seu teste gratuito do Data Infrastructure Insights
 
-Se esta for a primeira vez que você faz login no Data Infrastructure Insights, na oferta Data Infrastructure Insights , clique em *Iniciar avaliação gratuita*.  O Data Infrastructure Insights orientará você na criação do locatário da sua empresa, incluindo a seleção da região onde você deseja que seu locatário resida.
+Se esta for a sua primeira vez acessando o Data Infrastructure Insights, leia sobre tudo o que o Data Infrastructure Insights tem a oferecer e, quando estiver pronto para começar, clique em *Solicitar avaliação* e preencha suas informações.
 
-image:trial_region_selector.png["Selecionando a região na qual hospedar seu locatário do Data Infrastructure Insights"]
+Como parte da configuração do seu tenant de avaliação, você escolherá a região na qual seu tenant será hospedado e se deseja que ele esteja na AWS ou no Azure.
 
 Após a conclusão da criação do seu locatário, use suas credenciais do Console para efetuar login e iniciar seu teste gratuito de 30 dias do Data Infrastructure Insights.  Durante este teste, você pode explorar os recursos que o Data Infrastructure Insights tem a oferecer.
 
