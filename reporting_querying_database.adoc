@@ -7,6 +7,10 @@ keywords: reporting, cognos, data warehouse, dwh, API
 = Acesse o banco de dados de relatórios via API
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

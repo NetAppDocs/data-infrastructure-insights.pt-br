@@ -18,6 +18,35 @@ A NetApp está continuamente melhorando e aprimorando seus produtos e serviços.
 
 
 
+== Dezembro de 2025
+
+
+
+=== Controle o acesso às consultas com consultas compartilhadas.
+
+Compartilhe as consultas que você criar com controles de permissão detalhados. Escolha o modo de visualização somente leitura para impedir modificações ou o modo de edição para permitir alterações. As consultas privadas são acessíveis aos criadores, enquanto as consultas compartilhadas podem ser utilizadas em regras de anotação ou duplicadas para casos de uso específicos, oferecendo controle total sobre como as consultas são usadas e modificadas em toda a sua organização.
+
+image:query_sharing_dialog.png["Definindo permissões em uma consulta, largura=200"]
+
+Além disso, os usuários com a função _Convidado_ agora podem criar e gerenciar suas próprias consultas privadas.
+
+
+
+=== Melhor filtragem no gerenciamento de monitores
+
+O recurso de filtragem para listas e grupos de monitores foi aprimorado, adicionando suporte a caracteres curinga, múltiplos filtros, funcionalidade de inclusão/exclusão e muito mais.
+
+image:monitor_list_filters.png["Novo filtro de monitor, largura=500"]
+
+
+
+=== Visualizações de painel mais claras
+
+O design aprimorado do painel de controle ajuda você a ver o que é mais importante. Clareza visual aprimorada com bordas de sombra projetada que separam os widgets e linhas separadoras removidas para reduzir a desordem, permitindo que você se concentre nas suas análises de dados. Esses aprimoramentos criam uma experiência de painel mais limpa e intuitiva, que torna a identificação de tendências e anomalias mais rápida e fácil.
+
+'''
+
+
 == Novembro de 2025
 
 
