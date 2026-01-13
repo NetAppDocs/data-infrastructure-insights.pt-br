@@ -1,13 +1,12 @@
----
-sidebar: sidebar 
-permalink: concept_cs_event_rate_checker.html 
-summary: Este script pode ser executado para verificar a taxa de eventos no SVM antes de instalar um ONTAP SVM DSC 
-keywords: event, checker, rate, sizing, cloud secure 
----
 = Verificador de taxa de eventos SVM (guia de dimensionamento de agentes)
-:hardbreaks:
 :allow-uri-read: 
 
+
+r--- barra lateral: link permanente da barra lateral: concept_cs_event_rate_checker.html resumo: Use o verificador de taxa de eventos SVM para medir as taxas de eventos NFS/SMB e determinar o dimensionamento ideal do agente antes de implantar os coletores de dados do Workload Security. palavras-chave: evento, verificador, taxa, dimensionamento, segurança na nuvem ---
+
+
+
+= Verificador de taxa de eventos SVM (guia de dimensionamento de agentes)
 
 [role="lead"]
 O Event Rate Checker é usado para verificar a taxa de eventos combinada NFS/SMB no SVM antes de instalar um coletor de dados ONTAP SVM, para ver quantos SVMs uma máquina Agent será capaz de monitorar.  Use o Event Rate Checker como um guia de dimensionamento para ajudar a planejar seu ambiente de segurança.

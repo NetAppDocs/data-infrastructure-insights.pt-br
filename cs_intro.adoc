@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: cs_intro.html 
 keywords: CloudSecure, Cloud Secure 
-summary: Visão geral 
+summary: Proteja seus dados com a detecção de ameaças internas do Storage Workload Security, visibilidade centralizada em ambientes híbridos e aprendizado de máquina avançado para detecção de anomalias e conformidade. 
 ---
 = Sobre a segurança da carga de trabalho de armazenamento
 :hardbreaks:

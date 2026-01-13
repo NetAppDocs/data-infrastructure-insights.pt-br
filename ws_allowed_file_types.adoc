@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: ws_allowed_file_types.html 
-keywords: workload security, cloud secure, include list, allowed, file types, ransomware 
+keywords: workload security, cloud secure, include list, allowed, file types, ransomware, tampering 
 summary: Adicione extensões de arquivo a uma lista de tipos de arquivo permitidos para reduzir alertas. 
 ---
 = Políticas de tipos de arquivo permitidos
@@ -9,14 +9,14 @@ summary: Adicione extensões de arquivo a uma lista de tipos de arquivo permitid
 
 
 [role="lead"]
-Se um ataque de ransomware for detectado para uma extensão de arquivo conhecida e alertas estiverem sendo gerados na tela Alertas, essa extensão de arquivo poderá ser adicionada a uma lista de _tipos de arquivo permitidos_ para evitar alertas desnecessários.
+Se for detectado um ataque de adulteração de arquivos para uma extensão de arquivo conhecida e alertas estiverem sendo gerados na tela de Alertas, essa extensão de arquivo poderá ser adicionada a uma lista de _tipos de arquivo permitidos_ para evitar alertas desnecessários.
 
 Navegue até *Segurança de carga de trabalho > Políticas* e vá para a guia _Políticas de tipo de arquivo permitidas_.
 
 image:WS_Allowed_File_Type_Policies.png["Políticas de tipos de arquivo permitidos"]
 
-Depois de adicionado à lista de _tipos de arquivo permitidos_, nenhum alerta de ataque de ransomware será gerado para esse tipo de arquivo permitido.  Observe que a política _Tipos de arquivo permitidos_ só é aplicável à detecção de ransomware.
+Uma vez adicionado à lista de _tipos de arquivo permitidos_, nenhum alerta de ataque de adulteração de arquivo será gerado para esse tipo de arquivo permitido. Note que a política de _Tipos de Arquivo Permitidos_ só se aplica à detecção de adulteração de arquivos.
 
-Por exemplo, se um arquivo chamado _test.txt_ for renomeado para _test.txt.abc_ e o Workload Security estiver detectando um ataque de ransomware por causa da extensão _.abc_, a extensão _.abc_ poderá ser adicionada à lista de _tipos de arquivo permitidos_.  Após ser adicionado à lista, ataques de ransomware não serão mais gerados contra arquivos com a extensão _.abc_.
+Por exemplo, se um arquivo chamado _test.txt_ for renomeado para _test.txt.abc_ e o Workload Security detectar um ataque de adulteração de arquivo devido à extensão _.abc_, a extensão _.abc_ poderá ser adicionada à lista de _tipos de arquivo permitidos_. Após serem adicionados à lista, os ataques de adulteração de arquivos não serão mais gerados contra arquivos com a extensão _.abc_.
 
 Os tipos de arquivo permitidos podem ser correspondências exatas (por exemplo, ".abc") ou expressões (por exemplo, ".*type", ".type*" ou "*type*").  Expressões dos tipos “.a*c”, “.p*f” não são suportadas.

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: cs_restrict_user_access.html 
 keywords: alert, snapshot,  attack 
-summary: Com o Workload Security, você pode restringir o acesso do usuário em caso de suspeita de sabotagem 
+summary: Interrompa imediatamente os ataques detectados restringindo o acesso de usuários comprometidos de forma automática ou manual, evitando maiores danos aos sistemas de arquivos em vários volumes de armazenamento. 
 ---
-= Bloqueando o acesso do usuário
+= Bloquear o acesso do usuário para impedir ataques
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,7 @@ summary: Com o Workload Security, você pode restringir o acesso do usuário em 
 
 
 [role="lead"]
-Quando um ataque é detectado, o Workload Security pode interrompê-lo bloqueando o acesso do usuário ao sistema de arquivos.  O acesso pode ser bloqueado automaticamente, usando Políticas de Resposta Automatizada ou manualmente nas páginas de alerta ou detalhes do usuário.
-
-Ao bloquear o acesso do usuário, você deve definir um período de bloqueio.  Após o término do período de tempo selecionado, o acesso do usuário será restaurado automaticamente.  O bloqueio de acesso é suportado pelos protocolos SMB e NFS.
+Interrompa imediatamente os ataques detectados bloqueando o acesso do usuário comprometido para evitar maiores danos ou exfiltração de dados. A Segurança de Carga de Trabalho permite tanto o bloqueio automático por meio de Políticas de Resposta Automatizadas quanto a intervenção manual a partir de alertas ou páginas de detalhes do usuário, oferecendo controle flexível sobre sua resposta de segurança. As restrições de acesso são aplicadas automaticamente a todos os volumes de armazenamento monitorados e têm um prazo de validade para restauração automática.
 
 O usuário é bloqueado diretamente para SMB e o endereço IP das máquinas host que causam o ataque será bloqueado para NFS.  Esses endereços IP de máquina serão bloqueados para acessar qualquer uma das Máquinas Virtuais de Armazenamento (SVMs) monitoradas pelo Workload Security.
 

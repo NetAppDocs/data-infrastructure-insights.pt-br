@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_cs_agent_requirements.html 
-summary: O servidor ou VM que você usa como seu Agente deve atender aos requisitos mínimos 
+summary: Garanta que o ambiente de implantação do seu Agente de Segurança de Carga de Trabalho atenda aos requisitos mínimos de sistema operacional, CPU, memória e espaço em disco para desempenho e coleta de dados ideais. 
 keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cloud Secure 
 ---
 = Requisitos do agente de segurança de carga de trabalho

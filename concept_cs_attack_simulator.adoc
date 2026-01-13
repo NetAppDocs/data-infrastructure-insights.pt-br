@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept_cs_attack_simulator.html 
 keywords: ransomware, simulation, simulator, restrict, attack 
-summary: Usando um script, você pode simular um ataque de Ransomware para testar ou demonstrar a segurança da carga de trabalho 
+summary: Teste e valide as capacidades de detecção de segurança de cargas de trabalho simulando ataques usando o script de simulação incluído para verificar a geração de alertas e as políticas de resposta. 
 ---
-= Segurança da Carga de Trabalho: Simulando um Ataque
+= Segurança da carga de trabalho: Simulação de adulteração anormal de arquivos
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: Usando um script, você pode simular um ataque de Ransomware para testa
 
 
 [role="lead"]
-Você pode usar as instruções nesta página para simular um ataque para testar ou demonstrar a segurança da carga de trabalho usando o script de simulação de ransomware incluído.
+Você pode usar as instruções desta página para simular a adulteração de arquivos para testar ou demonstrar a segurança da carga de trabalho usando o script de simulação de adulteração de arquivos incluído.
 
 
 
 == Coisas a serem observadas antes de começar
 
-* O script de simulação de ransomware funciona apenas no Linux.  O script de simulação também deve gerar alertas de alta confiança caso o usuário tenha integrado o ONTAP ARP com o Workload Security.
+* O script de simulação de adulteração de arquivos funciona apenas no Linux. O script de simulação também deve gerar alertas de alta confiança caso o usuário tenha integrado o ONTAP ARP com a Segurança de Carga de Trabalho.
 * O Workload Security detectará eventos e alertas gerados com o NFS 4.1 somente se a versão do ONTAP for 9.15 ou superior.
 * O script é fornecido com os arquivos de instalação do agente do Workload Security.  Ele está disponível em qualquer máquina que tenha um agente de segurança de carga de trabalho instalado.
 * Você pode executar o script na própria máquina do agente do Workload Security; não há necessidade de preparar outra máquina Linux.  Entretanto, se você preferir executar o script em outro sistema, basta copiá-lo e executá-lo lá.
@@ -158,7 +158,7 @@ Se você pausou o coletor antes de seguir estas etapas, certifique-se de retomá
 
 Antes de criar os arquivos, você deve primeiro parar oulink:task_add_collector_svm.html#play-pause-data-collector["pausar o coletor de dados"] processamento.
 
-Para gerar um alerta de ransomware, você pode executar o script incluído que simulará um alerta de ransomware no Workload Security.
+Para gerar um alerta de adulteração de arquivo, você pode executar o script incluído, que simulará um alerta de adulteração de arquivo no Workload Security.
 
 
 
@@ -196,7 +196,7 @@ Observação: caso todas as condições a seguir sejam atendidas, um Alerta de A
 . O coletor de dados de segurança da carga de trabalho é adicionado no modo Cluster.
 
 
-O Workload Security detecta padrões de ransomware com base no comportamento do usuário, enquanto o ONTAP ARP detecta atividades de ransomware com base em atividades de criptografia em arquivos.
+O Workload Security detecta padrões de adulteração de arquivos com base no comportamento do usuário, enquanto o ONTAP ARP detecta atividades de adulteração de arquivos com base em atividades de criptografia nos arquivos.
 
 Se as condições forem atendidas, o Workload Security marcará os alertas como Alerta de Alta Confiança.
 
@@ -212,6 +212,6 @@ image:ws_high_confidence_alert_detail.png["Exemplo de alerta de alta confiança,
 
 == Disparando alertas várias vezes
 
-O Workload Security aprende o comportamento do usuário e não gerará alertas sobre ataques repetidos de ransomware dentro de 24 horas para o mesmo usuário.
+O Workload Security aprende o comportamento do usuário e não gerará alertas sobre ataques repetidos de adulteração de arquivos dentro de 24 horas para o mesmo usuário.
 
 Para gerar um novo alerta com um usuário diferente, siga os mesmos passos novamente (criando dados de teste e criptografando os dados de teste).

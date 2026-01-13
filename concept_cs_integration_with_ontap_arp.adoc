@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_cs_integration_with_ontap_arp.html 
-summary: O Workload Security integra-se ao ONTAP Autonomous Ransomware Protection para melhorar a detecção de ransomware. 
+summary: Aprimore a detecção de ataques integrando o Workload Security com o ONTAP Autonomous Protection para análises correlacionadas, respostas automatizadas e recursos de investigação forense. 
 keywords: ransomware, ARP, Protection, Security 
 ---
 = Integração com a Proteção Autônoma contra Ransomware ONTAP
@@ -10,7 +10,7 @@ keywords: ransomware, ARP, Protection, Security
 
 
 [role="lead"]
-O recurso ONTAP Autonomous Ransomware Protection (ARP) usa análise de carga de trabalho em ambientes NAS (NFS e SMB) para detectar e alertar proativamente sobre atividades anormais em arquivos que podem indicar um ataque de ransomware.
+O recurso de Proteção Autônoma do ONTAP utiliza a análise de carga de trabalho em ambientes NAS (NFS e SMB) para detectar proativamente e alertar sobre atividades anormais em arquivos que possam indicar ataques maliciosos ou modificações de dados não autorizadas.
 
 Detalhes adicionais e requisitos de licença sobre ARP podem ser encontradoslink:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["aqui"] .
 
@@ -62,7 +62,7 @@ Um exemplo de alerta gerado devido ao evento ARP é mostrado abaixo:
 
 image:CS_Ransomware_Example_1.png["Seção superior do alerta de ransomware"] image:CS_Ransomware_Example_2.png["Seção superior do alerta de ransomware"] image:CS_Ransomware_Example_3.png["Seção superior do alerta de ransomware"]
 
-Um banner de alta confiança indica que o ataque demonstrou comportamento de ransomware junto com atividades de criptografia de arquivos.  O gráfico de arquivos criptografados indica o registro de data e hora em que a atividade de criptografia de volume foi detectada pela solução ARP.
+Um indicador de alta confiança mostra que o ataque apresentou comportamento de adulteração de arquivos, juntamente com atividades de criptografia de arquivos. O gráfico de arquivos criptografados indica o registro de data e hora em que a atividade de criptografia do volume foi detectada pela solução ARP.
 
 
 

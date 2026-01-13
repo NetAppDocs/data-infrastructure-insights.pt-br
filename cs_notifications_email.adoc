@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: cs_notifications_email.html 
-summary: Adicionar endereços de e-mail para notificações de alertas de segurança de carga de trabalho. 
+summary: Configure as notificações por e-mail para receber alertas sobre possíveis ataques, avisos de segurança e o status de integridade do Agente/Coletor de Dados em tempo real. 
 keywords: email, notifications, alerts, warnings, attacks 
 ---
 = Configurando notificações por e-mail para alertas, avisos e integridade do agente/coletor de fonte de dados
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Para configurar os destinatários dos alertas de segurança da carga de trabalho, clique em *Admin > Notificações* e insira um endereço de e-mail nas seções apropriadas para cada destinatário.
+As notificações por e-mail permitem que você se mantenha informado sobre possíveis ataques, alertas de segurança e problemas de infraestrutura assim que eles ocorrerem. Configure os endereços de e-mail dos destinatários em Administração > Notificações para receber alertas em tempo real personalizados de acordo com as responsabilidades de cada destinatário.
 
 
 
@@ -33,7 +37,7 @@ Tenha em mente o seguinte:
 * Os alertas de saúde serão enviados somente após o agente/coletor parar de reportar por pelo menos uma hora.
 * Apenas uma notificação por e-mail é enviada aos destinatários pretendidos em um determinado período de 24 horas, mesmo que o Agente ou o Coletor de Dados esteja desconectado por um período mais longo.
 * Em caso de falha de um Agente, um alerta será enviado (não um por coletor).  O e-mail incluirá uma lista de todos os SVMs afetados.
-* A falha na coleta do Active Directory é relatada como um aviso; ela não afeta a detecção de Ransomware.
+* A falha na coleta de dados do Active Directory é relatada como um aviso; ela não afeta a detecção de ameaças.
 * A lista de configuração de Introdução agora inclui uma nova fase _Configurar notificações por e-mail_.
 
 
