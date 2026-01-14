@@ -28,7 +28,7 @@ O seguinte é exibido para cada alerta:
 
 *Ataques potenciais:*
 
-* O tipo de _Ataque Potencial_ (por exemplo, Ransomware ou Sabotagem)
+* O tipo de ataque potencial (por exemplo, adulteração de arquivos ou sabotagem).
 * A data e a hora em que o ataque potencial foi _Detectado_
 * O _Status_ do alerta:
 +
@@ -75,13 +75,13 @@ Você pode filtrar alertas pelo seguinte:
 
 == A página Detalhes do Alerta
 
-Você pode clicar em um link de alerta na página Lista de alertas para abrir uma página de detalhes do alerta.  Os detalhes do alerta podem variar de acordo com o tipo de ataque ou alerta.  Por exemplo, uma página de detalhes de um ataque de ransomware pode mostrar as seguintes informações:
+Você pode clicar no link de um alerta na página da lista de alertas para abrir a página de detalhes do alerta. Os detalhes do alerta podem variar de acordo com o tipo de ataque ou alerta. Por exemplo, uma página de detalhes de um ataque de adulteração de arquivos pode exibir as seguintes informações:
 
 
 
 === Seção de resumo:
 
-* Tipo de ataque (Ransomware, Sabotagem) e ID de alerta (atribuído pela Workload Security)
+* Tipo de ataque (adulteração de arquivos, sabotagem) e ID de alerta (atribuído pela segurança da carga de trabalho)
 * Data e hora em que o ataque foi detectado
 * Ação tomada (por exemplo, um instantâneo automático foi tirado.  O horário do instantâneo é mostrado imediatamente abaixo da seção de resumo))
 * Status (Novo, Em andamento, etc.)

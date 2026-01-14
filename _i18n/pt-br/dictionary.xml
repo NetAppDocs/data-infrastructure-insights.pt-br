@@ -3671,7 +3671,6 @@
   <block id="7397074a443dab350a0b46b445bd42b6" category="paragraph">A lista de alertas exibe um gráfico mostrando o número total de ataques e/ou avisos potenciais que foram gerados no intervalo de tempo selecionado, seguido por uma lista dos ataques e/ou avisos que ocorreram nesse intervalo de tempo.  Você pode alterar o intervalo de tempo ajustando os controles deslizantes de hora de início e hora de término no gráfico.</block>
   <block id="183537e26fed4b4329d37cb02da5ae53" category="paragraph">O seguinte é exibido para cada alerta:</block>
   <block id="0a36ca304e21eb8063b7869dea7a355b" category="paragraph">*Ataques potenciais:*</block>
-  <block id="8a684cc8084b02b93384f0bfc436d63c" category="list-text">O tipo de _Ataque Potencial_ (por exemplo, Ransomware ou Sabotagem)</block>
   <block id="b81879140b6197b1eee86a1d325a0a81" category="list-text">A data e a hora em que o ataque potencial foi _Detectado_</block>
   <block id="5efe06a62d35c2fe7354ce05b69e8db6" category="list-text">O _Status_ do alerta:</block>
   <block id="f0617472d6b597b6d93003c4c1003ad6" category="list-text">*Novo*: Este é o padrão para novos alertas.</block>
@@ -3697,9 +3696,7 @@
   <block id="95951a9f2b55d55d45a17decd61a620c" category="list-text">O tipo de _Ataques/Avisos_</block>
   <block id="3cd43e4673aa76de346f402ec291bd4a" category="list-text">O _Usuário_ cujas ações acionaram o alerta/aviso</block>
   <block id="f5d13b5070432d74ba3be2fb78559747" category="section-title">A página Detalhes do Alerta</block>
-  <block id="acd90b04487305df2bc9ead72d1b4d5b" category="paragraph">Você pode clicar em um link de alerta na página Lista de alertas para abrir uma página de detalhes do alerta.  Os detalhes do alerta podem variar de acordo com o tipo de ataque ou alerta.  Por exemplo, uma página de detalhes de um ataque de ransomware pode mostrar as seguintes informações:</block>
   <block id="328e24be37340d63de24fd6618cca8e1" category="section-title">Seção de resumo:</block>
-  <block id="8771316aacd1c4b06854e0e9f30a545c" category="list-text">Tipo de ataque (Ransomware, Sabotagem) e ID de alerta (atribuído pela Workload Security)</block>
   <block id="d5a18d6d3a7fe43fabf57a19bb702f39" category="list-text">Data e hora em que o ataque foi detectado</block>
   <block id="9edcf7f99dfc7a9e521c7ad085287595" category="list-text">Ação tomada (por exemplo, um instantâneo automático foi tirado.  O horário do instantâneo é mostrado imediatamente abaixo da seção de resumo))</block>
   <block id="680ed5ca6ba49d9bc8a5ffda83850464" category="list-text">Status (Novo, Em andamento, etc.)</block>
@@ -12664,13 +12661,11 @@
   <block id="d19e16fd482ca29d2c0ef4fb8523357a" category="summary">Garanta que o ambiente de implantação do seu Agente de Segurança de Carga de Trabalho atenda aos requisitos mínimos de sistema operacional, CPU, memória e espaço em disco para desempenho e coleta de dados ideais.</block>
   <block id="c4942feafc272d7da2ce90634dc0120d" category="summary">Acesse dados de segurança de cargas de trabalho por meio de uma API REST com autenticação segura baseada em token para integração com CMDBs, sistemas de tickets e outros aplicativos corporativos.</block>
   <block id="3dec3952c02d73a04d326f3624f668f6" category="summary">Teste e valide as capacidades de detecção de segurança de cargas de trabalho simulando ataques usando o script de simulação incluído para verificar a geração de alertas e as políticas de resposta.</block>
-  <block id="c7ea3cec531081ee09f563d84422d157" category="doc">Segurança da carga de trabalho: Simulação de adulteração anormal de arquivos</block>
   <block id="3e350b01c804205b973dbd44adc54728" category="paragraph">Você pode usar as instruções desta página para simular a adulteração de arquivos para testar ou demonstrar a segurança da carga de trabalho usando o script de simulação de adulteração de arquivos incluído.</block>
   <block id="67f556940660f0bafe2738969d389877" category="list-text">O script de simulação de adulteração de arquivos funciona apenas no Linux. O script de simulação também deve gerar alertas de alta confiança caso o usuário tenha integrado o ONTAP ARP com a Segurança de Carga de Trabalho.</block>
   <block id="6465f8a9b5dccc316104b56b41de2db0" category="paragraph">Para gerar um alerta de adulteração de arquivo, você pode executar o script incluído, que simulará um alerta de adulteração de arquivo no Workload Security.</block>
   <block id="2a9bccccecd980381e18178287c921b4" category="paragraph">O Workload Security detecta padrões de adulteração de arquivos com base no comportamento do usuário, enquanto o ONTAP ARP detecta atividades de adulteração de arquivos com base em atividades de criptografia nos arquivos.</block>
   <block id="a68622796ba5ea9694219b0cbfbae6b0" category="paragraph">O Workload Security aprende o comportamento do usuário e não gerará alertas sobre ataques repetidos de adulteração de arquivos dentro de 24 horas para o mesmo usuário.</block>
-  <block id="d1de6a785681750f7fd87d382642893e" category="paragraph">r--- barra lateral: link permanente da barra lateral: concept_cs_event_rate_checker.html resumo: Use o verificador de taxa de eventos SVM para medir as taxas de eventos NFS/SMB e determinar o dimensionamento ideal do agente antes de implantar os coletores de dados do Workload Security. palavras-chave: evento, verificador, taxa, dimensionamento, segurança na nuvem ---</block>
   <block id="8013d871b4070a5d3848e4faa21e67d9" category="summary">Aprimore a detecção de ataques integrando o Workload Security com o ONTAP Autonomous Protection para análises correlacionadas, respostas automatizadas e recursos de investigação forense.</block>
   <block id="0ed52d2d20f5fbf80a330283d4aa9a72" category="paragraph">O recurso de Proteção Autônoma do ONTAP utiliza a análise de carga de trabalho em ambientes NAS (NFS e SMB) para detectar proativamente e alertar sobre atividades anormais em arquivos que possam indicar ataques maliciosos ou modificações de dados não autorizadas.</block>
   <block id="8ec1d8886c9b4b48a45eb683d80b184e" category="paragraph">Um indicador de alta confiança mostra que o ataque apresentou comportamento de adulteração de arquivos, juntamente com atividades de criptografia de arquivos. O gráfico de arquivos criptografados indica o registro de data e hora em que a atividade de criptografia do volume foi detectada pela solução ARP.</block>
@@ -12697,4 +12692,9 @@
   <block id="7af3f2f9c8eaa3a8ff61f839001e8ca0" category="paragraph">Por exemplo, se um arquivo chamado _test.txt_ for renomeado para _test.txt.abc_ e o Workload Security detectar um ataque de adulteração de arquivo devido à extensão _.abc_, a extensão _.abc_ poderá ser adicionada à lista de _tipos de arquivo permitidos_. Após serem adicionados à lista, os ataques de adulteração de arquivos não serão mais gerados contra arquivos com a extensão _.abc_.</block>
   <block id="374bdbda42629b3859daec6506078b36" category="sidebar">Integração de proteção autônoma ONTAP</block>
   <block id="5273cec606b6768f8394e2ae1566c7f6" category="sidebar">Simulação de um ataque</block>
+  <block id="5da98f5c78418524ecf144084929f19e" category="doc">Segurança da carga de trabalho: Simulação de adulteração de arquivos</block>
+  <block id="e192cb4cca3f754a1b50fdf853ce74a4" category="summary">Utilize o verificador de taxa de eventos SVM para medir as taxas de eventos NFS/SMB e determinar o dimensionamento ideal do agente antes de implantar os coletores de dados do Workload Security.</block>
+  <block id="ec054c68e1c4c037a34f69b34cbcf8ae" category="list-text">O tipo de ataque potencial (por exemplo, adulteração de arquivos ou sabotagem).</block>
+  <block id="5d6d5d308daaaae7ed88d035f629ea81" category="paragraph">Você pode clicar no link de um alerta na página da lista de alertas para abrir a página de detalhes do alerta. Os detalhes do alerta podem variar de acordo com o tipo de ataque ou alerta. Por exemplo, uma página de detalhes de um ataque de adulteração de arquivos pode exibir as seguintes informações:</block>
+  <block id="a93ee3ea015fa995d5cf6a3a088e6f7b" category="list-text">Tipo de ataque (adulteração de arquivos, sabotagem) e ID de alerta (atribuído pela segurança da carga de trabalho)</block>
 </blocks>
