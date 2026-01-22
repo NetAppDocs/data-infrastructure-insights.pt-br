@@ -112,6 +112,23 @@ image:ws_test_connection_success_example.png["Mensagem de sucesso de 'Testar con
 
 
 
+== Pontos importantes a observar para ONTAP Multi Admin Verify (MAV)
+
+Algumas funcionalidades, como a criação e exclusão de snapshots ou o bloqueio de usuários (SMB), podem não funcionar com base nos comandos MAV adicionados em sua versão do ONTAP.
+
+Siga os passos abaixo para adicionar exclusões aos seus comandos MAV que permitem que o Workload Security crie ou exclua snapshots e bloqueie usuários.
+
+Comandos para permitir snapshot create e delete:
+
+....
+multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !*cloudsecure_*"
+multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !*cloudsecure_*"
+....
+Comando para permitir o bloqueio de usuário:
+
+ multi-admin-verify rule delete -operation set
+
+
 == Pré-requisitos para bloqueio de acesso do usuário
 
 Tenha em mente o seguinte paralink:cs_restrict_user_access.html["Bloqueio de acesso do usuário"] :
@@ -318,7 +335,7 @@ NOTE: Um coletor não pode ser pausado se tiver usuários restritos.  Restaure o
 Tenha em mente o seguinte:
 
 * A limpeza de instantâneos não ocorrerá de acordo com as configurações definidas em um coletor pausado.
-* Eventos EMS (como ONTAP ARP) não serão processados ​​em um coletor pausado.  Isso significa que se o ONTAP identificar um ataque de ransomware, o Data Infrastructure Insights Workload Security não conseguirá adquirir esse evento.
+* Eventos EMS (como ONTAP ARP) não serão processados em um coletor pausado. Isso significa que, se ONTAP identificar um ataque de adulteração de arquivo, Data Infrastructure Insights Workload Security não poderá adquirir esse evento.
 * E-mails de notificação de saúde NÃO serão enviados para um coletor pausado.
 * Ações manuais ou automáticas (como Snapshot ou Bloqueio de usuário) não serão suportadas em um coletor pausado.
 * Em atualizações de agente ou coletor, reinicializações/reinicializações de VM de agente ou reinicialização de serviço de agente, um coletor pausado permanecerá no estado _Pausado_.
