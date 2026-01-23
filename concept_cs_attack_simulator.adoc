@@ -67,7 +67,7 @@ mount -t cifs //10.193.77.91/sharedfolderincluster /root/destinationfolder/ -o u
 ----
 
 
-==== Habilitar a proteção autônoma contra ransomware do ONTAP (opcional):
+==== Ativar a Proteção Autônoma contra Ransomware do ONTAP (opcional):
 
 Se a versão do seu cluster ONTAP for 9.11.1 ou superior, você poderá habilitar o serviço ONTAP Ransomware Protection executando o seguinte comando no console de comando do ONTAP .
 

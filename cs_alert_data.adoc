@@ -4,7 +4,7 @@ permalink: cs_alert_data.html
 keywords: alert, attack, ransomware, activity, security, abnormal, tampering 
 summary: O Workload Security cria alertas em caso de atividade anormal do usuário ou possível ataque.  A página Alertas lista essas atividades para uma investigação rápida e fácil. 
 ---
-= Alertas
+= Compreendendo e investigando alertas
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

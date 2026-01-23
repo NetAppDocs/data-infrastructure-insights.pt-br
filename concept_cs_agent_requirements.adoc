@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_cs_agent_requirements.html 
-summary: Garanta que o ambiente de implantação do seu Agente de Segurança de Carga de Trabalho atenda aos requisitos mínimos de sistema operacional, CPU, memória e espaço em disco para desempenho e coleta de dados ideais. 
+summary: Os Agentes de Segurança de Carga de Trabalho exigem especificações específicas de sistema operacional, CPU, memória e espaço em disco para monitorar com eficácia o acesso a arquivos e detectar ameaças à segurança em toda a sua infraestrutura de storage. 
 keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cloud Secure 
 ---
 = Requisitos do agente de segurança de carga de trabalho
@@ -14,7 +14,7 @@ keywords: agent, Linux, requirements, docker, browsers, permissions, Network, Cl
 
 
 [role="lead"]
-Você develink:task_cs_add_agent.html["instalar um agente de segurança de carga de trabalho"] para obter informações de seus coletores de dados. Antes de instalar o Agente, certifique-se de que seu ambiente atenda aos requisitos de sistema operacional, CPU, memória e espaço em disco.
+Implante os Agentes de Workload Security em servidores dedicados que atendam aos requisitos mínimos de sistema operacional, CPU, memória e espaço em disco para garantir o desempenho ideal de monitoramento e detecção de ameaças. Este guia especifica os requisitos de hardware e rede necessários antes de link:task_cs_add_agent.html["instalando seu Workload Security Agent"], incluindo distribuições Linux compatíveis, regras de conectividade de rede e orientações para dimensionamento do sistema.
 
 [cols="36,60"]
 |===

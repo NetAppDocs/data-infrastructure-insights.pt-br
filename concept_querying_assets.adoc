@@ -1,18 +1,22 @@
 ---
 sidebar: sidebar 
 permalink: concept_querying_assets.html 
-summary: Visão geral da consulta 
+summary: Consulte os ativos de inventário e métricas de integração para monitorar, solucionar problemas e analisar o desempenho em toda a sua infraestrutura, incluindo infraestrutura de storage, computação e recursos de rede. 
 keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, Host, Internal Volume, iSCSI, Network, Portal, Path, Port, Qtree, Quota, Share, Storage, Node, Pool, SVM, Switch, Tape, VMDK, Virtual Machine, VM, Volume, Zone, Member 
 ---
-= Ativos usados em consultas
+= Consultando ativos e métricas
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-As consultas permitem que você monitore e solucione problemas na sua rede pesquisando os ativos e as métricas do seu locatário em um nível granular com base em critérios selecionados pelo usuário (por exemplo, anotações).
+Consulte os ativos físicos e virtuais da sua infraestrutura para monitorar o desempenho, solucionar problemas e realizar buscas detalhadas com base em critérios personalizados, como anotações. Data Infrastructure Insights permite consultas em diversos tipos de ativos — de storage arrays e hosts a aplicativos e máquinas virtuais — junto com métricas de integração do Kubernetes, Docker e ONTAP Advanced Data para uma visibilidade abrangente.
 
-Observe que as regras de anotação, que atribuem anotações automaticamente aos ativos, _exigem_ uma consulta.
+Observe que as regras de anotação, que atribuem anotações automaticamente aos ativos, exigem uma consulta que tenha sido compartilhada com todos. Veja abaixo mais informações sobre o compartilhamento de consultas.
 
 Você pode consultar os ativos de inventário físico ou virtual (e suas métricas associadas) no seu locatário ou as métricas fornecidas com integração, como Kubernetes ou ONTAP Advanced Data.
 
@@ -20,34 +24,7 @@ Você pode consultar os ativos de inventário físico ou virtual (e suas métric
 
 == Ativos de estoque
 
-Os seguintes tipos de ativos podem ser usados em consultas, widgets de painel e páginas de destino de ativos personalizadas.  Os campos e contadores disponíveis para filtros, expressões e exibição variam entre os tipos de ativos.  Nem todos os ativos podem ser usados em todos os tipos de widgets.
-
-* Aplicativo
-* Armazenamento de dados
-* Disco
-* Tecido
-* Dispositivo genérico
-* Hospedar
-* Volume interno
-* Sessão iSCSI
-* Portal de rede iSCSI
-* Caminho
-* Porta
-* Qtree
-* Contingente
-* Compartilhar
-* Armazenar
-* Nó de armazenamento
-* Pool de armazenamento
-* Máquina Virtual de Armazenamento (SVM)
-* Trocar
-* Fita
-* VMDK
-* Máquina Virtual
-* Volume
-* Zona
-* Membro da Zona
-
+Todos os tipos de ativos de inventário (também chamados de infraestrutura) (storage, switch, VM, Application, etc.) podem ser usados em consultas, widgets de painel e páginas de destino de ativos personalizadas. Os campos e contadores disponíveis para filtros, expressões e exibição variam entre os tipos de ativos.
 
 
 
@@ -56,3 +33,14 @@ Os seguintes tipos de ativos podem ser usados em consultas, widgets de painel e 
 Além de consultar ativos de inventário e suas métricas de desempenho associadas, você também pode consultar métricas de *dados de integração*, como aquelas geradas pelo Kubernetes ou Docker, ou fornecidas com o ONTAP Advanced Metrics.
 
 image:QueryPageFilter.png["Exemplo de filtro de consulta de integração"]
+
+
+
+== Compartilhamento de consultas
+
+Controle o acesso às suas consultas escolhendo quem pode visualizá-las e editá-las. Por padrão, as novas consultas são privadas e visíveis apenas para você, e você pode escolher compartilhá-las com usuários específicos ou com toda a sua organização com níveis de permissão flexíveis (somente leitura ou edição).
+
+Você pode optar por compartilhar a consulta com Everyone ou com usuários selecionados, com permissões de edição ou somente leitura.
+
+
+NOTE: Usuários com permissão de Account Owner podem ver todas as consultas, independentemente da configuração de privacidade.

@@ -7,6 +7,10 @@ keywords: coming soon, preview,
 = Visualizar recursos e funcionalidades
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

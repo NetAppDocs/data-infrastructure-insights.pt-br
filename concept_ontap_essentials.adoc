@@ -7,6 +7,10 @@ keywords: dashboard, widget, ontap, overview, insight
 = Fundamentos do ONTAP
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -72,9 +76,9 @@ image:DataProtectionDashboard_ClusterList.png["Lista de Clusters de Proteção d
 
 == Segurança
 
-O Painel de Segurança oferece uma visão instantânea da sua situação de segurança atual, mostrando gráficos de criptografia de volume de hardware e software, status anti-ransomware e métodos de autenticação de cluster.  Os critérios de segurança são avaliados com base nas recomendações definidas nolink:https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf["* Guia de reforço de segurança da NetApp para ONTAP 9*"] .
+O Painel de Segurança oferece uma visão instantânea da sua situação de segurança atual, exibindo gráficos para criptografia de hardware e software em volume, status de proteção contra adulteração de arquivos e métodos de autenticação de cluster. Os critérios de segurança são avaliados com base nas recomendações definidas no link:https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf["* Guia de reforço de segurança da NetApp para ONTAP 9*"].
 
-Selecione qualquer uma das contagens de criptografia ou anti-ransomware para mergulhar no seu ambiente.
+Selecione qualquer uma das opções de criptografia ou proteção contra adulteração de arquivos para analisar seu ambiente.
 
 image:OE_SecurityDashboard.png["Painel de segurança do ONTAP Essentials"]
 
