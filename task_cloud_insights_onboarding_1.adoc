@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: task_cloud_insights_onboarding_1.html 
+summary: Inscrevendo-se no Data Infrastructure Insights e criando seu locatário. 
+keywords: onboarding, new user 
+---
+= Integração de Data Infrastructure Insights
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Antes de começar a trabalhar com o Data Infrastructure Insights, você deve se inscrever no portal * NetApp Console*.  Se você já tiver um login no NetApp Console , poderá iniciar um teste gratuito do Data Infrastructure Insights com algumas etapas rápidas.
+
+Estas instruções estão sendo atualizadas. Por favor, volte mais tarde.
