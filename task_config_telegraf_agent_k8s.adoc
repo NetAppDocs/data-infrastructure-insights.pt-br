@@ -93,10 +93,10 @@ Se você atualizou usando o recurso de atualizações por botão e encontrar alg
 
 === Atualizações manuais
 
-Determine se existe um AgentConfiguration com o Operador existente (se o seu namespace não for o _netapp-monitoring_ padrão, substitua pelo namespace apropriado):
+Determine se existe uma _AgentConfiguration_ com o operador existente (se o seu namespace não for o padrão _netapp-monitoring_, substitua pelo namespace apropriado):
 
  kubectl -n netapp-monitoring get agentconfiguration netapp-ci-monitoring-configuration
-Se existir uma AgentConfiguration:
+Se uma _AgentConfiguration_ existir:
 
 * <<installing-the-kubernetes-monitoring-operator,Instalar>>o operador mais recente sobre o operador existente.
 +
@@ -105,7 +105,7 @@ Se existir uma AgentConfiguration:
 
 
 
-Se o AgentConfiguration não existir:
+Se a _AgentConfiguration_ não existir:
 
 * Anote o nome do seu cluster conforme reconhecido pelo Data Infrastructure Insights (se o seu namespace não for o netapp-monitoring padrão, substitua pelo namespace apropriado):
 +
@@ -117,7 +117,7 @@ Se o AgentConfiguration não existir:
 * <<installing-the-kubernetes-monitoring-operator,Instalar>>o mais recente Operador.
 +
 ** Use o mesmo nome de cluster.
-** Depois de baixar os arquivos YAML mais recentes do Operator, transfira todas as personalizações encontradas em agent_backup.yaml para o operator-config.yaml baixado antes de implantar.
+** Após baixar os arquivos YAML mais recentes do Operator, transfira quaisquer personalizações encontradas em _agent_backup.yaml_ para o _operator-config.yaml_ baixado antes de implantar.
 ** Certifique-se de que você está<<using-a-custom-or-private-docker-repository,puxando as últimas imagens de contêiner>> se você estiver usando um repositório personalizado.
 
 
@@ -191,7 +191,7 @@ As configurações mais comumente modificadas podem ser configuradas no recurso 
 Você também pode editar esse recurso depois que o operador for implantado usando o seguinte comando:
 
  kubectl -n netapp-monitoring edit AgentConfiguration
-Para determinar se a versão implantada do operador oferece suporte ao AgentConfiguration, execute o seguinte comando:
+Para determinar se a versão implantada do operador suporta _AgentConfiguration_, execute o seguinte comando:
 
  kubectl get crd agentconfigurations.monitoring.netapp.com
 Se você vir uma mensagem “Erro do servidor (Não encontrado)”, seu operador deverá ser atualizado antes que você possa usar o AgentConfiguration.
@@ -226,7 +226,7 @@ Para definir a(s) variável(is), execute as seguintes etapas no seu sistema *ant
 
 Para que o proxy usado no seu cluster Kubernetes se comunique com seu ambiente do Data Infrastructure Insights , instale o Kubernetes Monitoring Operator depois de ler todas estas instruções.
 
-Configure a seção proxy do AgentConfiguration em operator-config.yaml antes de implantar o Kubernetes Monitoring Operator.
+Configure a seção proxy de _AgentConfiguration_ em _operator-config.yaml_ antes de implantar o Kubernetes Monitoring Operator.
 
 [listing]
 ----
@@ -286,7 +286,7 @@ Edite a implantação do operador de monitoramento em operator-deployment.yaml e
 image: <docker repo of the enterprise/corp docker repo>/ci-kube-rbac-proxy:<ci-kube-rbac-proxy version>
 image: <docker repo of the enterprise/corp docker repo>/netapp-monitoring:<version>
 ....
-Edite o AgentConfiguration em operator-config.yaml para refletir o novo local do repositório do Docker.  Crie um novo imagePullSecret para seu repositório privado. Para mais detalhes, consulte _https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/_
+Edite o _AgentConfiguration_ em _operator-config.yaml_ para refletir a nova localização do repositório docker. Crie um novo imagePullSecret para seu repositório privado, para mais detalhes veja _https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/_
 
 [listing]
 ----
@@ -300,9 +300,25 @@ agent:
 ----
 
 
+==== Token de acesso à API para senhas de longo prazo
+
+Alguns ambientes (ou seja, repositórios proxy) exigem senhas de longa duração para o repositório Data Infrastructure Insights docker. A senha fornecida na interface do usuário no momento da instalação é válida por apenas 24 horas. Em vez de usar essa senha, pode-se usar um API Access Token como senha do repositório docker. Essa senha será válida enquanto o API Access Token for válido. Pode-se gerar um novo API Access Token para esse propósito específico ou usar um já existente.
+
+link:task_config_telegraf_agent.html#manually-create-an-api-access-token["Leia aqui"] para obter instruções sobre como criar um novo token de acesso à API.
+
+Para extrair um token de acesso à API existente de um arquivo _operator-secrets.yaml_ baixado, os usuários podem executar o seguinte:
+
+`grep '\.dockerconfigjson' operator-secrets.yaml |sed 's/.*\.dockerconfigjson: //g' |base64 -d |jq`
+
+Para extrair um token de acesso à API existente de uma instalação de operador em execução, os usuários podem executar o seguinte:
+
+`kubectl -n netapp-monitoring get secret netapp-ci-docker -o jsonpath='{.data.\.dockerconfigjson}' |base64 -d |jq`
+
+
+
 === Instruções do OpenShift
 
-Se você estiver executando o OpenShift 4.6 ou superior, deverá editar o AgentConfiguration em _operator-config.yaml_ para habilitar a configuração _runPrivileged_:
+Se você estiver executando o OpenShift 4.6 ou superior, você deve editar o _AgentConfiguration_ em _operator-config.yaml_ para habilitar a configuração _runPrivileged_:
 
 ....
 # Set runPrivileged to true SELinux is enabled on your kubernetes nodes
@@ -437,7 +453,7 @@ Capture ou anote a saída dos seguintes comandos e entre em contato com a equipe
 | Não vejo nenhuma métrica sendo coletada para os CronJobs do Kubernetes que existem no meu cluster. | Verifique sua versão do Kubernetes (ou seja, `kubectl version` ).  Se for v1.20.x ou anterior, esta é uma limitação esperada.  A versão kube-state-metrics implantada com o Kubernetes Monitoring Operator suporta apenas a v1.CronJob.  Com o Kubernetes 1.20.x e versões anteriores, o recurso CronJob está em v1beta.CronJob.  Como resultado, o kube-state-metrics não consegue encontrar o recurso CronJob. 
 
 
-| Após instalar o operador, os pods telegraf-ds entram em CrashLoopBackOff e os logs dos pods indicam "su: Falha de autenticação". | Edite a seção telegraf em _AgentConfiguration_ e defina _dockerMetricCollectionEnabled_ como false.  Para mais detalhes, consulte o manual do operadorlink:telegraf_agent_k8s_config_options.html["opções de configuração"] .  ... especificação: ... telégrafo: ...            - nome: docker run-mode: - Substituições do DaemonSet: - chave: DOCKER_UNIX_SOCK_PLACEHOLDER valor: unix:///run/docker.sock ...  ... 
+| Após instalar o operador, os pods telegraf-ds entram em CrashLoopBackOff e os logs dos pods indicam "su: Falha de autenticação". | Edite a seção telegraf em _AgentConfiguration_ e defina _dockerMetricCollectionEnabled_ como false. Para mais detalhes, consulte o link:telegraf_agent_k8s_config_options.html["opções de configuração"] do operador. ... spec: ... telegraf: ... - name: docker run-mode: - DaemonSet substitutions: - key: DOCKER_UNIX_SOCK_PLACEHOLDER value: unix:///run/docker.sock ... ... 
 
 
 | Vejo mensagens de erro repetidas semelhantes às seguintes nos meus logs do Telegraf: E!  [agent] Erro ao gravar em outputs.http: Post "\https://<tenant_url>/rest/v1/lake/ingest/influxdb": prazo de contexto excedido (Client.Timeout excedido ao aguardar cabeçalhos) | Edite a seção telegraf em _AgentConfiguration_ e aumente _outputTimeout_ para 10s.  Para mais detalhes, consulte o manual do operadorlink:telegraf_agent_k8s_config_options.html["opções de configuração"] . 
@@ -484,7 +500,7 @@ Alternativamente, também se pode<<uninstalling,desinstalar>> e<<installing-the-
 | O Telegraf avisa ou trava por causa de memória bloqueável insuficiente. | Tente aumentar o limite de memória bloqueável para o Telegraf no sistema operacional/nó subjacente.  Se aumentar o limite não for uma opção, modifique a configuração do agente NKMO e defina _unprotected_ como _true_.  Isso instruirá o Telegraf a não tentar reservar páginas de memória bloqueadas.  Embora isso possa representar um risco à segurança, pois segredos descriptografados podem ser transferidos para o disco, isso permite a execução em ambientes onde não é possível reservar memória bloqueada.  Para mais detalhes sobre as opções de configuração _desprotegidas_, consulte olink:telegraf_agent_k8s_config_options.html["opções de configuração"] página. 
 
 
-| Vejo mensagens de aviso do Telegraf parecidas com as seguintes: _W!  [inputs.diskio] Não foi possível coletar o nome do disco para "vdc": erro ao ler /dev/vdc: arquivo ou diretório inexistente_ | Para o Operador de Monitoramento do Kubernetes, essas mensagens de aviso são inofensivas e podem ser ignoradas com segurança.   Como alternativa, edite a seção telegraf em AgentConfiguration e defina _runDsPrivileged_ como true.  Para mais detalhes, consulte olink:telegraf_agent_k8s_config_options.html["opções de configuração do operador"] . 
+| Vejo mensagens de aviso do Telegraf parecidas com as seguintes: _W!  [inputs.diskio] Não foi possível coletar o nome do disco para "vdc": erro ao ler /dev/vdc: arquivo ou diretório inexistente_ | Para o operador de monitoramento do Kubernetes, essas mensagens de aviso são benignas e podem ser ignoradas com segurança. Como alternativa, edite a seção telegraf em AgentConfiguration e defina _runDsPrivileged_ como true. Para mais detalhes, consulte a link:telegraf_agent_k8s_config_options.html["opções de configuração do operador"]. 
 
 
 | Meu pod fluent-bit está falhando com os seguintes erros: [2024/10/16 14:16:23] [erro] [/src/fluent-bit/plugins/in_tail/tail_fs_inotify.c:360 errno=24] Muitos arquivos abertos [2024/10/16 14:16:23] [erro] falha ao inicializar a entrada tail.0 [2024/10/16 14:16:23] [erro] falha na inicialização da entrada [engine]  a| 
@@ -512,5 +528,8 @@ Observação: para tornar essas configurações persistentes nas reinicializaç�
 
 
 | Os pods do Telegraf DS estão relatando erros referentes ao plug-in de entrada do Kubernetes que não consegue fazer solicitações HTTP devido à incapacidade de validar o certificado TLS.  Por exemplo: E!  [inputs.kubernetes] Erro no plugin: erro ao fazer solicitação HTTP para"https://<kubelet_IP>:10250/stats/summary":[] Pegar"https://<kubelet_IP>:10250/stats/summary":[] tls: falha ao verificar o certificado: x509: não é possível validar o certificado para <kubelet_IP> porque ele não contém nenhum SAN IP | Isso ocorrerá se o kubelet estiver usando certificados autoassinados e/ou o certificado especificado não incluir o <kubelet_IP> na lista _Nome alternativo do assunto_ dos certificados.  Para resolver isso, o usuário pode modificar olink:telegraf_agent_k8s_config_options.html["configuração do agente"] , e defina _telegraf:insecureK8sSkipVerify_ como _true_.  Isso configurará o plugin de entrada do Telegraf para pular a verificação.  Alternativamente, o usuário pode configurar o kubelet paralink:https://kubernetes.io/docs/reference/config-api/kubelet-config.v1beta1/["servidorTLSBootstrap"] , que acionará uma solicitação de certificado da API 'certificates.k8s.io'. 
+
+
+| Estou recebendo o seguinte erro nos pods do Fluent-bit e o pod não inicia: 026/01/12 20:20:32] [erro] [sqldb] erro=não foi possível abrir o arquivo de banco de dados [2026/01/12 20:20:32] [erro] [input:tail:tail.0] db: não foi possível criar a tabela 'in_tail_files' [2026/01/12 20:20:32] [erro] [input:tail:tail.0] não foi possível abrir/criar o banco de dados [2026/01/12 20:20:32] [erro] falha ao inicializar a entrada tail.0 [2026/01/12 20:20:32] [erro] [engine] falha na inicialização da entrada | Certifique-se de que o diretório do host em que o arquivo DB reside tenha as permissões de leitura/gravação adequadas. Mais especificamente, o diretório do host deve conceder permissões de leitura/gravação a usuários que não sejam root. O local padrão do arquivo DB é /var/log/, a menos que seja substituído pela opção fluent-bit-dbFile _agentconfiguration_. Se o SELinux estiver habilitado, tente definir a opção fluent-bit-seLinuxOptionsType agentconfiguration como 'spc_t'. 
 |===
 Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .
