@@ -5,17 +5,12 @@ summary: O servidor ou VM que você usa como sua Unidade de Aquisição deve ate
 keywords: AU, acquisition unit, requirements, sizing 
 ---
 = Requisitos da Unidade de Aquisição
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
 :nofooter: 
 :icons: font
 :linkattrs: 
 :imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -31,7 +26,7 @@ Você deve instalar uma Unidade de Aquisição (UA) para adquirir informações 
 | Componente | Requisitos do Linux | Requisitos do Windows 
 
 
-| Sistema operacional | Um computador executando uma versão licenciada de um dos seguintes: * AlmaLinux 9.3 a 9.5 * Centos (64 bits): 7.2 a 7.9, 8.1 a 8.4, Stream 8, Stream 9 * Debian (64 bits): 9 a 12 * OpenSUSE Leap 15.1 a 15.6 * Oracle Enterprise Linux (64 bits): 7.5 a 7.9, 8.1 a 8.10, 9.3 a 9.6 * Red Hat (64 bits): 7.2 a 7.9, 8.1 a 8.10, 9.1 a 9.6 * Rocky 9.0 a 9.5 * SUSE Linux Enterprise Server 15, 15 SP2 a 15 SP6 * Ubuntu Server: 18.04, 20.04, 22.04, 24.04 LTS * SELinux nas plataformas acima Este computador não deve executar nenhum outro software de nível de aplicativo. Um servidor dedicado é recomendado.  Se você estiver executando com SELinux, é recomendável executar os seguintes comandos no sistema da unidade de aquisição: sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?" sudo restorecon -R /opt/netapp/cloudinsights | Um computador executando uma versão licenciada de um dos seguintes sistemas operacionais: * Microsoft Windows 11 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025. Este computador não deve estar executando nenhum outro software de nível de aplicativo. Um servidor dedicado é recomendado. 
+| Sistema operacional | Um computador executando uma versão licenciada de um dos seguintes: * AlmaLinux 9.5, 10 * Centos (64-bit): Stream 9 * Debian (64-bit): 11 a 13 * OpenSUSE Leap 15.2 a 15.6, 16 * Oracle Enterprise Linux (64-bit): 8.10, 9.2, 9.4, 9.6, 10 * Red Hat (64-bit): 8.10, 9.2, 9.4, 9.6, 10 * Rocky 9.2 a 9.6 * SUSE Linux Enterprise Server 15 SP4 a 15 SP7, 16 * Ubuntu Server: 20.04, 22.04, 24.04 LTS * SELinux nas plataformas acima Este computador não deve executar nenhum outro software de nível de aplicativo. Recomenda-se um servidor dedicado. Se você estiver usando SELinux, é recomendável executar os seguintes comandos no sistema da unidade de aquisição: sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?" sudo restorecon -R /opt/netapp/cloudinsights | Um computador executando uma versão licenciada de um dos seguintes sistemas operacionais: * Microsoft Windows 11 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025. Este computador não deve estar executando nenhum outro software de nível de aplicativo. Um servidor dedicado é recomendado. 
 
 
 | CPU | 2 núcleos de CPU | Mesmo 

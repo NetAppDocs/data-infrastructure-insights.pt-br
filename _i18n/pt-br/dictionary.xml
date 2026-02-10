@@ -165,7 +165,6 @@
   <block id="129f8880167531920bb3396830948e86" category="cell">Requisitos do Linux</block>
   <block id="033d64e0352a24070b4d6ba6e37207af" category="cell">Requisitos do Windows</block>
   <block id="696c660ff8d9323e55146a6dbd4e4088" category="cell">Sistema operacional</block>
-  <block id="cd016f59e3bce345c5a22a0c73b84bc2" category="cell">Um computador executando uma versão licenciada de um dos seguintes: * AlmaLinux 9.3 a 9.5 * Centos (64 bits): 7.2 a 7.9, 8.1 a 8.4, Stream 8, Stream 9 * Debian (64 bits): 9 a 12 * OpenSUSE Leap 15.1 a 15.6 * Oracle Enterprise Linux (64 bits): 7.5 a 7.9, 8.1 a 8.10, 9.3 a 9.6 * Red Hat (64 bits): 7.2 a 7.9, 8.1 a 8.10, 9.1 a 9.6 * Rocky 9.0 a 9.5 * SUSE Linux Enterprise Server 15, 15 SP2 a 15 SP6 * Ubuntu Server: 18.04, 20.04, 22.04, 24.04 LTS * SELinux nas plataformas acima Este computador não deve executar nenhum outro software de nível de aplicativo. Um servidor dedicado é recomendado.  Se você estiver executando com SELinux, é recomendável executar os seguintes comandos no sistema da unidade de aquisição: sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?" sudo restorecon -R /opt/netapp/cloudinsights</block>
   <block id="2b55387dd066c5bac646ac61543d152d" category="cell">CPU</block>
   <block id="36b415ace97b614344903d1d039cc60d" category="cell">2 núcleos de CPU</block>
   <block id="c90a13d8ec8fe53c6bb33fe10af6f2fe" category="cell">Mesmo</block>
@@ -12693,4 +12692,5 @@
   <block id="3771b23dadd43c39046622dbcb4c17e4" category="list-text">Clique em "Test Webhook" para garantir que não haja erros.</block>
   <block id="c20e86538672d1ab3ab8e3a5c2961e28" category="list-text">Salve o webhook.</block>
   <block id="beda12a678062ce581606c88344f4e06" category="sidebar">Exemplo de Webhook do Teams</block>
+  <block id="e18f38a263784d686e9a0d45d5416285" category="cell">Um computador executando uma versão licenciada de um dos seguintes: * AlmaLinux 9.5, 10 * Centos (64-bit): Stream 9 * Debian (64-bit): 11 a 13 * OpenSUSE Leap 15.2 a 15.6, 16 * Oracle Enterprise Linux (64-bit): 8.10, 9.2, 9.4, 9.6, 10 * Red Hat (64-bit): 8.10, 9.2, 9.4, 9.6, 10 * Rocky 9.2 a 9.6 * SUSE Linux Enterprise Server 15 SP4 a 15 SP7, 16 * Ubuntu Server: 20.04, 22.04, 24.04 LTS * SELinux nas plataformas acima Este computador não deve executar nenhum outro software de nível de aplicativo. Recomenda-se um servidor dedicado. Se você estiver usando SELinux, é recomendável executar os seguintes comandos no sistema da unidade de aquisição: sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?" sudo restorecon -R /opt/netapp/cloudinsights</block>
 </blocks>
