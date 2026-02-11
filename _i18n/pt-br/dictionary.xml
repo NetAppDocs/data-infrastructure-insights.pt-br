@@ -12693,4 +12693,5 @@
   <block id="c20e86538672d1ab3ab8e3a5c2961e28" category="list-text">Salve o webhook.</block>
   <block id="beda12a678062ce581606c88344f4e06" category="sidebar">Exemplo de Webhook do Teams</block>
   <block id="e18f38a263784d686e9a0d45d5416285" category="cell">Um computador executando uma versão licenciada de um dos seguintes: * AlmaLinux 9.5, 10 * Centos (64-bit): Stream 9 * Debian (64-bit): 11 a 13 * OpenSUSE Leap 15.2 a 15.6, 16 * Oracle Enterprise Linux (64-bit): 8.10, 9.2, 9.4, 9.6, 10 * Red Hat (64-bit): 8.10, 9.2, 9.4, 9.6, 10 * Rocky 9.2 a 9.6 * SUSE Linux Enterprise Server 15 SP4 a 15 SP7, 16 * Ubuntu Server: 20.04, 22.04, 24.04 LTS * SELinux nas plataformas acima Este computador não deve executar nenhum outro software de nível de aplicativo. Recomenda-se um servidor dedicado. Se você estiver usando SELinux, é recomendável executar os seguintes comandos no sistema da unidade de aquisição: sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?" sudo restorecon -R /opt/netapp/cloudinsights</block>
+  <block id="ddb78a0715fab46562d8ee8102cea78c" category="list-text">Porta 443 (ou 8443 se configurado)</block>
 </blocks>
