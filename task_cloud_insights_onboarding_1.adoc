@@ -14,6 +14,56 @@ keywords: onboarding, new user
 
 
 [role="lead"]
-Antes de começar a trabalhar com o Data Infrastructure Insights, você deve se inscrever no portal * NetApp Console*.  Se você já tiver um login no NetApp Console , poderá iniciar um teste gratuito do Data Infrastructure Insights com algumas etapas rápidas.
+Antes de começar a usar Data Infrastructure Insights, você precisa se cadastrar no portal do NetApp Console. Se você já possui um login do NetApp Console, pode iniciar um teste gratuito do Data Infrastructure Insights em poucos passos.
 
-Estas instruções estão sendo atualizadas. Por favor, volte mais tarde.
+
+
+== Criando sua conta no NetApp Console
+
+Para começar a usar os serviços em nuvem da NetApp, acesse link:https://console.netapp.com/["* NetApp Console*"^] e clique em *Começar*.
+
+* Se você ainda não se cadastrou, selecione *Sign Up*
+* Insira um endereço de e-mail comercial válido e escolha uma senha.
+* Digite o nome da sua empresa e seu nome completo.
+* Aceite os termos e condições e selecione *Continue*.
+* O Console irá guiá-lo pelo fluxo de trabalho de primeiros passos.
+
+
+
+
+=== E se eu já tiver um login no NetApp Console?
+
+Depois de ter uma conta do NetApp Console, basta escolher *Log In* na página do portal link:https://console.netapp.com/["NetApp Console"].
+
+Selecione sua organização no menu suspenso na parte superior da tela.
+
+No menu principal, no canto superior esquerdo, selecione *Governance > Data Infrastructure Insights*.
+
+
+
+== Iniciando sua avaliação gratuita do Data Infrastructure Insights
+
+Quando estiver pronto para começar, selecione *Iniciar teste gratuito de 30 dias*. Escolha a região onde deseja hospedar seu site e siga as outras instruções.
+
+Observe que você deve ter a função de "Org Admin" para poder criar o site DII.
+
+O NetApp Console informa quando seu Data Infrastructure Insights (DII) site está pronto para o processo de ambientação. Selecione o botão *Start onboarding* para configurar seu site.
+
+Se, em algum momento, você interromper o processo de ambientação antes de concluí-lo, basta fazer login novamente no Console para *Finalizar ambientação*.
+
+Após a conclusão do processo de ambientação, o Console informa que seu tenant está pronto para uso. Selecione Launch Data Infrastructure Insights* para começar. Observe que alguns dados estarão disponíveis para uso imediato (inventário, etc.), enquanto outros podem levar algum tempo para serem adquiridos e se tornarem relevantes (monitoramento de desempenho, etc.).
+
+
+
+== Fazer logout
+
+Para fazer logout do Data Infrastructure Insights, clique no seu *Nome de Usuário* e selecione *Log Out*.
+
+
+NOTE: Fazer logout do Data Infrastructure Insights faz com que você faça logout do Console. Você também será desconectado de outros serviços em nuvem da NetApp que utilizam o login do Console.
+
+
+
+=== Tempo limite de inatividade
+
+Por padrão, o Console fará logout de um usuário se não houver atividade por seis horas (360 minutos). Independentemente da atividade, os usuários serão desconectados após sete dias.

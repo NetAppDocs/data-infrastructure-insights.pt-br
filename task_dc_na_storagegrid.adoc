@@ -67,13 +67,13 @@ A seguir estão os requisitos para configurar esta fonte de dados:
 | Campo | Descrição 
 
 
-| Endereço IP do host StorageGRID | Gerenciamento do endereço IP virtual do dispositivo StorageGRID 
+| Endereço IP do host StorageGRID | Endereço IP de gerenciamento do StorageGRID (Grid Manager) 
 
 
-| Nome de usuário | Nome usado para efetuar login no dispositivo StorageGRID 
+| Nome de usuário | Nome usado para fazer login no StorageGRID (Grid Manager) 
 
 
-| Senha | Senha usada para efetuar login no dispositivo StorageGRID 
+| Senha | Senha usada para fazer login no StorageGRID (Grid Manager) 
 |===
 
 
