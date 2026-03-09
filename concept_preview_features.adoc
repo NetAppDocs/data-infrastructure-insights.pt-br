@@ -17,3 +17,10 @@ keywords: coming soon, preview,
 O Data Infrastructure Insights destaca novos recursos e funcionalidades em uma forma de _Prévia_.  Os recursos de visualização são disponibilizados em ambientes limitados ou com capacidade limitada.
 
 Se você estiver interessado em experimentar um ou mais desses recursos, entre em contato com sua equipe de vendas da NetApp para obter mais informações.
+
+
+
+== Pré-visualizações atuais:
+
+* link:ai_for_dii_overview.html["Data Infrastructure Insights Assistente de IA para insights de infraestrutura de dados"]Pré-visualização.
+

@@ -18,7 +18,7 @@ O *Data Infrastructure Insights AI Assistant* foi desenvolvido para ajudar você
 
 [NOTE]
 ====
-O Assistente de IA do DII está disponível como Prévia Limitada. link:/concept_preview_features.html["Saber mais"] sobre os recursos de prévia do Data Infrastructure Insights.
+O Assistente de IA do DII está disponível como Prévia Limitada. link:concept_preview_features.html["Saber mais"] sobre os recursos de prévia do Data Infrastructure Insights.
 
 O Assistente de IA está disponível apenas para locatários DII implantados na AWS.
 

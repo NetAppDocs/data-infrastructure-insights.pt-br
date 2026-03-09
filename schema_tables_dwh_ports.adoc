@@ -1,0 +1,351 @@
+---
+sidebar: sidebar 
+permalink: schema_tables_dwh_ports.html 
+summary: Tabelas de esquema e relacionamentos para o banco de dados dwh_ports 
+keywords: dwh, data warehouse, schema, reporting 
+---
+= Referência do esquema de banco de dados para dwh_ports
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Esta referência fornece informações detalhadas do esquema para o banco de dados dwh_ports, incluindo estruturas de tabelas, definições de campos, tipos de dados e relacionamentos.
+
+
+
+== Tabelas e Views
+
+
+
+=== cardeais
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| dígito | Número inteiro | Um número entre 0 e 99 
+|===
+'''
+
+
+=== connected_device_dimension
+
+*Chave primária:* tk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| nome | String | Nome do dispositivo 
+
+
+| fabricante | String | Fabricante do dispositivo 
+
+
+| modelo | String | Modelo do dispositivo 
+
+
+| tipo | String | Tipo do dispositivo 
+
+
+| firmware | String | Versão do firmware em execução no dispositivo 
+
+
+| id | Longo | O ID do dispositivo 
+
+
+| mais recente | String | Última flag 
+|===
+*Relacionamentos*
+
+* ports_fact (um-para-muitos)
+
+
+'''
+
+
+=== dimensão_data
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| fullDate | DateTimeOffset | Data completa 
+
+
+| dayInMonth | Byte | Dia do mês 
+
+
+| dayInYear | Número inteiro | Dia do ano 
+
+
+| dateYear | Número inteiro | Ano 
+
+
+| yearLabel | String | Etiqueta do ano 
+
+
+| monthNum | Byte | Número do mês 
+
+
+| monthLabel | String | Rótulo do mês 
+
+
+| dayInWeekNum | Byte | Número do dia da semana 
+
+
+| trimestre | Byte | Trimestre 
+
+
+| quarterLabel | String | Rótulo de trimestre 
+
+
+| dayInQuarter | Número inteiro | Dia no trimestre 
+
+
+| repQuarter | Byte | Trimestre representativo 
+
+
+| repMonth | Byte | Mês representativo 
+
+
+| repWeek | Byte | Semana representativa 
+
+
+| repDay | Byte | Dia representativo 
+
+
+| repMonthOrLatest | Byte | Mês representativo ou mais recente 
+
+
+| sspFlag | Byte | Bandeira SSP 
+
+
+| mais recente | String | Última flag 
+
+
+| futuro | String | Bandeira futura 
+|===
+*Relacionamentos*
+
+* ports_fact (um-para-muitos)
+
+
+'''
+
+
+=== dimensão_da_porta
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| wwn | String | World Wide Name 
+
+
+| nome | String | Nome da porta 
+
+
+| gbicType | String | Tipo de GBIC 
+
+
+| tipo | String | Tipo de porta 
+
+
+| velocidade | String | Velocidade da porta 
+
+
+| isGenerated | String | Bandeira gerada 
+
+
+| url | String | URL de referência 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* ports_fact (um-para-muitos)
+
+
+'''
+
+
+=== ports_fact
+
+*Chave primária:* tk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| switchTk | Número inteiro | Chave técnica switch 
+
+
+| connectedDeviceTk | Número inteiro | Chave técnica do dispositivo conectado 
+
+
+| portTk | Número inteiro | Chave técnica da porta 
+
+
+| fabric | String | Nome do fabric ou WWN 
+
+
+| velocidade | String | Velocidade da porta 
+
+
+| connectivityType | String | Tipo de conectividade 
+
+
+| tipo | String | Tipo de porta 
+
+
+| status | String | Status da porta 
+|===
+*Relacionamentos*
+
+* dimensão_dispositivo_conectado (many-to-one)
+* dimensão_da_porta (many-to-one)
+* date_dimension (muitos-para-um)
+* switch_dimension (muitos-para-um)
+
+
+'''
+
+
+=== ports_fact_current
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| switchTk | Número inteiro | Chave técnica switch 
+
+
+| connectedDeviceTk | Número inteiro | Chave técnica do dispositivo conectado 
+
+
+| portTk | Número inteiro | Chave técnica da porta 
+
+
+| fabric | String | Nome do fabric ou WWN 
+
+
+| velocidade | String | Velocidade da porta 
+
+
+| connectivityType | String | Tipo de conectividade 
+
+
+| tipo | String | Tipo de porta 
+
+
+| status | String | Status da porta 
+|===
+'''
+
+
+=== switch_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| wwn | String | World Wide Name 
+
+
+| nome | String | Nome do switch 
+
+
+| identificador | String | Identificador de switch 
+
+
+| ip | String | Endereço IP 
+
+
+| modelo | String | Modelo de switch 
+
+
+| fabricante | String | Fabricante 
+
+
+| firmware | String | Versão do firmware 
+
+
+| serialNumber | String | Número de série 
+
+
+| npv | String | Indicador de modo NPV 
+
+
+| isGenerated | String | Bandeira gerada 
+
+
+| tipo | String | Tipo de switch 
+
+
+| url | String | URL de referência 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| dataCenter | String | Localização do data center 
+
+
+| switchLevel | String | Nível do switch 
+|===
+*Relacionamentos*
+
+* ports_fact (um-para-muitos)
+
+
+'''

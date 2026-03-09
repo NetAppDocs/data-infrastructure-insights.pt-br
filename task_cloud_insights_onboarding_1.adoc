@@ -14,7 +14,7 @@ keywords: onboarding, new user
 
 
 [role="lead"]
-Antes de começar a usar Data Infrastructure Insights, você precisa se cadastrar no portal do NetApp Console. Se você já possui um login do NetApp Console, pode iniciar um teste gratuito do Data Infrastructure Insights em poucos passos.
+Antes de começar a trabalhar com Data Infrastructure Insights, você deve se cadastrar no portal *NetApp Console*. Se você já possui um login do NetApp Console, pode iniciar uma avaliação gratuita do Data Infrastructure Insights em poucos passos.
 
 
 

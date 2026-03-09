@@ -1,0 +1,2352 @@
+---
+sidebar: sidebar 
+permalink: reporting_schema_tables_dwh_capacity.html 
+summary: Tabelas de esquema e relacionamentos para o banco de dados dwh_capacity 
+keywords: dwh, data warehouse, schema, reporting 
+---
+= Referência do esquema de banco de dados para dwh_capacity
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Esta referência fornece informações detalhadas de esquema para o banco de dados dwh_capacity, incluindo estruturas de tabelas, definições de campos, tipos de dados e relacionamentos.
+
+
+
+== Tabelas e Views
+
+
+
+=== dimensão_de_aplicação
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| nome | String | Nome do aplicativo 
+
+
+| descrição | String | Descrição do aplicativo 
+
+
+| prioridade | String | Nível de prioridade 
+
+
+| url | String | URL de referência 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* internal_volume_capacity_fact (um-para-muitos): `tk` <- `internal_volume_capacity_fact.applicationTk`
+* chargeback_fact (um-para-muitos): `tk` <- `chargeback_fact.applicationTk`
+* vm_capacity_fact (um-para-muitos): `tk` <- `vm_capacity_fact.applicationTk`
+* qtree_capacity_fact (um-para-muitos): `tk` <- `qtree_capacity_fact.applicationTk`
+
+
+'''
+
+
+=== ponte_do_grupo_de_aplicativos
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| appGroupTk | Número inteiro | Chave técnica do grupo de aplicação 
+
+
+| appTk | Número inteiro | Chave técnica de aplicação 
+
+
+| isRep | String | Bandeira representativa 
+|===
+'''
+
+
+=== dimensão_do_grupo_de_aplicação
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| repApp | String | Aplicativo representativo 
+
+
+| repAppTk | Número inteiro | Chave técnica de aplicação representativa 
+
+
+| cardinalidade | Número inteiro | Cardinalidade do grupo 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* internal_volume_capacity_fact (um-para-muitos): `tk` <- `internal_volume_capacity_fact.applicationGroupTk`
+* chargeback_fact (um-para-muitos): `tk` <- `chargeback_fact.applicationGroupTk`
+* vm_capacity_fact (um-para-muitos): `tk` <- `vm_capacity_fact.applicationGroupTk`
+* qtree_capacity_fact (um-para-muitos): `tk` <- `qtree_capacity_fact.applicationGroupTk`
+
+
+'''
+
+
+=== business_entity_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| nome completo | String | Nome completo da entidade 
+
+
+| inquilino | String | Nome do tenant 
+
+
+| lob | String | Linha de negócios 
+
+
+| businessUnit | String | Unidade de negócios 
+
+
+| projeto | String | Nome do projeto 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* internal_volume_capacity_fact (um-para-muitos): `tk` <- `internal_volume_capacity_fact.businessEntityTk`
+* chargeback_fact (um-para-muitos): `tk` <- `chargeback_fact.businessEntityTk`
+* vm_capacity_fact (um-para-muitos): `tk` <- `vm_capacity_fact.businessEntityTk`
+* qtree_capacity_fact (um-para-muitos): `tk` <- `qtree_capacity_fact.businessEntityTk`
+
+
+'''
+
+
+=== capacity_type
+
+*Chave primária:* tipo
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tipo | String | Tipo de capacidade 
+
+
+| usado | String | Bandeira usada 
+
+
+| vmSpecific | String | Sinalizador específico da VM 
+
+
+| replicationSpecific | String | Sinalizador específico de replicação 
+
+
+| descrição | String | Descrição 
+|===
+*Relacionamentos*
+
+* vm_capacity_fact (um-para-muitos): `type` <- `vm_capacity_fact.capacityType`
+
+
+'''
+
+
+=== cardeais
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| dígito | Número inteiro | Número cardinal 
+|===
+'''
+
+
+=== chargeback_fact
+
+*Chave primária:* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| storageTk | Número inteiro | Chave técnica de armazenamento 
+
+
+| storagePoolTk | Número inteiro | Chave técnica do pool de armazenamento 
+
+
+| internalVolumeTk | Número inteiro | Chave técnica de volume interno 
+
+
+| qtreeTk | Número inteiro | Chave técnica do Qtree 
+
+
+| hostTk | Número inteiro | Chave técnica do host 
+
+
+| hostGroupTk | Número inteiro | Chave técnica do host group 
+
+
+| applicationTk | Número inteiro | Chave técnica de aplicação 
+
+
+| applicationGroupTk | Número inteiro | Chave técnica do grupo de aplicação 
+
+
+| tierTk | Número inteiro | Chave técnica de tier 
+
+
+| serviceLevelTk | Número inteiro | Chave técnica de nível de serviço 
+
+
+| businessUnit | String | Unidade de negócios 
+
+
+| businessEntityTk | Número inteiro | Chave técnica da entidade comercial 
+
+
+| k8sNamespaceTk | Número inteiro | Chave técnica do namespace do Kubernetes 
+
+
+| k8sNamespaceGroupTk | Número inteiro | Chave técnica do grupo de namespace do Kubernetes 
+
+
+| protectionType | String | Tipo de proteção 
+
+
+| storageAccessType | String | Tipo de acesso ao armazenamento 
+
+
+| resourceName | String | Nome do recurso 
+
+
+| resourceType | String | Tipo de recurso 
+
+
+| mappedByVM | String | Mapeado pelo sinalizador da VM 
+
+
+| virtualStorage | String | Sinalizador de armazenamento virtual 
+
+
+| provisionedCapacityMB | Longo | Capacidade provisionada (MB) 
+
+
+| usedCapacityMB | Longo | Capacidade utilizada (MB) 
+|===
+*Relacionamentos*
+
+* volume_fact_current (um para um): `tk` -> `volume_fact_current.chargebackFactTk`
+* volume_history_capacity_fact (um-para-muitos): `tk` <- `volume_history_capacity_fact.chargebackFactTk`
+* dimensão_volume_interno (muitos-para-um): `internalVolumeTk`-> `internal_volume_dimension.tk`
+* dimensão_de_armazenamento (muitos-para-um): `storageTk`-> `storage_dimension.tk`
+* dimensão_entidade_negócio (muitos-para-um): `businessEntityTk`-> `business_entity_dimension.tk`
+* host_group_dimension (muitos para um): `hostGroupTk` -> `host_group_dimension.tk`
+* k8s_namespace_group_dimension (muitos para um): `k8sNamespaceGroupTk` -> `k8s_namespace_group_dimension.tk`
+* application_group_dimension (muitos para um): `applicationGroupTk` -> `application_group_dimension.tk`
+* k8s_namespace_dimension (muitos para um): `k8sNamespaceTk` -> `k8s_namespace_dimension.tk`
+* service_level_dimension (muitos-para-um): `serviceLevelTk` -> `service_level_dimension.tk`
+* dimensão_de_nível (muitos-para-um): `tierTk`-> `tier_dimension.tk`
+* dimensão_da_aplicação (muitos-para-um): `applicationTk`-> `application_dimension.tk`
+* qtree_dimension (muitos-para-um): `qtreeTk` -> `qtree_dimension.tk`
+* storage_pool_dimension (muitos para um): `storagePoolTk` -> `storage_pool_dimension.tk`
+* dimensão_do_host (muitos-para-um): `hostTk`-> `host_dimension.tk`
+* date_dimension (muitos-para-um): `dateTk` -> `date_dimension.tk`
+
+
+'''
+
+
+=== dimensão do datastore
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| naturalKey | String | Chave natural 
+
+
+| nome | String | Nome do datastore 
+
+
+| moid | String | ID do objeto gerenciado 
+
+
+| virtualCenterIp | String | vCenter endereço IP 
+
+
+| url | String | URL de referência 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* vm_capacity_fact (um-para-muitos): `tk` <- `vm_capacity_fact.dataStoreTk`
+
+
+'''
+
+
+=== dimensão_data
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| fullDate | Data | Data completa 
+
+
+| dayInMonth | Número inteiro | Dia do mês 
+
+
+| dayInYear | Número inteiro | Dia do ano 
+
+
+| dateYear | Número inteiro | Ano 
+
+
+| yearLabel | String | Etiqueta do ano 
+
+
+| monthNum | Número inteiro | Número do mês 
+
+
+| monthLabel | String | Rótulo do mês 
+
+
+| dayInWeekNum | Número inteiro | Número do dia da semana 
+
+
+| trimestre | Número inteiro | Trimestre 
+
+
+| quarterLabel | String | Rótulo de trimestre 
+
+
+| dayInQuarter | Número inteiro | Dia no trimestre 
+
+
+| repQuarter | String | Trimestre representativo 
+
+
+| repMonth | String | Mês representativo 
+
+
+| repWeek | String | Semana representativa 
+
+
+| repDay | String | Dia representativo 
+
+
+| repMonthOrLatest | String | Mês representativo ou mais recente 
+
+
+| sspFlag | String | Bandeira SSP 
+
+
+| mais recente | String | Última flag 
+
+
+| futuro | String | Bandeira futura 
+|===
+*Relacionamentos*
+
+* internal_volume_capacity_fact (um-para-muitos): `tk` <- `internal_volume_capacity_fact.dateTk`
+* chargeback_fact (um-para-muitos): `tk` <- `chargeback_fact.dateTk`
+* disk_group_capacity_fact (um-para-muitos): `tk` <- `disk_group_capacity_fact.dateTk`
+* vm_capacity_fact (um-para-muitos): `tk` <- `vm_capacity_fact.dateTk`
+* disk_group_capacity_future_fact (um-para-muitos): `tk` <- `disk_group_capacity_future_fact.dateTk`
+* qtree_capacity_fact (um-para-muitos): `tk` <- `qtree_capacity_fact.dateTk`
+* k8s_pvc_capacity_fact (um-para-muitos): `tk` <- `k8s_pvc_capacity_fact.dateTk`
+* storage_and_storage_pool_capacity_fact (um-para-muitos): `tk` <- `storage_and_storage_pool_capacity_fact.dateTk`
+* volume_history_capacity_fact (um-para-muitos): `tk` <- `volume_history_capacity_fact.dateTk`
+* storage_and_storage_pool_capacity_future_fact (um-para-muitos): `tk` <- `storage_and_storage_pool_capacity_future_fact.dateTk`
+* storage_node_capacity_fact (um-para-muitos): `tk` <- `storage_node_capacity_fact.dateTk`
+
+
+'''
+
+
+=== disk_group_capacity_fact
+
+*Chave primária:* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| storageTk | Número inteiro | Chave técnica de armazenamento 
+
+
+| storagePoolTk | Número inteiro | Chave técnica do pool de armazenamento 
+
+
+| diskGroupTk | Número inteiro | Chave técnica do grupo de discos 
+
+
+| capacidadeMB | Longo | Capacidade total (MB) 
+
+
+| usedCapacityMB | Longo | Capacidade utilizada (MB) 
+
+
+| physicalDiskCapacityMB | Longo | Capacidade física do disco (MB) 
+|===
+*Relacionamentos*
+
+* disk_group_dimension (muitos para um): `diskGroupTk` -> `disk_group_dimension.tk`
+* dimensão_de_armazenamento (muitos-para-um): `storageTk`-> `storage_dimension.tk`
+* storage_pool_dimension (muitos para um): `storagePoolTk` -> `storage_pool_dimension.tk`
+* date_dimension (muitos-para-um): `dateTk` -> `date_dimension.tk`
+
+
+'''
+
+
+=== fato de capacidade futura do grupo de discos
+
+*Chave primária:* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| storageTk | Número inteiro | Chave técnica de armazenamento 
+
+
+| storagePoolTk | Número inteiro | Chave técnica do pool de armazenamento 
+
+
+| diskGroupTk | Número inteiro | Chave técnica do grupo de discos 
+
+
+| capacidadeMB | Longo | Capacidade projetada (MB) 
+
+
+| usedCapacityMB | Longo | Capacidade utilizada projetada (MB) 
+|===
+*Relacionamentos*
+
+* disk_group_dimension (muitos para um): `diskGroupTk` -> `disk_group_dimension.tk`
+* dimensão_de_armazenamento (muitos-para-um): `storageTk`-> `storage_dimension.tk`
+* storage_pool_dimension (muitos para um): `storagePoolTk` -> `storage_pool_dimension.tk`
+* date_dimension (muitos-para-um): `dateTk` -> `date_dimension.tk`
+
+
+'''
+
+
+=== dimensão_do_grupo_de_discos
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| nome | String | Nome do grupo de discos 
+
+
+| identificador | String | Identificador do grupo de discos 
+
+
+| vendorDiskGroupType | String | Tipo de grupo de discos do fornecedor 
+
+
+| diskType | String | Tipo de disco 
+
+
+| status | String | Status 
+
+
+| redundância | String | Nível de redundância 
+
+
+| isVirtual | String | Bandeira virtual 
+
+
+| vendorTier | String | Nível do fornecedor 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* disk_group_capacity_fact (um-para-muitos): `tk` <- `disk_group_capacity_fact.diskGroupTk`
+* disk_group_capacity_future_fact (um-para-muitos): `tk` <- `disk_group_capacity_future_fact.diskGroupTk`
+
+
+'''
+
+
+=== dimensão_do_host
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| nome | String | Nome do host 
+
+
+| identificador | String | Identificador do host 
+
+
+| ip | String | Endereço IP 
+
+
+| os | String | Sistema operacional 
+
+
+| modelo | String | Modelo de hardware 
+
+
+| fabricante | String | Fabricante 
+
+
+| url | String | URL de referência 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| dataCenter | String | Localização do data center 
+
+
+| Pseudônimo | String | Alias do host 
+
+
+| custo mensal da licença de vm | String | Custo mensal da licença de VM 
+
+
+| Entidade comercial | String | Entidade comercial 
+
+
+| Nível de serviço | String | Nível de serviço 
+|===
+*Relacionamentos*
+
+* chargeback_fact (um-para-muitos): `tk` <- `chargeback_fact.hostTk`
+* vm_capacity_fact (um-para-muitos): `tk` <- `vm_capacity_fact.hostTk`
+* volume_history_capacity_fact (um-para-muitos): `tk` <- `volume_history_capacity_fact.hostTk`
+
+
+'''
+
+
+=== host_group_bridge
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| hostGroupTk | Número inteiro | Chave técnica do host group 
+
+
+| hostTk | Número inteiro | Chave técnica do host 
+
+
+| isRep | String | Bandeira representativa 
+|===
+'''
+
+
+=== host_group_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| repHost | String | Host representante 
+
+
+| repHostTk | Número inteiro | Chave técnica do host representante 
+
+
+| cardinalidade | Número inteiro | Cardinalidade do grupo 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* chargeback_fact (um-para-muitos): `tk` <- `chargeback_fact.hostGroupTk`
+* vm_capacity_fact (um-para-muitos): `tk` <- `vm_capacity_fact.hostGroupTk`
+* volume_history_capacity_fact (um-para-muitos): `tk` <- `volume_history_capacity_fact.hostGroupTk`
+
+
+'''
+
+
+=== fato de capacidade de volume interno
+
+*Chave primária:* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| storageTk | Número inteiro | Chave técnica de armazenamento 
+
+
+| storagePoolTk | Número inteiro | Chave técnica do pool de armazenamento 
+
+
+| internalVolumeTk | Número inteiro | Chave técnica de volume interno 
+
+
+| virtualStorageTk | Número inteiro | Chave técnica de armazenamento virtual 
+
+
+| tierTk | Número inteiro | Chave técnica de tier 
+
+
+| applicationTk | Número inteiro | Chave técnica de aplicação 
+
+
+| applicationGroupTk | Número inteiro | Chave técnica do grupo de aplicação 
+
+
+| serviceLevelTk | Número inteiro | Chave técnica de nível de serviço 
+
+
+| businessUnit | String | Unidade de negócios 
+
+
+| businessEntityTk | Número inteiro | Chave técnica da entidade comercial 
+
+
+| k8sNamespaceTk | Número inteiro | Chave técnica do namespace do Kubernetes 
+
+
+| k8sNamespaceGroupTk | Número inteiro | Chave técnica do grupo de namespace do Kubernetes 
+
+
+| storageAccessType | String | Tipo de acesso ao armazenamento 
+
+
+| protectionType | String | Tipo de proteção 
+
+
+| allocatedCapacityMB | Longo | Capacidade alocada (MB) 
+
+
+| consumedCapacityMB | Longo | Capacidade consumida (MB) 
+
+
+| usedCapacityMB | Longo | Capacidade utilizada (MB) 
+
+
+| dataUsedCapacityMB | Longo | Capacidade de dados usada (MB) 
+
+
+| dataCapacidadeNãoUtilizadaMB | Longo | Capacidade de dados não utilizada (MB) 
+
+
+| snapshotAllocatedCapacityMB | Longo | Capacidade alocada do Snapshot (MB) 
+
+
+| snapshotUsedCapacityMB | Longo | Capacidade utilizada do Snapshot (MB) 
+
+
+| totalCloneSavedCapacityMB | Longo | Capacidade total de clone salva (MB) 
+
+
+| dedupeRatio | Decimal | Taxa de deduplicação 
+
+
+| dedupeSavingsGB | Decimal | Economia de desduplicação (GB) 
+
+
+| rawToUsableRatio | Decimal | Relação bruta para utilizável 
+
+
+| snapshotCount | Número inteiro | Contagem de Snapshot 
+
+
+| lastSnapshotTime | DateTimeOffset | Timestamp do último Snapshot 
+
+
+| compressionRatio | Decimal | Taxa de compressão 
+
+
+| compressãoEconomizadaGB | Decimal | Economia de compressão (GB) 
+
+
+| compressionSavingsPercent | Decimal | Economia de compressão (%) 
+
+
+| objectStoreUsedSpaceGB | Decimal | Espaço utilizado pelo object store (GB) 
+|===
+*Relacionamentos*
+
+* service_level_dimension (muitos-para-um): `serviceLevelTk` -> `service_level_dimension.tk`
+* dimensão_volume_interno (muitos-para-um): `internalVolumeTk`-> `internal_volume_dimension.tk`
+* dimensão_de_armazenamento (muitos-para-um): `storageTk`-> `storage_dimension.tk`
+* dimensão_de_nível (muitos-para-um): `tierTk`-> `tier_dimension.tk`
+* dimensão_entidade_negócio (muitos-para-um): `businessEntityTk`-> `business_entity_dimension.tk`
+* dimensão_da_aplicação (muitos-para-um): `applicationTk`-> `application_dimension.tk`
+* storage_pool_dimension (muitos para um): `storagePoolTk` -> `storage_pool_dimension.tk`
+* date_dimension (muitos-para-um): `dateTk` -> `date_dimension.tk`
+* k8s_namespace_group_dimension (muitos para um): `k8sNamespaceGroupTk` -> `k8s_namespace_group_dimension.tk`
+* application_group_dimension (muitos para um): `applicationGroupTk` -> `application_group_dimension.tk`
+* k8s_namespace_dimension (muitos para um): `k8sNamespaceTk` -> `k8s_namespace_dimension.tk`
+
+
+'''
+
+
+=== dimensão_do_volume_interno
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| nome | String | Nome do volume 
+
+
+| identificador | String | Identificador de volume 
+
+
+| storagePoolIdentifier | String | Identificador do pool de armazenamento 
+
+
+| storageName | String | Nome do armazenamento 
+
+
+| storageIP | String | Endereço IP de armazenamento 
+
+
+| tipo | String | Tipo de volume 
+
+
+| virtualStorage | String | Armazenamento virtual 
+
+
+| spaceGuarantee | String | Garantia de espaço 
+
+
+| thinProvisioningSupported | String | Flag de suporte a thin provisioning 
+
+
+| thinProvisioned | String | Sinalizador de thin provisioned 
+
+
+| uuid | String | UUID 
+
+
+| flexGroupIdentifier | String | Identificador do FlexGroup 
+
+
+| url | String | URL de referência 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* internal_volume_capacity_fact (um-para-muitos): `tk` <- `internal_volume_capacity_fact.internalVolumeTk`
+* chargeback_fact (um-para-muitos): `tk` <- `chargeback_fact.internalVolumeTk`
+* vm_capacity_fact (um-para-muitos): `tk` <- `vm_capacity_fact.internalVolumeTk`
+* qtree_capacity_fact (um-para-muitos): `tk` <- `qtree_capacity_fact.internalVolumeTk`
+* volume_history_capacity_fact (um-para-muitos): `tk` <- `volume_history_capacity_fact.internalVolumeTk`
+
+
+'''
+
+
+=== k8s_cluster_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| identificador | String | Identificador de cluster 
+
+
+| nome | String | Nome do cluster 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* k8s_pvc_capacity_fact (um-para-muitos): `tk` <- `k8s_pvc_capacity_fact.clusterTk`
+
+
+'''
+
+
+=== k8s_namespace_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| identificador | String | Identificador de namespace 
+
+
+| nome | String | Nome do namespace 
+
+
+| clusterName | String | Nome do cluster 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* internal_volume_capacity_fact (um-para-muitos): `tk` <- `internal_volume_capacity_fact.k8sNamespaceTk`
+* chargeback_fact (um-para-muitos): `tk` <- `chargeback_fact.k8sNamespaceTk`
+* qtree_capacity_fact (um-para-muitos): `tk` <- `qtree_capacity_fact.k8sNamespaceTk`
+* k8s_pvc_capacity_fact (um-para-muitos): `tk` <- `k8s_pvc_capacity_fact.namespaceTk`
+
+
+'''
+
+
+=== k8s_namespace_group_bridge
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| k8sNamespaceGroupTk | Número inteiro | Chave técnica do grupo de namespace 
+
+
+| k8sNamespaceTk | Número inteiro | Chave técnica do namespace 
+
+
+| isRep | String | Bandeira representativa 
+|===
+'''
+
+
+=== k8s_namespace_group_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| repK8sNamespace | String | Namespace representativo 
+
+
+| repK8sNamespaceTk | Número inteiro | Chave técnica do namespace representativo 
+
+
+| cardinalidade | Número inteiro | Cardinalidade do grupo 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* internal_volume_capacity_fact (um-para-muitos): `tk` <- `internal_volume_capacity_fact.k8sNamespaceGroupTk`
+* chargeback_fact (um-para-muitos): `tk` <- `chargeback_fact.k8sNamespaceGroupTk`
+* qtree_capacity_fact (um-para-muitos): `tk` <- `qtree_capacity_fact.k8sNamespaceGroupTk`
+* volume_history_capacity_fact (um-para-muitos): `tk` <- `volume_history_capacity_fact.k8sNamespaceGroupTk`
+
+
+'''
+
+
+=== k8s_node_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| identificador | String | Identificador do nó 
+
+
+| nome | String | Nome do nó 
+
+
+| clusterName | String | Nome do cluster 
+
+
+| internalIp | String | Endereço IP interno 
+
+
+| osImage | String | Imagem do SO 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* vm_capacity_fact (um-para-muitos): `tk` <- `vm_capacity_fact.k8sNodeTk`
+
+
+'''
+
+
+=== k8s_pv_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| identificador | String | Identificador PV 
+
+
+| nome | String | Nome do PV 
+
+
+| clusterName | String | Nome do cluster 
+
+
+| fase | String | Fase PV 
+
+
+| pvcName | String | Nome do PVC 
+
+
+| storageClass | String | Classe de armazenamento 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* k8s_pvc_capacity_fact (um-para-muitos): `tk` <- `k8s_pvc_capacity_fact.pvTk`
+
+
+'''
+
+
+=== k8s_pvc_capacity_fact
+
+*Chave primária:* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| pvcTk | Número inteiro | Chave técnica de PVC 
+
+
+| clusterTk | Número inteiro | Chave técnica do cluster 
+
+
+| namespaceTk | Número inteiro | Chave técnica do namespace 
+
+
+| pvTk | Número inteiro | Chave técnica PV 
+
+
+| pvSizeBytes | Longo | Tamanho do PV (bytes) 
+
+
+| pvcSizeBytes | Longo | Tamanho do PVC (bytes) 
+|===
+*Relacionamentos*
+
+* k8s_pvc_dimension (muitos-para-um): `pvcTk` -> `k8s_pvc_dimension.tk`
+* k8s_cluster_dimension (muitos-para-um): `clusterTk` -> `k8s_cluster_dimension.tk`
+* k8s_namespace_dimension (muitos para um): `namespaceTk` -> `k8s_namespace_dimension.tk`
+* date_dimension (muitos-para-um): `dateTk` -> `date_dimension.tk`
+* k8s_pv_dimension (muitos-para-um): `pvTk` -> `k8s_pv_dimension.tk`
+
+
+'''
+
+
+=== k8s_pvc_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| identificador | String | Identificador de PVC 
+
+
+| nome | String | Nome do PVC 
+
+
+| clusterName | String | Nome do cluster 
+
+
+| namespaceName | String | Nome do namespace 
+
+
+| pvName | String | Nome do PV 
+
+
+| fase | String | Fase PVC 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* k8s_pvc_capacity_fact (um-para-muitos): `tk` <- `k8s_pvc_capacity_fact.pvcTk`
+
+
+'''
+
+
+=== k8s_workload_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| identificador | String | Identificador de carga de trabalho 
+
+
+| nome | String | Nome da carga de trabalho 
+
+
+| clusterName | String | Nome do cluster 
+
+
+| namespaceName | String | Nome do namespace 
+
+
+| tipo | String | Tipo de carga de trabalho 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+'''
+
+
+=== qtree_capacity_fact
+
+*Chave primária:* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| storageTk | Número inteiro | Chave técnica de armazenamento 
+
+
+| storagePoolTk | Número inteiro | Chave técnica do pool de armazenamento 
+
+
+| internalVolumeTk | Número inteiro | Chave técnica de volume interno 
+
+
+| qtreeTk | Número inteiro | Chave técnica do Qtree 
+
+
+| virtualStorageTk | Número inteiro | Chave técnica de armazenamento virtual 
+
+
+| tierTk | Número inteiro | Chave técnica de tier 
+
+
+| serviceLevelTk | Número inteiro | Chave técnica de nível de serviço 
+
+
+| applicationTk | Número inteiro | Chave técnica de aplicação 
+
+
+| applicationGroupTk | Número inteiro | Chave técnica do grupo de aplicação 
+
+
+| businessUnit | String | Unidade de negócios 
+
+
+| businessEntityTk | Número inteiro | Chave técnica da entidade comercial 
+
+
+| k8sNamespaceTk | Número inteiro | Chave técnica do namespace do Kubernetes 
+
+
+| k8sNamespaceGroupTk | Número inteiro | Chave técnica do grupo de namespace do Kubernetes 
+
+
+| storageAccessType | String | Tipo de acesso ao armazenamento 
+
+
+| protectionType | String | Tipo de proteção 
+
+
+| hardLimitCapacityMB | Longo | Capacidade limite rígida (MB) 
+
+
+| softLimitCapacityMB | Longo | Limite flexível de capacidade (MB) 
+
+
+| usedCapacityMB | Longo | Capacidade utilizada (MB) 
+
+
+| rawToUsableRatio | Decimal | Relação bruta para utilizável 
+
+
+| missingQuotaLimits | String | Sinalizador de limites de quota ausente 
+|===
+*Relacionamentos*
+
+* dimensão_volume_interno (muitos-para-um): `internalVolumeTk`-> `internal_volume_dimension.tk`
+* dimensão_de_armazenamento (muitos-para-um): `storageTk`-> `storage_dimension.tk`
+* dimensão_entidade_negócio (muitos-para-um): `businessEntityTk`-> `business_entity_dimension.tk`
+* k8s_namespace_group_dimension (muitos para um): `k8sNamespaceGroupTk` -> `k8s_namespace_group_dimension.tk`
+* application_group_dimension (muitos para um): `applicationGroupTk` -> `application_group_dimension.tk`
+* k8s_namespace_dimension (muitos para um): `k8sNamespaceTk` -> `k8s_namespace_dimension.tk`
+* service_level_dimension (muitos-para-um): `serviceLevelTk` -> `service_level_dimension.tk`
+* dimensão_de_nível (muitos-para-um): `tierTk`-> `tier_dimension.tk`
+* dimensão_da_aplicação (muitos-para-um): `applicationTk`-> `application_dimension.tk`
+* qtree_dimension (muitos-para-um): `qtreeTk` -> `qtree_dimension.tk`
+* storage_pool_dimension (muitos para um): `storagePoolTk` -> `storage_pool_dimension.tk`
+* date_dimension (muitos-para-um): `dateTk` -> `date_dimension.tk`
+
+
+'''
+
+
+=== qtree_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| nome | String | Nome do qtree 
+
+
+| identificador | String | Identificador de Qtree 
+
+
+| storageIdentifier | String | Identificador de armazenamento 
+
+
+| tipo | String | Tipo de Qtree 
+
+
+| url | String | URL de referência 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| Nível | String | Anotação de tier 
+|===
+*Relacionamentos*
+
+* chargeback_fact (um-para-muitos): `tk` <- `chargeback_fact.qtreeTk`
+* vm_capacity_fact (um-para-muitos): `tk` <- `vm_capacity_fact.qtreeTk`
+* qtree_capacity_fact (um-para-muitos): `tk` <- `qtree_capacity_fact.qtreeTk`
+* volume_history_capacity_fact (um-para-muitos): `tk` <- `volume_history_capacity_fact.qtreeTk`
+
+
+'''
+
+
+=== service_level_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| nome | String | Nome do nível de serviço 
+
+
+| sequência | Número inteiro | Sequência 
+
+
+| custo | Decimal | Custo 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* internal_volume_capacity_fact (um-para-muitos): `tk` <- `internal_volume_capacity_fact.serviceLevelTk`
+* chargeback_fact (um-para-muitos): `tk` <- `chargeback_fact.serviceLevelTk`
+* vm_capacity_fact (um-para-muitos): `tk` <- `vm_capacity_fact.serviceLevelTk`
+* qtree_capacity_fact (um-para-muitos): `tk` <- `qtree_capacity_fact.serviceLevelTk`
+* volume_history_capacity_fact (um-para-muitos): `tk` <- `volume_history_capacity_fact.serviceLevelTk`
+
+
+'''
+
+
+=== sp_time_to_fill
+
+*Chave primária:* saspFactTk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| saspFactTk | Número inteiro | Chave técnica do fato do pool de storage 
+
+
+| daysToStoragePoolFull | Número inteiro | Dias até o pool de storage ficar cheio 
+
+
+| dateAtStoragePoolFull | Data | Data em que o pool de storage estará cheio 
+|===
+*Relacionamentos*
+
+* storage_and_storage_pool_capacity_fact (um para um): `saspFactTk` -> `storage_and_storage_pool_capacity_fact.tk`
+
+
+'''
+
+
+=== fato de capacidade de storage e pool de storage
+
+*Chave primária:* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| storagePoolTk | Número inteiro | Chave técnica do pool de armazenamento 
+
+
+| storageTk | Número inteiro | Chave técnica de armazenamento 
+
+
+| tierTk | Número inteiro | Chave técnica de tier 
+
+
+| backend | String | Flag de backend 
+
+
+| isVirtual | String | Bandeira virtual 
+
+
+| capacidadeMB | Longo | Capacidade total (MB) 
+
+
+| capacidadeBrutaMB | Longo | Capacidade bruta (MB) 
+
+
+| usedCapacityMB | Longo | Capacidade utilizada (MB) 
+
+
+| capacidadeBrutaUsadaMB | Longo | Capacidade bruta usada (MB) 
+
+
+| snapshotUsedCapacityMB | Longo | Capacidade utilizada do Snapshot (MB) 
+
+
+| snapshotUsedRawCapacityMB | Longo | Snapshot utilizou capacidade bruta (MB) 
+
+
+| softLimitCapacityMB | Longo | Limite flexível de capacidade (MB) 
+
+
+| capacidadeBrutaNãoConfiguradaMB | Longo | Capacidade bruta não configurada (MB) 
+
+
+| spareRawCapacityMB | Longo | Capacidade bruta de reserva (MB) 
+
+
+| failedRawCapacityMB | Longo | Falha na capacidade bruta (MB) 
+
+
+| volumeCapacityMB | Longo | Capacidade de volume (MB) 
+
+
+| Capacidade de volume não utilizado (MB) | Longo | Capacidade de volume não utilizada (MB) 
+
+
+| volumeConsumedCapacityMB | Longo | Capacidade consumida do volume (MB) 
+
+
+| mappedVolumeCapacityMB | Longo | Capacidade de volume mapeado (MB) 
+
+
+| maskedVolumeCapacityMB | Longo | Capacidade de volume mascarado (MB) 
+
+
+| internalVolumeAllocatedCapacityMB | Longo | Capacidade alocada de volume interno (MB) 
+
+
+| internalVolumeUsedCapacityMB | Longo | Capacidade utilizada do volume interno (MB) 
+
+
+| internalVolumeConsumedCapacityMB | Longo | Capacidade consumida do volume interno (MB) 
+
+
+| dedupeRatio | Decimal | Taxa de deduplicação 
+
+
+| dedupeSavingsGB | Decimal | Economia de desduplicação (GB) 
+
+
+| compressionRatio | Decimal | Taxa de compressão 
+
+
+| compressãoEconomizadaGB | Decimal | Economia de compressão (GB) 
+
+
+| compressionSavingsPercent | Decimal | Economia de compressão (%) 
+
+
+| objectStoreUsedSpaceGB | Decimal | Espaço utilizado pelo object store (GB) 
+
+
+| provisionedIops | Longo | IOPS provisionadas neste storage 
+
+
+| provisionedThroughput | Longo | Taxa de transferência provisionada neste storage (MiB/s) 
+
+
+| compactionRatio | Decimal | Taxa de compactação 
+
+
+| compactionSavingsGB | Decimal | Economias de compactação (GB) 
+|===
+*Relacionamentos*
+
+* sp_time_to_fill (um para um): `tk` <- `sp_time_to_fill.saspFactTk`
+* volume_history_capacity_fact (um-para-muitos): `tk` <- `volume_history_capacity_fact.storageAndSpFactTk`
+* dimensão_de_armazenamento (muitos-para-um): `storageTk`-> `storage_dimension.tk`
+* dimensão_de_nível (muitos-para-um): `tierTk`-> `tier_dimension.tk`
+* storage_pool_dimension (muitos para um): `storagePoolTk` -> `storage_pool_dimension.tk`
+* date_dimension (muitos-para-um): `dateTk` -> `date_dimension.tk`
+
+
+'''
+
+
+=== fato_futuro_de_capacidade_de_storage_e_pool_de_storage
+
+*Chave primária:* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| storagePoolTk | Número inteiro | Chave técnica do pool de armazenamento 
+
+
+| storageTk | Número inteiro | Chave técnica de armazenamento 
+
+
+| tierTk | Número inteiro | Chave técnica de tier 
+
+
+| backend | String | Flag de backend 
+
+
+| isVirtual | String | Bandeira virtual 
+
+
+| capacidadeMB | Longo | Capacidade projetada (MB) 
+
+
+| capacidadeBrutaMB | Longo | Capacidade bruta (MB) 
+
+
+| usedCapacityMB | Longo | Capacidade utilizada projetada (MB) 
+
+
+| capacidadeBrutaUsadaMB | Longo | Capacidade bruta usada projetada (MB) 
+|===
+*Relacionamentos*
+
+* dimensão_de_armazenamento (muitos-para-um): `storageTk`-> `storage_dimension.tk`
+* dimensão_de_nível (muitos-para-um): `tierTk`-> `tier_dimension.tk`
+* storage_pool_dimension (muitos para um): `storagePoolTk` -> `storage_pool_dimension.tk`
+* date_dimension (muitos-para-um): `dateTk` -> `date_dimension.tk`
+
+
+'''
+
+
+=== dimensão_de_storage
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| nome | String | Nome do armazenamento 
+
+
+| identificador | String | Identificador de armazenamento 
+
+
+| ip | String | Endereço IP 
+
+
+| modelo | String | Modelo de armazenamento 
+
+
+| fabricante | String | Fabricante 
+
+
+| serialNumber | String | Número de série 
+
+
+| microcodeVersion | String | Versão do microcode 
+
+
+| família | String | Família de storage 
+
+
+| url | String | URL de referência 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* internal_volume_capacity_fact (um-para-muitos): `tk` <- `internal_volume_capacity_fact.storageTk`
+* chargeback_fact (um-para-muitos): `tk` <- `chargeback_fact.storageTk`
+* disk_group_capacity_fact (um-para-muitos): `tk` <- `disk_group_capacity_fact.storageTk`
+* vm_capacity_fact (um-para-muitos): `tk` <- `vm_capacity_fact.storageTk`
+* disk_group_capacity_future_fact (um-para-muitos): `tk` <- `disk_group_capacity_future_fact.storageTk`
+* qtree_capacity_fact (um-para-muitos): `tk` <- `qtree_capacity_fact.storageTk`
+* storage_and_storage_pool_capacity_fact (um-para-muitos): `tk` <- `storage_and_storage_pool_capacity_fact.storageTk`
+* volume_history_capacity_fact (um-para-muitos): `tk` <- `volume_history_capacity_fact.storageTk`
+* storage_and_storage_pool_capacity_future_fact (um-para-muitos): `tk` <- `storage_and_storage_pool_capacity_future_fact.storageTk`
+* storage_node_capacity_fact (um-para-muitos): `tk` <- `storage_node_capacity_fact.storageTk`
+
+
+'''
+
+
+=== storage_node_capacity_fact
+
+*Chave primária:* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| storageTk | Número inteiro | Chave técnica de armazenamento 
+
+
+| storageNodeTk | Número inteiro | Chave técnica do storage node 
+
+
+| tierTk | Número inteiro | Chave técnica de tier 
+
+
+| utilização da capacidade total do nó MB | Longo | Utilização total da capacidade do nó (MB) 
+
+
+| utilizaçãoDaCapacidadeDoNóUtilizávelMB | Longo | Utilização da capacidade utilizável do nó (MB) 
+
+
+| utilização da capacidade do nó usado MB | Longo | Utilização da capacidade usada do nó (MB) 
+
+
+| utilização da capacidade do nó de metadados usado MB | Longo | Utilização da capacidade de metadados usada (MB) 
+
+
+| allowedMetaDataNodeCapacityUtilizationMB | Longo | Utilização permitida da capacidade de metadados (MB) 
+|===
+*Relacionamentos*
+
+* storage_node_dimension (muitos-para-um): `storageNodeTk` -> `storage_node_dimension.tk`
+* dimensão_de_armazenamento (muitos-para-um): `storageTk`-> `storage_dimension.tk`
+* dimensão_de_nível (muitos-para-um): `tierTk`-> `tier_dimension.tk`
+* date_dimension (muitos-para-um): `dateTk` -> `date_dimension.tk`
+
+
+'''
+
+
+=== dimensão_do_storage_node
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| nome | String | Nome do nó 
+
+
+| identificador | String | Identificador do nó 
+
+
+| versão | String | Versão do Node 
+
+
+| modelo | String | Modelo de nó 
+
+
+| serialNumber | String | Número de série 
+
+
+| siteName | String | Nome do site 
+
+
+| url | String | URL de referência 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| ActiveIQ | String | Anotação do ActiveIQ 
+|===
+*Relacionamentos*
+
+* storage_node_capacity_fact (um-para-muitos): `tk` <- `storage_node_capacity_fact.storageNodeTk`
+
+
+'''
+
+
+=== dimensão_do_pool_de_storage
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| identificador | String | Identificador do pool 
+
+
+| nome | String | Nome do pool 
+
+
+| storageName | String | Nome do armazenamento 
+
+
+| storageIP | String | IP de armazenamento 
+
+
+| tipo | String | Tipo de pool 
+
+
+| redundância | String | Nível de redundância 
+
+
+| thinProvisioningSupported | String | Flag de suporte a thin provisioning 
+
+
+| isVirtual | String | Bandeira virtual 
+
+
+| usesFlashPools | String | Usa a flag de flash pools 
+
+
+| url | String | URL de referência 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| Nível | String | Anotação de tier 
+
+
+| Província | String | Anotação de província 
+|===
+*Relacionamentos*
+
+* internal_volume_capacity_fact (um-para-muitos): `tk` <- `internal_volume_capacity_fact.storagePoolTk`
+* chargeback_fact (um-para-muitos): `tk` <- `chargeback_fact.storagePoolTk`
+* disk_group_capacity_fact (um-para-muitos): `tk` <- `disk_group_capacity_fact.storagePoolTk`
+* disk_group_capacity_future_fact (um-para-muitos): `tk` <- `disk_group_capacity_future_fact.storagePoolTk`
+* qtree_capacity_fact (um-para-muitos): `tk` <- `qtree_capacity_fact.storagePoolTk`
+* storage_and_storage_pool_capacity_fact (um-para-muitos): `tk` <- `storage_and_storage_pool_capacity_fact.storagePoolTk`
+* volume_history_capacity_fact (um-para-muitos): `tk` <- `volume_history_capacity_fact.storagePoolTk`
+* storage_and_storage_pool_capacity_future_fact (um-para-muitos): `tk` <- `storage_and_storage_pool_capacity_future_fact.storagePoolTk`
+
+
+'''
+
+
+=== dimensão_de_tier
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| nome | String | Nome do nível 
+
+
+| sequência | Número inteiro | Sequência 
+
+
+| custo | Decimal | Custo 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* internal_volume_capacity_fact (um-para-muitos): `tk` <- `internal_volume_capacity_fact.tierTk`
+* chargeback_fact (um-para-muitos): `tk` <- `chargeback_fact.tierTk`
+* vm_capacity_fact (um-para-muitos): `tk` <- `vm_capacity_fact.tierTk`
+* qtree_capacity_fact (um-para-muitos): `tk` <- `qtree_capacity_fact.tierTk`
+* storage_and_storage_pool_capacity_fact (um-para-muitos): `tk` <- `storage_and_storage_pool_capacity_fact.tierTk`
+* volume_history_capacity_fact (um-para-muitos): `tk` <- `volume_history_capacity_fact.tierTk`
+* storage_and_storage_pool_capacity_future_fact (um-para-muitos): `tk` <- `storage_and_storage_pool_capacity_future_fact.tierTk`
+* storage_node_capacity_fact (um-para-muitos): `tk` <- `storage_node_capacity_fact.tierTk`
+
+
+'''
+
+
+=== vm_capacity_fact
+
+*Chave primária:* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| hostTk | Número inteiro | Chave técnica do host 
+
+
+| storageTk | Número inteiro | Chave técnica de armazenamento 
+
+
+| virtualStorageTk | Número inteiro | Chave técnica de armazenamento virtual 
+
+
+| internalVolumeTk | Número inteiro | Chave técnica de volume interno 
+
+
+| qtreeTk | Número inteiro | Chave técnica do Qtree 
+
+
+| hostGroupTk | Número inteiro | Chave técnica do host group 
+
+
+| applicationTk | Número inteiro | Chave técnica de aplicação 
+
+
+| applicationGroupTk | Número inteiro | Chave técnica do grupo de aplicação 
+
+
+| tierTk | Número inteiro | Chave técnica de tier 
+
+
+| serviceLevelTk | Número inteiro | Chave técnica de nível de serviço 
+
+
+| vmTk | Número inteiro | Chave técnica VM 
+
+
+| dataStoreTk | Número inteiro | Chave técnica do datastore 
+
+
+| dataStoreName | String | Nome do datastore 
+
+
+| dataStoreId | Longo | ID do Datastore 
+
+
+| virtualCenterIp | String | IP do vCenter 
+
+
+| businessUnit | String | Unidade de negócios 
+
+
+| businessEntityTk | Número inteiro | Chave técnica da entidade comercial 
+
+
+| k8sNodeTk | Número inteiro | Chave técnica do nó Kubernetes 
+
+
+| storageAccessType | String | Tipo de acesso ao armazenamento 
+
+
+| capacityType | String | Tipo de capacidade 
+
+
+| actualMB | Longo | Capacidade real (MB) 
+
+
+| provisionedMB | Longo | Capacidade provisionada (MB) 
+|===
+*Relacionamentos*
+
+* dimensão_volume_interno (muitos-para-um): `internalVolumeTk`-> `internal_volume_dimension.tk`
+* dimensão_de_armazenamento (muitos-para-um): `storageTk`-> `storage_dimension.tk`
+* dimensão_entidade_negócio (muitos-para-um): `businessEntityTk`-> `business_entity_dimension.tk`
+* k8s_node_dimension (muitos para um): `k8sNodeTk`-> `k8s_node_dimension.tk`
+* host_group_dimension (muitos para um): `hostGroupTk` -> `host_group_dimension.tk`
+* vm_dimension (muitos para um): `vmTk` -> `vm_dimension.tk`
+* application_group_dimension (muitos para um): `applicationGroupTk` -> `application_group_dimension.tk`
+* service_level_dimension (muitos-para-um): `serviceLevelTk` -> `service_level_dimension.tk`
+* tipo_de_capacidade (muitos-para-um): `capacityType` -> `capacity_type.type`
+* dimensão_de_nível (muitos-para-um): `tierTk`-> `tier_dimension.tk`
+* dimensão_da_aplicação (muitos-para-um): `applicationTk`-> `application_dimension.tk`
+* dimensão_armazenamento_de_dados (muitos-para-um): `dataStoreTk` -> `datastore_dimension.tk`
+* qtree_dimension (muitos-para-um): `qtreeTk` -> `qtree_dimension.tk`
+* dimensão_do_host (muitos-para-um): `hostTk`-> `host_dimension.tk`
+* date_dimension (muitos-para-um): `dateTk` -> `date_dimension.tk`
+
+
+'''
+
+
+=== vm_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| nome | String | Nome da VM 
+
+
+| naturalKey | String | Chave natural 
+
+
+| os | String | Sistema operacional 
+
+
+| virtualCenterIp | String | IP do vCenter 
+
+
+| ips | String | Endereços IP 
+
+
+| url | String | URL de referência 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+|===
+*Relacionamentos*
+
+* vm_capacity_fact (um-para-muitos): `tk` <- `vm_capacity_fact.vmTk`
+
+
+'''
+
+
+=== volume_capacity_fact
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| volumeTk | Número inteiro | Chave técnica de volume 
+
+
+| chargebackFactTk | Número inteiro | Chave técnica do fato de chargeback 
+
+
+| storageAndSpFactTk | Número inteiro | Informações técnicas essenciais sobre armazenamento e pool 
+
+
+| hostTk | Número inteiro | Chave técnica do host 
+
+
+| storageTk | Número inteiro | Chave técnica de armazenamento 
+
+
+| hostGroupTk | Número inteiro | Chave técnica do host group 
+
+
+| tierTk | Número inteiro | Chave técnica de tier 
+
+
+| serviceLevelTk | Número inteiro | Chave técnica de nível de serviço 
+
+
+| storagePoolTk | Número inteiro | Chave técnica do pool de armazenamento 
+
+
+| internalVolumeTk | Número inteiro | Chave técnica de volume interno 
+
+
+| qtreeTk | Número inteiro | Chave técnica do Qtree 
+
+
+| k8sNamespaceTk | Número inteiro | Chave técnica do namespace do Kubernetes 
+
+
+| k8sNamespaceGroupTk | Número inteiro | Chave técnica do grupo de namespace do Kubernetes 
+
+
+| isVirtual | String | Bandeira virtual 
+
+
+| isBackend | String | Flag de backend 
+
+
+| protectionType | String | Tipo de proteção 
+
+
+| isAccessed | String | Flag acessada 
+
+
+| isOrphaned | String | Bandeira órfã 
+
+
+| isProtection | String | Bandeira de proteção 
+
+
+| isUnused | String | Bandeira não utilizada 
+
+
+| provisionedCapacityMB | Longo | Capacidade provisionada (MB) 
+
+
+| accessedCapacityMB | Longo | Capacidade acessada (MB) 
+
+
+| capacidade órfã MB | Longo | Capacidade órfã (MB) 
+
+
+| capacidadeDeProteçãoMB | Longo | Capacidade de proteção (MB) 
+
+
+| unusedCapacityMB | Longo | Capacidade não utilizada (MB) 
+
+
+| daysSinceLastAccessed | Número inteiro | Dias desde o último acesso 
+|===
+'''
+
+
+=== dimensão_do_volume
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| storageIdentifier | String | Identificador de armazenamento 
+
+
+| nome | String | Nome do volume 
+
+
+| rótulo | String | Rótulo de volume 
+
+
+| thinProvisioned | String | Sinalizador de thin provisioned 
+
+
+| tipo | String | Tipo de volume 
+
+
+| isVirtual | String | Bandeira virtual 
+
+
+| meta | String | Indicador de metadados 
+
+
+| Snapshot | String | Flag de Snapshot 
+
+
+| technologyType | String | Tipo de tecnologia 
+
+
+| uuid | String | UUID 
+
+
+| isMainframe | String | Bandeira de mainframe 
+
+
+| url | String | URL de referência 
+
+
+| id | Longo | Identificador único 
+
+
+| mais recente | String | Última flag 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| Entidade comercial | String | Anotação de entidade comercial 
+
+
+| Nível | String | Anotação de tier 
+|===
+*Relacionamentos*
+
+* volume_history_capacity_fact (um-para-muitos): `tk` <- `volume_history_capacity_fact.volumeTk`
+
+
+'''
+
+
+=== volume_fact_current
+
+*Chave primária:* volumeId
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| chargebackFactTk | Número inteiro | Chave técnica do fato de chargeback 
+
+
+| volumeId | Longo | ID do volume 
+
+
+| storageId | Longo | ID de armazenamento 
+
+
+| volumeName | String | Nome do volume 
+
+
+| volumeType | String | Tipo de volume 
+
+
+| thinProvisioned | String | Sinalizador de thin provisioned 
+
+
+| isVirtual | String | Bandeira virtual 
+
+
+| Snapshot | String | Flag de Snapshot 
+
+
+| technologyType | String | Tipo de tecnologia 
+
+
+| capacidade utilizável física (MB) | Longo | Capacidade utilizável (MB) 
+
+
+| physicalRawMB | Longo | Capacidade bruta (MB) 
+
+
+| provisionedUsableMB | Longo | Capacidade utilizável (MB) 
+
+
+| provisionedRawMB | Longo | Capacidade bruta (MB) 
+|===
+*Relacionamentos*
+
+* chargeback_fact (muitos-para-um): `chargebackFactTk` -> `chargeback_fact.tk`
+
+
+'''
+
+
+=== volume_history_capacity_fact
+
+*Chave primária:* tk, dateTk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| tk | Número inteiro | Chave técnica 
+
+
+| dateTk | Número inteiro | Chave técnica de data 
+
+
+| volumeTk | Número inteiro | Chave técnica de volume 
+
+
+| chargebackFactTk | Número inteiro | Chave técnica do fato de chargeback 
+
+
+| storageAndSpFactTk | Número inteiro | Informações técnicas essenciais sobre armazenamento e pool 
+
+
+| hostTk | Número inteiro | Chave técnica do host 
+
+
+| storageTk | Número inteiro | Chave técnica de armazenamento 
+
+
+| hostGroupTk | Número inteiro | Chave técnica do host group 
+
+
+| tierTk | Número inteiro | Chave técnica de tier 
+
+
+| serviceLevelTk | Número inteiro | Chave técnica de nível de serviço 
+
+
+| storagePoolTk | Número inteiro | Chave técnica do pool de armazenamento 
+
+
+| internalVolumeTk | Número inteiro | Chave técnica de volume interno 
+
+
+| qtreeTk | Número inteiro | Chave técnica do Qtree 
+
+
+| k8sNamespaceTk | Número inteiro | Chave técnica do namespace do Kubernetes 
+
+
+| k8sNamespaceGroupTk | Número inteiro | Chave técnica do grupo de namespace do Kubernetes 
+
+
+| isVirtual | String | Bandeira virtual 
+
+
+| isBackend | String | Flag de backend 
+
+
+| protectionType | String | Tipo de proteção 
+
+
+| isAccessed | String | Flag acessada 
+
+
+| isOrphaned | String | Bandeira órfã 
+
+
+| isProtection | String | Bandeira de proteção 
+
+
+| isUnused | String | Bandeira não utilizada 
+
+
+| isMasked | String | Bandeira mascarada 
+
+
+| isMapped | String | Bandeira mapeada 
+
+
+| provisionedCapacityMB | Longo | Capacidade provisionada (MB) 
+
+
+| accessedCapacityMB | Longo | Capacidade acessada (MB) 
+
+
+| capacidade órfã MB | Longo | Capacidade órfã (MB) 
+
+
+| capacidadeDeProteçãoMB | Longo | Capacidade de proteção (MB) 
+
+
+| unusedCapacityMB | Longo | Capacidade não utilizada (MB) 
+
+
+| consumedCapacityMB | Longo | Capacidade consumida (MB) 
+
+
+| daysSinceLastAccessed | Número inteiro | Dias desde o último acesso 
+|===
+*Relacionamentos*
+
+* chargeback_fact (muitos-para-um): `chargebackFactTk` -> `chargeback_fact.tk`
+* dimensão_volume_interno (muitos-para-um): `internalVolumeTk`-> `internal_volume_dimension.tk`
+* dimensão_de_armazenamento (muitos-para-um): `storageTk`-> `storage_dimension.tk`
+* storage_and_storage_pool_capacity_fact (muitos para um): `storageAndSpFactTk` -> `storage_and_storage_pool_capacity_fact.tk`
+* host_group_dimension (muitos para um): `hostGroupTk` -> `host_group_dimension.tk`
+* k8s_namespace_group_dimension (muitos para um): `k8sNamespaceGroupTk` -> `k8s_namespace_group_dimension.tk`
+* service_level_dimension (muitos-para-um): `serviceLevelTk` -> `service_level_dimension.tk`
+* dimensão_de_nível (muitos-para-um): `tierTk`-> `tier_dimension.tk`
+* storage_pool_dimension (muitos para um): `storagePoolTk` -> `storage_pool_dimension.tk`
+* qtree_dimension (muitos-para-um): `qtreeTk` -> `qtree_dimension.tk`
+* dimensão_do_host (muitos-para-um): `hostTk`-> `host_dimension.tk`
+* date_dimension (muitos-para-um): `dateTk` -> `date_dimension.tk`
+* dimensão_volume (muitos-para-um): `volumeTk` -> `volume_dimension.tk`
+
+
+'''
+
+
+=== volume_last_accessed_time
+
+*Chave primária:* volumeName, storageIdentifier
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descrição 
+
+
+| volumeId | Longo | ID do volume 
+
+
+| volumeName | String | Nome do volume 
+
+
+| storageIdentifier | String | Identificador de armazenamento 
+
+
+| lastAccessed | DateTimeOffset | Carimbo de data/hora do último acesso 
+|===
+'''
