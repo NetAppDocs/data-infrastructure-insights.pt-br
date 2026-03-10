@@ -284,6 +284,9 @@ Lista alfabética de coletores de dados suportados pelo Data Infrastructure Insi
 | link:task_config_telegraf_redis.html["Redis"] | Serviço 
 
 
+| link:task_dc_redhat_openshift virtualization.html[Virtualização Red Hat OpenShift ] | Infraestrutura 
+
+
 | link:task_config_telegraf_rethinkdb.html["RepensarDB"] | Serviço 
 
 
