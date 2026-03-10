@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_pure_flashblade.html 
-keywords: data collector, Pure Storage, pure, FlashBlade 
-summary: Configurando o coletor de dados do Pure Storage. 
+keywords: data collector, Pure Storage, pure, FlashBlade, flashblade 
+summary: Configurando o coletor de dados Pure FlashBlade Storage 
 ---
 = Coletor de dados Pure Storage FlashBlade
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-O Data Infrastructure Insights usa o coletor de dados Pure Storage FlashBlade para coletar dados de inventário e desempenho de clusters FlashBlade que expõem a versão 2 de sua API REST
+Data Infrastructure Insights utiliza o coletor de dados Pure Storage FlashBlade para reunir dados de inventário e desempenho de clusters FlashBlade que expõem a versão 2 de sua API REST.
 
 
 
@@ -18,7 +22,7 @@ O Data Infrastructure Insights usa o coletor de dados Pure Storage FlashBlade pa
 
 Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -55,7 +59,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -72,7 +76,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -98,7 +102,7 @@ Algumas coisas que você pode tentar se tiver problemas com este coletor de dado
 
 === Inventário
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Experimente isto: 
 

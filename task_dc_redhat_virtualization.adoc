@@ -7,6 +7,10 @@ summary: Configurando o coletor de dados do Red Hat Virtualization.
 = Coletor de dados de virtualização Red Hat
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

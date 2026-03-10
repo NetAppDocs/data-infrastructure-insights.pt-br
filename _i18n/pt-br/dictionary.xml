@@ -3841,8 +3841,6 @@
   <block id="c570274e8fb013719523945c6aff02f1" category="cell"><block ref="c570274e8fb013719523945c6aff02f1" category="inline-link-macro-rx"></block></block>
   <block id="4f24197d0503e262d29c81199ac0627c" category="inline-link-macro">VMs e VHDs do Azure</block>
   <block id="e00ad4181c9c1bb044b8dda82a2eb37c" category="cell"><block ref="e00ad4181c9c1bb044b8dda82a2eb37c" category="inline-link-macro-rx"></block></block>
-  <block id="c3dc9f108879520f071bfe791b64d931" category="inline-link-macro">Consultor de Rede Brocade (BNA)</block>
-  <block id="72981d1d7e5b9b8d922639718df6b13d" category="cell"><block ref="72981d1d7e5b9b8d922639718df6b13d" category="inline-link-macro-rx"></block></block>
   <block id="0491f979e459c21ca1a650d5bee1bedf" category="inline-link-macro">Switches Fibre Channel Brocade</block>
   <block id="6ae88aee808190aba1b5e4acb58392b7" category="cell"><block ref="6ae88aee808190aba1b5e4acb58392b7" category="inline-link-macro-rx"></block></block>
   <block id="764f447ccb3bf87ad75ec71c633b9966" category="inline-link-macro">Brocade FOS REST</block>
@@ -3895,8 +3893,6 @@
   <block id="3a1038b8fbe1e88b4f3c1b247da07798" category="cell"><block ref="3a1038b8fbe1e88b4f3c1b247da07798" category="inline-link-macro-rx"></block></block>
   <block id="39ba7675313c799c9b706c8928b535f6" category="inline-link-macro">Piscar</block>
   <block id="f1161d8aad902843d64ca7e6b3db0f14" category="cell"><block ref="f1161d8aad902843d64ca7e6b3db0f14" category="inline-link-macro-rx"></block></block>
-  <block id="0ac136d62167ae2749430a7b083e6d88" category="inline-link-macro">Fujitsu ETERNUS DX</block>
-  <block id="99a28d8d1439c7da877285fec312185a" category="cell"><block ref="99a28d8d1439c7da877285fec312185a" category="inline-link-macro-rx"></block></block>
   <block id="12087a5da9bcdb90a9ac3a7931c38b46" category="inline-link-macro">Google Compute e Armazenamento</block>
   <block id="8e0a555918ddd0d3171e923d8ec8927b" category="cell"><block ref="8e0a555918ddd0d3171e923d8ec8927b" category="inline-link-macro-rx"></block></block>
   <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetApp Volumes</block>
@@ -3957,10 +3953,6 @@
   <block id="4d9746bceefe2b6bd2586d1c3e4d2733" category="cell"><block ref="4d9746bceefe2b6bd2586d1c3e4d2733" category="inline-link-macro-rx"></block></block>
   <block id="b988e43525055930d8d214d3116d4c04" category="inline-link-macro">NetApp Cloud Volumes ONTAP</block>
   <block id="ecf8390ebf4bfbf85b7308b7ca58aaa1" category="cell"><block ref="ecf8390ebf4bfbf85b7308b7ca58aaa1" category="inline-link-macro-rx"></block></block>
-  <block id="acb242e4a47b7f1537825e1c4eacc87a" category="inline-link-macro">Conexão NetApp Cloud para ONTAP 9.9+</block>
-  <block id="32b322f0c18e116c5d878598d8fedae2" category="cell"><block ref="32b322f0c18e116c5d878598d8fedae2" category="inline-link-macro-rx"></block></block>
-  <block id="995d9995da501d3734932d95524f1a35" category="inline-link-macro">NetApp Data ONTAP 7-Mode</block>
-  <block id="2e59af567907cf6ad1ae87c0cac8e6dd" category="cell"><block ref="2e59af567907cf6ad1ae87c0cac8e6dd" category="inline-link-macro-rx"></block></block>
   <block id="0311befd4f8a4eb64d5f02957a8b1d99" category="inline-link-macro">NetApp Série E</block>
   <block id="263caec9c413672e1829ba1b317a5b42" category="cell"><block ref="263caec9c413672e1829ba1b317a5b42" category="inline-link-macro-rx"></block></block>
   <block id="8fd194517d64c215a9c8b5e2b8d0f67e" category="inline-link-macro">REST da série E da NetApp</block>
@@ -9156,7 +9148,6 @@
   <block id="b9249fd328314d6a7d2f42e8e3c6b5d4" category="summary">Configurando o coletor de dados VPLEX.</block>
   <block id="60681db287042fdbd55c4c2ed95ce0f0" category="doc">Configurando o coletor de dados EMC VPLEX</block>
   <block id="dbbc7759d6fa847682027ce2d68707f9" category="paragraph">Este coletor de dados adquire dados de inventário e desempenho dos sistemas de armazenamento EMC VPLEX.  Para configuração, o coletor de dados requer um endereço IP do servidor VPLEX e uma conta de domínio de nível administrativo.</block>
-  <block id="8f3f7ce90dce9ce91bcc07b31bdc1b6b" category="admonition">A coleta de desempenho do Data Infrastructure Insights de clusters Vplex exige que o serviço de arquivamento de desempenho esteja operacional para preencher os arquivos .CSV e logs que o Data Infrastructure Insights recupera por meio de cópias de arquivo baseadas em SCP.  A NetApp observou que muitas atualizações de firmware/estação de gerenciamento do Vplex deixarão essa funcionalidade inoperante.  Os clientes que planejam tais atualizações podem querer perguntar proativamente à Dell/EMC se a atualização planejada deixará essa funcionalidade inoperante e, em caso afirmativo, como eles podem reabilitá-la para minimizar lacunas na visibilidade do desempenho?  O código de desempenho Vplex do Cloud Insight avaliará em cada pesquisa se todos os arquivos esperados existem e se eles estão sendo atualizados corretamente; se estiverem ausentes ou obsoletos, o Data Infrastructure Insights registrará falhas na coleta de desempenho.</block>
   <block id="b9e79e40b10e4cd3212004f5560b2da1" category="paragraph">O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados VPLEX.  Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para esse ativo.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:</block>
   <block id="7bfa30721c5e726ff17e3f972237a82c" category="cell">Motor</block>
   <block id="4aa531638ba8a3023953a131c634e8d1" category="cell">Dispositivo, extensão do sistema</block>
@@ -10222,7 +10213,6 @@
   <block id="755b12aafe5dc12ab98be034e0bc593a" category="cell">“Credenciais de login inválidas” com mensagens de erro “A política não permite” ou “Você não está autorizado”</block>
   <block id="e3023c7402b94962861565244cb9f3d0" category="cell">Validar conta de usuário e senha Pure via interface http Pure</block>
   <block id="ea0b91ea0d8c2da2db5e90fb9a4e9e26" category="doc">Coletor de dados Pure Storage FlashBlade</block>
-  <block id="0dc4fd6064fea67266d1837f3d33b6e0" category="paragraph">O Data Infrastructure Insights usa o coletor de dados Pure Storage FlashBlade para coletar dados de inventário e desempenho de clusters FlashBlade que expõem a versão 2 de sua API REST</block>
   <block id="26c7e129f928f6ba8485b8308659b929" category="cell">Bucket de armazenamento de objetos</block>
   <block id="c307e1b8edd2b5d784d81d211f67c2e5" category="list-text">Endereço IP do sistema de armazenamento ou nome de domínio totalmente qualificado</block>
   <block id="ae4fab3dbcbe018dadb4c33b8b70b2e8" category="list-text">Token de API, idealmente com vida útil infinita.  Um usuário com nível somente leitura deve ser suficiente.</block>
@@ -12376,7 +12366,6 @@
   <block id="bb88c75c573c51be16c7d85804e7a9fe" category="sidebar">Nutanix</block>
   <block id="30162ed78b6c10f731411f2fc440c24f" category="sidebar">Oráculo</block>
   <block id="d30973809f2e4238b7eb2bac9241674c" category="sidebar">Puro</block>
-  <block id="1d9fc183665bd1e195391190be506894" category="sidebar">Chapéu Vermelho</block>
   <block id="38d38399d4a7514463d665125ae50a4a" category="sidebar">Rubrica CDM</block>
   <block id="56079badd056a19303cc26e6a4fcc7e0" category="sidebar">VMware</block>
   <block id="8683de0aa24eead7d9ee8d3fdaa00cbc" category="sidebar">Referência do Coletor de Dados - Serviços</block>
@@ -14658,4 +14647,10 @@
   <block id="e30ec09a4c79b55e1ccfc1955c76c379" category="cell">switchLevel</block>
   <block id="e10c8c70fc9c70d82df6e3c2ea10ceed" category="cell">Nível do switch</block>
   <block id="549ae8b6dea4926a2af206c5d7300fc5" category="paragraph">Antes de começar a trabalhar com Data Infrastructure Insights, você deve se cadastrar no portal *NetApp Console*. Se você já possui um login do NetApp Console, pode iniciar uma avaliação gratuita do Data Infrastructure Insights em poucos passos.</block>
+  <block id="93e49907cf8d9ecec89d856c3d49fb2f" category="inline-link-macro">Pure FlashBlade</block>
+  <block id="f92f77015be3ec66c79ba43a2aec5f69" category="cell"><block ref="f92f77015be3ec66c79ba43a2aec5f69" category="inline-link-macro-rx"></block></block>
+  <block id="52e4ed377cdb874dec547eb79615f673" category="admonition">A coleta de desempenho do Data Infrastructure Insights a partir de clusters VPLEX exige que o serviço de arquivamento de desempenho esteja operacional, para preencher os arquivos .CSV e logs que o Data Infrastructure Insights recupera por meio de cópias de arquivos baseadas em SCP. NetApp observou que muitas atualizações de firmware/estações de gerenciamento do VPLEX deixam essa funcionalidade inoperante. Clientes que planejam tais atualizações podem querer perguntar proativamente à Dell/EMC se a atualização planejada deixará essa funcionalidade inoperante e, em caso afirmativo, como podem reativá-la para minimizar lacunas na visibilidade do desempenho. O código de desempenho do VPLEX do Cloud Insights avaliará a cada consulta se todos os arquivos esperados existem e se estão sendo atualizados corretamente; se estiverem ausentes ou desatualizados, Data Infrastructure Insights registrará falhas na coleta de desempenho.</block>
+  <block id="de9fcff157c3fd05f707a7b227a45275" category="summary">Configurando o coletor de dados Pure FlashBlade Storage</block>
+  <block id="c0c126a33a6cd3661eae0fb5eca89c2d" category="paragraph">Data Infrastructure Insights utiliza o coletor de dados Pure Storage FlashBlade para reunir dados de inventário e desempenho de clusters FlashBlade que expõem a versão 2 de sua API REST.</block>
+  <block id="80e910f35b12e9c61335fa88de36edd0" category="sidebar">Red Hat Virtualization</block>
 </blocks>

@@ -447,7 +447,7 @@ sidebar:
         url: "/task_dc_oracle_zfs.html"
       - title: Puro
         url: "/task_dc_pure_flasharray.html"
-      - title: Chapéu Vermelho
+      - title: Red Hat Virtualization
         url: "/task_dc_redhat_virtualization.html"
       - title: Rubrica CDM
         url: "/task_dc_rubrik_cdm.html"
