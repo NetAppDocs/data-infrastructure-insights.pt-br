@@ -93,16 +93,6 @@ sidebar:
         url: "/concept_log_explorer.html"
       - title: Identificando dispositivos inativos
         url: "/task_identify_inactive_devices.html"
-    - title: Percepções
-      entries:
-      - title: Visão geral
-        url: "/insights_overview.html"
-      - title: Recursos compartilhados sob estresse
-        url: "/insights_shared_resources_under_stress.html"
-      - title: Espaços para namespaces do Kubernetes ficando sem espaço
-        url: "/insights_k8s_namespaces_running_out_of_space.html"
-      - title: Recuperar armazenamento refrigerado ONTAP
-        url: "/insights_reclaim_ontap_cold_storage.html"
     - title: Monitores e Alertas
       entries:
       - title: Criando Monitores
