@@ -7,10 +7,17 @@ summary: Configuração do coletor de dados Redis
 = Coletor de dados Redis
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do Redis.  Redis é um armazenamento de estrutura de dados de código aberto, na memória, usado como banco de dados, cache e corretor de mensagens, suportando as seguintes estruturas de dados: strings, hashes, listas, conjuntos e muito mais.
+
+
+NOTE: Este coletor está obsoleto. Ele não estará mais disponível a partir de janeiro de 2027.
 
 
 

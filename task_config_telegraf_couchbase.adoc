@@ -7,10 +7,17 @@ summary: Configuração do coletor de dados do Couchbase
 = Coletor de dados Couchbase
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do Couchbase.
+
+
+NOTE: Este coletor está obsoleto. Ele não estará mais disponível a partir de janeiro de 2027.
 
 
 

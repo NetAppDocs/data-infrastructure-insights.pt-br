@@ -7,10 +7,14 @@ summary: Configurando o coletor de dados do DELL EMC Data Domain.
 = Coletor de dados DELL EMC Data Domain
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Este coletor de dados reúne informações de inventário e desempenho dos sistemas de armazenamento de desduplicação DELL EMC Data Domain.  Para configurar este coletor de dados, há instruções de configuração específicas e recomendações de uso que você deve seguir.
+Este coletor de dados reúne informações de inventário de sistemas de armazenamento com deduplicação DELL EMC Data Domain. Para configurar este coletor de dados, existem instruções de configuração específicas e recomendações de uso que você deve seguir.
 
 
 

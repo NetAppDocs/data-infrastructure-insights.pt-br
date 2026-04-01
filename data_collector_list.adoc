@@ -233,9 +233,6 @@ Lista alfabética de coletores de dados suportados pelo Data Infrastructure Insi
 | link:task_dc_na_ontap_rest.html["Coletor NetApp ONTAP REST"] | Infraestrutura 
 
 
-| link:task_dc_na_ontap_afx.html["NetApp ONTAP AFX"] | Infraestrutura 
-
-
 | link:task_dc_na_ontap_all_san_array.html["Coletor NetApp ONTAP ASA r2 (All-SAN Array)"] | Infraestrutura 
 
 
@@ -272,13 +269,16 @@ Lista alfabética de coletores de dados suportados pelo Data Infrastructure Insi
 | link:task_config_telegraf_puppetagent.html["Agente Fantoche"] | Serviço 
 
 
-| link:task_dc_pure_flashblade.html["Pure FlashBlade"] | Infraestrutura 
-
-
 | link:task_dc_pure_flasharray.html["FlashArray de armazenamento puro"] | Infraestrutura 
 
 
+| link:task_dc_pure_flashblade.html["Pure Storage FlashBlade"] | Infraestrutura 
+
+
 | link:task_dc_redhat_virtualization.html["Virtualização Red Hat"] | Infraestrutura 
+
+
+| link:task_dc_redhat_openshift_virtualization.html["Virtualização do Red Hat OpenShift"] | Infraestrutura 
 
 
 | link:task_config_telegraf_redis.html["Redis"] | Serviço 

@@ -7,10 +7,17 @@ summary: Configuração do coletor de dados Kibana
 = Coletor de Dados Kibana
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do Kibana.
+
+
+NOTE: Este coletor está obsoleto. Ele não estará mais disponível a partir de janeiro de 2027.
 
 
 

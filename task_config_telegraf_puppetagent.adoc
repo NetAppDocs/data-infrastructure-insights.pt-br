@@ -7,10 +7,17 @@ summary: Configuração do coletor de dados Puppet
 = Coletor de dados do agente fantoche
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 O Data Infrastructure Insights usa esse coletor de dados para coletar métricas do Puppet Agent.
+
+
+NOTE: Este coletor está obsoleto. Ele não estará mais disponível a partir de janeiro de 2027.
 
 
 

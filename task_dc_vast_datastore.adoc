@@ -7,6 +7,10 @@ summary: Configurando o coletor de dados de armazenamento VAST Data DataStore.
 = Coletor de dados VAST DataStore
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

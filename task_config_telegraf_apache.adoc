@@ -7,10 +7,17 @@ summary: Configuração do coletor de dados do Apache
 = Coletor de Dados Apache
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 Este coletor de dados permite a coleta de dados de servidores Apache em seu locatário.
+
+
+NOTE: Este coletor está obsoleto. Ele não estará mais disponível a partir de janeiro de 2027.
 
 .Pré-requisitos
 * Você deve ter seu servidor Apache HTTP configurado e funcionando corretamente
