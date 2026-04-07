@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: ws_alert_exclusions.html 
+keywords: workload security, cloud secure, include list, allowed, file types, ransomware, tampering, exclusion, alerts 
+summary: Adicione extensões de arquivo a uma lista de exclusão de alertas para reduzir alertas. 
+---
+= Exclusões de alerta
+:allow-uri-read: 
+
+
+[role="lead"]
+Se um ataque de adulteração de arquivos for detectado para uma extensão de arquivo conhecida e alertas estiverem sendo gerados na tela de Alertas, essa extensão de arquivo poderá ser adicionada a uma lista de _exclusões de alerta_ para evitar alertas desnecessários. Isso também pode ser considerado uma lista de _tipos de arquivo permitidos_, já que Workload Security permitirá que esses arquivos ignorem os alertas de adulteração.
+
+Acesse *Segurança da Carga de Trabalho > Políticas* e vá para a guia _Exclusões de Alerta_.
+
+image:ws_alert_exclusions_list.png["Tipos de arquivo permitidos a serem excluídos de alertas"]
+
+Uma vez adicionado à lista de tipos de arquivo permitidos, nenhum alerta de ataque de adulteração de arquivo será gerado para esse tipo de arquivo. Observe que a política de Exclusão de Alerta se aplica somente à detecção de adulteração de arquivo.
+
+Por exemplo, se um arquivo chamado _test.txt_ for renomeado para _test.txt.abc_ e Workload Security estiver detectando um ataque de adulteração de arquivo devido à extensão _.abc_, a extensão _.abc_ pode ser adicionada à lista de tipos de arquivo permitidos. Após ser adicionada à lista, ataques de adulteração de arquivo não serão mais gerados contra arquivos com a extensão _.abc_.
+
+Os tipos de arquivo permitidos podem ser correspondências exatas (por exemplo, ".abc") ou expressões (por exemplo, "*.type", ".type*" ou ".*type*"). Expressões dos tipos ".a*c", ".p*f" não são suportadas.
+
+Foram introduzidos os atributos adicionais 'Definido por' e 'Data de definição' para fins de auditoria. Os tipos de arquivo existentes serão migrados para o novo formato com os valores de ambos os atributos definidos como 'migrados'.

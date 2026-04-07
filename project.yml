@@ -261,9 +261,9 @@ sidebar:
         url: "/forensic_user_overview.html"
     - title: Políticas de Resposta Automatizada
       url: "/cs_automated_response_policies.html"
-    - title: Políticas de tipos de arquivo permitidos
-      url: "/ws_allowed_file_types.html"
-    - title: Integração de proteção autônoma ONTAP
+    - title: Exclusões de alerta
+      url: "/ws_alert_exclusions.html"
+    - title: Integração da proteção autônoma contra ransomware ONTAP
       url: "/concept_cs_integration_with_ontap_arp.html"
     - title: Integração de acesso negado ONTAP
       url: "/concept_ws_integration_with_ontap_access_denied.html"
