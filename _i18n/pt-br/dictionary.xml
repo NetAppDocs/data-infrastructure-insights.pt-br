@@ -14495,12 +14495,9 @@
   <block id="9b5911ec569b49f0ae81ecb2c9067806" category="sidebar">Integração da proteção autônoma contra ransomware ONTAP</block>
   <block id="1fe01bac09fca89fb6f196d8c95401dc" category="paragraph">A Exclusão de Alertas permite suprimir a geração de alertas para tipos de arquivo, usuários e caminhos de diretório específicos. Use isso para reduzir falsos positivos, excluindo atividades conhecidas e esperadas que, de outra forma, poderiam corresponder aos padrões de alerta.</block>
   <block id="3b39eff6bd46ab915c26d8ab9ed7bb91" category="paragraph">A exclusão de alertas é configurada por locatário e inclui o seguinte:</block>
-  <block id="1ce4fd7b116c43c936cc8ddbaa51ce99" category="inline-link-macro">extensões de arquivo</block>
-  <block id="f49e387bd8ac75fdab8d848695d1de88" category="list-text">Tipos de arquivo: suprimir alertas de adulteração de arquivos em tipos específicos <block ref="10b52059d1feedcec024042c1bbd1e91" category="inline-link-macro-rx"></block></block>
   <block id="aa4f2113791c12393a66ffe706420102" category="list-text">Usuários: suprimir alertas acionados por usuários selecionados.</block>
   <block id="ecfbace61ab4dd6175d43a276330b05d" category="list-text">Caminhos: suprime alertas de atividade em caminhos de diretório selecionados (até quatro níveis de diretório, começando no caminho de junção).</block>
   <block id="099aaf46fa32549a39916446ecf1fe7e" category="inline-link-macro">Tipos de arquivo permitidos</block>
-  <block id="0dd69cce6b9e3a8a53769caf0047d503" category="paragraph">A exclusão de tipos de arquivo (também conhecida como 'Políticas de Tipo de Arquivo Permitido') foi atualizada e descrita em <block ref="38cbb5c947813aa64b0054e34231a6d7" category="inline-link-macro-rx"></block>.</block>
   <block id="70c2babfc037807dc9d1d94e48e6b818" category="paragraph">A lista de exclusão de usuários é suportada por preenchimento automático, onde os administradores podem selecionar usuários a serem excluídos dos alertas.</block>
   <block id="ab217818a7f8d6405dd619210434e25f" category="paragraph">A exclusão de diretórios suporta até quatro níveis de caminhos de diretório, começando pelo caminho de junção.</block>
   <block id="33b828c8fb435b67f3a4a321adbc89c1" category="paragraph">Usuários individuais e caminhos de diretório podem ser adicionados ou removidos da respectiva lista de exclusão. Cada entrada em cada lista conterá informações sobre quando e por quem foi adicionada à lista, e essas informações serão usadas para fins de auditoria.</block>
@@ -14509,4 +14506,12 @@
   <block id="49a160591030eb82ba36b624f5514398" category="list-text">Cada entrada de exclusão registra o nome do administrador que a configurou e a data em que foi configurada. Essas informações são armazenadas para fins de auditoria.</block>
   <block id="430f66c61c1d6e05ef92945c7107306f" category="paragraph"><block ref="430f66c61c1d6e05ef92945c7107306f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4d06e3dd77aaee13a5d969e19fc7acf6" category="paragraph"><block ref="4d06e3dd77aaee13a5d969e19fc7acf6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="147e7f8d7d8064d51ff49f93c07adfeb" category="paragraph">Acesse *Segurança da Carga de Trabalho &gt; Políticas* e selecione a guia *Exclusões de Alerta*.</block>
+  <block id="9bf079c262098280af19e475b460e655" category="list-text">Tipos de arquivo: suprimir alertas de adulteração de arquivos em tipos específicos <block ref="e9fd5a7947ff579f7dabe8508e9cb8cd" category="inline-xref-macro-rx"></block></block>
+  <block id="3596850f01f0deb9d5aecf72b1462619" category="paragraph">As extensões de arquivo podem ser adicionadas a uma lista de _tipos de arquivo permitidos_ para evitar alertas desnecessários.</block>
+  <block id="c6b621c33fa4f966db8e8fc0013ade5e" category="paragraph">Selecione *+Tipo de Arquivo* para adicionar tipos de arquivo à lista de tipos de arquivo permitidos para alertas.</block>
+  <block id="a29d1a88246db4532c1e6dec57fad276" category="inline-image-macro">Adicionar tipos de arquivo permitidos</block>
+  <block id="e805eed5e1733a26a8b20a94b4a681d5" category="paragraph"><block ref="e805eed5e1733a26a8b20a94b4a681d5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="492f463a35ea215d77ae021c64cddb64" category="paragraph">Por exemplo, se um arquivo chamado _test.txt_ for renomeado para _test.txt.abc_ e o Workload Security detectar um ataque de ransomware devido à extensão _.abc_, a extensão _.abc_ pode ser adicionada à lista de _tipos de arquivo permitidos_. Após ser adicionada à lista, ataques de ransomware não serão mais gerados contra arquivos com a extensão _.abc_.</block>
+  <block id="318685a1827ca5f4280e59d71f7d1438" category="paragraph">Os tipos de arquivo permitidos podem ser correspondências exatas (por exemplo, ".abc") ou expressões (por exemplo, ++.*type++, ++.type*++ ou ++.*type*++). Expressões dos tipos .a*c, .p*f não são suportadas.</block>
 </blocks>
