@@ -11,6 +11,8 @@ summary: Adicione extensões de arquivo a uma lista de exclusão de alertas para
 [role="lead"]
 A Exclusão de Alertas permite suprimir a geração de alertas para tipos de arquivo, usuários e caminhos de diretório específicos. Use isso para reduzir falsos positivos, excluindo atividades conhecidas e esperadas que, de outra forma, poderiam corresponder aos padrões de alerta.
 
+Note que apenas o alerta para o evento é suprimido; os eventos em si ainda são capturados e podem ser revisados.
+
 Acesse *Segurança da Carga de Trabalho > Políticas* e selecione a guia *Exclusões de Alerta*.
 
 A exclusão de alertas é configurada por locatário e inclui o seguinte:
@@ -20,12 +22,6 @@ A exclusão de alertas é configurada por locatário e inclui o seguinte:
 . Caminhos: suprime alertas de atividade em caminhos de diretório selecionados (até quatro níveis de diretório, começando no caminho de junção).
 
 
-A lista de exclusão de usuários é suportada por preenchimento automático, onde os administradores podem selecionar usuários a serem excluídos dos alertas.
-
-A exclusão de diretórios suporta até quatro níveis de caminhos de diretório, começando pelo caminho de junção.
-
-Usuários individuais e caminhos de diretório podem ser adicionados ou removidos da respectiva lista de exclusão. Cada entrada em cada lista conterá informações sobre quando e por quem foi adicionada à lista, e essas informações serão usadas para fins de auditoria.
-
 
 
 == Gerenciar exclusões e auditorias
@@ -34,22 +30,30 @@ Usuários individuais e caminhos de diretório podem ser adicionados ou removido
 * Cada entrada de exclusão registra o nome do administrador que a configurou e a data em que foi configurada. Essas informações são armazenadas para fins de auditoria.
 
 
+
+
+== Usuários e Caminhos
+
+* Lista de exclusão de usuários: adicione usuários para serem excluídos dos alertas.
+* Lista de exclusão de diretórios: suporta até quatro níveis de caminhos de diretório, começando pelo caminho de junção.
+
+
 image:ws_alert_exclusions_users.png[""]
 
 image:ws_alert_exclusions_paths.png[""]
 
+Usuários individuais e caminhos de diretório podem ser adicionados ou removidos da respectiva lista de exclusão. Cada entrada em cada lista conterá informações sobre quando e por quem foi adicionada à lista, e essas informações serão usadas para fins de auditoria.
 
 
-== Tipos de arquivo permitidos
 
-As extensões de arquivo podem ser adicionadas a uma lista de _tipos de arquivo permitidos_ para evitar alertas desnecessários.
+== Tipos de arquivo
 
-Selecione *+Tipo de Arquivo* para adicionar tipos de arquivo à lista de tipos de arquivo permitidos para alertas.
+Uma vez adicionado à lista de Tipos de Arquivo, nenhum alerta de ataque de adulteração de arquivo será gerado para esse tipo de arquivo permitido. Observe que a política de Tipos de Arquivo se aplica somente à detecção de adulteração de arquivo.
 
-image:ws_allowed_file_types.png["Adicionar tipos de arquivo permitidos"]
-
-Uma vez adicionado à lista de _tipos de arquivo permitidos_, nenhum alerta de ataque de adulteração de arquivo será gerado para esse tipo de arquivo permitido. Note que a política de _Tipos de Arquivo Permitidos_ só se aplica à detecção de adulteração de arquivos.
+image:ws_file_types_list.png["Lista de tipos de arquivo"]
 
 Por exemplo, se um arquivo chamado _test.txt_ for renomeado para _test.txt.abc_ e o Workload Security detectar um ataque de ransomware devido à extensão _.abc_, a extensão _.abc_ pode ser adicionada à lista de _tipos de arquivo permitidos_. Após ser adicionada à lista, ataques de ransomware não serão mais gerados contra arquivos com a extensão _.abc_.
 
 Os tipos de arquivo permitidos podem ser correspondências exatas (por exemplo, ".abc") ou expressões (por exemplo, ++.*type++, ++.type*++ ou ++.*type*++). Expressões dos tipos .a*c, .p*f não são suportadas.
+
+Foram introduzidos os atributos adicionais 'Definido por' e 'Data de definição' para fins de auditoria. Os tipos de arquivo existentes serão migrados para o novo formato com os valores de ambos os atributos definidos como 'migrados'.
