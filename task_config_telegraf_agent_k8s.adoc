@@ -72,6 +72,9 @@ image:KubernetesModifyDeploymentScreen.png["Modificar opções de implantação,
 Você pode atualizar o Kubernetes Monitoring Operator por meio da página DII Kubernetes Collectors.  Clique no menu ao lado do cluster que você gostaria de atualizar e selecione _Atualizar_.  O operador verificará as assinaturas de imagem, fará um snapshot da sua instalação atual e realizará a atualização.  Em poucos minutos, você verá o progresso do status do operador, passando de Atualização em andamento para a mais recente.  Se você encontrar um erro, pode selecionar o status Erro para obter mais detalhes e consultar a tabela de solução de problemas de atualizações por botão abaixo.
 
 
+NOTE: As atualizações por botão não estão disponíveis para versões do operador anteriores à 1.2057.0. Siga as instruções de atualização manual abaixo para atualizar para a versão mais recente. Após essa atualização, as atualizações futuras poderão ser realizadas usando o recurso de atualização por botão.
+
+
 
 ==== Atualizações por botão com repositórios privados
 

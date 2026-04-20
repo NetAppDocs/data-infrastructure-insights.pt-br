@@ -8,6 +8,9 @@ summary: O Data Infrastructure Insights oferece suporte à Telegraf como seu age
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
