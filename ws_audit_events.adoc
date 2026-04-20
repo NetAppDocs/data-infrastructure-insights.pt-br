@@ -1,0 +1,138 @@
+---
+sidebar: sidebar 
+permalink: ws_audit_events.html 
+summary: Eventos de auditoria em Workload Security 
+keywords: workload security, audit, events 
+---
+= Auditar eventos de segurança da carga de trabalho
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+Identifique alterações esperadas (para monitoramento) ou inesperadas (para solução de problemas). Visualize um registro de auditoria dos eventos do sistema Workload Security e das atividades do usuário.
+
+
+
+== Visualizando eventos auditados
+
+Para visualizar a página de auditoria, clique em Admin > Audit no menu. A página de auditoria é exibida, fornecendo os seguintes detalhes para cada entrada de auditoria:
+
+* Horário - Data e hora do evento ou atividade
+* Usuário - O usuário que iniciou a atividade
+* Função - A função do usuário no Workload Security (convidado, usuário, administrador)
+* IP - O endereço IP associado ao evento
+* Ação - Tipo de atividade, por exemplo Login, Criar, Atualizar
+* Categoria - A categoria da atividade.
+* Detalhes - Detalhes da atividade
+* Tipo de aplicação - Tipo de aplicação auditada: Observabilidade OU Segurança de Workload. Use esta opção para filtrar apenas auditorias de Segurança de Workload.
+
+
+Os eventos de Workload Security auditados incluem, entre outros, os seguintes:
+
+* Alterações nas políticas de segurança da carga de trabalho.
+* Criação de novos Coletores de Fontes de Dados (DSCs).
+* Modificação de DSCs.
+* Criação de agentes.
+* Tarefas de gerenciamento de usuários.
+* Tarefas de token de API.
+
+
+
+
+== Exibindo entradas de auditoria
+
+Há várias maneiras diferentes de visualizar entradas de auditoria:
+
+* Você pode exibir entradas de auditoria escolhendo um período de tempo específico (1 hora, 24 horas, 3 dias, etc.).
+* Você pode alterar a ordem de classificação das entradas para crescente (seta para cima) ou decrescente (seta para baixo) clicando na seta no cabeçalho da coluna. Por padrão, a tabela exibe as entradas em ordem de tempo decrescente.
+* Você pode usar os campos de filtro para mostrar apenas as entradas que deseja na tabela.  Clique no botão [+] para adicionar filtros adicionais.
+
+
+
+
+== Mais sobre filtragem
+
+Você pode usar qualquer um dos seguintes para refinar seu filtro:
+
+|===
+
+
+| Filtro | O que ele faz | Exemplo | Resultado 
+
+
+| * (Asterisco) | permite que você pesquise tudo | vol*rhel | retorna todos os recursos que começam com "vol" e terminam com "rhel" 
+
+
+| ?  (ponto de interrogação) | permite que você pesquise um número específico de caracteres | BOS-PRD??-S12 | retorna BOS-PRD12-S12, BOS-PRD23-S12 e assim por diante 
+
+
+| OU | permite que você especifique múltiplas entidades | FAS2240 OU CX600 OU FAS3270 | retorna qualquer um dos FAS2440, CX600 ou FAS3270 
+
+
+| NÃO | permite que você exclua texto dos resultados da pesquisa | NÃO EMC* | retorna tudo que não começa com "EMC" 
+
+
+| Nenhum | procura por blank/NULL/None em qualquer campo onde selecionado | Nenhum | retorna resultados onde o campo de destino não está vazio 
+
+
+| Não * | Assim como em None acima, você também pode usar este formulário para pesquisar valores NULL em campos somente de texto | Não * | retorna resultados onde o campo de destino não está vazio. 
+
+
+| "" | procura por uma correspondência exata | "NetApp*" | retorna resultados que contêm a string literal exata NetApp* 
+|===
+Se você colocar uma sequência de filtro entre aspas duplas, o Insight tratará tudo entre a primeira e a última aspas como uma correspondência exata.  Quaisquer caracteres especiais ou operadores dentro das aspas serão tratados como literais.  Por exemplo, filtrar por "*" retornará resultados que são um asterisco literal; o asterisco não será tratado como um curinga neste caso.  Os operadores OR e NOT também serão tratados como strings literais quando colocados entre aspas duplas.
+
+
+
+== Eventos e Ações Auditados
+
+Os eventos e ações auditados pelo Workload Security podem ser categorizados nas seguintes áreas gerais:
+
+* Conta de usuário: entrar, fazer logout, alterar função, etc.
+* Agente: criar, excluir, atualizar, fixar, desafixar etc.
++
+Exemplos: _Agente Agent-Boston-1 foi excluído._ _Atualização do agente para a versão 1.760.0 iniciada por operação em lote_
+
+* Coletor de diretório de dados/usuários: adicionar, remover, modificar, atualizar, adiar/retomar, alterar agente, reiniciar, etc.
++
+Exemplos: _Coletor de dados Collector-Boston1 removido, tipo ONTAP SVM_ _Agente: Agent-Boston-1, endereço IP do cluster 10.193.88.36, SVM demoGroupShares2_ _Coletor ONTAP SVM upgrade para a versão 1.417.0 iniciado por operação em lote_
+
+* Políticas de resposta automatizadas: adicionar, atualizar, remover, ativar, desativar, etc.
++
+Exemplo: _Política de ataque automatizada Policy-Boston1 atualizada. Propriedades Dispositivos atualizadas, valor antigo: [Device(name=svm_boston1, dataSourceId=39fb3b9c-9dd4-4961-bc27-23eb0b6f9ab7)], novo valor: [Device(name=demoGroupShares2, dataSourceId=5b9f5b74-4533-4852-909d-8886582a4359)]_
+
+* Bloqueio/desbloqueio de usuários: bloqueio e desbloqueio de usuários automatizados ou manuais.
++
+Exemplo: _Bloqueio iniciado para o usuário Safwan Langley como parte da Resposta Automatizada por um período de 2 horas_
+
+* Apikey: adicionar, remover, etc.
++
+Exemplo: _O token de acesso à API Workload Security JPick-SWS foi criado_
+
+* Notificação: alteração de e-mail, etc.
++
+Exemplo: _Destinatário ci-alerts-notifications-dl criado_
+
+
+
+
+
+== Exportando eventos de auditoria
+
+Você pode exportar os resultados da sua Audit para um arquivo .CSV, o que permitirá analisar os dados ou importá-los para outro aplicativo. Passos 1. Na página Audit, defina o intervalo de tempo desejado e quaisquer filtros que desejar. Workload Security exportará apenas as entradas de Audit que corresponderem aos filtros e ao intervalo de tempo definidos. 2. Clique no botão Export no canto superior direito da tabela. Os eventos de Audit exibidos serão exportados para um arquivo .CSV, com um máximo de 10.000 linhas.
+
+
+
+== Retenção de Dados de Auditoria
+
+O período de tempo que o Workload Security retém os dados de auditoria depende da sua assinatura:
+
+* Ambientes de teste: os dados de auditoria são retidos por 30 dias
+* Ambientes assinados: os dados de auditoria são retidos por 1 ano mais 1 dia
+
+
+Entradas de auditoria mais antigas que o tempo de retenção são automaticamente eliminadas.  Não é necessária nenhuma interação do usuário.
