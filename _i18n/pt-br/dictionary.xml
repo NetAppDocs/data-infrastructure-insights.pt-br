@@ -9964,7 +9964,6 @@
   <block id="250a0e817001d5aadc297d9943b4611a" category="list-text">12ep0</block>
   <block id="7fbc2da9d2e5b20105696da7ea4ce3dd" category="list-text">emc3</block>
   <block id="cb0dda161e32cb6fdfcbd71707929167" category="list-text">hba3</block>
-  <block id="ea72e8c9dc8f8b845a6ad19e15b5867a" category="list-text">Regras que usam expressões regulares exigem uma expressão regular, o formato e a seleção de diferenciação entre maiúsculas e minúsculas.</block>
   <block id="669613ed670b6c6c42c39acf0bfee7b0" category="list-text">Clique em *Executar AR* para executar todas as regras ou clique na seta para baixo no botão para executar a regra que você criou (e quaisquer outras regras que tenham sido criadas desde a última execução completa do AR).</block>
   <block id="f5d37dace9a539d56f93b2e2c32704d5" category="paragraph">Os resultados da execução da regra são exibidos na guia *Identificação do FC*.</block>
   <block id="c2c94fa68f8065fa325aff6c260bebfb" category="section-title">Iniciando uma atualização automática da resolução do dispositivo</block>
@@ -14091,4 +14090,8 @@
   <block id="e63e4cacc359b740fa0bc5ab6ea0ba8d" category="paragraph">O período de tempo que o Workload Security retém os dados de auditoria depende da sua assinatura:</block>
   <block id="db33137206c4f6b3edeb7dda117f05dd" category="sidebar">Visualização de eventos de auditoria</block>
   <block id="30e34a68b374f1718d077f39f1e4b558" category="admonition">As atualizações por botão não estão disponíveis para versões do operador anteriores à 1.2057.0. Siga as instruções de atualização manual abaixo para atualizar para a versão mais recente. Após essa atualização, as atualizações futuras poderão ser realizadas usando o recurso de atualização por botão.</block>
+  <block id="d0c7c0947ebc2f58067c90be172b88e0" category="list-text">Clique em *Observability &gt; Enrich &gt; Device Resolution*</block>
+  <block id="7ecd430509607d1a2c2f3ffad808df91" category="list-text">As regras que utilizam expressões regulares exigem uma expressão regular, o formato e a seleção de distinção entre maiúsculas e minúsculas.</block>
+  <block id="9372fa792b7b3d019662b44dd2963355" category="section-title">Regras de pausa e retomada</block>
+  <block id="716da8f41fd22d5cd56ad74991f757ba" category="paragraph">Para impedir a execução de uma regra, selecione "Pausar" no menu à direita da regra ou selecione várias regras e escolha "Pausar" no menu suspenso "Ações em massa". Você pode retomar a execução da regra da mesma maneira.</block>
 </blocks>
