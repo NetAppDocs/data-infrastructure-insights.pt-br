@@ -35,7 +35,7 @@ A exclusão de alertas é configurada por locatário e inclui o seguinte:
 == Usuários e Caminhos
 
 * Lista de exclusão de usuários: adicione usuários para serem excluídos dos alertas.
-* Lista de exclusão de diretórios: suporta até quatro níveis de caminhos de diretório, começando pelo caminho de junção.
+* Lista de exclusão de diretórios: suporta até quatro níveis de caminhos de diretório, começando pelo caminho de junção. Todos os subdiretórios e arquivos sob este caminho serão excluídos da geração de alertas. Caracteres curinga em caminhos de diretório não são suportados.
 
 
 image:ws_alert_exclusions_users.png[""]

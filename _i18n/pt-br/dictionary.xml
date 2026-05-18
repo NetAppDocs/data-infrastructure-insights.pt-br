@@ -14030,7 +14030,6 @@
   <block id="d01a003326568eee4579a0b14096808a" category="list-text">Cada entrada de exclusão registra o nome do administrador que a configurou e a data em que foi configurada. Essas informações são armazenadas para fins de auditoria.</block>
   <block id="502a3077dba0d1ad6f92723157947eb2" category="section-title">Usuários e Caminhos</block>
   <block id="fbe64a9bdbefe7d8e246dbe4db973fd6" category="list-text">Lista de exclusão de usuários: adicione usuários para serem excluídos dos alertas.</block>
-  <block id="7f21f675f8b42bfe63a9f7bf4d897cb0" category="list-text">Lista de exclusão de diretórios: suporta até quatro níveis de caminhos de diretório, começando pelo caminho de junção.</block>
   <block id="f12b42eece54a56ffab836a42eb37488" category="section-title">Tipos de arquivo</block>
   <block id="137e136f6b4d96d6452fec8d0ed99197" category="paragraph">Uma vez adicionado à lista de Tipos de Arquivo, nenhum alerta de ataque de adulteração de arquivo será gerado para esse tipo de arquivo permitido. Observe que a política de Tipos de Arquivo se aplica somente à detecção de adulteração de arquivo.</block>
   <block id="b3e41e2fae7745b697dbed9b6f854aa1" category="inline-image-macro">Lista de tipos de arquivo</block>
@@ -14094,4 +14093,5 @@
   <block id="7ecd430509607d1a2c2f3ffad808df91" category="list-text">As regras que utilizam expressões regulares exigem uma expressão regular, o formato e a seleção de distinção entre maiúsculas e minúsculas.</block>
   <block id="9372fa792b7b3d019662b44dd2963355" category="section-title">Regras de pausa e retomada</block>
   <block id="716da8f41fd22d5cd56ad74991f757ba" category="paragraph">Para impedir a execução de uma regra, selecione "Pausar" no menu à direita da regra ou selecione várias regras e escolha "Pausar" no menu suspenso "Ações em massa". Você pode retomar a execução da regra da mesma maneira.</block>
+  <block id="baac891fc4329aa8b558fa7560c83369" category="list-text">Lista de exclusão de diretórios: suporta até quatro níveis de caminhos de diretório, começando pelo caminho de junção. Todos os subdiretórios e arquivos sob este caminho serão excluídos da geração de alertas. Caracteres curinga em caminhos de diretório não são suportados.</block>
 </blocks>
