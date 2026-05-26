@@ -3706,8 +3706,6 @@
   <block id="df6a21f670066b82b5409a049dec0efe" category="doc">Políticas de Resposta Automatizada</block>
   <block id="e5da02c738b911c42fb0a45a5b76c8d9" category="paragraph">As Políticas de Resposta acionam ações como tirar um instantâneo ou restringir o acesso do usuário em caso de ataque ou comportamento anormal do usuário.</block>
   <block id="8816114441548a7f4d390de764f25ad9" category="paragraph">Você pode definir políticas em dispositivos específicos ou em todos os dispositivos.  Para definir uma política de resposta, selecione *Admin &gt; Políticas de resposta automatizadas* e clique no botão *+Política* apropriado.  Você pode criar políticas para Ataques ou para Avisos.</block>
-  <block id="29d142bb0759eaeb3b47bf1809087cc7" category="inline-image-macro">Adicionar uma caixa de diálogo de política de ataque mostrando o menu suspenso do webhook</block>
-  <block id="9c3cfe368d37e834800103686eba11c1" category="paragraph"><block ref="9c3cfe368d37e834800103686eba11c1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="10519a96ebde07deba902eb606bf97ff" category="paragraph">Você deve salvar a política com um nome exclusivo.</block>
   <block id="168e31fead9fc72274b5723b0c86d27f" category="paragraph">Para desabilitar uma ação de resposta automatizada (por exemplo, Tirar instantâneo), basta desmarcar a ação e salvar a política.</block>
   <block id="3218ac0e5f26253bd8724ab98d8f5e02" category="inline-link-macro">Página de detalhes do alerta</block>
@@ -14094,4 +14092,6 @@
   <block id="9372fa792b7b3d019662b44dd2963355" category="section-title">Regras de pausa e retomada</block>
   <block id="716da8f41fd22d5cd56ad74991f757ba" category="paragraph">Para impedir a execução de uma regra, selecione "Pausar" no menu à direita da regra ou selecione várias regras e escolha "Pausar" no menu suspenso "Ações em massa". Você pode retomar a execução da regra da mesma maneira.</block>
   <block id="baac891fc4329aa8b558fa7560c83369" category="list-text">Lista de exclusão de diretórios: suporta até quatro níveis de caminhos de diretório, começando pelo caminho de junção. Todos os subdiretórios e arquivos sob este caminho serão excluídos da geração de alertas. Caracteres curinga em caminhos de diretório não são suportados.</block>
+  <block id="fc6be75876bcdad138173b62e9ab5c17" category="inline-image-macro">Adicionar uma caixa de diálogo de Política de Ataque exibindo o menu suspenso do webhook, width=300</block>
+  <block id="7cb01fa627551da61643f2eab2af39fb" category="paragraph"><block ref="7cb01fa627551da61643f2eab2af39fb" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
