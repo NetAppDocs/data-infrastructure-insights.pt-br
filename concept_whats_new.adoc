@@ -18,6 +18,33 @@ A NetApp está continuamente melhorando e aprimorando seus produtos e serviços.
 
 
 
+== Junho de 2026
+
+
+
+=== Um assistente de IA mais inteligente para equipes globais
+
+O Assistente de IA agora é compatível com mais de uma dúzia de idiomas, permitindo que sua equipe interaja naturalmente em seu idioma preferido. Veja a lista completa link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support["aqui"^].
+
+
+
+=== Novos monitores para alterações de atributos de infraestrutura
+
+Agora, os Monitores de Atributos estão disponíveis para alertar automaticamente sua equipe quando ativos forem movidos entre data centers, um pool de storage não estiver criptografado ou ocorrerem modificações em atributos. Isso ajuda a manter as configurações padrão e ajuda a garantir que nada passe despercebido durante novas implantações ou alterações.
+
+image:attribute_monitor_in_list.png["Monitores de atributos são adicionados aos tipos de monitor"]
+
+
+
+=== Crie alertas e webhooks mais inteligentes com mensagens dinâmicas e ricas em contexto
+
+Ao criar um monitor ou webhook, basta digitar "%" na descrição do alerta ou na URL, cabeçalho ou corpo do webhook para selecionar em uma lista preenchida dinamicamente de atributos e anotações de objeto disponíveis. Forneça o contexto adequado aos seus alertas para melhorar a clareza, aprimorar a integração do webhook e acelerar os tempos de resposta.
+
+image:attribute_list_example.png["Lista de atributos na descrição do monitor, largura=400"]
+
+'''
+
+
 == Abril de 2026
 
 
