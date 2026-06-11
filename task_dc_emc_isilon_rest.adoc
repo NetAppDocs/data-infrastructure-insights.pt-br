@@ -7,6 +7,10 @@ summary: Configurando o coletor de dados REST do Dell EMC Isilon/PowerScale.
 = Coletor de dados REST Dell EMC Isilon / PowerScale
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

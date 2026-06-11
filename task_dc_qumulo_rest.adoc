@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: task_dc_qumulo_rest.html 
+keywords: data collector, qumulo, rest 
+summary: Configurando o coletor de dados REST do Qumulo. 
+---
+= Coletor de dados REST Qumulo
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Data Infrastructure Insights utiliza esse coletor para obter dados de inventário e desempenho do armazenamento Qumulo.
+
+
+
+== Terminologia
+
+O Data Infrastructure Insights adquire as seguintes informações de inventário deste coletor de dados.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
+
+
+| Dirigir | Disco 
+
+
+| Conjunto | Armazenar 
+
+
+| Nó | Nó de armazenamento 
+
+
+| Sistema de arquivos OneFS | Volume interno 
+
+
+| Sistema de arquivos OneFS | Pool de armazenamento 
+
+
+| Qtree | Qtree 
+|===
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
+
+
+
+== Requisitos
+
+Você precisa das seguintes informações para configurar este coletor de dados:
+
+* Uma conta de usuário e senha.  Esta conta NÃO precisa ser de administrador/root, mas você DEVE conceder um número substancial de privilégios somente leitura à sua conta de serviço - veja a tabela abaixo
+* Endereço IP / nome de domínio totalmente qualificado do cluster Qumulo
+* Acesso HTTPS à porta 8080
+
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Qumulo endereço IP | O endereço IP ou nome de domínio totalmente qualificado do armazenamento Qumulo 
+
+
+| Nome de usuário | Nome de usuário para o Qumulo 
+
+
+| Senha | Senha usada para o Qumulo 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Porta HTTPS | O padrão é 8080. 
+
+
+| Intervalo de pesquisa de inventário (min) | Intervalo entre as consultas de inventário. O padrão é 30. 
+
+
+| Intervalo de pesquisa de desempenho (min) | Intervalo entre as medições de desempenho. O padrão é 5. 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

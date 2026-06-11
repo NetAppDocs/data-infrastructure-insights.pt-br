@@ -13990,8 +13990,6 @@
   <block id="6fd44ae5a42d6b33248d329cbbddaa88" category="paragraph">O coletor DII Red Hat OpenShift Virtualization tentará descobrir as cargas de trabalho de computação OSV em execução em um ambiente OpenShift Virtualization - este coletor não descobrirá todos os pods OpenShift. Este é um coletor baseado em API REST HTTPS. Recomenda-se criar um coletor por cluster OSV.</block>
   <block id="0e2f53883090c3b63a953261cdb19325" category="paragraph">A abordagem de autenticação para este coletor é um token de autenticação vinculado a uma conta de serviço. Para criar tanto a conta de usuário quanto o token:</block>
   <block id="f2c430952fd20f76b24810e2e6f8dace" category="paragraph">Execute esses 3 comandos e fique atento a quaisquer erros.</block>
-  <block id="8a8ad6f9b43737bda614d744a8286cc4" category="paragraph">Quando os comandos forem concluídos:</block>
-  <block id="9fb84dc506591e78ff3f6f8ac2f00e6e" category="paragraph">Isso criará um token vinculado ao seu usuário.</block>
   <block id="0cf40b0b5f29b2928f214370b73c4fac" category="paragraph">Por fim, você também pode querer que seu administrador do OSV execute:</block>
   <block id="7af44018c8c76e698e986a0c0db08e5f" category="paragraph">Isso retornará o nome do host/endereço IP para gerenciamento. Cada coletor DII OSV precisa ser configurado para apontar para o endereço IP/nome do host para gerenciamento do OSV.</block>
   <block id="e62768229563f11ca5fd49a1482ae7a8" category="list-text">Endereço IP do servidor Red Hat OpenShift Virtualization na porta 443 via API REST</block>
@@ -14109,4 +14107,18 @@
   <block id="0c57b296d9e6f421b799470406b41595" category="paragraph">O menu de navegação do DII tem um visual totalmente novo, agora combinando com as cores e o comportamento do Console para uma experiência mais unificada. O menu principal, antes estático, será recolhido por padrão para um espaço de trabalho mais focado e um uso mais eficiente do espaço na tela. Basta clicar no ícone de menu (☰) no canto superior esquerdo para acessá-lo.</block>
   <block id="638f6b8d99e1422bc23e131d2c84c24d" category="section-title">Amplie a visibilidade do dispositivo com assistência inteligente de IA</block>
   <block id="8cc9ca78507aef920c11566fc08c38ca" category="paragraph">Acelere a integração de novos dispositivos com a identificação de dispositivos baseada em IA. Data Infrastructure Insights analisa seu ambiente e sugere regras de Resolução Automática de Dispositivos, ajudando você a identificar e gerenciar mais dispositivos rapidamente. Basta revisar e aprovar as regras geradas por IA e Data Infrastructure Insights cuida do resto, melhorando a visibilidade e o gerenciamento de dispositivos em toda a sua infraestrutura.</block>
+  <block id="b60f27931c3ae71e254e2b744656329e" category="inline-link-macro">Qumulo REST</block>
+  <block id="d5f6f6770076a4cff24cf687c1f3ce72" category="cell"><block ref="d5f6f6770076a4cff24cf687c1f3ce72" category="inline-link-macro-rx"></block></block>
+  <block id="e11d6c7f4644f952faf6dce5c4b295ad" category="summary">Configurando o coletor de dados REST do Qumulo.</block>
+  <block id="d3b9d1ab118852a73d2b9221ede10370" category="doc">Coletor de dados REST Qumulo</block>
+  <block id="a7236bb9d36106126af2861383d145e2" category="paragraph">Data Infrastructure Insights utiliza esse coletor para obter dados de inventário e desempenho do armazenamento Qumulo.</block>
+  <block id="b23a87bcdf03ab57cf9c989bf91c2e39" category="list-text">Endereço IP / nome de domínio totalmente qualificado do cluster Qumulo</block>
+  <block id="6b163e0e6c238a01d0ce91c0c83e4f0c" category="cell">Qumulo endereço IP</block>
+  <block id="0a4db5a5d79afd66b50465ed8b623a2d" category="cell">O endereço IP ou nome de domínio totalmente qualificado do armazenamento Qumulo</block>
+  <block id="b011dcc2f56365d26e263f3ed75cdfa7" category="cell">Nome de usuário para o Qumulo</block>
+  <block id="f37b44ac7ba2560a5f36f58586dc6502" category="cell">Senha usada para o Qumulo</block>
+  <block id="77c91f11c388cc00f02f729cfee3aa51" category="cell">Intervalo entre as consultas de inventário. O padrão é 30.</block>
+  <block id="10c51e7fed3d0622297f012b6ed375ff" category="cell">Intervalo entre as medições de desempenho. O padrão é 5.</block>
+  <block id="d08016e5c5be3fa70d21f77cdf152be2" category="paragraph">Quando os comandos forem concluídos, execute:</block>
+  <block id="6d0f6de7ebc4523de6bfdcd599b62bf1" category="paragraph">Isso criará um token vinculado ao seu usuário. Observação: recomenda-se definir a duração do token. Esteja ciente de que a coleta de dados falhará com um erro “Falha ao conectar” após a expiração do token.</block>
 </blocks>
