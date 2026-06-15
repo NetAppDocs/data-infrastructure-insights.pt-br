@@ -14121,4 +14121,6 @@
   <block id="10c51e7fed3d0622297f012b6ed375ff" category="cell">Intervalo entre as medições de desempenho. O padrão é 5.</block>
   <block id="d08016e5c5be3fa70d21f77cdf152be2" category="paragraph">Quando os comandos forem concluídos, execute:</block>
   <block id="6d0f6de7ebc4523de6bfdcd599b62bf1" category="paragraph">Isso criará um token vinculado ao seu usuário. Observação: recomenda-se definir a duração do token. Esteja ciente de que a coleta de dados falhará com um erro “Falha ao conectar” após a expiração do token.</block>
+  <block id="90e0071503be9324e2266cfd3368d18a" category="list-text">Acesso HTTPS à porta 8000</block>
+  <block id="bdda6785fe5c26b462fa0a87d4327560" category="cell">O padrão é 8000.</block>
 </blocks>
