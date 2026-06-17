@@ -14124,4 +14124,6 @@
   <block id="90e0071503be9324e2266cfd3368d18a" category="list-text">Acesso HTTPS à porta 8000</block>
   <block id="bdda6785fe5c26b462fa0a87d4327560" category="cell">O padrão é 8000.</block>
   <block id="606930ccd6550cc24fe845f69572c586" category="list-text">Uma conta de usuário e senha com pelo menos permissão de leitura.</block>
+  <block id="38fbce916138020848ac3b594a6648d0" category="section-title">Compartilhe atualizações importantes com mensagens de login</block>
+  <block id="7260908f665e8b3c02f0fce13c7ea541" category="paragraph">Mantenha sua equipe informada e alinhada com mensagens de login personalizáveis. Comunique anúncios importantes, cronogramas de manutenção ou atualizações de políticas diretamente aos usuários quando eles fizerem login. Com suporte a markdown, você pode formatar as mensagens para maior clareza e garantir que informações críticas cheguem a todos os usuários do DII. Contas com privilégios de administrador podem encontrar a configuração no menu Admin, em Notificações.</block>
 </blocks>
