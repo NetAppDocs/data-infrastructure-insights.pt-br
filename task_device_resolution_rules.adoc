@@ -161,4 +161,48 @@ O Data Infrastructure Insights executa o processo de resolução do host na orde
 
 Quando regras aplicáveis são encontradas, os nomes das regras são mostrados na coluna de regras e identificados como manuais.
 
-Relacionado:link:task_device_resolution_fibre_channel.html["Resolução do dispositivo Fibre Channel"] link:task_device_resolution_ip.html["Resolução do dispositivo IP"] link:task_device_resolution_preferences.html["Configurando preferências de resolução do dispositivo"]
+
+
+== Geração de regras assistida por IA
+
+Como alternativa, você pode eliminar as suposições com a identificação de dispositivos baseada em IA para criar regras de forma rápida e fácil. Basta executar o Gerador de Regras Assistido por IA para analisar seu ambiente e sugerir regras de Resolução de Dispositivos, ajudando você a identificar e gerenciar mais dispositivos rapidamente.
+
+
+
+=== Comece agora
+
+Para começar a usar IA para gerar regras de resolução, um administrador deve primeiro habilitar as regras geradas por IA.
+
+image:ahr_ai_get_started.png["Comece a gerar regras de IA, width=400"]
+
+O assistente de IA informará a porcentagem de seus dispositivos Fibre Channel que não foram identificados e solicitará sua permissão para gerar regras. Selecione "Let's Go!".
+
+image:ahr_ai_lets_go.png["Selecione \"Vamos lá\" para gerar regras, width=400"]
+
+Você será solicitado a confirmar seus nomes de domínio antes de ativar as regras geradas por IA. Você deve incluir todos os seus domínios para que a identificação seja eficaz.
+
+
+
+=== Verificar progresso
+
+Periodicamente, o DII criará uma notificação quando dispositivos adicionais estiverem disponíveis para possível identificação. Se você vir um ponto verde no ícone de sino no canto superior direito da página, selecione-o para visualizar a notificação.
+
+image:ahr_ai_notification.png["sino de notificação, largura=400"]
+
+Use o ícone do sino para verificar também o status da geração de regras, que pode levar de alguns segundos a vários minutos, dependendo da complexidade do seu ambiente.
+
+As regras geradas por IA exibirão um selo "Gerado por IA" na lista.
+
+image:ahr_ai_badge.png["Distintivo de regra gerado por IA, largura=400"]
+
+
+
+=== Retomar e continuar
+
+As regras geradas por IA estão em estado _Pausado_ por padrão. Você precisa revisar cada regra e _Retomar_ para que ela identifique dispositivos.
+
+
+
+== Relacionado:
+
+link:task_device_resolution_fibre_channel.html["Resolução do dispositivo Fibre Channel"] link:task_device_resolution_ip.html["Resolução do dispositivo IP"] link:task_device_resolution_preferences.html["Configurando preferências de resolução do dispositivo"]

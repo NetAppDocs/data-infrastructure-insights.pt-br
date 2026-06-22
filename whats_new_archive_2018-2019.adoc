@@ -771,7 +771,7 @@ Observe que o coletor de dados HCI adquire dados somente do HCI Virtual Center. 
 
 === Novo Coletor de Dados de Serviço: Kapacitor
 
-* link:task_config_telegraf_kapacitor.html["Capacitor"]foi adicionado como um coletor de dados para serviços.
+* Kapacitor foi adicionado como coletor de dados para serviços.
 
 
 

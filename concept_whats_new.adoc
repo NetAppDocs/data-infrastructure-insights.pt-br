@@ -40,6 +40,24 @@ Acelere a integração de novos dispositivos com a identificação de dispositiv
 
 
 
+=== Compartilhe atualizações importantes com mensagens de login
+
+Mantenha sua equipe informada e alinhada com mensagens de login personalizáveis. Comunique anúncios importantes, cronogramas de manutenção ou atualizações de políticas diretamente aos usuários quando eles fizerem login. Com suporte a markdown, você pode formatar as mensagens para maior clareza e garantir que informações críticas cheguem a todos os usuários do DII. Contas com privilégios de administrador podem encontrar a configuração no menu Admin, em Notificações.
+
+
+
+=== Mais espaço de trabalho, menos bagunça
+
+O menu de navegação do DII tem um visual totalmente novo, agora combinando com as cores e o comportamento do Console para uma experiência mais unificada. O menu principal, antes estático, será recolhido por padrão para um espaço de trabalho mais focado e um uso mais eficiente do espaço na tela. Basta clicar no ícone de menu (☰) no canto superior esquerdo para acessá-lo.
+
+
+
+=== Amplie a visibilidade do dispositivo com assistência inteligente de IA
+
+Acelere a integração de novos dispositivos com a identificação de dispositivos baseada em IA. Data Infrastructure Insights analisa seu ambiente e sugere regras de Resolução Automática de Dispositivos, ajudando você a identificar e gerenciar mais dispositivos rapidamente. Basta revisar e aprovar as regras geradas por IA e Data Infrastructure Insights cuida do resto, melhorando a visibilidade e o gerenciamento de dispositivos em toda a sua infraestrutura.
+
+
+
 === Um assistente de IA mais inteligente para equipes globais
 
 O Assistente de IA agora é compatível com mais de uma dúzia de idiomas, permitindo que sua equipe interaja naturalmente em seu idioma preferido. Veja a lista completa link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support["aqui"^].
@@ -1264,7 +1282,7 @@ As seguintes melhorias foram feitas paralink:telegraf_agent_k8s_config_options.h
 
 === Insight: Recupere o armazenamento refrigerado
 
-Olink:insights_reclaim_ontap_cold_storage.html["Recuperar insights de armazenamento refrigerado ONTAP"] agora oferece suporte ao FlexGroups e está disponível para todos os clientes.
+O Reclaim ONTAP storage frio Insight agora oferece suporte a FlexGroups e agora está disponível para todos os clientes.
 
 
 
@@ -1631,12 +1649,6 @@ image:Help_LiveChat.png["Menu de ajuda com chat ao vivo em destaque"]
 
 
 
-=== Insights mais visíveis
-
-Se o seu ambiente estiver passando por umalink:insights_overview.html["Entendimento"] como _Recursos compartilhados sob estresse_ ou _Namespaces do Kubernetes ficando sem espaço_, as páginas de destino de ativos para recursos afetados agora incluem links para o próprio Insight, proporcionando exploração e solução de problemas mais rápidas.
-
-
-
 === Novos Coletores de Dados
 
 * Amazon S3 (disponível em versão prévia)
@@ -1717,10 +1729,10 @@ Os seguintes recursos saíram da versão de visualização e agora estão dispon
 | *Recurso* | *Descrição* 
 
 
-| Namespaces do Kubernetes ficando sem espaço | O _Kubernetes Namespaces Running Out of Space_ Insight fornece uma visão das cargas de trabalho em seus namespaces do Kubernetes que correm o risco de ficar sem espaço, com uma estimativa do número de dias restantes antes que cada espaço fique cheio.link:https://docs.netapp.com/us-en/cloudinsights/insights_k8s_namespaces_running_out_of_space.html["Ler mais"] 
+| Namespaces do Kubernetes ficando sem espaço | O recurso _Kubernetes Namespaces Running Out of Space_ oferece uma visão das cargas de trabalho em seus namespaces do Kubernetes que correm o risco de ficar sem espaço, com uma estimativa do número de dias restantes antes que cada espaço fique cheio. 
 
 
-| Recurso compartilhado sob estresse | O insight _Shared Resource Under Stress_ usa IA/ML para identificar automaticamente onde a contenção de recursos está causando degradação de desempenho em seu ambiente, destaca quaisquer cargas de trabalho impactadas por ela e fornece ações recomendadas para correção, permitindo que você resolva problemas de desempenho mais rapidamente.link:https://docs.netapp.com/us-en/cloudinsights/insights_shared_resources_under_stress.html["Ler mais"] 
+| Recurso compartilhado sob estresse | O insight _Shared Resource Under Stress_ utiliza IA/ML para identificar automaticamente onde a disputa por recursos está causando degradação de desempenho em seu ambiente, destaca quaisquer cargas de trabalho afetadas por isso e fornece ações recomendadas para remediar, permitindo que você resolva problemas de desempenho mais rapidamente. 
 
 
 | Cloud Secure – Bloqueie o acesso do usuário em caso de ataque | Maior proteção para seus dados críticos de negócios com a capacidade de bloquear o acesso do usuário quando um ataque é detectado.  O acesso pode ser bloqueado automaticamente, usando Políticas de Resposta Automatizada, ou manualmente nas páginas de alerta ou detalhes do usuário.link:https://docs.netapp.com/us-en/cloudinsights/cs_automated_response_policies.html["Ler mais"] 
@@ -1833,7 +1845,7 @@ O agente para ingestão de dados de integração do Telegraf foi atualizado para
 
 === Recursos de visualização
 
-O Cloud Insights destaca regularmente uma série de novos e interessantes recursos de pré-visualização.  Se você estiver interessado em visualizar um ou mais desses recursos, entre em contato com seulink:https://bluexp.netapp.com/contact-cds["Equipe de vendas da NetApp"] para mais informações.
+Cloud Insights destaca regularmente uma série de novos e interessantes recursos em versão prévia. Se você tiver interesse em experimentar um ou mais desses recursos, entre em contato com sua equipe de vendas da NetApp para obter mais informações.
 
 |===
 
@@ -1841,13 +1853,13 @@ O Cloud Insights destaca regularmente uma série de novos e interessantes recurs
 | *Recurso* | *Descrição* 
 
 
-| Namespaces do Kubernetes ficando sem espaço | O _Kubernetes Namespaces Running Out of Space_ Insight fornece uma visão das cargas de trabalho em seus namespaces do Kubernetes que correm o risco de ficar sem espaço, com uma estimativa do número de dias restantes antes que cada espaço fique cheio.link:https://docs.netapp.com/us-en/cloudinsights/insights_k8s_namespaces_running_out_of_space.html["Ler mais"] 
+| Namespaces do Kubernetes ficando sem espaço | O recurso _Kubernetes Namespaces Running Out of Space_ oferece uma visão das cargas de trabalho em seus namespaces do Kubernetes que correm o risco de ficar sem espaço, com uma estimativa do número de dias restantes antes que cada espaço fique cheio. 
 
 
 | Cloud Secure – bloqueia o acesso do usuário em caso de ataque | Maior proteção para seus dados críticos de negócios com a capacidade de bloquear o acesso do usuário quando um ataque é detectado.  O acesso pode ser bloqueado automaticamente, usando Políticas de Resposta Automatizada ou manualmente nas páginas de alerta ou detalhes do usuário.link:https://docs.netapp.com/us-en/cloudinsights/cs_automated_response_policies.html["Ler mais"] 
 
 
-| Recurso compartilhado sob estresse | O insight _Shared Resource Under Stress_ usa IA/ML para identificar automaticamente onde a contenção de recursos está causando degradação de desempenho em seu ambiente, destaca quaisquer cargas de trabalho impactadas por ela e fornece ações recomendadas para correção, permitindo que você resolva problemas de desempenho mais rapidamente.link:https://docs.netapp.com/us-en/cloudinsights/insights_shared_resources_under_stress.html["Ler mais"] 
+| Recurso compartilhado sob estresse | O insight _Shared Resource Under Stress_ utiliza IA/ML para identificar automaticamente onde a disputa por recursos está causando degradação de desempenho em seu ambiente, destaca quaisquer cargas de trabalho afetadas por isso e fornece ações recomendadas para remediar, permitindo que você resolva problemas de desempenho mais rapidamente. 
 |===
 '''
 
@@ -1898,7 +1910,7 @@ Agora você pode configurar o Cloud Insights para alertar quando modificações 
 
 === Recursos de visualização
 
-O Cloud Insights destaca regularmente uma série de novos e interessantes recursos de pré-visualização.  Se você estiver interessado em visualizar um ou mais desses recursos, entre em contato com seulink:https://bluexp.netapp.com/contact-cds["Equipe de vendas da NetApp"] para mais informações.
+Cloud Insights destaca regularmente uma série de novos e interessantes recursos em versão prévia. Se você tiver interesse em experimentar um ou mais desses recursos, entre em contato com sua equipe de vendas da NetApp para obter mais informações.
 
 |===
 
@@ -1906,7 +1918,7 @@ O Cloud Insights destaca regularmente uma série de novos e interessantes recurs
 | *Recurso* | *Descrição* 
 
 
-| Namespaces do Kubernetes ficando sem espaço | O _Kubernetes Namespaces Running Out of Space_ Insight fornece uma visão das cargas de trabalho em seus namespaces do Kubernetes que correm o risco de ficar sem espaço, com uma estimativa do número de dias restantes antes que cada espaço fique cheio.link:https://docs.netapp.com/us-en/cloudinsights/insights_k8s_namespaces_running_out_of_space.html["Ler mais"] 
+| Namespaces do Kubernetes ficando sem espaço | O recurso _Kubernetes Namespaces Running Out of Space_ oferece uma visão das cargas de trabalho em seus namespaces do Kubernetes que correm o risco de ficar sem espaço, com uma estimativa do número de dias restantes antes que cada espaço fique cheio. 
 
 
 | Previsão de Volume Interno e Tempo de Capacidade de Volume até o Total | O Cloud Insights é capaz de prever o número de dias até que a capacidade se esgote para cada Volume Interno e Volume monitorado.  Esse valor pode ajudar a reduzir significativamente o risco de uma interrupção. 
@@ -1915,7 +1927,7 @@ O Cloud Insights destaca regularmente uma série de novos e interessantes recurs
 | Cloud Secure – bloqueia o acesso do usuário em caso de ataque | Maior proteção para seus dados críticos de negócios com a capacidade de bloquear o acesso do usuário quando um ataque é detectado.  O acesso pode ser bloqueado automaticamente, usando Políticas de Resposta Automatizada ou manualmente nas páginas de alerta ou detalhes do usuário.link:https://docs.netapp.com/us-en/cloudinsights/cs_automated_response_policies.html["Ler mais"] 
 
 
-| Recurso compartilhado sob estresse | O insight _Shared Resource Under Stress_ usa IA/ML para identificar automaticamente onde a contenção de recursos está causando degradação de desempenho em seu ambiente, destaca quaisquer cargas de trabalho impactadas por ela e fornece ações recomendadas para correção, permitindo que você resolva problemas de desempenho mais rapidamente.link:https://docs.netapp.com/us-en/cloudinsights/insights_shared_resources_under_stress.html["Ler mais"] 
+| Recurso compartilhado sob estresse | O insight _Shared Resource Under Stress_ utiliza IA/ML para identificar automaticamente onde a disputa por recursos está causando degradação de desempenho em seu ambiente, destaca quaisquer cargas de trabalho afetadas por isso e fornece ações recomendadas para remediar, permitindo que você resolva problemas de desempenho mais rapidamente. 
 |===
 '''
 
@@ -1957,7 +1969,7 @@ O Cloud Insights mantém você informado sobre as alterações no seu ambiente K
 
 === Recursos de visualização
 
-O Cloud Insights destaca regularmente uma série de novos e interessantes recursos de pré-visualização.  Se você estiver interessado em visualizar um ou mais desses recursos, entre em contato com seulink:https://bluexp.netapp.com/contact-cds["Equipe de vendas da NetApp"] para mais informações.
+Cloud Insights destaca regularmente uma série de novos e interessantes recursos em versão prévia. Se você tiver interesse em experimentar um ou mais desses recursos, entre em contato com sua equipe de vendas da NetApp para obter mais informações.
 
 |===
 
@@ -1971,7 +1983,7 @@ O Cloud Insights destaca regularmente uma série de novos e interessantes recurs
 | Cloud Secure – bloqueia o acesso do usuário em caso de ataque | Maior proteção para seus dados críticos de negócios com a capacidade de bloquear o acesso do usuário quando um ataque é detectado.  O acesso pode ser bloqueado automaticamente, usando Políticas de Resposta Automatizada ou manualmente nas páginas de alerta ou detalhes do usuário.link:https://docs.netapp.com/us-en/cloudinsights/cs_automated_response_policies.html["Ler mais"] 
 
 
-| Recurso compartilhado sob estresse | O insight Shared Resource Under Stress usa IA/ML para identificar automaticamente onde a contenção de recursos está causando degradação de desempenho em seu ambiente, destaca quaisquer cargas de trabalho impactadas por ela e fornece ações recomendadas para correção, permitindo que você resolva problemas de desempenho mais rapidamente.link:https://docs.netapp.com/us-en/cloudinsights/insights_shared_resources_under_stress.html["Ler mais"] 
+| Recurso compartilhado sob estresse | O insight "Recursos Compartilhados Sob Estresse" utiliza IA/ML para identificar automaticamente onde a disputa por recursos está causando degradação de desempenho em seu ambiente, destaca quaisquer cargas de trabalho afetadas por isso e fornece ações recomendadas para remediação, permitindo que você resolva problemas de desempenho mais rapidamente. 
 |===
 
 
@@ -2752,728 +2764,3 @@ IMPORTANT: Se você é um cliente Premium Edition atual e deseja manter seus rel
 O Cloud Insights adicionou uma categoria de API de *Ingestão de Dados*, oferecendo maior controle sobre dados e agentes personalizados.  A documentação detalhada para esta e outras categorias de API pode ser encontrada no Cloud Insights navegando até *Admin > Acesso à API* e clicando no link _Documentação da API_.  Você também pode anexar um comentário à UA no campo Nota, que é exibido na página de detalhes da UA, bem como na página da lista de UA.
 
 '''
-
-
-== Agosto de 2020
-
-
-
-=== Monitoramento e Alerta
-
-Além da capacidade atual de definir políticas de desempenho para objetos de armazenamento, VMs, EC2 e portas, o Cloud Insights Standard Edition agora inclui a capacidade delink:task_create_monitor.html["configurar monitores"] para limites em dados de integração para Kubernetes, métricas avançadas do ONTAP e plug-ins do Telegraf.  Basta criar um monitor para cada métrica de objeto para a qual você deseja acionar alertas, definir as condições para limites de nível de aviso ou nível crítico e especificar o(s) destinatário(s) de e-mail desejado(s) para cada nível.  Você pode entãolink:task_view_and_manage_alerts.html["visualizar e gerenciar alertas"] para rastrear tendências ou solucionar problemas.
-
-image:define_monitor_conditions_2.png["Monitorar condições"]
-
-'''
-
-
-== Julho de 2020
-
-
-
-=== Ação _Tirar um instantâneo_ do Cloud Secure
-
-O Cloud Secure protege seus dados tirando um instantâneo automaticamente quando uma atividade maliciosa é detectada, garantindo que seus dados sejam armazenados em backup com segurança.
-
-Você pode definir políticas de resposta automatizadas que tiram um instantâneo quando um ataque de ransomware ou outra atividade anormal do usuário é detectada.  Você também pode tirar um instantâneo manualmente na página de alerta.
-
-Snapshot automático tirado:image:AlertActionsAutomaticExample.png["Tela de Ação de Alerta, 1000"]
-
-Instantâneo manual:image:AlertActionsExample.png["Tela de Ação de Alerta, 1000"]
-
-
-
-=== Atualizações de métricas/contadores
-
-Os seguintes contadores de capacidade estão disponíveis para uso na interface do usuário do Cloud Insights e na API REST.  Anteriormente, esses contadores estavam disponíveis apenas para o Data Warehouse/Relatórios.
-
-[cols="2*"]
-|===
-| Tipo de objeto | Contador 
-
-
-| Armazenar | Capacidade - Bruta Sobressalente Capacidade - Bruta com Falha 
-
-
-| Pool de armazenamento | Capacidade de dados - Capacidade de dados usada - Capacidade total de outros - Capacidade usada de outros - Capacidade total - Capacidade bruta - Limite flexível 
-
-
-| Volume interno | Capacidade de dados - Capacidade de dados usada - Total Outra capacidade - Usada Outra capacidade - Total Capacidade salva do clone - Total 
-|===
-
-
-=== Detecção de Ataque Potencial Cloud Secure
-
-O Cloud Secure agora detecta ataques potenciais, como ransomware.  Clique em um alerta na página Lista de alertas para abrir uma página de detalhes mostrando o seguinte:
-
-* Hora do ataque
-* Atividade de usuário e arquivo associada
-* Ação tomada
-* Informações adicionais para ajudar a rastrear possíveis violações de segurança
-
-
-Página de alertas mostrando possível ataque de ransomware:image:RansomwareAlertExample.png["Exemplo de alerta de ransomware"]
-
-Página de detalhes para possível ataque de ransomware: -Visualização em "Tela": Os widgets de tabela exibem o objeto/agrupamento no lado esquerdo e os dados do objeto (atributos/métricas) no lado direito.
-
-+ image:TableWidgetLeftRightPanes.png["Widget de tabela mostrando os painéis esquerdo e direito"]
-
-* Agrupamento de vários atributos: para dados de integração (Kubernetes, ONTAP Advanced Metrics, Docker, etc.), você pode escolher vários atributos para agrupamento.  Os dados são exibidos de acordo com os atributos de agrupamento que você escolher.
-+
-Agrupamento com dados de integração (mostrado no modo de edição):image:TableWidgetIntegrationEditMode.png["Integração de agrupamento de dados no widget de tabela"]
-
-* O agrupamento de dados de infraestrutura (armazenamento, EC2, VM, portas, etc.) é feito por um único atributo, como antes.  Ao agrupar por um atributo que não é o objeto, a tabela permitirá que você expanda a linha do grupo para ver todos os objetos dentro do grupo.
-+
-Agrupamento com dados de infraestrutura (mostrados no modo de exibição):image:TableWidgetPerformanceData.png["Agrupamento de dados de infraestrutura no widget de tabela"]
-
-
-
-
-
-=== Filtragem de métricas
-
-Além de filtrar os atributos de um objeto em um widget, agora você também pode filtrar as métricas.
-
-image:MetricsFiltering.png["Filtragem de métricas"]
-
-Ao trabalhar com dados de integração (Kubernetes, ONTAP Advanced Data, etc.), a filtragem de métricas remove os pontos de dados individuais/incomparáveis ​​da série de dados plotados, diferentemente dos dados de infraestrutura (armazenamento, VM, portas, etc.), onde os filtros trabalham no valor agregado da série de dados e potencialmente removem o objeto inteiro do gráfico.
-
-image:IntegrationMetricFilterExample.png["Filtragem de Métricas de Integração"]
-
-
-
-=== Dados avançados do contador ONTAP
-
-O Cloud Insights aproveita os *Dados de Contadores Avançados* específicos do ONTAP da NetApp, que fornecem uma série de contadores e métricas coletados de dispositivos ONTAP .  Os dados avançados do contador ONTAP estão disponíveis para todos os clientes do NetApp ONTAP .  Essas métricas permitem uma visualização personalizada e abrangente em widgets e painéis do Cloud Insights .
-
-Os contadores avançados do ONTAP podem ser encontrados pesquisando por "netapp_ontap" na consulta do widget e selecionando entre os contadores.
-
-image:netapp_ontap counters.png["Procurando por contadores avançados ONTAP"]
-
-Você pode refinar sua pesquisa digitando partes adicionais do nome do contador. Por exemplo:
-
-* _vida_
-* _agregar_
-* _offbox_vscan_servidor_
-* e mais
-
-
-image:ONTAP_Widget_Example2.png["Exemplo de widget ONTAP - WAFL"] image:ONTAP_Widget_Example1.png["Exemplo de widget ONTAP - Leituras de CP"]
-
-Observe o seguinte:
-
-* A coleta avançada de dados será habilitada por padrão para novos coletores de dados ONTAP .  Para habilitar a coleta avançada de dados para seus coletores de dados ONTAP existentes, edite o coletor de dados e expanda a seção _Configuração avançada_.
-* A coleta avançada de dados não está disponível para o ONTAP de 7 modos.
-
-
-
-
-=== Painéis de Contagem Avançados
-
-O Cloud Insights vem com uma variedade de painéis pré-projetados para ajudar você a começar a visualizar contadores avançados do ONTAP para tópicos como _Desempenho agregado_, _Carga de trabalho de volume_, _Atividade do processador_ e muito mais.  Se você tiver pelo menos um coletor de dados ONTAP configurado, eles poderão ser importados da Galeria de Painéis em qualquer página de lista de painéis.
-
-
-
-=== Saber mais
-
-Mais informações sobre o ONTAP Advanced Data podem ser encontradas nos seguintes links:
-
-* https://mysupport.netapp.com/site/tools/tool-eula/netapp-harvest[](Observação: você precisará fazer login no Suporte da NetApp )
-* https://nabox.org/faq/[]
-
-
-
-
-=== Menu de Políticas e Violações
-
-Políticas de desempenho e violações agora podem ser encontradas no menu *Alertas*.  As funcionalidades de política e violação não foram alteradas.
-
-image:PoliciesMenuChange.png["Menu de Políticas e Violações"]
-
-
-
-=== Agente Telegraf atualizado
-
-O agente para ingestão de dados de integração do Telegraf foi atualizado paralink:https://docs.influxdata.com/telegraf/v1.14/["versão 1.14"] , que inclui correções de bugs, correções de segurança e novos plugins.
-
-Observação: ao configurar um coletor de dados do Kubernetes na plataforma Kubernetes, você poderá ver um erro "HTTP status 403 Forbidden" no log, devido a permissões insuficientes no atributo "clusterrole".
-
-Para contornar esse problema, adicione as seguintes linhas destacadas à seção _rules:_ do clusterrole endpoint-access e reinicie os pods do Telegraf.
-
-[listing]
-----
-rules:
-- apiGroups:
-  - ""
-  - apps
-  - autoscaling
-  - batch
-  - extensions
-  - policy
-  - rbac.authorization.k8s.io
-  attributeRestrictions: null
-  resources:
-  - nodes/metrics
-  - nodes/proxy     <== Add this line
-  - nodes/stats
-  - pods            <== Add this line
-  verbs:
-  - get
-  - list            <== Add this line
-----
-'''
-
-
-== Junho de 2020
-
-
-
-=== Relatório de erros simplificado do coletor de dados
-
-Relatar um erro do coletor de dados é mais fácil com o botão _Enviar relatório de erro_ na página do coletor de dados.  Clicar no botão envia informações básicas sobre o erro para a NetApp e inicia uma investigação sobre o problema.  Quando pressionado, o Cloud Insights reconhece que a NetApp foi notificada, e o botão Relatório de Erros é desabilitado para indicar que um relatório de erros para aquele coletor de dados foi enviado.  O botão permanece desabilitado até que a página do navegador seja atualizada.
-
-image:DCErrorReportButton.png["Botão Relatório de Erros"]
-
-
-
-=== Melhorias no widget
-
-As seguintes melhorias foram feitas nos widgets do painel.  Essas melhorias são consideradas funcionalidades de visualização e podem não estar disponíveis para todos os ambientes do Cloud Insights .
-
-* Novo seletor de objetos/métricas: objetos (armazenamento, disco, portas, nós, etc.) e suas métricas associadas (IOPS, latência, contagem de CPU, etc.) agora estão disponíveis em widgets em um único menu suspenso inclusivo com capacidade de pesquisa avançada.  Você pode inserir vários termos parciais no menu suspenso, e o Cloud Insights listará todas as métricas de objeto que atendem a esses termos.
-
-
-image:Object_Metric_Chooser.png["Seletor de Objeto/Métrica"]
-
-* Agrupamento de várias tags: ao trabalhar com dados de integração (Kubernetes, etc.), você pode agrupar os dados por várias tags/atributos.  Por exemplo, soma do uso de memória por namespace do Kubernetes e nome do contêiner.
-
-
-image:MultipleGroupsIntegrationLineChart.png["Agrupamento múltiplo ao exibir dados de integração"]
-
-'''
-
-
-== Maio de 2020
-
-
-
-=== Funções de usuário de relatórios
-
-As seguintes funções foram adicionadas para Relatórios:
-
-* Consumidores do Cloud Insights : podem executar e visualizar relatórios
-* Autores do Cloud Insights : podem executar funções de consumidor, bem como criar e gerenciar relatórios e painéis
-* Administradores do Cloud Insights : podem executar as funções de autor, bem como todas as tarefas administrativas
-
-
-
-
-=== Atualizações Cloud Secure
-
-O Cloud Insights inclui as seguintes alterações recentes do Cloud Secure .
-
-Na página Forense > Forense de Atividade, fornecemos duas visualizações para analisar e investigar a atividade do usuário:
-
-* Visualização de atividade, focada na atividade do usuário (Qual operação?  Onde foi realizado?)
-* Exibição de entidades, focada em quais arquivos o usuário acessou.
-
-
-image:CSActivityForensicsExample.png["Exemplo de página de entidades"]
-
-Além disso, a notificação por e-mail de alerta agora contém um link direto para a página de alerta.
-
-
-
-=== Agrupamento de painéis
-
-O agrupamento do painel permite melhorlink:concept_dashboard_features.html#dashboard-groups["gerenciamento de painéis"] que são relevantes para você.  Você pode adicionar painéis relacionados a um grupo para gerenciamento "centralizado", por exemplo, do seu armazenamento ou máquinas virtuais.
-
-Os grupos são personalizados por usuário, então os grupos de uma pessoa podem ser diferentes dos de outra.  Você pode ter quantos grupos precisar, com quantos painéis quiser em cada grupo.
-
-image:DashboardGroupNoPin.png["Grupos do Painel"]
-
-
-
-=== Fixação do painel
-
-Você pode fixar painéis para que os favoritos sempre apareçam no topo da lista.
-
-image:DashboardPin.png["Pinos do painel"]
-
-
-
-=== Modo TV e atualização automática
-
-link:concept_dashboard_features.html#tv-mode-and-auto-refresh["Modo TV e atualização automática"]permitir a exibição de dados quase em tempo real em um painel ou página de ativos:
-
-* O *Modo TV* proporciona uma exibição organizada; o menu de navegação fica oculto, oferecendo mais espaço na tela para a exibição dos seus dados.
-* Dados em widgets em painéis e páginas de destino de ativos *Atualização automática* de acordo com um intervalo de atualização (a cada 10 segundos) determinado pelo intervalo de tempo do painel selecionado (ou intervalo de tempo do widget, se definido para substituir o tempo do painel).
-
-
-Combinados, o Modo TV e a Atualização Automática fornecem uma visualização ao vivo dos seus dados do Cloud Insights , perfeito para demonstrações contínuas ou monitoramento interno.
-
-'''
-
-
-== Abril de 2020
-
-
-
-=== Novas opções de intervalo de tempo do painel
-
-As opções de intervalo de tempo para painéis e outras páginas de insights do Cloud agora incluem _Última 1 hora_ e _Últimos 15 minutos_.
-
-
-
-=== Atualizações Cloud Secure
-
-O Cloud Insights inclui as seguintes alterações recentes do Cloud Secure .
-
-* Melhor reconhecimento de alterações de metadados de arquivos e pastas para detectar se o usuário alterou a Permissão, o Proprietário ou a Propriedade do Grupo.
-* Exportar relatório de atividade do usuário para CSV.
-
-
-O Cloud Secure monitora e audita todas as operações de acesso do usuário em arquivos e pastas.  A auditoria de atividades permite que você cumpra as políticas de segurança internas, atenda aos requisitos de conformidade externa, como PCI, GDPR e HIPAA, e conduza investigações de violações de dados e incidentes de segurança.
-
-
-
-=== Tempo padrão do painel
-
-O intervalo de tempo padrão para painéis agora é de 3 horas em vez de 24 horas.
-
-
-
-=== Tempos de agregação otimizados
-
-Otimizadolink:concept_dashboard_features.html#aggregating-data["agregação de tempo"] intervalos em widgets de séries temporais (gráficos de linha, spline, área e área empilhada) são mais frequentes para intervalos de tempo de painel/widget de 3 e 24 horas, permitindo gráficos de dados mais rápidos.
-
-* O intervalo de tempo de 3 horas é otimizado para um intervalo de agregação de 1 minuto.  Anteriormente, eram 5 minutos.
-* O intervalo de tempo de 24 horas é otimizado para um intervalo de agregação de 30 minutos.  Anteriormente era 1 hora.
-
-
-Você ainda pode substituir a agregação otimizada definindo um intervalo personalizado.
-
-
-
-=== Unidade de exibição de formato automático
-
-Na maioria dos widgets, o Cloud Insights conhece a unidade base na qual exibir valores, por exemplo _Megabytes_, _Milhares_, _Porcentagem_, _Milissegundos (ms)_, etc., e agoralink:concept_dashboard_features.html#choosing-the-unit-for-displaying-data["formata automaticamente"] o widget para a unidade mais legível.  Por exemplo, um valor de dados de 1.234.567.890 bytes seria formatado automaticamente para 1,23 gibibytes.  Em muitos casos, o Cloud Insights sabe o melhor formato para os dados que estão sendo adquiridos.  Nos casos em que o melhor formato não é conhecido, ou em widgets onde você deseja substituir a formatação automática, você pode escolher o formato desejado.
-
-image:used_memory_in_bytes_gb.png["Formatação automática em widgets, largura=480"]
-
-
-
-=== Importar anotações usando API
-
-Com a poderosa API do Cloud Insights Premium Edition, agora você podelink:task_annotation_import.html["importar anotações"] e atribuí-los a objetos usando um arquivo .CSV.  Você também pode importar aplicativos e atribuir entidades comerciais da mesma maneira.
-
-image:api_assets_import.png["Importando Anotações"]
-
-
-
-=== Seletor de widgets mais simples
-
-Adicionar widgets a painéis e landing pages de ativos ficou mais fácil com um novo seletor de widgets que exibe todos os tipos de widgets em uma única visualização, de forma que o usuário não precisa mais rolar por uma lista de tipos de widgets para encontrar o que deseja adicionar. Os widgets relacionados são coordenados por cores e agrupados por proximidade no novo seletor.
-
-image:NewWidgetPicker.png["Novo seletor de widgets"]
-
-'''
-
-
-== Fevereiro de 2020
-
-
-
-=== API com Edição Premium
-
-O Cloud Insights Premium Edition vem com umlink:API_Overview.html["API poderosa"] que pode ser usado para integrar o Cloud Insights com outros aplicativos, como CMDBs ou outros sistemas de emissão de tickets.
-
-Informações detalhadas baseadas no Swagger podem ser encontradas em *Admin > API Acccess*, no link *Documentação da API*.  O Swagger fornece uma breve descrição e informações de uso da API e permite que você experimente cada API em seu ambiente.
-
-A API do Cloud Insights usa tokens de acesso para fornecer acesso baseado em permissão a categorias de API, como ATIVOS ou COLEÇÃO.
-
-image:API_Documentation.png["Documentação da API"]
-
-
-
-=== Pesquisa inicial após adicionar um coletor de dados
-
-Anteriormente, após configurar um novo coletor de dados, o Cloud Insights consultava o coletor de dados imediatamente para coletar dados de _inventário_, mas esperava até o intervalo de consulta de desempenho configurado (normalmente 15 minutos) para coletar dados de _desempenho_ iniciais.  Ele então esperaria por outro intervalo antes de iniciar a segunda pesquisa de desempenho, o que significava que levaria até _30 minutos_ antes que dados significativos fossem adquiridos de um novo coletor de dados.
-
-Coletor de dadoslink:task_configure_data_collectors.html["votação"] foi bastante melhorado, de modo que a pesquisa de desempenho inicial ocorre imediatamente após a pesquisa de inventário, com a segunda pesquisa de desempenho ocorrendo alguns segundos após a conclusão da primeira pesquisa de desempenho.  Isso permite que o Cloud Insights comece a mostrar dados úteis em painéis e gráficos em um tempo muito curto.
-
-Esse comportamento de pesquisa também ocorre após editar a configuração de um coletor de dados existente.
-
-
-
-=== Duplicação de widgets mais fácil
-
-Está mais fácil do que nunca criar uma cópia de um widget em um painel ou página de destino.  No modo de edição do painel, clique no menu do widget e selecione *Duplicar*.  O editor de widgets é iniciado, pré-preenchido com a configuração original do widget e com um sufixo “cópia” no nome do widget.  Você pode facilmente fazer as alterações necessárias e salvar o novo widget.  O widget será colocado na parte inferior do seu painel e você poderá posicioná-lo conforme necessário.  Lembre-se de salvar seu painel quando todas as alterações estiverem concluídas.
-
-image:DuplicateWidget.png["Duplicar um widget"]
-
-
-
-=== Logon único (SSO)
-
-Com o Cloud Insights Premium Edition, os administradores podem habilitar *link:concept_user_roles.html#what-is-identity-federation["Login único"] * Acesso (SSO) ao Cloud Insights para todos os usuários em seu domínio corporativo, sem precisar convidá-los individualmente.  Com o SSO habilitado, qualquer usuário com o mesmo endereço de e-mail de domínio pode fazer login no Cloud Insights usando suas credenciais corporativas.
-
-
-NOTE: O SSO está disponível apenas no Cloud Insights Premium Edition e deve ser configurado antes de poder ser habilitado para o Cloud Insights.  A configuração SSO incluilink:https://services.cloud.netapp.com/misc/federation-support["Federação de Identidade"] por meio do NetApp Cloud Central.  A federação permite que usuários de logon único acessem suas contas do NetApp Cloud Central usando credenciais do seu diretório corporativo.
-
-'''
-
-
-== Janeiro de 2020
-
-
-
-=== Documentação do Swagger para API REST
-
-Swagger explica cada API REST disponível no Cloud Insights, bem como seu uso e sintaxe.  Informações sobre as APIs do Cloud Insights estão disponíveis emlink:http://docs.netapp.com/us-en/cloudinsights/API_Overview.html["documentação"] .
-
-
-
-=== Barra de progresso dos tutoriais de recursos
-
-A lista de verificação de tutoriais de recursos foi movida para o banner superior e agora apresenta um indicador de progresso.  Os tutoriais estão disponíveis para cada usuário até serem dispensados ​​e estão sempre disponíveis no Cloud Insightslink:concept_feature_tutorials.html["documentação"] .
-
-image:TutorialProgress.png["Progresso da lista de verificação do tutorial"]
-
-
-
-=== Mudanças na Unidade de Aquisição
-
-Ao instalar uma Unidade de Aquisição (UA) em um host ou VM que tem o mesmo nome de uma UA já instalada, o Cloud Insights garante um nome exclusivo anexando ao nome da UA "_1", "_2", etc. Isso também ocorre ao desinstalar e reinstalar uma UA da mesma VM sem primeiro removê-la do Cloud Insights.  Quer um nome de UA totalmente diferente?  Sem problemas; as AUs podem ser renomeadas após a instalação.
-
-
-
-=== Agregação de tempo otimizada em widgets
-
-Nos widgets, você pode escolher entre um intervalo de agregação de tempo _Otimizado_ ou um intervalo _Personalizado_ definido por você.  A agregação otimizada seleciona automaticamente o intervalo de tempo correto com base no intervalo de tempo do painel selecionado (ou intervalo de tempo do widget, se estiver substituindo o tempo do painel).  O intervalo muda dinamicamente conforme o intervalo de tempo do painel ou do widget é alterado.
-
-
-
-=== Processo simplificado de "Introdução ao Cloud Insights"
-
-O processo para começar a usar o Cloud Insights foi simplificado para tornar sua primeira configuração mais fácil e tranquila.  Basta selecionar um coletor de dados inicial e seguir as instruções.  O Cloud Insights orientará você na configuração do coletor de dados e de qualquer agente ou unidade de aquisição necessária.  Na maioria dos casos, ele até importará um ou mais painéis iniciais para que você possa começar a obter insights sobre seu ambiente rapidamente (mas aguarde até 30 minutos para que o Cloud Insights colete dados significativos).
-
-Melhorias adicionais:
-
-* A instalação da Unidade de Aquisição é mais simples e rápida.
-* As opções dos Coletores de Dados Alfabéticos tornam mais fácil encontrar o que você está procurando.
-* As instruções de configuração aprimoradas do Coletor de Dados estão mais fáceis de seguir.
-* Usuários experientes podem pular o processo de introdução com o clique de um botão.
-* Uma nova barra de progresso mostra onde você está no processo.
-+
-image:Onboarding_Progress.png["Barra de progresso"]
-
-
-
-'''
-Widget de valor com formatação image:Single-Value Widgets - Formatted.png["Widgets de valor único com formatação"]
-
-
-
-=== Convidar usuários durante a integração
-
-A qualquer momento durante o processo de integração, você pode clicar em Admin > Gerenciamento de usuários > +Usuário para convidar usuários adicionais para seu ambiente do Cloud Insights .  Esteja ciente de que usuários com funções de _Convidado_ ou _Usuário_ verão maiores benefícios quando a integração for concluída e os dados forem coletados.
-
-
-
-=== Melhoria da página de detalhes do coletor de dados
-
-A página de detalhes do coletor de dados foi melhorada para exibir erros em um formato mais legível.  Os erros agora são exibidos em uma tabela separada na página, com cada erro exibido em uma linha separada no caso de vários erros para o coletor de dados.
-
-'''
-
-
-== Agosto de 2019
-
-
-
-=== Todos vs. Coletores de Dados Disponíveis
-
-Ao adicionar coletores de dados ao seu ambiente, você pode definir um filtro para mostrar apenas os coletores de dados disponíveis com base no seu nível de assinatura ou todos os coletores de dados.
-
-
-
-=== Integração ActiveIQ
-
-O Cloud Insights coleta dados do NetApp ActiveIQ, que fornece uma série de visualizações, análises e outros serviços de suporte relacionados aos clientes da NetApp e seus sistemas de hardware/software.  O Cloud Insights integra-se aos sistemas de gerenciamento de dados ONTAP . Ver link:concept_activeiq.html["Active IQ"] para maiores informações.
-
-'''
-
-
-== Julho de 2019
-
-
-
-=== Melhorias no painel
-
-Os painéis e widgets foram aprimorados com as seguintes alterações:
-
-* Além de Soma, Mín., Máx. e Média, *Contagem* agora é uma opção para acumulação em widgets de valor único.  Ao acumular por “Contagem”, o Cloud Insights verifica se um objeto está ativo ou não e adiciona apenas os ativos à contagem.  O número resultante está sujeito a agregação e filtros.
-* No widget de valor único, agora você tem a opção de exibir o número resultante com 0, 1, 2, 3 ou 4 casas decimais.
-* Os gráficos de linhas mostram um rótulo de eixo e unidades quando um único contador está sendo plotado.
-* A opção *Transformar* está disponível para dados de integração de serviços agora em todos os widgets de séries temporais para todas as métricas.  Para qualquer contador ou métrica de integração de serviços (Telegraf) em widgets de séries temporais (Linha, Spline, Área, Área Empilhada), você tem a opção de como desejalink:concept_telegraf_display_options.html["Transforme os valores"] .  Nenhum (exibir valor como está), Soma, Delta, Cumulativo, etc.
-
-
-
-
-=== Fazendo downgrade para a edição básica
-
-O downgrade para a Basic Edition falha com uma mensagem de erro se não houver nenhum dispositivo NetApp disponível configurado que tenha concluído com sucesso uma pesquisa nos últimos 7 dias.
-
-
-
-=== Coletando métricas de estado do Kube
-
-Olink:task_config_telegraf_kubernetes.html["Coletor de dados do Kubernetes"] agora coleta objetos e contadores do plugin kube-state-metrics, expandindo muito o número e o escopo de métricas disponíveis para monitoramento no Cloud Insights.
-
-'''
-
-
-== Junho de 2019
-
-
-
-=== Edições do Cloud Insights
-
-O Cloud Insights está disponível em diferentes edições para se adequar ao seu orçamento e às suas necessidades comerciais.  Os clientes atuais da NetApp com uma conta de suporte NetApp ativa podem aproveitar 7 dias de retenção de dados e acesso aos coletores de dados da NetApp com a *Edição Básica* gratuita ou obter maior retenção de dados, acesso a todos os coletores de dados suportados, suporte técnico especializado e muito mais com a *Edição Padrão*.  Para obter mais informações sobre os recursos disponíveis, consulte o NetApplink:https://www.netapp.com/cloud-services/cloud-insights/["Cloud Insights"] site.
-
-
-
-=== Novo coletor de dados de infraestrutura: NetApp HCI
-
-* link:task_dc_na_hci.html["Centro Virtual NetApp HCI"]foi adicionado como um coletor de dados de infraestrutura.  O coletor de dados do HCI Virtual Center coleta informações do NetApp HCI Host e requer privilégios somente leitura em todos os objetos dentro do Virtual Center.
-
-
-Observe que o coletor de dados HCI adquire dados somente do HCI Virtual Center.  Para coletar dados do sistema de armazenamento, você também deve configurar o NetApplink:task_dc_na_solidfire["SolidFire"] coletor de dados.
-
-'''
-
-
-== Maio de 2019
-
-
-
-=== Novo Coletor de Dados de Serviço: Kapacitor
-
-* link:task_config_telegraf_kapacitor.html["Capacitor"]foi adicionado como um coletor de dados para serviços.
-
-
-
-
-=== Integração com Serviços via Telegraf
-
-Além da aquisição de dados de dispositivos de infraestrutura, como switches e armazenamento, o Cloud Insights agora coleta dados de uma variedade de sistemas operacionais e serviços, usandolink:task_config_telegraf_agent.html["Telegraf como seu agente"] para coleta de dados de integração.  Telegraf é um agente controlado por plugin que pode ser usado para coletar e relatar métricas.  Os plugins de entrada são usados ​​para coletar as informações desejadas no agente acessando o sistema/SO diretamente, chamando APIs de terceiros ou ouvindo fluxos configurados.
-
-A documentação para integrações atualmente suportadas pode ser encontrada no menu à esquerda em *Referência e Suporte*.
-
-
-
-=== Ativos de Máquina Virtual de Armazenamento
-
-* Máquinas virtuais de armazenamento (SVMs) estão disponíveis como ativos no Cloud Insights.  As SVMs têm suas próprias páginas de destino de ativos e podem ser exibidas e usadas em pesquisas, consultas e filtros.  SVMs também podem ser usados ​​em widgets de painel e associados a anotações.
-
-
-
-
-=== Requisitos de sistema de unidade de aquisição reduzidos
-
-* Os requisitos de CPU e memória do sistema para o software da Unidade de Aquisição (AU) foram reduzidos.  Os novos requisitos são:
-
-
-|===
-
-
-| *Componente* | *Requisito antigo* | *Novo Requisito* 
-
-
-| Núcleos de CPU | 4 | 2 
-
-
-| Memória | 16 GB | 8 GB 
-|===
-
-
-=== Plataformas adicionais suportadas
-
-* As seguintes plataformas foram adicionadas às atualmentelink:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html["com suporte para Cloud Insights"] :
-
-
-|===
-
-
-| Linux | Windows 
-
-
-| CentOS 7.3 de 64 bits CentOS 7.4 de 64 bits CentOS 7.6 de 64 bits Debian 9 de 64 bits Red Hat Enterprise Linux 7.3 de 64 bits Red Hat Enterprise Linux 7.4 de 64 bits Red Hat Enterprise Linux 7.6 de 64 bits Ubuntu Server 18.04 LTS | Microsoft Windows 10 de 64 bits Microsoft Windows Server 2008 R2 Microsoft Windows Server 2019 
-|===
-'''
-
-
-== Abril de 2019
-
-
-
-=== Filtrar máquinas virtuais por tags
-
-Ao configurar os seguintes coletores de dados, você pode filtrar para incluir ou excluir máquinas virtuais da coleta de dados de acordo com suas tags ou rótulos.
-
-* link:task_dc_amazon_ec2.html#advanced-configuration["Amazon EC2"]
-* link:task_dc_ms_azure.html#advanced-configuration["Azul"]
-* link:task_dc_google_cloud.html#advanced-configuration["Plataforma Google Cloud"]
-
-
-'''
-
-
-== Março de 2019
-
-
-
-=== Notificações por e-mail para eventos relacionados à assinatura
-
-* Você pode selecionar destinatários para e-maillink:concept_notifications_email.html["notificações"] quando ocorrem eventos relacionados à assinatura, como expiração iminente do teste ou alterações na conta assinada.  Você pode escolher destinatários para essas notificações entre os seguintes:
-+
-** Todos os proprietários de contas
-** Todos os administradores
-** Endereços de e-mail adicionais que você especificar
-
-
-
-
-
-
-=== Painéis adicionais
-
-* Os seguintes novos recursos focados na AWSlink:concept_import_from_dashboard_gallery.html["painéis"] foram adicionados à galeria e estão disponíveis para importação:
-+
-** AWS Admin - Quais EC2s estão em alta demanda?
-** Desempenho da instância do AWS EC2 por região
-
-
-
-
-'''
-
-
-== Fevereiro de 2019
-
-
-
-=== Coletando de contas filhas da AWS
-
-* O Cloud Insights oferece suportelink:task_dc_amazon_ec2.html#collecting-from-aws-child-accounts["coleta de contas filhas da AWS"] dentro de um único coletor de dados.  Seu ambiente AWS deve ser configurado para permitir que o Cloud Insights colete dados de contas filhas.
-
-
-
-
-=== Nomenclatura do coletor de dados
-
-* Os nomes do coletor de dados agora podem incluir pontos (.), hifens (-) e espaços ( ), além de letras, números e sublinhados.  Os nomes não podem começar ou terminar com espaço, ponto final ou hífen.
-
-
-
-
-=== Unidade de Aquisição para Windows
-
-* Você pode configurar uma Unidade de Aquisição do Cloud Insights em um servidor/VM Windows.  Revise as janelaslink:concept_acquisition_unit_requirements.html["pré-requisitos"] antes de instalar olink:task_configure_acquisition_unit.html["Software de Unidade de Aquisição"] .
-
-
-'''
-
-
-== Janeiro de 2019
-
-
-
-=== O campo "Proprietário" é mais legível
-
-* Nas listas do Painel e da Consulta, os dados do campo "Proprietário" eram anteriormente uma sequência de ID de autorização, em vez de um nome de proprietário amigável.  O campo "Proprietário" agora mostra um nome de proprietário mais simples e legível.
-
-
-
-
-=== Detalhamento da unidade gerenciada na página de assinatura
-
-* Para cada coletor de dados listado na página *Administrador > Assinatura*, agora você pode ver um detalhamento das contagens de Unidades Gerenciadas (MU) para hosts e armazenamento, bem como o total.
-
-
-'''
-
-
-== Dezembro de 2018
-
-
-
-=== Melhoria do tempo de carregamento da interface do usuário
-
-* O tempo de carregamento inicial da interface de usuário (IU) do Cloud Insights foi significativamente melhorado.  O tempo de atualização da interface do usuário também se beneficia dessa melhoria em circunstâncias em que metadados são carregados.
-
-
-
-
-=== Coletores de dados de edição em massa
-
-* Você pode editar informações de vários coletores de dados ao mesmo tempo.  Na página *Observabilidade > Coletores*, selecione os coletores de dados a serem modificados marcando a caixa à esquerda de cada um e clique no botão *Ações em massa*.  Selecione *Editar* e modifique os campos necessários.
-+
-Os coletores de dados selecionados devem ser do mesmo fornecedor e modelo e residir na mesma Unidade de Aquisição.
-
-
-
-
-
-=== As páginas de suporte e assinatura estão disponíveis durante a integração
-
-* Durante o fluxo de trabalho de integração, você pode navegar até as páginas *Ajuda > Suporte* e *Administrador > Assinatura*.  Retornar dessas páginas o levará de volta ao fluxo de trabalho de integração, desde que você não tenha fechado a aba do navegador.
-
-
-'''
-
-
-== Novembro de 2018
-
-
-
-=== Assine através do NetApp Sales ou do AWS Marketplace
-
-* A assinatura e o faturamento do Cloud Insights agora estão disponíveis diretamente pela NetApp.  Isso é um acréscimo à assinatura de autoatendimento disponível no AWS Marketplace.  Um novo link *Contatar Vendas* é apresentado na página *Administrador > Assinatura*.  Para clientes cujos ambientes têm ou devem ter 1.000 ou mais Unidades Gerenciadas (MUs), é recomendável entrar em contato com a equipe de vendas da NetApp por meio do link Entre em contato com a equipe de vendas.
-
-
-
-
-=== Hiperlinks de anotação de texto
-
-* Anotações do tipo texto agora podem incluir hiperlinks.
-
-
-
-
-=== Passo a passo de integração
-
-* O Cloud Insights agora oferece um passo a passo de integração para o primeiro usuário (administrador ou proprietário da conta) que fizer login em um novo ambiente.  O passo a passo mostra como instalar uma Unidade de Aquisição, configurar um coletor de dados inicial e selecionar um ou mais painéis úteis.
-
-
-
-
-=== Importar painéis da galeria
-
-* Além de selecionar painéis durante a integração, você pode importar painéis por meio de *Painéis > Mostrar todos os painéis* e clicar em *+Da galeria*.
-
-
-
-
-=== Duplicando painéis
-
-* A capacidade de duplicar um painel foi adicionada à página de lista de painéis como uma opção no menu de opções de cada painel e na própria página principal do painel no menu _Salvar_.
-
-
-
-
-=== Menu de produtos do Cloud Central
-
-* O menu que permite alternar para outros produtos do NetApp Cloud Central foi movido para o canto superior direito da tela.
-

@@ -296,7 +296,7 @@ Edite o _AgentConfiguration_ em _operator-config.yaml_ para refletir a nova loca
 agent:
   ...
   # An optional docker registry where you want docker images to be pulled from as compared to CI's docker registry
-  # Please see documentation link here: link:task_config_telegraf_agent_k8s.html#using-a-custom-or-private-docker-repository
+  # Please see documentation link here: link:task_config_telegraf_agent_k8s.html#using-a-custom-or-private-docker-repository[Using a custom or private docker repository]
   dockerRepo: your.docker.repo/long/path/to/test
   # Optional: A docker image pull secret that maybe needed for your private docker registry
   dockerImagePullSecret: docker-secret-name
@@ -426,7 +426,7 @@ Algumas coisas que você pode tentar se tiver problemas ao configurar o Kubernet
 | Tive problemas ao tentar implantar o Operador e tenho o PSP/PSA em uso. | 1. Edite o agente usando o seguinte comando: kubectl -n <name-space> edit agent 2.  Marque 'security-policy-enabled' como 'false'.  Isso desabilitará as Políticas de Segurança do Pod e a Admissão de Segurança do Pod e permitirá que o Operador faça a implantação.  Confirme usando os seguintes comandos: kubectl get psp (deve mostrar que a Política de Segurança do Pod foi removida) kubectl get all -n <namespace> | grep -i psp (deve mostrar que nada foi encontrado) 
 
 
-| Erros "ImagePullBackoff" vistos | Esses erros podem ser vistos se você tiver um repositório docker personalizado ou privado e ainda não tiver configurado o Kubernetes Monitoring Operator para reconhecê-lo corretamente. <<using-a-custom-or-private-docker-repository,Ler mais>> sobre configuração para repositório personalizado/privado. 
+| Erros "ImagePullBackoff" vistos | Esses erros podem ocorrer se você tiver um repositório docker personalizado ou privado e ainda não tiver configurado o Kubernetes Monitoring Operator para reconhecê-lo corretamente. <<Usando um repositório docker personalizado ou privado,Ler mais>> sobre configurar para repositório personalizado/privado. 
 
 
 | Estou tendo um problema com a implantação do meu operador de monitoramento e a documentação atual não me ajuda a resolvê-lo.  a| 

@@ -7,6 +7,10 @@ summary: Configurando o Coletor de Diretório de Usuário LDAP de Segurança de 
 = Configurando um coletor de servidor de diretório LDAP
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -126,7 +130,7 @@ Você pode validar permissões de usuário LDAP e definições de atributos usan
  ldapsearch -D "uid=john ,cn=users,cn=accounts,dc=dorp,dc=company,dc=com" -W -x -LLL -o ldif-wrap=no -b "cn=accounts,dc=dorp,dc=company,dc=com" -H ldap://vmwipaapp08.dorp.company.com
 * Use o LDAP Explorer para navegar em um banco de dados LDAP, visualizar propriedades e atributos de objetos, visualizar permissões, visualizar o esquema de um objeto e executar pesquisas sofisticadas que você pode salvar e reexecutar.
 +
-** Instalar o LDAP Explorer(http://ldaptool.sourceforge.net/[] ) ou Java LDAP Explorer(http://jxplorer.org/[] ) em qualquer máquina Windows que possa se conectar ao servidor LDAP.
+** Instale link:http://ldaptool.sourceforge.net/["Explorador LDAP"] ou link:http://jxplorer.org/["Java LDAP Explorer"] em qualquer máquina Windows que possa se conectar ao servidor LDAP.
 ** Conecte-se ao servidor LDAP usando o nome de usuário/senha do servidor de diretório LDAP.
 
 

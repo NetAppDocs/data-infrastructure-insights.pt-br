@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: login_message_popup.html 
+summary: Defina uma mensagem pop-up do dia para todos os usuários. 
+keywords: notifications, pop-up, banner, motd, message, login 
+---
+= Configurando uma mensagem de login
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Você pode configurar uma mensagem para ser exibida como uma janela pop-up para todos os usuários quando fizerem login. Você pode optar por exibi-la apenas no próximo login ou em todos os logins subsequentes.
+
+Um administrador pode definir a mensagem em Admin > Notificações, na guia "Banner de login".
+
+A mensagem suporta Markdown básico, permitindo aplicar formatação como negrito, itálico, tabelas, etc.
+
+Escolha se o usuário verá a mensagem apenas no próximo login ou em todos os logins subsequentes.
+
+image:login_banner_settings.png["configurações do banner de login"]
+
+Note que o usuário _deve_ confirmar a mensagem de login para poder descartá-la. Após o descarte, quaisquer pop-ups adicionais (atualizações de "Novidades", atualizações dos Termos de Serviço, etc.) serão exibidos.

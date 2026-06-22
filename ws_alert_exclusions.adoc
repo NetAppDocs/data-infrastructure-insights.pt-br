@@ -17,7 +17,7 @@ Acesse *Segurança da Carga de Trabalho > Políticas* e selecione a guia *Exclus
 
 A exclusão de alertas é configurada por locatário e inclui o seguinte:
 
-. Tipos de arquivo: suprimir alertas de adulteração de arquivos em tipos específicos <<allowed-file-types,Tipos de arquivo permitidos>>
+. Tipos de arquivo: suprimir alertas de adulteração de arquivos em tipos específicos <<file-types,Tipos de arquivo permitidos>>
 . Usuários: suprimir alertas acionados por usuários selecionados.
 . Caminhos: suprime alertas de atividade em caminhos de diretório selecionados (até quatro níveis de diretório, começando no caminho de junção).
 
@@ -38,9 +38,9 @@ A exclusão de alertas é configurada por locatário e inclui o seguinte:
 * Lista de exclusão de diretórios: suporta até quatro níveis de caminhos de diretório, começando pelo caminho de junção. Todos os subdiretórios e arquivos sob este caminho serão excluídos da geração de alertas. Caracteres curinga em caminhos de diretório não são suportados.
 
 
-image:ws_alert_exclusions_users.png[""]
+image:ws_alert_exclusions_users.png["Usuários com exclusões de alerta"]
 
-image:ws_alert_exclusions_paths.png[""]
+image:ws_alert_exclusions_paths.png["Caminhos de exclusão de alertas"]
 
 Usuários individuais e caminhos de diretório podem ser adicionados ou removidos da respectiva lista de exclusão. Cada entrada em cada lista conterá informações sobre quando e por quem foi adicionada à lista, e essas informações serão usadas para fins de auditoria.
 
