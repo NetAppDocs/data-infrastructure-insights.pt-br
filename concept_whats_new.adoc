@@ -40,24 +40,6 @@ Acelere a integração de novos dispositivos com a identificação de dispositiv
 
 
 
-=== Compartilhe atualizações importantes com mensagens de login
-
-Mantenha sua equipe informada e alinhada com mensagens de login personalizáveis. Comunique anúncios importantes, cronogramas de manutenção ou atualizações de políticas diretamente aos usuários quando eles fizerem login. Com suporte a markdown, você pode formatar as mensagens para maior clareza e garantir que informações críticas cheguem a todos os usuários do DII. Contas com privilégios de administrador podem encontrar a configuração no menu Admin, em Notificações.
-
-
-
-=== Mais espaço de trabalho, menos bagunça
-
-O menu de navegação do DII tem um visual totalmente novo, agora combinando com as cores e o comportamento do Console para uma experiência mais unificada. O menu principal, antes estático, será recolhido por padrão para um espaço de trabalho mais focado e um uso mais eficiente do espaço na tela. Basta clicar no ícone de menu (☰) no canto superior esquerdo para acessá-lo.
-
-
-
-=== Amplie a visibilidade do dispositivo com assistência inteligente de IA
-
-Acelere a integração de novos dispositivos com a identificação de dispositivos baseada em IA. Data Infrastructure Insights analisa seu ambiente e sugere regras de Resolução Automática de Dispositivos, ajudando você a identificar e gerenciar mais dispositivos rapidamente. Basta revisar e aprovar as regras geradas por IA e Data Infrastructure Insights cuida do resto, melhorando a visibilidade e o gerenciamento de dispositivos em toda a sua infraestrutura.
-
-
-
 === Um assistente de IA mais inteligente para equipes globais
 
 O Assistente de IA agora é compatível com mais de uma dúzia de idiomas, permitindo que sua equipe interaja naturalmente em seu idioma preferido. Veja a lista completa link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support["aqui"^].
