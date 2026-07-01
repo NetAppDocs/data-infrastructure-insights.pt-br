@@ -14157,4 +14157,5 @@
   <block id="180f4f510f0a043b315312d10faa507e" category="paragraph"><block ref="180f4f510f0a043b315312d10faa507e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="eda220a2d8b65414dd2552b1cc37aca5" category="sidebar">Monitoramento, alertas e notificações</block>
   <block id="b3dd2c9c1ffecc51c5a189f2d6c9d4c6" category="sidebar">Mensagem de login</block>
+  <block id="241aeccf602b677945fa5597f1832e5e" category="section-title">Gerar alerta de adulteração de arquivo</block>
 </blocks>
