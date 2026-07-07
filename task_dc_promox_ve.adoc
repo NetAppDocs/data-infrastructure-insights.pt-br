@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: task_dc_promox_ve.html 
+keywords: data collector, Promox VirtVirtual Environmentalization 
+summary: Configurando o coletor de dados do Promox Virtual Environment. 
+---
+= Coletor de dados de virtualização Red Hat OpenShift
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O coletor do Ambiente Virtual DII Promox coletará dados de inventário. Este é um coletor baseado em API REST HTTPS.
+
+
+
+== Terminologia
+
+Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="2*"]
+|===
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
+
+
+| Disco | Disco Virtual 
+
+
+| Hospedar | Hospedar 
+
+
+| Máquina Virtual | Máquina Virtual 
+
+
+| Domínio de armazenamento | Armazenamento de dados 
+
+
+| Unidade Lógica | LUN 
+|===
+Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
+
+
+
+== Configuração
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Nome do host ou endereço IP | Nome do host endereço IP do sistema de storage 
+
+
+| ID do token da API | Token da API necessário para acesso 
+
+
+| Segredo do token da API | Segredo para o token acima 
+|===
+
+
+== Configuração avançada
+
+[cols="2*"]
+|===
+| Campo | Descrição 
+
+
+| Porta de comunicação HTTPS | Porta usada para comunicação HTTPS (padrão 8006) 
+
+
+| Intervalo de pesquisa de inventário (min) | O padrão é 20 minutos. 
+|===
+
+
+== Solução de problemas
+
+Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .
