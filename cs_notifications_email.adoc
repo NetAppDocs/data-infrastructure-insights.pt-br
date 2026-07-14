@@ -18,6 +18,7 @@ As notificações por e-mail permitem que você se mantenha informado sobre poss
 
 
 
+[[potential-attack-alerts-and-warnings]]
 == Alertas e avisos de ataques potenciais
 
 Para enviar notificações de alerta de _Ataque Potencial_, insira os endereços de e-mail dos destinatários na seção _Enviar Alertas de Ataque Potencial_.  Notificações por e-mail são enviadas para a lista de destinatários do alerta para cada ação no alerta.
@@ -26,6 +27,7 @@ Para enviar notificações de _Aviso_, insira os endereços de e-mail dos destin
 
 
 
+[[agent-and-data-collector-health-monitoring]]
 == Monitoramento de integridade do agente e do coletor de dados
 
 Você pode monitorar a integridade dos Agentes e Fontes de Dados por meio de notificações.
@@ -43,6 +45,7 @@ Tenha em mente o seguinte:
 
 
 
+[[receiving-agent-and-data-collector-upgrade-notifications]]
 == Recebendo notificações de atualização do agente e do coletor de dados
 
 * Insira o(s) ID(s) de e-mail em “Alertas de saúde de coleta de dados”.
@@ -52,6 +55,7 @@ Tenha em mente o seguinte:
 
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 |===

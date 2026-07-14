@@ -19,12 +19,14 @@ image:anomaly_detection_expert_view.png["gráfico mostrando anomalia detectada"]
 
 
 
+[[what-is-anomaly-detection]]
 == O que é detecção de anomalias?
 
 Uma anomalia ocorre quando o valor médio de uma métrica está a uma série de desvios-padrão da média ponderada dessa métrica nas semanas anteriores, com as semanas recentes tendo mais peso do que as semanas anteriores.  O Data Infrastructure Insights oferece a capacidade de monitorar dados e alertar quando anomalias são detectadas.  Você tem a opção de definir os níveis de "sensibilidade" de detecção.  Por exemplo, uma sensibilidade maior seria quando o valor médio tivesse menos desvios-padrão da média, fazendo com que mais alertas fossem gerados.  Por outro lado, menor sensibilidade = mais desvios padrão da média = menos alertas.
 
 
 
+[[anomaly-detection-monitoring-differs-from-threshold-monitoring]]
 === O monitoramento de detecção de anomalias é diferente do monitoramento de limites.
 
 * *O monitoramento baseado em limites* funciona quando você tem limites predefinidos para métricas específicas.  Em outras palavras, quando você tem uma compreensão clara do que é esperado (ou seja, dentro de uma faixa normal).
@@ -39,6 +41,7 @@ image:ADMonitor_blurb.png["Os monitores de detecção de anomalias são para qua
 
 
 
+[[when-would-i-need-anomaly-detection]]
 == Quando eu precisaria de Detecção de Anomalias?
 
 O monitoramento de detecção de anomalias pode fornecer alertas úteis para muitas situações, incluindo as seguintes:
@@ -50,6 +53,7 @@ O monitoramento de detecção de anomalias pode fornecer alertas úteis para mui
 
 
 
+[[creating-an-anomaly-detection-monitor]]
 == Criando um Monitor de Detecção de Anomalias
 
 Para alertar sobre anomalias, crie um monitor navegando até *Observabilidade > Alertas > +Monitor*.  Selecione _Monitor de detecção de anomalias_ como o tipo de monitor.
@@ -79,6 +83,7 @@ NOTE: Quando um monitor é criado, o DII analisa todos os dados existentes da se
 
 
 
+[[viewing-the-anomalies]]
 == Visualizando as anomalias
 
 Em uma página de destino de alerta, os alertas disparados quando anomalias são detectadas mostrarão uma faixa destacada no gráfico, desde o momento em que a métrica atingiu o pico fora dos limites previstos até quando ela voltou a ficar dentro desses limites.

@@ -14,6 +14,7 @@ O coletor de dados EMC XtremIO adquire dados de inventário e desempenho do sist
 
 
 
+[[requirements]]
 == Requisitos
 
 Para configurar o coletor de dados EMC XtremIO (HTTP), você deve ter:
@@ -25,11 +26,12 @@ Para configurar o coletor de dados EMC XtremIO (HTTP), você deve ter:
 
 
 
+[[terminology]]
 == Terminologia
 
 O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados EMC XtremIO.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas desta fonte de dados, tenha em mente a seguinte terminologia:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -55,6 +57,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[requirements]]
 == Requisitos
 
 * Endereço IP do host do XtremIO Management Server (XMS)
@@ -63,9 +66,10 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -80,9 +84,10 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -97,6 +102,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

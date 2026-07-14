@@ -32,10 +32,12 @@ image:LogExplorer_QueryForFailed.png["Exemplo de consulta mostrando filtro"]
 
 
 
+[[filtering]]
 == Filtragem
 
 
 
+[[include-exclude]]
 === Incluir / Excluir
 
 Ao filtrar os logs, você pode escolher *incluir* (ou seja, "Filtrar para") ou *excluir* as strings digitadas.  As sequências de caracteres excluídas são exibidas no filtro concluído como "NÃO <string>".
@@ -49,6 +51,7 @@ NOTE: A qualquer momento, você pode clicar em _Criar um Monitor de Log_ para cr
 
 
 
+[[advanced-filtering]]
 === Filtragem Avançada
 
 Ao filtrar por texto ou valores de lista em consultas ou widgets do painel, ao começar a digitar, você verá a opção de criar um *filtro curinga* com base no texto atual.  Selecionar esta opção retornará todos os resultados que correspondem à expressão curinga.  Você também pode criar expressões usando NOT, AND ou OR, ou pode selecionar a opção "Nenhum" para filtrar valores nulos.
@@ -112,6 +115,7 @@ Você pode combinar um filtro simples com um filtro de consulta avançado; o fil
 
 
 
+[[the-chart-legend]]
 === A lenda do gráfico
 
 A _Legenda_ abaixo do gráfico também traz algumas surpresas.  Para cada resultado (com base no filtro atual) mostrado na Legenda, você tem a opção de exibir somente os resultados para aquela linha (Adicionar Filtro) ou exibir quaisquer resultados QUE NÃO sejam para aquela linha (Adicionar Filtro de Excluir).  O gráfico e a lista de entradas de log são atualizados para mostrar resultados com base na sua seleção.  Para remover essa filtragem, abra a Legenda novamente e selecione [X] para limpar o filtro baseado em Legenda.
@@ -120,6 +124,7 @@ image:Log_Advanced_Query_Legend.png["Legenda de consulta avançada mostrando \"A
 
 
 
+[[log-details]]
 == Detalhes do registro
 
 Clicar em qualquer lugar em uma entrada de log na lista abrirá um painel de detalhes para essa entrada.  Aqui você pode explorar mais informações sobre o evento.
@@ -132,6 +137,7 @@ image:LogExplorer_DetailPane.png["Painel de detalhes de entrada de log"]
 
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Aqui você encontrará sugestões para solucionar problemas com consultas de log.

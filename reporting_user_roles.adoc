@@ -76,6 +76,7 @@ A tabela a seguir mostra as funções disponíveis para cada função de Relató
 |===
 
 
+[[setting-reporting-cognos-email-preferences]]
 == Definindo preferências de e-mail de relatórios (Cognos)
 
 
@@ -83,6 +84,7 @@ NOTE: Se você alterar suas preferências de e-mail do usuário no Data Infrastr
 
 
 
+[[what-steps-should-i-take-to-prepare-my-existing-environment-for-enabling-sso]]
 === Que medidas devo tomar para preparar meu ambiente existente para habilitar o SSO?
 
 Para garantir que seus relatórios sejam retidos, migre todos os relatórios de _Meu conteúdo_ para _Conteúdo da equipe_ usando as seguintes etapas.  Você deve fazer isso antes de habilitar o SSO no seu locatário:

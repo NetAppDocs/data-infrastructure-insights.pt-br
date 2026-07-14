@@ -18,6 +18,7 @@ A página Entidades Forenses fornece informações detalhadas sobre a atividade 
 
 
 
+[[examining-entity-information]]
 == Examinando informações da entidade
 
 Clique em *Forense > Forense de atividades* e clique na aba _Entidades_ para acessar a página Entidades.

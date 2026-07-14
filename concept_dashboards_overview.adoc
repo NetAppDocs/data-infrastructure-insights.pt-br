@@ -21,6 +21,7 @@ IMPORTANT: Os exemplos nestas seções são apenas para fins explicativos e não
 
 
 
+[[creating-a-dashboard]]
 == Criando um painel
 
 Você cria um novo painel em um dos dois lugares:
@@ -31,12 +32,14 @@ Você cria um novo painel em um dos dois lugares:
 
 
 
+[[see-it-in-action]]
 == Veja em ação
 
 link:https://media.netapp.com/video-detail/5a293f3c-c655-5879-9133-1a32aaa140e8["Crie painéis poderosos com o NetApp (vídeo),window=ler-mais-tarde"]
 
 
 
+[[dashboard-controls]]
 == Controles do painel
 
 A tela do Painel tem vários controles:
@@ -55,6 +58,7 @@ Os widgets podem ser redimensionados e realocados para diferentes posições den
 
 
 
+[[widget-types]]
 == Tipos de widgets
 
 Você pode escolher entre os seguintes tipos de widget:
@@ -107,6 +111,7 @@ Para explicações mais detalhadas sobre estes e outros recursos do painel,link:
 
 
 
+[[setting-a-dashboard-as-your-home-page]]
 == Definir um painel como sua página inicial
 
 Você pode escolher qual painel definir como a *página inicial* do seu locatário usando um dos seguintes métodos:

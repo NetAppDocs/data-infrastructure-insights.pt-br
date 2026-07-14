@@ -29,6 +29,7 @@ Após definir um aplicativo, ele pode ser atribuído aos ativos.
 
 
 
+[[assigning-applications-to-assets]]
 == Atribuição de aplicativos a ativos
 
 Este procedimento atribui o aplicativo a um host como exemplo.  Você pode atribuir host, máquina virtual, volume ou volumes internos a um aplicativo.

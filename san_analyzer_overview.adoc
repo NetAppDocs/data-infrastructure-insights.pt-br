@@ -20,6 +20,7 @@ image:san_analyzer_example_with_panel.png["Mapa de topologia do SAN Analyzer de 
 
 
 
+[[explore-connections-among-your-assets]]
 == Explore conexões entre seus ativos
 
 Selecione *Observabilidade > Analisar > SAN Analyzer* para visualizar o SAN Analyzer.  Defina um filtro para Aplicativo, Host, Fabric e/ou Armazenamento.  O mapa dos objetos é exibido, mostrando os objetos conectados.  Passe o mouse sobre um objeto para visualizar as métricas de tráfego dessas conexões.
@@ -45,6 +46,7 @@ image:san_analyzer_iscsi_traffic.png["Tráfego iSCSI destacado"]
 
 
 
+[[troubleshooting-tips]]
 == Dicas para solução de problemas
 
 Algumas coisas que você pode tentar se tiver problemas:

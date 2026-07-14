@@ -21,6 +21,7 @@ Leia sobre a segurança do Data Infrastructure Insightslink:security_overview.ht
 
 
 
+[[adding-a-linux-acquisition-unit]]
 == Adicionando uma Unidade de Aquisição Linux
 
 .Antes de começar
@@ -61,6 +62,7 @@ image:NewLinuxAUInstall.png["Instruções do Linux AU"]
 
 
 
+[[setting-proxy-environment-variables]]
 === Configurando variáveis de ambiente de proxy
 
 Para ambientes que usam um proxy, você deve definir as variáveis de ambiente do proxy antes de adicionar a Unidade de Aquisição.  As instruções para configurar o proxy são fornecidas na caixa de diálogo _Adicionar Unidade de Aquisição_.
@@ -76,6 +78,7 @@ Observação: esteja ciente das restrições de caracteres especiais nos campos 
 
 
 
+[[proxy-configuration]]
 === Configuração de proxy
 
 A Unidade de Aquisição usa autenticação bidirecional/mútua para se conectar ao servidor Data Infrastructure Insights .  O certificado do cliente deve ser passado ao servidor Data Infrastructure Insights para ser autenticado.  Para fazer isso, o proxy deve ser configurado para encaminhar a solicitação https ao servidor Data Infrastructure Insights sem descriptografar os dados.
@@ -100,6 +103,7 @@ Se você tiver o Workload Security no seu locatário, os URLs de endpoint config
 
 
 
+[[adding-a-windows-acquisition-unit]]
 == Adicionando uma Unidade de Aquisição do Windows
 
 .Etapas para instalação da unidade de aquisição do Windows
@@ -133,6 +137,7 @@ image:NewWindowsAUInstall.png["Instalação do Windows AU"]
 
 
 
+[[proxy-configuration]]
 === Configuração de proxy
 
 A Unidade de Aquisição usa autenticação bidirecional/mútua para se conectar ao servidor Data Infrastructure Insights .  O certificado do cliente deve ser passado ao servidor Data Infrastructure Insights para ser autenticado.  Para fazer isso, o proxy deve ser configurado para encaminhar a solicitação https ao servidor Data Infrastructure Insights sem descriptografar os dados.
@@ -157,6 +162,7 @@ Se você tiver o Workload Security no seu locatário, os URLs de endpoint config
 
 
 
+[[uninstalling-an-acquisition-unit]]
 == Desinstalando uma Unidade de Aquisição
 
 Para desinstalar o software da Unidade de Aquisição, faça o seguinte:
@@ -201,6 +207,7 @@ image:AU_for_Device_Resolution.png["AU usado para resolução do dispositivo"]
 
 
 
+[[reinstalling-an-acquisition-unit]]
 == Reinstalando uma Unidade de Aquisição
 
 Para reinstalar uma Unidade de Aquisição no mesmo servidor/VM, você deve seguir estas etapas:
@@ -223,6 +230,7 @@ Você também pode selecionar vários coletores de dados do mesmo tipo e clicar 
 
 
 
+[[viewing-au-details]]
 == Visualizando detalhes da AU
 
 A página de detalhes da Unidade de Aquisição (UA) fornece detalhes úteis sobre uma UA, bem como informações para ajudar na solução de problemas.  A página de detalhes da UA contém as seguintes seções:

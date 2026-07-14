@@ -18,12 +18,14 @@ O Data Infrastructure Insights oferece o *Kubernetes Monitoring Operator* para a
 
 
 
+[[before-installing-the-kubernetes-monitoring-operator]]
 == Antes de instalar o Kubernetes Monitoring Operator
 
 Veja olink:pre-requisites_for_k8s_operator.html["Pré-requisitos"] documentação antes de instalar ou atualizar o Kubernetes Monitoring Operator.
 
 
 
+[[installing-the-kubernetes-monitoring-operator]]
 == Instalando o Operador de Monitoramento do Kubernetes
 
 image:NKMO-Instructions-1.png["Instruções do Operador de Monitoramento"] image:NKMO-Instructions-2.png["Instruções do Operador de Monitoramento"]
@@ -43,6 +45,7 @@ Se você tiver um repositório personalizado, leia sobre<<using-a-custom-or-priv
 
 
 
+[[kubernetes-monitoring-components]]
 == Componentes de monitoramento do Kubernetes
 
 O Data Infrastructure Insights Kubernetes Monitoring é composto por quatro componentes de monitoramento:
@@ -63,10 +66,13 @@ image:KubernetesModifyDeploymentScreen.png["Modificar opções de implantação,
 
 
 
+[[upgrading-to-the-latest-kubernetes-monitoring-operator]]
+[[upgrading]]
 == Atualizando para o mais recente Kubernetes Monitoring Operator
 
 
 
+[[dii-push-button-upgrades]]
 === Atualizações de botão DII
 
 Você pode atualizar o Kubernetes Monitoring Operator por meio da página DII Kubernetes Collectors.  Clique no menu ao lado do cluster que você gostaria de atualizar e selecione _Atualizar_.  O operador verificará as assinaturas de imagem, fará um snapshot da sua instalação atual e realizará a atualização.  Em poucos minutos, você verá o progresso do status do operador, passando de Atualização em andamento para a mais recente.  Se você encontrar um erro, pode selecionar o status Erro para obter mais detalhes e consultar a tabela de solução de problemas de atualizações por botão abaixo.
@@ -94,6 +100,7 @@ Se você atualizou usando o recurso de atualizações por botão e encontrar alg
 
 
 
+[[manual-upgrades]]
 === Atualizações manuais
 
 Determine se existe uma _AgentConfiguration_ com o operador existente (se o seu namespace não for o padrão _netapp-monitoring_, substitua pelo namespace apropriado):
@@ -128,6 +135,7 @@ Se a _AgentConfiguration_ não existir:
 
 
 
+[[stopping-and-starting-the-kubernetes-monitoring-operator]]
 == Parando e iniciando o operador de monitoramento do Kubernetes
 
 Para interromper o Operador de Monitoramento do Kubernetes:
@@ -138,10 +146,12 @@ Para iniciar o Operador de Monitoramento do Kubernetes:
  kubectl -n netapp-monitoring scale deploy monitoring-operator --replicas=1
 
 
+[[uninstalling]]
 == Desinstalando
 
 
 
+[[to-remove-the-kubernetes-monitoring-operator]]
 === Para remover o Operador de Monitoramento do Kubernetes
 
 Observe que o namespace padrão para o Kubernetes Monitoring Operator é "netapp-monitoring".  Se você tiver definido seu próprio namespace, substitua-o nestes e em todos os comandos e arquivos subsequentes.
@@ -173,6 +183,7 @@ Se uma Restrição de Contexto de Segurança foi criada anteriormente:
  kubectl delete scc telegraf-hostaccess
 
 
+[[about-kube-state-metrics]]
 == Sobre Kube-state-metrics
 
 O NetApp Kubernetes Monitoring Operator instala suas próprias métricas de estado do kube para evitar conflitos com outras instâncias.
@@ -181,12 +192,14 @@ Para obter informações sobre Kube-State-Metrics, consultelink:task_config_tele
 
 
 
+[[configuringcustomizing-the-operator]]
 == Configurando/Personalizando o Operador
 
 Estas seções contêm informações sobre como personalizar a configuração do seu operador, trabalhar com proxy, usar um repositório Docker personalizado ou privado ou trabalhar com o OpenShift.
 
 
 
+[[configuration-options]]
 === Opções de configuração
 
 As configurações mais comumente modificadas podem ser configuradas no recurso personalizado _AgentConfiguration_.  Você pode editar este recurso antes de implantar o operador editando o arquivo _operator-config.yaml_.  Este arquivo inclui exemplos comentados de configurações.  Veja a lista delink:telegraf_agent_k8s_config_options.html["configurações disponíveis"] para a versão mais recente do operador.
@@ -201,6 +214,7 @@ Se você vir uma mensagem “Erro do servidor (Não encontrado)”, seu operador
 
 
 
+[[configuring-proxy-support]]
 === Configurando o suporte a proxy
 
 Há dois lugares onde você pode usar um proxy no seu locatário para instalar o Kubernetes Monitoring Operator.  Esses podem ser os mesmos sistemas proxy ou sistemas separados:
@@ -255,6 +269,7 @@ agent:
 ----
 
 
+[[using-a-custom-or-private-docker-repository]]
 === Usando um repositório docker personalizado ou privado
 
 Por padrão, o Kubernetes Monitoring Operator extrairá imagens de contêiner do repositório do Data Infrastructure Insights .  Se você tiver um cluster Kubernetes usado como destino para monitoramento e esse cluster estiver configurado para extrair apenas imagens de contêiner de um repositório Docker personalizado ou privado ou de um registro de contêiner, você deverá configurar o acesso aos contêineres necessários para o Kubernetes Monitoring Operator.
@@ -324,6 +339,7 @@ Para extrair um token de acesso à API existente de uma instalação de operador
 
 
 
+[[openshift-instructions]]
 === Instruções do OpenShift
 
 Se você estiver executando o OpenShift 4.6 ou superior, você deve editar o _AgentConfiguration_ em _operator-config.yaml_ para habilitar a configuração _runPrivileged_:
@@ -336,6 +352,7 @@ O Openshift pode implementar um nível adicional de segurança que pode bloquear
 
 
 
+[[tolerations-and-taints]]
 === Tolerâncias e Manchas
 
 Os DaemonSets _netapp-ci-telegraf-ds_, _netapp-ci-fluent-bit-ds_ e _netapp-ci-net-observer-l4-ds_ devem agendar um pod em cada nó do cluster para coletar dados corretamente em todos os nós.  O operador foi configurado para tolerar algumas *manchas* bem conhecidas.  Se você configurou alguma contaminação personalizada em seus nós, impedindo assim que os pods sejam executados em todos os nós, você pode criar uma *tolerância* para essas contaminaçõeslink:telegraf_agent_k8s_config_options.html["na _Configuração do Agente_"] .  Se você tiver aplicado taints personalizados a todos os nós do cluster, também deverá adicionar as tolerâncias necessárias à implantação do operador para permitir que o pod do operador seja agendado e executado.
@@ -346,36 +363,7 @@ Voltar para olink:task_config_telegraf_agent_k8s.html["* Página de instalação
 
 
 
-== Uma nota sobre segredos
-
-Para remover a permissão do Kubernetes Monitoring Operator para visualizar segredos em todo o cluster, exclua os seguintes recursos do arquivo _operator-setup.yaml_ antes da instalação:
-
-[listing]
-----
- ClusterRole/netapp-ci<namespace>-agent-secret
- ClusterRoleBinding/netapp-ci<namespace>-agent-secret
-----
-Se for uma atualização, exclua também os recursos do seu cluster:
-
-[listing]
-----
- kubectl delete ClusterRole/netapp-ci-<namespace>-agent-secret-clusterrole
- kubectl delete ClusterRoleBinding/netapp-ci-<namespace>-agent-secret-clusterrolebinding
-
-----
-Se a Análise de Mudanças estiver habilitada, modifique _AgentConfiguration_ ou _operator-config.yaml_ para descomentar a seção de gerenciamento de mudanças e incluir _kindsToIgnoreFromWatch: '"secrets"'_ na seção de gerenciamento de mudanças.  Observe a presença e a posição das aspas simples e duplas nesta linha.
-
-....
-change-management:
-  ...
-  # # A comma separated list of kinds to ignore from watching from the default set of kinds watched by the collector
-  # # Each kind will have to be prefixed by its apigroup
-  # # Example: '"networking.k8s.io.networkpolicies,batch.jobs", "authorization.k8s.io.subjectaccessreviews"'
-  kindsToIgnoreFromWatch: '"secrets"'
-  ...
-....
-
-
+[[verifying-kubernetes-monitoring-operator-image-signatures]]
 == Verificando assinaturas de imagem do operador de monitoramento do Kubernetes
 
 A imagem do operador e todas as imagens relacionadas que ele implementa são assinadas pela NetApp.  Você pode verificar manualmente as imagens antes da instalação usando a ferramenta cosign ou configurar um controlador de admissão do Kubernetes.  Para mais detalhes, consulte olink:https://kubernetes.io/docs/tasks/administer-cluster/verify-signed-artifacts/#verifying-image-signatures["Documentação do Kubernetes"] .
@@ -401,6 +389,7 @@ The following checks were performed on each of these signatures:
 ----
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Algumas coisas que você pode tentar se tiver problemas ao configurar o Kubernetes Monitoring Operator:

@@ -18,6 +18,7 @@ Você pode usar as instruções desta página para simular a adulteração de ar
 
 
 
+[[things-to-note-before-you-begin]]
 == Coisas a serem observadas antes de começar
 
 * O script de simulação de adulteração de arquivos funciona apenas no Linux. O script de simulação também deve gerar alertas de alta confiança caso o usuário tenha integrado o ONTAP ARP com a Segurança de Carga de Trabalho.
@@ -30,6 +31,7 @@ Você pode usar as instruções desta página para simular a adulteração de ar
 
 
 
+[[guidelines]]
 == Diretrizes:
 
 Este script deve ser executado em um SVM contendo uma pasta com um número substancial de arquivos para criptografia, idealmente 100 ou mais, incluindo arquivos em subpastas.  Certifique-se de que os arquivos não estejam vazios.
@@ -38,10 +40,12 @@ Para gerar o alerta, pause temporariamente o coletor antes da criação dos dado
 
 
 
+[[steps]]
 == Passos:
 
 
 
+[[prepare-the-system]]
 === Prepare o sistema:
 
 Primeiro, monte o volume de destino na máquina.  Você pode montar uma exportação NFS ou CIFS.
@@ -81,6 +85,7 @@ Em seguida, configure um coletor de dados:
 
 
 
+[[generate-the-sample-files-programmatically]]
 == Gere os arquivos de amostra programaticamente:
 
 Antes de criar os arquivos, você deve primeiro parar oulink:task_add_collector_svm.html#play-pause-data-collector["pausar o coletor de dados"] processamento.
@@ -91,6 +96,7 @@ Se você optar por criar os arquivos programaticamente, poderá usar o Shell ou 
 
 
 
+[[shell]]
 === Concha:
 
 . Entre na caixa do Agente.
@@ -104,6 +110,7 @@ Se você optar por criar os arquivos programaticamente, poderá usar o Shell ou 
 
 
 
+[[python]]
 === Pitão:
 
 
@@ -148,18 +155,21 @@ Se você optar por criar os arquivos programaticamente, poderá usar o Shell ou 
 
 
 
+[[resume-the-collector]]
 == Retomar o coletor
 
 Se você pausou o coletor antes de seguir estas etapas, certifique-se de retomá-lo depois que os arquivos de amostra forem criados.
 
 
 
+[[generate-file-tampering-alert]]
 == Gerar alerta de adulteração de arquivo
 
 Para gerar um alerta de adulteração de arquivo, você pode executar o script incluído, que simulará um alerta de adulteração de arquivo no Workload Security.
 
 
 
+[[shell]]
 === Concha:
 
 . Copie o script do diretório de instalação do agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/shell/simulate_attack.sh) para o local de montagem de destino.
@@ -171,6 +181,7 @@ Para gerar um alerta de adulteração de arquivo, você pode executar o script i
 
 
 
+[[python]]
 === Pitão:
 
 . Copie o script do diretório de instalação do agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/python/simulate_attack.py) para o local de montagem de destino.
@@ -183,6 +194,7 @@ Para gerar um alerta de adulteração de arquivo, você pode executar o script i
 
 
 
+[[generate-an-alert-in-workload-security]]
 == Gerar um alerta no Workload Security
 
 Quando a execução do script do simulador for concluída, um alerta será exibido na interface do usuário da Web em alguns minutos.
@@ -208,6 +220,7 @@ image:ws_high_confidence_alert_detail.png["Exemplo de alerta de alta confiança,
 
 
 
+[[triggering-alert-multiple-times]]
 == Disparando alertas várias vezes
 
 O Workload Security aprende o comportamento do usuário e não gerará alertas sobre ataques repetidos de adulteração de arquivos dentro de 24 horas para o mesmo usuário.

@@ -25,6 +25,7 @@ A página é atualizada automaticamente com base no intervalo de tempo do Data I
 
 
 
+[[filtering]]
 == Filtragem
 
 Assim como acontece com todos os recursos do Data Infrastructure Insights, a filtragem da lista de alterações é intuitiva: na parte superior da página, insira ou selecione valores para seu cluster, namespace ou carga de trabalho do Kubernetes, ou adicione seus próprios filtros selecionando o botão {+].
@@ -35,6 +36,7 @@ image:ChangeAnalytitcs_Filtered_Timeline.png["Exemplo de cronograma de carga de 
 
 
 
+[[quick-status]]
 == Status rápido
 
 Abaixo da área de filtragem há uma série de indicadores de alto nível.  À esquerda está o número de alertas (Aviso e Crítico).  Este número inclui alertas _Ativos_ e _Resolvidos_.  Para ver apenas alertas _Ativos_, defina um filtro para "Status" e escolha "Ativo".
@@ -51,6 +53,7 @@ image:ChangeAnalytitcs_ExploreWorkloadAlerts.png["Alterar opções de exploraç�
 
 
 
+[[detail-panel]]
 == Painel de detalhes
 
 Selecionar uma alteração na lista abre um painel que descreve a alteração com mais detalhes.  Por exemplo, selecionar uma implantação com falha mostra um resumo da implantação, com horários de início e término, duração e onde a implantação foi acionada, com links para explorar esses recursos.  Ele também exibe o motivo da falha, quaisquer alterações relacionadas e quaisquer eventos associados.

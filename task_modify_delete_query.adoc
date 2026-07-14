@@ -14,6 +14,7 @@ Você pode alterar os critérios associados a uma consulta quando quiser alterar
 
 
 
+[[modifying-a-query]]
 == Modificando uma consulta
 
 .Passos
@@ -35,6 +36,7 @@ Depois de fazer todas as alterações necessárias, faça um dos seguintes:
 
 
 
+[[deleting-a-query]]
 == Excluindo uma consulta
 
 Para excluir uma consulta, clique em *Consultas* e selecione *Mostrar todas as consultas* e faça um dos seguintes:

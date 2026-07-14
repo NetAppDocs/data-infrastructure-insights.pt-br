@@ -18,6 +18,7 @@ image:workload-map-animated.gif["Exemplo de mapa de carga de trabalho"]
 
 
 
+[[pre-requisites]]
 == Pré-requisitos
 
 Antes de poder usar o Monitoramento e Mapa de Desempenho de Rede do Kubernetes, você deve ter configurado olink:task_config_telegraf_agent_k8s.html["Operador de monitoramento do NetApp Kubernetes"] para habilitar esta opção.  Durante a implantação do Operador, marque a caixa de seleção "Desempenho e Mapa de Rede" para habilitar.  Você também pode habilitar essa opção navegando até uma página de destino do Kubernetes e selecionando "Modificar implantação".
@@ -26,6 +27,7 @@ image:ServiceMap_NKMO_Deployment_Options.png["selecionando a opção Mapa durant
 
 
 
+[[monitors]]
 == Monitores
 
 O Mapa de Carga de Trabalho usalink:task_create_monitor.html["monitores"] para derivar informações.  O Data Infrastructure Insights fornece vários monitores Kubernetes padrão (observe que eles podem estar _Pausados_ por padrão).  Você pode _Retomar_ (ou seja, habilitar) os monitores que desejar ou pode criar monitores personalizados para objetos do Kubernetes, que o Mapa de Carga de Trabalho também usará.
@@ -45,6 +47,7 @@ Você pode criar alertas de métricas do Data Infrastructure Insights em qualque
 
 
 
+[[the-map]]
 == O Mapa
 
 O mapa mostra serviços/cargas de trabalho e seus relacionamentos entre si.  As setas mostram as direções do trânsito.  Passar o mouse sobre uma carga de trabalho exibe informações resumidas sobre essa carga de trabalho, como você pode ver neste exemplo:
@@ -63,6 +66,7 @@ image:ServiceMap_Node_and_Connection_Legend.png["legenda mostrando o círculo re
 
 
 
+[[workload-details-and-alerts]]
 == Detalhes e alertas da carga de trabalho
 
 Círculos exibidos em cores indicam um alerta de nível crítico ou de advertência para a carga de trabalho.  Passe o mouse sobre o círculo para ver um resumo do problema ou clique no círculo para abrir um painel deslizante com mais detalhes.
@@ -71,6 +75,7 @@ image:Workload_Map_Slideout_with_Alert.png["Detalhes do Slideout da Carga de Tra
 
 
 
+[[finding-and-filtering]]
 == Encontrar e Filtrar
 
 Assim como acontece com outros recursos do Data Infrastructure Insights , você pode definir filtros facilmente para focar nos objetos específicos ou atributos de carga de trabalho desejados.
@@ -83,6 +88,7 @@ image:Workload_Map_Find_Highlighting.png["digitar na caixa de localização dest
 
 
 
+[[workload-labels]]
 == Rótulos de carga de trabalho
 
 Os rótulos de carga de trabalho são necessários se você quiser que o Mapa identifique os tipos de cargas de trabalho exibidas (ou seja, os ícones circulares).  Os rótulos são derivados da seguinte forma:
@@ -117,6 +123,7 @@ Por exemplo, com um nome resolvido por DNS de _s3.eu-north-1.amazonaws.com_, o n
 
 
 
+[[dive-deep]]
 == Mergulhe fundo
 
 Clicar com o botão direito do mouse em uma carga de trabalho apresenta opções adicionais para você explorar mais a fundo.  Por exemplo, aqui você pode ampliar para visualizar as conexões dessa carga de trabalho.

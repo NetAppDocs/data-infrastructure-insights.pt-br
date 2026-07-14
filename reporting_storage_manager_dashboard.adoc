@@ -17,6 +17,7 @@ NOTE: O recurso de relatórios está disponível no Data Infrastructure Insights
 
 
 
+[[summary]]
 == Resumo
 
 Selecionar *Painel do Gerenciador de Armazenamento* no Conteúdo da Equipe fornece vários relatórios que fornecem informações sobre seu tráfego e armazenamento.
@@ -31,6 +32,7 @@ Este componente mostra a capacidade de armazenamento usada versus a utilizável,
 
 
 
+[[storage-tiers-capacity]]
 === Capacidade de níveis de armazenamento
 
 Este componente mostra a capacidade do nível usada em comparação com a capacidade alocada ao nível, o que indica como a capacidade usada aumenta ou diminui ao longo de um período de 12 meses e quantos meses restam até a capacidade máxima.  O uso da capacidade é mostrado com valores fornecidos para o uso real, a previsão de uso e uma meta de capacidade, que você pode configurar.  Quando a capacidade utilizada prevista, que é baseada na data de projeção de uso futuro, excede a capacidade alvo, um alerta (círculo vermelho sólido) aparece ao lado de um nível.
@@ -39,6 +41,7 @@ Você pode clicar em qualquer nível para exibir o relatório Detalhes de capaci
 
 
 
+[[daily-storage-traffic]]
 === Tráfego diário de armazenamento
 
 Este componente mostra o desempenho do ambiente, se há algum grande crescimento, mudanças ou possíveis problemas em comparação aos seis meses anteriores.  Ele também mostra o tráfego médio em comparação com o tráfego dos sete dias anteriores e do dia anterior.  Você pode visualizar quaisquer anormalidades no desempenho da infraestrutura porque ela fornece informações que destacam variações cíclicas (sete dias anteriores) e sazonais (seis meses anteriores).
@@ -47,6 +50,7 @@ Você pode clicar no título (Tráfego de armazenamento diário) para exibir o r
 
 
 
+[[data-centers-time-to-full]]
 === Tempo de espera para a plena capacidade dos data centers
 
 Este componente mostra todos os data centers em relação a todas as camadas e quanta capacidade resta em cada data center para cada camada de armazenamento com base nas taxas de crescimento previstas.  O nível de capacidade do nível é mostrado em azul; quanto mais escura a cor, menor o tempo restante para o nível no local ficar cheio.
@@ -55,6 +59,7 @@ Você pode clicar em uma seção de uma camada para exibir o relatório Detalhes
 
 
 
+[[top-10-applications]]
 === 10 principais aplicativos
 
 Este componente mostra os 10 principais aplicativos com base na capacidade utilizada.  Independentemente de como a camada organiza os dados, esta área exibe a capacidade usada atualmente e o compartilhamento da infraestrutura.  Você pode visualizar o intervalo de experiência do usuário nos últimos sete dias para ver se os consumidores vivenciam tempos de resposta aceitáveis (ou, mais importante, inaceitáveis).
@@ -63,6 +68,7 @@ Esta área também mostra tendências, que indicam se os aplicativos atendem aos
 
 
 
+[[storage-tiers-daily-performance]]
 === Desempenho diário dos níveis de armazenamento
 
 Este componente mostra um resumo do desempenho da camada em termos de tempo de resposta e IOPS nos sete dias anteriores.  Esse desempenho é comparado a um SLO, que você pode configurar, permitindo que você veja se há oportunidade de consolidar camadas, realinhar cargas de trabalho entregues a partir dessas camadas ou identificar problemas com camadas específicas.  Quando o tempo de resposta médio ou o IOPS médio estiver fora do intervalo de SLO aceitável, um alerta (círculo vermelho sólido) aparecerá ao lado de uma camada.
@@ -71,6 +77,7 @@ Você pode clicar no nome de uma camada para exibir o relatório Detalhes de cap
 
 
 
+[[orphaned-capacity]]
 === Capacidade Órfã
 
 Este componente mostra a capacidade órfã total e a capacidade órfã por nível, comparando-a com intervalos aceitáveis para capacidade total utilizável e mostrando a capacidade real que está órfã.  A capacidade órfã é definida pela configuração e pelo desempenho.  Armazenamento órfão por configuração descreve uma situação na qual há armazenamento alocado a um host.  Entretanto, a configuração não foi realizada corretamente e o host não consegue acessar o armazenamento.  Órfão por desempenho ocorre quando o armazenamento está configurado corretamente para ser acessado por um host.  Entretanto, não houve tráfego de armazenamento.

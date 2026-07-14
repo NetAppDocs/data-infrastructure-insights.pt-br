@@ -20,6 +20,7 @@ IMPORTANT: Antes de fazer alterações nas permissões ou na segurança dos rela
 
 
 
+[[customizing-a-reports-output-format-and-delivery]]
 == Personalizando o formato de saída e entrega de um relatório
 
 Você pode personalizar o formato e o método de entrega dos relatórios.
@@ -41,6 +42,7 @@ image:Reporting_Output_and_Delivery.png["Relatório de saída e entrega"]
 
 
 
+[[copying-a-report-to-the-clipboard]]
 == Copiando um relatório para a área de transferência
 
 Use este processo para copiar um relatório para a área de transferência.
@@ -59,6 +61,7 @@ image:Reporting_Copy_To_Clipboard.png["Copiando um relatório para a área de tr
 
 
 
+[[opening-reports-from-the-clipboard]]
 == Abrindo relatórios da área de transferência
 
 Você pode abrir uma especificação de relatório que foi copiada anteriormente para a área de transferência.
@@ -80,12 +83,14 @@ image:Reporting_Open_From_Clipboard.png["Abrindo um relatório da área de trans
 
 
 
+[[editing-an-existing-report]]
 == Editando um relatório existente
 
 Esteja ciente de que editar arquivos em seu local padrão corre o risco de esses relatórios serem substituídos na próxima atualização do catálogo de relatórios.  É recomendável salvar o relatório editado com um novo nome ou armazená-lo em um local não padrão.
 
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Aqui você encontrará sugestões para solucionar problemas com Relatórios.

@@ -14,6 +14,7 @@ O Data Infrastructure Insights fornece até quatro funções de conta de usuári
 
 
 
+[[permission-levels]]
 == Níveis de permissão
 
 Use uma conta com privilégios de administrador para criar ou modificar contas de usuário.  Cada conta de usuário recebe uma função para cada recurso do Data Infrastructure Insights nos seguintes níveis de permissão.
@@ -37,6 +38,7 @@ A melhor prática é limitar o número de usuários com permissões de administr
 
 
 
+[[data-infrastructure-insights-permissions-by-user-role]]
 === Permissões do Data Infrastructure Insights por função do usuário
 
 A tabela a seguir mostra as permissões do Data Infrastructure Insights concedidas a cada função de usuário.
@@ -122,6 +124,7 @@ A tabela a seguir mostra as permissões do Data Infrastructure Insights concedid
 
 
 
+[[creating-accounts-by-inviting-users]]
 == Criando contas convidando usuários
 
 A criação de uma nova conta de usuário é feita por meio do NetApp Console.  Um usuário pode responder ao convite enviado por e-mail, mas se o usuário não tiver uma conta no Console, ele precisará se inscrever para poder aceitar o convite.
@@ -164,6 +167,7 @@ O convite é enviado ao usuário.  Os usuários terão 14 dias para aceitar o co
 
 
 
+[[modifying-an-existing-users-role]]
 == Modificando a função de um usuário existente
 
 Para modificar a função de um usuário existente, incluindo adicioná-lo como *proprietário secundário da conta*, siga estas etapas.
@@ -176,6 +180,7 @@ Para modificar a função de um usuário existente, incluindo adicioná-lo como 
 
 
 
+[[to-assign-a-secondary-account-owner]]
 === Para atribuir um proprietário de conta secundária
 
 Você precisa estar conectado como proprietário de uma conta do Observability para poder atribuir a função de proprietário da conta a outro usuário.
@@ -192,6 +197,7 @@ Você pode ter quantos proprietários de conta desejar, mas a prática recomenda
 
 
 
+[[deleting-users]]
 == Excluindo usuários
 
 Um usuário com a função de Administrador pode excluir um usuário (por exemplo, alguém que não faz mais parte da empresa) clicando no nome do usuário e clicando em _Excluir usuário_ na caixa de diálogo.  O usuário será removido do ambiente do Data Infrastructure Insights .
@@ -200,10 +206,12 @@ Observe que todos os painéis, consultas etc. criados pelo usuário permanecerã
 
 
 
+[[single-sign-on-sso-and-identity-federation]]
 == Single Sign-On (SSO) e Federação de Identidade
 
 
 
+[[what-is-identity-federation]]
 === O que é a Federação de Identidade?
 
 Com a Federação de Identidade:
@@ -226,6 +234,7 @@ No diagrama acima, quando um usuário acessa o Data Infrastructure Insights, ele
 
 
 
+[[enabling-identity-federation]]
 === Habilitando a Federação de Identidade
 
 O console usa o Auth0 para implementar a Federação de Identidade e integrar-se a serviços como o Active Directory Federation Services (ADFS) e o Microsoft Azure Active Directory (AD).  Para configurar a Federação de Identidade, consulte olink:https://services.cloud.netapp.com/misc/federation-support["Instruções da Federação"] .
@@ -241,6 +250,7 @@ Para este ou qualquer outro problema de federação, você pode abrir um tíquet
 
 
 
+[[single-sign-on-sso-user-auto-provisioning]]
 === Provisionamento automático de usuário de logon único (SSO)
 
 Além de convidar usuários, os administradores podem habilitar o acesso *Single Sign-On (SSO) User Auto-Provisioning* ao Data Infrastructure Insights para todos os usuários em seu domínio corporativo, sem precisar convidá-los individualmente.  Com o SSO habilitado, qualquer usuário com o mesmo endereço de e-mail de domínio pode fazer login no Data Infrastructure Insights usando suas credenciais corporativas.
@@ -266,6 +276,7 @@ Entretanto, não habilite o _Provisionamento automático de usuário SSO_ se qua
 
 
 
+[[restricting-access-by-domain]]
 == Restringindo acesso por domínio
 
 O Data Infrastructure Insights pode restringir o acesso do usuário somente aos domínios que você especificar.  Na página *Administrador > Gerenciamento de usuários*, selecione "Restringir domínios".

@@ -17,11 +17,12 @@ NOTE: A Hitachi Content Platform é medida a uma taxa de TB brutos diferente da 
 
 
 
+[[terminology]]
 == Terminologia
 
 O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados Hitachi HCP.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -41,6 +42,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[inventory-requirements]]
 == Requisitos de inventário
 
 Você deve ter o seguinte para coletar dados de inventário:
@@ -51,9 +53,10 @@ Você deve ter o seguinte para coletar dados de inventário:
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -74,6 +77,7 @@ Você deve ter o seguinte para coletar dados de inventário:
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
 |===

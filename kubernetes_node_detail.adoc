@@ -16,6 +16,7 @@ image:KubernetesNodeFiltering.png["Página de detalhes do nó do Kubernetes most
 
 
 
+[[exploring-the-nodes-pods-and-persistent-volumes]]
 == Explorando os Pods e Volumes Persistentes do Nó
 
 O Data Infrastructure Insights fornece visibilidade do armazenamento de back-end para seus ambientes Kubernetes, fornecendo insights sobre seus pods e volumes persistentes (PVs) do Kubernetes.  Você pode rastrear contadores PV, como IOPS, latência e taxa de transferência, desde o uso de um único Pod por meio de um contador PV até um PV e até o dispositivo de armazenamento de back-end.
@@ -33,6 +34,7 @@ Observe que, para aproveitar essas novas tabelas, é recomendável desinstalar s
 
 
 
+[[kubernetes-node-to-vm-links]]
 == Links do nó do Kubernetes para a VM
 
 Em uma página do Nó do Kubernetes, você pode clicar para abrir a página da VM do Nó.  A página da VM também inclui um link de volta para o próprio nó.

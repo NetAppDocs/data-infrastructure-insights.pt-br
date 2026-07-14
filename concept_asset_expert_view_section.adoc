@@ -18,6 +18,7 @@ A seção Desempenho de uma página de ativos ou painel deslizante permite que v
 
 
 
+[[using-the-performance-section]]
 == Usando a seção Desempenho
 
 A seguir está um exemplo da seção Desempenho em uma página de ativos de armazenamento:
@@ -46,6 +47,7 @@ Mostra os ativos que impactam ou são impactados por outros recursos compartilha
 
 
 
+[[alerts-in-performance-section]]
 == Alertas na seção Desempenho
 
 Os alertas também são exibidos na seção Desempenho da página inicial de um ativo, mostrando a hora e a duração do alerta, bem como a condição do monitor que o acionou.  Passe o mouse sobre um indicador de alerta para ver detalhes sobre o alerta.
@@ -54,6 +56,7 @@ image:asset_page_alert_section.png["Alertas na seção de desempenho"]
 
 
 
+[[performance-metric-definitions]]
 == Definições de métricas de desempenho
 
 A seção Desempenho de uma página de ativo exibe diversas métricas com base no período de tempo selecionado para o ativo.  Cada métrica é exibida em seu próprio gráfico de desempenho.  Você pode adicionar ou remover métricas e ativos relacionados dos gráficos, dependendo dos dados que deseja ver.  As métricas que você pode escolher variam dependendo do tipo de ativo.
@@ -164,6 +167,7 @@ A seção Desempenho de uma página de ativo exibe diversas métricas com base n
 |===
 
 
+[[using-the-performance-section]]
 == Usando a seção Desempenho
 
 A seção Desempenho permite que você visualize gráficos de desempenho de um ativo com base em qualquer número de métricas aplicáveis durante um período de tempo escolhido e adicione ativos relacionados para comparar e contrastar o desempenho do ativo e do ativo relacionado em diferentes períodos de tempo.

@@ -14,6 +14,7 @@ O Data Infrastructure Insights Storage Workload Security (antigo Cloud Secure) a
 
 
 
+[[visibility]]
 == Visibilidade
 
 Obtenha visibilidade e controle centralizados do acesso do usuário aos seus dados corporativos críticos armazenados no local ou na nuvem.
@@ -22,6 +23,7 @@ Substitua ferramentas e processos manuais que não fornecem visibilidade precisa
 
 
 
+[[protection]]
 == Proteção
 
 Proteja os dados organizacionais contra uso indevido por usuários mal-intencionados ou comprometidos por meio de aprendizado de máquina avançado e detecção de anomalias.
@@ -30,6 +32,7 @@ Alerta você sobre qualquer acesso anormal a dados por meio de aprendizado de m�
 
 
 
+[[compliance]]
 == Conformidade
 
 Garanta a conformidade corporativa auditando o acesso dos dados do usuário aos seus dados corporativos críticos armazenados no local ou na nuvem.

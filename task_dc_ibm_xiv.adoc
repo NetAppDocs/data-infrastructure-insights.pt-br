@@ -14,9 +14,10 @@ O coletor de dados IBM XIV e A9000 (CLI) usa a interface de linha de comando do 
 
 
 
+[[terminology]]
 == Terminologia
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -34,6 +35,7 @@ O coletor de dados IBM XIV e A9000 (CLI) usa a interface de linha de comando do 
 |===
 
 
+[[requirements]]
 == Requisitos
 
 Os seguintes requisitos devem ser atendidos para configurar e usar este coletor de dados:
@@ -45,6 +47,7 @@ Os seguintes requisitos devem ser atendidos para configurar e usar este coletor 
 
 
 
+[[performance-requirements]]
 == Requisitos de desempenho
 
 A seguir estão os requisitos para a coleta de desempenho:
@@ -59,9 +62,10 @@ A seguir estão os requisitos para a coleta de desempenho:
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -82,9 +86,10 @@ A seguir estão os requisitos para a coleta de desempenho:
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -108,6 +113,7 @@ A seguir estão os requisitos para a coleta de desempenho:
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

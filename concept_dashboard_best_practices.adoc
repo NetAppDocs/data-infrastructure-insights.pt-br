@@ -18,6 +18,7 @@ Dicas e truques para ajudar você a aproveitar ao máximo os recursos poderosos 
 
 
 
+[[finding-the-right-metric]]
 == Encontrando a métrica certa
 
 O Data Infrastructure Insights adquire contadores e métricas usando nomes que às vezes diferem de coletor de dados para coletor de dados.
@@ -64,6 +65,7 @@ Esta não é uma lista abrangente.  Estes são apenas exemplos de possíveis ter
 
 
 
+[[finding-the-right-assets]]
 == Encontrando os ativos certos
 
 Os ativos que você pode referenciar em filtros e pesquisas de widgets variam de acordo com o tipo de ativo.
@@ -96,6 +98,7 @@ Esta não é uma lista abrangente.
 
 
 
+[[scatter-plot-example-knowing-your-axis]]
 == Exemplo de gráfico de dispersão: conhecendo seu eixo
 
 Alterar a ordem dos contadores em um widget de gráfico de dispersão altera os eixos nos quais os dados são exibidos.

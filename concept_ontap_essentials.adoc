@@ -27,6 +27,7 @@ O ONTAP Essentials requer pelo menos um coletor de dados ONTAP em funcionamento 
 
 
 
+[[overview]]
 == Visão geral
 
 Para começar a explorar, selecione * ONTAP Essentials* no menu principal do Data Infrastructure Insights .
@@ -41,6 +42,7 @@ Observação: um número de "dias para a plena" de "0" (zero) indica que a estim
 
 
 
+[[data-protection]]
 == Proteção de Dados
 
 A página *Proteção de Dados* mostra o status dos volumes protegidos por *Cópias de Snapshot* ou *Políticas do SnapMirror *.
@@ -74,6 +76,7 @@ image:DataProtectionDashboard_ClusterList.png["Lista de Clusters de Proteção d
 
 
 
+[[security]]
 == Segurança
 
 O Painel de Segurança oferece uma visão instantânea da sua situação de segurança atual, exibindo gráficos para criptografia de hardware e software em volume, status de proteção contra adulteração de arquivos e métodos de autenticação de cluster. Os critérios de segurança são avaliados com base nas recomendações definidas no link:https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf["* Guia de reforço de segurança da NetApp para ONTAP 9*"].
@@ -151,6 +154,7 @@ Os detalhes do Anti-Ransomware mostram se uma VM de armazenamento é protegida p
 
 
 
+[[alerts]]
 == Alertas
 
 Aqui você pode visualizar os alertas ativos do seu locatário e rapidamente analisar possíveis problemas.  Selecione a aba _Resolvido_ para visualizar os alertas que foram resolvidos.
@@ -159,6 +163,7 @@ image:OE_Alerts.png["Lista de alertas essenciais do ONTAP"]
 
 
 
+[[infrastructure]]
 == Infraestrutura
 
 A página *Infraestrutura* do ONTAP Essentials oferece uma visão da integridade e do desempenho do cluster, usando consultas pré-criadas (e ainda mais personalizáveis) em todos os objetos básicos do ONTAP .  Selecione o tipo de objeto que deseja explorar (cluster, pool de armazenamento, etc.) e escolha se deseja visualizar informações de integridade ou desempenho.  Defina filtros para se aprofundar em sistemas individuais.
@@ -169,6 +174,7 @@ Página de infraestrutura mostrando a integridade do cluster:image:ONTAP_Essenti
 
 
 
+[[networking]]
 == Rede
 
 O ONTAP Essentials Networking oferece visões da sua infraestrutura FC, NVME FC, Ethernet e iSCSI.  Nessas páginas, você pode explorar coisas como portas em seus clusters e seus nós.
@@ -177,6 +183,7 @@ image:ONTAP_Essentials_Alerts_Menu.png["Menu de rede ONTAP Essentials"] image:ON
 
 
 
+[[workloads]]
 == Cargas de trabalho
 
 Visualize e explore cargas de trabalho em LUNs/Volumes, compartilhamentos NFS ou SMB ou Qtrees em seu locatário.

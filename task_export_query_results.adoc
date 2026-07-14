@@ -27,6 +27,7 @@ NOTE: A exportação para .CSV também está disponível no menu "três pontos" 
 
 
 
+[[asynchronous-export]]
 == Exportação assíncrona
 
 Exportar dados para .CSV pode levar de alguns segundos a algumas horas, dependendo da quantidade de dados a serem exportados.  O Data Infrastructure Insights exporta esses dados de forma assíncrona, para que você possa continuar trabalhando enquanto o .CSV está sendo compilado.
@@ -39,12 +40,14 @@ Os dados exportados refletirão a filtragem atual, as colunas e os nomes das col
 
 
 
+[[commas-in-asset-names]]
 == Vírgulas em nomes de ativos
 
 Observação: quando uma vírgula aparece no nome de um ativo, a exportação coloca o nome entre aspas, preservando o nome do ativo e o formato .csv adequado.
 
 
 
+[[time-format-or-not-time-format]]
 == Formato de hora ou não formato de hora?
 
 Ao abrir um arquivo .CSV exportado com o Excel, se você tiver um nome de objeto ou outro campo que esteja no formato NN:NN (dois dígitos seguidos por dois pontos seguidos por mais dois dígitos), o Excel às vezes interpretará esse nome como um formato de hora, em vez de um formato de texto.  Isso pode fazer com que o Excel exiba valores incorretos nessas colunas.  Por exemplo, um objeto chamado "81:45" seria exibido no Excel como "81:45:00".

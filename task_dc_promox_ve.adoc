@@ -18,11 +18,12 @@ O coletor do Ambiente Virtual DII Promox coletará dados de inventário. Este é
 
 
 
+[[terminology]]
 == Terminologia
 
 Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -45,9 +46,10 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -55,16 +57,17 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 | Nome do host ou endereço IP | Nome do host endereço IP do sistema de storage 
 
 
-| ID do token da API | Token da API necessário para acesso 
+| ID do token da API | Token de API necessário para acesso 
 
 
 | Segredo do token da API | Segredo para o token acima 
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -76,6 +79,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

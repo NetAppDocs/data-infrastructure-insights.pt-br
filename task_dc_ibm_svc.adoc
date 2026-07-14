@@ -16,11 +16,12 @@ A lista de dispositivos suportados inclui modelos como o SVC, o v7000, o v5000 e
 
 
 
+[[terminology]]
 == Terminologia
 
 O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do IBM SVC.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -46,6 +47,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[inventory-requirements]]
 === Requisitos de inventário
 
 * Endereço IP de cada cluster SVC
@@ -55,6 +57,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[performance-requirements]]
 === Requisitos de desempenho
 
 * Console SVC, que é obrigatório para qualquer cluster SVC e necessário para o pacote de base de descoberta do SVC.
@@ -67,9 +70,10 @@ Observação: como alternativa, habilite a coleta de dados usando a interface de
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -84,9 +88,10 @@ Observação: como alternativa, habilite a coleta de dados usando a interface de
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -101,11 +106,12 @@ Observação: como alternativa, habilite a coleta de dados usando a interface de
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Experimente isto: 
 
@@ -114,7 +120,7 @@ Algumas coisas que você pode tentar se tiver problemas com este coletor de dado
 |===
 Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Experimente isto: 
 

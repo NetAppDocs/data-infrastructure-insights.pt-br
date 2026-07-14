@@ -49,6 +49,7 @@ NOTE: Em um grande ambiente do Data Infrastructure Insights , você pode notar q
 
 
 
+[[modifying-annotation-rules]]
 == Modificando regras de anotação
 
 Você pode modificar uma regra de anotação para alterar o nome da regra, sua anotação, o valor da anotação ou a consulta associada à regra.
@@ -72,6 +73,7 @@ A caixa de diálogo Editar regra é exibida.
 
 
 
+[[changing-the-order-of-rules]]
 == Alterando a ordem das regras
 
 As regras de anotação são processadas do topo para o fim da lista de regras.  Para alterar a ordem em que uma regra é processada, faça o seguinte:
@@ -85,6 +87,7 @@ Observe que, ao executar várias regras que atualizam a mesma anotação em um a
 
 
 
+[[deleting-annotation-rules]]
 == Excluindo regras de anotação
 
 Talvez você queira excluir regras de anotação que não são mais usadas.

@@ -13,39 +13,46 @@ keywords: features
 :imagesdir: ./media/
 
 
+[[whats-new]]
 [role="lead"]
 A NetApp está continuamente melhorando e aprimorando seus produtos e serviços.  Aqui estão alguns dos recursos e funcionalidades mais recentes disponíveis no Data Infrastructure Insights (antigo Cloud Insights).
 
 
 
+[[june-2026]]
 == Junho de 2026
 
 
 
+[[share-important-updates-with-login-messages]]
 === Compartilhe atualizações importantes com mensagens de login
 
 Mantenha sua equipe informada e alinhada com mensagens de login personalizáveis. Comunique anúncios importantes, cronogramas de manutenção ou atualizações de políticas diretamente aos usuários quando eles fizerem login. Com suporte a markdown, você pode formatar as mensagens para maior clareza e garantir que informações críticas cheguem a todos os usuários do DII. Contas com privilégios de administrador podem encontrar a configuração no menu Admin, em Notificações.
 
 
 
+[[more-workspace-less-clutter]]
 === Mais espaço de trabalho, menos bagunça
 
 O menu de navegação do DII tem um visual totalmente novo, agora combinando com as cores e o comportamento do Console para uma experiência mais unificada. O menu principal, antes estático, será recolhido por padrão para um espaço de trabalho mais focado e um uso mais eficiente do espaço na tela. Basta clicar no ícone de menu (☰) no canto superior esquerdo para acessá-lo.
 
 
 
+[[expand-device-visibility-with-intelligent-ai-assistance]]
 === Amplie a visibilidade do dispositivo com assistência inteligente de IA
 
 Acelere a integração de novos dispositivos com a identificação de dispositivos baseada em IA. Data Infrastructure Insights analisa seu ambiente e sugere regras de Resolução Automática de Dispositivos, ajudando você a identificar e gerenciar mais dispositivos rapidamente. Basta revisar e aprovar as regras geradas por IA e Data Infrastructure Insights cuida do resto, melhorando a visibilidade e o gerenciamento de dispositivos em toda a sua infraestrutura.
 
 
 
+[[a-smarter-ai-assistant-for-global-teams]]
 === Um assistente de IA mais inteligente para equipes globais
 
 O Assistente de IA agora é compatível com mais de uma dúzia de idiomas, permitindo que sua equipe interaja naturalmente em seu idioma preferido. Veja a lista completa link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support["aqui"^].
 
 
 
+[[new-monitors-for-infrastructure-attribute-changes]]
 === Novos monitores para alterações de atributos de infraestrutura
 
 Agora, os Monitores de Atributos estão disponíveis para alertar automaticamente sua equipe quando ativos forem movidos entre data centers, um pool de storage não estiver criptografado ou ocorrerem modificações em atributos. Isso ajuda a manter as configurações padrão e ajuda a garantir que nada passe despercebido durante novas implantações ou alterações.
@@ -54,6 +61,7 @@ image:attribute_monitor_in_list.png["Monitores de atributos são adicionados aos
 
 
 
+[[build-smarter-alerts-and-webhooks-with-dynamic-context-rich-messages]]
 === Crie alertas e webhooks mais inteligentes com mensagens dinâmicas e ricas em contexto
 
 Ao criar um monitor ou webhook, basta digitar "%" na descrição do alerta ou na URL, cabeçalho ou corpo do webhook para selecionar em uma lista preenchida dinamicamente de atributos e anotações de objeto disponíveis. Forneça o contexto adequado aos seus alertas para melhorar a clareza, aprimorar a integração do webhook e acelerar os tempos de resposta.
@@ -63,10 +71,12 @@ image:attribute_list_example.png["Lista de atributos na descrição do monitor, 
 '''
 
 
+[[april-2026]]
 == Abril de 2026
 
 
 
+[[dii-knows-your-environment-better-than-ever]]
 === DII conhece o seu ambiente melhor do que nunca.
 
 Aprimoramos a forma como a IA do Data Infrastructure Insights entende sua configuração. Utilizando um contexto mais rico sobre seu uso atual do serviço, a configuração e os padrões de desempenho antes de responder. O resultado é uma orientação inicial que reflete seu ambiente, em vez de um ponto de partida genérico, com menos perguntas adicionais necessárias para chegar a uma resposta útil.
@@ -81,10 +91,12 @@ Por exemplo, navegue até um dispositivo de storage e o Assistente de IA fornece
 '''
 
 
+[[march-2026]]
 == Março de 2026
 
 
 
+[[ai-assistant-is-now-generally-available]]
 === AI Assistant agora está disponível de forma geral
 
 O Assistente de IA do Data Infrastructure Insights agora está disponível para todos os clientes com sites do DII hospedados na AWS.
@@ -93,16 +105,19 @@ Observe que o Assistente de IA nos sites do Azure ainda está em versão prévia
 
 
 
+[[infrastructure-insights-features-removed]]
 === Recursos do Infrastructure Insights removidos
 
 Os recursos "Infrastructure Insights" do DII, como _Shared Resources Under Stress_, _Kubernetes Namespaces Running out of Space_ e _Reclaiming ONTAP Cold Storage_, não estão mais disponíveis no DII.
 
 
 
+[[february-2026]]
 == Fevereiro de 2026
 
 
 
+[[instant-intelligent-answers-about-your-infrastructure]]
 === Respostas inteligentes instantâneas sobre sua infraestrutura
 
 Conheça o novo parceiro inteligente da sua infraestrutura: O link:ai_for_dii_overview.html["*Data Infrastructure Insights Assistente de IA*"] transforma a maneira como você interage com seus dados, convertendo consultas complexas em conversas simples. Descubra instantaneamente padrões ocultos, acelere a solução de problemas e tome decisões baseadas em dados com confiança. Obtenha respostas instantâneas para perguntas como:
@@ -118,6 +133,7 @@ image:ai_assistant_icon.png["Ícone do AI Assistant"]
 
 
 
+[[monitor-improvements]]
 === Melhorias de monitoramento
 
 
@@ -142,6 +158,7 @@ image:health_monitoring_exclude_object.png["excluir objeto do monitoramento de s
 
 
 
+[[operating-system-support]]
 === Suporte ao sistema operacional
 
 Os seguintes sistemas operacionais Linux são atualmente suportados com Data Infrastructure Insights link:concept_acquisition_unit_requirements.html["Unidades de Aquisição"]:
@@ -161,10 +178,12 @@ Os seguintes sistemas operacionais Linux são atualmente suportados com Data Inf
 '''
 
 
+[[december-2025]]
 == Dezembro de 2025
 
 
 
+[[control-query-access-with-shared-queries]]
 === Controle o acesso às consultas com consultas compartilhadas.
 
 Compartilhe as consultas que você criar com controles de permissão detalhados. Escolha o modo de visualização somente leitura para impedir modificações ou o modo de edição para permitir alterações. As consultas privadas são acessíveis aos criadores, enquanto as consultas compartilhadas podem ser utilizadas em regras de anotação ou duplicadas para casos de uso específicos, oferecendo controle total sobre como as consultas são usadas e modificadas em toda a sua organização.
@@ -175,6 +194,7 @@ Além disso, os usuários com a função _Convidado_ agora podem criar e gerenci
 
 
 
+[[better-filtering-when-managing-monitors]]
 === Melhor filtragem no gerenciamento de monitores
 
 O recurso de filtragem para listas e grupos de monitores foi aprimorado, adicionando suporte a caracteres curinga, múltiplos filtros, funcionalidade de inclusão/exclusão e muito mais.
@@ -183,6 +203,7 @@ image:monitor_list_filters.png["Novo filtro de monitor, largura=500"]
 
 
 
+[[cleaner-dashboard-visualizations]]
 === Visualizações de painel mais claras
 
 O design aprimorado do painel de controle ajuda você a ver o que é mais importante. Clareza visual aprimorada com bordas de sombra projetada que separam os widgets e linhas separadoras removidas para reduzir a desordem, permitindo que você se concentre nas suas análises de dados. Esses aprimoramentos criam uma experiência de painel mais limpa e intuitiva, que torna a identificação de tendências e anomalias mais rápida e fácil.
@@ -190,10 +211,12 @@ O design aprimorado do painel de controle ajuda você a ver o que é mais import
 '''
 
 
+[[november-2025]]
 == Novembro de 2025
 
 
 
+[[set-your-personalized-home-page]]
 === Configure sua página inicial personalizada.
 
 Simplifique seu fluxo de trabalho de monitoramento diário definindo _qualquer_ página do Data Infrastructure Insights como sua página inicial personalizada. Cada usuário pode selecionar uma página inicial diferente para se concentrar no que é importante para ele: um painel de controle crítico, alertas, integridade da infraestrutura, segurança da carga de trabalho ou mais.
@@ -202,6 +225,7 @@ image:home_page_set.png["Definindo uma página inicial, largura=300"]
 
 
 
+[[stay-organized-with-automatic-dashboard-grouping]]
 === Mantenha-se organizado com o agrupamento automático de painéis.
 
 Transforme a sua experiência com dashboards usando o agrupamento inteligente, que organiza automaticamente os dashboards importados da Galeria em categorias lógicas. O novo recurso de agrupamento facilita a importação de dashboards e coloca cada dashboard no grupo apropriado com base em sua função e relevância para o seu ambiente.
@@ -211,10 +235,12 @@ image:dashboard_gallery_groups.png["grupos de galerias durante a importação, l
 '''
 
 
+[[october-2025]]
 == Outubro de 2025
 
 
 
+[[infrastructure-health-instant-visibility-into-storage-and-fabric-risk]]
 === Saúde da infraestrutura: visibilidade instantânea dos riscos de armazenamento e malha
 
 Obtenha visibilidade instantânea de riscos potenciais em seu armazenamento e tecidos com nosso novo recurso *Infrastructure Health*.  Um único painel codificado por cores oferece visibilidade unificada dos riscos, ajudando a minimizar o tempo de inatividade e aliviar rapidamente a perda de receita.
@@ -229,6 +255,7 @@ image:infra_health_detailpanel.png["painel de detalhes de infra-estrutura de sa�
 
 
 
+[[multi-condition-monitors-for-precise-alerting]]
 === Monitores multicondições para alertas precisos
 
 Reduza o ruído de alerta e melhore a precisão do monitoramento adicionando uma segunda condição opcional a qualquer monitor métrico.  Os alertas são acionados somente quando ambas as condições são atendidas, fornecendo notificações mais direcionadas que se concentram nos cenários que mais importam para você.
@@ -237,6 +264,7 @@ image:multi-condition_monitor_second_condition.png["adicionando uma segunda cond
 
 
 
+[[query-improvements-at-a-glance-object-details]]
 === Melhorias na consulta: detalhes do objeto em um relance
 
 Selecionar uma linha em uma lista de resultados de consulta de objeto abre um painel de detalhes para o objeto selecionado.  Visualize rapidamente métricas e atributos (a exibição padrão para consultas de objetos), alertas e alterações, desempenho e pontuações de integridade ou explore recursos relacionados.  Todas as informações relevantes sobre objetos estão ao seu alcance.
@@ -245,6 +273,7 @@ image:query_slideout_panel.png["ilustração de um painel deslizante de consulta
 
 
 
+[[workload-security-improvements]]
 === Melhorias na segurança da carga de trabalho
 
 Duas novas APIs oferecem mais controle sobre seu ambiente de segurança de carga de trabalho:
@@ -258,10 +287,12 @@ Além disso, as verificações de permissão da função de segurança de carga 
 '''
 
 
+[[august-2025]]
 == Agosto de 2025
 
 
 
+[[focused-widget-data-at-your-fingertips]]
 === Dados de widgets focados na ponta dos seus dedos
 
 O novo recurso *Analisar* na maioria dos widgets permite que você observe mais detalhadamente os dados em um widget por vez. Basta clicar no botão "Analisar" em um widget para abrir uma visualização detalhada, onde você pode explorar interativamente os dados subjacentes e ampliar para obter insights mais profundos, sem sair do contexto do painel.
@@ -270,6 +301,7 @@ image:widget_analyze_panel.png["Analisar painel para um widget de linha, largura
 
 
 
+[[export-and-import-dashboards]]
 === Exportar e importar painéis
 
 Se você gerencia vários locatários e desenvolveu um painel útil, pode exportá-lo e importá-lo para outro locatário.
@@ -278,18 +310,21 @@ image:dashboard_import_from_file.png["imagem mostrando importação"] image:dash
 
 
 
+[[enhanced-cloud-integration-google-cloud-netapp-volumes-gcnv-support]]
 === Integração aprimorada na nuvem: suporte ao Google Cloud NetApp Volumes (GCNV)
 
 * O Google Cloud NetApp Volumes* (GCNV) agora tem suporte total como coletor de dados no DII, completando nosso ecossistema para monitoramento de nuvem híbrida. Obtenha visibilidade de objetos de armazenamento críticos, como organizações, pools e volumes em toda a infraestrutura. Agora você pode rastrear todos os seus ambientes de armazenamento, no local ou na nuvem, a partir de uma única plataforma.
 
 
 
+[[enhanced-storagegrid-monitoring]]
 === Monitoramento aprimorado do StorageGRID
 
 A coleta de logs do StorageGRID agora está habilitada por padrão, fornecendo dados de rastreamento de eventos para o DII, e expandimos o monitoramento do StorageGrid com mais de 50 alertas padrão, rastreamento de eventos em tempo real e novos painéis para simplificar operações complexas da grade de armazenamento. Fique à frente dos problemas com insights mais profundos sobre políticas de tráfego e desempenho de buckets.
 
 
 
+[[operating-system-support]]
 === Suporte ao sistema operacional
 
 Os seguintes sistemas operacionais agora são suportados com Data Infrastructure Insights Acquisition Units, além daqueleslink:concept_acquisition_unit_requirements.html["já suportado"] :
@@ -301,10 +336,12 @@ Os seguintes sistemas operacionais agora são suportados com Data Infrastructure
 
 
 
+[[june-2025]]
 == Junho de 2025
 
 
 
+[[vm-analyzer-holistic-vm-to-storage-visibility-troubleshooting]]
 === VM Analyzer: Visibilidade holística da VM para o armazenamento e solução de problemas
 
 O recurso *VM Analyzer* do DII fornece uma visão abrangente e completa dos seus ambientes virtualizados.  O VM Analyzer simplifica a solução de problemas mapeando todo o caminho das máquinas virtuais até o armazenamento, permitindo que os usuários identifiquem rapidamente problemas de desempenho em discos virtuais, VMs, hosts, repositórios de dados, volumes e armazenamento.  Com uma visualização intuitiva da topologia, filtragem e métricas detalhadas de desempenho, os administradores podem facilmente identificar gargalos, analisar desequilíbrios de tráfego e otimizar o desempenho geral do armazenamento.
@@ -313,6 +350,7 @@ image:vm_analyzer_example_with_panel.png["Mapa de topologia do VM Analyzer de um
 
 
 
+[[operating-system-support]]
 === Suporte ao sistema operacional
 
 Os seguintes sistemas operacionais agora são suportados com Data Infrastructure Insights Acquisition Units, além daqueleslink:concept_acquisition_unit_requirements.html["já suportado"] :
@@ -325,10 +363,12 @@ Os seguintes sistemas operacionais agora são suportados com Data Infrastructure
 '''
 
 
+[[may-2025]]
 == Maio de 2025
 
 
 
+[[new-landing-pages-keep-you-in-the-flow]]
 === Novas Landing Pages mantêm você no fluxo
 
 As Landing Pages redesenhadas apresentam tudo o que você precisa — dados resumidos, gráficos de desempenho, correlações, alertas e alterações, além de recursos importantes — em uma única visualização.
@@ -339,6 +379,7 @@ image:lp_new_design.png["novo design de página de destino mostrando o posiciona
 
 
 
+[[workload-security-improvements]]
 === Melhorias na segurança da carga de trabalho
 
 *Webhooks agora disponíveis para alertas de segurança de carga de trabalho*
@@ -355,6 +396,7 @@ image:ws_migrate_collector_to_another_agent.png["coletor de migração, largura=
 
 
 
+[[csv-asynchronous-export]]
 === Exportação assíncrona .CSV
 
 Exportar dados para .CSV pode levar de alguns segundos a algumas horas, dependendo da quantidade de dados a serem exportados.  O Data Infrastructure Insights agora exporta esses dados de forma assíncrona, para que você possa continuar trabalhando enquanto o .CSV está sendo compilado.
@@ -366,10 +408,12 @@ image:csv_export_async.png["ícone de sino com lista de exportações .csv pront
 '''
 
 
+[[april-2025]]
 == Abril de 2025
 
 
 
+[[ml-powered-anomaly-bounds-in-line-widgets-for-proactive-issue-resolution]]
 === Limites de anomalias com tecnologia de aprendizado de máquina em widgets de linha para resolução proativa de problemas
 
 Para solucionar problemas de desempenho com widgets de gráfico de linha ou spline, agora você pode exibir limites de comportamento esperados junto com métricas reais, permitindo distinguir entre tendências de métricas normais e anormais.
@@ -380,6 +424,7 @@ image:expected_bounds_example_showing_spike.png["limites esperados mostrando pic
 
 
 
+[[optimize-vmware-costs-with-vsan-storage-support]]
 === Otimize os custos do VMware com suporte de armazenamento VSAN
 
 Nosso recurso de otimização de VM agora inclui suporte para ambientes VMWare com armazenamento VSAN.  Além do uso de CPU e memória, a análise agora considera o armazenamento VSAN local para recomendações de recuperação, ajudando você a reduzir ainda mais os custos de licenciamento.
@@ -388,6 +433,7 @@ image:vm_optimization_with_vsan.png["Exemplo de otimização de VM com VSAN"]
 
 
 
+[[alert-details-at-your-fingertips]]
 === Detalhes de alerta na ponta dos seus dedos
 
 Investigar alertas está mais fácil do que nunca com o novo painel deslizante.  Selecione um alerta para visualizar detalhes dele e alterne facilmente entre eles sem se perder enquanto investiga problemas.
@@ -396,12 +442,14 @@ image:alert_slideout_example.png["Controle deslizante de alerta para navegação
 
 
 
+[[workload-security-forensics-asynchronous-export]]
 === Exportação assíncrona de análise forense de segurança de carga de trabalho
 
 A exportação de dados forenses pode levar de alguns segundos a várias horas, dependendo da quantidade de dados a serem exportados.  O Workload Security exporta esses dados de forma assíncrona, para que você possa continuar trabalhando enquanto o .CSV está sendo compilado.
 
 
 
+[[data-collector-notifications-grouped-into-rules]]
 === Notificações do coletor de dados agrupadas em regras
 
 Se você configurou notificações em coletores de dados, a partir de 15 de abril essas notificações serão tratadas em Regras de Notificação, com uma única regra para coletores que tenham destinatários idênticos.  Coletores com destinatários diferentes terão regras separadas.  As notificações do coletor existentes são migradas para regras de notificação.
@@ -409,10 +457,12 @@ Se você configurou notificações em coletores de dados, a partir de 15 de abri
 '''
 
 
+[[march-2025]]
 == Março de 2025
 
 
 
+[[enhanced-contextual-navigation-for-efficient-infrastructure-management]]
 === Navegação contextual aprimorada para gerenciamento eficiente de infraestrutura
 
 Economize tempo aproveitando o Data Infrastructure Insights para excelência operacional.  Agora estamos adicionando links de menu contextual que permitem que você pule diretamente de qualquer objeto para a página inicial do ativo para obter insights de desempenho do dispositivo, SAN Analyzer para visualização da topologia de rede, logs para conscientização operacional ou Change Analyzer para gerenciamento de configuração.
@@ -423,6 +473,7 @@ image:contextual_menu_example.png["Exemplo de menu contextual, largura=500"]
 
 
 
+[[preserve-the-history-of-removed-assets]]
 === Preserve o histórico de ativos removidos
 
 Nosso recurso aprimorado de alteração de infraestrutura agora preserva o histórico de ativos removidos, como qtrees e volumes que foram movidos e não estão mais disponíveis.
@@ -435,6 +486,7 @@ image:infra_change_removed_assets.png["ativos removidos na alteração de infra 
 
 
 
+[[kubernetes-operator-push-button-upgrade]]
 === Atualização por botão do operador do Kubernetes
 
 Quer ter certeza de que você tem o Kubernetes Operator mais recente?  Atualize o operador sob demanda no menu do cluster DII Kubernetes Collectors.  Basta selecionar Atualizar no menu, e o operador verificará as assinaturas da imagem, capturará um instantâneo da sua instalação atual e executará a atualização.
@@ -445,6 +497,7 @@ image:dii_push_button_upgrade.png["atualização do operador por botão de press
 
 
 
+[[test-connectivity-for-storage-workload-security-data-collectors]]
 === Teste de conectividade para coletores de dados de segurança de carga de trabalho de armazenamento
 
 O recurso de conectividade de teste visa ajudar os usuários finais a identificar as causas específicas de falhas ao configurar coletores de dados no Data Infrastructure Insights (DII) Workload Security.  Isso permite que os usuários corrijam problemas relacionados à comunicação de rede ou funções ausentes.
@@ -453,6 +506,7 @@ image:ws_test_connection_button.png["botão de conexão de teste de segurança d
 
 
 
+[[operating-system-support]]
 === Suporte ao sistema operacional
 
 Os seguintes sistemas operacionais agora são suportados com Data Infrastructure Insights Acquisition Units, além daqueleslink:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html["já suportado"] :
@@ -470,6 +524,7 @@ Os seguintes sistemas operacionais agora são suportados com Data Infrastructure
 '''
 
 
+[[february-2025]]
 == Fevereiro de 2025
 
 Os fundamentos do ONTAP agora incluem capacidade de gerenciamento pronta para uso para a última geração delink:task_dc_na_ontap_all_san_array.html["ASA"] dispositivos.  Isso inclui o SAN Analyzer para topologias de VM para LUN de cargas de trabalho em execução no ONTAP, agora também disponível com suporte da NetApp como parte do Data Infrastructure Insights Basic Edition.
@@ -478,6 +533,7 @@ image:ontap_essentials_asa_views.png["Menu suspenso ONTAP Essentials mostrando A
 
 
 
+[[dii-api-usage-tracking-enhance-security-and-efficiency]]
 === Rastreamento de uso da API DII: Aumente a segurança e a eficiência
 
 Fortaleça sua postura de segurança e simplifique o gerenciamento de recursos com o rastreamento aprimorado de uso da API REST, disponível para usuários administradores.  Com o rastreamento de uso da API, você pode ver quais tokens de API estão sendo usados, de quais endereços IP e o volume de tráfego que eles geram.  Ao vincular tokens a endereços IP e níveis de uso específicos, você obterá insights poderosos sobre o acesso ao sistema e tendências de uso, dando a você o controle necessário para manter um ambiente seguro e eficiente e manter as operações funcionando sem problemas.
@@ -488,6 +544,7 @@ image:api_usage_analytics_screenshot.png["Exemplo de análise de uso de API"]
 
 
 
+[[workload-security-api-to-restrict-users]]
 === API de segurança de carga de trabalho para restringir usuários
 
 Uma nova API foi adicionada para gerenciar restrições de usuários no Workload Security.  Com a API, você pode bloquear ou desbloquear um usuário ou alterar a duração do acesso restrito dele.  Consulte a página Admin > Acesso à API > Documentação da API para a API _cloudsecure_actions.block_.
@@ -495,10 +552,12 @@ Uma nova API foi adicionada para gerenciar restrições de usuários no Workload
 '''
 
 
+[[january-2025]]
 == Janeiro de 2025
 
 
 
+[[proactively-manage-risk-with-forensics-grouping]]
 === Gerencie riscos proativamente com o Forensics Grouping
 
 Apresentamos nosso mais novo recurso projetado para aprimorar sua segurança e recursos de gerenciamento!  Com a funcionalidade avançada de agrupamento e suporte a múltiplos agrupamentos hierárquicos, agora você pode identificar facilmente os usuários que acessaram pastas específicas, determinar os usuários e compartilhamentos mais ativos e gerenciar riscos proativamente rastreando endereços IP de clientes ativos.  Otimize seu armazenamento e uso de largura de banda identificando os arquivos e pastas mais acessados e obtenha maior controle sobre o acesso ao sistema identificando os usuários.
@@ -507,6 +566,7 @@ image:forensics_activity_example.png["tela de exemplo de rastreamento de ativida
 
 
 
+[[dashboard-access-control]]
 === Controle de acesso ao painel
 
 O Data Infrastructure Insights agora oferece maior controle sobre o acesso aos painéis que você cria.  Você escolhe quem pode modificar seus gráficos.  Você controla a exposição a informações potencialmente sensíveis.  Ainda está trabalhando em um painel que não está pronto para visibilidade geral?  Você pode mantê-lo privado até estar pronto para compartilhá-lo.
@@ -516,10 +576,12 @@ image:Dashboard_Sharing_Options.png["opções de compartilhamento do painel"]
 '''
 
 
+[[december-2024]]
 == Dezembro de 2024
 
 
 
+[[introducing-san-analyzer-enhanced-visibility-for-block-workloads]]
 === Apresentando o SAN Analyzer: visibilidade aprimorada para cargas de trabalho em bloco
 
 A SAN desempenha um papel crucial no tratamento de cargas de trabalho vitais, mas sua complexidade pode resultar em interrupções significativas e interrupções para o cliente.  Com o *SAN Analyzer* da DII, o gerenciamento de SAN se torna mais simples e eficiente.  Esta ferramenta poderosa oferece visibilidade de ponta a ponta, mapeando dependências de VM/Host para rede, LUN e armazenamento.  Ao fornecer um mapa de topologia interativo, o SAN Analyzer permite que você identifique problemas, entenda mudanças e melhore a compreensão do fluxo de dados.  Simplifique o gerenciamento de SAN em ambientes de TI complexos com o SAN Analyzer e aumente sua visibilidade das cargas de trabalho em bloco.
@@ -528,6 +590,7 @@ image:san_analyzer_example_with_panel.png["Mapa de topologia do SAN Analyzer de 
 
 
 
+[[optimize-vm-costs-with-intelligent-host-decommissioning-and-vm-reclamation]]
 === Otimize os custos de VM com descomissionamento inteligente de host e recuperação de VM
 
 O Data Infrastructure Insights ajuda você a gerenciar custos de infraestrutura e licenciamento analisando o comportamento histórico do ambiente e estabelecendo previsões de curto e longo prazo, gerando recomendações detalhadas para descomissionamento de host e recuperação de VMs desligadas e ociosas.  Essas recomendações ajudam a garantir a estabilidade do desempenho, liberar capacidade não utilizada e reduzir a alocação de memória e CPU.
@@ -536,6 +599,7 @@ image:vm_optimization_summary.png["Tela de Resumo de Otimização de VM"]
 
 
 
+[[uncover-log-insights-with-time-charts-and-table-widget-support]]
 === Descubra insights de log com gráficos de tempo e suporte a widgets de tabela
 
 Agora você pode aproveitar gráficos de tempo (barras, linhas, áreas) para identificar tendências e padrões em dados de log, como erros recorrentes ou picos de atividade, fornecendo insights valiosos sobre o comportamento do sistema ao longo do tempo.  Além disso, com as tabelas, agora você pode incluir mensagens de log diretamente no painel, permitindo uma visão mais abrangente dos detalhes do log.
@@ -545,10 +609,12 @@ image:log_insights_dashboard_example.png["registrar insights em um painel"]
 '''
 
 
+[[november-2024]]
 == Novembro de 2024
 
 
 
+[[new-workload-security-alerts-api]]
 === Nova API de alertas de segurança de carga de trabalho
 
 Recupere detalhes de alertas forenses com o novo Workload Securitylink:concept_cs_api.html["API *cloudsecure_forensics.alerts*"] .
@@ -557,6 +623,7 @@ image:ws_forensics_alerts_api.png["API de alertas forenses de segurança de carg
 
 
 
+[[analyze-configuration-changes-in-your-environment]]
 === Analisar alterações de configuração em seu ambiente
 
 Alterações de configuração são uma das causas mais comuns de problemas na TI moderna.  Novo Data Infrastructure Insights(DII's)link:infrastructure_change_analytics.html["análise de mudanças"] A capacidade permite que você entenda claramente as mudanças que causam problemas no seu ambiente.  Acelere o tempo de solução de problemas mostrando todas as alterações em dispositivos e componentes de infraestrutura relacionados que podem ter causado um problema.  Além disso, quando você ou sua equipe realizam alterações planejadas, é possível validar essas alterações rapidamente e garantir que não haja efeitos inesperados antes que os níveis de serviço sejam afetados.
@@ -565,6 +632,7 @@ image:Change_Analysis_Example_showing_alert-change_correlation.png["Exemplo de a
 
 
 
+[[kubevirt-support-monitor-virtual-machine-workloads-running-within-your-kubernetes-cluster]]
 === Suporte KubeVirt: monitore cargas de trabalho de máquinas virtuais em execução no seu cluster Kubernetes
 
 O DII agora oferece suporte total ao KubeVirt, a solução de virtualização nativa do Kubernetes usada por plataformas como OpenShift Virtualization e Harvester.  Obtenha visibilidade total das métricas, eventos, alterações de configuração e tráfego de rede de máquinas virtuais e cargas de trabalho de contêineres em seus clusters Kubernetes.
@@ -572,10 +640,12 @@ O DII agora oferece suporte total ao KubeVirt, a solução de virtualização na
 '''
 
 
+[[october-2024]]
 == Outubro de 2024
 
 
 
+[[unlock-new-insights-with-custom-expressions-in-monitors]]
 === Desbloqueie novos insights com expressões personalizadas em monitores
 
 As expressões permitem que você execute operações aritméticas em monitores de detecção de métricas e anomalias.  Aqui estão alguns exemplos:
@@ -590,6 +660,7 @@ image:Expressions_In_Monitors.png["Criando uma expressão em um monitor métrico
 
 
 
+[[minimize-alert-disruptions-during-maintenance-period]]
 === Minimize as interrupções de alertas durante o período de manutenção
 
 As janelas de manutenção permitem suprimir notificações de alerta durante períodos de manutenção agendados, ajudando a evitar interrupções desnecessárias.
@@ -602,6 +673,7 @@ image:Maintenance_Windows_example.png["Exemplo de janelas de manutenção"]
 
 
 
+[[streamline-alert-management-with-new-alert-notification-rules]]
 === Simplifique o gerenciamento de alertas com novas regras de notificação de alertas
 
 As regras de notificação de alerta simplificam o gerenciamento de notificações entre monitores e equipes.
@@ -612,6 +684,7 @@ image:notification_rule_configure.png["definindo filtros para regra de notifica�
 
 
 
+[[log-analytics-in-dashboards]]
 === Log Analytics em painéis
 
 Agora você pode incluir eventos de log em seus painéis para visualizar dados de eventos e ter uma compreensão mais abrangente e contextual do seu ambiente.  Investigue logs e visualize métricas relacionadas sem sair do painel!
@@ -620,6 +693,7 @@ image:log_analytics_bar_graph_example.png["Exemplo de análise de log"]
 
 
 
+[[better-vmware-observability-with-vmware-events]]
 === Melhor observabilidade do VMware com eventos do VMware
 
 Gerencie e solucione problemas proativamente em seu ambiente VMware com eventos em tempo real.  Os eventos da VMware fornecem insights sobre migrações de VMs, alocações de recursos e integridade do host.  Agora disponível para uso em consultas, painéis e monitores.  Requer VMware versão 8 ou superior.  Basta selecionar a fonte _logs.vmware.events_.
@@ -630,6 +704,7 @@ image:vmware_log_events.png["seleção de log do VMware no menu suspenso"]
 
 
 
+[[data-collector-updates]]
 === Atualizações do coletor de dados:
 
 * *Pure FlashBlade*: Este coletor reúne dados de inventário e desempenho de clusters FlashBlade que expõem a versão 2 de sua API REST.
@@ -638,10 +713,12 @@ image:vmware_log_events.png["seleção de log do VMware no menu suspenso"]
 '''
 
 
+[[september-2024]]
 == Setembro de 2024
 
 
 
+[[introducing-data-infrastructure-insights-formerly-cloud-insights]]
 === Apresentando o Data Infrastructure Insights, anteriormente Cloud Insights
 
 Na terça-feira, 24 de setembro de 2024, a NetApp mudou oficialmente o nome do Cloud Insights para * Data Infrastructure Insights* (DII).  Isso foi anunciado durante a conferência de usuários do Insight por Haiyan Song em sua apresentação principal no palco principal e em um comunicado à imprensa do produto da conferência Insight.
@@ -650,10 +727,12 @@ O serviço DII permanece o mesmo; não há alterações ou modificações de rec
 
 
 
+[[august-2024]]
 == Agosto de 2024
 
 
 
+[[view-data-specific-to-your-time-range]]
 === Visualizar dados específicos para seu intervalo de tempo
 
 Investigando um alerta?  Ampliou um gráfico?  Essas ações alteram o intervalo de tempo dessas páginas.  Agora você pode bloquear esse intervalo de tempo, navegar para outras páginas do Cloud Insights e ver dados específicos desse intervalo de tempo bloqueado.  Investigar e solucionar problemas ficou muito mais fácil!
@@ -662,6 +741,7 @@ image:timerange_lock.png["dica de ferramenta informando que você deve clicar no
 
 
 
+[[change-and-change-ratio-analysis]]
 === Análise de Mudança e Razão de Mudança (%)
 
 Agregações de tempo de taxa de mudança ajudam você a identificar mudanças e tendências significativas em valores de métricas ao longo do tempo.  Esses insights são essenciais para entender o que mudou, como um crescimento considerável da capacidade em um período específico ou uma mudança no desempenho de uma única porta.
@@ -674,6 +754,7 @@ image:change_and_change_ratio_bar_chart.png["exemplo de gráfico de barras mostr
 
 
 
+[[export-log-query-results-to-csv]]
 === Exportar resultados da consulta de log para .CSV
 
 Ao visualizar os resultados da consulta de log, exporte facilmente até 10.000 linhas para .CSV clicando no novo botão "Exportar".  Isso melhora a acessibilidade dos dados, facilita a análise e a geração de relatórios de dados e facilita a integração perfeita com outras ferramentas de processamento de dados.
@@ -682,6 +763,7 @@ image:csv_export_button.png["Botão Exportar para CSV em uma página de consulta
 
 
 
+[[resolve-alerts-by-time]]
 === Resolver alertas por tempo
 
 O Cloud Insights agora oferece a opção de resolver um alerta quando a métrica monitorada permanece dentro do intervalo aceitável por um período especificado.  Isso permite que você se concentre em problemas reais, reduzindo o ruído associado a métricas que cruzam repetidamente limites definidos ao consolidar vários alertas em um.
@@ -691,10 +773,12 @@ image:resolve_alert_by_time_dropdown.png["resolvendo um alerta com base no tempo
 '''
 
 
+[[july-2024]]
 == Julho de 2024
 
 
 
+[[aiops-anomaly-detection]]
 === AIOps: Detecção de Anomalias
 
 O Cloud Insights usa aprendizado de máquina para detectar mudanças inesperadas nos padrões de dados em seu ambiente e fornecer alertas proativos para ajudar você a identificar problemas antecipadamente.
@@ -709,6 +793,7 @@ image:anomaly_detection_expert_view.png["gráfico mostrando anomalia detectada"]
 
 
 
+[[workload-security-improvements]]
 === Melhorias na segurança da carga de trabalho
 
 *Suporte NFS 4.1*
@@ -723,6 +808,7 @@ Observe que, se você estiver fazendo várias chamadas para esta API, para obter
 
 
 
+[[easier-dashboard-navigation]]
 === Navegação mais fácil no painel
 
 Esse recurso visa otimizar seus fluxos de trabalho operacionais e facilitar a colaboração entre equipes.
@@ -734,10 +820,12 @@ image:Dashboard_Nav_Group_Dropdown.png["Menu suspenso para selecionar outro pain
 '''
 
 
+[[june-2024]]
 == Junho de 2024
 
 
 
+[[operating-system-support]]
 === Suporte ao sistema operacional
 
 Os seguintes sistemas operacionais são suportados pelas Unidades de Aquisição do Cloud Insights , além daqueleslink:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html["já suportado"] :
@@ -749,10 +837,12 @@ Os seguintes sistemas operacionais são suportados pelas Unidades de Aquisição
 
 
 
+[[may-2024]]
 == Maio de 2024
 
 
 
+[[automatically-resolve-alerts-based-on-time]]
 === Resolver alertas automaticamente com base no tempo
 
 Os alertas de log agora podem ser resolvidos com base no tempo; se a condição de alerta parar de ocorrer, o Cloud Insights poderá resolver o alerta automaticamente após um tempo especificado.  Você pode escolher resolver o alerta em minutos, horas ou dias.
@@ -762,10 +852,12 @@ image:alerts_resolve_based_on_time.png["Resolver um alerta com base no tempo dec
 '''
 
 
+[[april-2024]]
 == Abril de 2024
 
 
 
+[[iscsi-support-for-kubernetes]]
 === Suporte iSCSI para Kubernetes
 
 O Cloud Insights agora tem suporte para mapear o armazenamento iSCSI associado ao Kubernetes, permitindo uma solução de problemas mais rápida usando o mapa de rede do Kubernetes e a capacidade de fornecer relatórios de chargeback ou showback por meio de Relatórios.
@@ -774,6 +866,7 @@ image:pod-to-storage.png["Exemplo de pod para armazenamento"]
 
 
 
+[[operating-system-support]]
 === Suporte ao sistema operacional
 
 Os seguintes sistemas operacionais são suportados pelas Unidades de Aquisição do Cloud Insights , além daqueleslink:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html["já suportado"] :
@@ -788,10 +881,12 @@ Os seguintes sistemas operacionais são suportados pelas Unidades de Aquisição
 '''
 
 
+[[march-2024]]
 == Março de 2024
 
 
 
+[[workload-security-agent-details]]
 === Detalhes do agente de segurança de carga de trabalho
 
 Cada um dos seus Agentes de Segurança de Carga de Trabalho tem sua própria página de destino, onde você pode ver facilmente informações resumidas sobre o Agente, bem como os Coletores de Dados e Diretórios de Usuários instalados associados a esse Agente.
@@ -800,6 +895,7 @@ image:Agent_Detail_Page.png["Exemplo de página de destino de detalhes do agente
 
 
 
+[[chart-more-data-more-quickly]]
 === Crie gráficos de mais dados com mais rapidez
 
 Ao analisar dados na página de destino de um ativo, adicionar dados adicionais aos gráficos do Expert View é muito fácil.  Para cada tabela na página de destino, se um tipo de objeto tiver dados relevantes, passe o mouse sobre esse objeto para exibir o ícone "Adicionar à Visualização de Especialista".  Selecionar este ícone adiciona esse objeto aos Recursos Adicionais e o exibe nos gráficos do Modo de Exibição de Especialista.
@@ -813,10 +909,12 @@ image:LPTableShowChartIcon.png["Ícone Mostrar gráfico"]
 '''
 
 
+[[february-2024]]
 == Fevereiro de 2024
 
 
 
+[[usability-improvements]]
 === Melhorias de usabilidade
 
 Salve um *instantâneo* do seu painel atual selecionando _Exportar como imagem_ no menu suspenso do canto direito.  O Cloud Insights cria um .PNG dos estados atuais do widget.
@@ -841,6 +939,7 @@ image:TriggeredOnLink.png["Links no campo de alerta TriggeredOn"]
 
 
 
+[[see-all-changes-in-your-namespace]]
 === Veja todas as alterações no seu namespace
 
 A Análise de alterações do Kubernetes agora permite que você veja uma linha do tempo das alterações ao selecionar Cluster e Namespace.  Anteriormente, a Carga de trabalho também deve ter sido selecionada.  Ao filtrar por Cluster e Namespace, a linha do tempo de todas as alterações de carga de trabalho naquele namespace é mostrada em uma linha.
@@ -849,6 +948,7 @@ image:NamespaceTimeline.png["Linha do tempo do namespace"]
 
 
 
+[[related-logs-for-alerts]]
 === Registros relacionados para alertas
 
 Ao visualizar um alerta de log, as entradas de log relacionadas são mostradas em uma nova tabela.  Uma entrada de log é relacionada se ocorrer na mesma origem e período de tempo que o alerta e estiver sujeita às mesmas condições.  Selecione “Analisar Logs” para explorar mais.
@@ -857,12 +957,14 @@ image:RelatedLogsTable.png["Logs relacionados em uma página de destino de alert
 
 
 
+[[collect-ontap-switch-data]]
 === Coletar dados do switch ONTAP
 
 O Cloud Insights pode coletar dados dos switches de back-end do sistema ONTAP ; basta habilitar a coleta na seção _Configuração avançada_ do coletor de dados e garantir que o sistema ONTAP esteja configurado para fornecerlink:https://docs.netapp.com/us-en/ontap-cli-98/system-switch-ethernet-create.html["informações de troca"] e tem o apropriadolink:task_dc_na_cdot.html#a-note-about-permissions["permissões"] definir.
 
 
 
+[[workload-security-data-collector-api]]
 === API do coletor de dados de segurança de carga de trabalho
 
 Em ambientes grandes, você pode automatizar a criação do coletor de segurança de carga de trabalho usando a nova API de coletores de dados.  Navegue até *Admin > Acesso à API > Documentação da API* e selecione o tipo de API _Segurança de carga de trabalho_ para saber mais.
@@ -870,16 +972,19 @@ Em ambientes grandes, você pode automatizar a criação do coletor de seguranç
 '''
 
 
+[[january-2024]]
 == Janeiro de 2024
 
 
 
+[[try-cloud-insights-features-you-havent-used-yet]]
 === Experimente os recursos do Cloud Insights que você ainda não usou
 
 Além do seu teste inicial do Cloud Insights, você também pode aproveitarlink:concept_subscribing_to_cloud_insights.html#module-evaluation["Avaliações de Módulos"] .  Por exemplo, se você for assinante do Cloud Insights e estiver monitorando armazenamento e máquinas virtuais, ao adicionar o Kubernetes ao seu ambiente, você entrará automaticamente em um teste de 30 dias do Kubernetes Observability.  O uso da unidade gerenciada do Kubernetes Observability não será contabilizado no seu direito assinado até o término do período de avaliação.
 
 
 
+[[how-healthy-are-my-workloads]]
 === Quão saudáveis são minhas cargas de trabalho?
 
 A integridade da carga de trabalho está disponível rapidamente na página *Kubernetes > Explorar > Cargas de trabalho*, para que você possa ver rapidamente quais cargas de trabalho estão apresentando bom desempenho e quais podem precisar de ajuda.  Identifique facilmente se o problema de saúde está relacionado a alterações de infraestrutura, rede ou configuração e analise a fundo a causa raiz.
@@ -888,6 +993,7 @@ image:WorkloadHealth.png["Visão geral da saúde da carga de trabalho"]
 
 
 
+[[data-collector-updates]]
 === Atualizações do coletor de dados
 
 
@@ -898,6 +1004,7 @@ O coletor do Data Domain foi aprimorado para identificar melhor os sistemas de H
 
 
 
+[[enhanced-ransomware-detection-ml-algorithm]]
 === Algoritmo de ML de detecção de ransomware aprimorado
 
 O Workload Security inclui um novo algoritmo de ML de detecção de ransomware de segunda geração para detectar os ataques mais sofisticados com mais rapidez e precisão.
@@ -906,6 +1013,7 @@ O Workload Security inclui um novo algoritmo de ML de detecção de ransomware d
 
 
 
+[[deprecated-functionality]]
 === Funcionalidade obsoleta
 
 Ocasionalmente, a funcionalidade é descontinuada à medida que os recursos evoluem.  Aqui estão alguns dos recursos e funcionalidades que foram descontinuados no Cloud Insights:
@@ -950,10 +1058,12 @@ Para mais detalhes, consulte a documentação do Swagger em “Admin > Acesso à
 '''
 
 
+[[december-2023]]
 == Dezembro de 2023
 
 
 
+[[change-analytics-at-a-glance]]
 === Análise de alterações em resumo
 
 Kuberneteslink:kubernetes_change_analytics.html["Análise de Mudanças"] fornecer uma visão completa das mudanças recentes no seu ambiente Kubernetes.  Alertas e status de implantação estão ao seu alcance.  Com o Change Analytics, você pode rastrear todas as alterações de implantação e configuração e correlacioná-las com a integridade e o desempenho dos serviços, infraestrutura e clusters do K8s.
@@ -962,6 +1072,7 @@ image:ChangeAnalytitcs_Main_Screen.png["Painel de análise de alterações"]
 
 
 
+[[kubernetes-workload-performance-dashboard]]
 === Painel de desempenho da carga de trabalho do Kubernetes
 
 O desempenho da carga de trabalho está disponível rapidamente no painel abrangente de desempenho da carga de trabalho do Kubernetes.  Visualize rapidamente gráficos de tendências de volume, taxa de transferência, latência e retransmissão, bem como uma tabela de tráfego de carga de trabalho para cada namespace em seu ambiente.  Os filtros permitem fácil foco em áreas de interesse.
@@ -972,6 +1083,7 @@ image:K8s_Workload_performance_dashboard.png["Painel de desempenho da carga de t
 
 
 
+[[query-details-on-one-screen]]
 === Detalhes da consulta em uma tela
 
 Em uma consulta, selecionar uma linha abre um painel lateral mostrando detalhes de atributos, anotações e métricas para a linha selecionada, fornecendo informações úteis sem precisar acessar a página inicial do objeto.  Links na linha ou no painel lateral permitem uma navegação fácil.
@@ -980,6 +1092,7 @@ image:MetricQuerySlideoutPanel.png["Painel deslizante para consulta de métricas
 
 
 
+[[data-collector-updates]]
 === Atualizações do coletor de dados:
 
 * * Brocade FOS REST*: Este coletor foi removido da "Visualização" e agora está disponível para o público em geral.  Algumas coisas a serem observadas:
@@ -994,16 +1107,19 @@ image:MetricQuerySlideoutPanel.png["Painel deslizante para consulta de métricas
 '''
 
 
+[[november-2023]]
 == Novembro de 2023
 
 
 
+[[workload-security-pauseresume-a-collector]]
 === Segurança da carga de trabalho: pausar/retomar um coletor
 
 No Workload Security, você pode pausar um coletor de dados se o coletor estiver no estado _Em execução_.  Abra o menu "três pontos" do coletor e selecione PAUSAR.  Enquanto o coletor estiver pausado, nenhum dado será coletado do ONTAP e nenhum dado será enviado do coletor para o ONTAP.  Selecione Retomar para começar a coletar novamente.
 
 
 
+[[storage-node-support-information]]
 === Informações de suporte do nó de armazenamento
 
 Na página inicial de um nó de armazenamento, a seção _Dados do usuário_ fornece informações rápidas sobre sua oferta de suporte, status atual, status do suporte e data de término da garantia.  Observe que, atualmente, o Cloud Insights publica automaticamente essas informações apenas para dispositivos NetApp .  Observe também que esses campos de suporte são anotações, portanto, podem ser usados ​​em consultas e painéis.
@@ -1012,12 +1128,14 @@ image:StorageNodeSupportData.png["Informações de suporte do nó de armazenamen
 
 
 
+[[map-vmware-tags-to-cloud-insights-annotations]]
 === Mapear tags VMWare para anotações do Cloud Insights
 
 Olink:task_dc_vmware.html["VMware"] O coletor de dados permite que você preencha anotações de texto do Cloud Insights com tags de mesmo nome configuradas no VMWare.
 
 
 
+[[brocade-cli-collector-reliability-enhancements-for-fos-9-1-1c-and-higher-firmware]]
 === Melhorias na confiabilidade do coletor Brocade CLI para FOS 9.1.1c e firmware superior
 
 Em alguns switches Brocade Fibre Channel executando firmware 9.1.1c, a saída de certos comandos CLI pode ser prefixada com o texto do banner de login “motd” ou avisos para os usuários alterarem as senhas padrão.  O coletor Brocade CLI foi aprimorado para ignorar esses dois tipos de texto estranho.
@@ -1027,10 +1145,12 @@ Antes desse aprimoramento, apenas switches FOS 9.1.1c sem Virtual Fabrics presen
 '''
 
 
+[[october-2023]]
 == Outubro de 2023
 
 
 
+[[enhanced-workload-security]]
 === Segurança de carga de trabalho aprimorada
 
 A segurança da carga de trabalho foi aprimorada com o seguinte:
@@ -1041,12 +1161,14 @@ A segurança da carga de trabalho foi aprimorada com o seguinte:
 
 
 
+[[module-trials]]
 === Testes de Módulos
 
 Além do seu teste inicial do Cloud Insights, você também pode aproveitarlink:concept_subscribing_to_cloud_insights.html#module-evaluation["Avaliações de Módulos"] .  Por exemplo, se você já for assinante do Infrastructure Observability, mas estiver adicionando o Kubernetes ao seu ambiente, você entrará automaticamente em um teste de 30 dias do Kubernetes Observability.  Você só será cobrado pelo uso da sua unidade gerenciada do Kubernetes Observability no final do período de avaliação.
 
 
 
+[[restrict-access-to-specified-domains]]
 === Restringir acesso a domínios especificados
 
 Os administradores e proprietários de contas agora têm a capacidade delink:concept_user_roles.html#restricting-access-by-domain["restringir o acesso ao Cloud Insights"] para domínios de e-mail que eles especificam.  Vá para *Admin > Gerenciamento de usuários* e selecione o botão _Restringir domínios_.
@@ -1055,6 +1177,7 @@ image:Restrict_Domains_Modal.png["Modal de Domínios Restringidos"]
 
 
 
+[[data-collector-updates]]
 === Atualizações do coletor de dados
 
 As seguintes alterações na Unidade de Coletor/Aquisição de Dados estão em vigor:
@@ -1066,10 +1189,12 @@ As seguintes alterações na Unidade de Coletor/Aquisição de Dados estão em v
 '''
 
 
+[[september-2023]]
 == Setembro de 2023
 
 
 
+[[easily-find-what-you-want-in-the-logs]]
 === Encontre facilmente o que você deseja nos registros
 
 Consulta de Log (*Observabilidade > Consultas de Log > +Nova Consulta de Log*) inclui uma série delink:concept_log_explorer.html#advanced-filtering["melhorias"] para tornar a exploração de registros mais fácil e informativa.
@@ -1102,6 +1227,7 @@ image:Log_Query_Group_By_Chart.png["Exemplo de grupo de consultas de log mostran
 
 
 
+[[floating-log-detail-panel]]
 === Painel de detalhes do tronco "flutuante"
 
 Ao explorar logs usando a Consulta de Log, selecionar uma entrada na lista abre um painel de detalhes para essa entrada.  Agora você pode escolher exibir o painel deslizante "Flutuante" (ou seja, exibido sobre o restante da tela) ou "Na página" (ou seja, exibido como um quadro próprio dentro da página).  Para alternar entre essas visualizações, selecione o botão "Na página / Flutuante" no canto superior direito do painel.
@@ -1110,6 +1236,7 @@ image:Log_Query_Floating_Detail_Panel.png["Painel deslizante \"In-Page\" com bot
 
 
 
+[[collapse-the-menu]]
 === Recolher o menu
 
 Você pode recolher o menu de navegação do Cloud Insights do lado esquerdo selecionando o botão "Minimizar" abaixo do menu.  Enquanto o menu estiver minimizado, passe o mouse sobre um ícone para ver qual seção ele abre; selecionar o ícone abre o menu e leva você diretamente para essa seção.
@@ -1118,6 +1245,7 @@ image:CI_Menu_Minimize_Button.png["Minimizar o menu"]
 
 
 
+[[data-collector-improvements]]
 === Melhorias no coletor de dados
 
 O Cloud Insights tornou mais fácil mostrar e encontrar informações do coletor de dados:
@@ -1131,10 +1259,12 @@ O Cloud Insights tornou mais fácil mostrar e encontrar informações do coletor
 '''
 
 
+[[august-2023]]
 == Agosto de 2023
 
 
 
+[[collecting-isilonpowerscale-logs-and-advanced-analytics-data]]
 === Coletando logs do Isilon/PowerScale e dados de análise avançada
 
 Os coletores Isilon REST e PowerScale REST contêm as seguintes melhorias:
@@ -1154,6 +1284,7 @@ Eles são habilitados por padrão para usuários dos coletores Isilon REST e/ou 
 
 
 
+[[improved-workload-map]]
 === Mapa de carga de trabalho aprimorado
 
 O mapa de carga de trabalho é mais utilizável e menos ruidoso; ele agrupa todos os serviços externos semelhantes em um nó se eles se comunicarem com as mesmas cargas de trabalho, reduzindo a complexidade do gráfico e facilitando a compreensão de como os serviços estão interconectados.
@@ -1162,6 +1293,7 @@ A escolha de um nó agrupado exibirá uma tabela detalhada com as métricas de t
 
 
 
+[[kubernetes-managed-unit-usage-adjustment]]
 === Ajuste de uso da Unidade Gerenciada do Kubernetes
 
 No caso de um recurso de computação no seu ambiente de cluster Kubernetes ser contado pelo NetApp Kubernetes Monitoring Operator e por um coletor de dados de infraestrutura subjacente (por exemplo, VMware), seu uso desses recursos será ajustado para garantir a contagem mais eficiente de unidades gerenciadas.  Você pode visualizar os ajustes do Kubernetes MU na página Admin > Assinatura, nas guias Resumo e Uso.
@@ -1172,6 +1304,7 @@ Guia de uso:image:MU_Adjustments_K8s_Usage_Tab.png["Ajuste do MU do k8s mostrado
 
 
 
+[[collectoracquisition-changes]]
 === Alterações de Colecionador/Aquisição:
 
 As seguintes alterações na Unidade de Coletor/Aquisição de Dados estão em vigor:
@@ -1181,6 +1314,7 @@ As seguintes alterações na Unidade de Coletor/Aquisição de Dados estão em v
 
 
 
+[[improved-menus]]
 === Menus aprimorados
 
 Atualizamos o menu de navegação à esquerda para oferecer melhor suporte aos fluxos de trabalho dos nossos clientes.  Novos itens de nível superior, como o _Kubernetes_, fornecem acesso acelerado às necessidades do cliente, e um console de administradores consolidado oferece suporte à função de proprietário do locatário.
@@ -1240,10 +1374,12 @@ Administrador:
 
 
 
+[[july-2023]]
 == Julho de 2023
 
 
 
+[[show-recent-changes]]
 === Mostrar alterações recentes
 
 As páginas de destino do Data Collector agora incluem uma lista de alterações recentes.  Basta clicar no botão "Alterações recentes" na parte inferior de qualquer página inicial do coletor de dados para exibir as alterações recentes do coletor de dados.
@@ -1252,6 +1388,7 @@ image:Recent_Changes_Example.png["Exemplo de mudanças recentes"]
 
 
 
+[[operator-improvements]]
 === Melhorias do Operador
 
 As seguintes melhorias foram feitas paralink:telegraf_agent_k8s_config_options.html["Operador do Kubernetes"] Implantação:
@@ -1262,12 +1399,14 @@ As seguintes melhorias foram feitas paralink:telegraf_agent_k8s_config_options.h
 
 
 
+[[insight-reclaim-cold-storage]]
 === Insight: Recupere o armazenamento refrigerado
 
 O Reclaim ONTAP storage frio Insight agora oferece suporte a FlexGroups e agora está disponível para todos os clientes.
 
 
 
+[[operator-image-signature]]
 === Assinatura da imagem do operador
 
 Para clientes que usam um repositório privado para o NetApp Kubernetes Monitoring Operator, agora é possível copiar a chave pública da assinatura de imagem durante a instalação do Operator, permitindo confirmar a autenticidade do software baixado.  Selecione o botão _Copiar chave pública da assinatura da imagem_ durante a etapa opcional para _Carregar a imagem do operador para seu repositório privado_.
@@ -1276,6 +1415,7 @@ image:Operator_Public_Image_Key.png["Baixe a Chave Pública"]
 
 
 
+[[aggregation-conditional-formatting-and-more-for-queries]]
 === Agregação, formatação condicional e muito mais para consultas
 
 Agregação, seleção de unidade, formatação condicional e renomeação de coluna estão entre os recursos mais úteis de um widget de tabela de painel e agora esses mesmos recursos estão disponíveis paralink:task_create_query.html["Consultas"] .
@@ -1286,6 +1426,7 @@ Esses recursos já estão disponíveis para dados do tipo integração (Kubernet
 
 
 
+[[api-for-audit]]
 === API para Auditoria
 
 Agora você pode usar uma API para consultar ou exportar eventos auditados.  Acesse Admin > Acesso à API e selecione o link _Documentação da API_ para obter informações.
@@ -1294,6 +1435,7 @@ image:Audit_API_Swagger.png["API Swagger para auditoria, largura=400"]
 
 
 
+[[data-collector-trident-economy]]
 === Coletor de dados: Trident Economy
 
 O Cloud Insights agora oferece suporte ao Trident Economy Driver, obtendo os seguintes benefícios:
@@ -1306,10 +1448,12 @@ O Cloud Insights agora oferece suporte ao Trident Economy Driver, obtendo os seg
 '''
 
 
+[[june-2023]]
 == Junho de 2023
 
 
 
+[[check-out-your-usage]]
 === Verifique seu uso
 
 A partir de junho de 2023, o Cloud Insights fornecerá um detalhamento do uso da Unidade Gerenciada com base no Conjunto de Recursos.  Agora você pode visualizar e monitorar rapidamente o uso da unidade gerenciada (MU) para sua infraestrutura, bem como o uso da MU vinculada ao Kubernetes.
@@ -1318,12 +1462,14 @@ image:Metering_Usage.png["Análises de uso de medição"]
 
 
 
+[[kubernetes-network-monitoring-and-map-is-available-for-all]]
 === O monitoramento e o mapa da rede Kubernetes estão disponíveis para todos
 
 Olink:concept_kubernetes_network_monitoring_and_map.html["_Desempenho e mapa da rede Kubernetes_"] simplifica a solução de problemas mapeando dependências entre cargas de trabalho do Kubernetes, fornecendo visibilidade em tempo real das latências e anomalias de desempenho da rede do Kubernetes para identificar problemas de desempenho antes que eles afetem os usuários.  Muitos clientes acharam isso útil durante a pré-visualização, e agora está disponível para todos aproveitarem.
 
 
 
+[[collectoracquisition-changes]]
 === Alterações de Colecionador/Aquisição:
 
 As seguintes alterações na Unidade de Coletor/Aquisição de Dados estão em vigor:
@@ -1334,6 +1480,7 @@ As seguintes alterações na Unidade de Coletor/Aquisição de Dados estão em v
 
 
 
+[[new-ontap-essentials-dashboards]]
 === Novos painéis do ONTAP Essentials
 
 Os seguintes painéis do ONTAP Essentials estavam disponíveis em ambientes de visualização e agora estão disponíveis para todos:
@@ -1344,6 +1491,7 @@ Os seguintes painéis do ONTAP Essentials estavam disponíveis em ambientes de v
 
 
 
+[[additional-system-monitors]]
 === Monitores de sistema adicionais
 
 Os seguintes monitores de sistema estão incluídos no Cloud Insights:
@@ -1355,10 +1503,12 @@ Os seguintes monitores de sistema estão incluídos no Cloud Insights:
 '''
 
 
+[[may-2023]]
 == Maio de 2023
 
 
 
+[[improved-kubernetes-monitoring-operator-installation]]
 === Instalação aprimorada do operador de monitoramento do Kubernetes
 
 Instalação e configuração dolink:task_config_telegraf_agent_k8s.html["Operador de monitoramento do NetApp Kubernetes"] é mais fácil do que nunca com as seguintes melhorias:
@@ -1372,6 +1522,7 @@ Instalação e configuração dolink:task_config_telegraf_agent_k8s.html["Operad
 
 
 
+[[storage-virtualization]]
 === Virtualização de armazenamento
 
 O Cloud Insights pode diferenciar entre um conjunto de armazenamento com armazenamento local ou virtualização de outros conjuntos de armazenamento.  Isso lhe dá a capacidade de relacionar custos e distinguir o desempenho do front-end até o back-end da sua infraestrutura.
@@ -1380,6 +1531,7 @@ image:StorageVirtualization_StorageSummary.png["Página de destino de armazename
 
 
 
+[[new-webhook-parameters]]
 === Novos parâmetros do Webhook
 
 Ao criar umlink:task_create_webhook.html["Webhook"] notificação, agora você pode incluir estes parâmetros na sua definição de webhook:
@@ -1390,12 +1542,14 @@ Ao criar umlink:task_create_webhook.html["Webhook"] notificação, agora você p
 
 
 
+[[reporting-on-kubernetes-data]]
 === Relatórios sobre dados do Kubernetes
 
 Os dados do Kubernetes coletados pelo Cloud Insights— incluindo volumes persistentes (PV), PVC, cargas de trabalho, clusters e namespaces — agora estão disponíveis para uso em relatórios, permitindo chargeback, tendências, previsões, cálculos de TTF e outros relatórios comerciais sobre métricas para o Kubernetes.
 
 
 
+[[default-ontap-system-monitors-enabled-for-new-customers]]
 === Monitores de sistema ONTAP padrão habilitados para novos clientes
 
 Muitos monitores de sistema ONTAP são habilitados (ou seja, _Retomados_) por padrão em novos ambientes do Cloud Insights .  Anteriormente, a maioria dos monitores tinha como padrão o estado _Pausado_.  Como as necessidades de negócios variam de empresa para empresa, sempre recomendamos dar uma olhada nolink:task_system_monitors.html["monitores de sistema"] no seu ambiente e pausar ou retomar cada um com base nas suas necessidades de alerta.
@@ -1403,10 +1557,12 @@ Muitos monitores de sistema ONTAP são habilitados (ou seja, _Retomados_) por pa
 '''
 
 
+[[april-2023]]
 == Abril de 2023
 
 
 
+[[kubernetes-performance-monitoring-and-map]]
 === Monitoramento e mapeamento de desempenho do Kubernetes
 
 Olink:concept_kubernetes_network_monitoring_and_map.html["_Desempenho e mapa da rede Kubernetes_"] O recurso simplifica a solução de problemas mapeando dependências entre cargas de trabalho do Kubernetes.  Ele fornece visibilidade em tempo real das latências e anomalias de desempenho da rede Kubernetes para identificar problemas de desempenho antes que eles afetem os usuários.  Esse recurso ajuda as organizações a reduzir custos gerais analisando e auditando os fluxos de tráfego do Kubernetes.
@@ -1421,6 +1577,7 @@ O Kubernetes Performance Monitoring and Map está disponível como umlink:concep
 
 
 
+[[ontap-essentials-security-dashboard]]
 === Painel de segurança do ONTAP Essentials
 
 Olink:concept_ontap_essentials.html#security["Painel de Segurança"] fornece uma visão instantânea da sua situação de segurança atual, mostrando gráficos de criptografia de volume de hardware e software, status anti-ransomware e métodos de autenticação de cluster.  O Painel de Segurança está disponível como umlink:concept_preview_features.html["Pré-visualização"] recurso.
@@ -1429,6 +1586,7 @@ image:OE_SecurityDashboard.png["Painel de segurança do ONTAP Essentials"]
 
 
 
+[[reclaim-ontap-cold-storage]]
 === Recuperar armazenamento refrigerado ONTAP
 
 O _Reclaim ONTAP Cold Storage_ Insight fornece dados sobre capacidade de frio, potencial economia de custos/energia e itens de ação recomendados para volumes em sistemas ONTAP .
@@ -1446,6 +1604,7 @@ _Recuperar ONTAP Cold Storage_ é considerado umlink:concept_preview_features.ht
 
 
 
+[[subscription-notification-also-controls-banner-messages]]
 === A notificação de assinatura também controla mensagens de banner
 
 Definir destinatários para notificações de assinatura (Admin > Notificações) agora também controla quem verá notificações de banner no produto relacionadas à assinatura.
@@ -1454,6 +1613,7 @@ image:Subscription_Expiring_Banner.png["Exemplo de banner de assinatura expirand
 
 
 
+[[reporting-has-a-new-look]]
 === Os relatórios têm uma nova aparência
 
 Você notará que as telas de relatórios do Cloud Insights têm uma nova aparência e que parte da navegação do menu mudou.  Essas telas e alterações de navegação foram atualizadas no atuallink:reporting_overview.html["Documentação de Relatórios"] .
@@ -1462,12 +1622,14 @@ image:Reporting_Menu.png["Nova aparência do menu de relatórios"]
 
 
 
+[[monitors-paused-by-default]]
 === Monitores pausados por padrão
 
 Para novos ambientes do Cloud Insights , esteja ciente de quelink:task_system_monitors.html["monitores definidos pelo sistema"] não enviar notificações de alerta por padrão.  Você precisará habilitar notificações para qualquer monitor que queira alertá-lo, adicionando um ou mais métodos de entrega para o monitor.  Para ambientes Cloud Insights existentes, a lista de destinatários de notificação _global_ padrão foi removida para todos os monitores definidos pelo sistema atualmente no estado _Pausado_.  As notificações definidas pelo usuário permanecem inalteradas, assim como as configurações de notificação para monitores definidos pelo sistema atualmente ativos.
 
 
 
+[[looking-for-the-api-metering-tab]]
 === Procurando pela aba Medição de API?
 
 A medição de API foi movida da página Assinatura para a página *Administrador > Acesso à API*.
@@ -1475,10 +1637,12 @@ A medição de API foi movida da página Assinatura para a página *Administrado
 '''
 
 
+[[march-2023]]
 == Março de 2023
 
 
 
+[[cloud-connection-for-ontap-9-9-deprecated]]
 === Conexão em nuvem para ONTAP 9.9+ obsoleta
 
 O coletor de dados do Cloud Connection para ONTAP 9.9+ está sendo descontinuado.  A partir de 4 de abril de 2023, os coletores de dados do Cloud Connection no seu ambiente não coletarão mais dados e, em vez disso, apresentarão um erro ao pesquisar.  O coletor de dados do Cloud Connection será removido completamente do Cloud Insights em uma atualização subsequente.
@@ -1488,10 +1652,12 @@ Antes de 4 de abril de 2023, é obrigatório configurar um novo coletor de dados
 '''
 
 
+[[january-2023]]
 == Janeiro de 2023
 
 
 
+[[new-log-monitors]]
 === Novos monitores de log
 
 Adicionamos quase duas dúziaslink:task_system_monitors.html["monitores de sistema adicionais"] para alertar sobre links de interconexão quebrados, problemas de pulsação e muito mais.  Além disso, três novos monitores de log de proteção de dados foram adicionados para alertar sobre alterações no SnapMirror Auto Resync, no MetroCluster Mirroring e no FabricPool Mirror Resync.
@@ -1500,6 +1666,7 @@ Observe que alguns desses monitores estarão _ativados_ por padrão; você deve 
 
 
 
+[[csv-export-for-all-dashboard-table-widgets]]
 === Exportação .CSV para todos os widgets de tabela do painel
 
 Garantir a acessibilidade aos seus dados é essencial, por isso disponibilizamos a exportação .CSV para todas as consultas de métricas, widgets de tabelas de painéis e páginas de destino de objetos, independentemente do tipo de dado (ativo ou integração) que você está consultando.
@@ -1509,16 +1676,19 @@ Personalizações de dados, como seleção de colunas, renomeação de colunas e
 '''
 
 
+[[december-2022]]
 == Dezembro de 2022
 
 
 
+[[explore-ransomware-protection-and-other-security-features-during-cloud-insights-trial]]
 === Explore a proteção contra ransomware e outros recursos de segurança durante o teste do Cloud Insights
 
 A partir de hoje, inscrever-se para uma nova avaliação do Cloud Insights permite que você explore recursos de segurança, como detecção de ransomware e política de resposta automatizada de bloqueio de usuários.  Se você ainda não se inscreveu para o seu teste, faça isso hoje mesmo!
 
 
 
+[[kubernetes-workloads-have-their-own-landing-page]]
 === As cargas de trabalho do Kubernetes têm sua própria página de destino
 
 As cargas de trabalho são uma parte essencial do seu ambiente Kubernetes, por isso o Cloud Insights agora fornece landing pages para essas cargas de trabalho.  A partir daqui, você pode visualizar, explorar e solucionar problemas que afetam suas cargas de trabalho do Kubernetes.
@@ -1527,6 +1697,7 @@ image:Kubernetes_Workload_LP.png["Exemplo de página de destino da carga de trab
 
 
 
+[[check-your-checksums]]
 === Verifique suas somas de verificação
 
 Você nos pediu para fornecer valores de soma de verificação durante a instalação do agente para Windows e Linux e achamos que é uma ótima ideia.  Então aqui estão eles:
@@ -1535,6 +1706,7 @@ image:Agent_Checksum_Instructions.png["Valores de soma de verificação do agent
 
 
 
+[[log-alerting-improvements]]
 === Melhorias no alerta de log
 
 
@@ -1557,6 +1729,7 @@ image:Log_Monitor_Duplicate.png["Duplicando um Monitor de Log"]
 
 
 
+[[11-new-default-ontap-monitors-covering-snapmirror-for-business-continuity]]
 === 11 novos monitores ONTAP padrão que abrangem o SnapMirror para continuidade de negócios
 
 Adicionamos quase uma dúzia de novoslink:task_system_monitors.html#snapmirror-for-business-continuity-smbc-mediator-log-monitors["monitores de sistema"] para SnapMirror for Business Continuity (SMBC), que alerta sobre alterações em certificados SMBC e mediadores ONTAP .
@@ -1564,10 +1737,12 @@ Adicionamos quase uma dúzia de novoslink:task_system_monitors.html#snapmirror-f
 '''
 
 
+[[november-2022]]
 == Novembro de 2022
 
 
 
+[[more-than-40-new-security-data-collection-and-cvo-monitors]]
 === Mais de 40 novos monitores de Segurança, Coleta de Dados e CVO!
 
 Adicionamos dezenas de novos monitores definidos pelo sistema para alertá-lo sobre possíveis problemas com o Cloud Volumes, a segurança e a proteção de dados.  Saiba mais sobre esses monitoreslink:task_system_monitors.html#security-monitors["aqui"] .
@@ -1575,10 +1750,12 @@ Adicionamos dezenas de novos monitores definidos pelo sistema para alertá-lo so
 '''
 
 
+[[october-2022]]
 == Outubro de 2022
 
 
 
+[[better-and-more-accurate-ransomware-detection-with-ontap-autonomous-ransomware-protection-integration]]
 === Detecção de Ransomware melhor e mais precisa com a integração da Proteção Autônoma contra Ransomware do ONTAP
 
 O Cloud Secure melhora a detecção de ransomware por meio da integração com o ONTAPlink:concept_cs_integration_with_ontap_arp.html["Proteção Autônoma contra Ransomware"] (ARP).
@@ -1593,22 +1770,26 @@ O Cloud Secure recebe eventos ONTAP ARP sobre atividades potenciais de criptogra
 '''
 
 
+[[september-2022]]
 == Setembro de 2022
 
 
 
+[[monitors-available-in-basic-edition]]
 === Monitores disponíveis na Edição Básica
 
 ONTAPlink:task_system_monitors.html["Monitores padrão"] agora disponível para uso no Cloud Insights Basic Edition.  Isso inclui mais de 70 monitores de infraestrutura e 30 exemplos de carga de trabalho.
 
 
 
+[[ontap-power-and-storagegrid-dashboards]]
 === Painéis ONTAP Power e StorageGRID
 
 A galeria de painéis inclui um novo painel para ONTAP Power and Temperature, bem como quatro painéis para StorageGRID.  Se o seu ambiente estiver coletando métricas de energia do ONTAP e/ou dados do StorageGRID , importe esses painéis selecionando *+Da Galeria*.
 
 
 
+[[at-a-glance-threshold-visibility-in-tables]]
 === Visibilidade de limiar em tabelas à primeira vista
 
 A Formatação Condicional permite que você defina e destaque limites de nível de Aviso e nível Crítico em widgets de tabela, trazendo visibilidade instantânea para outliers e pontos de dados excepcionais.
@@ -1617,12 +1798,14 @@ image:ConditionalFormattingExample.png["Exemplo de formatação condicional"]
 
 
 
+[[security-monitor]]
 === Monitor de segurança
 
 O Cloud Insights pode alertá-lo quando detectar que o modo FIPS está desabilitado no sistema ONTAP .  Leia mais sobrelink:task_system_monitors.html#security-monitors["Monitores de sistema"] , e fique atento para mais Monitores de Segurança, em breve!
 
 
 
+[[chat-from-anywhere]]
 === Bate-papo de qualquer lugar
 
 Converse com um especialista em suporte da NetApp em qualquer tela do Cloud Insights selecionando o novo link *Ajuda > Chat ao vivo*.  Ajuda está disponível no ícone "?" no canto superior direito da tela.
@@ -1631,6 +1814,7 @@ image:Help_LiveChat.png["Menu de ajuda com chat ao vivo em destaque"]
 
 
 
+[[new-data-collectors]]
 === Novos Coletores de Dados
 
 * Amazon S3 (disponível em versão prévia)
@@ -1640,12 +1824,14 @@ image:Help_LiveChat.png["Menu de ajuda com chat ao vivo em destaque"]
 
 
 
+[[other-data-collector-updates]]
 === Outras atualizações do coletor de dados
 
 Todas as fontes de dados agora estão otimizadas para retomar a pesquisa de desempenho após atualizações e/ou patches da Unidade de Aquisição.
 
 
 
+[[operating-system-support]]
 === Suporte ao sistema operacional
 
 Os seguintes sistemas operacionais são suportados pelas Unidades de Aquisição do Cloud Insights , além daqueleslink:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html["já suportado"] :
@@ -1656,10 +1842,12 @@ Os seguintes sistemas operacionais são suportados pelas Unidades de Aquisição
 '''
 
 
+[[august-2022]]
 == Agosto de 2022
 
 
 
+[[cloud-insights-has-a-new-look]]
 === O Cloud Insights tem um novo visual!
 
 A partir deste mês, "Monitorar e Otimizar" foi renomeado para *Observabilidade*.  Você encontrará todos os seus recursos favoritos, como painéis, consultas, alertas e relatórios aqui.  Além disso, procure por Cloud Secure no novo menu *Segurança*.  Observe que apenas os menus mudaram; a funcionalidade dos recursos permanece a mesma.
@@ -1675,6 +1863,7 @@ image:New_Help_Menu_2022.png["O menu de ajuda está no canto superior direito"]
 
 
 
+[[not-sure-where-to-start-check-out-ontap-essentials]]
 === Não sabe por onde começar?  Confira o ONTAP Essentials!
 
 link:concept_ontap_essentials.html["* Fundamentos do ONTAP *"]é um conjunto de painéis e fluxos de trabalho que fornecem visualizações detalhadas dos seus inventários, cargas de trabalho e proteção de dados do NetApp ONTAP , incluindo previsões de dias até o limite máximo para capacidade de armazenamento e desempenho.  Você pode até ver se algum controlador está funcionando com alta utilização.  O ONTAP Essentials é o lugar ideal para todas as suas necessidades de monitoramento do NetApp ONTAP !
@@ -1685,6 +1874,7 @@ image:ONTAP_Essentials_Menu_and_screen.png["Painel de visão geral do ONTAP Esse
 
 
 
+[[storage-data-families-are-merged]]
 === As famílias de dados de armazenamento são mescladas
 
 Vocês pediram e agora vocês conseguiram.  As unidades de dados de armazenamento base 2 e base 10 agora são combinadas em uma família, de bits e bytes a tebibits e terabytes, facilitando a exibição de dados em seus painéis.  As taxas de dados agora também são uma grande família.
@@ -1693,6 +1883,7 @@ image:DataFamilyMerged.png["menu suspenso mostrando a fusão de famílias de dad
 
 
 
+[[how-much-power-is-my-storage-using]]
 === Quanta energia meu armazenamento está usando?
 
 Exiba e monitore o consumo de energia, a temperatura e a velocidade do ventilador do seu nó e prateleira de armazenamento ONTAP , usando as métricas netapp_ontap.storage_shelf, netapp_ontap.system_node e netapp_ontap.cluster (somente consumo de energia).
@@ -1701,6 +1892,7 @@ image:ONTAP_Power_Metrics_1.png["Métricas de consumo de energia de armazenament
 
 
 
+[[features-graduated-from-preview]]
 === Recursos graduados da visualização
 
 Os seguintes recursos saíram da versão de visualização e agora estão disponíveis para todos os clientes:
@@ -1721,6 +1913,7 @@ Os seguintes recursos saíram da versão de visualização e agora estão dispon
 |===
 
 
+[[hows-my-data-collection-health]]
 === Como está a saúde da minha coleta de dados?
 
 O Cloud Insights fornece dois novos monitores de pulsação para suas Unidades de Aquisição, bem como dois monitores para alertá-lo sobre falhas no coletor de dados.  Eles podem ser usados ​​para alertá-lo rapidamente sobre problemas de coleta de dados.
@@ -1737,24 +1930,28 @@ Observe que esses monitores estão no estado _Pausado_ por padrão.  Ative-os pa
 
 
 
+[[auto-renewing-api-tokens]]
 === Tokens de API de renovação automática
 
 Os tokens de acesso à API agora podem ser definidos para renovação automática.  Ao habilitar esse recurso, novos/atualizados tokens de acesso à API serão gerados automaticamente para tokens que estão expirando.  Os agentes do Cloud Insights que usam um token prestes a expirar serão atualizados automaticamente para usar o novo/atualizado token de acesso à API correspondente, permitindo que eles continuem operando sem problemas.  Basta marcar a caixa “Renovar token automaticamente” ao criar seu token.  Atualmente, esse recurso é compatível com agentes do Cloud Insights em execução na plataforma Kubernetes com o NetApp Kubernetes Monitoring Operator mais recente.
 
 
 
+[[basic-edition-gives-you-more-than-before]]
 === A Edição Básica oferece mais do que antes
 
 Seu teste está terminando, mas você ainda não tem certeza se uma assinatura é ideal para você?  A Basic Edition sempre lhe deu a chance de continuar usando o Cloud Insights com seu coletor de dados ONTAP atual, mas agora você também pode continuar capturando dados de versão, topologia e IOPS/Rendimento/Latência do VMWare.  Os clientes da NetApp com suporte premium em seus sistemas de armazenamento também terão direito ao suporte do Cloud Insights.
 
 
 
+[[ready-to-learn-more]]
 === Pronto para saber mais?
 
 Confira a seção *Centro de aprendizagem* da página Ajuda > Suporte para obter links para as ofertas de cursos do NetApp University Cloud Insights !
 
 
 
+[[operating-system-support]]
 === Suporte ao sistema operacional
 
 O seguinte sistema operacional é compatível com as Unidades de Aquisição do Cloud Insights , além daqueleslink:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html["já suportado"] :
@@ -1765,10 +1962,12 @@ O seguinte sistema operacional é compatível com as Unidades de Aquisição do 
 '''
 
 
+[[june-2022]]
 == Junho de 2022
 
 
 
+[[kubernetes-cluster-saturation-and-other-details]]
 === Saturação do cluster Kubernetes e outros detalhes
 
 O Cloud Insights torna mais fácil do que nunca explorar seu ambiente Kubernetes, com uma página de detalhes de cluster aprimorada que fornece detalhes de saturação, bem como uma visão mais clara de namespaces e cargas de trabalho.
@@ -1781,6 +1980,7 @@ image:Kubernetes_List_Page_new.png["Página de lista de clusters mostrando núme
 
 
 
+[[how-old-is-your-kubernetes-cluster]]
 === Qual a idade do seu cluster Kubernetes?
 
 Seu cluster está apenas começando no mundo ou já teve uma longa vida digital?  _Idade_ foi adicionada como uma métrica de tempo coletada para nós do Kubernetes.
@@ -1789,6 +1989,7 @@ image:Kubernetes_Table_Showing_Age.png["Tabela de nós do Kubernetes mostrando a
 
 
 
+[[capacity-time-to-full-forecasting]]
 === Previsão de tempo de capacidade total
 
 O Cloud Insights fornece um painel para prever o número de dias até que a capacidade se esgote para cada Volume Interno monitorado.  Esses valores podem ajudar a reduzir significativamente o risco de uma interrupção.
@@ -1801,6 +2002,7 @@ Observe que a previsão de tempo total está saindo do _Preview_ e será impleme
 
 
 
+[[whats-changed-in-my-environment]]
 === O que mudou no meu ambiente?
 
 As entradas do log de alterações do ONTAP podem ser visualizadas no explorador de logs.
@@ -1809,6 +2011,7 @@ image:ChangeLogEntries.png["imagem mostrando exemplos de entrada de log de alter
 
 
 
+[[operating-system-support]]
 === Suporte ao sistema operacional
 
 Os seguintes sistemas operacionais são suportados pelas Unidades de Aquisição do Cloud Insights , além daqueleslink:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html["já suportado"] :
@@ -1819,12 +2022,14 @@ Os seguintes sistemas operacionais são suportados pelas Unidades de Aquisição
 
 
 
+[[updated-telegraf-agent]]
 === Agente Telegraf atualizado
 
 O agente para ingestão de dados de integração do Telegraf foi atualizado para a versão *1.22.3*, com melhorias de desempenho e segurança.  Os usuários que desejam atualizar podem consultar a seção de atualização apropriada dolink:task_config_telegraf_agent.html["Instalação do agente"] documentação.  Versões anteriores do agente continuarão funcionando sem necessidade de ação do usuário.
 
 
 
+[[preview-features]]
 === Recursos de visualização
 
 Cloud Insights destaca regularmente uma série de novos e interessantes recursos em versão prévia. Se você tiver interesse em experimentar um ou mais desses recursos, entre em contato com sua equipe de vendas da NetApp para obter mais informações.
@@ -1846,10 +2051,12 @@ Cloud Insights destaca regularmente uma série de novos e interessantes recursos
 '''
 
 
+[[may-2022]]
 == Maio de 2022
 
 
 
+[[chat-live-with-netapp-support]]
 === Converse ao vivo com o suporte da NetApp
 
 Agora você pode bater papo ao vivo com a equipe de suporte da NetApp !  Na página Ajuda > Suporte, basta clicar no ícone Bate-papo ou clicar em _Bate-papo_ na seção "Fale conosco" para iniciar uma sessão de bate-papo.  O suporte por chat está disponível durante a semana nos EUA para usuários das edições Standard e Premium.
@@ -1858,6 +2065,7 @@ image:ChatIcon.png["Ícone de bate-papo mostrando o \"N\" azul da NetApp acima d
 
 
 
+[[kubernetes-operator]]
 === Operador do Kubernetes
 
 Facilitamos a sua instalação e operação com o monitoramento avançado do Kubernetes e o cluster explorer do Cloud Insights.
@@ -1868,12 +2076,14 @@ Clique no link acima para mais informações e pré-requisitos
 
 
 
+[[manage-users-and-invites-with-api]]
 === Gerenciar usuários e convites com API
 
 Agora você pode gerenciar usuários e convites usando a poderosa API do Cloud Insights.  Leia mais emlink:https://docs.netapp.com/us-en/cloudinsights/API_Overview.html["Documentação da API Swagger"] .
 
 
 
+[[data-collection-alerts]]
 === Alertas de coleta de dados
 
 Não perca métricas críticas devido a um coletor com falha!
@@ -1882,6 +2092,7 @@ Não perca métricas críticas devido a um coletor com falha!
 
 
 
+[[alert-on-ontap-storage-changes]]
 === Alerta sobre alterações no armazenamento ONTAP
 
 Não deixe que mudanças inesperadas no armazenamento causem interrupções!
@@ -1890,6 +2101,7 @@ Agora você pode configurar o Cloud Insights para alertar quando modificações 
 
 
 
+[[preview-features]]
 === Recursos de visualização
 
 Cloud Insights destaca regularmente uma série de novos e interessantes recursos em versão prévia. Se você tiver interesse em experimentar um ou mais desses recursos, entre em contato com sua equipe de vendas da NetApp para obter mais informações.
@@ -1914,16 +2126,19 @@ Cloud Insights destaca regularmente uma série de novos e interessantes recursos
 '''
 
 
+[[april-2022]]
 == Abril de 2022
 
 
 
+[[share-your-feedback]]
 === Compartilhe seu feedback!
 
 Queremos sua contribuição para ajudar a moldar o Cloud Insights.  Ganhe pontos e prêmios participando do programa *Insights to Action* da NetApp. link:https://netapp.co1.qualtrics.com/jfe/form/SV_2aVWcE58J7oIDs1["*Inscreva-se agora*"] !
 
 
 
+[[updated-dashboard-editor]]
 === Editor de painel atualizado
 
 Reformulamos nossas ferramentas de criação de painéis para facilitar a visualização dos seus dados de forma ainda mais rápida.  Navegue até a página “Painéis” do Cloud Insights para editar um painel existente, adicionar um da nossa galeria de painéis ou criar um novo painel para conferir.
@@ -1943,12 +2158,14 @@ Além disso, os gráficos de linha agora permitem que você selecione um dos tr�
 
 
 
+[[enhanced-monitoring-for-your-kubernetes-infrastructure]]
 === Monitoramento aprimorado para sua infraestrutura Kubernetes
 
 O Cloud Insights mantém você informado sobre as alterações no seu ambiente Kubernetes, alertando-o quando pods, daemonsets e replicasets são criados ou removidos, bem como quando novas implantações são criadas.  Os monitores do Kubernetes assumem o estado _pausado_ por padrão, então você deve habilitar apenas os específicos que precisa.
 
 
 
+[[preview-features]]
 === Recursos de visualização
 
 Cloud Insights destaca regularmente uma série de novos e interessantes recursos em versão prévia. Se você tiver interesse em experimentar um ou mais desses recursos, entre em contato com sua equipe de vendas da NetApp para obter mais informações.
@@ -1969,6 +2186,7 @@ Cloud Insights destaca regularmente uma série de novos e interessantes recursos
 |===
 
 
+[[new-data-collector]]
 === Novo Coletor de Dados
 
 * *Cohesity SmartFiles* - Este coletor baseado em API REST adquirirá um cluster Cohesity, descobrindo as “Visualizações” (como Volumes Internos de CI), os vários nós, além de coletar métricas de desempenho.
@@ -1976,6 +2194,7 @@ Cloud Insights destaca regularmente uma série de novos e interessantes recursos
 
 
 
+[[other-data-collector-updates]]
 === Outras atualizações do coletor de dados
 
 A coleta e a exibição de dados de desempenho foram aprimoradas nos seguintes coletores de dados:
@@ -1990,16 +2209,19 @@ Essas melhorias de desempenho já estão disponíveis em todos os coletores de d
 '''
 
 
+[[march-2022]]
 == Março de 2022
 
 
 
+[[cloud-connection-for-ontap-9-9]]
 === Conexão em nuvem para ONTAP 9.9+
 
 Olink:task_dc_na_cloud_connection.html["Conexão NetApp Cloud para ONTAP 9.9+"] O coletor de dados elimina a necessidade de instalar uma unidade de aquisição externa, simplificando assim a solução de problemas, a manutenção e a implantação inicial.
 
 
 
+[[new-fsx-for-netapp-ontap-monitors]]
 === Novo FSx para monitores NetApp ONTAP
 
 Monitorar seu ambiente FSx para NetApp ONTAP é fácil com o novolink:task_system_monitors.html["monitores definidos pelo sistema"] tanto para infraestrutura (métricas) quanto para cargas de trabalho (logs).
@@ -2008,6 +2230,7 @@ image:FSx_System_Monitors_Metrics.png["Monitores FSx para infraestrutura"] image
 
 
 
+[[new-cloud-secure-features-available-to-all]]
 === Novos recursos do Cloud Secure disponíveis para todos
 
 Seu ambiente está mais seguro do que nunca com os seguintes recursos do Cloud Secure agora disponíveis para o público em geral:
@@ -2025,12 +2248,14 @@ Seu ambiente está mais seguro do que nunca com os seguintes recursos do Cloud S
 |===
 
 
+[[updated-telegraf-agent]]
 === Agente Telegraf atualizado
 
 O agente para ingestão de dados de integração do Telegraf foi atualizado para a versão *1.21.2*, com melhorias de desempenho e segurança.  Os usuários que desejam atualizar podem consultar a seção de atualização apropriada dolink:task_config_telegraf_agent.html["Instalação do agente"] documentação.  Versões anteriores do agente continuarão funcionando sem necessidade de ação do usuário.
 
 
 
+[[data-collector-updates]]
 === Atualizações do coletor de dados
 
 * O coletor de dados dos switches Fibre Channel da Broadcom foi otimizado para reduzir o número de comandos CLI emitidos com cada pesquisa de inventário.
@@ -2039,10 +2264,12 @@ O agente para ingestão de dados de integração do Telegraf foi atualizado para
 '''
 
 
+[[february-2022]]
 == Fevereiro de 2022
 
 
 
+[[cloud-insights-addresses-apache-log4j-vulnerabilities]]
 === Cloud Insights aborda vulnerabilidades do Apache Log4j
 
 A segurança do cliente é uma prioridade máxima na NetApp.  O Cloud Insights inclui atualizações em suas bibliotecas de software para lidar com as vulnerabilidades recentes do Apache Log4j.
@@ -2055,6 +2282,7 @@ Você pode ler mais sobre essas vulnerabilidades e a resposta da NetApp emlink:h
 
 
 
+[[kubernetes-namespace-detail-page]]
 === Página de detalhes do namespace do Kubernetes
 
 Explorar seu ambiente Kubernetes agora está melhor do que nunca, com páginas de detalhes informativas para os namespaces do seu cluster.  A página de detalhes do namespace fornece um resumo de todos os ativos usados por um namespace, incluindo todos os recursos de armazenamento de back-end e suas utilizações de capacidade.
@@ -2064,16 +2292,19 @@ image:Kubernetes_Namespace_Detail_Example_2.png["Página de detalhes do namespac
 '''
 
 
+[[december-2021]]
 == Dezembro de 2021
 
 
 
+[[deeper-integration-for-ontap-systems]]
 === Integração mais profunda para sistemas ONTAP
 
 Simplifique os alertas para falhas de hardware ONTAP e muito mais com a nova integração com o NetApp Event Management System (EMS). link:task_system_monitors.html["Explorar e alertar"] em mensagens ONTAP de baixo nível no Cloud Insights para informar e melhorar os fluxos de trabalho de solução de problemas e reduzir ainda mais a dependência de ferramentas de gerenciamento de elementos ONTAP .
 
 
 
+[[querying-logs]]
 === Consultando Logs
 
 Para sistemas ONTAP , as consultas do Cloud Insights incluem um poderosolink:concept_log_explorer.html["Explorador de Logs"] , permitindo que você investigue e solucione problemas facilmente nas entradas de log do EMS.
@@ -2082,12 +2313,14 @@ image:LogQueryExplorer.png["Consultas de log"]
 
 
 
+[[data-collector-level-notifications]]
 === Notificações no nível do coletor de dados.
 
 Além dos monitores definidos pelo sistema e criados personalizados para alertas, você também pode definir notificações de alerta para coletores de dados ONTAP , permitindo que você especifique destinatários para alertas em nível de coletor, independentemente de outros alertas de monitor.
 
 
 
+[[greater-flexibility-of-cloud-secure-roles]]
 === Maior flexibilidade das funções do Cloud Secure
 
 Os usuários podem ter acesso aos recursos do Cloud Secure com base emlink:concept_user_roles.html#permission-levels["papéis"] definido por um administrador:
@@ -2108,12 +2341,14 @@ Os usuários podem ter acesso aos recursos do Cloud Secure com base emlink:conce
 |===
 
 
+[[operating-system-support]]
 === Suporte ao sistema operacional
 
 O suporte ao CentOS 8.x está sendo substituído pelo suporte ao *CentOS 8 Stream*.  O CentOS 8.x chegará ao fim de sua vida útil em 31 de dezembro de 2021.
 
 
 
+[[data-collector-updates]]
 === Atualizações do coletor de dados
 
 Vários nomes de coletores de dados do Cloud Insights foram adicionados para refletir as alterações do fornecedor:
@@ -2135,10 +2370,12 @@ Vários nomes de coletores de dados do Cloud Insights foram adicionados para ref
 '''
 
 
+[[november-2021]]
 == Novembro de 2021
 
 
 
+[[adaptive-dashboards]]
 === Painéis Adaptáveis
 
 _Novas variáveis para atributos e capacidade de usar variáveis em widgets_.
@@ -2149,12 +2386,14 @@ image:Variables_Drop_Down_Showing_Annotations.png["Anotações suspensas em uma 
 
 
 
+[[access-the-reporting-database-via-api]]
 === Acesse o banco de dados de relatórios via API
 
 Capacidades aprimoradas para integração com relatórios de terceiros, ITSM e ferramentas de automação: o poderoso Cloud Insightslink:API_Overview.html["API"] permite que os usuários consultem o banco de dados do Cloud Insights Reporting diretamente, sem passar pelo ambiente do Cognos Reporting.
 
 
 
+[[pod-tables-on-vm-landing-page]]
 === Tabelas de pod na página de destino da VM
 
 Navegação perfeita entre VMs e os pods do Kubernetes que as utilizam: para melhor solução de problemas e gerenciamento de desempenho, uma tabela de pods do Kubernetes associados agora aparecerá nas páginas de destino das VMs.
@@ -2163,6 +2402,7 @@ image:Kubernetes_Pod_Table_on_VM_Page.png["Tabela de pod do Kubernetes em uma p�
 
 
 
+[[data-collector-updates]]
 === Atualizações do coletor de dados
 
 * O ECS agora relata firmware para armazenamento e nó
@@ -2174,6 +2414,7 @@ image:Kubernetes_Pod_Table_on_VM_Page.png["Tabela de pod do Kubernetes em uma p�
 
 
 
+[[additional-operating-systems-supported]]
 === Sistemas operacionais adicionais suportados
 
 A Cloud Insights Acquisition Unit oferece suporte aos seguintes sistemas operacionais, além dos já suportados:
@@ -2186,10 +2427,12 @@ A Cloud Insights Acquisition Unit oferece suporte aos seguintes sistemas operaci
 '''
 
 
+[[october-2021]]
 == Outubro de 2021
 
 
 
+[[filters-on-k8s-explorer-pages]]
 === Filtros nas páginas do K8S Explorer
 
 link:kubernetes_landing_page.html["Explorador do Kubernetes"]Os filtros de página oferecem controle focado dos dados exibidos para a exploração do seu cluster, nó e pod do Kubernetes.
@@ -2198,6 +2441,7 @@ image:Filter_Kubernetes_Explorer.png["Exemplo de filtragem do Kubernetes Explore
 
 
 
+[[k8s-data-for-reporting]]
 === Dados K8s para relatórios
 
 Os dados do Kubernetes agora estão disponíveis para uso em Relatórios, permitindo que você crie relatórios de chargeback ou outros.  Para que os dados de chargeback do Kubernetes sejam passados ​​para o Relatórios, você deve ter uma conexão ativa com seu cluster do Kubernetes, bem como seu armazenamento de back-end, e o Cloud Insights deve estar recebendo dados dele.  Se não houver dados recebidos do armazenamento de back-end, o Cloud Insights não poderá enviar dados de objetos do Kubernetes para o Reporting.
@@ -2206,12 +2450,14 @@ image:Kubernetes_ETL_Example.png["Dados do Kubernetes exibidos em um relatório 
 
 
 
+[[dark-theme-has-arrived]]
 === O Tema Escuro chegou
 
 Muitos de vocês pediram um tema escuro, e o Cloud Insights respondeu.  Para alternar entre o tema claro e escuro, clique no menu suspenso ao lado do seu nome de usuário.image:DarkModeSwitch.png["Mudar para o tema escuro está disponível no menu suspenso Usuário"] image:DarkModeDashboard.png["Uma imagem de um painel típico mostrado em tema escuro"]
 
 
 
+[[data-collector-support]]
 === Suporte ao Coletor de Dados
 
 Fizemos algumas melhorias nos coletores de dados do Cloud Insights .  Aqui estão alguns destaques:
@@ -2222,16 +2468,19 @@ Fizemos algumas melhorias nos coletores de dados do Cloud Insights .  Aqui estã
 '''
 
 
+[[september-2021]]
 == Setembro de 2021
 
 
 
+[[performance-policies-are-now-monitors]]
 === As políticas de desempenho agora são monitores
 
 Monitores e alertas substituíram políticas de desempenho e violações em todo o Cloud Insights. link:task_create_monitor.html["Alerta com monitores"] fornece maior flexibilidade e percepção sobre potenciais problemas ou tendências em seu ambiente.
 
 
 
+[[autocomplete-suggestions-wildcards-and-expressions-in-monitors]]
 === Sugestões de preenchimento automático, curingas e expressões em monitores
 
 Ao criar um monitor para alertas, digitar um filtro agora é preditivo, permitindo que você pesquise e encontre facilmente as métricas ou atributos do seu monitor.  Além disso, você tem a opção de criar um filtro curinga com base no texto digitado.
@@ -2240,12 +2489,14 @@ image:Type-Ahead_Monitor_1.png["Filtros de digitação antecipada em monitores"]
 
 
 
+[[updated-telegraf-agent]]
 === Agente Telegraf atualizado
 
 O agente para ingestão de dados de integração do Telegraf foi atualizado para a versão *1.19.3*, com melhorias de desempenho e segurança.  Os usuários que desejam atualizar podem consultar a seção de atualização apropriada dolink:task_config_telegraf_agent.html["Instalação do agente"] documentação.  Versões anteriores do agente continuarão funcionando sem necessidade de ação do usuário.
 
 
 
+[[data-collector-support]]
 === Suporte ao Coletor de Dados
 
 Fizemos algumas melhorias nos coletores de dados do Cloud Insights .  Aqui estão alguns destaques:
@@ -2271,16 +2522,19 @@ E como estamos sempre aprimorando a Coleta de Dados, aqui estão algumas outras 
 '''
 
 
+[[august-2021]]
 == Agosto de 2021
 
 
 
+[[new-audit-page-user-interface]]
 === Nova interface do usuário da página de auditoria
 
 Olink:concept_audit.html["Página de auditoria"] fornece uma interface mais limpa e agora permite a exportação de eventos de auditoria para um arquivo .CSV.
 
 
 
+[[enhanced-user-role-management]]
 === Gerenciamento aprimorado de funções de usuário
 
 O Cloud Insights agora permite ainda mais liberdade para atribuir funções de usuário e controles de acesso.  Agora, os usuários podem receber permissões granulares para monitoramento, relatórios e Cloud Secure separadamente.
@@ -2292,10 +2546,12 @@ link:https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html["Saiba 
 '''
 
 
+[[june-2021]]
 == Junho de 2021
 
 
 
+[[autocomplete-suggestions-wildcards-and-expressions-in-filters]]
 === Sugestões de preenchimento automático, curingas e expressões em filtros
 
 Com esta versão do Cloud Insights, você não precisa mais saber todos os nomes e valores possíveis para filtrar em uma consulta ou widget.  Ao filtrar, você pode simplesmente começar a digitar e o Cloud Insights sugerirá valores com base no seu texto.  Não é mais necessário procurar nomes de aplicativos ou atributos do Kubernetes com antecedência apenas para encontrar aqueles que você deseja exibir no seu widget.
@@ -2310,6 +2566,7 @@ Leia mais sobrelink:task_create_query.html#more-on-filtering["opções de filtra
 
 
 
+[[apis-available-by-edition]]
 === APIs disponíveis por edição
 
 As poderosas APIs do Cloud Insights estão mais acessíveis do que nunca, com as APIs de alertas agora disponíveis nas edições Standard e Premium.  As seguintes APIs estão disponíveis para cada edição:
@@ -2335,6 +2592,7 @@ As poderosas APIs do Cloud Insights estão mais acessíveis do que nunca, com as
 |===
 
 
+[[kubernetes-pv-and-pod-visibility]]
 === Visibilidade do Kubernetes PV e Pod
 
 O Cloud Insights fornece visibilidade do armazenamento de back-end para seus ambientes Kubernetes, dando a você insights sobre seus Pods e Volumes Persistentes (PVs) do Kubernetes.  Agora você pode rastrear contadores PV, como IOPS, latência e taxa de transferência, do uso de um único Pod por meio de um contador PV até um PV e até o dispositivo de armazenamento de back-end.
@@ -2347,6 +2605,7 @@ Observe que, para aproveitar essas novas tabelas, é recomendável desinstalar s
 
 
 
+[[kubernetes-node-to-vm-links]]
 === Links do nó do Kubernetes para a VM
 
 Em uma página do Nó do Kubernetes, agora você pode clicar para abrir a página da VM do Nó.  A página da VM também inclui um link de volta para o próprio nó.
@@ -2355,18 +2614,21 @@ image:Kubernetes_Node_Page_with_VM_Link.png["Página do nó do Kubernetes mostra
 
 
 
+[[alert-monitors-replacing-performance-policies]]
 === Monitores de alerta substituindo políticas de desempenho
 
 Para habilitar os benefícios adicionais de vários limites, entrega de alertas por webhook e e-mail, alertas sobre todas as métricas usando uma única interface e muito mais, o Cloud Insights converterá clientes das edições Standard e Premium de *Políticas de Desempenho* para *Monitores* durante os meses de julho e agosto de 2021.  Saiba mais sobrelink:https://docs.netapp.com/us-en/cloudinsights/task_create_monitor.html["Alertas e Monitores"] , e fique ligado nessa mudança emocionante.
 
 
 
+[[cloud-secure-supports-nfs]]
 === O Cloud Secure oferece suporte ao NFS
 
 O Cloud Secure agora oferece suporte a NFS para coleta de dados ONTAP .  Monitore o acesso de usuários SMB e NFS para proteger seus dados contra ataques de ransomware.  Além disso, o Cloud Secure oferece suporte a diretórios de usuários do Active Directory e LDAP para coleta de atributos de usuários NFS.
 
 
 
+[[cloud-secure-snapshot-purge]]
 === Limpeza de snapshots do Cloud Secure
 
 O Cloud Secure exclui automaticamente os snapshots com base nas configurações de limpeza de snapshots para economizar espaço de armazenamento e reduzir a necessidade de exclusão manual de snapshots.
@@ -2375,6 +2637,7 @@ image:CloudSecure_SnapshotPurgeSettings.png["Configurações de limpeza"]
 
 
 
+[[cloud-secure-data-collection-speed]]
 === Velocidade de coleta de dados Cloud Secure
 
 Um único sistema de agente coletor de dados agora pode postar até 20.000 eventos por segundo no Cloud Secure.
@@ -2382,18 +2645,21 @@ Um único sistema de agente coletor de dados agora pode postar até 20.000 event
 '''
 
 
+[[may-2021]]
 == Maio de 2021
 
 Aqui estão algumas das mudanças que fizemos em abril:
 
 
 
+[[updated-telegraf-agent]]
 === Agente Telegraf atualizado
 
 O agente para ingestão de dados de integração do Telegraf foi atualizado para a versão 1.17.3, com melhorias de desempenho e segurança.  Os usuários que desejam atualizar podem consultar a seção de atualização apropriada dolink:https://docs.netapp.com/us-en/cloudinsights/task_config_telegraf_agent.html["Instalação do agente"] documentação.  Versões anteriores do agente continuarão funcionando sem necessidade de ação do usuário.
 
 
 
+[[add-corrective-actions-to-an-alert]]
 === Adicionar ações corretivas a um alerta
 
 Agora você pode adicionar uma descrição opcional, bem como insights adicionais e/ou ações corretivas ao criar ou modificar um Monitor preenchendo a seção *Adicionar uma descrição de alerta*.  A descrição será enviada com o alerta.  O campo _insights e ações corretivas_ pode fornecer etapas detalhadas e orientações para lidar com alertas e será exibido na seção de resumo da página inicial do alerta.
@@ -2402,6 +2668,7 @@ image:Monitors_Alert_Description.png["Ações corretivas de alerta e descrição
 
 
 
+[[cloud-insights-apis-for-all-editions]]
 === APIs do Cloud Insights para todas as edições
 
 O acesso à API agora está disponível em todas as edições do Cloud Insights.  Os usuários da edição Básica agora podem automatizar ações para Unidades de Aquisição e Coletores de Dados, e os usuários da Edição Padrão podem consultar métricas e ingerir métricas personalizadas.  A edição Premium continua permitindo o uso completo de todas as categorias de API.
@@ -2430,10 +2697,12 @@ Para obter detalhes sobre o uso da API, consulte olink:API_Overview.html#api-doc
 '''
 
 
+[[april-2021]]
 == Abril de 2021
 
 
 
+[[easier-management-of-monitors]]
 === Gerenciamento mais fácil de monitores
 
 link:task_create_monitor.html#monitor-groups["Agrupamento de monitores"]simplifica o gerenciamento de monitores em seu ambiente.  Agora é possível agrupar vários monitores e pausá-los como um só.  Por exemplo, se houver uma atualização ocorrendo em uma pilha de infraestrutura, você pode pausar alertas de todos esses dispositivos com um clique.
@@ -2444,6 +2713,7 @@ image:Monitors_GroupList.png["Agrupamento de monitores"]
 
 
 
+[[enhanced-alerting-options-using-webhooks]]
 === Opções de alerta aprimoradas usando webhooks
 
 Muitas aplicações comerciais suportamlink:task_create_webhook.html["Webhooks"] como uma interface de entrada padrão.  O Cloud Insights agora oferece suporte a muitos desses canais de entrega, fornecendo modelos padrão para Slack, PagerDuty, Teams e Discord, além de fornecer webhooks genéricos personalizáveis ​​para oferecer suporte a muitos outros aplicativos.
@@ -2452,12 +2722,14 @@ image:Webhooks_Notifications_sm.png["Notificações de Webhooks"]
 
 
 
+[[improved-device-identification]]
 === Identificação de dispositivo aprimorada
 
 Para melhorar o monitoramento e a solução de problemas, bem como fornecer relatórios precisos, é útil entender os nomes dos dispositivos em vez de seus endereços IP ou outros identificadores.  O Cloud Insights agora incorpora uma maneira automática de identificar os nomes dos dispositivos de armazenamento e host físico no ambiente, usando uma abordagem baseada em regras chamadalink:concept_device_resolution_overview.html["*Resolução do dispositivo*"] , disponível no menu *Gerenciar*.
 
 
 
+[[you-asked-for-more]]
 === Vocês pediram mais!
 
 Um pedido popular dos clientes tem sido por mais opções padrão para visualizar o intervalo de dados, então adicionamos as cinco novas opções a seguir, que agora estão disponíveis em todo o serviço por meio do seletor de intervalo de tempo:
@@ -2471,18 +2743,21 @@ Um pedido popular dos clientes tem sido por mais opções padrão para visualiza
 
 
 
+[[multiple-subscriptions-in-one-cloud-insights-environment]]
 === Várias assinaturas em um ambiente Cloud Insights
 
 A partir de 2 de abril, o Cloud Insights oferecerá suporte a várias assinaturas do mesmo tipo de edição para um cliente em uma única instância do Cloud Insights .  Isso permite que os clientes combinem partes de sua assinatura do Cloud Insights com compras de infraestrutura.  Entre em contato com o departamento de vendas da NetApp para obter assistência com várias assinaturas.
 
 
 
+[[choose-your-path]]
 === Escolha seu caminho
 
 Ao configurar o Cloud Insights, agora você pode escolher se deseja começar com Monitoramento e Alertas ou Detecção de Ransomware e Ameaças Internas.  O Cloud Insights configurará seu ambiente inicial com base no caminho que você escolher.  Você pode configurar o outro caminho a qualquer momento depois.
 
 
 
+[[easier-cloud-secure-onboarding]]
 === Integração Cloud Secure mais fácil
 
 E está mais fácil do que nunca começar a usar o Cloud Secure, com uma nova lista de verificação de configuração passo a passo.
@@ -2494,16 +2769,19 @@ Como sempre, adoramos ouvir suas sugestões!  Envie-os para ng-cloudinsights-cus
 '''
 
 
+[[february-2021]]
 == Fevereiro de 2021
 
 
 
+[[updated-telegraf-agent]]
 === Agente Telegraf atualizado
 
 O agente para ingestão de dados de integração do Telegraf foi atualizado para a versão 1.17.0, que inclui correções de vulnerabilidades e bugs.
 
 
 
+[[cloud-cost-analyzer]]
 === Analisador de Custos de Nuvem
 
 Experimente o poder do Spot by NetApp com o Cloud Cost, que fornece uma análise detalhada de custos de gastos passados, presentes e estimados, proporcionando visibilidade do uso da nuvem em seu ambiente.  O painel de custos da nuvem oferece uma visão clara das despesas com a nuvem e uma análise detalhada de cargas de trabalho, contas e serviços individuais.
@@ -2519,6 +2797,7 @@ O Cloud Cost é focado em monitoramento.  Atualize para a conta completa Spot by
 
 
 
+[[querying-for-objects-having-null-values-using-filters]]
 === Consultando objetos com valores nulos usando filtros
 
 O Cloud Insights agora permite pesquisar atributos e métricas com valores nulos/nenhum por meio do uso de filtros.  Você pode executar essa filtragem em quaisquer atributos/métricas nos seguintes locais:
@@ -2535,6 +2814,7 @@ image:Filter_Null_Example.png["Filtro nulo no menu suspenso"]
 
 
 
+[[multi-region-support]]
 === Suporte multirregional
 
 A partir de hoje, oferecemos o serviço Cloud Insights em diferentes regiões do mundo, o que facilita o desempenho e aumenta a segurança para clientes localizados fora dos Estados Unidos.  O Cloud Insights/ Cloud Secure armazena informações de acordo com a região em que seu ambiente é criado.
@@ -2544,10 +2824,12 @@ Cliquelink:http://docs.netapp.com/us-en/cloudinsights/security_information_and_r
 '''
 
 
+[[january-2021]]
 == Janeiro de 2021
 
 
 
+[[additional-ontap-metrics-renamed]]
 === Métricas ONTAP adicionais renomeadas
 
 Como parte do nosso esforço contínuo para melhorar a eficiência da coleta de dados dos sistemas ONTAP , as seguintes métricas ONTAP foram renomeadas.
@@ -2689,6 +2971,7 @@ Se você tiver widgets ou consultas de painel existentes usando qualquer uma des
 |===
 
 
+[[new-kubernetes-explorer]]
 === Novo Kubernetes Explorer
 
 Olink:kubernetes_landing_page.html["Explorador do Kubernetes"] fornece uma visão simples da topologia dos clusters do Kubernetes, permitindo que até mesmo não especialistas identifiquem rapidamente problemas e dependências, desde o nível do cluster até o contêiner e o armazenamento.
@@ -2701,18 +2984,21 @@ image:Kubernetes_Cluster_Detail_Example.png["O Explorador do Kubernetes"]
 
 
 
+[[acquisition-unit-detail-page]]
 === Página de detalhes da unidade de aquisição
 
 As Unidades de Aquisição agora têm sua própria página de destino, fornecendo detalhes úteis para cada UA, bem como informações para ajudar na solução de problemas.  Olink:task_configure_acquisition_unit.html#viewing-au-details["Página de detalhes da UA"] fornece links para os coletores de dados da UA, bem como informações úteis sobre o status.
 
 
 
+[[cloud-secure-docker-dependency-removed]]
 === Dependência do Cloud Secure Docker removida
 
 A dependência do Cloud Secure no Docker foi removida.  O Docker não é mais necessário para a instalação do agente Cloud Secure .
 
 
 
+[[reporting-user-roles]]
 === Funções de usuário de relatórios
 
 Se você tiver o Cloud Insights Premium Edition com Relatórios, cada usuário do Cloud Insights em seu ambiente também terá um login de Logon Único (SSO) no aplicativo Relatórios (por exemplo, Cognos); ao clicar no link *Relatórios* no menu, eles serão automaticamente conectados ao Relatórios.
@@ -2741,6 +3027,7 @@ IMPORTANT: Se você é um cliente Premium Edition atual e deseja manter seus rel
 
 
 
+[[new-api-category-for-data-ingestion]]
 === Nova categoria de API para ingestão de dados
 
 O Cloud Insights adicionou uma categoria de API de *Ingestão de Dados*, oferecendo maior controle sobre dados e agentes personalizados.  A documentação detalhada para esta e outras categorias de API pode ser encontrada no Cloud Insights navegando até *Admin > Acesso à API* e clicando no link _Documentação da API_.  Você também pode anexar um comentário à UA no campo Nota, que é exibido na página de detalhes da UA, bem como na página da lista de UA.

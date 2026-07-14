@@ -18,6 +18,7 @@ O coletor de dados EMC RecoverPoint reúne os relacionamentos de replicação de
 
 
 
+[[requirements]]
 == Requisitos
 
 As seguintes informações são necessárias para configurar este coletor de dados:
@@ -29,9 +30,10 @@ As seguintes informações são necessárias para configurar este coletor de dad
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -46,9 +48,10 @@ As seguintes informações são necessárias para configurar este coletor de dad
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -63,6 +66,7 @@ As seguintes informações são necessárias para configurar este coletor de dad
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

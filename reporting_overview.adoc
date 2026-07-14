@@ -38,6 +38,7 @@ O Data Infrastructure Insights Reporting pode gerar relatórios personalizados p
 
 
 
+[[accessing-data-infrastructure-insights-reporting]]
 == Acessando relatórios de Data Infrastructure Insights
 
 Você pode acessar o Relatório do Data Infrastructure Insights clicando no link *Relatórios* no menu.
@@ -46,6 +47,7 @@ Você será levado para a interface de relatórios.  O Data Infrastructure Insig
 
 
 
+[[what-is-etl]]
 == O que é ETL?
 
 Ao trabalhar com relatórios, você ouvirá os termos "Data Warehouse" e "ETL".  ETL significa "Extrair, Transformar e Carregar".  O processo ETL recupera dados coletados no Data Infrastructure Insights e os transforma em um formato para uso em Relatórios.  "Data Warehouse" refere-se aos dados coletados disponíveis para Relatórios.

@@ -18,6 +18,7 @@ Monitore o acesso a arquivos e usuários em toda a sua infraestrutura de armazen
 
 
 
+[[cloud-volumes-ontap-storage-configuration]]
 == Configuração de armazenamento Cloud Volumes ONTAP
 
 Consulte a documentação do OnCommand Cloud Volumes ONTAP para configurar uma instância AWS de nó único/HA para hospedar o Workload Security Agent:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/index.html[]
@@ -26,6 +27,7 @@ Após a conclusão da configuração, siga as etapas para configurar seu SVM:htt
 
 
 
+[[supported-platforms]]
 == Plataformas suportadas
 
 * Cloud Volumes ONTAP, suportado por todos os provedores de serviços de nuvem disponíveis, sempre que disponível.  Por exemplo: Amazon, Azure, Google Cloud.
@@ -34,6 +36,7 @@ Após a conclusão da configuração, siga as etapas para configurar seu SVM:htt
 
 
 
+[[agent-machine-configuration]]
 == Configuração da máquina do agente
 
 A máquina do agente deve ser configurada nas respectivas sub-redes dos provedores de serviços de nuvem.  Leia mais sobre acesso à rede em [Requisitos do agente].
@@ -62,6 +65,7 @@ Use as seguintes etapas para configurar a máquina a ser usada como um Agente de
 
 
 
+[[install-the-workload-security-agent]]
 == Instalar o Agente de Segurança de Carga de Trabalho
 
 . Efetue login como administrador ou proprietário da conta no seu ambiente do Data Infrastructure Insights .
@@ -75,6 +79,7 @@ Para obter etapas detalhadas, consulte este link: https://docs.netapp.com/us-en/
 
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Problemas conhecidos e suas soluções são descritos na tabela a seguir.

@@ -18,11 +18,12 @@ O coletor de dados do VMware vSphere coleta informações de desempenho e config
 
 
 
+[[terminology]]
 == Terminologia
 
 O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados VMware vSphere.  Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para o ativo.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -48,6 +49,7 @@ Esses são apenas mapeamentos de terminologia comum e podem não representar tod
 
 
 
+[[requirements]]
 == Requisitos
 
 As seguintes informações são necessárias para configurar este coletor de dados:
@@ -67,9 +69,10 @@ As seguintes informações são necessárias para configurar este coletor de dad
 
 
 
+[[setup-and-connection]]
 == Configuração e conexão
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -81,9 +84,10 @@ As seguintes informações são necessárias para configurar este coletor de dad
 |===
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -98,14 +102,13 @@ As seguintes informações são necessárias para configurar este coletor de dad
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
 Na tela de configuração avançada, marque a caixa *Desempenho da VM* para coletar dados de desempenho.  A coleta de inventário é habilitada por padrão.  Os seguintes campos podem ser configurados:
 
-[cols="2*"]
+[cols="50,50"]
 |===
-
-
 | Campo | Descrição 
 
 
@@ -131,6 +134,7 @@ Na tela de configuração avançada, marque a caixa *Desempenho da VM* para cole
 |===
 
 
+[[mapping-vmware-tags-to-data-infrastructure-insights-annotations]]
 == Mapeando tags VMware para anotações do Data Infrastructure Insights
 
 O coletor de dados do VMware permite que você preencha anotações do Data Infrastructure Insights com tags configuradas no VMware.  O nome da anotação DII deve ser idêntico ao nome da *categoria* VMware; a tag é então aplicada como um valor de anotação de uma anotação DII do mesmo nome da categoria.  O Data Infrastructure Insights sempre preencherá anotações de mesmo tipo de texto e fará o "melhor esforço" para preencher anotações de outros tipos (número, booleano, etc.).  Se sua anotação for de um tipo diferente e o coletor de dados não conseguir preenchê-la, pode ser necessário remover a anotação e recriá-la como um tipo de texto.
@@ -146,15 +150,17 @@ Tenha em mente o seguinte:
 
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
+[[inventory]]
 === Inventário
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Experimente isto: 
 

@@ -34,6 +34,7 @@ Antes de criar seus relatórios, conclua as seguintes tarefas:
 
 
 
+[[report-creation-process]]
 == Processo de Criação de Relatórios
 
 O processo de criação de relatórios personalizados (também chamados de "ad hoc") envolve várias tarefas:
@@ -47,6 +48,7 @@ O processo de criação de relatórios personalizados (também chamados de "ad h
 
 
 
+[[planning-the-results-of-your-custom-report]]
 === Planejando os resultados do seu relatório personalizado
 
 Antes de abrir as ferramentas de criação de relatórios, talvez você queira planejar os resultados desejados do relatório.  Com ferramentas de criação de relatórios, você pode criar relatórios facilmente e pode não precisar de muito planejamento; no entanto, é uma boa ideia obter uma ideia do solicitante do relatório sobre os requisitos do relatório.
@@ -72,6 +74,7 @@ Antes de abrir as ferramentas de criação de relatórios, talvez você queira p
 
 
 
+[[tips-for-designing-reports]]
 === Dicas para criar relatórios
 
 Várias dicas podem ser úteis ao criar relatórios.
@@ -89,6 +92,7 @@ Para segmentar as informações para diferentes usuários, você pode criar rela
 
 
 
+[[reporting-data-models]]
 == Modelos de dados de relatórios
 
 O Data Infrastructure Insights inclui vários modelos de dados dos quais você pode selecionar relatórios predefinidos ou criar seu próprio relatório personalizado.
@@ -101,6 +105,7 @@ Cada modelo de dados contém um data mart simples e um data mart avançado:
 
 
 
+[[capacity-data-models]]
 === Modelos de dados de capacidade
 
 Permite que você responda a perguntas sobre capacidade de armazenamento, utilização do sistema de arquivos, capacidade de volume interno, capacidade de porta, capacidade de qtree e capacidade de máquina virtual (VM).  O modelo de dados de capacidade é um contêiner para vários modelos de dados de capacidade.  Você pode criar relatórios respondendo a vários tipos de perguntas usando este modelo de dados:
@@ -199,6 +204,7 @@ Você pode responder perguntas semelhantes às seguintes com este modelo de dado
 
 
 
+[[chargeback-data-model]]
 === Modelo de dados de estorno
 
 Permite que você responda a perguntas sobre capacidade usada e capacidade alocada em recursos de armazenamento (volumes, volumes internos e qtrees).  Este modelo de dados fornece informações de responsabilidade e estorno de capacidade de armazenamento por hosts, aplicativos e entidades comerciais, e inclui dados atuais e históricos.  Os dados do relatório podem ser categorizados por nível de serviço e nível de armazenamento.
@@ -226,6 +232,7 @@ Relatórios que usam o modelo de dados de Chargeback podem exibir valores difere
 
 
 
+[[inventory-data-model]]
 === Modelo de dados de inventário
 
 Permite que você responda a perguntas sobre recursos de inventário, incluindo hosts, sistemas de armazenamento, switches, discos, fitas, qtrees, cotas, máquinas virtuais e servidores e dispositivos genéricos.  O modelo de dados de inventário inclui vários submercados que permitem visualizar informações sobre replicações, caminhos FC, caminhos iSCSI, caminhos NFS e violações.  O modelo de dados de inventário não inclui dados históricos.  Perguntas que você pode responder com esses dados
@@ -247,6 +254,7 @@ Permite que você responda a perguntas sobre recursos de inventário, incluindo 
 
 
 
+[[performance-data-model]]
 === Modelo de dados de desempenho
 
 Permite que você responda a perguntas sobre desempenho de volumes, volumes de aplicativos, volumes internos, switches, aplicativos, VMs, VMDKs, ESX versus VM, hosts e nós de aplicativos.  Muitos deles relatam dados _por hora_, dados _diários_ ou ambos.  Usando esse modelo de dados, você pode criar relatórios que respondem a vários tipos de perguntas de gerenciamento de desempenho:
@@ -291,6 +299,7 @@ O modelo de dados de desempenho inclui informações que ajudam a determinar a a
 
 
 
+[[storage-efficiency-data-model]]
 === Modelo de dados de eficiência de armazenamento
 
 Permite que você acompanhe a pontuação e o potencial de eficiência de armazenamento ao longo do tempo.  Este modelo de dados armazena medições não apenas da capacidade provisionada, mas também da quantidade usada ou consumida (a medição física).  Por exemplo, quando o provisionamento fino está habilitado, o Data Infrastructure Insights indica quanta capacidade é retirada do dispositivo.  Você também pode usar este modelo para determinar a eficiência quando a desduplicação estiver habilitada.  Você pode responder a várias perguntas usando o data mart de Eficiência de Armazenamento:
@@ -304,6 +313,7 @@ Permite que você acompanhe a pontuação e o potencial de eficiência de armaze
 
 
 
+[[data-model-fact-and-dimension-tables]]
 === Tabelas de fatos e dimensões do modelo de dados
 
 Cada modelo de dados inclui tabelas de fatos e dimensões.
@@ -316,6 +326,7 @@ Usando atributos de dimensão diferentes ou múltiplos (vistos como colunas nos 
 
 
 
+[[colors-used-in-data-model-elements]]
 === Cores usadas em elementos do modelo de dados
 
 As cores nos elementos do modelo de dados têm indicações diferentes.
@@ -326,6 +337,7 @@ As cores nos elementos do modelo de dados têm indicações diferentes.
 
 
 
+[[using-multiple-data-models-in-one-report]]
 === Usando vários modelos de dados em um relatório
 
 Normalmente, você usa um modelo de dados por relatório.  No entanto, você pode escrever um relatório que combine dados de vários modelos de dados.

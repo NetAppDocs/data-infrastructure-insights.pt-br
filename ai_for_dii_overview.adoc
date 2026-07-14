@@ -20,6 +20,7 @@ image:ai_assistant_sample_question.png["Exemplo de pergunta de assistente de IA"
 
 
 
+[[meet-your-infrastructures-new-intelligent-partner]]
 == Conheça o novo parceiro inteligente da sua infraestrutura
 
 O Assistente de IA transforma a maneira como você interage com seus dados, convertendo consultas complexas em conversas simples. Descubra instantaneamente padrões ocultos, acelere a resolução de problemas e tome decisões baseadas em dados com confiança. Obtenha respostas instantâneas para perguntas como:
@@ -38,6 +39,7 @@ O Assistente de IA transforma a maneira como você interage com seus dados, conv
 
 
 
+[[before-using-the-ai-assistant]]
 == Antes de usar o Assistente de IA
 
 * O Assistente de IA foi projetado para te ajudar. Embora busque a precisão, é altamente recomendável verificar suas respostas com a supervisão de um humano para melhores resultados.
@@ -48,6 +50,7 @@ O Assistente de IA transforma a maneira como você interage com seus dados, conv
 
 
 
+[[the-ai-assistant-works-with-you]]
 == O Assistente de IA trabalha com você
 
 O Assistente de IA da DII pode ajudar você a responder perguntas sobre os dados da sua infraestrutura de TI. Para fazer isso de forma eficaz, ele precisa entender sua solicitação, assim como quais dados específicos são necessários para responder à sua solicitação.
@@ -69,12 +72,14 @@ Para a melhor experiência, forneça ao Assistente informações específicas so
 
 
 
+[[chat-naturally]]
 == Converse naturalmente
 
 O Assistente de IA agora é compatível com mais de uma dúzia de idiomas, permitindo que sua equipe interaja naturalmente em seu idioma preferido. Veja a lista completa link:https://platform.claude.com/docs/en/build-with-claude/multilingual-support["aqui"].
 
 
 
+[[accessing-the-assistant]]
 == Acessando o Assistant
 
 Para acessar o Assistente de IA da DII, basta selecionar o ícone da coruja no canto inferior da tela. Um usuário com a função de “Owner” ou "Admin" deve aceitar os termos e condições antes que qualquer usuário possa utilizar o Assistente de IA em seu tenant.

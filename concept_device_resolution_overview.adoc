@@ -44,6 +44,7 @@ O recurso de resolução do dispositivo (Gerenciar > Resolução do dispositivo)
 
 
 
+[[before-you-begin]]
 == Antes de começar
 
 Você precisa saber como seu ambiente está configurado antes de definir as regras para identificar dispositivos.  Quanto mais você souber sobre seu ambiente, mais fácil será identificar os dispositivos.
@@ -66,6 +67,7 @@ Neste exemplo, o maior número de dispositivos é representado de forma confiáv
 
 
 
+[[steps-to-identifying-devices]]
 == Etapas para identificar dispositivos
 
 Normalmente, você usaria um fluxo de trabalho semelhante ao seguinte para identificar dispositivos no seu locatário.  A identificação é um processo iterativo e pode exigir várias etapas de planejamento e refinamento de regras.

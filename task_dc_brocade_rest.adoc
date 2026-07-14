@@ -26,11 +26,12 @@ Observação: o usuário padrão somente leitura do FOS "user" NÃO tem permiss�
 
 
 
+[[terminology]]
 == Terminologia
 
 O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados Brocade FOS REST.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -56,6 +57,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[requirements]]
 == Requisitos
 
 * Deve haver conectividade TCP com todos os switches na malha.  Este tipo de coletor de dados tentará perfeitamente HTTP e HTTPS para cada dispositivo na malha.  Se você marcar a caixa de seleção _Descobrir todos os switches na malha_, o Data Infrastructure Insights identificará todos os switches na malha; no entanto, ele precisa de conectividade TCP com esses switches adicionais para descobri-los.
@@ -64,9 +66,10 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -81,9 +84,10 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -110,15 +114,17 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
+[[inventory]]
 === Inventário
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Experimente isto: 
 

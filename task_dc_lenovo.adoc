@@ -16,6 +16,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[requirements]]
 == Requisitos
 
 * Endereço IP externo do Prism
@@ -25,9 +26,10 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -42,9 +44,10 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -59,6 +62,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

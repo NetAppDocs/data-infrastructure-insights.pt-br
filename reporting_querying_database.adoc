@@ -21,6 +21,7 @@ NOTE: Esta documentação se refere ao recurso de relatórios do Data Infrastruc
 
 
 
+[[odata]]
 == Odata
 
 A API de relatórios do Data Infrastructure Insights segue olink:https://www.odata.org/["OData v4"] (Open Data Protocol) padrão para consulta ao banco de dados de relatórios.  Para mais informações ou para saber mais, confiralink:https://www.odata.org/getting-started/basic-tutorial/["este tutorial"] no OData.
@@ -29,6 +30,7 @@ Todas as solicitações começarão com a URL _\https://< URL do Data Infrastruc
 
 
 
+[[generating-an-apikey]]
 == Gerando uma APIKey
 
 Leia mais sobrelink:API_Overview.html["APIs de Data Infrastructure Insights"] .
@@ -48,6 +50,7 @@ As chaves de API são boas para<<synchronous-or-asynchronous,_Sincronizado_ ou _
 
 
 
+[[direct-query-of-tables]]
 == Consulta direta de tabelas
 
 Com a chave de API em vigor, agora é possível fazer consultas diretas ao banco de dados de relatórios.  URLs longas podem ser simplificadas para \https://.../odata/ para fins de exibição, em vez do completo \https://< URL do Data Infrastructure Insights >/rest/v1/dwh-management/odata/
@@ -63,6 +66,7 @@ Tente consultas simples como
 
 
 
+[[rest-api-examples]]
 == Exemplos de API REST
 
 A URL para todas as chamadas é _\https://< URL do Data Infrastructure Insights >/rest/v1/dwh-management/odata_.
@@ -107,6 +111,7 @@ Resultado:
 ....
 
 
+[[helpful-hints]]
 == Dicas úteis
 
 Tenha em mente o seguinte ao trabalhar com consultas da API de relatórios.
@@ -133,6 +138,7 @@ Sua chave de API será específica para seu ambiente do Data Infrastructure Insi
 
 
 
+[[synchronous-or-asynchronous]]
 == Síncrono ou assíncrono?
 
 Por padrão, um comando de API operará no modo _síncrono_, o que significa que você envia a solicitação e a resposta é retornada imediatamente.  No entanto, às vezes, uma consulta pode levar muito tempo para ser executada, o que pode levar ao tempo limite da solicitação.  Para contornar isso, você pode executar uma solicitação _de forma assíncrona_.  No modo assíncrono, a solicitação retornará uma URL por meio da qual a execução poderá ser monitorada.  A URL retornará o resultado quando estiver pronta.

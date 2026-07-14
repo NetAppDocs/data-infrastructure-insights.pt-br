@@ -14,6 +14,7 @@ Para sistemas de armazenamento que usam o software Data ONTAP operando no Modo 7
 
 
 
+[[terminology]]
 == Terminologia
 
 O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do NetApp 7-mode.  Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para esse ativo.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
@@ -21,7 +22,7 @@ O Data Infrastructure Insights adquire as seguintes informações de inventário
 
 NOTE: Este coletor de dados élink:task_getting_started_with_cloud_insights.html#useful-definitions["obsoleto"] .
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -50,6 +51,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[requirements]]
 == Requisitos
 
 Você precisa do seguinte para configurar e usar este coletor de dados:
@@ -71,9 +73,10 @@ Você precisa do seguinte para configurar e usar este coletor de dados:
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -97,9 +100,10 @@ Você precisa do seguinte para configurar e usar este coletor de dados:
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -117,6 +121,7 @@ Você precisa do seguinte para configurar e usar este coletor de dados:
 |===
 
 
+[[storage-systems-connection]]
 == Conexão de sistemas de armazenamento
 
 Como alternativa ao uso do usuário administrativo padrão para este coletor de dados, você pode configurar um usuário com direitos administrativos diretamente nos sistemas de armazenamento NetApp para que este coletor de dados possa adquirir dados dos sistemas de armazenamento NetApp .
@@ -156,15 +161,17 @@ Para adquirir uma fonte de dados do Modo 7 com sucesso e não gerar avisos no si
 
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
+[[inventory]]
 === Inventário
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Experimente isto: 
 

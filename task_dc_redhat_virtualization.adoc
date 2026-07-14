@@ -18,11 +18,12 @@ O coletor de dados DII para Red Hat Virtualization também oferece suporte ao pr
 
 
 
+[[terminology]]
 == Terminologia
 
 Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -45,6 +46,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[requirements]]
 == Requisitos
 
 * Endereço IP/nome do host do servidor RHV/oVirt/OLVM na porta 443 via API REST
@@ -54,9 +56,10 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -71,9 +74,10 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -91,6 +95,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

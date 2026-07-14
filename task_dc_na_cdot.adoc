@@ -14,11 +14,12 @@ Este coletor de dados adquire dados de inventário e desempenho de sistemas de a
 
 
 
+[[terminology]]
 == Terminologia
 
 O Data Infrastructure Insights adquire dados de inventário e desempenho do coletor de dados ONTAP .  Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para o ativo.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -45,12 +46,14 @@ O Data Infrastructure Insights adquire dados de inventário e desempenho do cole
 |===
 
 
+[[ontap-data-management-terminology]]
 == Terminologia de gerenciamento de dados ONTAP
 
 Os termos a seguir se aplicam a objetos ou referências que você pode encontrar nas páginas de destino de ativos de armazenamento do ONTAP Data Management.  Muitos desses termos também se aplicam a outros coletores de dados.
 
 
 
+[[storage]]
 === Armazenar
 
 * Modelo – Uma lista delimitada por vírgulas de nomes exclusivos e discretos de modelos de nós dentro deste cluster.  Se todos os nós nos clusters forem do mesmo tipo de modelo, apenas um nome de modelo aparecerá.
@@ -65,6 +68,7 @@ Os termos a seguir se aplicam a objetos ou referências que você pode encontrar
 
 
 
+[[storage-pool]]
 === Pool de armazenamento
 
 * Armazenamento – em qual matriz de armazenamento esse pool reside.  Obrigatório.
@@ -81,6 +85,7 @@ Os termos a seguir se aplicam a objetos ou referências que você pode encontrar
 
 
 
+[[storage-node]]
 === Nó de armazenamento
 
 * Armazenamento – de qual matriz de armazenamento esse nó faz parte.  Obrigatório.
@@ -99,6 +104,7 @@ Os termos a seguir se aplicam a objetos ou referências que você pode encontrar
 
 
 
+[[requirements]]
 == Requisitos
 
 A seguir estão os requisitos para configurar e usar este coletor de dados:
@@ -121,15 +127,17 @@ A seguir estão os requisitos para configurar e usar este coletor de dados:
 
 
 
+[[permission-requirements-for-collecting-ontap-switch-metrics]]
 === Requisitos de permissão para coletar métricas do switch ONTAP
 
 O Data Infrastructure Insights tem a capacidade de coletar dados de switch de cluster ONTAP como uma opção no coletor<<advanced-configuration,Configuração avançada>> configurações.  Além de habilitar isso no coletor Data Infrastructure Insights , você também deve *configurar o próprio sistema ONTAP * para fornecerlink:https://docs.netapp.com/us-en/ontap-cli-98/system-switch-ethernet-create.html["informações de troca"] , e garantir a correta<<a-note-about-permissions,permissões>> são definidos para permitir que os dados do switch sejam enviados ao Data Infrastructure Insights.
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -144,9 +152,10 @@ O Data Infrastructure Insights tem a capacidade de coletar dados de switch de cl
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -185,6 +194,7 @@ O Data Infrastructure Insights tem a capacidade de coletar dados de switch de cl
 |===
 
 
+[[ontap-power-metrics]]
 == Métricas de potência ONTAP
 
 Vários modelos ONTAP fornecem métricas de energia para o Data Infrastructure Insights que podem ser usadas para monitoramento ou alertas.
@@ -202,6 +212,7 @@ FAS2620 FAS3250 FAS3270 FAS500f FAS6280 FAS/ AFF 8020 FAS/ AFF 8040 FAS/ AFF 806
 
 
 
+[[a-note-about-permissions]]
 == Uma nota sobre permissões
 
 Como vários painéis ONTAP do Data Infrastructure Insights dependem de contadores ONTAP avançados, você deve habilitar *Coleta avançada de dados de contadores* na seção Configuração avançada do coletor de dados.
@@ -254,15 +265,17 @@ NOTE: Se o controle de acesso ONTAP não estiver definido corretamente, as chama
 
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
+[[inventory]]
 === Inventário
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Experimente isto: 
 
@@ -292,9 +305,10 @@ Algumas coisas que você pode tentar se tiver problemas com este coletor de dado
 |===
 
 
+[[performance]]
 === Desempenho
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Experimente isto: 
 

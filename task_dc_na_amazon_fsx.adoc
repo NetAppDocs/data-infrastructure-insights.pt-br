@@ -17,11 +17,12 @@ NOTE: Este coletor do Data Infrastructure Insights requer um usuário ONTAP com 
 
 
 
+[[terminology]]
 == Terminologia
 
 O Data Infrastructure Insights adquire dados de inventário e desempenho do coletor de dados FSx- NetApp .  Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para o ativo.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -36,12 +37,14 @@ O Data Infrastructure Insights adquire dados de inventário e desempenho do cole
 |===
 
 
+[[fsx-netapp-terminology]]
 == Terminologia FSx- NetApp
 
 Os termos a seguir se aplicam a objetos ou referências que você pode encontrar nas páginas iniciais de ativos de armazenamento do FSx- NetApp .  Muitos desses termos também se aplicam a outros coletores de dados.
 
 
 
+[[storage]]
 === Armazenar
 
 * Modelo – Uma lista delimitada por vírgulas de nomes de modelos exclusivos e discretos dentro deste cluster.
@@ -55,6 +58,7 @@ Os termos a seguir se aplicam a objetos ou referências que você pode encontrar
 
 
 
+[[storage-pool]]
 === Pool de armazenamento
 
 * Armazenamento – em qual matriz de armazenamento esse pool reside.  Obrigatório.
@@ -66,6 +70,7 @@ Os termos a seguir se aplicam a objetos ou referências que você pode encontrar
 
 
 
+[[requirements]]
 == Requisitos
 
 A seguir estão os requisitos para configurar e usar este coletor de dados:
@@ -77,9 +82,10 @@ A seguir estão os requisitos para configurar e usar este coletor de dados:
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -94,6 +100,7 @@ A seguir estão os requisitos para configurar e usar este coletor de dados:
 |===
 
 
+[[advanced-metrics]]
 == Métricas Avançadas
 
 Este coletor de dados coleta as seguintes métricas avançadas do FSx para armazenamento NetApp ONTAP :
@@ -115,15 +122,17 @@ Observe que os comandos da CLI e da API do FSx recuperam alguns valores de capac
 
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
+[[inventory]]
 === Inventário
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Experimente isto: 
 

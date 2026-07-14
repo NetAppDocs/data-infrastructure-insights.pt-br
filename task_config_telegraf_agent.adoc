@@ -22,6 +22,7 @@ NOTE: Se você quiser verificar os arquivos de instalação antes de instalar o 
 
 
 
+[[installing-an-agent]]
 == Instalando um Agente
 
 Se você estiver instalando um coletor de dados de serviço e ainda não tiver configurado um agente, será solicitado que você primeiro instale um agente para o sistema operacional apropriado.  Este tópico fornece instruções para instalar o agente Telegraf nos seguintes sistemas operacionais:
@@ -51,6 +52,7 @@ NOTE: Se você estiver usando um proxy, leia as instruções do proxy para sua p
 
 
 
+[[log-locations]]
 === Locais de registro
 
 As mensagens de log do Telegraf são redirecionadas do stdout para os seguintes arquivos de log por padrão:
@@ -62,6 +64,7 @@ As mensagens de log do Telegraf são redirecionadas do stdout para os seguintes 
 
 
 
+[[windows]]
 === Windows
 
 
@@ -149,6 +152,7 @@ sc.exe delete telegraf
 
 
 
+[[rhel-and-centos]]
 === RHEL e CentOS
 
 
@@ -251,6 +255,7 @@ systemctl stop telegraf (If your operating system is using systemd (CentOS 7+ an
 
 
 
+[[ubuntu-and-debian]]
 === Ubuntu e Debian
 
 
@@ -353,12 +358,15 @@ systemctl stop telegraf (If your operating system is using systemd)
 
 
 
+[[verifying-telegraf-package-checksums]]
+[[verifying-checksums]]
 == Verificando somas de verificação de pacotes Telegraf
 
 O instalador do agente do Data Infrastructure Insights executa verificações de integridade, mas alguns usuários podem querer realizar suas próprias verificações antes de instalar o binário do Telegraf baixado.  Isso pode ser feito baixando o instalador e gerando uma soma de verificação para o pacote baixado e, em seguida, comparando a soma de verificação com o valor mostrado nas instruções de instalação.
 
 
 
+[[download-the-installer-package-without-installing]]
 === Baixe o pacote de instalação sem instalar
 
 Para executar uma operação somente de download (em oposição ao download e instalação padrão), os usuários podem editar o comando de instalação do agente obtido na interface do usuário e remover a opção “instalar”.
@@ -405,6 +413,7 @@ O snippet de instalação baixado e copiado do DII verifica automaticamente o sc
 
 
 
+[[verify-checksum-value]]
 === Verificar valor de soma de verificação
 
 Para gerar o valor da soma de verificação, execute o seguinte comando para sua plataforma apropriada:
@@ -419,6 +428,7 @@ Para gerar o valor da soma de verificação, execute o seguinte comando para sua
 
 
 
+[[install-the-downloaded-package]]
 === Instale o pacote baixado
 
 Depois que todos os artefatos forem verificados satisfatoriamente, a instalação do agente pode ser iniciada executando:
@@ -431,12 +441,14 @@ Windows:
  .\cloudinsights-windows.ps1 -install
 
 
+[[creating-and-using-api-access-tokens]]
 == Criação e uso de tokens de acesso à API
 
 Para criar um token de acesso à API para ingestão de dados do Telegraf, siga um destes procedimentos:
 
 
 
+[[create-through-the-data-collector-installation-page]]
 === Criar através da página de instalação do coletor de dados
 
 . Navegue até a página de instalação do Data Collector para a plataforma que você deseja usar (Windows, Linux).
@@ -447,6 +459,7 @@ Para criar um token de acesso à API para ingestão de dados do Telegraf, siga u
 
 
 
+[[manually-create-an-api-access-token]]
 === Crie manualmente um token de acesso à API
 
 . Navegue até Admin > Acesso à API.
@@ -466,6 +479,7 @@ Para usar seu token de acesso à API recém-criado, selecione-o no menu suspenso
 
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Algumas coisas que você pode tentar se tiver problemas ao configurar um agente:

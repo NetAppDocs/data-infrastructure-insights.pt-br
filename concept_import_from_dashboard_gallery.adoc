@@ -18,6 +18,7 @@ O Data Infrastructure Insights fornece uma série de painéis recomendados para 
 
 
 
+[[importing-from-the-dashboard-gallery]]
 == Importando da Galeria do Painel
 
 Para importar um painel da galeria, faça o seguinte:
@@ -36,6 +37,7 @@ A importação da galeria do painel está disponível para usuários com funçã
 
 
 
+[[importing-an-exported-dashboard]]
 == Importando um painel exportado
 
 Para *exportar* um painel, na página *Observabilidade > Explorar > Todos os painéis*, clique no menu à direita do painel e escolha _Exportar_. Você também pode selecionar vários painéis e escolher _Exportar_ no menu suspenso _Ações em massa_. Os painéis são salvos em um arquivo .ZIP no seu sistema local.

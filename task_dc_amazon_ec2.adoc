@@ -14,6 +14,7 @@ O Data Infrastructure Insights usa o coletor de dados do Amazon EC2 para adquiri
 
 
 
+[[requirements]]
 == Requisitos
 
 Para coletar dados de dispositivos Amazon EC2, você precisa ter as seguintes informações:
@@ -33,11 +34,12 @@ As chaves de acesso consistem em um ID de chave de acesso (por exemplo, AKIAIOSF
 
 
 
+[[configuration]]
 == Configuração
 
 Insira os dados nos campos do coletor de dados de acordo com a tabela abaixo:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -58,9 +60,10 @@ Insira os dados nos campos do coletor de dados de acordo com a tabela abaixo:
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -87,6 +90,7 @@ Insira os dados nos campos do coletor de dados de acordo com a tabela abaixo:
 |===
 
 
+[[iam-access-key]]
 == Chave de acesso IAM
 
 As chaves de acesso são credenciais de longo prazo para um usuário do IAM ou o usuário raiz da conta da AWS.  As chaves de acesso são usadas para assinar solicitações programáticas para a AWS CLI ou a AWS API (diretamente ou usando o AWS SDK).
@@ -95,6 +99,7 @@ As chaves de acesso consistem em duas partes: um ID de chave de acesso e uma cha
 
 
 
+[[iam-role]]
 == Função IAM
 
 Ao usar a autenticação _IAM Role_ (em oposição à autenticação IAM Access Key), você deve garantir que a função criada ou especificada tenha as permissões apropriadas necessárias para acessar seus recursos.
@@ -111,6 +116,7 @@ Observação: a função do IAM pode ser usada somente quando a Unidade de Aquis
 
 
 
+[[mapping-amazon-tags-to-data-infrastructure-insights-annotations]]
 == Mapeando tags da Amazon para anotações do Data Infrastructure Insights
 
 O coletor de dados do Amazon EC2 inclui uma opção que permite preencher anotações do Data Infrastructure Insights com tags configuradas no EC2.  As anotações devem ser nomeadas exatamente como as tags EC2.  O Data Infrastructure Insights sempre preencherá anotações de mesmo tipo de texto e fará o "melhor esforço" para preencher anotações de outros tipos (número, booleano, etc.).  Se sua anotação for de um tipo diferente e o coletor de dados não conseguir preenchê-la, pode ser necessário remover a anotação e recriá-la como um tipo de texto.
@@ -119,12 +125,14 @@ Observe que a AWS diferencia maiúsculas de minúsculas, enquanto o Data Infrast
 
 
 
+[[include-extra-regions]]
 == Incluir regiões extras
 
 Na seção *Configuração avançada* do AWS Data Collector, você pode definir o campo *Incluir regiões extras* para incluir regiões adicionais, separadas por vírgula ou ponto e vírgula.  Por padrão, este campo é definido como *_us-.*_*, que coleta dados em todas as regiões da AWS dos EUA.  Para coletar em _todas_ as regiões, defina este campo como *_.*_*.  Se o campo *Incluir regiões extras* estiver vazio, o coletor de dados coletará os ativos especificados no campo *Região da AWS*, conforme especificado na seção *Configuração*.
 
 
 
+[[collecting-from-aws-child-accounts]]
 == Coletando de contas filhas da AWS
 
 O Data Infrastructure Insights oferece suporte à coleta de contas filhas para a AWS em um único coletor de dados da AWS.  A configuração desta coleção é realizada no ambiente AWS:
@@ -147,6 +155,7 @@ link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.h
 
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

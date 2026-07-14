@@ -17,6 +17,7 @@ NOTE: Esta página se refere a instruções de terceiros, que podem estar sujeit
 
 
 
+[[discord-setup]]
 == Configuração do Discord:
 
 * No Discord, selecione o Servidor, em Canais de Texto, selecione Editar Canal (ícone de engrenagem)
@@ -26,6 +27,7 @@ NOTE: Esta página se refere a instruções de terceiros, que podem estar sujeit
 
 
 
+[[create-data-infrastructure-insights-webhook]]
 == Criar webhook de Data Infrastructure Insights :
 
 . No Data Infrastructure Insights, navegue até *Admin > Notificações* e selecione a guia *Webhooks*.  Clique em *+Webhook* para criar um novo webhook.
@@ -41,6 +43,7 @@ NOTE: Para testar o webhook, substitua temporariamente o valor da URL no corpo d
 
 
 
+[[notifications-via-webhook]]
 == Notificações via Webhook
 
 Para notificar eventos via webhook, no Data Infrastructure Insights navegue até *Alertas > Monitores* e clique em *+Monitor* para criar um novolink:task_create_monitor.html["monitor"] .

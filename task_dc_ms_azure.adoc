@@ -14,6 +14,7 @@ O Data Infrastructure Insights usa o coletor de dados de computação do Azure p
 
 
 
+[[requirements]]
 == Requisitos
 
 Você precisa das seguintes informações para configurar este coletor de dados.
@@ -32,11 +33,12 @@ Depois que a conta estiver configurada corretamente e você registrar o aplicati
 
 
 
+[[configuration]]
 == Configuração
 
 Insira os dados nos campos do coletor de dados de acordo com a tabela abaixo:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -54,9 +56,10 @@ Insira os dados nos campos do coletor de dados de acordo com a tabela abaixo:
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -74,6 +77,7 @@ Insira os dados nos campos do coletor de dados de acordo com a tabela abaixo:
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

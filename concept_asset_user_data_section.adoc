@@ -14,6 +14,7 @@ A seção Dados do usuário de uma página de ativos exibe e permite que você a
 
 
 
+[[using-the-user-data-section-to-assign-or-modify-applications]]
 == Usando a seção Dados do Usuário para atribuir ou modificar aplicativos
 
 Você pode atribuir aplicativos em execução no seu locatário a determinados ativos (host, máquinas virtuais, volumes, volumes internos, qtrees e hipervisores).  A seção Dados do usuário permite adicionar, alterar ou remover os aplicativos atribuídos a um ativo.  Para todos esses tipos de ativos, exceto volumes, você pode atribuir mais de um aplicativo.
@@ -37,6 +38,7 @@ Para remover um aplicativo, abra a lista de aplicativos e desmarque o aplicativo
 
 
 
+[[using-the-user-data-section-to-assign-or-modify-annotations]]
 == Usando a seção Dados do Usuário para atribuir ou modificar anotações
 
 Ao personalizar o Data Infrastructure Insights para rastrear dados para suas necessidades corporativas, você pode definir notas especializadas chamadas anotações e atribuí-las aos seus ativos.  A seção Dados do usuário de uma página de ativo exibe anotações atribuídas a um ativo e também permite que você altere as anotações atribuídas a esse ativo.

@@ -14,11 +14,12 @@ O coletor de dados do Hitachi Vantara Command Suite oferece suporte ao servidor 
 
 
 
+[[terminology]]
 == Terminologia
 
 O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do Hitachi Vantara Command Suite.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -44,6 +45,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[storage]]
 === Armazenar
 
 Os termos a seguir se aplicam a objetos ou referências que você pode encontrar nas páginas de destino de ativos de armazenamento do HDS.  Muitos desses termos também se aplicam a outros coletores de dados.
@@ -58,6 +60,7 @@ Os termos a seguir se aplicam a objetos ou referências que você pode encontrar
 
 
 
+[[storage-pool]]
 === Pool de armazenamento
 
 Os termos a seguir se aplicam a objetos ou referências que você pode encontrar nas páginas de destino de ativos do pool de armazenamento do HDS.  Muitos desses termos também se aplicam a outros coletores de dados.
@@ -84,6 +87,7 @@ Em vez disso, o coletor de dados HDS Command Suite do Data Infrastructure Insigh
 
 
 
+[[storage-node]]
 === Nó de armazenamento
 
 Os termos a seguir se aplicam a objetos ou referências que você pode encontrar nas páginas de destino de ativos do nó de armazenamento HDS.  Muitos desses termos também se aplicam a outros coletores de dados.
@@ -94,6 +98,7 @@ Os termos a seguir se aplicam a objetos ou referências que você pode encontrar
 
 
 
+[[inventory-requirements]]
 == Requisitos de inventário
 
 Você deve ter o seguinte para coletar dados de inventário:
@@ -107,6 +112,7 @@ Você deve ter o seguinte para coletar dados de inventário:
 
 
 
+[[performance-requirements]]
 == Requisitos de desempenho
 
 Os seguintes requisitos devem ser atendidos para coletar dados de desempenho:
@@ -130,9 +136,10 @@ Os seguintes requisitos devem ser atendidos para coletar dados de desempenho:
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -170,6 +177,7 @@ Observação: em HDS USP, USP V e VSP, qualquer disco pode pertencer a mais de u
 
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
 |===
@@ -200,15 +208,17 @@ Observação: em HDS USP, USP V e VSP, qualquer disco pode pertencer a mais de u
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
+[[inventory]]
 === Inventário
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Experimente isto: 
 
@@ -223,9 +233,10 @@ Algumas coisas que você pode tentar se tiver problemas com este coletor de dado
 |===
 
 
+[[performance]]
 === Desempenho
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Experimente isto: 
 

@@ -58,6 +58,7 @@ Aqui você encontrará sugestões para solucionar problemas com Unidades de Aqui
 |===
 
 
+[[considerations-about-proxies-and-firewalls]]
 == Considerações sobre Proxies e Firewalls
 
 Se sua organização exigir o uso de proxy para acesso à Internet, talvez seja necessário entender o comportamento do proxy da sua organização e buscar certas exceções para que o Data Infrastructure Insights funcione.  Tenha em mente o seguinte:
@@ -80,6 +81,7 @@ No caso em que o proxy não está configurado para inspeção de tráfego, uma l
 
 
 
+[[viewing-proxy-endpoints]]
 === Visualizando endpoints de proxy
 
 Você pode visualizar seus endpoints de proxy clicando no link *Configurações de proxy* ao escolher um coletor de dados durante a integração ou no link em _Configurações de proxy_ na página *Ajuda > Suporte*.  Uma tabela como a seguinte é exibida.  Se você tiver o Workload Security em seu ambiente, os URLs de endpoint configurados também serão exibidos nesta lista.
@@ -88,6 +90,7 @@ image:ProxyEndpoints_NewTable.png["Tabela de endpoints de proxy"]
 
 
 
+[[resources]]
 == Recursos
 
 Dicas adicionais de solução de problemas podem ser encontradas emlink:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs["Base de conhecimento da NetApp"] (é necessário fazer login no suporte).

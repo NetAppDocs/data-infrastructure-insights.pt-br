@@ -14,6 +14,7 @@ O Data Infrastructure Insights usa o coletor de dados Brocade Sphereon/Intrepid 
 
 
 
+[[requirements]]
 == Requisitos
 
 Os seguintes requisitos devem ser atendidos para configurar este coletor de dados:
@@ -26,9 +27,10 @@ Os seguintes requisitos devem ser atendidos para configurar este coletor de dado
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -49,9 +51,10 @@ Os seguintes requisitos devem ser atendidos para configurar este coletor de dado
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -81,6 +84,7 @@ Os seguintes requisitos devem ser atendidos para configurar este coletor de dado
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

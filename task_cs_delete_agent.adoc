@@ -14,6 +14,7 @@ Quando você exclui um Agente de Segurança de Carga de Trabalho, todos os colet
 
 
 
+[[deleting-an-agent]]
 == Excluindo um Agente
 
 

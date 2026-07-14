@@ -21,6 +21,7 @@ NOTE: O coletor ONTAP REST pode ser usado como um substituto para o coletor ante
 
 
 
+[[requirements]]
 == Requisitos
 
 A seguir estão os requisitos para configurar e usar este coletor de dados:
@@ -37,6 +38,7 @@ A seguir estão os requisitos para configurar e usar este coletor de dados:
 
 
 
+[[a-note-about-permissions]]
 == Uma nota sobre permissões
 
 Como vários painéis ONTAP do Data Infrastructure Insights dependem de contadores ONTAP avançados, você deve manter *Habilitar coleta avançada de dados de contadores* ativado na seção Configuração avançada do coletor de dados.
@@ -97,6 +99,7 @@ Você pode verificar o acesso spi se necessário:
 ----
 
 
+[[migration]]
 == Migração
 
 Para migrar de um coletor de dados ONTAP (ontapi) anterior para o coletor ONTAP REST mais recente, faça o seguinte:
@@ -111,6 +114,7 @@ Você pode usar o mesmo processo para retornar ao coletor anterior, se desejar.
 
 
 
+[[configuration]]
 == Configuração
 
 [cols="50,50"]
@@ -128,6 +132,7 @@ Você pode usar o mesmo processo para retornar ao coletor anterior, se desejar.
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
 [cols="50,50"]
@@ -151,6 +156,7 @@ Você pode usar o mesmo processo para retornar ao coletor anterior, se desejar.
 |===
 
 
+[[terminology]]
 == Terminologia
 
 O Data Infrastructure Insights adquire dados de inventário, logs e desempenho do coletor de dados ONTAP .  Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para o ativo.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
@@ -185,12 +191,14 @@ O Data Infrastructure Insights adquire dados de inventário, logs e desempenho d
 |===
 
 
+[[ontap-data-management-terminology]]
 == Terminologia de gerenciamento de dados ONTAP
 
 Os termos a seguir se aplicam a objetos ou referências que você pode encontrar nas páginas de destino de ativos de armazenamento do ONTAP Data Management.  Muitos desses termos também se aplicam a outros coletores de dados.
 
 
 
+[[storage]]
 === Armazenar
 
 * Modelo – Uma lista delimitada por vírgulas de nomes exclusivos e discretos de modelos de nós dentro deste cluster.  Se todos os nós nos clusters forem do mesmo tipo de modelo, apenas um nome de modelo aparecerá.
@@ -206,6 +214,7 @@ Os termos a seguir se aplicam a objetos ou referências que você pode encontrar
 
 
 
+[[storage-pool]]
 === Pool de armazenamento
 
 * Armazenamento – em qual matriz de armazenamento esse pool reside.  Obrigatório.
@@ -222,6 +231,7 @@ Os termos a seguir se aplicam a objetos ou referências que você pode encontrar
 
 
 
+[[storage-node]]
 === Nó de armazenamento
 
 * Armazenamento – de qual matriz de armazenamento esse nó faz parte.  Obrigatório.
@@ -240,6 +250,7 @@ Os termos a seguir se aplicam a objetos ou referências que você pode encontrar
 
 
 
+[[ontap-power-metrics]]
 == Métricas de potência ONTAP
 
 Vários modelos ONTAP fornecem métricas de energia para o Data Infrastructure Insights que podem ser usadas para monitoramento ou alertas.  As listas de modelos suportados e não suportados abaixo não são abrangentes, mas devem fornecer alguma orientação; em geral, se um modelo estiver na mesma família de um na lista, o suporte deve ser o mesmo.
@@ -254,11 +265,12 @@ FAS2620 FAS3250 FAS3270 FAS500f FAS6280 FAS/ AFF 8020 FAS/ AFF 8040 FAS/ AFF 806
 
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Experimente isto: 
 

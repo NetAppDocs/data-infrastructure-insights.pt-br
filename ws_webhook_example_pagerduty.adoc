@@ -21,6 +21,7 @@ NOTE: Esta página se refere a instruções de terceiros, que estão sujeitas a 
 
 
 
+[[pagerduty-setup]]
 == Configuração do PagerDuty:
 
 . No PagerDuty, navegue até *Serviços > Diretório de serviços* e clique no botão *+Novo serviço*.
@@ -39,6 +40,7 @@ image:ws_pagerduty_incidents_list.png["exemplo de lista de incidentes do pagerdu
 
 
 
+[[create-workload-security-pagerduty-webhook]]
 == Criar Webhook do PagerDuty de Segurança de Carga de Trabalho:
 
 * Navegue até Admin > Notificações e selecione a aba _Workload Security Webhooks_.  Selecione '+ Webhook' para criar um novo webhook.
@@ -53,6 +55,7 @@ image:ws_webhook_pagerduty_example.png["Exemplo de webhook de página de seguran
 
 
 
+[[notifications-via-webhook]]
 == Notificações via Webhook
 
 * Para notificar eventos via webhook, navegue até _Segurança de carga de trabalho > Políticas_.  Selecione _+Política de Ataque_ ou _+Política de Aviso_.

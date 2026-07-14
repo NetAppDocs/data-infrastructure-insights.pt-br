@@ -18,6 +18,7 @@ A Matriz de Suporte ao Coletor de Dados fornece referência para Coletores de Da
 
 
 
+[[hp-enterprise-3par-alletra-9000-primera-storeserv-storage]]
 == Armazenamento HP Enterprise 3PAR / Alletra 9000 / Primera StoreServ
 
 Modelos e versões suportados por este coletor de dados:
@@ -828,6 +829,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[amazon-aws-ec2]]
 == Amazon AWS EC2
 
 Modelos e versões suportados por este coletor de dados: Versões da API:
@@ -1102,6 +1104,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[amazon-aws-s3]]
 == Amazon AWS S3
 
 Modelos e versões suportados por este coletor de dados:
@@ -1265,6 +1268,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[microsoft-azure-netapp-files]]
 == Azure NetApp Files
 
 Modelos e versões suportados por este coletor de dados:
@@ -1587,6 +1591,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[brocade-fibre-channel-switches]]
 == Switches Fibre Channel Brocade
 
 Modelos e versões suportados por este coletor de dados:
@@ -2162,6 +2167,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[brocade-network-advisor-http]]
 == Consultor de rede Brocade HTTP
 
 Modelos e versões suportados por este coletor de dados:
@@ -2418,6 +2424,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[brocade-fos-rest]]
 == Brocade FOS REST
 
 Modelos e versões suportados por este coletor de dados:
@@ -2898,6 +2905,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[cisco-mds-nexus-fabric-switches]]
 == Switches Cisco MDS e Nexus Fabric
 
 Modelos e versões suportados por este coletor de dados:
@@ -3412,6 +3420,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[cohesity]]
 == Coesão
 
 Modelos e versões suportados por este coletor de dados:
@@ -3683,6 +3692,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[emc-celerra-ssh]]
 == EMC Celerra (SSH)
 
 Modelos e versões suportados por este coletor de dados:
@@ -3963,6 +3973,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[emc-clariion-navicli]]
 == EMC CLARiiON (NaviCLI)
 
 Modelos e versões suportados por este coletor de dados:
@@ -4576,6 +4587,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[emc-data-domain-ssh]]
 == Domínio de dados EMC (SSH)
 
 Modelos e versões suportados por este coletor de dados:
@@ -4929,6 +4941,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[emc-ecs]]
 == EMC ECS
 
 Modelos e versões suportados por este coletor de dados:
@@ -5260,6 +5273,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[dell-emc-isilon-powerscale-rest]]
 == Dell EMC Isilon e PowerScale Rest
 
 Modelos e versões suportados por este coletor de dados:
@@ -5982,6 +5996,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[dell-emc-isilon-powerscale-cli]]
 == Dell EMC Isilon / PowerScale (CLI)
 
 Modelos e versões suportados por este coletor de dados:
@@ -6549,6 +6564,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[emc-powerstore-rest]]
 == EMC PowerStore REST
 
 Modelos e versões suportados por este coletor de dados:
@@ -7184,6 +7200,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[emc-recoverpoint-http]]
 == Ponto de Recuperação EMC (HTTP)
 
 Modelos e versões suportados por este coletor de dados:
@@ -7311,6 +7328,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[emc-scaleio-powerflex-rest]]
 == EMC ScaleIO e PowerFlex REST
 
 Modelos e versões suportados por este coletor de dados:
@@ -7525,6 +7543,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[emc-symmetrix-cli]]
 == CLI do EMC Symmetrix
 
 Modelos e versões suportados por este coletor de dados:
@@ -8388,6 +8407,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[dell-unisphere-rest]]
 == Dell Unisphere REST
 
 Modelos e versões suportados por este coletor de dados:
@@ -9111,6 +9131,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[emc-vnx-ssh]]
 == EMC VNX (SSH)
 
 Modelos e versões suportados por este coletor de dados:
@@ -9796,6 +9817,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[emc-vnxe-unity-unisphere-cli]]
 == EMC VNXe e Unity Unisphere (CLI)
 
 Modelos e versões suportados por este coletor de dados:
@@ -10390,6 +10412,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[emc-vplex]]
 == EMC VPLEX
 
 |===
@@ -10469,6 +10492,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[emc-xtremio-http]]
 == EMC XtremIO (HTTP)
 
 Modelos e versões suportados por este coletor de dados:
@@ -11026,6 +11050,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[netapp-e-series]]
 == NetApp Série E
 
 Modelos e versões suportados por este coletor de dados:
@@ -11672,6 +11697,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[pure-storage-flashblade-rest]]
 == Pure Storage FlashBlade REST
 
 Modelos e versões suportados por este coletor de dados:
@@ -12045,6 +12071,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[google-cloud-compute]]
 == Google Cloud Compute
 
 Modelos e versões suportados por este coletor de dados: Versões da API:
@@ -12277,6 +12304,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[hds-hcp-https]]
 == HDS HCP (HTTPS)
 
 Modelos e versões suportados por este coletor de dados:
@@ -12461,6 +12489,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[hicommand-device-manager]]
 == Gerenciador de dispositivos HiCommand
 
 Modelos e versões suportados por este coletor de dados:
@@ -13135,6 +13164,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[hitachi-ops-center]]
 == Centro de Operações Hitachi
 
 Modelos e versões suportados por este coletor de dados:
@@ -13822,6 +13852,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[hds-hnas-cli]]
 == HDS HNAS (CLI)
 
 Modelos e versões suportados por este coletor de dados:
@@ -14108,6 +14139,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[hpe-nimble-alletra-6000-storage]]
 == Armazenamento HPE Nimble/Alletra 6000
 
 Modelos e versões suportados por este coletor de dados:
@@ -14598,6 +14630,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[huawei-oceanstor-resthttps]]
 == Huawei OceanStor (REST/HTTPS)
 
 Modelos e versões suportados por este coletor de dados:
@@ -15322,6 +15355,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[ibm-cleversafe]]
 == IBM Cleversafe
 
 |===
@@ -15512,6 +15546,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[ibm-ds-8k-dscli]]
 == IBM DS 8K (DSCLI)
 
 Modelos e versões suportados por este coletor de dados:
@@ -16011,6 +16046,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[ibm-powervm-ssh]]
 == IBM PowerVM (SSH)
 
 |===
@@ -16192,6 +16228,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[ibm-svc-cli]]
 == IBM SVC (CLI)
 
 Modelos e versões suportados por este coletor de dados:
@@ -16939,6 +16976,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[ibm-xiv-a9000-xivcli]]
 == IBM XIV e A9000 (XIVCLI)
 
 Modelos e versões suportados por este coletor de dados:
@@ -17171,6 +17209,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[infinidat-infinibox-http]]
 == Infinidat Infinibox (HTTP)
 
 Modelos e versões suportados por este coletor de dados:
@@ -17520,6 +17559,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[microsoft-azure-compute]]
 == Computação do Microsoft Azure
 
 Modelos e versões suportados por este coletor de dados: Versões da API:
@@ -17776,6 +17816,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[microsoft-hyper-v]]
 == Microsoft Hyper-V
 
 |===
@@ -18257,6 +18298,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[netapp-7-mode]]
 == Modo NetApp 7
 
 Modelos e versões suportados por este coletor de dados:
@@ -19239,6 +19281,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[netapp-e-series-rest]]
 == REST da série E da NetApp
 
 Modelos e versões suportados por este coletor de dados:
@@ -19609,6 +19652,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[amazon-fsx-for-netapp-ontap]]
 == Amazon FSx for NetApp ONTAP
 
 Modelos e versões suportados por este coletor de dados:
@@ -20534,6 +20578,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[netapp-clustered-data-ontap-8-1-1]]
 == Data ONTAP agrupados NetApp ONTAP 8.1.1+
 
 Modelos e versões suportados por este coletor de dados:
@@ -22289,6 +22334,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[asa]]
 == ASA
 
 Modelos e versões suportados por este coletor de dados:
@@ -22917,6 +22963,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[netapp-ontap-rest]]
 == NetApp ONTAP REST
 
 Modelos e versões suportados por este coletor de dados:
@@ -23775,6 +23822,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[netapp-solidfire-8-1]]
 == NetApp SolidFire 8.1+
 
 Modelos e versões suportados por este coletor de dados:
@@ -24520,6 +24568,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[netapp-storagegrid-https]]
 == StorageGRID NetApp (HTTPS)
 
 Modelos e versões suportados por este coletor de dados:
@@ -24903,6 +24952,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[nutanix-storage-rest]]
 == Armazenamento Nutanix (REST)
 
 Modelos e versões suportados por este coletor de dados:
@@ -25414,6 +25464,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[oracle-zfs-https]]
 == Oracle ZFS (HTTPS)
 
 Modelos e versões suportados por este coletor de dados:
@@ -25964,6 +26015,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[pure-storage-flasharray-http]]
 == FlashArray de armazenamento puro (HTTP)
 
 Modelos e versões suportados por este coletor de dados:
@@ -26573,6 +26625,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[red-hat-rhv-rest]]
 == Red Hat RHV (REST)
 
 |===
@@ -26817,6 +26870,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[rubrik-storage]]
 == Armazenamento Rubrik
 
 Modelos e versões suportados por este coletor de dados: Versões de firmware:
@@ -27159,6 +27213,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[vast-datastore]]
 == Armazenamento de dados VAST
 
 Modelos e versões suportados por este coletor de dados:
@@ -27571,6 +27626,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[netapp-hci-virtual-center]]
 == Centro Virtual NetApp HCI
 
 Modelos e versões suportados por este coletor de dados: Versões da API:
@@ -28119,6 +28175,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[vmware-cloud-on-aws]]
 == VMware Cloud na AWS
 
 Modelos e versões suportados por este coletor de dados: Versões da API:
@@ -28461,6 +28518,7 @@ APIs de gerenciamento usadas por este coletor de dados:
 |===
 
 
+[[vmware-vsphere-web-services]]
 == VMware vSphere (Serviços Web)
 
 Modelos e versões suportados por este coletor de dados: Versões da API:

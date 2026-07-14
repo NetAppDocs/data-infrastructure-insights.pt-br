@@ -14,6 +14,7 @@ A guia de preferências de resolução do dispositivo permite criar um cronogram
 
 
 
+[[auto-resolution-schedule]]
 == Cronograma de resolução automática
 
 Um agendamento de resolução automática pode especificar quando a resolução automática do dispositivo é executada:
@@ -39,6 +40,7 @@ Se você especificar _Manualmente_, a resolução automática noturna do disposi
 
 
 
+[[dns-processing-options]]
 == Opções de processamento de DNS
 
 As opções de processamento de DNS permitem que você selecione os seguintes recursos:
@@ -50,6 +52,7 @@ As opções de processamento de DNS permitem que você selecione os seguintes re
 
 
 
+[[including-or-excluding-specific-storage-and-tape-vendors]]
 === Incluindo ou excluindo fornecedores específicos de armazenamento e fitas
 
 Você pode incluir ou excluir fornecedores específicos de armazenamento e fita para resolução automática.  Talvez você queira excluir fornecedores específicos se souber, por exemplo, que um host específico se tornará um host legado e deverá ser excluído do seu novo ambiente.  Você também pode adicionar novamente fornecedores que você excluiu anteriormente, mas não deseja mais que sejam excluídos.

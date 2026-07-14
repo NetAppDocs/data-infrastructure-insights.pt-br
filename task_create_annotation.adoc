@@ -18,6 +18,7 @@ Você cria anotações e as atribui aos ativos que monitora.  Anotações são n
 
 
 
+[[defining-annotations]]
 == Definindo anotações
 
 Usando anotações, você pode adicionar dados comerciais personalizados específicos aos ativos que correspondem às suas necessidades comerciais.  Embora o Data Infrastructure Insights forneça um conjunto de anotações padrão, como ciclo de vida do ativo (aniversário ou fim da vida útil), localização do edifício ou do data center e nível, você pode querer visualizar os dados de outras maneiras.
@@ -50,6 +51,7 @@ Por exemplo, insira o seguinte para criar uma anotação de texto que defina a l
 
 
 
+[[manually-assigning-annotations-to-assets]]
 == Atribuição manual de anotações a ativos
 
 Atribuir anotações aos ativos ajuda você a classificar, agrupar e relatar ativos de maneiras relevantes para o seu negócio.  Embora você possa atribuir anotações a ativos de um tipo específico automaticamente usando regras de anotação, você pode atribuir anotações a um ativo individual usando sua página de ativos.
@@ -81,12 +83,14 @@ Se quiser alterar o valor da anotação depois de atribuí-la, clique no campo d
 
 
 
+[[assigning-annotations-using-annotation-rules]]
 == Atribuição de anotações usando regras de anotação
 
 Para atribuir anotações automaticamente aos ativos com base nos critérios definidos por você, configure regras de anotação.  O Data Infrastructure Insights atribui as anotações aos ativos com base nessas regras.  O Data Infrastructure Insights também fornece duas regras de anotação padrão, que você pode modificar para atender às suas necessidades ou remover se não quiser usá-las.
 
 
 
+[[creating-annotation-rules]]
 === Criando regras de anotação
 
 Como alternativa à aplicação manual de anotações a ativos individuais, você pode aplicar anotações automaticamente a vários ativos usando regras de anotação.  Anotações definidas manualmente em páginas de ativos individuais têm precedência sobre anotações baseadas em regras quando o Insight avalia as regras de anotação.

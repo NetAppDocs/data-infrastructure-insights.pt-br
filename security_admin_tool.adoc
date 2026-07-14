@@ -18,18 +18,21 @@ As senhas criptografadas da fonte de dados são armazenadas no Data Infrastructu
 
 
 
+[[upgrade-and-installation-considerations]]
 == Considerações sobre atualização e instalação
 
 Quando o seu sistema Insight contém configurações de segurança não padrão (ou seja, você redigitou senhas), você deve fazer backup de suas configurações de segurança.  A instalação de um novo software ou, em alguns casos, a atualização de um software reverte o sistema para uma configuração de segurança padrão.  Quando o sistema retorna à configuração padrão, você deve restaurar a configuração não padrão para que o sistema funcione corretamente.
 
 
 
+[[managing-security-on-the-acquisition-unit]]
 == Gerenciando a segurança na unidade de aquisição
 
 A ferramenta SecurityAdmin permite que você gerencie as opções de segurança do Data Infrastructure Insights e é executada no sistema da unidade de aquisição.  O gerenciamento de segurança inclui gerenciar chaves e senhas, salvar e restaurar configurações de segurança criadas por você ou restaurar configurações para as configurações padrão.
 
 
 
+[[before-you-begin]]
 == Antes de começar
 
 * Você deve ter privilégios de administrador no sistema AU para instalar o software da Unidade de Aquisição (que inclui a ferramenta SecurityAdmin).
@@ -44,6 +47,7 @@ Linux - /bin/oci-securityadmin.sh
 ....
 
 
+[[using-the-securityadmin-tool]]
 == Usando a ferramenta SecurityAdmin
 
 Inicie a ferramenta SecurityAdmin no modo interativo (-i).
@@ -126,6 +130,7 @@ Escolha a opção que deseja configurar e siga as instruções.
 
 
 
+[[specifying-a-user-to-run-the-tool]]
 == Especificando um usuário para executar a ferramenta
 
 Se você estiver em um ambiente controlado e preocupado com a segurança, talvez não tenha o grupo _cisys_, mas ainda assim poderá querer que usuários específicos executem a ferramenta SecurityAdmin.
@@ -148,6 +153,7 @@ Se o usuário e/ou grupo especificado não existir, eles serão criados.  O usu�
 
 
 
+[[updating-or-removing-proxy]]
 == Atualizando ou removendo proxy
 
 A ferramenta SecurityAdmin pode ser usada para definir ou remover informações de proxy para a Unidade de Aquisição executando a ferramenta com o parâmetro _-pr_:
@@ -194,6 +200,7 @@ Para atualizar um proxy, o comando é
  ./securityadmin -pr -upr <arg>
 
 
+[[external-key-retrieval]]
 == Recuperação de Chave Externa
 
 Se você fornecer um script de shell UNIX, ele poderá ser executado pela unidade de aquisição para recuperar a *chave privada* e a *chave pública* do seu sistema de gerenciamento de chaves.
@@ -226,6 +233,7 @@ O script deve ser registrado na unidade de aquisição usando a ferramenta Secur
 |===
 
 
+[[encrypting-a-password-for-use-in-api]]
 == Criptografando uma senha para uso na API
 
 A opção 8 permite que você criptografe uma senha, que pode então ser passada para um coletor de dados via API.

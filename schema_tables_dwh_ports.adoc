@@ -18,10 +18,12 @@ Esta referência fornece informações detalhadas do esquema para o banco de dad
 
 
 
+[[tables-and-views]]
 == Tabelas e Views
 
 
 
+[[cardinals]]
 === cardeais
 
 [cols="1,1,2"]
@@ -34,6 +36,7 @@ Esta referência fornece informações detalhadas do esquema para o banco de dad
 '''
 
 
+[[connecteddevicedimension]]
 === connected_device_dimension
 
 *Chave primária:* tk
@@ -74,6 +77,7 @@ Esta referência fornece informações detalhadas do esquema para o banco de dad
 '''
 
 
+[[datedimension]]
 === dimensão_data
 
 [cols="1,1,2"]
@@ -148,6 +152,7 @@ Esta referência fornece informações detalhadas do esquema para o banco de dad
 '''
 
 
+[[portdimension]]
 === dimensão_da_porta
 
 [cols="1,1,2"]
@@ -195,6 +200,7 @@ Esta referência fornece informações detalhadas do esquema para o banco de dad
 '''
 
 
+[[portsfact]]
 === ports_fact
 
 *Chave primária:* tk
@@ -244,6 +250,7 @@ Esta referência fornece informações detalhadas do esquema para o banco de dad
 '''
 
 
+[[portsfactcurrent]]
 === ports_fact_current
 
 [cols="1,1,2"]
@@ -283,6 +290,7 @@ Esta referência fornece informações detalhadas do esquema para o banco de dad
 '''
 
 
+[[switchdimension]]
 === switch_dimension
 
 [cols="1,1,2"]

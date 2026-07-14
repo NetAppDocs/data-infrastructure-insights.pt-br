@@ -13,15 +13,18 @@ keywords: features
 :imagesdir: ./media/
 
 
+[[whats-new]]
 [role="lead"]
 A NetApp está continuamente melhorando e aprimorando seus produtos e serviços.  Aqui estão alguns dos recursos e funcionalidades mais recentes disponíveis no Data Infrastructure Insights (antigo Cloud Insights).
 
 
 
+[[december-2020]]
 == Dezembro de 2020
 
 
 
+[[simpler-kubernetes-installation]]
 === Instalação mais simples do Kubernetes
 
 A instalação do agente do Kubernetes foi simplificada para exigir menos interações do usuário. link:task_config_telegraf_agent_k8s.html["Instalando o Agente Kubernetes"] agora inclui coleta de dados do Kubernetes.
@@ -29,10 +32,12 @@ A instalação do agente do Kubernetes foi simplificada para exigir menos intera
 '''
 
 
+[[november-2020]]
 == Novembro de 2020
 
 
 
+[[additional-dashboards]]
 === Painéis adicionais
 
 Os seguintes novos painéis focados no ONTAP foram adicionados à galeria e estão disponíveis para importação:
@@ -54,6 +59,7 @@ Os seguintes novos painéis focados no ONTAP foram adicionados à galeria e est�
 
 
 
+[[column-rename-in-table-widgets]]
 === Renomear coluna em widgets de tabela
 
 Você pode renomear colunas na seção _Métricas e Atributos_ de um widget de tabela abrindo o widget no modo de Edição e clicando no menu na parte superior da coluna.  Digite o novo nome e clique em _Salvar_ ou clique em _Redefinir_ para redefinir a coluna para o nome original.
@@ -65,22 +71,26 @@ image:Table_Widget_Column_Rename.png["Widget de tabela Renomear coluna"]
 '''
 
 
+[[october-2020]]
 == Outubro de 2020
 
 
 
+[[default-expansion-of-integration-data]]
 === Expansão padrão de dados de integração
 
 O agrupamento de widgets de tabela agora permite expansões padrão de métricas do Kubernetes, do ONTAP Advanced Data e do Agent Node.  Por exemplo, se você agrupar _Nós_ do Kubernetes por _Cluster_, verá uma linha na tabela para cada cluster.  Você pode então expandir cada linha do cluster para ver uma lista dos objetos Node.
 
 
 
+[[basic-edition-technical-support]]
 === Suporte Técnico da Edição Básica
 
 O suporte técnico agora está disponível para assinantes do Cloud Insights Basic Edition, além das edições Standard e Premium.  Além disso, o Cloud Insights simplificou o fluxo de trabalho para criar um tíquete de suporte da NetApp .
 
 
 
+[[cloud-secure-public-api]]
 === API pública Cloud Secure
 
 Suporte Cloud Securelink:concept_cs_api.html["APIs REST"] para acessar informações de atividade e alerta.  Isso é feito por meio do uso de tokens de acesso à API, criados por meio da interface de administração do Cloud Secure , que são então usados ​​para acessar as APIs REST.  A documentação do Swagger para essas APIs REST está integrada ao Cloud Secure.
@@ -88,10 +98,12 @@ Suporte Cloud Securelink:concept_cs_api.html["APIs REST"] para acessar informaç
 '''
 
 
+[[september-2020]]
 == Setembro de 2020
 
 
 
+[[query-page-with-integration-data]]
 === Página de consulta com dados de integração
 
 A página Consulta do Cloud Insights oferece suporte a dados de integração (por exemplo, do Kubernetes, ONTAP Advanced Metrics, etc.).  Ao trabalhar com dados de integração, a tabela de resultados da consulta exibe uma visualização em "Tela Dividida", com objeto/agrupamento no lado esquerdo e dados do objeto (atributos/métricas) no lado direito.  Você também pode escolher vários atributos para agrupar dados de integração.
@@ -100,6 +112,7 @@ image:QueryPageIntegrationData.png["Consulta mostrando dados de integração"]
 
 
 
+[[unit-display-formatting-in-table-widget]]
 === Formatação de exibição de unidade no widget de tabela
 
 A formatação de exibição da unidade agora está disponível em widgets de Tabela para colunas que exibem dados de métricas/contadores (por exemplo, gigabytes, MB/segundo, etc.).  Para alterar a unidade de exibição de uma métrica, clique no menu "três pontos" no cabeçalho da coluna e selecione "Exibição da unidade".  Você pode escolher qualquer uma das unidades disponíveis.  As unidades disponíveis variam de acordo com o tipo de dados métricos na coluna de exibição.
@@ -108,18 +121,21 @@ image:TableWidgetUnitManagement1.png["Gerenciamento de Unidade de Widget de Tabe
 
 
 
+[[acquisition-unit-detail-page]]
 === Página de detalhes da unidade de aquisição
 
 As Unidades de Aquisição agora têm sua própria página de destino, fornecendo detalhes úteis para cada UA, bem como informações para ajudar na solução de problemas.  Olink:task_configure_acquisition_unit.html#viewing-au-details["Página de detalhes da UA"] fornece links para os coletores de dados da UA, bem como informações úteis sobre o status.
 
 
 
+[[cloud-secure-docker-dependency-removed]]
 === Dependência do Cloud Secure Docker removida
 
 A dependência do Cloud Secure no Docker foi removida.  O Docker não é mais necessário para a instalação do agente Cloud Secure .
 
 
 
+[[reporting-user-roles]]
 === Funções de usuário de relatórios
 
 Se você tiver o Cloud Insights Premium Edition com Relatórios, cada usuário do Cloud Insights em seu ambiente também terá um login de Logon Único (SSO) no aplicativo Relatórios (por exemplo, Cognos); ao clicar no link *Relatórios* no menu, eles serão automaticamente conectados ao Relatórios.
@@ -148,6 +164,7 @@ IMPORTANT: Se você é um cliente Premium Edition atual e deseja manter seus rel
 
 
 
+[[new-api-category-for-data-ingestion]]
 === Nova categoria de API para ingestão de dados
 
 O Cloud Insights adicionou uma categoria de API de *Ingestão de Dados*, oferecendo maior controle sobre dados e agentes personalizados.  A documentação detalhada para esta e outras categorias de API pode ser encontrada no Cloud Insights navegando até *Admin > Acesso à API* e clicando no link _Documentação da API_.  Você também pode anexar um comentário à UA no campo Nota, que é exibido na página de detalhes da UA, bem como na página da lista de UA.
@@ -155,10 +172,12 @@ O Cloud Insights adicionou uma categoria de API de *Ingestão de Dados*, oferece
 '''
 
 
+[[august-2020]]
 == Agosto de 2020
 
 
 
+[[monitoring-and-alerting]]
 === Monitoramento e Alerta
 
 Além da capacidade atual de definir políticas de desempenho para objetos de armazenamento, VMs, EC2 e portas, o Cloud Insights Standard Edition agora inclui a capacidade delink:task_create_monitor.html["configurar monitores"] para limites em dados de integração para Kubernetes, métricas avançadas do ONTAP e plug-ins do Telegraf.  Basta criar um monitor para cada métrica de objeto para a qual você deseja acionar alertas, definir as condições para limites de nível de aviso ou nível crítico e especificar o(s) destinatário(s) de e-mail desejado(s) para cada nível.  Você pode entãolink:task_view_and_manage_alerts.html["visualizar e gerenciar alertas"] para rastrear tendências ou solucionar problemas.
@@ -168,10 +187,12 @@ image:define_monitor_conditions_2.png["Monitorar condições"]
 '''
 
 
+[[july-2020]]
 == Julho de 2020
 
 
 
+[[cloud-secure-take-a-snapshot-action]]
 === Ação _Tirar um instantâneo_ do Cloud Secure
 
 O Cloud Secure protege seus dados tirando um instantâneo automaticamente quando uma atividade maliciosa é detectada, garantindo que seus dados sejam armazenados em backup com segurança.
@@ -184,6 +205,7 @@ Instantâneo manual:image:AlertActionsExample.png["Tela de Ação de Alerta, 100
 
 
 
+[[metriccounter-updates]]
 === Atualizações de métricas/contadores
 
 Os seguintes contadores de capacidade estão disponíveis para uso na interface do usuário do Cloud Insights e na API REST.  Anteriormente, esses contadores estavam disponíveis apenas para o Data Warehouse/Relatórios.
@@ -203,6 +225,7 @@ Os seguintes contadores de capacidade estão disponíveis para uso na interface 
 |===
 
 
+[[cloud-secure-potential-attack-detection]]
 === Detecção de Ataque Potencial Cloud Secure
 
 O Cloud Secure agora detecta ataques potenciais, como ransomware.  Clique em um alerta na página Lista de alertas para abrir uma página de detalhes mostrando o seguinte:
@@ -219,12 +242,14 @@ Página de detalhes sobre possível ataque de ransomware:image:RansomwareDetailP
 
 
 
+[[subscribe-to-premium-edition-through-aws]]
 === Assine a Premium Edition pela AWS
 
 Durante o seu teste do Cloud Insights, você podelink:concept_subscribing_to_cloud_insights.html["autoinscrição"] por meio do AWS Marketplace para o Cloud Insights Standard Edition ou Premium Edition.  Anteriormente, você só podia fazer a autoassinatura pelo AWS Marketplace apenas para a Standard Edition.
 
 
 
+[[enhanced-table-widget]]
 === Widget de tabela aprimorado
 
 O widget Tabela da página do painel/ativo inclui os seguintes aprimoramentos:
@@ -245,6 +270,7 @@ Agrupamento com dados de infraestrutura (mostrados no modo de exibição):image:
 
 
 
+[[metrics-filtering]]
 === Filtragem de métricas
 
 Além de filtrar os atributos de um objeto em um widget, agora você também pode filtrar as métricas.
@@ -257,6 +283,7 @@ image:IntegrationMetricFilterExample.png["Filtragem de Métricas de Integração
 
 
 
+[[ontap-advanced-counter-data]]
 === Dados avançados do contador ONTAP
 
 O Cloud Insights aproveita os *Dados de Contadores Avançados* específicos do ONTAP da NetApp, que fornecem uma série de contadores e métricas coletados de dispositivos ONTAP .  Os dados avançados do contador ONTAP estão disponíveis para todos os clientes do NetApp ONTAP .  Essas métricas permitem uma visualização personalizada e abrangente em widgets e painéis do Cloud Insights .
@@ -283,12 +310,14 @@ Observe o seguinte:
 
 
 
+[[advanced-counter-dashboards]]
 === Painéis de Contagem Avançados
 
 O Cloud Insights vem com uma variedade de painéis pré-projetados para ajudar você a começar a visualizar contadores avançados do ONTAP para tópicos como _Desempenho agregado_, _Carga de trabalho de volume_, _Atividade do processador_ e muito mais.  Se você tiver pelo menos um coletor de dados ONTAP configurado, eles poderão ser importados da Galeria de Painéis em qualquer página de lista de painéis.
 
 
 
+[[learn-more]]
 === Saber mais
 
 Mais informações sobre o ONTAP Advanced Data podem ser encontradas nos seguintes links:
@@ -299,6 +328,7 @@ Mais informações sobre o ONTAP Advanced Data podem ser encontradas nos seguint
 
 
 
+[[policies-and-violations-menu]]
 === Menu de Políticas e Violações
 
 Políticas de desempenho e violações agora podem ser encontradas no menu *Alertas*.  As funcionalidades de política e violação não foram alteradas.
@@ -307,6 +337,7 @@ image:PoliciesMenuChange.png["Menu de Políticas e Violações"]
 
 
 
+[[updated-telegraf-agent]]
 === Agente Telegraf atualizado
 
 O agente para ingestão de dados de integração do Telegraf foi atualizado paralink:https://docs.influxdata.com/telegraf/v1.14/["versão 1.14"] , que inclui correções de bugs, correções de segurança e novos plugins.
@@ -339,10 +370,12 @@ rules:
 '''
 
 
+[[june-2020]]
 == Junho de 2020
 
 
 
+[[simplified-data-collector-error-reporting]]
 === Relatório de erros simplificado do coletor de dados
 
 Relatar um erro do coletor de dados é mais fácil com o botão _Enviar relatório de erro_ na página do coletor de dados.  Clicar no botão envia informações básicas sobre o erro para a NetApp e inicia uma investigação sobre o problema.  Quando pressionado, o Cloud Insights reconhece que a NetApp foi notificada, e o botão Relatório de Erros é desabilitado para indicar que um relatório de erros para aquele coletor de dados foi enviado.  O botão permanece desabilitado até que a página do navegador seja atualizada.
@@ -351,6 +384,7 @@ image:DCErrorReportButton.png["Botão Relatório de Erros"]
 
 
 
+[[widget-improvements]]
 === Melhorias no widget
 
 As seguintes melhorias foram feitas nos widgets do painel.  Essas melhorias são consideradas funcionalidades de visualização e podem não estar disponíveis para todos os ambientes do Cloud Insights .
@@ -368,10 +402,12 @@ image:MultipleGroupsIntegrationLineChart.png["Agrupamento múltiplo ao exibir da
 '''
 
 
+[[may-2020]]
 == Maio de 2020
 
 
 
+[[reporting-user-roles]]
 === Funções de usuário de relatórios
 
 As seguintes funções foram adicionadas para Relatórios:
@@ -383,6 +419,7 @@ As seguintes funções foram adicionadas para Relatórios:
 
 
 
+[[cloud-secure-updates]]
 === Atualizações Cloud Secure
 
 O Cloud Insights inclui as seguintes alterações recentes do Cloud Secure .
@@ -399,6 +436,7 @@ Além disso, a notificação por e-mail de alerta agora contém um link direto p
 
 
 
+[[dashboard-grouping]]
 === Agrupamento de painéis
 
 O agrupamento do painel permite melhorlink:concept_dashboard_features.html#dashboard-groups["gerenciamento de painéis"] que são relevantes para você.  Você pode adicionar painéis relacionados a um grupo para gerenciamento "centralizado", por exemplo, do seu armazenamento ou máquinas virtuais.
@@ -409,6 +447,7 @@ image:DashboardGroupNoPin.png["Grupos do Painel"]
 
 
 
+[[dashboard-pinning]]
 === Fixação do painel
 
 Você pode fixar painéis para que os favoritos sempre apareçam no topo da lista.
@@ -417,6 +456,7 @@ image:DashboardPin.png["Pinos do painel"]
 
 
 
+[[tv-mode-and-auto-refresh]]
 === Modo TV e atualização automática
 
 link:concept_dashboard_features.html#tv-mode-and-auto-refresh["Modo TV e atualização automática"]permitir a exibição de dados quase em tempo real em um painel ou página de ativos:
@@ -430,16 +470,19 @@ Combinados, o Modo TV e a Atualização Automática fornecem uma visualização 
 '''
 
 
+[[april-2020]]
 == Abril de 2020
 
 
 
+[[new-dashboard-time-range-choices]]
 === Novas opções de intervalo de tempo do painel
 
 As opções de intervalo de tempo para painéis e outras páginas de insights do Cloud agora incluem _Última 1 hora_ e _Últimos 15 minutos_.
 
 
 
+[[cloud-secure-updates]]
 === Atualizações Cloud Secure
 
 O Cloud Insights inclui as seguintes alterações recentes do Cloud Secure .
@@ -452,12 +495,14 @@ O Cloud Secure monitora e audita todas as operações de acesso do usuário em a
 
 
 
+[[default-dashboard-time]]
 === Tempo padrão do painel
 
 O intervalo de tempo padrão para painéis agora é de 3 horas em vez de 24 horas.
 
 
 
+[[optimized-aggregation-times]]
 === Tempos de agregação otimizados
 
 Otimizadolink:concept_dashboard_features.html#aggregating-data["agregação de tempo"] intervalos em widgets de séries temporais (gráficos de linha, spline, área e área empilhada) são mais frequentes para intervalos de tempo de painel/widget de 3 e 24 horas, permitindo gráficos de dados mais rápidos.
@@ -470,6 +515,7 @@ Você ainda pode substituir a agregação otimizada definindo um intervalo perso
 
 
 
+[[display-unit-auto-format]]
 === Unidade de exibição de formato automático
 
 Na maioria dos widgets, o Cloud Insights conhece a unidade base na qual exibir valores, por exemplo _Megabytes_, _Milhares_, _Porcentagem_, _Milissegundos (ms)_, etc., e agoralink:concept_dashboard_features.html#choosing-the-unit-for-displaying-data["formata automaticamente"] o widget para a unidade mais legível.  Por exemplo, um valor de dados de 1.234.567.890 bytes seria formatado automaticamente para 1,23 gibibytes.  Em muitos casos, o Cloud Insights sabe o melhor formato para os dados que estão sendo adquiridos.  Nos casos em que o melhor formato não é conhecido, ou em widgets onde você deseja substituir a formatação automática, você pode escolher o formato desejado.
@@ -478,6 +524,7 @@ image:used_memory_in_bytes_gb.png["Formatação automática em widgets, largura=
 
 
 
+[[import-annotations-using-api]]
 === Importar anotações usando API
 
 Com a poderosa API do Cloud Insights Premium Edition, agora você podelink:task_annotation_import.html["importar anotações"] e atribuí-los a objetos usando um arquivo .CSV.  Você também pode importar aplicativos e atribuir entidades comerciais da mesma maneira.
@@ -486,6 +533,7 @@ image:api_assets_import.png["Importando Anotações"]
 
 
 
+[[simpler-widget-selector]]
 === Seletor de widgets mais simples
 
 Adicionar widgets a painéis e landing pages de ativos ficou mais fácil com um novo seletor de widgets que exibe todos os tipos de widgets em uma única visualização, de forma que o usuário não precisa mais rolar por uma lista de tipos de widgets para encontrar o que deseja adicionar. Os widgets relacionados são coordenados por cores e agrupados por proximidade no novo seletor.
@@ -495,10 +543,12 @@ image:NewWidgetPicker.png["Novo seletor de widgets"]
 '''
 
 
+[[february-2020]]
 == Fevereiro de 2020
 
 
 
+[[api-with-premium-edition]]
 === API com Edição Premium
 
 O Cloud Insights Premium Edition vem com umlink:API_Overview.html["API poderosa"] que pode ser usado para integrar o Cloud Insights com outros aplicativos, como CMDBs ou outros sistemas de emissão de tickets.
@@ -511,6 +561,7 @@ image:API_Documentation.png["Documentação da API"]
 
 
 
+[[initial-polling-after-adding-a-data-collector]]
 === Pesquisa inicial após adicionar um coletor de dados
 
 Anteriormente, após configurar um novo coletor de dados, o Cloud Insights consultava o coletor de dados imediatamente para coletar dados de _inventário_, mas esperava até o intervalo de consulta de desempenho configurado (normalmente 15 minutos) para coletar dados de _desempenho_ iniciais.  Ele então esperaria por outro intervalo antes de iniciar a segunda pesquisa de desempenho, o que significava que levaria até _30 minutos_ antes que dados significativos fossem adquiridos de um novo coletor de dados.
@@ -521,6 +572,7 @@ Esse comportamento de pesquisa também ocorre após editar a configuração de u
 
 
 
+[[easier-widget-duplication]]
 === Duplicação de widgets mais fácil
 
 Está mais fácil do que nunca criar uma cópia de um widget em um painel ou página de destino.  No modo de edição do painel, clique no menu do widget e selecione *Duplicar*.  O editor de widgets é iniciado, pré-preenchido com a configuração original do widget e com um sufixo “cópia” no nome do widget.  Você pode facilmente fazer as alterações necessárias e salvar o novo widget.  O widget será colocado na parte inferior do seu painel e você poderá posicioná-lo conforme necessário.  Lembre-se de salvar seu painel quando todas as alterações estiverem concluídas.
@@ -529,6 +581,7 @@ image:DuplicateWidget.png["Duplicar um widget"]
 
 
 
+[[single-sign-on-sso]]
 === Logon único (SSO)
 
 Com o Cloud Insights Premium Edition, os administradores podem habilitar *link:concept_user_roles.html#what-is-identity-federation["Login único"] * Acesso (SSO) ao Cloud Insights para todos os usuários em seu domínio corporativo, sem precisar convidá-los individualmente.  Com o SSO habilitado, qualquer usuário com o mesmo endereço de e-mail de domínio pode fazer login no Cloud Insights usando suas credenciais corporativas.
@@ -539,16 +592,19 @@ NOTE: O SSO está disponível apenas no Cloud Insights Premium Edition e deve se
 '''
 
 
+[[january-2020]]
 == Janeiro de 2020
 
 
 
+[[swagger-documentation-for-rest-api]]
 === Documentação do Swagger para API REST
 
 Swagger explica cada API REST disponível no Cloud Insights, bem como seu uso e sintaxe.  Informações sobre as APIs do Cloud Insights estão disponíveis emlink:http://docs.netapp.com/us-en/cloudinsights/API_Overview.html["documentação"] .
 
 
 
+[[feature-tutorials-progress-bar]]
 === Barra de progresso dos tutoriais de recursos
 
 A lista de verificação de tutoriais de recursos foi movida para o banner superior e agora apresenta um indicador de progresso.  Os tutoriais estão disponíveis para cada usuário até serem dispensados ​​e estão sempre disponíveis no Cloud Insightslink:concept_feature_tutorials.html["documentação"] .
@@ -557,18 +613,21 @@ image:TutorialProgress.png["Progresso da lista de verificação do tutorial"]
 
 
 
+[[acquisition-unit-changes]]
 === Mudanças na Unidade de Aquisição
 
 Ao instalar uma Unidade de Aquisição (UA) em um host ou VM que tem o mesmo nome de uma UA já instalada, o Cloud Insights garante um nome exclusivo anexando ao nome da UA "_1", "_2", etc. Isso também ocorre ao desinstalar e reinstalar uma UA da mesma VM sem primeiro removê-la do Cloud Insights.  Quer um nome de UA totalmente diferente?  Sem problemas; as AUs podem ser renomeadas após a instalação.
 
 
 
+[[optimized-time-aggregation-in-widgets]]
 === Agregação de tempo otimizada em widgets
 
 Nos widgets, você pode escolher entre um intervalo de agregação de tempo _Otimizado_ ou um intervalo _Personalizado_ definido por você.  A agregação otimizada seleciona automaticamente o intervalo de tempo correto com base no intervalo de tempo do painel selecionado (ou intervalo de tempo do widget, se estiver substituindo o tempo do painel).  O intervalo muda dinamicamente conforme o intervalo de tempo do painel ou do widget é alterado.
 
 
 
+[[simplified-getting-started-with-cloud-insights-process]]
 === Processo simplificado de "Introdução ao Cloud Insights"
 
 O processo para começar a usar o Cloud Insights foi simplificado para tornar sua primeira configuração mais fácil e tranquila.  Basta selecionar um coletor de dados inicial e seguir as instruções.  O Cloud Insights orientará você na configuração do coletor de dados e de qualquer agente ou unidade de aquisição necessária.  Na maioria dos casos, ele até importará um ou mais painéis iniciais para que você possa começar a obter insights sobre seu ambiente rapidamente (mas aguarde até 30 minutos para que o Cloud Insights colete dados significativos).
@@ -589,28 +648,33 @@ image:Onboarding_Progress.png["Barra de progresso"]
 '''
 
 
+[[december-2019]]
 == Dezembro de 2019
 
 
 
+[[business-entity-can-be-used-in-filters]]
 === Entidade empresarial pode ser usada em filtros
 
 Anotações de Entidades Comerciais podem ser usadas em filtros para consultas, widgets, políticas de desempenho e páginas de destino.
 
 
 
+[[drill-down-available-for-single-value-and-gauge-widgets-and-any-widgets-rolled-to-by-all]]
 === Drilldown disponível para widgets de valor único e medidor, e quaisquer widgets agrupados por "Todos"
 
 Clicar no valor em um widget de valor único ou de medidor abre uma página de consulta mostrando os resultados da primeira consulta usada no widget.  Além disso, clicar na legenda de qualquer widget cujos dados sejam agrupados por "Todos" também abrirá uma página de consulta mostrando os resultados da primeira consulta usada no widget.
 
 
 
+[[trial-period-extended]]
 === Período de teste estendido
 
 Novos usuários que se inscreverem para um teste gratuito do Cloud Insights agora têm 30 dias para avaliar o produto.  Este é um aumento em relação ao período de teste anterior de 14 dias.
 
 
 
+[[managed-unit-calculation]]
 === Cálculo da Unidade Gerenciada
 
 O cálculo de Unidades Gerenciadas (MUs) no Cloud Insights foi alterado para o seguinte:
@@ -624,14 +688,17 @@ Essa alteração efetivamente dobra a capacidade do ambiente que você pode moni
 '''
 
 
+[[november-2019]]
 == Novembro de 2019
 
 
 
+[[october-2019]]
 == Outubro de 2019
 
 
 
+[[reporting]]
 === Relatórios
 
 link:reporting_overview.html["* Relatórios de Cloud Insights *"]é uma ferramenta de inteligência empresarial que permite visualizar relatórios predefinidos ou criar relatórios personalizados.  Com o Relatórios você pode executar as seguintes tarefas:
@@ -659,6 +726,7 @@ Os relatórios estão disponíveis com o Cloud Insights *Premium Edition*.
 
 
 
+[[active-iq-enhancements]]
 === Melhorias Active IQ
 
 link:concept_activeiq.html["Riscos de Active IQ"]agora estão disponíveis como objetos que podem ser consultados e usados em widgets de tabela do painel.  Os seguintes atributos de objeto de Riscos estão incluídos: * Categoria * Categoria de Mitigação * Impacto Potencial * Detalhe do Risco * Gravidade * Origem * Armazenamento * Nó de Armazenamento * Categoria da IU
@@ -666,10 +734,12 @@ link:concept_activeiq.html["Riscos de Active IQ"]agora estão disponíveis como 
 '''
 
 
+[[september-2019]]
 == Setembro de 2019
 
 
 
+[[new-gauge-widgets]]
 === Novos widgets de medidor
 
 Dois novos widgets estão disponíveis para exibir dados de valor único em seus painéis em cores atraentes com base nos limites especificados.  Você pode exibir valores usando um *Medidor Sólido* ou um *Medidor de Marcador*.  Os valores que estão dentro do intervalo de Aviso são exibidos em laranja.  Os valores no intervalo Crítico são exibidos em vermelho.  Valores abaixo do limite de aviso são exibidos em verde.
@@ -678,6 +748,7 @@ image:Gauge-Solid.png["Calibre sólido/tradicional"] image:Gauge-Bullet.png["Med
 
 
 
+[[conditional-color-formatting-for-single-value-widget]]
 === Formatação de cor condicional para widget de valor único
 
 Agora você pode exibir o widget de valor único com um fundo colorido com base nos limites definidos.
@@ -686,12 +757,14 @@ image:Single-Value Widgets - Formatted.png["Widgets de valor único com formata�
 
 
 
+[[invite-users-during-onboarding]]
 === Convidar usuários durante a integração
 
 A qualquer momento durante o processo de integração, você pode clicar em Admin > Gerenciamento de usuários > +Usuário para convidar usuários adicionais para seu ambiente do Cloud Insights .  Esteja ciente de que usuários com funções de _Convidado_ ou _Usuário_ verão maiores benefícios quando a integração for concluída e os dados forem coletados.
 
 
 
+[[data-collector-detail-page-improvement]]
 === Melhoria da página de detalhes do coletor de dados
 
 A página de detalhes do coletor de dados foi melhorada para exibir erros em um formato mais legível.  Os erros agora são exibidos em uma tabela separada na página, com cada erro exibido em uma linha separada no caso de vários erros para o coletor de dados.
@@ -699,16 +772,19 @@ A página de detalhes do coletor de dados foi melhorada para exibir erros em um 
 '''
 
 
+[[august-2019]]
 == Agosto de 2019
 
 
 
+[[all-vs-available-data-collectors]]
 === Todos vs. Coletores de Dados Disponíveis
 
 Ao adicionar coletores de dados ao seu ambiente, você pode definir um filtro para mostrar apenas os coletores de dados disponíveis com base no seu nível de assinatura ou todos os coletores de dados.
 
 
 
+[[activeiq-integration]]
 === Integração ActiveIQ
 
 O Cloud Insights coleta dados do NetApp ActiveIQ, que fornece uma série de visualizações, análises e outros serviços de suporte relacionados aos clientes da NetApp e seus sistemas de hardware/software.  O Cloud Insights integra-se aos sistemas de gerenciamento de dados ONTAP . Ver link:concept_activeiq.html["Active IQ"] para maiores informações.
@@ -716,10 +792,12 @@ O Cloud Insights coleta dados do NetApp ActiveIQ, que fornece uma série de visu
 '''
 
 
+[[july-2019]]
 == Julho de 2019
 
 
 
+[[dashboard-improvements]]
 === Melhorias no painel
 
 Os painéis e widgets foram aprimorados com as seguintes alterações:
@@ -732,12 +810,14 @@ Os painéis e widgets foram aprimorados com as seguintes alterações:
 
 
 
+[[downgrading-to-basic-edition]]
 === Fazendo downgrade para a edição básica
 
 O downgrade para a Basic Edition falha com uma mensagem de erro se não houver nenhum dispositivo NetApp disponível configurado que tenha concluído com sucesso uma pesquisa nos últimos 7 dias.
 
 
 
+[[collecting-kube-state-metrics]]
 === Coletando métricas de estado do Kube
 
 Olink:task_config_telegraf_kubernetes.html["Coletor de dados do Kubernetes"] agora coleta objetos e contadores do plugin kube-state-metrics, expandindo muito o número e o escopo de métricas disponíveis para monitoramento no Cloud Insights.
@@ -745,16 +825,19 @@ Olink:task_config_telegraf_kubernetes.html["Coletor de dados do Kubernetes"] ago
 '''
 
 
+[[june-2019]]
 == Junho de 2019
 
 
 
+[[cloud-insights-editions]]
 === Edições do Cloud Insights
 
 O Cloud Insights está disponível em diferentes edições para se adequar ao seu orçamento e às suas necessidades comerciais.  Os clientes atuais da NetApp com uma conta de suporte NetApp ativa podem aproveitar 7 dias de retenção de dados e acesso aos coletores de dados da NetApp com a *Edição Básica* gratuita ou obter maior retenção de dados, acesso a todos os coletores de dados suportados, suporte técnico especializado e muito mais com a *Edição Padrão*.  Para obter mais informações sobre os recursos disponíveis, consulte o NetApplink:https://www.netapp.com/cloud-services/cloud-insights/["Cloud Insights"] site.
 
 
 
+[[new-infrastructure-data-collector-netapp-hci]]
 === Novo coletor de dados de infraestrutura: NetApp HCI
 
 * link:task_dc_na_hci.html["Centro Virtual NetApp HCI"]foi adicionado como um coletor de dados de infraestrutura.  O coletor de dados do HCI Virtual Center coleta informações do NetApp HCI Host e requer privilégios somente leitura em todos os objetos dentro do Virtual Center.
@@ -765,10 +848,12 @@ Observe que o coletor de dados HCI adquire dados somente do HCI Virtual Center. 
 '''
 
 
+[[may-2019]]
 == Maio de 2019
 
 
 
+[[new-service-data-collector-kapacitor]]
 === Novo Coletor de Dados de Serviço: Kapacitor
 
 * Kapacitor foi adicionado como coletor de dados para serviços.
@@ -776,6 +861,7 @@ Observe que o coletor de dados HCI adquire dados somente do HCI Virtual Center. 
 
 
 
+[[integration-with-services-via-telegraf]]
 === Integração com Serviços via Telegraf
 
 Além da aquisição de dados de dispositivos de infraestrutura, como switches e armazenamento, o Cloud Insights agora coleta dados de uma variedade de sistemas operacionais e serviços, usandolink:task_config_telegraf_agent.html["Telegraf como seu agente"] para coleta de dados de integração.  Telegraf é um agente controlado por plugin que pode ser usado para coletar e relatar métricas.  Os plugins de entrada são usados ​​para coletar as informações desejadas no agente acessando o sistema/SO diretamente, chamando APIs de terceiros ou ouvindo fluxos configurados.
@@ -784,6 +870,7 @@ A documentação para integrações atualmente suportadas pode ser encontrada no
 
 
 
+[[storage-virtual-machine-assets]]
 === Ativos de Máquina Virtual de Armazenamento
 
 * Máquinas virtuais de armazenamento (SVMs) estão disponíveis como ativos no Cloud Insights.  As SVMs têm suas próprias páginas de destino de ativos e podem ser exibidas e usadas em pesquisas, consultas e filtros.  SVMs também podem ser usados ​​em widgets de painel e associados a anotações.
@@ -791,6 +878,7 @@ A documentação para integrações atualmente suportadas pode ser encontrada no
 
 
 
+[[reduced-acquisition-unit-system-requirements]]
 === Requisitos de sistema de unidade de aquisição reduzidos
 
 * Os requisitos de CPU e memória do sistema para o software da Unidade de Aquisição (AU) foram reduzidos.  Os novos requisitos são:
@@ -809,6 +897,7 @@ A documentação para integrações atualmente suportadas pode ser encontrada no
 |===
 
 
+[[additional-platforms-supported]]
 === Plataformas adicionais suportadas
 
 * As seguintes plataformas foram adicionadas às atualmentelink:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html["com suporte para Cloud Insights"] :
@@ -825,10 +914,12 @@ A documentação para integrações atualmente suportadas pode ser encontrada no
 '''
 
 
+[[april-2019]]
 == Abril de 2019
 
 
 
+[[filter-virtual-machines-by-tags]]
 === Filtrar máquinas virtuais por tags
 
 Ao configurar os seguintes coletores de dados, você pode filtrar para incluir ou excluir máquinas virtuais da coleta de dados de acordo com suas tags ou rótulos.
@@ -841,10 +932,12 @@ Ao configurar os seguintes coletores de dados, você pode filtrar para incluir o
 '''
 
 
+[[march-2019]]
 == Março de 2019
 
 
 
+[[email-notifications-for-subscription-related-events]]
 === Notificações por e-mail para eventos relacionados à assinatura
 
 * Você pode selecionar destinatários para e-maillink:concept_notifications_email.html["notificações"] quando ocorrem eventos relacionados à assinatura, como expiração iminente do teste ou alterações na conta assinada.  Você pode escolher destinatários para essas notificações entre os seguintes:
@@ -858,6 +951,7 @@ Ao configurar os seguintes coletores de dados, você pode filtrar para incluir o
 
 
 
+[[additional-dashboards]]
 === Painéis adicionais
 
 * Os seguintes novos recursos focados na AWSlink:concept_import_from_dashboard_gallery.html["painéis"] foram adicionados à galeria e estão disponíveis para importação:
@@ -871,10 +965,12 @@ Ao configurar os seguintes coletores de dados, você pode filtrar para incluir o
 '''
 
 
+[[february-2019]]
 == Fevereiro de 2019
 
 
 
+[[collecting-from-aws-child-accounts]]
 === Coletando de contas filhas da AWS
 
 * O Cloud Insights oferece suportelink:task_dc_amazon_ec2.html#collecting-from-aws-child-accounts["coleta de contas filhas da AWS"] dentro de um único coletor de dados.  Seu ambiente AWS deve ser configurado para permitir que o Cloud Insights colete dados de contas filhas.
@@ -882,6 +978,7 @@ Ao configurar os seguintes coletores de dados, você pode filtrar para incluir o
 
 
 
+[[data-collector-naming]]
 === Nomenclatura do coletor de dados
 
 * Os nomes do coletor de dados agora podem incluir pontos (.), hifens (-) e espaços ( ), além de letras, números e sublinhados.  Os nomes não podem começar ou terminar com espaço, ponto final ou hífen.
@@ -889,6 +986,7 @@ Ao configurar os seguintes coletores de dados, você pode filtrar para incluir o
 
 
 
+[[acquisition-unit-for-windows]]
 === Unidade de Aquisição para Windows
 
 * Você pode configurar uma Unidade de Aquisição do Cloud Insights em um servidor/VM Windows.  Revise as janelaslink:concept_acquisition_unit_requirements.html["pré-requisitos"] antes de instalar olink:task_configure_acquisition_unit.html["Software de Unidade de Aquisição"] .
@@ -897,10 +995,12 @@ Ao configurar os seguintes coletores de dados, você pode filtrar para incluir o
 '''
 
 
+[[january-2019]]
 == Janeiro de 2019
 
 
 
+[[owner-field-is-more-readable]]
 === O campo "Proprietário" é mais legível
 
 * Nas listas do Painel e da Consulta, os dados do campo "Proprietário" eram anteriormente uma sequência de ID de autorização, em vez de um nome de proprietário amigável.  O campo "Proprietário" agora mostra um nome de proprietário mais simples e legível.
@@ -908,6 +1008,7 @@ Ao configurar os seguintes coletores de dados, você pode filtrar para incluir o
 
 
 
+[[managed-unit-breakdown-on-subscription-page]]
 === Detalhamento da unidade gerenciada na página de assinatura
 
 * Para cada coletor de dados listado na página *Administrador > Assinatura*, agora você pode ver um detalhamento das contagens de Unidades Gerenciadas (MU) para hosts e armazenamento, bem como o total.
@@ -916,10 +1017,12 @@ Ao configurar os seguintes coletores de dados, você pode filtrar para incluir o
 '''
 
 
+[[december-2018]]
 == Dezembro de 2018
 
 
 
+[[improvement-of-ui-load-time]]
 === Melhoria do tempo de carregamento da interface do usuário
 
 * O tempo de carregamento inicial da interface de usuário (IU) do Cloud Insights foi significativamente melhorado.  O tempo de atualização da interface do usuário também se beneficia dessa melhoria em circunstâncias em que metadados são carregados.
@@ -927,6 +1030,7 @@ Ao configurar os seguintes coletores de dados, você pode filtrar para incluir o
 
 
 
+[[bulk-edit-data-collectors]]
 === Coletores de dados de edição em massa
 
 * Você pode editar informações de vários coletores de dados ao mesmo tempo.  Na página *Observabilidade > Coletores*, selecione os coletores de dados a serem modificados marcando a caixa à esquerda de cada um e clique no botão *Ações em massa*.  Selecione *Editar* e modifique os campos necessários.
@@ -937,6 +1041,7 @@ Os coletores de dados selecionados devem ser do mesmo fornecedor e modelo e resi
 
 
 
+[[support-and-subscription-pages-are-available-during-onboarding]]
 === As páginas de suporte e assinatura estão disponíveis durante a integração
 
 * Durante o fluxo de trabalho de integração, você pode navegar até as páginas *Ajuda > Suporte* e *Administrador > Assinatura*.  Retornar dessas páginas o levará de volta ao fluxo de trabalho de integração, desde que você não tenha fechado a aba do navegador.
@@ -945,10 +1050,12 @@ Os coletores de dados selecionados devem ser do mesmo fornecedor e modelo e resi
 '''
 
 
+[[november-2018]]
 == Novembro de 2018
 
 
 
+[[subscribe-through-netapp-sales-or-aws-marketplace]]
 === Assine através do NetApp Sales ou do AWS Marketplace
 
 * A assinatura e o faturamento do Cloud Insights agora estão disponíveis diretamente pela NetApp.  Isso é um acréscimo à assinatura de autoatendimento disponível no AWS Marketplace.  Um novo link *Contatar Vendas* é apresentado na página *Administrador > Assinatura*.  Para clientes cujos ambientes têm ou devem ter 1.000 ou mais Unidades Gerenciadas (MUs), é recomendável entrar em contato com a equipe de vendas da NetApp por meio do link Entre em contato com a equipe de vendas.
@@ -956,6 +1063,7 @@ Os coletores de dados selecionados devem ser do mesmo fornecedor e modelo e resi
 
 
 
+[[text-annotation-hyperlinks]]
 === Hiperlinks de anotação de texto
 
 * Anotações do tipo texto agora podem incluir hiperlinks.
@@ -963,6 +1071,7 @@ Os coletores de dados selecionados devem ser do mesmo fornecedor e modelo e resi
 
 
 
+[[onboarding-walkthrough]]
 === Passo a passo de integração
 
 * O Cloud Insights agora oferece um passo a passo de integração para o primeiro usuário (administrador ou proprietário da conta) que fizer login em um novo ambiente.  O passo a passo mostra como instalar uma Unidade de Aquisição, configurar um coletor de dados inicial e selecionar um ou mais painéis úteis.
@@ -970,6 +1079,7 @@ Os coletores de dados selecionados devem ser do mesmo fornecedor e modelo e resi
 
 
 
+[[import-dashboards-from-the-gallery]]
 === Importar painéis da galeria
 
 * Além de selecionar painéis durante a integração, você pode importar painéis por meio de *Painéis > Mostrar todos os painéis* e clicar em *+Da galeria*.
@@ -977,6 +1087,7 @@ Os coletores de dados selecionados devem ser do mesmo fornecedor e modelo e resi
 
 
 
+[[duplicating-dashboards]]
 === Duplicando painéis
 
 * A capacidade de duplicar um painel foi adicionada à página de lista de painéis como uma opção no menu de opções de cada painel e na própria página principal do painel no menu _Salvar_.
@@ -984,6 +1095,7 @@ Os coletores de dados selecionados devem ser do mesmo fornecedor e modelo e resi
 
 
 
+[[cloud-central-products-menu]]
 === Menu de produtos do Cloud Central
 
 * O menu que permite alternar para outros produtos do NetApp Cloud Central foi movido para o canto superior direito da tela.

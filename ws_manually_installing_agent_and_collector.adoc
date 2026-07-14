@@ -14,6 +14,7 @@ Por padrão, quando uma nova versão de um agente ou coletor do Workload Securit
 
 
 
+[[before-you-begin]]
 == Antes de começar
 
 . Verifique no swagger se as categorias de API denominadas “cloudsecure_installers.agent” e “cloudsecure_installers.collector” estão disponíveis.  Caso contrário, o suporte para instalação manual do agente não será habilitado.  Entre em contato com o suporte da NetApp para habilitar o recurso.
@@ -25,6 +26,7 @@ image:ws_manual_install_APIs.png["APIs de instalação manual"]
 
 
 
+[[installing-a-new-agent]]
 == Instalando um novo agente
 
 . Crie um novo token de acesso à API de segurança de carga de trabalho.
@@ -197,6 +199,7 @@ image:ws_agentsPageShowingConnected.png["IU mostrando agentes conectados"]
 
 
 
+[[installing-a-new-data-collector]]
 == Instalando um novo coletor de dados.
 
 Nota: Este documento contém instruções para instalar o “coletor de dados ONTAP SVM”.  As mesmas etapas se aplicam ao “Coletor de dados Cloud Volumes ONTAP ” e ao “Coletor de dados Amazon FSx for NetApp ONTAP ”.
@@ -289,6 +292,7 @@ image:ws_collectorPageList.png["Página de lista da IU mostrando coletores"]
 
 
 
+[[installing-a-new-user-directory-collector]]
 == Instalando um novo coletor de diretório de usuário
 
 Observação: neste documento mencionamos as etapas para instalar um coletor LDAP.  As mesmas etapas se aplicam à instalação de um coletor de AD.
@@ -401,6 +405,7 @@ image:ws_LDAP_collector_list.png["Lista de coletores LDAP na interface do usuár
 
 
 
+[[upgrading-an-agent]]
 == Atualizando um agente
 
 Uma notificação por e-mail será enviada quando uma nova versão do agente/coletor estiver disponível.
@@ -487,6 +492,7 @@ image:ws_agentsPageShowingConnected.png["IU mostrando agentes conectados"]
 
 
 
+[[upgrading-collectors]]
 == Atualizando coletores
 
 Observação: as etapas de atualização são as mesmas para todos os tipos de coletores.  Neste documento demonstraremos a atualização do coletor “ONTAP SVM”.
@@ -570,6 +576,7 @@ Repita os passos acima para atualizar outros tipos de coletores também.
 
 
 
+[[commons-issues-and-fixes]]
 == Problemas e correções do Commons.
 
 . Erro AGENT014

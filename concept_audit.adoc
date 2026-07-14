@@ -18,6 +18,7 @@ Para identificar alterações esperadas (para rastreamento) ou inesperadas (para
 
 
 
+[[viewing-audited-events]]
 == Visualizando eventos auditados
 
 Para visualizar a página Auditoria, clique em *Admin > Auditoria* no menu.  A página Auditoria é exibida, fornecendo os seguintes detalhes para cada entrada de auditoria:
@@ -33,6 +34,7 @@ Para visualizar a página Auditoria, clique em *Admin > Auditoria* no menu.  A p
 
 
 
+[[displaying-audit-entries]]
 == Exibindo entradas de auditoria
 
 Há várias maneiras diferentes de visualizar entradas de auditoria:
@@ -50,6 +52,7 @@ image:Audit_Filters.png["Filtros de auditoria"]
 
 
 
+[[more-on-filtering]]
 === Mais sobre filtragem
 
 Você pode usar qualquer um dos seguintes para refinar seu filtro:
@@ -84,6 +87,7 @@ Se você colocar uma sequência de filtro entre aspas duplas, o Insight tratará
 
 
 
+[[audited-events-and-actions]]
 == Eventos e Ações Auditados
 
 Os eventos e ações auditados pelo Data Infrastructure Insights podem ser categorizados nas seguintes áreas amplas:
@@ -121,6 +125,7 @@ Exemplo: Destinatário _ci-alerts-notifications-dl_ criado
 
 
 
+[[exporting-audit-events]]
 == Exportando eventos de auditoria
 
 Você pode exportar os resultados da sua exibição de auditoria para um arquivo .CSV, o que permitirá que você analise os dados ou importe-os para outro aplicativo.
@@ -134,6 +139,7 @@ Os eventos de auditoria exibidos serão exportados para um arquivo .CSV, com no 
 
 
 
+[[retention-of-audit-data]]
 == Retenção de Dados de Auditoria
 
 O período durante o qual o Data Infrastructure Insights retém os dados de auditoria depende da sua assinatura:
@@ -148,6 +154,7 @@ Entradas de auditoria mais antigas que o tempo de retenção são automaticament
 
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Aqui você encontrará sugestões para solucionar problemas com o Audit.

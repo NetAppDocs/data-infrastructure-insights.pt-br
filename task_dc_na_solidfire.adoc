@@ -16,11 +16,12 @@ O coletor de dados SolidFire utiliza a API REST do SolidFire .  A unidade de aqu
 
 
 
+[[terminology]]
 == Terminologia
 
 O Data Infrastructure Insights adquire as seguintes informações de inventário do coletor de dados do NetApp SolidFire All-Flash Array.  Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para esse ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -49,6 +50,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[requirements]]
 == Requisitos
 
 A seguir estão os requisitos para configurar este coletor de dados:
@@ -60,9 +62,10 @@ A seguir estão os requisitos para configurar este coletor de dados:
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -77,9 +80,10 @@ A seguir estão os requisitos para configurar este coletor de dados:
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -97,6 +101,7 @@ A seguir estão os requisitos para configurar este coletor de dados:
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Quando o SolidFire relata um erro, ele é exibido no Data Infrastructure Insights da seguinte forma:

@@ -25,6 +25,7 @@ Selecione seu primeiro coletor de dados entre os fornecedores e modelos suportad
 
 
 
+[[install-an-acquisition-unit]]
 == Instalar uma Unidade de Aquisição
 
 Se você selecionou um coletor de dados de _Infraestrutura_, uma Unidade de Aquisição será necessária para injetar dados no Data Infrastructure Insights.  Você precisará baixar e instalar o software Acquisition Unit em um servidor ou VM no data center de onde você fará a coleta.  Uma única Unidade de Aquisição pode ser usada para vários coletores de dados.
@@ -40,6 +41,7 @@ Você pode configurar unidades de aquisição adicionais mais tarde, se necessá
 
 
 
+[[configure-the-data-collector-infrastructure]]
 == Configurar o Coletor de Dados - Infraestrutura
 
 Para coletores de dados de _Infraestrutura_, você será solicitado a preencher os campos do coletor de dados apresentados:
@@ -54,10 +56,12 @@ Você poderá configurar coletores de dados adicionais mais tarde.
 
 
 
+[[configure-the-data-collector-operating-systems-and-services]]
 == Configurar o Coletor de Dados - Sistemas Operacionais e Serviços
 
 
 
+[[operating-system]]
 === Sistema operacional:
 
 Para coletores de dados do _Sistema Operacional_, escolha uma plataforma (Linux, Windows) para instalar um Agente do Data Infrastructure Insights .  Você deve ter pelo menos um agente para coletar dados dos Serviços.  O agente também coleta dados do próprio host para uso no Data Infrastructure Insights.  Esses dados são categorizados como dados de "Nó" em widgets, etc.
@@ -68,6 +72,7 @@ Para coletores de dados do _Sistema Operacional_, escolha uma plataforma (Linux,
 
 
 
+[[services]]
 === Serviços:
 
 Para coletores de dados de _Serviço_, clique em um bloco para abrir a página de instruções para esse serviço.
@@ -81,6 +86,7 @@ Para coletores de dados de _Serviço_, clique em um bloco para abrir a página d
 
 
 
+[[add-dashboards]]
 == Adicionar painéis
 
 Dependendo do tipo de coletor de dados inicial selecionado para configurar (armazenamento, switch, etc.), um ou mais painéis relevantes serão importados.  Por exemplo, se você configurou um coletor de dados de armazenamento, um conjunto de painéis relacionados ao armazenamento será importado, e um será definido como sua página inicial do Data Infrastructure Insights .  Você pode alterar a página inicial na lista *Painéis > Mostrar todos os painéis*.
@@ -89,6 +95,7 @@ Você pode importar painéis adicionais mais tarde oulink:concept_dashboards_ove
 
 
 
+[[thats-all-there-is-to-it]]
 == É só isso
 
 Depois de concluir o processo de configuração inicial, seu ambiente começará a coletar dados.
@@ -102,6 +109,7 @@ Se o processo de configuração inicial for interrompido (por exemplo, se você 
 
 
 
+[[useful-definitions]]
 == Definições úteis
 
 As seguintes definições podem ser úteis ao falar sobre coletores de dados ou recursos do Data Infrastructure Insights :

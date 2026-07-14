@@ -18,6 +18,7 @@ Você deve instalar uma Unidade de Aquisição (UA) para adquirir informações 
 
 
 
+[[requirements]]
 == Requisitos
 
 |===
@@ -92,6 +93,7 @@ Seu sistema de arquivos pode usar algum espaço para sua sobrecarga. Estes são 
 |===
 
 
+[[additional-recommendations]]
 == Recomendações adicionais
 
 * Para auditoria e relatórios de dados precisos, é altamente recomendável sincronizar a hora na máquina da Unidade de Aquisição usando *Network Time Protocol (NTP)* ou *Simple Network Time Protocol (SNTP)*.
@@ -99,6 +101,7 @@ Seu sistema de arquivos pode usar algum espaço para sua sobrecarga. Estes são 
 
 
 
+[[regarding-sizing]]
 == Sobre o dimensionamento
 
 Você pode começar com uma Unidade de Aquisição de Data Infrastructure Insights com apenas 8 GB de memória e 50 GB de espaço em disco. No entanto, para ambientes maiores, você deve se perguntar o seguinte:

@@ -14,6 +14,7 @@ O Data Infrastructure Insights retém dados por períodos que variam de 7 dias a
 
 
 
+[[data-retention]]
 == Retenção de dados
 
 O Data Infrastructure Insights retém dados por um período determinado pelo seu tipo de assinatura.
@@ -31,12 +32,14 @@ Para obter informações detalhadas sobre os recursos e opções de preços do D
 
 
 
+[[downsampling-of-data]]
 == Redução da amostragem de dados
 
 *A redução da amostragem* fornece uma aproximação estatística dos seus dados em gráficos, dando a você uma visão geral eficiente dos dados sem precisar exibir cada ponto de dados, ao mesmo tempo em que mantém uma visão precisa dos dados coletados.
 
 
 
+[[why-is-downsampling-needed]]
 === Por que a redução da amostragem é necessária?
 
 Como uma grande quantidade de processamento é necessária para preparar dados para exibição em gráficos e tabelas, para permitir que os gráficos sejam exibidos de forma rápida e eficiente, os dados podem ser reduzidos de forma a manter o formato geral de um gráfico sem precisar processar cada ponto de dados desse gráfico.
@@ -45,6 +48,7 @@ Observação: nenhum dado real é perdido durante a redução da amostragem.  Vo
 
 
 
+[[how-downsampling-works]]
 === Como funciona a redução de amostragem
 
 Os dados são reduzidos sob as seguintes condições:
@@ -76,6 +80,7 @@ NOTE: Devido à forma como os dados são aproximados para redução da amostrage
 
 
 
+[[violations-on-downsampled-charts]]
 === Violações em gráficos subamostrados
 
 Ao visualizar gráficos com redução de amostragem, esteja ciente de que as violações não são mostradas.  Para ver as violações, você pode fazer uma das duas coisas:

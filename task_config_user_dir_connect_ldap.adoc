@@ -121,6 +121,7 @@ Clique em Incluir atributos opcionais para adicionar qualquer um dos seguintes a
 |===
 
 
+[[testing-your-user-directory-collector-configuration]]
 == Testando a configuração do coletor de diretório do usuário
 
 Você pode validar permissões de usuário LDAP e definições de atributos usando os seguintes procedimentos:
@@ -140,6 +141,7 @@ image:CloudSecure_LDAPDialog.png["Conexão LDAP"]
 
 
 
+[[troubleshooting-ldap-directory-collector-configuration-errors]]
 == Solução de problemas de erros de configuração do coletor de diretório LDAP
 
 A tabela a seguir descreve problemas conhecidos e soluções que podem ocorrer durante a configuração do coletor:

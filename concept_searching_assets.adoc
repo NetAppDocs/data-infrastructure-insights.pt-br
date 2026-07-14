@@ -66,6 +66,7 @@ A pesquisa não diferencia maiúsculas de minúsculas.
 
 
 
+[[search-using-indexed-terms]]
 == Pesquisar usando termos indexados
 
 Pesquisas que correspondem a mais termos indexados resultam em pontuações mais altas.

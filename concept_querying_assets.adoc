@@ -22,12 +22,14 @@ Você pode consultar os ativos de inventário físico ou virtual (e suas métric
 
 
 
+[[inventory-assets]]
 == Ativos de estoque
 
 Todos os tipos de ativos de inventário (também chamados de infraestrutura) (storage, switch, VM, Application, etc.) podem ser usados em consultas, widgets de painel e páginas de destino de ativos personalizadas. Os campos e contadores disponíveis para filtros, expressões e exibição variam entre os tipos de ativos.
 
 
 
+[[integration-metrics]]
 == Métricas de Integração
 
 Além de consultar ativos de inventário e suas métricas de desempenho associadas, você também pode consultar métricas de *dados de integração*, como aquelas geradas pelo Kubernetes ou Docker, ou fornecidas com o ONTAP Advanced Metrics.
@@ -36,6 +38,7 @@ image:QueryPageFilter.png["Exemplo de filtro de consulta de integração"]
 
 
 
+[[sharing-queries]]
 == Compartilhamento de consultas
 
 Controle o acesso às suas consultas escolhendo quem pode visualizá-las e editá-las. Por padrão, as novas consultas são privadas e visíveis apenas para você, e você pode escolher compartilhá-las com usuários específicos ou com toda a sua organização com níveis de permissão flexíveis (somente leitura ou edição).

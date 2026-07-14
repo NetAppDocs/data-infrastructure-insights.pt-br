@@ -14,6 +14,7 @@ O Data Infrastructure Insights usa o coletor de dados do Brocade Enterprise Fabr
 
 
 
+[[requirements]]
 == Requisitos
 
 * Endereço de rede ou nome de domínio totalmente qualificado para o servidor EFCM
@@ -25,9 +26,10 @@ O Data Infrastructure Insights usa o coletor de dados do Brocade Enterprise Fabr
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -42,9 +44,10 @@ O Data Infrastructure Insights usa o coletor de dados do Brocade Enterprise Fabr
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 

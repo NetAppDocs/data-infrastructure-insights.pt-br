@@ -24,6 +24,7 @@ A exclusão de alertas é configurada por locatário e inclui o seguinte:
 
 
 
+[[manage-exclusions-and-auditing]]
 == Gerenciar exclusões e auditorias
 
 * Os administradores podem adicionar ou remover extensões de arquivo, usuários individuais ou caminhos a qualquer momento.
@@ -32,6 +33,7 @@ A exclusão de alertas é configurada por locatário e inclui o seguinte:
 
 
 
+[[users-and-paths]]
 == Usuários e Caminhos
 
 * Lista de exclusão de usuários: adicione usuários para serem excluídos dos alertas.
@@ -46,6 +48,7 @@ Usuários individuais e caminhos de diretório podem ser adicionados ou removido
 
 
 
+[[file-types]]
 == Tipos de arquivo
 
 Uma vez adicionado à lista de Tipos de Arquivo, nenhum alerta de ataque de adulteração de arquivo será gerado para esse tipo de arquivo permitido. Observe que a política de Tipos de Arquivo se aplica somente à detecção de adulteração de arquivo.

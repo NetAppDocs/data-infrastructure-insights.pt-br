@@ -27,6 +27,7 @@ image:AIQ_Summary_Example.png["Resumo da página de armazenamento"]
 
 
 
+[[opening-the-digital-advisor-page]]
 == Abrindo a página do Digital Advisor
 
 Ao clicar no link para uma página do Digital Advisor , se você não estiver conectado à sua conta do Digital Advisor , execute as seguintes etapas para visualizar a página do Digital Advisor para o nó de armazenamento.
@@ -37,12 +38,14 @@ Ao clicar no link para uma página do Digital Advisor , se você não estiver co
 
 
 
+[[querying-for-risks]]
 == Consultando Riscos
 
 No Data Infrastructure Insights, você pode adicionar a coluna *monitoring.count* a uma consulta de armazenamento ou nó de armazenamento.  Se o resultado retornado incluir Digital Advisor- Sistemas de armazenamento monitorados, a coluna monitoring.count exibirá o número de riscos para o sistema de armazenamento ou nó.
 
 
 
+[[dashboards]]
 == Painéis
 
 Você pode criar widgets (por exemplo, gráfico de pizza, widget de tabela, barra, coluna, gráfico de dispersão e widgets de valor único) para visualizar riscos de objetos para armazenamento e nós de armazenamento para sistemas NetApp Clustered Data ONTAP monitorados pelo Digital Advisor.  "Riscos de objeto" pode ser selecionado como uma coluna ou métrica nesses widgets onde Armazenamento ou Nó de armazenamento é o objeto de foco.

@@ -18,6 +18,7 @@ Informações para cada usuário são fornecidas na Visão Geral do Usuário.  U
 
 
 
+[[user-profile]]
 == Perfil do usuário
 
 As informações do perfil do usuário incluem informações de contato e localização do usuário.  O perfil fornece as seguintes informações:
@@ -31,6 +32,7 @@ As informações do perfil do usuário incluem informações de contato e locali
 
 
 
+[[user-behavior]]
 == Comportamento do usuário
 
 As informações de comportamento do usuário identificam atividades e operações recentes realizadas pelo usuário.  Essas informações incluem:
@@ -53,12 +55,14 @@ As informações de comportamento do usuário identificam atividades e operaçõ
 
 
 
+[[refresh-interval]]
 == Intervalo de atualização
 
 A lista de usuários é atualizada a cada 12 horas.
 
 
 
+[[retention-policy]]
 == Política de retenção
 
 Se não for atualizada novamente, a lista de usuários será mantida por 13 meses.  Após 13 meses, os dados serão excluídos.  Se o seu ambiente de segurança de carga de trabalho for excluído, todos os dados associados ao ambiente serão excluídos.

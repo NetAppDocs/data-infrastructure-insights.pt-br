@@ -18,10 +18,12 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 
 
 
+[[tables-and-views]]
 == Tabelas e Views
 
 
 
+[[applicationdimension]]
 === dimensão_de_aplicação
 
 [cols="1,1,2"]
@@ -63,6 +65,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[applicationgroupbridge]]
 === ponte_do_grupo_de_aplicativos
 
 [cols="1,1,2"]
@@ -81,6 +84,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[applicationgroupdimension]]
 === dimensão_do_grupo_de_aplicação
 
 [cols="1,1,2"]
@@ -113,6 +117,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[businessentitydimension]]
 === business_entity_dimension
 
 [cols="1,1,2"]
@@ -157,6 +162,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[capacitytype]]
 === capacity_type
 
 *Chave primária:* tipo
@@ -188,6 +194,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[cardinals]]
 === cardeais
 
 [cols="1,1,2"]
@@ -200,6 +207,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[chargebackfact]]
 === chargeback_fact
 
 *Chave primária:* tk, dateTk
@@ -303,6 +311,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[datastoredimension]]
 === dimensão do datastore
 
 [cols="1,1,2"]
@@ -344,6 +353,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[datedimension]]
 === dimensão_data
 
 [cols="1,1,2"]
@@ -428,6 +438,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[diskgroupcapacityfact]]
 === disk_group_capacity_fact
 
 *Chave primária:* tk, dateTk
@@ -471,6 +482,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[diskgroupcapacityfuturefact]]
 === fato de capacidade futura do grupo de discos
 
 *Chave primária:* tk, dateTk
@@ -511,6 +523,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[diskgroupdimension]]
 === dimensão_do_grupo_de_discos
 
 [cols="1,1,2"]
@@ -562,6 +575,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[hostdimension]]
 === dimensão_do_host
 
 [cols="1,1,2"]
@@ -626,6 +640,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[hostgroupbridge]]
 === host_group_bridge
 
 [cols="1,1,2"]
@@ -644,6 +659,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[hostgroupdimension]]
 === host_group_dimension
 
 [cols="1,1,2"]
@@ -675,6 +691,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[internalvolumecapacityfact]]
 === fato de capacidade de volume interno
 
 *Chave primária:* tk, dateTk
@@ -800,6 +817,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[internalvolumedimension]]
 === dimensão_do_volume_interno
 
 [cols="1,1,2"]
@@ -869,6 +887,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[k8sclusterdimension]]
 === k8s_cluster_dimension
 
 [cols="1,1,2"]
@@ -901,6 +920,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[k8snamespacedimension]]
 === k8s_namespace_dimension
 
 [cols="1,1,2"]
@@ -939,6 +959,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[k8snamespacegroupbridge]]
 === k8s_namespace_group_bridge
 
 [cols="1,1,2"]
@@ -957,6 +978,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[k8snamespacegroupdimension]]
 === k8s_namespace_group_dimension
 
 [cols="1,1,2"]
@@ -989,6 +1011,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[k8snodedimension]]
 === k8s_node_dimension
 
 [cols="1,1,2"]
@@ -1030,6 +1053,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[k8spvdimension]]
 === k8s_pv_dimension
 
 [cols="1,1,2"]
@@ -1074,6 +1098,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[k8spvccapacityfact]]
 === k8s_pvc_capacity_fact
 
 *Chave primária:* tk, dateTk
@@ -1118,6 +1143,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[k8spvcdimension]]
 === k8s_pvc_dimension
 
 [cols="1,1,2"]
@@ -1162,6 +1188,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[k8sworkloaddimension]]
 === k8s_workload_dimension
 
 [cols="1,1,2"]
@@ -1198,6 +1225,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[qtreecapacityfact]]
 === qtree_capacity_fact
 
 *Chave primária:* tk, dateTk
@@ -1291,6 +1319,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[qtreedimension]]
 === qtree_dimension
 
 [cols="1,1,2"]
@@ -1338,6 +1367,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[serviceleveldimension]]
 === service_level_dimension
 
 [cols="1,1,2"]
@@ -1377,6 +1407,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[sptimetofill]]
 === sp_time_to_fill
 
 *Chave primária:* saspFactTk
@@ -1402,6 +1433,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[storageandstoragepoolcapacityfact]]
 === fato de capacidade de storage e pool de storage
 
 *Chave primária:* tk, dateTk
@@ -1522,6 +1554,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[storageandstoragepoolcapacityfuturefact]]
 === fato_futuro_de_capacidade_de_storage_e_pool_de_storage
 
 *Chave primária:* tk, dateTk
@@ -1574,6 +1607,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[storagedimension]]
 === dimensão_de_storage
 
 [cols="1,1,2"]
@@ -1636,6 +1670,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[storagenodecapacityfact]]
 === storage_node_capacity_fact
 
 *Chave primária:* tk, dateTk
@@ -1685,6 +1720,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[storagenodedimension]]
 === dimensão_do_storage_node
 
 [cols="1,1,2"]
@@ -1735,6 +1771,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[storagepooldimension]]
 === dimensão_do_pool_de_storage
 
 [cols="1,1,2"]
@@ -1804,6 +1841,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[tierdimension]]
 === dimensão_de_tier
 
 [cols="1,1,2"]
@@ -1846,6 +1884,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[vmcapacityfact]]
 === vm_capacity_fact
 
 *Chave primária:* tk, dateTk
@@ -1948,6 +1987,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[vmdimension]]
 === vm_dimension
 
 [cols="1,1,2"]
@@ -1992,6 +2032,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[volumecapacityfact]]
 === volume_capacity_fact
 
 [cols="1,1,2"]
@@ -2079,6 +2120,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[volumedimension]]
 === dimensão_do_volume
 
 [cols="1,1,2"]
@@ -2147,6 +2189,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[volumefactcurrent]]
 === volume_fact_current
 
 *Chave primária:* volumeId
@@ -2202,6 +2245,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[volumehistorycapacityfact]]
 === volume_history_capacity_fact
 
 *Chave primária:* tk, dateTk
@@ -2323,6 +2367,7 @@ Esta referência fornece informações detalhadas de esquema para o banco de dad
 '''
 
 
+[[volumelastaccessedtime]]
 === volume_last_accessed_time
 
 *Chave primária:* volumeName, storageIdentifier

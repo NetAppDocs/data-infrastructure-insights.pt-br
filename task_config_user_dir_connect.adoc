@@ -111,6 +111,7 @@ Clique em Incluir atributos opcionais para adicionar qualquer um dos seguintes a
 |===
 
 
+[[testing-your-user-directory-collector-configuration]]
 == Testando a configuração do coletor de diretório do usuário
 
 Você pode validar permissões de usuário LDAP e definições de atributos usando os seguintes procedimentos:
@@ -131,6 +132,7 @@ image:cs_ADExample.png["Conexão AD"]
 
 
 
+[[troubleshooting-user-directory-collector-configuration-errors]]
 == Solução de problemas de erros de configuração do coletor de diretório de usuário
 
 A tabela a seguir descreve problemas conhecidos e soluções que podem ocorrer durante a configuração do coletor:

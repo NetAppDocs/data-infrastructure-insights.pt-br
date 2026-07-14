@@ -18,6 +18,7 @@ image:Kubernetes_List_Page_new.png["Página de lista do Kubernetes"]
 
 
 
+[[cluster-list]]
 === Lista de clusters
 
 A lista de clusters exibe as seguintes informações para cada cluster no seu locatário:
@@ -32,6 +33,7 @@ A lista de clusters exibe as seguintes informações para cada cluster no seu lo
 
 
 
+[[refining-the-filter]]
 == Refinando o Filtro
 
 Ao filtrar, ao começar a digitar, você terá a opção de criar um *filtro curinga* com base no texto atual.  Selecionar esta opção retornará todos os resultados que correspondem à expressão curinga.  Você também pode criar *expressões* usando NOT ou AND, ou pode selecionar a opção "Nenhum" para filtrar valores nulos no campo.

@@ -14,11 +14,12 @@ O coletor de dados REST da série E da NetApp reúne dados de inventário, logs 
 
 
 
+[[terminology]]
 == Terminologia
 
 O Data Infrastructure Insights adquire as seguintes informações de inventário do NetApp E-Series, usando REST. Para cada tipo de ativo adquirido, é mostrada a terminologia mais comum usada para esse ativo. Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
 
@@ -44,6 +45,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[requirements]]
 == Requisitos
 
 * O endereço IP de cada controlador no array
@@ -54,9 +56,10 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -65,9 +68,10 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -79,12 +83,14 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 |===
 
 
+[[e-series-terminology-landing-page]]
 == Terminologia da Série E (Página de destino)
 
 Os termos a seguir se aplicam a objetos ou referências que você pode encontrar nas páginas de destino de ativos do NetApp E-Series.  Muitos desses termos também se aplicam a outros coletores de dados.
 
 
 
+[[storage]]
 === Armazenar
 
 * Modelo – nome do modelo do dispositivo.
@@ -100,6 +106,7 @@ Os termos a seguir se aplicam a objetos ou referências que você pode encontrar
 
 
 
+[[storage-pool]]
 === Pool de armazenamento
 
 * Armazenamento – em qual matriz de armazenamento esse pool reside. Obrigatório
@@ -117,6 +124,7 @@ Os termos a seguir se aplicam a objetos ou referências que você pode encontrar
 
 
 
+[[storage-node]]
 === Nó de armazenamento
 
 * Armazenamento – de qual matriz de armazenamento esse nó faz parte. Obrigatório
@@ -135,6 +143,7 @@ Os termos a seguir se aplicam a objetos ou referências que você pode encontrar
 
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Informações adicionais sobre este coletor de dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

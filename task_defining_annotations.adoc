@@ -31,6 +31,7 @@ Por exemplo, se um ativo estiver sendo arrendado e o arrendamento expirar dentro
 
 
 
+[[default-annotation-types]]
 == Tipos de anotação padrão
 
 O Data Infrastructure Insights fornece alguns tipos de anotação padrão.  Essas anotações podem ser usadas para filtrar ou agrupar dados.
@@ -86,6 +87,7 @@ NOTE: Alias, Data Center, Hot, Service Level, Sunset, Switch Level, Tier e Viola
 
 
 
+[[creating-custom-annotations]]
 == Criando anotações personalizadas
 
 Usando anotações, você pode adicionar dados comerciais personalizados específicos aos ativos que correspondem às suas necessidades comerciais.  Embora o Data Infrastructure Insights forneça um conjunto de anotações padrão, você pode querer visualizar dados de outras maneiras.  Os dados em anotações personalizadas complementam os dados do dispositivo já coletados, como fabricante do armazenamento, volumes numéricos e estatísticas de desempenho.  Os dados que você adiciona usando anotações não são descobertos pelo Data Infrastructure Insights.

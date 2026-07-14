@@ -20,6 +20,7 @@ O Data Infrastructure Insights Workload Security integra-se ao ONTAP para recebe
 
 
 
+[[prerequisites]]
 == Pré-requisitos
 
 * Versão mínima do ONTAP : 9.13.0.
@@ -30,6 +31,7 @@ image:WS_Access_Denied_Enable_in_Collector.png["Habilitar acesso negado na confi
 
 
 
+[[user-permissions-required]]
 == Permissões de usuário necessárias
 
 Se o Coletor de Dados for adicionado usando credenciais de administração de cluster, nenhuma nova permissão será necessária.
@@ -46,6 +48,7 @@ Leia mais sobre como configurar outroslink:task_add_collector_svm.html["Permiss�
 
 
 
+[[access-denied-events]]
 == Eventos de acesso negado
 
 Depois que os eventos forem adquiridos do sistema ONTAP , a página Análise Forense de Segurança de Carga de Trabalho mostrará eventos de Acesso Negado.  Além das informações exibidas, você pode visualizar as permissões de usuário ausentes para uma operação específica adicionando a coluna _Atividade desejada_ à tabela no ícone de engrenagem.

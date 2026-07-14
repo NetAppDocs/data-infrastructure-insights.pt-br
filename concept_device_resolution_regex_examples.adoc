@@ -14,6 +14,7 @@ Se você selecionou a abordagem de expressão regular como sua estratégia de no
 
 
 
+[[formatting-regular-expressions]]
 == Formatando expressões regulares
 
 Ao criar expressões regulares para resolução automática do Data Infrastructure Insights , você pode configurar o formato de saída inserindo valores em um campo chamado _FORMAT_.
@@ -52,10 +53,12 @@ Os hifens entre as variáveis fornecem um exemplo de texto constante que é inse
 
 
 
+[[examples]]
 == Exemplos
 
 
 
+[[example-1-showing-zone-names]]
 === Exemplo 1 mostrando nomes de zonas
 
 Neste exemplo, você usa a expressão regular para extrair um nome de host do nome da zona.  Você pode criar uma expressão regular se tiver algo semelhante aos seguintes nomes de zona:
@@ -86,6 +89,7 @@ A expressão regular pode ser dividida em seus componentes:
 
 
 
+[[example-2]]
 === Exemplo 2
 
 Neste exemplo, pule até o primeiro sublinhado "_", depois combine E e tudo depois dele até o segundo "_" e então pule tudo depois dele.
@@ -98,6 +102,7 @@ Neste exemplo, pule até o primeiro sublinhado "_", depois combine E e tudo depo
 
 
 
+[[example-3]]
 === Exemplo 3
 
 Os parênteses "( )" ao redor da última seção na Expressão Regular (abaixo) identificam qual parte é o nome do host.  Se você quisesse que VSAN3 fosse o nome do host, seria: [a-zA-Z0-9]+_([a-zA-Z0-9]+).*
@@ -110,6 +115,7 @@ Os parênteses "( )" ao redor da última seção na Expressão Regular (abaixo) 
 
 
 
+[[example-4-showing-a-more-complicated-naming-pattern]]
 === Exemplo 4 mostrando um padrão de nomenclatura mais complicado
 
 Você pode criar uma expressão regular se tiver algo semelhante aos seguintes nomes de zona:
@@ -139,6 +145,7 @@ Em outras palavras, a combinação .* indica qualquer caractere, qualquer númer
 
 
 
+[[example-5-showing-zone-names-without-a-pattern]]
 === Exemplo 5 mostrando nomes de zonas sem um padrão
 
 Você pode criar uma expressão regular se tiver algo semelhante aos seguintes nomes de zona:
@@ -163,6 +170,7 @@ A expressão regular pode ser dividida em seus componentes:
 
 
 
+[[example-6-showing-computer-names-with-a-pattern]]
 === Exemplo 6 mostrando nomes de computadores com um padrão
 
 Você pode criar uma expressão regular se tiver algo semelhante aos seguintes nomes de zona:
@@ -201,6 +209,7 @@ O resultado disso faria com que a variável \1 contivesse qualquer sequência al
 
 
 
+[[example-7]]
 === Exemplo 7
 
 *Zona:* meuNomeDoComputador123_HBA1_Symm1_FA1
@@ -211,6 +220,7 @@ O resultado disso faria com que a variável \1 contivesse qualquer sequência al
 
 
 
+[[example-8]]
 === Exemplo 8
 
 Este exemplo encontra tudo antes do primeiro _.
@@ -225,6 +235,7 @@ Exp. regular: (.*?)_.*
 
 
 
+[[example-9]]
 === Exemplo 9
 
 Este exemplo encontra tudo depois do 1º _ e até o segundo _.
@@ -237,6 +248,7 @@ Este exemplo encontra tudo depois do 1º _ e até o segundo _.
 
 
 
+[[example-10]]
 === Exemplo 10
 
 Este exemplo extrai "MyComputerName123" dos exemplos de zona.
@@ -253,6 +265,7 @@ Storage3_Switch3_MyComputerName123T_A3_FC3
 
 
 
+[[example-11]]
 === Exemplo 11
 
 *Zona:* Armazenamento1_Switch1_NomeDoMeuComputador123A_A1_FC1
@@ -263,6 +276,7 @@ Storage3_Switch3_MyComputerName123T_A3_FC3
 
 
 
+[[example-12]]
 === Exemplo 12
 
 O ^ (circunflexo ou circunflexo) *dentro de colchetes* nega a expressão, por exemplo, [^Ff] significa qualquer coisa, exceto F maiúsculo ou minúsculo, e [^az] significa tudo, exceto a até z minúsculo, e no caso acima, qualquer coisa, exceto _.  A instrução de formato adiciona "-" ao nome do host de saída.
@@ -275,6 +289,7 @@ O ^ (circunflexo ou circunflexo) *dentro de colchetes* nega a expressão, por ex
 
 
 
+[[example-13]]
 === Exemplo 13
 
 Neste exemplo, o alias de armazenamento é delimitado por "\" e a expressão precisa usar "\\" para definir que há realmente "\" sendo usados na string e que eles não fazem parte da expressão em si.
@@ -287,6 +302,7 @@ Neste exemplo, o alias de armazenamento é delimitado por "\" e a expressão pre
 
 
 
+[[example-14]]
 === Exemplo 14
 
 Este exemplo extrai "PD-RV-W-AD-2" dos exemplos de zona.
@@ -299,6 +315,7 @@ Este exemplo extrai "PD-RV-W-AD-2" dos exemplos de zona.
 
 
 
+[[example-15]]
 === Exemplo 15
 
 A configuração de formato neste caso adiciona "US-BV-" ao nome do host.

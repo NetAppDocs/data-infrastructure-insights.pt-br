@@ -18,6 +18,7 @@ O Data Infrastructure Insights fornece monitoramento abrangente da integridade d
 
 
 
+[[the-infrastructure-health-dashboard]]
 == O painel de saúde da infraestrutura
 
 
@@ -31,6 +32,7 @@ Por padrão, as pontuações de saúde são agrupadas por data center; você pod
 
 
 
+[[configure-monitors-to-use-for-infrastructure-health]]
 == Configurar monitores para uso na integridade da infraestrutura
 
 As pontuações de integridade são orientadas por alertas configurados para inclusão nos cálculos de integridade do sistema.
@@ -47,6 +49,7 @@ image:infra_health_monitor_advanced_config.png["monitore a configuração avanç
 
 
 
+[[health-scores-explained]]
 == Pontuações de saúde explicadas
 
 As pontuações são apresentadas em uma escala de 0 a 100, sendo 100 a saúde plena. Objetos de infraestrutura monitorados que estão enfrentando problemas atualmente ou recentemente diminuirão essa pontuação de acordo com as seguintes médias ponderadas:

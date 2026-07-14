@@ -16,12 +16,14 @@ image:Kubernetes_Detail_Page_new.png["Página de detalhes do cluster"]
 
 
 
+[[namespace-node-and-pod-counts]]
 == Contagens de namespace, nó e pod
 
 As contagens no topo da página mostram o número total de namespaces, nós e pods no cluster, bem como o número de popds que estão atualmente em alerta e pendentes.
 
 
 
+[[shared-resources-and-saturation]]
 == Recursos Compartilhados e Saturação
 
 No canto superior direito da página de detalhes está a saturação do cluster como uma porcentagem atual, bem como um gráfico mostrando a tendência recente ao longo do tempo.  A saturação do cluster é a maior saturação de CPU, memória ou armazenamento em cada ponto no tempo.
@@ -32,6 +34,7 @@ Os dispositivos com maior uso são mostrados em uma tabela na parte inferior.  C
 
 
 
+[[namespaces]]
 == Espaços de nomes
 
 A guia Namespaces exibe uma lista de todos os namespaces no seu ambiente Kubernetes, mostrando o uso de CPU e memória, bem como uma contagem de cargas de trabalho em cada namespace.  Clique nos links Nome para explorar cada namespace.
@@ -40,6 +43,7 @@ image:Kubernetes_Namespace_tab_new.png["lista de namespaces atuais em seu ambien
 
 
 
+[[workloads]]
 == Cargas de trabalho
 
 Da mesma forma, a guia Cargas de trabalho exibe uma lista das cargas de trabalho em cada namespace, mostrando novamente o uso de CPU e memória.  Clicar nos links do Namespace permite que você se aprofunde em cada um deles.
@@ -48,6 +52,7 @@ image:Kubernetes_Workloads_tab_new.png["lista de namespaces atuais em seu ambien
 
 
 
+[[the-cluster-wheel]]
 == A "Roda" do Cluster
 
 image:Kubernetes_Wheel_Section.png["Roda de Cluster"]
@@ -74,6 +79,7 @@ image:Kubernetes_Capacity_Info.png["Capacidade e alocação de nós"]
 
 
 
+[[a-note-about-the-gauges]]
 == Uma nota sobre os medidores
 
 Os indicadores de memória e CPU mostram três cores, pois mostram _usado_ em relação à _capacidade alocável_ e à _capacidade total_.

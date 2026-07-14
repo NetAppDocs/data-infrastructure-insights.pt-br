@@ -14,15 +14,17 @@ Este coletor de dados adquire inventário
 
 
 
+[[terminology]]
 == Terminologia
 
 O Data Infrastructure Insights adquire inventário deste coletor.
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -43,9 +45,10 @@ O Data Infrastructure Insights adquire inventário deste coletor.
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 

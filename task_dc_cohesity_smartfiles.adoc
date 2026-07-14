@@ -14,9 +14,10 @@ Este coletor baseado em API REST adquirirá um cluster Cohesity, descobrindo as 
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -31,9 +32,10 @@ Este coletor baseado em API REST adquirirá um cluster Cohesity, descobrindo as 
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -48,6 +50,7 @@ Este coletor baseado em API REST adquirirá um cluster Cohesity, descobrindo as 
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

@@ -18,6 +18,7 @@ Este coletor de dados oferece suporte à coleta de inventário e desempenho das 
 
 
 
+[[service-account-requirements]]
 == Requisitos da conta de serviço
 
 * Você deve criar uma conta de serviço seguindo as instruções emlink:https://cloud.google.com/iam/docs/creating-managing-service-accounts["Criação/Gerenciamento de Contas de Serviço"] .  Esta conta de serviço é identificada por um ID exclusivo, conhecido como _clientId_, que será usado como nome de usuário.
@@ -27,6 +28,7 @@ Este coletor de dados oferece suporte à coleta de inventário e desempenho das 
 
 
 
+[[configuration]]
 == Configuração
 
 [cols="50,50"]
@@ -53,6 +55,7 @@ Este coletor de dados oferece suporte à coleta de inventário e desempenho das 
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
 [cols="50,50"]
@@ -73,6 +76,7 @@ Este coletor de dados oferece suporte à coleta de inventário e desempenho das 
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

@@ -14,6 +14,7 @@ O Data Infrastructure Insights usa esse coletor de dados para coletar métricas 
 
 
 
+[[installation]]
 == Instalação
 
 . Em *Observabilidade > Coletores*, clique em *+Coletor de Dados*.  Escolha ActiveMQ.
@@ -29,12 +30,14 @@ image:ActiveMQDCConfigWindows.png["Configuração do ActiveMQ"]
 
 
 
+[[setup]]
 == Configurar
 
 Informações podem ser encontradas em http://activemq.apache.org/getting-started.html["Documentação do ActiveMQ"]
 
 
 
+[[objects-and-counters]]
 == Objetos e Contadores
 
 Os seguintes objetos e seus contadores são coletados:
@@ -54,6 +57,7 @@ Os seguintes objetos e seus contadores são coletados:
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Informações adicionais podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página.

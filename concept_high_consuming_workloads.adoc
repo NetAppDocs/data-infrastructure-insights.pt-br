@@ -14,6 +14,7 @@ Cargas de trabalho de alto impacto podem reduzir o desempenho de outras cargas d
 
 
 
+[[terminology]]
 === Terminologia
 
 Ao falar sobre carga de trabalho ou impacto de recursos, as seguintes definições são úteis.
@@ -32,6 +33,7 @@ Uma *Contenção* ocorre quando é determinado que IOPS estão afetando outros r
 
 
 
+[[high-consuming-workloads]]
 === Cargas de trabalho de alto consumo
 
 Quaisquer cargas de trabalho de alto consumo detectadas pelo Data Infrastructure Insights são mostradas no Insight _Recursos compartilhados sob estresse_.  Navegue até *Observabilidade > Insights de infraestrutura* para visualizar esses insights.
@@ -48,6 +50,7 @@ image:Insights_Demanding_Workload_Chart.png["Gráfico de carga de trabalho exige
 
 
 
+[[what-do-i-do-to-resolve-saturation]]
 === O que devo fazer para resolver a saturação?
 
 Há uma série de medidas que você pode tomar para reduzir ou eliminar a chance de saturação do seu inquilino.  Aqui estão algumas coisas que você pode tentar.

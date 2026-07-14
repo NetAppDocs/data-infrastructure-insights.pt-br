@@ -35,6 +35,7 @@ Uma lista de todos os coletores de dados instalados é exibida.  A lista fornece
 
 
 
+[[controlling-data-collector-polling]]
 == Controlando a pesquisa do coletor de dados
 
 Depois de fazer uma alteração em um coletor de dados, você pode querer que ele faça uma pesquisa imediatamente para verificar suas alterações ou pode querer adiar a coleta de dados em um coletor de dados por um, três ou cinco dias enquanto trabalha em um problema.
@@ -51,6 +52,7 @@ Ações em massa podem ser executadas simultaneamente em vários coletores de da
 
 
 
+[[editing-data-collector-information]]
 == Editando informações do coletor de dados
 
 Você pode editar as informações de configuração do coletor de dados existentes.
@@ -83,6 +85,7 @@ Ao editar vários coletores de dados, o botão *Testar configuração* não est�
 
 
 
+[[cloning-data-collectors]]
 == Clonagem de coletores de dados
 
 Usando o recurso de clonagem, você pode adicionar rapidamente uma fonte de dados que tenha as mesmas credenciais e atributos de outra fonte de dados.  A clonagem permite que você configure facilmente várias instâncias do mesmo tipo de dispositivo.
@@ -104,6 +107,7 @@ A operação de clonagem copia todos os outros atributos e configurações para 
 
 
 
+[[performing-bulk-actions-on-data-collectors]]
 == Executando ações em massa em coletores de dados
 
 Você pode editar simultaneamente algumas informações para vários coletores de dados.  Este recurso permite que você inicie uma enquete, adie a enquete e retome a enquete em vários coletores de dados.  Além disso, você pode excluir vários coletores de dados.

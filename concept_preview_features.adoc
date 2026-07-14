@@ -20,6 +20,7 @@ Se você estiver interessado em experimentar um ou mais desses recursos, entre e
 
 
 
+[[current-previews]]
 == Pré-visualizações atuais:
 
 * link:ai_for_dii_overview.html["Data Infrastructure Insights Assistente de IA para insights de infraestrutura de dados"]Pré-visualização.

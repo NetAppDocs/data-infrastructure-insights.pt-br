@@ -14,9 +14,10 @@ Este coletor de dados oferece suporte à coleta de inventário de configuraçõe
 
 
 
+[[configuration]]
 == Configuração
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -31,9 +32,10 @@ Este coletor de dados oferece suporte à coleta de inventário de configuraçõe
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descrição 
 
@@ -75,6 +77,7 @@ Este coletor de dados oferece suporte à coleta de inventário de configuraçõe
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Informações adicionais sobre este Coletor de Dados podem ser encontradas emlink:concept_requesting_support.html["Apoiar"] página ou nolink:reference_data_collector_support_matrix.html["Matriz de Suporte ao Coletor de Dados"] .

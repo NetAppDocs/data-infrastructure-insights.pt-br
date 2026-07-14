@@ -18,6 +18,7 @@ Crie e gerencie entidades comerciais para seu ambiente corporativo usando o tipo
 
 
 
+[[creating-a-business-entity]]
 == Criando uma Entidade Empresarial
 
 Para criar uma entidade empresarial, faça o seguinte:
@@ -39,6 +40,7 @@ NOTE: Os valores selecionados devem compor uma entidade empresarial total exclus
 
 
 
+[[applying-a-business-entity-to-an-object]]
 == Aplicando uma Entidade Comercial a um Objeto
 
 A maneira mais fácil de aplicar uma entidade comercial a um objeto ou objetos é por meio de uma consulta.
@@ -59,6 +61,7 @@ NOTE: Um objeto pode ter apenas uma entidade comercial associada a ele.
 
 
 
+[[removing-a-business-entity-from-an-object]]
 == Removendo uma Entidade Comercial de um objeto
 
 Para remover uma entidade comercial de um ou mais objetos, consulte e selecione o(s) objeto(s), clique em *Ações em massa* e selecione _Remover anotação_.  Selecione a anotação Entidade Comercial e clique em *Excluir*.

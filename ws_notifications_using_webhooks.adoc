@@ -45,6 +45,7 @@ A instância do canal webhook é composta pelos seguintes elementos
 |===
 
 
+[[creating-a-webhook]]
 == Criando um webhook
 
 Para criar um Webhook de segurança de carga de trabalho, vá para Admin > Notificações e selecione a aba “Webhooks de segurança de carga de trabalho”.  A imagem a seguir mostra uma tela de exemplo de criação de webhook do Slack.
@@ -60,6 +61,7 @@ image:ws_webhook_slack_example.png["Exemplo de webhook do Slack para Segurança 
 
 
 
+[[parameters-what-are-they-and-how-to-use-them]]
 == Parâmetros: O que são e como usá-los?
 
 Parâmetros de alerta são valores dinâmicos preenchidos por alerta.  Por exemplo, o parâmetro _%%severity%%_ será substituído pelo tipo de gravidade do alerta.
@@ -68,6 +70,7 @@ Observe que as substituições não são realizadas ao clicar no botão "Testar 
 
 
 
+[[custom-parameters-and-secrets]]
 === Parâmetros e segredos personalizados
 
 Nesta seção, você pode adicionar quaisquer parâmetros personalizados e/ou segredos que desejar.  Um parâmetro personalizado ou segredo pode estar no URL ou no corpo da mensagem.  Os segredos permitem que o usuário configure um parâmetro personalizado seguro, como senha, apiKey etc.
@@ -78,6 +81,7 @@ image:ws_webhook_parameters_example.png["webhook de segurança de carga de traba
 
 
 
+[[workload-security-webhooks-list-page]]
 == Página da lista de webhooks de segurança de carga de trabalho
 
 Na página da lista Webhooks, são exibidos os campos Nome, Criado por, Criado em, Status, Seguro e Último relatório.  Observação: o valor da coluna 'status' continuará mudando com base no resultado do último gatilho do webhook.  A seguir estão alguns exemplos de resultados de status.
@@ -115,6 +119,7 @@ Na página de listagem de webhooks, os usuários também podem editar/duplicar/e
 
 
 
+[[configure-webhook-notification-in-alert-policy]]
 == Configurar notificação de Webhook na política de alerta
 
 Para adicionar uma notificação de webhook a uma política de alerta, acesse -Segurança de carga de trabalho > Políticas- e selecione uma política existente ou adicione uma nova política.  Na seção _Ações_ > menu suspenso _Notificações de webhook_, selecione os webhooks necessários.
@@ -131,6 +136,7 @@ Observação: as notificações por e-mail são independentes de políticas e se
 
 
 
+[[workload-security-webhook-examples]]
 === Exemplos de webhook de segurança de carga de trabalho
 
 Webhooks paralink:ws_webhook_example_slack.html["Folga"]

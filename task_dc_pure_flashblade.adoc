@@ -18,6 +18,7 @@ Data Infrastructure Insights utiliza o coletor de dados Pure Storage FlashBlade 
 
 
 
+[[terminology]]
 == Terminologia
 
 Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
@@ -48,6 +49,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[requirements]]
 == Requisitos
 
 * Endereço IP do sistema de armazenamento ou nome de domínio totalmente qualificado
@@ -57,6 +59,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 
 
 
+[[configuration]]
 == Configuração
 
 [cols="50,50"]
@@ -74,6 +77,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 |===
 
 
+[[advanced-configuration]]
 == Configuração avançada
 
 [cols="50,50"]
@@ -94,12 +98,14 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 |===
 
 
+[[troubleshooting]]
 == Solução de problemas
 
 Algumas coisas que você pode tentar se tiver problemas com este coletor de dados:
 
 
 
+[[inventory]]
 === Inventário
 
 [cols="50,50"]
