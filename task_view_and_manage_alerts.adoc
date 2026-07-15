@@ -83,3 +83,32 @@ Se você tiver um Monitor com uma janela de 30 minutos que percebe que uma condi
 É possível configurar um monitor de forma que a condição *sempre* exista no objeto monitorado — por exemplo, IOPS > 1 ou latência > 0.  Eles geralmente são criados como monitores de "teste" e depois esquecidos.  Esses monitores criam alertas que ficam permanentemente abertos nos objetos constituintes, o que pode causar estresse no sistema e problemas de estabilidade ao longo do tempo.
 
 Para evitar isso, o Data Infrastructure Insights fechará automaticamente qualquer alerta "permanentemente ativo" após 7 dias.  Observe que as condições subjacentes do monitor podem (provavelmente) continuar a existir, fazendo com que um novo alerta seja emitido quase imediatamente, mas esse fechamento de alertas "sempre ativos" alivia parte do estresse do sistema que pode ocorrer de outra forma.
+
+
+
+[[maintenance-windows]]
+== Janelas de manutenção
+
+As janelas de manutenção permitem suprimir notificações de alerta durante períodos de manutenção agendados, ajudando a evitar interrupções desnecessárias.
+
+Com as Janelas de Manutenção, você pode agendar períodos específicos de manutenção durante os quais as notificações de alerta são suprimidas para objetos e métricas que você escolher. Por exemplo, você pode suprimir as notificações de alerta acionadas por sistemas de storage específicos quando esses sistemas estiverem em um período de upgrade planejado.
+
+Você pode escolher se deseja suprimir tanto os alertas quanto as notificações durante a janela, ou suprimir apenas as notificações, mas continuar detectando os alertas.
+
+image:Maintenance_Windows_example.png["Exemplo de Janela de Manutenção, largura=400"]
+
+
+
+[[creating-a-maintenance-window]]
+=== Criando uma janela de manutenção
+
+Para criar uma janela de manutenção:
+
+. Acesse *Observability > Alerts > Maintenance Windows* e clique em *+ Maintenance Window*.
+. Insira um *Nome* para a janela de manutenção. Para melhores resultados, escolha um nome significativo e específico.
+. Selecione o *dispositivo de storage* ou o *atributo do objeto*.
+. Filtre pelo *monitor ou monitores*. Caracteres curinga são aceitos.
+. Selecione a *Hora de Início* e a *Hora de Término* para o período de manutenção.
+. Escolha se deseja suprimir *alertas e notificações* ou *apenas notificações* (os alertas ainda são detectados durante a janela).
+. Clique em *Salvar* para criar a janela de manutenção.
+

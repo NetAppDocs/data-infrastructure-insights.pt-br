@@ -22,6 +22,6 @@ A mensagem suporta Markdown básico, permitindo aplicar formatação como negrit
 
 Escolha se o usuário verá a mensagem apenas no próximo login ou em todos os logins subsequentes.
 
-image:login_banner_settings.png["configurações do banner de login"]
+image:login_banner_settings.png["Configurações do banner de login, largura=400"]
 
 Note que o usuário _deve_ confirmar a mensagem de login para poder descartá-la. Após o descarte, quaisquer pop-ups adicionais (atualizações de "Novidades", atualizações dos Termos de Serviço, etc.) serão exibidos.

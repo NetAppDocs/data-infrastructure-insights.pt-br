@@ -14072,8 +14072,6 @@
   <block id="810bac3bcbfe61628b10fe3df2e0ea96" category="paragraph">Um administrador pode definir a mensagem em Admin &gt; Notificações, na guia "Banner de login".</block>
   <block id="22f60aff39394bad553a00e2940bdf11" category="paragraph">A mensagem suporta Markdown básico, permitindo aplicar formatação como negrito, itálico, tabelas, etc.</block>
   <block id="6a46079dd2d659655fc832470519e71a" category="paragraph">Escolha se o usuário verá a mensagem apenas no próximo login ou em todos os logins subsequentes.</block>
-  <block id="6a5f1dd41e7d3fa22fbd71d29b46cea4" category="inline-image-macro">configurações do banner de login</block>
-  <block id="bd6c3bd0a46b9e6da4828acea4a9e315" category="paragraph"><block ref="bd6c3bd0a46b9e6da4828acea4a9e315" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1ef61a1b7e25b910ec7beca0741bd208" category="paragraph">Note que o usuário _deve_ confirmar a mensagem de login para poder descartá-la. Após o descarte, quaisquer pop-ups adicionais (atualizações de "Novidades", atualizações dos Termos de Serviço, etc.) serão exibidos.</block>
   <block id="38f64824b0d19083b9c439a8b4af41e4" category="admonition">Após instalar um agente em um servidor/VM, Data Infrastructure Insights coleta métricas desse sistema, além de coletar de quaisquer coletores de dados que você configurar. Essas métricas são coletadas como métricas de "Nó".</block>
   <block id="7fa36585f976625a51b4f3be0f46f0b5" category="cell">Esses erros podem ocorrer se você tiver um repositório docker personalizado ou privado e ainda não tiver configurado o Kubernetes Monitoring Operator para reconhecê-lo corretamente. <block ref="2d47cbc88497421e2fe69677ce7d4cef" category="inline-xref-macro-rx"></block> sobre configurar para repositório personalizado/privado.</block>
@@ -14176,4 +14174,29 @@
   <block id="4f23d2244ea630f361d554b54b77bf03" category="list-text">Endereço IP do servidor Red Hat OpenShift Virtualization na porta 6443 via API REST</block>
   <block id="427f91a8692cb3d3ee52ca20ff3b659c" category="cell">Porta utilizada para comunicação HTTPS com o RHOV. O padrão é 6443.</block>
   <block id="635a6e63b01914992d3584137f9e6ba6" category="sidebar">Nutanix AHV</block>
+  <block id="a257f7f4b2f6e07845ce567df142ad00" category="section-title">Julho de 2026</block>
+  <block id="8014692a31dc15996a299cb6c0683d99" category="section-title">Nova página inicial do assistente de IA</block>
+  <block id="217f492cb52cc14d717c54a81afbacfe" category="paragraph">O Assistente de IA da DII agora conta com uma página inicial dedicada, colocando a análise inteligente de infraestrutura em destaque. Inicie novas conversas instantaneamente, retome sua última sessão com um clique ou comece rapidamente com sugestões de prompts.</block>
+  <block id="dac1263103d1a0aa0f29eb002af291af" category="inline-image-macro">Painel de IA padrão, largura=800</block>
+  <block id="6c78ab210f62dbc85fe22910374ff62b" category="paragraph"><block ref="6c78ab210f62dbc85fe22910374ff62b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7bd22707614b54a5cb3a8b8f12117bb9" category="paragraph">Acesse a página inicial pelo *Assistente de IA* no menu de navegação ou abra o Assistente de IA de qualquer lugar usando o ícone de "estrelas" no canto superior esquerdo.</block>
+  <block id="8946b454436a3b11aac461eaa734adfe" category="inline-image-macro">Menu de navegação do assistente de IA, largura=600</block>
+  <block id="2c8265bfd753072f003bc24b1df77111" category="inline-image-macro">Acesso ao assistente de IA de qualquer lugar, width=300</block>
+  <block id="9f6f73922ecce265167332ab3cf87f92" category="paragraph"><block ref="f633ce7b4fef8820f87a799ad31a7cb5" category="inline-image-macro-rx" type="image"></block> <block ref="fefcd3a065be75939d8d47b234d9d0c0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="94187d26105df3824bea268e9ae25535" category="inline-image-macro">Configurações do banner de login, largura=400</block>
+  <block id="d1e27aaece77e53fc070c0b0ce490e10" category="paragraph"><block ref="d1e27aaece77e53fc070c0b0ce490e10" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="58b6e1ec0b6ec5b4a454251805124640" category="section-title">Janelas de manutenção</block>
+  <block id="3f3ec1c35b7249f193c068e0a8c036d3" category="paragraph">Com as Janelas de Manutenção, você pode agendar períodos específicos de manutenção durante os quais as notificações de alerta são suprimidas para objetos e métricas que você escolher. Por exemplo, você pode suprimir as notificações de alerta acionadas por sistemas de storage específicos quando esses sistemas estiverem em um período de upgrade planejado.</block>
+  <block id="df24d8acd06534f618230d46637d6d1b" category="paragraph">Você pode escolher se deseja suprimir tanto os alertas quanto as notificações durante a janela, ou suprimir apenas as notificações, mas continuar detectando os alertas.</block>
+  <block id="1aed277c750cbbf8c2859dca8664dada" category="inline-image-macro">Exemplo de Janela de Manutenção, largura=400</block>
+  <block id="8f42f88b31e1b4f22f40e0ae5ecd38fb" category="paragraph"><block ref="8f42f88b31e1b4f22f40e0ae5ecd38fb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="82bc146aadfdab0e3c7443c79b7f4c8b" category="section-title">Criando uma janela de manutenção</block>
+  <block id="4def5c59958a122e22c3d06a018c9ef0" category="paragraph">Para criar uma janela de manutenção:</block>
+  <block id="2b2323dddeb141b098fbcd705e90e359" category="list-text">Acesse *Observability &gt; Alerts &gt; Maintenance Windows* e clique em *+ Maintenance Window*.</block>
+  <block id="610844a278d3d0601b4bc4c27665563e" category="list-text">Insira um *Nome* para a janela de manutenção. Para melhores resultados, escolha um nome significativo e específico.</block>
+  <block id="c74ae4bc562a9f2edcf63aa39e8fac31" category="list-text">Selecione o *dispositivo de storage* ou o *atributo do objeto*.</block>
+  <block id="5760cc9b0c4d4910c5b80c7479b3f2a3" category="list-text">Filtre pelo *monitor ou monitores*. Caracteres curinga são aceitos.</block>
+  <block id="ea10176408e9b54a867b0e298e4b4bc2" category="list-text">Selecione a *Hora de Início* e a *Hora de Término* para o período de manutenção.</block>
+  <block id="de3fd64c52ab8fa6a72c862f6f638fb0" category="list-text">Escolha se deseja suprimir *alertas e notificações* ou *apenas notificações* (os alertas ainda são detectados durante a janela).</block>
+  <block id="35d71e914a221fd7fa5e2e2d8c813a2a" category="list-text">Clique em *Salvar* para criar a janela de manutenção.</block>
 </blocks>

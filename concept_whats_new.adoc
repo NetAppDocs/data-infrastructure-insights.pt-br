@@ -19,6 +19,25 @@ A NetApp está continuamente melhorando e aprimorando seus produtos e serviços.
 
 
 
+[[july-2026]]
+== Julho de 2026
+
+
+
+[[new-ai-assistant-starting-page]]
+=== Nova página inicial do assistente de IA
+
+O Assistente de IA da DII agora conta com uma página inicial dedicada, colocando a análise inteligente de infraestrutura em destaque. Inicie novas conversas instantaneamente, retome sua última sessão com um clique ou comece rapidamente com sugestões de prompts.
+
+image:AI_dashboard_page_default.png["Painel de IA padrão, largura=800"]
+
+Acesse a página inicial pelo *Assistente de IA* no menu de navegação ou abra o Assistente de IA de qualquer lugar usando o ícone de "estrelas" no canto superior esquerdo.
+
+image:AI_dashboard_page_menu.png["Menu de navegação do assistente de IA, largura=600"] image:AI_assistant_access_button.png["Acesso ao assistente de IA de qualquer lugar, width=300"]
+
+'''
+
+
 [[june-2026]]
 == Junho de 2026
 
