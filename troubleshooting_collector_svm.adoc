@@ -245,4 +245,21 @@ Reinicie o coletor depois que as permissões forem definidas.
 {vazio}
 
 '''
+*Problema:* Após adicionar ou atualizar um ONTAP SVM Data Collector (Segurança de Carga de Trabalho), o tenant exibe um alerta de provisionamento excessivo ou violação de assinatura. A capacidade de storage bruto aumentou mesmo sem a adição de novo hardware.
+
+*Experimente isto:* O mesmo storage pode ser contabilizado duas vezes — uma vez por um coletor de cluster ONTAP do Observability e novamente por um coletor SVM do Workload Security no mesmo cluster.
+
+Compare a capacidade de storage bruto relatada pelos coletores Observability ONTAP e pelos coletores Workload Security SVM. Para cada coletor SVM, verifique se o cluster pai já está sendo monitorado por um coletor Observability ONTAP. Se estiver, somente a capacidade do cluster deve ser contabilizada no uso da assinatura.
+
+Confirme se ocorreu alguma migração recente de SVM entre clusters. Após a migração de uma SVM, as métricas de capacidade podem permanecer associadas ao cluster anterior até que o Workload Security receba informações atualizadas do coletor.
+
+Certifique-se de que o coletor de dados ONTAP SVM para a SVM migrada esteja em estado RUNNING. Se necessário, reinicie o coletor para que o Workload Security possa coletar as métricas corretas de cluster e capacidade após a migração.
+
+Se a capacidade do cluster e a capacidade da SVM aparecerem no total, é provável que a capacidade esteja sendo contabilizada duas vezes. Isso geralmente acontece logo após adicionar, atualizar, reiniciar um coletor de SVM ou migrar uma SVM entre clusters.
+
+Se o uso ainda exceder sua assinatura, abra um chamado de suporte da NetApp com o uso da assinatura antes e depois do alerta, e uma lista dos coletores de Observabilidade e SVM com suas respectivas capacidades de storage bruto relatadas.
+
+{vazio}
+
+'''
 Se você ainda estiver enfrentando problemas, entre em contato com os links de suporte mencionados na página *Ajuda > Suporte*.
