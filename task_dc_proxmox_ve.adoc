@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task_dc_promox_ve.html 
-keywords: data collector, Promox VirtVirtual Environmentalization 
-summary: Configurando o coletor de dados do Promox Virtual Environment. 
+permalink: task_dc_proxmox_ve.html 
+keywords: data collector, Proxmox Virtual Environment, PVE 
+summary: Configurando o coletor de dados do Proxmox Virtual Environment. 
 ---
-= Coletor de dados de virtualização Red Hat OpenShift
+= Coletor de dados do Proxmox Virtual Environment
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,9 @@ summary: Configurando o coletor de dados do Promox Virtual Environment.
 
 
 [role="lead"]
-O coletor do Ambiente Virtual DII Promox coletará dados de inventário. Este é um coletor baseado em API REST HTTPS.
+O coletor de Ambiente Virtual Proxmox DII coletará dados de inventário e desempenho para máquinas virtuais baseadas em PVE (não contêineres LXC) e hosts/hipervisores. Este é um coletor baseado em API REST HTTPS que precisa se comunicar com a API REST fornecida pelo serviço/daemon pveproxy que escuta na porta TCP 8006.
+
+Este coletor de dados utiliza autenticação de usuário + token. Você precisará criar uma conta de serviço em cada cluster Proxmox, atribuir as permissões apropriadas ao usuário e, em seguida, gerar um token de API com esses mesmos direitos. Observe que o token de um determinado usuário do Proxmox NÃO necessariamente possui os mesmos direitos/permissões que o usuário. O DII geralmente precisa de direitos globais de Auditoria/Monitoramento. Se você estiver criando uma conta de serviço pela interface do Proxmox, para PathPermision comece em "/", defina Propagar como "Sim" e desbloqueie, no mínimo, Auditoria de Datastore, Auditoria de Mapeamento, Auditoria de Pool, Auditoria SDN, Auditoria de Sistema, Auditoria de VM e Monitoramento de VM. Com o usuário criado, você pode então criar um token de acesso para ele. Considere fortemente criar o token com expiração 0 para garantir que ele nunca expire.
 
 
 
@@ -37,10 +39,7 @@ Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminolo
 | Máquina Virtual | Máquina Virtual 
 
 
-| Domínio de armazenamento | Armazenamento de dados 
-
-
-| Unidade Lógica | LUN 
+| Armazenar | Armazenamento de dados 
 |===
 Observação: esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
 

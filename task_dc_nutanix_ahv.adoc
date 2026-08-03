@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_nutanix_ahv.html 
-keywords: data collector, Nutanix, AHV Series 
+keywords: data collector, Nutanix, AHV Series , Acropolis, hypervisor 
 summary: Configurando o coletor de dados Nutanix AHV. 
 ---
 = Coletor de dados Nutanix AHV
@@ -51,10 +51,10 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 == Requisitos
 
 * Endereço IP ou nome de domínio totalmente qualificado do Prism Central
-* Nome de usuário e senha do Prism Central local ou LDAP (uma conta somente leitura é suficiente para inventário e desempenho; Admin não é necessário)
+* Nome de usuário e senha do Prism Central local ou LDAP (uma conta somente leitura é suficiente)
 * Requisito de porta: HTTPS 9440
 * Prism Central versão pc.2023.x ou posterior (API v3); pc.7.x ou posterior recomendado (API v4)
-* As métricas de desempenho exigem o Prism Central com API v4.0.b1 ou posterior (pc.7.3+). Em versões anteriores, o inventário ainda é coletado, mas nenhum dado de desempenho é reportado.
+* As métricas de desempenho exigem o Prism Central com API REST v4.0.b1 ou posterior (pc.7.3+). Em versões anteriores, o inventário é coletado, mas nenhum dado de desempenho é informado.
 
 
 
@@ -67,7 +67,7 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 | Campo | Descrição 
 
 
-| Endereço IP do Prism Central | Endereço IP ou FQDN da instância do Prism Central 
+| Endereço IP/Nome do host do Prism Central | Endereço IP ou FQDN da instância do Prism Central 
 
 
 | Nome de usuário | Nome de usuário do Prism Central 
@@ -88,13 +88,13 @@ Observação: esses são apenas mapeamentos de terminologia comum e podem não r
 | Porta TCP | Porta TCP usada para conectar ao Prism Central. O padrão é 9440. 
 
 
-| Intervalo de pesquisa de inventário (min) | Intervalo entre pesquisas de inventário. O padrão é 60 minutos. 
+| Intervalo de pesquisa de inventário (min) | Intervalo entre as consultas de inventário. O padrão é 60 minutos. 
 
 
-| Intervalo de pesquisa de desempenho (seg) | Intervalo entre pesquisas de desempenho. O padrão é 300 segundos. 
+| Intervalo de pesquisa de desempenho (seg) | Intervalo entre as verificações de desempenho. O padrão é 300 segundos. 
 
 
-| Tempo limite HTTP (seg) | Tempo limite da requisição HTTP. O padrão é 60 segundos. 
+| Tempo limite HTTP (seg) | Tempo limite da requisição HTTP. O padrão é 60. 
 
 
 | Contagem de tentativas HTTP | Número de tentativas de HTTP em falhas transitórias. O padrão é 3. 
