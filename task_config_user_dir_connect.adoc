@@ -46,7 +46,7 @@ Configure o Coletor de Diretório do Usuário inserindo os dados necessários na
 | Nome da Floresta | Nível de floresta da estrutura de diretório.  O nome da floresta permite ambos os formatos a seguir: _x.y.z_ => nome de domínio direto como você tem no seu SVM.  [Exemplo: hq.companyname.com] _DC=x,DC=y,DC=z_ => Nomes distintos relativos [Exemplo: DC=hq,DC= companyname,DC=com] Ou você pode especificar como o seguinte: _OU=engineering,DC=hq,DC= companyname,DC=com_ [para filtrar por engenharia de UO específica] _CN=username,OU=engineering,DC=companyname, DC=netapp, DC=com_ [para obter apenas um usuário específico com <username> da UO <engineering>] _CN=Acrobat Users,CN=Users,DC=hq,DC=companyname,DC=com,O= companyname,L=Boston,S=MA,C=US_ [para obter todos os usuários do Acrobat dentro dos usuários dessa organização] Domínios confiáveis do Active Directory também são suportados. 
 
 
-| Vincular DN | Usuário autorizado a pesquisar no diretório.  Por exemplo: _nomedeusuário@nomedaempresa.com_ ou _nomedeusuário@nomedodomínio.com_ Além disso, é necessária a permissão Somente Leitura do Domínio.  O usuário deve ser membro do grupo de segurança _Controladores de domínio somente leitura_. 
+| Vincular DN | Usuário autorizado a pesquisar no diretório. Por exemplo: _username@companyname.com_ ou _username@domainname.com_ 
 
 
 | Senha BIND | Senha do servidor de diretório (ou seja, senha para nome de usuário usado no Bind DN) 
