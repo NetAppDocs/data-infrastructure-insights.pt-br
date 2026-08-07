@@ -262,4 +262,24 @@ Se o uso ainda exceder sua assinatura, abra um chamado de suporte da NetApp com 
 {vazio}
 
 '''
+*Problema*: Um ou mais coletores de dados são exibidos como Degradados em vez de Em Execução, mesmo que o serviço do coletor esteja em execução.
+
+*Experimente isto*: O SWS reporta "Degradado" quando uma ou mais conexões FPolicy em um nó são desconectadas. Isso não é uma interrupção, o coletor continua em execução, mas os eventos de auditoria desses nós podem ser perdidos até que a conectividade seja restaurada.
+
+ONTAP estabelece uma conexão de canal de controle FPolicy a partir de cada nó que possui um LIF de dados operacional para a SVM. Um nó sem um LIF de dados local não pode se conectar. Veja:
+
+* link:https://docs.netapp.com/us-en/ontap/nas-audit/node-fpolicy-server-communication-process-concept.html["Processo de comunicação do nó para o servidor ONTAP FPolicy externo"^]
+* link:https://docs.netapp.com/us-en/ontap/nas-audit/fpolicy-external-fpolicy-servers-concept.html["Como o ONTAP FPolicy funciona com servidores FPolicy externos"^]
+* link:https://docs.netapp.com/us-en/ontap/nas-audit/requirements-best-practices-fpolicy-concept.html["Requisitos, considerações e melhores práticas para configurar o ONTAP FPolicy"^]
+
+
+Na interface do usuário, observe quais nós estão desconectados e verifique se esses nós possuem um LIF de dados para a SVM.
+
+* Sem LIF de dados nos nós listados: desconsidere o status Degradado. O ONTAP pode mostrar o FPolicy desconectado com o motivo "No local lif present to connect to FPolicy server" quando nenhum LIF de dados local estiver presente; isso é esperado. Consulte link:https://kb.netapp.com/on-prem/ontap/da/NAS/NAS-KBs/Fpolicy_server_not_connected_due_to_no_local_lif_present_on_one_or_more_nodes["KB: Servidor Fpolicy não conectado devido a "no local lif present""^]. Uma futura versão do SWS deixará de marcar o coletor como Degradado neste caso.
+* LIF de dados presente nos nós listados: Investigue por que o FPolicy está desconectado (LIF inativo / cliente data-fpolicy ausente, rede/firewall ou reinicialização/failover temporário).
+
+
+{vazio}
+
+'''
 Se você ainda estiver enfrentando problemas, entre em contato com os links de suporte mencionados na página *Ajuda > Suporte*.
