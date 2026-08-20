@@ -1,0 +1,462 @@
+---
+sidebar: sidebar 
+permalink: reporting_schema_ports.html 
+summary: Tabelas de esquema para o data warehouse Ports 
+keywords: dwh, data warehouse, schema, reporting, ports 
+---
+= Esquema de portas
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+Fonte: endpoint OData *dwh_ports* — Data Infrastructure Insights
+
+Tabelas encontradas: *7* | Associações: *4*
+
+
+
+[[key-relationships-between-tables]]
+== Principais relações entre as tabelas
+
+
+
+[[portsfact]]
+=== ports_fact
+
+[cols="1,1,1"]
+|===
+| Tabela de referência (pai) | Coluna FK | PK pai 
+
+
+| link:#entity-connected_device_dimension["connected_device_dimension"] | connectedDeviceTk | tk 
+
+
+| link:#entity-date_dimension["dimensão_data"] | dateTk | tk 
+
+
+| link:#entity-port_dimension["dimensão_da_porta"] | portTk | tk 
+
+
+| link:#entity-switch_dimension["switch_dimension"] | switchTk | tk 
+|===
+
+
+[[tables-fields]]
+== Tabelas e Campos
+
+PKPrimary KeyFKForeign KeyNOT NULLCampo obrigatório
+
+
+
+[[cardinals]]
+=== cardeais
+
+
+
+[[top]]
+=== ↑ topo
+
+Conjunto(s) de entidades: cardinais
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Anulável | Comentário 
+
+
+| dígito | Int32 | Sim | Um número entre 0 e 99. 
+|===
+
+
+[[connecteddevicedimension]]
+=== connected_device_dimension
+
+
+
+[[top]]
+=== ↑ topo
+
+Conjunto(s) de entidades: connected_device_dimension
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Anulável | Comentário 
+
+
+| tk *[PK]* | Int32 | Sim | TK do dispositivo. 
+
+
+| nome | String | Sim | Nome do dispositivo. 
+
+
+| fabricante | String | Sim | Fabricante do dispositivo. 
+
+
+| modelo | String | Sim | Modelo do dispositivo. 
+
+
+| tipo | String | Sim | Tipo do dispositivo. 
+
+
+| firmware | String | Sim | Versão do firmware em execução no dispositivo. 
+
+
+| id | Int64 | Sim | O ID do dispositivo 
+
+
+| mais recente | String | Sim | Indica se esta linha é a mais recente para este dispositivo. 
+|===
+
+
+==== Propriedades de navegação (junções)
+
+[cols="1,1,1"]
+|===
+| Propriedade Nav | Entidade relacionada | Cardinalidade / Junção 
+
+
+| ports_fact | link:#entity-ports_fact["ports_fact"] | muitos 
+|===
+
+
+[[datedimension]]
+=== dimensão_data
+
+
+
+[[top]]
+=== ↑ topo
+
+Conjunto(s) de entidades: date_dimension
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Anulável | Comentário 
+
+
+| tk | Int32 | Sim | TK do objeto de data. 
+
+
+| fullDate | DateTimeOffset | Sim | Data do objeto de data. 
+
+
+| dayInMonth | Byte | Sim | Dia do mês para o objeto de data. O primeiro dia do mês tem valor 1. 
+
+
+| dayInYear | Int32 | Sim | Dia do ano do objeto de data. O primeiro dia do ano tem o valor 1. 
+
+
+| dateYear | Int32 | Sim | Ano do objeto de data. 
+
+
+| yearLabel | String | Sim | Ano formatado como string 
+
+
+| monthNum | Byte | Sim | Mês do objeto de data. Janeiro tem o valor 1. 
+
+
+| monthLabel | String | Sim | Mês formatado como string 
+
+
+| dayInWeekNum | Byte | Sim | Dia da semana para o objeto de data. Domingo tem o valor 1. 
+
+
+| trimestre | Byte | Sim | Trimestre do objeto de data. O primeiro trimestre tem o valor 1. 
+
+
+| quarterLabel | String | Sim | Trimestre formatado como String 
+
+
+| dayInQuarter | Int32 | Sim | Dia do trimestre do objeto de data. O primeiro dia do trimestre tem o valor 1. 
+
+
+| repQuarter | Byte | Sim | Indica se esta data é a primeira data disponível para o seu trimestre. 
+
+
+| repMonth | Byte | Sim | Indica se esta data é a primeira data disponível para o mês. 
+
+
+| repWeek | Byte | Sim | Indica se esta data é a primeira data disponível para sua semana. 
+
+
+| repDay | Byte | Sim | Indica se esta data é a primeira data disponível para o seu dia. 
+
+
+| repMonthOrLatest | Byte | Sim | Indica se esta data é o repmonth ou a mais recente. Este indicador é usado por Datamarts que trabalham com reps mensais. A única diferença é que, para o mês atual, é a mais recente 
+
+
+| sspFlag | Byte | Sim | Indica se esta data é usada no Datamart de Storage e no Datamart do Pool de Storage. É verdadeiro para representantes de mês e para o último número de dias conforme definido na configuração. 
+
+
+| mais recente | String | Sim | Indica se esta data é a última data disponível na tabela. 
+
+
+| futuro | String | Sim | Indica se esta data é uma data futura (projeção) ou uma data regular. 
+|===
+
+
+==== Propriedades de navegação (junções)
+
+[cols="1,1,1"]
+|===
+| Propriedade Nav | Entidade relacionada | Cardinalidade / Junção 
+
+
+| ports_fact | link:#entity-ports_fact["ports_fact"] | muitos 
+|===
+
+
+[[portdimension]]
+=== dimensão_da_porta
+
+
+
+[[top]]
+=== ↑ topo
+
+Conjunto(s) de entidades: port_dimension
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Anulável | Comentário 
+
+
+| tk | Int32 | Sim | TK desta linha de portas. 
+
+
+| wwn | String | Sim | WWN da porta. 
+
+
+| nome | String | Sim | Nome da porta. 
+
+
+| gbicType | String | Sim | Tipo de GBIC (Conversor de Interface Gigabit) usado para a porta. 
+
+
+| tipo | String | Sim | Tipo de porta, normalmente usado para identificar o protocolo utilizado para comunicação com o outro dispositivo, obtido do próprio dispositivo: F-port, E-port, e assim por diante. 
+
+
+| velocidade | String | Sim | Velocidade da porta, em Gbps. 
+
+
+| isGenerated | String | Sim | Indica se este é um WWN gerado (caso não conheça o WWN real). 
+
+
+| url | String | Sim | URL para esta porta no Insight Server. 
+
+
+| id | Int64 | Sim | GUID da porta em dwh_inventory.switch_port. 
+
+
+| mais recente | String | Sim | Indica se esta linha é a mais recente para esta porta. 
+
+
+| dateTk | Int32 | Sim | TK da data em que a linha da porta foi criada. 
+|===
+
+
+==== Propriedades de navegação (junções)
+
+[cols="1,1,1"]
+|===
+| Propriedade Nav | Entidade relacionada | Cardinalidade / Junção 
+
+
+| ports_fact | link:#entity-ports_fact["ports_fact"] | muitos 
+|===
+
+
+[[portsfact]]
+=== ports_fact
+
+
+
+[[top]]
+=== ↑ topo
+
+Conjunto(s) de entidades: ports_fact
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Anulável | Comentário 
+
+
+| tk *[PK]* | Int32 | Sim | TK do fato. 
+
+
+| dateTk *[FK]* →link:#entity-date_dimension["dimensão_data"].tk | Int32 | Sim | TK da data. 
+
+
+| switchTk *[FK]* →link:#entity-switch_dimension["switch_dimension"].tk | Int32 | Sim | TK do switch que contém a porta. 
+
+
+| connectedDeviceTk *[FK]* →link:#entity-connected_device_dimension["connected_device_dimension"].tk | Int32 | Sim | TK do dispositivo que está conectado à porta. 
+
+
+| portTk *[FK]* →link:#entity-port_dimension["dimensão_da_porta"].tk | Int32 | Sim | TK da porta. 
+
+
+| fabric | String | Sim | Nome ou WWN da malha (ou VSAN) na qual a porta está configurada para operar. 
+
+
+| velocidade | String | Sim | Velocidade da porta, em Gbps. 
+
+
+| connectivityType | String | Sim | Tipo do dispositivo conectado. 
+
+
+| tipo | String | Sim | Tipo de porta, normalmente usado para identificar o protocolo utilizado para comunicação com o outro dispositivo, obtido do próprio dispositivo: F-port, E-port, e assim por diante. 
+
+
+| status | String | Sim | Status da porta. Os valores possíveis são OK, NOT_LICENSED, ERROR, INACTIVE e UNKNOWN 
+|===
+
+
+==== Propriedades de navegação (junções)
+
+[cols="1,1,1"]
+|===
+| Propriedade Nav | Entidade relacionada | Cardinalidade / Junção 
+
+
+| connected_device_dimension | link:#entity-connected_device_dimension["connected_device_dimension"] | um JOIN:connectedDeviceTk=link:#entity-connected_device_dimension["connected_device_dimension"].tk 
+
+
+| dimensão_da_porta | link:#entity-port_dimension["dimensão_da_porta"] | um JOIN:portTk=link:#entity-port_dimension["dimensão_da_porta"].tk 
+
+
+| dimensão_data | link:#entity-date_dimension["dimensão_data"] | um JOIN:dateTk=link:#entity-date_dimension["dimensão_data"].tk 
+
+
+| switch_dimension | link:#entity-switch_dimension["switch_dimension"] | um JOIN:switchTk=link:#entity-switch_dimension["switch_dimension"].tk 
+|===
+
+
+[[portsfactcurrent]]
+=== ports_fact_current
+
+
+
+[[top]]
+=== ↑ topo
+
+Conjunto(s) de entidades: ports_fact_current
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Anulável | Comentário 
+
+
+| tk | Int32 | Sim | TK do fato. 
+
+
+| dateTk | Int32 | Sim | TK da data. 
+
+
+| switchTk | Int32 | Sim | TK do switch que contém a porta. 
+
+
+| connectedDeviceTk | Int32 | Sim | TK do dispositivo que está conectado à porta. 
+
+
+| portTk | Int32 | Sim | TK da porta. 
+
+
+| fabric | String | Sim | Nome ou WWN da malha (ou VSAN) na qual a porta está configurada para operar. 
+
+
+| velocidade | String | Sim | Velocidade da porta, em Gbps. 
+
+
+| connectivityType | String | Sim | Tipo do dispositivo conectado. 
+
+
+| tipo | String | Sim | Tipo de porta, normalmente usado para identificar o protocolo utilizado para comunicação com o outro dispositivo, obtido do próprio dispositivo: F-port, E-port, e assim por diante. 
+
+
+| status | String | Sim | Status da porta. Os valores possíveis são OK, NOT_LICENSED, ERROR, INACTIVE e UNKNOWN 
+|===
+
+
+[[switchdimension]]
+=== switch_dimension
+
+
+
+[[top]]
+=== ↑ topo
+
+Conjunto(s) de entidades: switch_dimension
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Anulável | Comentário 
+
+
+| tk | Int32 | Sim | TK desta linha de switch. 
+
+
+| wwn | String | Sim | WWN do switch. 
+
+
+| nome | String | Sim | Nome do switch. 
+
+
+| identificador | String | Sim | Identificador do dispositivo. 
+
+
+| ip | String | Sim | Endereço IP do switch. 
+
+
+| modelo | String | Sim | Modelo do switch. 
+
+
+| fabricante | String | Sim | Fabricante do switch. 
+
+
+| firmware | String | Sim | Versão do firmware em execução no switch. 
+
+
+| serialNumber | String | Sim | Número de série do switch. 
+
+
+| npv | String | Sim | Indicação se este é um switch NPV. 
+
+
+| isGenerated | String | Sim | Indica se este switch não corresponde a um dispositivo físico. É usado para modelar a conectividade de uma para muitas portas. 
+
+
+| tipo | String | Sim | Tipo de switch. 
+
+
+| url | String | Sim | URL para este switch no Insight Server. 
+
+
+| id | Int64 | Sim | GUID do switch em dwh_inventory.switch. 
+
+
+| mais recente | String | Sim | Indica se esta linha é a mais recente para este switch. 
+
+
+| dateTk | Int32 | Sim | TK da data em que esta linha de switch foi criada. 
+
+
+| dataCenter | String | Sim | dataCenter valor de anotação atribuído a dwh_dimensions.switch_dimension 
+
+
+| switchLevel | String | Sim | switchLevel valor de anotação atribuído a dwh_dimensions.switch_dimension 
+|===
+
+
+==== Propriedades de navegação (junções)
+
+[cols="1,1,1"]
+|===
+| Propriedade Nav | Entidade relacionada | Cardinalidade / Junção 
+
+
+| ports_fact | link:#entity-ports_fact["ports_fact"] | muitos 
+|===
