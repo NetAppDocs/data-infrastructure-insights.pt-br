@@ -10,7 +10,7 @@ keywords: dwh, data warehouse, schema, reporting, file system, fs util
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 Fonte: endpoint OData *dwh_fs_util* — Data Infrastructure Insights
