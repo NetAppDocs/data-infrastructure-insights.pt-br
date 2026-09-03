@@ -19,6 +19,45 @@ A NetApp está continuamente melhorando e aprimorando seus produtos e serviços.
 
 
 
+[[september-2026]]
+== Setembro de 2026
+
+
+
+[[ai-assistant-visualizations]]
+=== Visualizações do Assistente de IA
+
+Transforme dados complexos em insights gráficos instantaneamente. Peça ao Assistente de IA para criar um painel e ele visualizará a resposta com gráficos e tabelas interativos, ajudando você a identificar tendências e resolver problemas mais rapidamente sem a necessidade de criar gráficos manualmente.
+
+image:ai_assistant-column_graph.png["Visualização do Assistente de IA"]
+
+
+
+[[enhanced-vm-analyzer-filtering]]
+=== Filtragem aprimorada do VM Analyzer
+
+Uma nova opção na visualização do Analisador de VMs permite que você oculte volumes montados sem um datastore, oferecendo uma visualização mais limpa para simplificar a solução de problemas em VMs.
+
+image:vm_analyzer_datastore_only_view.png["controle deslizante de visualização somente do datastore"]
+
+
+
+[[ui-update-user-data-edit-mode]]
+=== Atualização da interface do usuário: modo de edição de dados do usuário
+
+Mantenha as informações dos ativos precisas enquanto reduz o risco de alterações não intencionais. Anotações e atributos (ou seja, "Dados do Usuário") agora aparecem em modo somente leitura por padrão, assim você pode revisar os detalhes primeiro e escolher quando estiver pronto para editá-los.
+
+Edite somente quando necessário. Em um painel deslizante, expanda os detalhes do ativo e selecione o ícone de lápis. A página inicial do ativo será aberta no modo de edição, onde você pode atualizar as informações e selecionar Salvar quando terminar.
+
+Você também pode abrir a página inicial do ativo diretamente e selecionar Editar no canto superior direito.
+
+image:UserDataEdit-Slideout.png["Editar dados do usuário no painel deslizante, ícone de lápis, largura=400"]
+
+image:UserDataEdit-LP.png["Modo de edição da página inicial, largura=200"]
+
+'''
+
+
 [[july-2026]]
 == Julho de 2026
 

@@ -15153,4 +15153,21 @@
   <block id="99d4794c62d21c6728e26e05101b8882" category="list-text">VMware vCenter Server 9.1.0.0100.25417926</block>
   <block id="b45a2c4b5a41856d149eda48df72a60d" category="list-text">VMware vCenter Server 9.1.0.0200.25573614</block>
   <block id="d3f00c8b96a99c9baa77432cd9f1361c" category="list-text">VMware vCenter Server 9.1.0.0300.25629530</block>
+  <block id="e38a5e1defdd7273b8e80b04713ffb71" category="section-title">Setembro de 2026</block>
+  <block id="a98677a246eab0b523b85299a331fdf0" category="section-title">Visualizações do Assistente de IA</block>
+  <block id="250d4304cd4e62c8276482ad498b2480" category="paragraph">Transforme dados complexos em insights gráficos instantaneamente. Peça ao Assistente de IA para criar um painel e ele visualizará a resposta com gráficos e tabelas interativos, ajudando você a identificar tendências e resolver problemas mais rapidamente sem a necessidade de criar gráficos manualmente.</block>
+  <block id="856b34d25fd5cc3c809fa9a4903b28c9" category="inline-image-macro">Visualização do Assistente de IA</block>
+  <block id="fd478a561c17b02fc7176a6815bdb7b5" category="paragraph"><block ref="fd478a561c17b02fc7176a6815bdb7b5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="69e2dfb064efa13bd1fc00b0e930b08e" category="section-title">Filtragem aprimorada do VM Analyzer</block>
+  <block id="7e3b063a499521d531e921d85b5ffe47" category="paragraph">Uma nova opção na visualização do Analisador de VMs permite que você oculte volumes montados sem um datastore, oferecendo uma visualização mais limpa para simplificar a solução de problemas em VMs.</block>
+  <block id="e79d136b36c447d8657b22a6e13ba6c7" category="inline-image-macro">controle deslizante de visualização somente do datastore</block>
+  <block id="509d1d4de8b6cd47ea7d3ca1489eb431" category="paragraph"><block ref="509d1d4de8b6cd47ea7d3ca1489eb431" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="63856975c5ad6030b44d991d888c3682" category="section-title">Atualização da interface do usuário: modo de edição de dados do usuário</block>
+  <block id="b51653051c347f36230ff7a954a6adbe" category="paragraph">Mantenha as informações dos ativos precisas enquanto reduz o risco de alterações não intencionais. Anotações e atributos (ou seja, "Dados do Usuário") agora aparecem em modo somente leitura por padrão, assim você pode revisar os detalhes primeiro e escolher quando estiver pronto para editá-los.</block>
+  <block id="ad67430b6aa6c2d55f6197c51eaf2f6b" category="paragraph">Edite somente quando necessário. Em um painel deslizante, expanda os detalhes do ativo e selecione o ícone de lápis. A página inicial do ativo será aberta no modo de edição, onde você pode atualizar as informações e selecionar Salvar quando terminar.</block>
+  <block id="3475edeb098139e66dd7f554f459dbb7" category="paragraph">Você também pode abrir a página inicial do ativo diretamente e selecionar Editar no canto superior direito.</block>
+  <block id="c33980d05b2deb568b7a508ae668206c" category="inline-image-macro">Editar dados do usuário no painel deslizante, ícone de lápis, largura=400</block>
+  <block id="d05c002809e2eff8dbbef3f837ebccae" category="paragraph"><block ref="d05c002809e2eff8dbbef3f837ebccae" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0b67caee179a4206a762e287d0cc0b59" category="inline-image-macro">Modo de edição da página inicial, largura=200</block>
+  <block id="2676c87e0e32e08b02693582de233efc" category="paragraph"><block ref="2676c87e0e32e08b02693582de233efc" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
