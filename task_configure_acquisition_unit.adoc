@@ -7,6 +7,10 @@ summary: Unidade de Aquisição instalando, desinstalando, configurando suporte 
 = Configurando Unidades de Aquisição
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -89,7 +93,15 @@ A maneira mais simples de fazer isso é especificar a configuração curinga no 
 
 NOTE: O uso de um asterisco (*) como curinga é comum, mas sua configuração de proxy/firewall pode usar um formato diferente.  Verifique a documentação do seu proxy para garantir a especificação correta do curinga no seu ambiente.
 
+Se você perceber que sua AU está bloqueada ao tentar se conectar à DII, tente adicionar esses endpoints ao seu proxy:
+
+....
+api.bluexp.netapp.com
+netapp-cloud-account.auth0.com
+....
 Mais informações sobre a configuração do proxy podem ser encontradas no NetApplink:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit["Base de conhecimento"] .
+
+Os endpoints específicos do proxy do NetApp Console que você pode precisar estão listados na link:https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console-previous.html#update-endpoint-list["Administrador de Configuração do NetApp Console"] documentação.
 
 
 
