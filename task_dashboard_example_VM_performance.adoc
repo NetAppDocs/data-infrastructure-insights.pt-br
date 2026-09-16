@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_dashboard_example_VM_performance.html 
-summary: Exemplo de painel destacando o desempenho da máquina virtual. 
+summary: Tutorial passo a passo para criar um painel de desempenho de máquina virtual com tabelas, gráficos e widgets que comparam as métricas da máquina virtual e de storage. 
 keywords: dashboard, widget, custom, example, virtual machine, vm, performance 
 ---
 = Exemplo de painel: desempenho da máquina virtual
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Há muitos desafios enfrentados pelas operações de TI hoje em dia.  Os administradores estão sendo solicitados a fazer mais com menos, e ter visibilidade total dos seus data centers dinâmicos é essencial.  Neste exemplo, mostraremos como criar um painel com widgets que fornecem insights operacionais sobre o desempenho da máquina virtual (VM) no seu locatário.  Seguindo este exemplo e criando widgets para atender às suas necessidades específicas, você pode fazer coisas como visualizar o desempenho do armazenamento de back-end em comparação ao desempenho da máquina virtual de front-end ou visualizar a latência da VM em comparação à demanda de E/S.
+Aprenda a criar um painel de desempenho abrangente de máquina virtual com este tutorial passo a passo. Você vai criar widgets que visualizam dados de desempenho de máquinas virtuais, comparar métricas de storage backend com o desempenho de front-end das máquinas virtuais e analisar as relações entre a latência das máquinas virtuais e a demanda de E/S para obter melhores insights operacionais.
 
 .Sobre esta tarefa
 Aqui, criaremos um painel de desempenho da máquina virtual contendo o seguinte:

@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_create_query.html 
-summary: As consultas permitem que você identifique de forma rápida e fácil ativos e métricas de interesse. 
+summary: Crie consultas personalizadas para pesquisar, filtrar e analisar seus ativos de infraestrutura e métricas com controle granular, agrupamento flexível e exibição de resultados personalizável. 
 keywords: query, queries 
 ---
 = Criando consultas
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-As consultas permitem que você pesquise os ativos do seu locatário em um nível granular, permitindo filtrar os dados desejados e classificar os resultados conforme sua preferência.
+Crie consultas poderosas para pesquisar seus ativos de infraestrutura em um nível granular, com recursos flexíveis de filtragem, agrupamento e classificação. Desenvolva pesquisas direcionadas que ajudam você a identificar ativos específicos, analisar métricas de desempenho e organizar os resultados exatamente como você precisa.
 
 Por exemplo, você pode criar uma consulta para _volumes_, adicionar um filtro para encontrar _armazenamentos_ específicos associados aos volumes selecionados, adicionar outro filtro para encontrar uma _anotação_ específica, como "Nível 1", nos armazenamentos selecionados e, finalmente, adicionar outro filtro para encontrar todos os armazenamentos com _IOPS - Leitura (IO/s)_ maior que 25.  Quando os resultados forem exibidos, você poderá classificar as colunas de informações associadas à consulta em ordem crescente ou decrescente.
 

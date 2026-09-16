@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_dashboard_features.html 
-summary: Recursos e conceitos do painel. 
+summary: Domine os recursos avançados do painel de controle, incluindo personalização de widgets, filtragem de consultas, configuração de variáveis, transformações de dados e opções de formatação para criar visualizações poderosas e flexíveis. 
 keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand 
 ---
 = Recursos do painel
@@ -14,7 +14,7 @@ keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll 
 
 
 [role="lead"]
-Painéis e widgets permitem grande flexibilidade na forma como os dados são exibidos.  Aqui estão alguns conceitos para ajudar você a aproveitar ao máximo seus painéis personalizados.
+Libere todo o potencial dos seus dashboards com recursos avançados e opções de personalização. Aprenda a configurar consultas de widgets, aplicar transformações de dados, usar variáveis para filtragem dinâmica e implementar formatação sofisticada para criar visualizações altamente eficazes e personalizadas para as suas necessidades de monitoramento de infraestrutura.
 
 sumário:[]
 

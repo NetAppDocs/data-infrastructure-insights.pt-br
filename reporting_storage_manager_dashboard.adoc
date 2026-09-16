@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: reporting_storage_manager_dashboard.html 
-summary: Você pode usar o Painel do Gerenciador de Armazenamento para o gerenciamento diário dos seus serviços de armazenamento. 
+summary: Acesse insights centralizados de gerenciamento de storage com relatórios abrangentes sobre utilização de capacidade, tendências de desempenho e previsão de recursos para o gerenciamento proativo do data center. 
 keywords: reporting, cognos, data warehouse, dwh, smd, storage manager dashboard 
 ---
 = Painel do Gerenciador de Armazenamento
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-O Painel do Gerenciador de Armazenamento fornece uma visualização centralizada que permite comparar e contrastar o uso de recursos ao longo do tempo em relação aos intervalos aceitáveis e dias anteriores de atividade.  Exibindo apenas as principais métricas de desempenho dos seus serviços de armazenamento, você pode tomar decisões sobre como manter seus data centers.
+O painel de controle do Gerenciador de Armazenamento oferece insights centralizados sobre seu ambiente de storage por meio de relatórios e visualizações abrangentes. Monitore a utilização da capacidade, acompanhe as tendências de desempenho ao longo do tempo e compare as métricas atuais com as faixas aceitáveis para tomar decisões informadas sobre a manutenção do data center e o planejamento de recursos.
 
 
 NOTE: O recurso de relatórios está disponível no Data Infrastructure Insightslink:concept_subscribing_to_cloud_insights.html["Edição Premium"] .

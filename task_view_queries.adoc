@@ -1,20 +1,24 @@
 ---
 sidebar: sidebar 
 permalink: task_view_queries.html 
-summary: Visualizando consultas que foram criadas 
+summary: Visualize e gerencie suas consultas salvas com opções de exibição personalizáveis, incluindo filtragem, classificação e organização de colunas para uma organização e acesso eficientes às consultas. 
 keywords: query, queries, viewing 
 ---
 = Visualizando consultas
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Você pode visualizar suas consultas para monitorar seus ativos e alterar como suas consultas exibem os dados relacionados aos seus ativos.
+Acesse e gerencie suas consultas salvas por meio da interface de consulta, onde você pode filtrar, classificar e personalizar a exibição para organizar e localizar com eficiência as consultas de que você precisa para o monitoramento e análise de ativos.
 
 .Passos
 . Efetue login no seu locatário do Data Infrastructure Insights .
-. Clique em *Consultas* e selecione *Mostrar todas as consultas*.  Você pode alterar a forma como as consultas são exibidas executando qualquer um dos seguintes procedimentos:
+. Clique em *Explorar* e selecione *Todas as consultas de métricas*. Você pode alterar a forma como as consultas são exibidas fazendo o seguinte:
 . Você pode inserir texto na caixa de filtro para pesquisar e exibir consultas específicas.
 . Você pode alterar a ordem de classificação das colunas na tabela de consultas para crescente (seta para cima) ou decrescente (seta para baixo) clicando na seta no cabeçalho da coluna.
 . Para redimensionar uma coluna, passe o mouse sobre o cabeçalho da coluna até que uma barra azul apareça.  Coloque o mouse sobre a barra e arraste-o para a direita ou esquerda.

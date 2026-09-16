@@ -7,6 +7,10 @@ keywords: security, risk, protection
 = Informação e Região
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -99,10 +103,4 @@ As regiões anfitriãs incluem:
 [[more-information]]
 == Mais informações
 
-Você pode ler mais sobre privacidade e segurança da NetApp nos seguintes links:
-
-* link:https://www.netapp.com/us/company/trust-center/index.aspx["Centro de Confiança"]
-* link:https://www.netapp.com/us/company/trust-center/privacy/data-location-cross-border-transfers.aspx["Transferências de dados transfronteiriças"]
-* link:https://www.netapp.com/us/company/trust-center/transparency/third-party-data-requests.aspx["Respondendo a solicitações de dados de terceiros"]
-* link:https://www.netapp.com/us/company/trust-center/privacy/privacy-principles-security-safeguards.aspx["Princípios de privacidade da NetApp"]
-
+Você pode ler mais sobre a privacidade e segurança da NetApp no * NetApp link:https://www.netapp.com/responsibility/trust-center/["Centro de Confiança"].

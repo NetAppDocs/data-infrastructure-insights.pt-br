@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_modify_delete_query.html 
-summary: Modificando ou excluindo uma consulta 
+summary: Modifique as consultas existentes alterando os critérios e as colunas, com opções flexíveis de salvamento para atualizar, renomear ou criar novas versões, além de opções para excluir consultas quando não forem mais necessárias. 
 keywords: query, queries, modify, edit, delete, remove 
 ---
 = Modificando ou excluindo uma consulta
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Você pode alterar os critérios associados a uma consulta quando quiser alterar os critérios de pesquisa dos ativos que está consultando.
+Gerencie suas consultas de forma eficaz, modificando os critérios de pesquisa, adicionando ou removendo colunas e escolhendo entre opções flexíveis de salvamento. Atualize consultas existentes, crie novas versões ou exclua consultas que não sejam mais necessárias para manter sua biblioteca de consultas organizada e atualizada.
 
 
 

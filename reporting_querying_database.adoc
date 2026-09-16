@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: reporting_querying_database.html 
-summary: Use as APIs do Data Infrastructure Insights para consultar o banco de dados de relatórios diretamente. 
+summary: Acesse o banco de dados de relatórios diretamente por meio de APIs, dispensando o Cognos para integrações personalizadas, relatórios automatizados e fluxos de trabalho avançados de análise de dados. 
 keywords: reporting, cognos, data warehouse, dwh, API 
 ---
 = Acesse o banco de dados de relatórios via API
@@ -14,7 +14,7 @@ keywords: reporting, cognos, data warehouse, dwh, API
 
 
 [role="lead"]
-A poderosa API do Data Infrastructure Insights permite que os usuários consultem o banco de dados de relatórios do Data Infrastructure Insights diretamente, sem passar pelo ambiente de relatórios do Cognos.
+Acesse o banco de dados de relatórios do Data Infrastructure Insights diretamente por meio de APIs compatíveis com OData v4, evitando a interface Cognos para maior flexibilidade. Isso possibilita integrações personalizadas, fluxos de trabalho de relatórios automatizados e análises de dados avançadas para usuários que precisam de acesso programático aos dados de sua infraestrutura.
 
 
 NOTE: Esta documentação se refere ao recurso de relatórios do Data Infrastructure Insights , que está disponível no Data Infrastructure Insights Premium Edition.
@@ -24,7 +24,7 @@ NOTE: Esta documentação se refere ao recurso de relatórios do Data Infrastruc
 [[odata]]
 == Odata
 
-A API de relatórios do Data Infrastructure Insights segue olink:https://www.odata.org/["OData v4"] (Open Data Protocol) padrão para consulta ao banco de dados de relatórios.  Para mais informações ou para saber mais, confiralink:https://www.odata.org/getting-started/basic-tutorial/["este tutorial"] no OData.
+A API de Relatórios do Data Infrastructure Insights segue o padrão link:https://www.odata.org/["OData v4"] (Open Data Protocol) para suas consultas ao banco de dados de relatórios. Para saber mais, confira link:https://www.odata.org/getting-started/basic-tutorial/["este tutorial"] sobre o OData.
 
 Todas as solicitações começarão com a URL _\https://< URL do Data Infrastructure Insights >/rest/v1/dwh-management/odata_
 

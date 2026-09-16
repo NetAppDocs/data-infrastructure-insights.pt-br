@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: dashboard_access_management.html 
-summary: Você determina se um painel criado é público ou privado. 
+summary: Controle a visibilidade e o acesso aos painéis com opções flexíveis de compartilhamento que permitem manter os painéis privados, compartilhá-los com usuários específicos ou disponibilizá-los para toda a organização. 
 keywords: dashboard, public, shared, private 
 ---
 = Gerenciamento de acesso ao painel
@@ -14,7 +14,7 @@ keywords: dashboard, public, shared, private
 
 
 [role="lead"]
-O Data Infrastructure Insights agora oferece maior controle sobre o acesso aos painéis que você cria.  Você escolhe quem pode modificar seus gráficos.  Você controla a exposição a informações potencialmente confidenciais.  Manter um painel privado permite que você finalize suas visualizações até que elas estejam prontas para serem consumidas por outras pessoas na sua organização.
+Controle quem pode visualizar e modificar seus painéis com opções flexíveis de gerenciamento de acesso. Mantenha os painéis privados durante o desenvolvimento e, em seguida, compartilhe-os com usuários específicos ou com toda a sua organização, usando permissões personalizáveis de edição ou somente leitura para proteger informações confidenciais enquanto permite a colaboração.
 
 image:Dashboard_Sharing_Options.png["opções de compartilhamento do painel, largura=300"]
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: monitor_infrastructure_health.html 
 keywords: infra, infrastructure, health, monitor 
-summary: Monitore a integridade da infraestrutura com pontuação unificada baseada em desempenho, capacidade, configuração e alertas de componentes para resolução proativa de problemas. 
+summary: Obtenha uma visão unificada da integridade do seu ambiente de storage por meio de um monitoramento abrangente que combina desempenho, capacidade, configuração e alertas de componentes em pontuações de integridade acionáveis. 
 ---
 = Monitorar a saúde da infraestrutura
 :hardbreaks:
@@ -14,15 +14,12 @@ summary: Monitore a integridade da infraestrutura com pontuação unificada base
 
 
 [role="lead"]
-O Data Infrastructure Insights fornece monitoramento abrangente da integridade da infraestrutura que rastreia o desempenho, a capacidade, a configuração e o status dos componentes do seu ambiente de armazenamento. As pontuações de integridade são calculadas com base nos alertas do monitor nessas categorias, fornecendo uma visão unificada da integridade do sistema e permitindo a resolução proativa de problemas.
+O Data Infrastructure Insights monitora a integridade do seu ambiente de storage, rastreando desempenho, capacidade, configuração e status dos componentes. O sistema calcula pontuações de integridade unificadas a partir de alertas de monitoramento nessas categorias, proporcionando visibilidade clara da integridade do sistema e permitindo a resolução proativa de problemas.
 
 
 
 [[the-infrastructure-health-dashboard]]
 == O painel de saúde da infraestrutura
-
-
-NOTE: Monitorar a saúde da infraestrutura é umalink:concept_preview_features.html["Pré-visualização"] recurso e está sujeito a alterações.
 
 Navegue até *Observabilidade > Analisar* e selecione *Saúde da infraestrutura*. O painel fornece uma visão geral da integridade do seu sistema, com base nas categorias de alertas do monitor e pontuações, conforme explicado abaixo. Defina filtros na parte superior para restringir o foco da sua investigação.
 

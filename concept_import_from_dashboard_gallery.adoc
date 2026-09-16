@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_import_from_dashboard_gallery.html 
-summary: Você pode importar painéis recomendados para ajudar a responder perguntas sobre insights de negócios. Você também pode importar painéis personalizados que você exportou anteriormente. 
+summary: Importe painéis pré-configurados da galeria para obter rapidamente insights de negócios, ou importe painéis personalizados que você exportou para compartilhar configurações entre locatários. 
 keywords: dashboard, gallery, import, export 
 ---
 = Importando painéis
@@ -14,7 +14,7 @@ keywords: dashboard, gallery, import, export
 
 
 [role="lead"]
-O Data Infrastructure Insights fornece uma série de painéis recomendados para fornecer insights comerciais sobre seus dados. Cada painel contém widgets projetados para ajudar a responder a uma pergunta específica ou resolver um problema específico relevante aos dados que estão sendo coletados no seu locatário. O DII também permite que você exporte um painel útil e o importe para outro locatário.
+Acesse painéis predefinidos da galeria para obter rapidamente insights sobre sua infraestrutura ou importe painéis personalizados que você exportou de outros tenants. Os painéis da galeria são adaptados aos coletores de dados do seu ambiente e projetados para responder a perguntas específicas de negócios, enquanto os painéis exportados permitem que você compartilhe configurações úteis entre vários tenants.
 
 
 

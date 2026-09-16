@@ -49,6 +49,8 @@ Ao adicionar um novo monitor, você será solicitado a criar um Monitor de Métr
 +
 ** Monitores _Metric_ alertam sobre gatilhos relacionados à infraestrutura ou ao desempenho
 ** _Log_ monitora alertas sobre atividades relacionadas a logs
+** O recurso _Detecção de Anomalias_ monitora e alerta sobre mudanças nos padrões dos seus dados
+** O recurso _Attribute_ monitora alertas sobre alterações nos atributos de um objeto, como mover um objeto para um novo data center
 
 
 +
@@ -171,6 +173,17 @@ image:AnomalyDetectionMonitorMetricChoosing.png["Filtragem de métricas para det
 
 
 image:AnomalyDetectionMonitorDefineConditions.png["Definir as condições para desencadear uma detecção de anomalia"]
+
+
+
+[[attribute-monitor]]
+=== Monitor de Atributos
+
+Os Monitores de Atributos alertam automaticamente sua equipe quando ativos são movidos entre data centers, um pool de storage não está criptografado ou quando ocorrem modificações em atributos. Isso ajuda a manter as configurações padrão e ajuda a garantir que nada passe despercebido durante novas implantações ou alterações.
+
+image:attribute_monitor_in_list.png["Monitores de atributos são adicionados aos tipos de monitor"]
+
+Basta escolher o tipo de objeto e selecionar quais atributos você deseja monitorar em busca de alterações.
 
 
 

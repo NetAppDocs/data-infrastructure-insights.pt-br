@@ -7,10 +7,14 @@ summary: Apresenta dependências e fluxos de carga de trabalho do Kubernetes e d
 = Monitoramento e mapeamento de desempenho da rede Kubernetes
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-O recurso Monitoramento e Mapeamento de Desempenho de Rede do Kubernetes simplifica a solução de problemas mapeando dependências entre serviços (também chamados de cargas de trabalho) e fornece visibilidade em tempo real das latências e anomalias de desempenho da rede para identificar problemas de desempenho antes que eles afetem os usuários.  Esse recurso ajuda as organizações a reduzir custos gerais analisando e auditando os fluxos de tráfego do Kubernetes.
+O Data Infrastructure Insights oferece monitoramento abrangente de desempenho de rede e mapeamento visual para ambientes Kubernetes. Obtenha visibilidade em tempo real das dependências de carga de trabalho, latências de rede e fluxos de tráfego para identificar proativamente problemas de desempenho e otimizar custos por meio de análises detalhadas de tráfego.
 
 Principais recursos: • O Mapa de carga de trabalho apresenta dependências e fluxos de carga de trabalho do Kubernetes e destaca problemas de rede e desempenho.  • Monitore o tráfego de rede entre pods, cargas de trabalho e nós do Kubernetes; identifique a origem dos problemas de tráfego e latência.  • Reduza os custos gerais analisando o tráfego de rede de entrada, saída, entre regiões e entre zonas.
 

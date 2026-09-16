@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_query_assign_multiple_applications.html 
-summary: Use uma consulta para atribuir vários aplicativos ou anotações a objetos ou remover vários aplicativos ou anotações de objetos. 
+summary: Gerencie com eficiência aplicativos e anotações em vários ativos usando operações em lote baseadas em consultas para atribuir ou remover esses itens sem a necessidade de configuração manual individual de cada ativo. 
 keywords: query, queries, application, annotation, multiple 
 ---
 = Atribuir vários aplicativos ou remover vários aplicativos de ativos
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Você pode atribuir várioslink:task_create_application.html["aplicações"] para ou remover vários aplicativos de ativos usando uma consulta em vez de ter que atribuí-los ou removê-los manualmente.
+Simplifique o gerenciamento de ativos utilizando consultas para realizar operações em lote em aplicações e anotações. Em vez de configurar manualmente cada ativo individualmente, você pode atribuir ou remover com eficiência várias aplicações e anotações em grupos de ativos em uma única operação.
 
 
 NOTE: Você pode usar estas etapas para adicionar ou removerlink:task_defining_annotations.html["anotações"] da mesma forma.

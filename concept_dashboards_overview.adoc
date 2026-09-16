@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_dashboards_overview.html 
-summary: Visão geral dos painéis no Data Infrastructure Insights. 
+summary: Crie painéis personalizados com widgets flexíveis para visualizar dados de infraestrutura, monitorar tendências de desempenho e construir visualizações operacionais adaptadas às suas necessidades específicas de monitoramento. 
 keywords: dashboard, widget, custom, view, data 
 ---
 = Visão geral dos painéis
@@ -14,7 +14,7 @@ keywords: dashboard, widget, custom, view, data
 
 
 [role="lead"]
-O Data Infrastructure Insights oferece aos usuários a flexibilidade de criar visualizações operacionais de dados de infraestrutura, permitindo que você crie painéis personalizados com uma variedade de widgets, cada um dos quais fornece ampla flexibilidade na exibição e no mapeamento de seus dados.
+Crie painéis personalizados que forneçam as informações operacionais de que você mais precisa. Escolha entre diversos tipos de widgets, incluindo tabelas, gráficos, indicadores e diagramas, para visualizar os dados da sua infraestrutura exatamente como você deseja, permitindo uma melhor tomada de decisão e um monitoramento mais eficaz.
 
 
 IMPORTANT: Os exemplos nestas seções são apenas para fins explicativos e não abrangem todos os cenários possíveis.  Os conceitos e etapas aqui descritos podem ser usados para criar seus próprios painéis para destacar dados específicos para suas necessidades particulares.
