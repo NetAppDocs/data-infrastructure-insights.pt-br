@@ -7,41 +7,168 @@ summary: Excluindo agentes de segurança de carga de trabalho
 = Excluindo um agente de segurança de carga de trabalho
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Quando você exclui um Agente de Segurança de Carga de Trabalho, todos os coletores de dados associados ao Agente devem ser excluídos primeiro.
+Exclua um agente quando você estiver desativando seu host ou consolidando a coleta em outro agente. Excluir um agente também exclui todos os coletores ainda atribuídos a ele.
+
+[cols="100%"]
+|===
+| *A exclusão de um Agent exclui seus coletores restantes.* Qualquer data collector ou User Directory Collector ainda atribuído ao Agent é removido juntamente com ele, e a configuração não poderá ser recuperada posteriormente. Anote ou mova qualquer configuração que você ainda precise antes de excluir o Agent. 
+|===
+
+
+[[decide-what-you-want-to-keep]]
+== Decida o que você quer guardar
+
+[cols="37%,63%"]
+|===
+| *Seu objetivo* | *O que fazer* 
+
+
+| Continue coletando o mesmo armazenamento de outro Agent | Mova cada coletor para o outro Agent antes de excluir este. Reatribue os coletores em vez de recriá-los, para que a coleta não seja duplicada. 
+
+
+| Pare de coletar deste storage completamente | Exclua o agente. Os coletores ainda atribuídos a ele são excluídos ao mesmo tempo. 
+
+
+| Reconstrua o agente em um novo host | Primeiro, registre a configuração de cada coletor, implante o novo Agent e, em seguida, recrie ou mova os coletores. 
+|===
+
+
+[[before-you-begin]]
+== Antes de começar
+
+* Inicie sessão como administrador do Data Infrastructure Insights ou proprietário da conta. A exclusão de um agente requer permissões de administrador.
+* Identifique o agente pelo nome e verifique os coletores atribuídos a ele na página de detalhes do agente.
+* Salve qualquer configuração de coletor que você ainda precise. Configuração de coletor excluída não pode ser restaurada.
+* Remova todos os coletores atribuídos a este agente de qualquer política de alerta que o referencie. Um coletor que ainda seja referenciado por uma política de alerta impede a exclusão.
+
+
+[cols="100%"]
+|===
+| *Não é necessário pausar o Agent, desafixá-lo ou aguardar uma atualização.* Pausar, retomar, fixar e desafixar não afetam a exclusão do Agent. Operações agendadas ou em andamento do Agent e do collector também não a bloqueiam. 
+|===
+
+
+[[choose-the-procedure-that-matches-your-agent]]
+== Escolha o procedimento que corresponde ao seu Agent
+
+A lista de agentes mostra o status de cada agente. O que você deve fazer antes de excluir depende de o agente ainda estar conectado.
+
+[cols="21%,62%,17%"]
+|===
+| *Status do agente* | *O que o Workload Security exige* | *Usar* 
+
+
+| Conectado | Primeiro, todos os coletores de dados e coletores de diretório de usuários devem ser removidos do Agent. O estado do coletor não importa; um coletor parado ainda conta. | Procedimento A 
+
+
+| Não conectado | Não é necessário remover primeiro os coletores. Qualquer coletor ainda atribuído é excluído juntamente com o agente. | Procedimento B 
+|===
+
+
+[[procedure-a-delete-a-connected-agent]]
+== Procedimento A: excluir um agente conectado
+
+*1.* Selecione o Workload Security ++>++ Collectors ++>++ Agents e, em seguida, selecione o nome do Agent para abrir seus detalhes.
+
+*2.* Mova ou exclua todos os coletores de dados listados para o Agent. Para continuar coletando o mesmo armazenamento, atribua o coletor a outro Agent em vez de excluí-lo.
+
+*3.* Mova ou exclua todos os coletores de diretório de usuários listados para o agente.
+
+*4.* Retorne à Workload Security ++>++ Collectors ++>++ Agents.
+
+*5.* Selecione o menu de opções do Agent e, em seguida, selecione Excluir.
+
+*6.* Confirme a exclusão na caixa de diálogo Excluir Agent.
+
+*7.* Desinstale o software do Agent no seu host, conforme descrito em "Uninstall the Agent software".
+
+image:ws-delete-agent-confirmation.png["Diálogo de confirmação de exclusão do Agent, confirmando a exclusão de um Agent de exemplo e exibindo o comando que desinstala o software do Agent do seu host.,title=\"Delete Agent confirmation dialog\",width=1007,height=562"]
+
+[cols="100%"]
+|===
+| *Se a caixa de diálogo exibir "Não é possível excluir o agente"* Pelo menos um coletor de dados ou coletor de diretório de usuários ainda está atribuído a este agente conectado. Remova os coletores restantes e tente novamente. Atualize a página de agentes primeiro se você acabou de removê-los. 
+|===
+
+
+[[procedure-b-delete-a-retired-or-unreachable-agent]]
+== Procedimento B: excluir um agente aposentado ou inacessível
+
+Utilize este procedimento quando o host do Agente estiver sendo desativado ou já estiver offline e você não precisar mais dos coletores atribuídos a ele.
+
+*1.* Confirme que você não precisa mais de nenhum coletor atribuído a este agente. Esses coletores são excluídos juntamente com ele.
+
+*2.* Se o host ainda estiver acessível, desinstale o software do Agent conforme descrito em "Uninstall the Agent software".
+
+*3.* Selecione o Workload Security ++>++ Collectors ++>++ Agents e aguarde até que o Agent mostre Não Conectado.
+
+*4.* Selecione o menu de opções do Agent e, em seguida, selecione Excluir.
+
+*5.* Confirme a exclusão na caixa de diálogo Excluir Agente.
 
 
 
-[[deleting-an-agent]]
-== Excluindo um Agente
+[[uninstall-the-agent-software]]
+== Desinstale o software Agent
+
+Excluir um agente no Workload Security remove sua configuração na nuvem. Isso não desinstala o software do host, portanto, desinstale-o separadamente quando você desativar o host.
+
+*1.* Abra uma sessão de terminal no host do Agente.
+
+*2.* Execute o comando de desinstalação e digite "y" quando solicitado.
+
+[listing]
+----
+sudo cloudsecure-agent-uninstall.sh
+----
+O desinstalador interrompe e desativa o serviço do Agent e remove o diretório de instalação. Para desinstalar sem a solicitação de confirmação, adicione a opção -n.
 
 
-IMPORTANT: A exclusão de um Agente exclui todos os Coletores de Dados associados ao Agente.  Se você planeja configurar os coletores de dados com um agente diferente, crie um backup das configurações do Coletor de Dados antes de excluir o Agente.
 
-.Antes de começar
-. Certifique-se de que todos os coletores de dados associados ao agente sejam excluídos do portal de segurança de carga de trabalho.
-+
-Observação: ignore esta etapa se todos os coletores associados estiverem no estado PARADO.
+[[verify-the-deletion]]
+== Verifique a exclusão
+
+* O agente não aparece mais em Workload Security ++>++ Collectors ++>++ Agents.
+* Os coletores que foram atribuídos a ele não aparecem mais nas listas de coletores.
+* O serviço Agent não está mais presente no host se você desinstalou o software.
 
 
 
-.Etapas para excluir um agente:
-. Faça SSH na VM do agente e execute o seguinte comando.  Quando solicitado, digite "y" para continuar.
-+
-....
-sudo /opt/netapp/cloudsecure/agent/install/cloudsecure-agent-uninstall.sh
-Uninstall CloudSecure Agent? [y|N]:
-....
-. Clique em *Segurança de Carga de Trabalho > Coletores > Agentes*
-+
-O sistema exibe a lista de Agentes configurados.
 
-. Clique no menu de opções do Agente que você está excluindo.
-. Clique em *Excluir*.
-+
-O sistema exibe a página *Excluir Agente*.
+[[troubleshooting]]
+== Solução de problemas
 
-. Clique em *Excluir* para confirmar a exclusão.
+[cols="39%,61%"]
+|===
+| *Mensagem ou sintoma* | *Causa e resolução* 
 
+
+| Não é possível excluir o agente: "Exclua todos os coletores de dados configurados em ++<++Agent++>++." | O agente está conectado e ainda possui pelo menos um coletor de dados ou coletor de diretório de usuários atribuído. Mova ou exclua os coletores restantes, atualize a página e tente novamente. 
+
+
+| "Remova os dispositivos abaixo do agente dessas políticas antes de excluir o agente." | Um coletor vinculado a este agente ainda é referenciado pelas políticas de alerta mencionadas na mensagem. Edite cada política, remova esse coletor, salve a política e tente a exclusão novamente. 
+
+
+| A exclusão falha devido a um erro de autorização. | A exclusão de um agente requer um administrador ou proprietário da conta. Outras funções podem acessar a página de agentes, mas não podem concluir a exclusão. 
+
+
+| O agente consta como não registrado. | O agente já foi excluído ou você está trabalhando em um ambiente diferente. Atualize a página de agentes e confirme o agente e o locatário. 
+
+
+| O agente foi removido do Workload Security, mas ainda está em execução no host. | Excluir o Agent não desinstala o software. Execute o comando de desinstalação no host. 
+
+
+| Um coletor excluído ainda parece consumir uso. | O uso é relatado a partir dos coletores presentes durante cada intervalo de relatório. Exclua os Agents e coletores que você não usa mais e mova os coletores em vez de recriá-los para que os coletores antigos e novos não se sobreponham. 
+|===
+
+
+[[related-information]]
+== Informações relacionadas
+
+https://docs.netapp.com/us-en/data-infrastructure-insights/task_cs_delete_agent.html["[.sublinhado"]#Página de documentação atual da NetApp#]
