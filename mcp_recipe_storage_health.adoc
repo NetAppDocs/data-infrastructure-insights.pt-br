@@ -1,0 +1,148 @@
+---
+sidebar: sidebar 
+permalink: mcp_recipe_storage_health.html 
+summary: Use esta receita para priorizar problemas de storage combinando alertas ativos, intenção de monitoramento, orientações corretivas, logs relevantes da plataforma e contexto do objeto. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Avalie a saúde do armazenamento
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Use esta receita para priorizar problemas de storage combinando alertas ativos, intenção de monitoramento, orientações corretivas, logs relevantes da plataforma e contexto do objeto.
+
+
+NOTE: O DII MCP é um recurso link:concept_preview_features.html["Pré-visualização"] e, portanto, está sujeito a alterações.
+
+
+
+[[prerequisites]]
+== Pré-requisitos
+
+* Um período de 30 dias ou menos.
+* Escopo opcional de sistema de armazenamento, cluster, pool ou volume.
+* Acesso às ferramentas de alerta, monitoramento, registro e objetos.
+
+
+
+
+[[tools-used]]
+== Ferramentas utilizadas
+
+* +ServiçoDeAlertas_obterMetadados+
+* +AlertsService_queryForAlerts+
+* +AlertsService_getAlertByName+
+* +MonitorsService_getMonitorById+
+* +LogService_getLogTypes+
+* +LogService_getLogTypeMetadata+
+* +LogService_queryLogEvents+
+* +ObjectService_getObjectTypes+
+* +ObjectService_getMetadataForObjectType+
+* +ObjectService_query+
+
+
+
+
+[[starter-prompt]]
+== Prompt inicial
+
+[]
+====
+Avalie a integridade do armazenamento nas últimas 24 horas. Identifique alertas ativos críticos e de aviso para sistemas de armazenamento, nós, pools e volumes. Para os alertas de maior impacto, explique a condição do monitor e as orientações corretivas e, em seguida, inspecione os logs relevantes do EMS ou da plataforma de armazenamento em torno do horário do acionamento. Separe as evidências confirmadas das causas prováveis.
+
+====
+
+
+[[agent-workflow]]
+== Fluxo de trabalho do agente
+
+. Obter os metadados do alerta.
+. Identifique campos válidos para gravidade, status, monitor, objeto relacionado e horário de acionamento.
+. Consultar alertas ativos relacionados ao armazenamento na janela solicitada.
+. Classifique os alertas usando:
++
+** Gravidade
+** Tipo de objeto afetado
+** Número de objetos afetados
+** Recência e recorrência
+** Impacto na disponibilidade, proteção de dados, desempenho ou capacidade
+
+
+. Obtenha detalhes completos dos alertas de maior prioridade.
+. Recupere suas definições de monitoramento e orientações corretivas.
+. Liste os tipos de log e selecione o fluxo nativo da plataforma relevante para cada alerta, como eventos do ONTAP EMS ou do StorageGRID.
+. Recupere os metadados do log e, em seguida, consulte um intervalo restrito em torno do alerta.
+. Recupere atributos ou métricas necessários para confirmar o estado atual.
+. Elabore um resumo de integridade com evidências, causa provável, impacto e próxima verificação.
+
+
+
+
+[[interpretation]]
+== Interpretação
+
+Não considere um único sinal como uma avaliação completa da integridade:
+
+* *Alertas* mostram as condições detectadas.
+* *Os monitores* explicam a regra de detecção e a ação corretiva pretendida.
+* Os *logs* fornecem contexto de eventos nativo da plataforma.
+* *Objetos e métricas* mostram o inventário atual ou o estado medido.
+
+
+Um alerta ativo pode permanecer aberto após a mudança da condição subjacente. Use dados novos de objetos e métricas sempre que possível.
+
+
+
+[[suggested-output]]
+== Saída sugerida
+
+Para cada problema prioritário:
+
+* Recurso afetado
+* Gravidade e estado do alerta
+* Tempo de disparo
+* Monitorar e condicionar
+* Registros ou métricas que corroborem
+* Evidências confirmadas
+* Causa provável, classificada como uma inferência
+* Orientação corretiva
+* Confiança e evidências ausentes
+
+
+
+
+[[limits-and-privacy]]
+== Limites e privacidade
+
+* Mantenha as janelas de alerta e de log abaixo de 30 dias.
+* Use janelas de log estreitas para reduzir eventos não relacionados.
+* Omita UUIDs, endereços, anotações e payloads brutos desnecessários.
+* As orientações corretivas são meramente informativas; valide os comandos em relação à documentação relevante do produto e ao processo de alteração.
+
+
+
+
+[[follow-up-prompts]]
+== Perguntas de acompanhamento
+
+[]
+====
+Para o alerta `AL-123456`, mostre a orientação do monitor e os eventos EMS relacionados em até 30 minutos antes e depois do acionamento.
+
+====
+[]
+====
+Agrupe os alertas de armazenamento ativo por sistema afetado e área de impacto. Qual sistema precisa de atenção primeiro e por quê?
+
+====
+[]
+====
+Verifique se o alerta de prioridade mais alta ainda é suportado pelas métricas atuais do objeto.
+
+====
+link:mcp_recipe_overview.html["Voltar às receitas"]

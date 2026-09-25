@@ -1,0 +1,108 @@
+---
+sidebar: sidebar 
+permalink: mcp_overview.html 
+summary: 'Conecte assistentes de IA ao Data Infrastructure Insights (DII) para que eles possam investigar o inventário da infraestrutura, a telemetria, os alertas e a integridade da coleta usando linguagem natural.' 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= O DII MCP Server
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Conecte assistentes/agentes de IA ao Data Infrastructure Insights (DII) para que eles possam investigar o inventário da infraestrutura, a telemetria, os alertas e a integridade da coleta usando linguagem natural.
+
+
+NOTE: O DII MCP é um recurso link:concept_preview_features.html["Pré-visualização"] e, portanto, está sujeito a alterações.
+
+O servidor DII MCP implementa o Model Context Protocol (MCP) e expõe ferramentas com escopo de locatário para clientes de IA compatíveis. O conjunto de ferramentas atual do produto é *somente leitura*: ele recupera e analisa dados do DII, mas não modifica a infraestrutura nem os recursos do DII.
+
+
+
+[[what-you-can-investigate]]
+== O que você pode investigar
+
+* *Inventário de infraestrutura:* armazenamento, virtualização, Kubernetes, ONTAP, Azure NetApp Files, StorageGRID e recursos relacionados.
+* *Desempenho e capacidade:* métricas de objetos, agregados agrupados e comportamento de séries temporais.
+* *Registros e eventos:* descubra tipos de log, pesquise eventos e crie histogramas de contagem de eventos.
+* *Alertas:* inspecione alertas ativos, definições de monitores, níveis de gravidade e orientações corretivas.
+* *Saúde da coleção:* revise as unidades de aquisição, as fontes de dados, os tipos de coletores compatíveis e as versões do coletor do Kubernetes.
+* *Postura de notificação:* inspecione janelas de manutenção, regras de notificação e tipos de destino de webhook.
+
+
+
+
+[[choose-an-entry-point]]
+== Escolha um ponto de entrada
+
+
+
+[[connect-an-ai-client]]
+=== Conecte um cliente de IA
+
+Siga link:mcp_setup.html["Configure o servidor DII MCP"] para o Cursor, Claude Code, VS Code, Codex ou outro cliente compatível com MCP.
+
+
+
+[[browse-available-tools]]
+=== Navegue pelas ferramentas disponíveis
+
+Use a link:mcp_tools_overview.html["referência da ferramenta"] para compreender todas as ferramentas atuais, as chamadas de descoberta necessárias, os limites de consulta e os nomes visíveis ao usuário.
+
+
+
+[[start-with-an-operational-workflow]]
+=== Comece com um fluxo de trabalho operacional
+
+Use a opção "a" link:mcp_recipe_overview.html["receita"] quando você já souber o resultado desejado:
+
+* Saúde da coleta de inventário
+* Avalie a saúde do armazenamento
+* Identificar o risco de capacidade
+* Verifique se o coletor do Kubernetes está atualizado
+* Solucionar problemas de desempenho
+* Revisar a postura de notificação
+
+
+
+
+[[how-dii-mcp-queries-work]]
+== Como funcionam as consultas do DII MCP
+
+Muitos recursos de DII possuem esquemas dinâmicos. Uma investigação confiável segue uma sequência que prioriza a descoberta:
+
+. Liste os tipos de objeto ou de log disponíveis.
+. Recuperar metadados para o tipo selecionado.
+. Utilize apenas atributos e métricas desses metadados.
+. Consultar um intervalo de tempo limitado.
+. Refine o resultado com filtros, agrupamento, classificação ou paginação.
+
+
+Consulte link:mcp_concepts.html["Conceitos e modelo de dados"] para obter detalhes.
+
+
+
+[[important-limitations]]
+== Limitações importantes
+
+* Todas as ferramentas atuais do produto são somente leitura.
+* Consultas de objetos, desempenho e logs impõem janelas de tempo limitadas. Use janelas de 30 dias ou menos, a menos que a página da ferramenta documente explicitamente um limite menor.
+* Os campos da consulta devem corresponder aos metadados retornados para o tipo de recurso selecionado.
+* Resultados extensos são paginados ou têm seu tamanho limitado.
+* A disponibilidade da ferramenta e os dados retornados dependem dos coletores do locatário, dos recursos habilitados e das permissões do usuário.
+* Não solicite nem reproduza endereços completos de endpoint de webhook. Consulte link:mcp_security.html["Segurança e privacidade"].
+
+
+
+
+[[next-steps]]
+== Próximos passos
+
+. link:mcp_setup.html["Conecte seu cliente"].
+. Experimente o link:mcp_recipe_environment_inventory.html["receita de inventário do ambiente"].
+. Verifique link:mcp_troubleshooting.html["Solução de problemas"] se uma consulta for rejeitada ou retornar resultados inesperados.
+

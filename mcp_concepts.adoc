@@ -1,0 +1,161 @@
+---
+sidebar: sidebar 
+permalink: mcp_concepts.html 
+summary: Compreender esses conceitos ajuda um assistente de IA a selecionar as ferramentas certas e a criar consultas válidas. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Conceitos e modelo de dados do DII MCP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Compreender esses conceitos ajuda um assistente de IA a selecionar as ferramentas certas e a criar consultas válidas.
+
+
+NOTE: O DII MCP é um recurso link:concept_preview_features.html["Pré-visualização"] e, portanto, está sujeito a alterações.
+
+
+
+[[tenant-scope]]
+== Escopo do locatário
+
+Cada solicitação DII MCP é executada no tenant DII e com as permissões do usuário autenticado. Uma ferramenta só pode retornar dados que existam nesse tenant e que sejam visíveis para essa identidade.
+
+
+
+[[acquisition-units]]
+== Unidades de aquisição
+
+Uma unidade de aquisição (UA) é um agente instalado remotamente que consulta fontes de dados e relata telemetria ao DII. Os registros da UA incluem o status da conexão, a atualidade dos relatórios, o sistema operacional, a versão e o número de fontes de dados atribuídas.
+
+Conexão e relatório são sinais diferentes. Por exemplo, uma AU pode aceitar uma conexão sem ter um histórico de relatórios bem-sucedidos. Avalie tanto o status quanto `lastReported`.
+
+
+
+[[data-sources]]
+== Fontes de dados
+
+Uma fonte de dados, também chamada de coletor, é uma conexão configurada com um sistema de infraestrutura, como um array de storage, switch, hipervisor ou serviço em nuvem.
+
+Use a operação de listagem para inventário e status. Recupere uma fonte de dados específica quando precisar de detalhes de configuração, como pacotes de coleta, intervalos de sondagem ou atividade recente.
+
+Os tipos de fonte de dados compatíveis descrevem o catálogo mais amplo de coletores do DII. Eles não são os mesmos que os coletores configurados no locatário atual.
+
+
+
+[[objects]]
+== Objetos
+
+Os objetos são entidades de infraestrutura normalizadas, como sistemas de storage, pools, volumes, hosts, máquinas virtuais, cargas de trabalho do Kubernetes e recursos específicos do produto.
+
+Os tipos de objetos são dinâmicos. Sempre:
+
+. Liste os tipos de objeto.
+. Selecione o tipo exato.
+. Recupere metadados para esse tipo.
+. Consultar somente os atributos e métricas declarados pelos metadados.
+
+
+
+
+[[attributes-and-metrics]]
+=== Atributos e métricas
+
+* *Atributos* descrevem a identidade, a configuração, a propriedade, os rótulos ou os relacionamentos.
+* *Métricas* são medições que variam ao longo do tempo, como capacidade, latência, taxa de transferência ou utilização.
+* *Atributos agrupáveis* podem segmentar uma consulta agregada.
+
+
+Os filtros de métricas são avaliados em relação aos valores brutos das métricas antes da aplicação da agregação da janela de tempo solicitada.
+
+
+
+[[logs]]
+== Registros
+
+Os tipos de log representam fluxos de eventos como ONTAP EMS, eventos do Kubernetes, eventos do StorageGRID, eventos do VMware e eventos da plataforma DII.
+
+A consulta de logs também prioriza os metadados:
+
+. Liste os tipos de registro disponíveis.
+. Recuperar metadados para o tipo selecionado.
+. Solicite apenas atributos válidos.
+. Pesquise eventos ou crie um histograma de contagem de eventos.
+
+
+
+
+[[monitors-and-alerts]]
+== Monitores e alertas
+
+Um monitor define uma condição que o DII avalia. Um alerta é um resultado específico do monitor para um ou mais objetos relacionados.
+
+* Use ferramentas de monitoramento para inspecionar a intenção, o status, o tipo de objeto e as orientações corretivas.
+* Use os metadados dos alertas antes de consultá-los.
+* Use um nome de alerta, como  `AL-123456` ou seu UUID, para recuperar um alerta.
+
+
+O status de alerta e a gravidade são dimensões distintas. Solicite ambos ao priorizar os resultados.
+
+
+
+[[maintenance-windows]]
+== Janelas de manutenção
+
+Uma janela de manutenção suprime alertas que correspondem a uma expressão durante um período definido. Um resultado vazio bem-sucedido significa que não existem janelas correspondentes; não é evidência de dados ausentes.
+
+
+
+[[notification-rules-and-targets]]
+== Regras e destinos de notificação
+
+As regras de notificação encaminham alertas correspondentes. Os destinos podem incluir Slack, Microsoft Teams, PagerDuty ou integrações HTTP personalizadas.
+
+Os endereços de webhook podem conter material secreto. Para relatórios, solicite apenas o nome do alvo, o tipo de mecanismo e o status. Nunca reproduza o endereço completo.
+
+
+
+[[metadata-first-query-flow]]
+== Fluxo de consulta com metadados como prioridade
+
+[source, text]
+----
+Discover types
+    → retrieve type metadata
+        → select valid attributes and metrics
+            → query a bounded time range
+                → paginate, group, or retrieve time series
+----
+
+
+[[filters]]
+== Filtros
+
+As ferramentas de consulta DII suportam condições e operadores lógicos aninhados:
+
+* Comparações: `EQ`, `NE`, `GT`, `LT`, `GE`, `LE`
+* Correspondência de padrões: `WILDCARD`
+* Presença: `EXISTS`
+* Lógica: `and`, `or`, `not`
+
+
+Use o nome exato do campo e o tipo de valor compatível declarado nos metadados. Para `EXISTS`, omita um valor de comparação quando houver suporte na versão do servidor conectado.
+
+
+
+[[time-ranges-and-pagination]]
+== Intervalos de tempo e paginação
+
+* Use carimbos de data/hora ISO-8601 com deslocamentos explícitos ou `Z`.
+* Forneça um fuso horário IANA, como +America/New_York+ ou  `UTC` quando necessário.
+* Limite as janelas de consulta a 30 dias ou menos, a menos que uma ferramenta documente um limite menor.
+* Consultas de objetos e alertas geralmente usam `limit` e `offset`.
+* As consultas de eventos de log usam um cursor retornado para a próxima página.
+
+
+Para ver os erros e as etapas de recuperação, consulte link:mcp_troubleshooting.html["Solução de problemas"].

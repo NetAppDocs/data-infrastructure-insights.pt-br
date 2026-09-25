@@ -1,0 +1,136 @@
+---
+sidebar: sidebar 
+permalink: mcp_recipe_environment_inventory.html 
+summary: Use esta receita para entender se as unidades de aquisição e as fontes de dados configuradas do DII estão conectadas, gerando relatórios e coletando dados corretamente. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Ambiente de inventário e integridade da coleção
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Use esta receita para entender se as unidades de aquisição e as fontes de dados configuradas do DII estão conectadas, gerando relatórios e coletando dados corretamente.
+
+
+NOTE: O DII MCP é um recurso link:concept_preview_features.html["Pré-visualização"] e, portanto, está sujeito a alterações.
+
+
+
+[[prerequisites]]
+== Pré-requisitos
+
+* Acesso à unidade de aquisição e às ferramentas de coleta.
+* Um nome opcional da unidade de aquisição ou do coletor para restringir a investigação.
+
+
+
+
+[[tools-used]]
+== Ferramentas utilizadas
+
+* +AcquisitionUnitsService_getAcquisitionUnits+
+* +AcquisitionUnitsService_getAcquisitionUnitByUuid+
+* +CollectorService_getDataSources+
+* +CollectorService_getDataSourceById+
+* +CollectorService_getDataSourceTypes+
+
+
+
+
+[[starter-prompt]]
+== Prompt inicial
+
+[]
+====
+Analise meu ambiente de coleta de dados DII. Resuma as unidades de aquisição por status de conexão e atualização dos relatórios e, em seguida, resuma as fontes de dados configuradas por status de aquisição e fornecedor. Destaque as unidades de aquisição que nunca reportaram dados, as unidades sem coletores atribuídos, os coletores com falha e as aquisições bem-sucedidas desatualizadas. Não exiba endereços IP, UUIDs ou credenciais.
+
+====
+
+
+[[agent-workflow]]
+== Fluxo de trabalho do agente
+
+. Liste todas as unidades de aquisição.
+. Classifique cada AU usando o status de conexão e `lastReported`.
+. Conte as fontes de dados atribuídas por AU.
+. Liste todas as fontes de dados configuradas.
+. Agrupe os coletores por status, fornecedor, modelo e AU.
+. Identificar:
++
+** AUs desconectadas ou com falha de heartbeat
+** Unidades de ação conectadas que nunca relataram
+** UAs com zero fontes de dados
+** Coletores com falha
+** Coletores sem aquisição bem-sucedida
+** Coletores bem-sucedidos cuja última aquisição é inesperadamente antiga
+
+
+. Recupere detalhes completos do AU ou do coletor apenas para as exceções.
+. Retorne um resumo priorizado e indique claramente o limite de atualização utilizado.
+
+
+
+
+[[interpretation]]
+== Interpretação
+
+Use estas distinções:
+
+* *Conectado e reportando:* a AU está conectada e tem um valor  `lastReported`recente.
+* *Conectado, mas nunca reportado:* a conectividade existe, mas o envio bem-sucedido de telemetria não foi estabelecido.
+* *Falha de heartbeat:* investigue o host da AU, o caminho de rede e o serviço.
+* *Falha no coletor:* inspecione a atividade de polling recente do coletor, o status do pacote, a configuração e a última aquisição bem-sucedida.
+* *Nenhum coletor atribuído:* isso pode ser intencional; verifique antes de tratar isso como uma falha.
+
+
+O catálogo de tipos de fonte de dados suportados descreve os produtos que o DII pode coletar. Ele não comprova que esses produtos estejam configurados no locatário.
+
+
+
+[[suggested-output]]
+== Saída sugerida
+
+. Resumo executivo
+. Contagem de status da unidade de aquisição
+. Contagens de status do coletor
+. Exceções classificadas por impacto operacional
+. Verificações recomendadas
+. Limitações de dados
+
+
+
+
+[[limits-and-privacy]]
+== Limites e privacidade
+
+* Evite retornar UUIDs de AU, endereços IP, nomes de host privados ou credenciais do coletor.
+* Um valor de status por si só não estabelece a atualidade dos dados.
+* Recupere a configuração detalhada apenas para exceções nomeadas.
+
+
+
+
+[[follow-up-prompts]]
+== Perguntas de acompanhamento
+
+[]
+====
+Inspecione o coletor com falha chamado  `example-array`. Resuma a atividade recente de polling e as falhas do pacote de coleta sem mostrar credenciais ou endereços privados.
+
+====
+[]
+====
+Quais unidades de aquisição não reportaram nos últimos 30 minutos e de quais coletores elas dependem?
+
+====
+[]
+====
+Compare os fornecedores de coletores configurados com o catálogo de tipos de fonte de dados compatíveis com o DII.
+
+====
+link:mcp_recipe_overview.html["Voltar às receitas"]

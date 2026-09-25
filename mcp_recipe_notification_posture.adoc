@@ -1,0 +1,150 @@
+---
+sidebar: sidebar 
+permalink: mcp_recipe_notification_posture.html 
+summary: Use esta receita para entender como os alertas do DII são roteados e suprimidos sem expor os endereços dos endpoints do webhook. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Revisar a postura de notificação
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Use esta receita para entender como os alertas do DII são roteados e suprimidos sem expor os endereços dos endpoints do webhook.
+
+
+NOTE: O DII MCP é um recurso link:concept_preview_features.html["Pré-visualização"] e, portanto, está sujeito a alterações.
+
+
+
+[[prerequisites]]
+== Pré-requisitos
+
+* Acesso às ferramentas de notificação e de janela de manutenção.
+* Um tipo opcional de monitor, recurso ou integração para restringir a análise.
+
+
+
+
+[[tools-used]]
+== Ferramentas utilizadas
+
+* +NotificationService_getNotificationRules+
+* +NotificationService_getNotificationRuleById+
+* +NotificationService_getWebhooks+
+* +MaintenanceWindowService_getMaintenanceWindows+
+* +MaintenanceWindowService_getMaintenanceWindowById+
+* Opcional: +MonitorsService_queryMonitors+
+
+
+
+
+[[starter-prompt]]
+== Prompt inicial
+
+[]
+====
+Analise o status das notificações do DII. Resuma as regras de notificação ativas e inativas, o escopo de monitoramento ou recurso de cada regra, a quantidade de destinos de webhook por tipo de integração e as janelas de manutenção atuais. Retorne apenas os nomes dos destinos, os tipos de mecanismo e o status, nunca os endereços dos endpoints.
+
+====
+
+
+[[agent-workflow]]
+== Fluxo de trabalho do agente
+
+. Liste as regras de notificação.
+. Classifique as regras como ativas, inativas, expirando ou sem expiração.
+. Resuma o escopo da expressão de cada regra:
++
+** Nome do monitor ou grupo
+** Objeto relacionado
+** Escopo amplo de curinga
+
+
+. Recupere uma regra específica somente quando detalhes adicionais forem necessários.
+. Liste os destinos do webhook e descarte imediatamente o campo de endereço do resultado em processamento.
+. Agrupe os alvos por tipo de mecanismo e status.
+. Liste as janelas de manutenção ativas.
+. Identifique janelas de supressão que se sobreponham a recursos importantes ou a períodos excepcionalmente longos.
+. Opcionalmente, compare as expressões das regras com os monitores disponíveis.
+. Informe a cobertura de roteamento, as regras gerais, as regras inativas e os riscos de supressão.
+
+
+
+
+[[security-requirement]]
+== Requisito de segurança
+
+Os endereços completos de webhook podem conter:
+
+* Caminhos de entrada no Slack ou no Teams
+* Chaves de roteamento do PagerDuty
+* Tokens de API
+* Assinaturas exclusivas de fluxo de trabalho
+* Credenciais de integração personalizadas
+
+
+Nunca exiba, cite, resuma, persista nem encaminhe o campo de endereço. Um sufixo mascarado também é desnecessário para este fluxo de trabalho.
+
+Se um endpoint completo aparecer em uma transcrição ou artefato compartilhado, siga as etapas do incidente em link:mcp_security.html["Segurança e privacidade"].
+
+
+
+[[interpretation]]
+== Interpretação
+
+* Uma regra inativa pode ser intencional; confirme a propriedade antes de recomendar a remoção.
+* Uma expressão curinga ampla pode gerar ruído nas notificações ou roteamento indesejado.
+* O status de um destino pode ser nulo ou desconhecido; não o reporte como ativado.
+* Um resultado bem-sucedido de janela de manutenção vazia significa que não existem janelas correspondentes.
+* Uma janela de longa duração pode ocultar problemas reais mesmo quando está tecnicamente ativa e válida.
+
+
+
+
+[[suggested-output]]
+== Saída sugerida
+
+. Contagens de regras por status
+. Escopo da regra e tipo de destino
+. Contagem de destinos por mecanismo
+. Janelas de manutenção ativas
+. Configurações amplas, inativas ou ambíguas
+. Advertências sobre segurança e qualidade dos dados
+
+
+
+
+[[limits-and-privacy]]
+== Limites e privacidade
+
+* Não retorne endereços, tokens, UUIDs ou identificadores de recursos privados.
+* Este fluxo de trabalho analisa a configuração, mas não testa a entrega de mensagens.
+* As ferramentas atuais não criam, atualizam, desativam nem excluem regras e destinos.
+
+
+
+
+[[follow-up-prompts]]
+== Perguntas de acompanhamento
+
+[]
+====
+Quais regras de notificação ativas têm expressões curinga amplas e a quais grupos de monitoramento elas podem corresponder?
+
+====
+[]
+====
+Liste as janelas de manutenção atuais e futuras e explique quais escopos de alerta elas suprimem.
+
+====
+[]
+====
+Conte os destinos de notificação por tipo de integração e identifique os destinos com status desconhecido. Não exiba os endereços.
+
+====
+link:mcp_recipe_overview.html["Voltar às receitas"]

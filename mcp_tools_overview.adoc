@@ -1,0 +1,466 @@
+---
+sidebar: sidebar 
+permalink: mcp_tools_overview.html 
+summary: 'O servidor DII MCP atualmente expõe 26 ferramentas de produto somente leitura em nove domínios. Um auxiliar separado `mcp_auth` pode aparecer quando o cliente conectado precisar se autenticar.' 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Referência da ferramenta DII MCP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O servidor DII MCP atualmente expõe 26 ferramentas de produto somente leitura em nove domínios. Um auxiliar +mcp_auth+ separado pode aparecer quando o cliente conectado precisar se autenticar.
+
+
+NOTE: O DII MCP é um recurso link:concept_preview_features.html["Pré-visualização"] e, portanto, está sujeito a alterações.
+
+A disponibilidade e os resultados da ferramenta dependem do tenant autenticado, dos recursos DII habilitados, dos coletores configurados e das permissões do usuário.
+
+
+
+[[query-conventions]]
+== Convenções de consulta
+
+* Descubra tipos e metadados antes de consultar campos dinâmicos.
+* Use os nomes exatos de atributos e métricas, com distinção entre maiúsculas e minúsculas, retornados pelos metadados.
+* Use registros de data e hora ISO-8601 e nomes de fuso horário IANA quando necessário.
+* Limite as janelas de consulta a 30 dias ou menos.
+* Use  `limit` e  `offset` para paginação de objetos e alertas.
+* Use o cursor retornado para a paginação de eventos de log.
+* Não exiba os endereços completos dos endpoints de webhook.
+
+
+
+
+[[acquisition-units]]
+== Unidades de aquisição
+
+
+
+[[list-acquisition-units]]
+=== Listar unidades de aquisição
+
++AcquisitionUnitsService_getAcquisitionUnits+
+
+Retorna todas as unidades de aquisição com status da conexão, atualização dos relatórios, sistema operacional, versão, endereço IP e contagem de fontes de dados atribuídas.
+
+Exemplo:
+
+[]
+====
+Listar unidades de aquisição. Resumir unidades conectadas, com falha e nunca reportadas, sem exibir endereços IP ou UUIDs.
+
+====
+
+
+[[get-an-acquisition-unit]]
+=== Obtenha uma unidade de aquisição
+
++AcquisitionUnitsService_getAcquisitionUnitByUuid+
+
+Recupera todos os detalhes de uma unidade de aquisição. Se você fornecer um nome, liste primeiro as unidades de aquisição para determinar o UUID correspondente.
+
+Entrada necessária: `uuid`
+
+
+
+[[alerts]]
+== Alertas
+
+
+
+[[get-alert-metadata]]
+=== Obter metadados do alerta
+
++ServiçoDeAlertas_obterMetadados+
+
+Retorna nomes de campos de alerta e tipos de dados válidos. Chame esta função antes de consultar os alertas.
+
+
+
+[[query-alerts]]
+=== Consultar alertas
+
++AlertsService_queryForAlerts+
+
+Consulta alertas ativos ou inativos com atributos, filtros, ordenação, limites de tempo e paginação por deslocamento selecionados.
+
+Entradas necessárias:
+
+* `active`
+* `attributeNames`
+* `fromTime`
+* `toTime`
+* `timezone`
+
+
+As entradas opcionais incluem `filter`, `sortField`, `sortAscending`, `limit` e `offset`. `limit` é de 1 a 500; `offset` é de 0 a 1000. Mantenha o intervalo de tempo abaixo de 30 dias.
+
+Exemplo:
+
+[]
+====
+Recupere alertas críticos de armazenamento ativo dos últimos sete dias. Retorne o ID do alerta, o nome do monitor, a gravidade, o status e o nome do armazenamento relacionado.
+
+====
+
+
+[[get-an-alert-by-name]]
+=== Receba um alerta pelo nome
+
++AlertsService_getAlertByName+
+
+Recupera um alerta usando um ID de alerta no formato  `AL-123456`.
+
+Entrada necessária: `name`
+
+
+
+[[get-an-alert-by-uuid]]
+=== Receba um alerta por UUID
+
++AlertsService_getAlertByUUID+
+
+Recupera um alerta usando seu UUID.
+
+Entrada necessária: `uuid`
+
+
+
+[[data-collectors]]
+== Coletores de dados
+
+
+
+[[list-data-sources]]
+=== Listar fontes de dados
+
++CollectorService_getDataSources+
+
+Lista os coletores configurados com nome, status, fornecedor, modelo, unidade de aquisição, versão e última aquisição bem-sucedida. Opcionalmente, permite filtrar por um UUID de AU.
+
+Exemplo:
+
+[]
+====
+Agrupe as fontes de dados configuradas por status e fornecedor. Destaque as falhas e as aquisições bem-sucedidas desatualizadas.
+
+====
+
+
+[[get-a-data-source]]
+=== Obtenha uma fonte de dados
+
++CollectorService_getDataSourceById+
+
+Recupera um coletor com a configuração, o status do pacote de coleta, a atividade de sondagem, os dispositivos descobertos, as informações de patch e o contexto da unidade de aquisição.
+
+Entrada necessária: `id`
+
+Use esta ferramenta para intervalos de sondagem, métricas configuradas, configurações de coleta ou investigação de falhas.
+
+
+
+[[list-supported-data-source-types]]
+=== Liste os tipos de fonte de dados compatíveis
+
++CollectorService_getDataSourceTypes+
+
+Lista os tipos de produtos compatíveis com o catálogo de coletores do DII. Esta não é uma lista dos coletores configurados no tenant.
+
+
+
+[[logs]]
+== Registros
+
+
+
+[[list-log-types]]
+=== Listar tipos de log
+
++LogService_getLogTypes+
+
+Lista os tipos de log atualmente disponíveis no locatário.
+
+
+
+[[get-log-type-metadata]]
+=== Obter metadados do tipo de log
+
++LogService_getLogTypeMetadata+
+
+Retorna os atributos válidos para um tipo de log. Chame esta função antes de pesquisar ou agrupar eventos.
+
+Entrada necessária: `type`
+
+
+
+[[query-log-events]]
+=== Eventos de registro de consultas
+
++LogService_queryLogEvents+
+
+Retorna os eventos de log em ordem decrescente de data e hora.
+
+Entradas necessárias:
+
+* `type`
+* `fromTime`
+* `toTime`
+* `timezone`
+
+
+As entradas opcionais incluem `attributes`, `filter`, `limit` e `cursor`. `limit` é de 1 a 200. A janela de eventos não pode exceder 30 dias. Passe o cursor da resposta anterior para recuperar a próxima página.
+
+
+
+[[count-log-events-over-time]]
+=== Conte os eventos de log ao longo do tempo
+
++LogService_queryLogEventsCountHistogram+
+
+Retorna intervalos de tempo de tamanho fixo com a contagem de eventos. Opcionalmente, agrupe cada intervalo por um atributo agrupável válido; os resultados agrupados retornam os principais segmentos e um segmento "+__other__+".
+
+Entradas necessárias:
+
+* `type`
+* `fromTime`
+* `toTime`
+* `timezone`
+
+
+Entradas opcionais: `filter`, `groupBy`
+
+
+
+[[maintenance-windows]]
+== Janelas de manutenção
+
+
+
+[[list-maintenance-windows]]
+=== Liste as janelas de manutenção
+
++MaintenanceWindowService_getMaintenanceWindows+
+
+Lista as janelas de supressão de alertas ativas e não expiradas. Defina `includeExpired` como `true` para incluir janelas expiradas.
+
+Uma resposta vazia bem-sucedida significa que não existem janelas de manutenção correspondentes.
+
+
+
+[[get-a-maintenance-window]]
+=== Obtenha uma janela de manutenção
+
++MaintenanceWindowService_getMaintenanceWindowById+
+
+Recupera uma janela de manutenção.
+
+Entrada necessária: `id`
+
+
+
+[[monitors]]
+== Monitores
+
+
+
+[[list-monitors]]
+=== Listar monitores
+
++MonitorsService_queryMonitors+
+
+Lista os monitores DII. Use  `isSystem` para retornar apenas os monitores do sistema, excluir os monitores do sistema ou retornar todos os monitores.
+
+
+
+[[get-a-monitor]]
+=== Adquira um monitor
+
++MonitorsService_getMonitorById+
+
+Recupera um monitor, incluindo sua descrição e orientações corretivas, quando disponíveis.
+
+Entrada necessária: `id`
+
+
+
+[[notifications]]
+== Notificações
+
+
+
+[[list-notification-rules]]
+=== Listar regras de notificação
+
++NotificationService_getNotificationRules+
+
+Lista as regras que encaminham alertas correspondentes para os destinos de notificação. Uma resposta vazia bem-sucedida significa que não existem regras correspondentes.
+
+
+
+[[get-a-notification-rule]]
+=== Obtenha uma regra de notificação
+
++NotificationService_getNotificationRuleById+
+
+Recupera uma regra de roteamento.
+
+Entrada necessária: `id`
+
+
+
+[[list-webhook-targets]]
+=== Listar destinos de webhook
+
++NotificationService_getWebhooks+
+
+Lista os metadados de destino do webhook para Slack, Microsoft Teams, Discord, PagerDuty e integrações HTTP personalizadas. Opcionalmente, filtre por tipos de mecanismo separados por vírgula.
+
+Requisito de segurança: endereços de endpoint completos podem conter credenciais. Aplicativos e agentes devem omitir ou ocultar o campo de endereço dos resultados exibidos ou encaminhados.
+
+Exemplo seguro:
+
+[]
+====
+Conte os destinos do webhook por tipo de mecanismo e liste apenas os nomes e o status dos destinos. Não retorne os endereços dos endpoints.
+
+====
+
+
+[[objects-and-metrics]]
+== Objetos e métricas
+
+
+
+[[list-object-types]]
+=== Listar tipos de objeto
+
++ObjectService_getObjectTypes+
+
+Lista os tipos de objetos atualmente disponíveis no locatário.
+
+
+
+[[get-object-metadata]]
+=== Obter metadados do objeto
+
++ObjectService_getMetadataForObjectType+
+
+Retorna atributos, métricas, tipos e capacidades de agrupamento válidos para um tipo de objeto.
+
+Entrada necessária: `objectType`
+
+
+
+[[query-objects]]
+=== Objetos de consulta
+
++ObjectService_query+
+
+Recupera objetos, atributos selecionados e métricas opcionais. Os filtros que fazem referência a métricas aplicam-se aos valores brutos antes da agregação por janela temporal.
+
+Entradas necessárias:
+
+* `objectType`
+* `attributeNames`
+
+
+As entradas opcionais incluem `metricNames`, `filter`, `sortFieldName`, `isSortAscending`, `fromTime`, `toTime`, `aggregateFunctions`, `limit`, e `offset`.
+
+Agregações de consulta suportadas: `MAX`, `MIN`, `AVG`, `SUM`, `LAST`. `limit` é de 1 a 500. Se os limites de tempo forem omitidos, a ferramenta usará como padrão uma janela recente de três horas.
+
+
+
+[[group-objects]]
+=== Objetos de grupo
+
++ObjectService_groupObjects+
+
+Agrupa objetos por um atributo agrupável válido e agrega as métricas selecionadas. Os filtros são aplicados aos valores brutos antes da agregação.
+
+Entradas necessárias:
+
+* `objectType`
+* `groupByAttribute`
+* `metricNames`
+
+
+As entradas opcionais incluem `aggregateFunctions`, `filter`, classificação, limites de tempo, `limit` e `offset`.
+
+Agregações de grupo suportadas: `MAX`, `MIN`, `AVG`, `SUM`, `FIRST`, `CHANGE`, +CHANGE_RATIO+.
+
+
+
+[[query-performance-time-series]]
+=== Séries temporais de desempenho de consultas
+
++consultar métricas de desempenho do ObjectService para objetos+
+
+Retorna dados de séries temporais agrupados em buckets para uma métrica e os objetos correspondentes.
+
+Entradas necessárias:
+
+* `objectType`
+* `metricName`
+* `fromTime`
+* `toTime`
+* `timezone`
+
+
+As entradas opcionais incluem `filter`, `aggregationFunction`, `limit`, e `isSortAscending`. `limit` controla o número de séries retornadas e deve ser de 1 a 50.
+
+Agregações de buckets suportadas: `MAX`, `MIN`, `AVG`, `SUM`, `FIRST`, `CHANGE`, +CHANGE_RATIO+.
+
+
+
+[[kubernetes-collectors]]
+== Coletores do Kubernetes
+
+
+
+[[list-kubernetes-collectors]]
+=== Listar coletores do Kubernetes
+
++OperatorsManagement_getKubernetesCollectors+
+
+Retorna o nome do cluster, o status geral de atualidade, a versão do operador, a versão do componente Network Performance and Map, a versão do componente Change Analysis e o carimbo de data e hora do último relatório.
+
+Exemplo:
+
+[]
+====
+Identifique coletores do Kubernetes desatualizados e resuma quais componentes precisam de atenção.
+
+====
+
+
+[[filter-operators]]
+== Operadores de filtro
+
+As consultas de alerta, log e objeto suportam condições aninhadas:
+
+* `EQ`, `NE`
+* `GT`, `LT`, `GE`, `LE`
+* `WILDCARD` usando `++*++` e `?`
+* `EXISTS`
+* Aninhado `and`, `or` e `not`
+
+
+O servidor conectado valida os campos em relação aos metadados. Se uma consulta for rejeitada, atualize os metadados relevantes e reconstrua o filtro.
+
+
+
+[[related-documentation]]
+== Documentação relacionada
+
+* link:mcp_overview.html["Visão geral do DII MCP"]
+* link:mcp_concepts.html["Conceitos e modelo de dados"]
+* link:mcp_recipe_overview.html["Receitas operacionais"]
+* link:mcp_troubleshooting.html["Solução de problemas"]
+

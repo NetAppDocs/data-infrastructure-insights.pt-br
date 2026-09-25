@@ -1,0 +1,162 @@
+---
+sidebar: sidebar 
+permalink: mcp_troubleshooting.html 
+summary: Soluções comuns para problemas de conexão com o servidor MCP, erros de autenticação, rejeições de consultas e limitação da taxa da API. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Solução de problemas do DII MCP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+
+NOTE: O DII MCP é um recurso link:concept_preview_features.html["Pré-visualização"] e, portanto, está sujeito a alterações.
+
+
+
+[[the-server-does-not-connect]]
+== O servidor não se conecta
+
+Verifique:
+
+. A URL configurada corresponde ao endpoint fornecido para o seu ambiente DII.
+. O cliente oferece suporte a servidores MCP HTTP remotos e ao fluxo de autenticação necessário.
+. Autenticação concluída com sucesso.
+. A política de rede permite acesso ao endpoint.
+. A identidade conectada pode acessar o tenant do DII.
+
+
+Reinicie ou recarregue o servidor MCP após alterar a configuração do cliente.
+
+
+
+[[authentication-is-required]]
+== A autenticação é necessária
+
+Conclua o fluxo de login do cliente e, em seguida, tente novamente a solicitação original. Se uma identidade de serviço for usada, verifique se sua credencial é válida e está armazenada por meio de um mecanismo de segredo aprovado.
+
+Não repita tentativas para uma negação de autorização confirmada. Peça a um administrador do DII para revisar as permissões de tenant e de recursos do usuário.
+
+
+
+[[an-object-query-rejects-a-field]]
+== Uma consulta de objeto rejeita um campo
+
+Os atributos e métricas variam de acordo com o tipo.
+
+. Chame +ObjectService_getObjectTypes+.
+. Confirme o tipo exato do objeto.
+. Chame +ObjectService_getMetadataForObjectType+.
+. Copie os nomes dos campos exatamente dos metadados.
+. Verifique se o tipo de valor e a função de agregação são compatíveis.
+
+
+Somente os atributos marcados como agrupáveis podem ser usados para agrupar objetos.
+
+
+
+[[a-log-query-rejects-an-attribute]]
+== Uma consulta de log rejeita um atributo
+
+. Chame +LogService_getLogTypes+.
+. Confirme o tipo exato de log.
+. Chame +LogService_getLogTypeMetadata+.
+. Use apenas os atributos retornados para esse tipo de log.
+
+
+As consultas de eventos de log usam paginação baseada em cursor. Passe o cursor retornado pela página anterior em vez de um deslocamento.
+
+
+
+[[an-alert-query-rejects-a-field]]
+== Uma consulta de alerta rejeita um campo
+
+Chame +AlertsService_getMetadata+ imediatamente antes de construir a consulta. Os metadados de alerta podem ser amplos e dependentes do locatário; use os nomes exatos dos campos.
+
+
+
+[[the-time-range-is-invalid]]
+== O intervalo de tempo é inválido
+
+* Certifique-se de que `fromTime` seja anterior ou igual a `toTime`.
+* Use timestamps ISO-8601 com um deslocamento ou `Z`.
+* Mantenha a janela solicitada abaixo de 30 dias.
+* Divida investigações mais longas em janelas consecutivas e não sobrepostas e resuma os resultados.
+* Forneça um fuso horário IANA válido quando a ferramenta exigir um.
+
+
+A imposição em tempo de execução é definitiva se for mais rigorosa do que a descrição de uma ferramenta armazenada em cache no cliente.
+
+
+
+[[a-query-returns-too-many-results]]
+== Uma consulta retorna resultados em excesso
+
+* Adicione um filtro válido.
+* Reduza o intervalo de tempo.
+* Ordene pela métrica mais relevante.
+* Diminua o limite de resultados.
+* Use agrupamento ou um histograma quando registros individuais forem desnecessários.
+* Continue com  `offset` ou um cursor de registro somente quando mais detalhes forem necessários.
+
+
+
+
+[[a-successful-call-returns-no-rows]]
+== Uma chamada bem-sucedida não retorna nenhuma linha
+
+Um resultado vazio geralmente é uma resposta válida. Pode significar:
+
+* Nenhum recurso corresponde ao filtro.
+* Nenhum evento ocorreu no intervalo de tempo selecionado.
+* Não há janelas de manutenção nem regras de notificação configuradas.
+* O tipo de dados selecionado não é preenchido pelos coletores do locatário.
+
+
+Não descreva um resultado vazio bem-sucedido como dados ausentes, a menos que outras evidências indiquem um problema na coleta.
+
+
+
+[[an-acquisition-unit-is-connected-but-has-never-reported]]
+== Uma unidade de aquisição está conectada, mas nunca reportou
+
+O estado da conexão e o envio bem-sucedido de relatórios são processos distintos. Verifique:
+
+* `lastReported`
+* Contagem de fontes de dados atribuídas
+* Status de aquisição da fonte de dados
+* A conectividade de host e a versão do AU host
+* Atividade de sondagem para uma fonte de dados atribuída
+
+
+
+
+[[a-collector-is-failed]]
+== Um coletor falhou
+
+Use +CollectorService_getDataSourceById+ para o coletor afetado. Analise a atividade recente de coleta de dados, informações sobre patches ativos, status do pacote, configuração e o horário da última aquisição bem-sucedida. Evite exibir credenciais ou valores de configuração privados.
+
+
+
+[[webhook-results-include-complete-addresses]]
+== Os resultados do webhook incluem endereços completos
+
+Não repita os valores. Resuma apenas os nomes dos alvos, os tipos de integração, as contagens e o status. Siga link:mcp_security.html["Segurança e privacidade"] se algum material secreto foi exibido ou compartilhado.
+
+
+
+[[the-ai-assistant-selected-the-wrong-tool]]
+== O assistente de IA selecionou a ferramenta errada
+
+Use um prompt mais explícito:
+
+[]
+====
+Primeiro, liste os tipos de objeto disponíveis. Recupere metadados para o tipo selecionado. Em seguida, consulte apenas os campos válidos e explique quais ferramentas DII você utilizou.
+
+====
+Para investigações comuns, comece com um link:mcp_recipe_overview.html["receita operacional"].

@@ -1,0 +1,138 @@
+---
+sidebar: sidebar 
+permalink: mcp_recipe_kubernetes_collector_currency.html 
+summary: Use esta receita para identificar clusters Kubernetes cujos componentes do operador ou de coleta do DII estejam desatualizados, desativados ou obsoletos. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Verifique se o coletor do Kubernetes está atualizado
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Use esta receita para identificar clusters Kubernetes cujos componentes do operador ou de coleta do DII estejam desatualizados, desativados ou obsoletos.
+
+
+NOTE: O DII MCP é um recurso link:concept_preview_features.html["Pré-visualização"] e, portanto, está sujeito a alterações.
+
+
+
+[[prerequisites]]
+== Pré-requisitos
+
+* A coleção do Kubernetes está configurada no tenant do DII.
+* Acesso às informações do coletor do Kubernetes.
+
+
+
+
+[[tools-used]]
+== Ferramentas utilizadas
+
+* +OperatorsManagement_getKubernetesCollectors+
+* Opcional: +AcquisitionUnitsService_getAcquisitionUnits+
+* Opcional: +CollectorService_getDataSources+
+
+
+
+
+[[starter-prompt]]
+== Prompt inicial
+
+[]
+====
+Analise a atualidade do coletor DII Kubernetes. Agrupe clusters por status geral, identifique operadores e componentes desatualizados ou desativados e sinalize registros de data e hora do último relatório que estejam desatualizados. Não exiba endereços internos ou UUIDs.
+
+====
+
+
+[[agent-workflow]]
+== Fluxo de trabalho do agente
+
+. Liste os coletores do Kubernetes.
+. Normalize cada cluster em:
++
+** Atualizado
+** Desatualizado
+** Desabilitado
+** Desconhecido
+
+
+. Compare:
++
+** Versão do operador
+** Versão do componente Network Performance and Map
+** Alterar a versão do componente Análise de Alterações
+
+
+. Converta o último registro de data e hora para o fuso horário solicitado.
+. Sinalize os clusters que não relataram dentro do limite de atualização acordado.
+. Diferencie `N/A` de uma versão desatualizada:
++
+** `N/A` pode significar que o componente não está instalado, não está ativado ou não é aplicável.
+
+
+. Se os relatórios estiverem desatualizados, verifique a unidade de aquisição relacionada e o status do coletor, quando disponíveis.
+. Retorna uma lista priorizada de atualizações e investigações.
+
+
+
+
+[[interpretation]]
+== Interpretação
+
+* *Desatualizado:* pelo menos um componente instalado está desatualizado em relação à versão esperada pelo DII.
+* *Desativado:* a coleção está desativada intencionalmente ou administrativamente.
+* *Relatórios desatualizados:* os dados da versão podem não refletir o estado atual do cluster.
+* *N/A:* requer contexto; não classifique automaticamente como uma falha.
+
+
+A ferramenta informa versões e status. Ela não realiza atualizações.
+
+
+
+[[suggested-output]]
+== Saída sugerida
+
+. Contagem de clusters por status
+. Clusters desatualizados classificados pelo nível de atualização dos relatórios
+. Diferenças de versão no nível do componente
+. Componentes desativados ou indisponíveis
+. Etapas de verificação recomendadas
+
+
+
+
+[[limits-and-privacy]]
+== Limites e privacidade
+
+* Os nomes dos clusters podem ser confidenciais; use o tratamento aprovado ao compartilhar os resultados.
+* Não infira a exposição a vulnerabilidades apenas com base na atualidade da versão.
+* Valide a compatibilidade da atualização e o processo fora deste fluxo de trabalho somente leitura.
+
+
+
+
+[[follow-up-prompts]]
+== Perguntas de acompanhamento
+
+[]
+====
+Quais clusters têm um operador desatualizado e não relataram nada na última hora?
+
+====
+[]
+====
+Separe os clusters com um componente de Análise de Alterações desatualizado dos clusters em que esse componente não está disponível.
+
+====
+[]
+====
+Para clusters obsoletos, verifique se a infraestrutura de coleta de DII associada está saudável.
+
+====
+link:mcp_recipe_overview.html["Voltar às receitas"]

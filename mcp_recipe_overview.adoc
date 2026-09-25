@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: mcp_recipe_overview.html 
+summary: As receitas combinam várias ferramentas DII somente leitura em fluxos de trabalho de infraestrutura repetíveis. Use-as como pontos de partida e substitua os nomes fictícios dos recursos pelos valores do seu locatário. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Receitas operacionais do DII MCP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+As receitas combinam várias ferramentas DII somente leitura em fluxos de trabalho de infraestrutura repetíveis. Use-as como pontos de partida e substitua os nomes fictícios dos recursos pelos valores do seu locatário.
+
+
+NOTE: O DII MCP é um recurso link:concept_preview_features.html["Pré-visualização"] e, portanto, está sujeito a alterações.
+
+
+
+[[choose-a-workflow]]
+== Escolha um fluxo de trabalho
+
+|===
+| Meta | Receita | Superfícies DII primárias 
+
+
+| Valide a cobertura e o frescor da coleta | link:mcp_recipe_environment_inventory.html["Ambiente de inventário e integridade da coleção"] | Unidades de aquisição, fontes de dados 
+
+
+| Priorize problemas ativos de infraestrutura | link:mcp_recipe_storage_health.html["Avalie a saúde do armazenamento"] | Alertas, monitores, registros, objetos 
+
+
+| Encontre pools próximos da capacidade máxima | link:mcp_recipe_capacity_risk.html["Identificar o risco de capacidade"] | Metadados de objeto, agrupamento, séries temporais 
+
+
+| Verifique as versões dos componentes da coleção do Kubernetes | link:mcp_recipe_kubernetes_collector_currency.html["Verifique se o coletor do Kubernetes está atualizado"] | Coletores do Kubernetes 
+
+
+| Investigue um volume ou workload lentos | link:mcp_recipe_performance_rca.html["Solucionar problemas de desempenho"] | Métricas, alertas, registros de objetos 
+
+
+| Revise o roteamento e a supressão com segurança | link:mcp_recipe_notification_posture.html["Revisar a postura de notificação"] | Regras, metas, janelas de manutenção 
+|===
+
+
+[[standard-investigation-pattern]]
+== Padrão de investigação
+
+. Esclareça o escopo do recurso e o intervalo de tempo.
+. Descubra os tipos disponíveis.
+. Recupere os metadados antes de usar campos dinâmicos.
+. Consultar um intervalo de tempo limitado.
+. Correlacione sinais independentes.
+. Distinga fatos observados de inferências.
+. Relate as limitações e o acompanhamento recomendado.
+
+
+
+
+[[safety]]
+== Segurança
+
+* Essas receitas utilizam ferramentas somente leitura.
+* Mantenha as janelas de tempo em 30 dias ou menos.
+* Omita credenciais, endereços privados, UUIDs, endpoints de webhook brutos e payloads de log desnecessários.
+* Confirme ações operacionais de alto impacto fora do fluxo de trabalho do MCP.
+
+
+
+
+[[related-documentation]]
+== Documentação relacionada
+
+* link:mcp_overview.html["Visão geral do DII MCP"]
+* link:mcp_concepts.html["Conceitos e modelo de dados"]
+* link:mcp_tools_overview.html["Referência de ferramentas"]
+* link:mcp_security.html["Segurança e privacidade"]
+
