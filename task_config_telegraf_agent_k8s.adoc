@@ -288,7 +288,6 @@ Funcionalidade do Operador Principal e Monitoramento do Kubernetes
 Registro de eventos
 
 * ci-fluent-bit
-* ci-kubernetes-event-exporter
 
 
 Desempenho e Mapa da Rede
@@ -462,26 +461,6 @@ Capture ou anote a saída dos seguintes comandos e entre em contato com a equipe
 | Por que estou vendo dois pods de operador de monitoramento em execução, um chamado netapp-ci-monitoring-operator-<pod> e o outro chamado monitoring-operator-<pod>? | A partir de 12 de outubro de 2023, o Data Infrastructure Insights refatorou o operador para melhor atender nossos usuários; para que essas mudanças sejam totalmente adotadas, você deve<<uninstalling,remover o operador antigo>> e<<installing-the-kubernetes-monitoring-operator,instalar o novo>> . 
 
 
-| Meus eventos do Kubernetes pararam inesperadamente de reportar ao Data Infrastructure Insights.  a| 
-Recupere o nome do pod do exportador de eventos:
-
- `kubectl -n netapp-monitoring get pods |grep event-exporter |awk '{print $1}' |sed 's/event-exporter./event-exporter/'`
-Deve ser "netapp-ci-event-exporter" ou "event-exporter".  Em seguida, edite o agente de monitoramento `kubectl -n netapp-monitoring edit agent` e defina o valor para LOG_FILE para refletir o nome do pod do exportador de eventos apropriado encontrado na etapa anterior.  Mais especificamente, LOG_FILE deve ser definido como "/var/log/containers/netapp-ci-event-exporter.log" ou "/var/log/containers/event-exporter*.log"
-
-....
-fluent-bit:
-...
-- name: event-exporter-ci
-  substitutions:
-  - key: LOG_FILE
-    values:
-    - /var/log/containers/netapp-ci-event-exporter*.log
-...
-....
-Alternativamente, também se pode<<uninstalling,desinstalar>> e<<installing-the-kubernetes-monitoring-operator,reinstalar>> o agente.
-
-
-
 | Estou vendo pod(s) implantado(s) pelo Kubernetes Monitoring Operator travando devido a recursos insuficientes. | Consulte o Operador de Monitoramento do Kuberneteslink:telegraf_agent_k8s_config_options.html["opções de configuração"] para aumentar os limites da CPU e/ou memória conforme necessário. 
 
 
@@ -489,9 +468,6 @@ Alternativamente, também se pode<<uninstalling,desinstalar>> e<<installing-the-
 
 
 | Os pods netapp-ci-kube-state-metrics falham ao iniciar após executar uma atualização do Kubernetes Operator, gerando ErrImagePull (falha ao extrair a imagem). | Tente redefinir os pods manualmente. 
-
-
-| Mensagens "Evento descartado por ser mais antigo que maxEventAgeSeconds" estão sendo observadas no meu cluster Kubernetes na Análise de Log. | Modifique o operador _agentconfiguration_ e aumente _event-exporter-maxEventAgeSeconds_ (ou seja, para 60s), _event-exporter-kubeQPS_ (ou seja, para 100) e _event-exporter-kubeBurst_ (ou seja, para 500).  Para obter mais detalhes sobre essas opções de configuração, consulte olink:telegraf_agent_k8s_config_options.html["opções de configuração"] página. 
 
 
 | O Telegraf avisa ou trava por causa de memória bloqueável insuficiente. | Tente aumentar o limite de memória bloqueável para o Telegraf no sistema operacional/nó subjacente.  Se aumentar o limite não for uma opção, modifique a configuração do agente NKMO e defina _unprotected_ como _true_.  Isso instruirá o Telegraf a não tentar reservar páginas de memória bloqueadas.  Embora isso possa representar um risco à segurança, pois segredos descriptografados podem ser transferidos para o disco, isso permite a execução em ambientes onde não é possível reservar memória bloqueada.  Para mais detalhes sobre as opções de configuração _desprotegidas_, consulte olink:telegraf_agent_k8s_config_options.html["opções de configuração"] página. 
