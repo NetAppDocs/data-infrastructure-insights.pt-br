@@ -36,9 +36,9 @@ image:ai_assistant-column_graph.png["Visualização do Assistente de IA"]
 [[enhanced-vm-analyzer-filtering]]
 === Filtragem aprimorada do VM Analyzer
 
-Uma nova opção na visualização do Analisador de VMs permite que você oculte volumes montados sem um datastore, oferecendo uma visualização mais limpa para simplificar a solução de problemas em VMs.
+Uma nova opção na visualização do VM Analyzer permite ocultar volumes montados sem um datastore, oferecendo uma visualização mais limpa para simplificar a solução de problemas de VMs.
 
-image:vm_analyzer_datastore_only_view.png["controle deslizante de visualização somente do datastore"]
+image:vm_analyzer_datastore_only_view.png["O VM Analyzer mostra a opção que oculta volumes montados sem um datastore."]
 
 
 
@@ -51,9 +51,9 @@ Edite somente quando necessário. Em um painel deslizante, expanda os detalhes d
 
 Você também pode abrir a página inicial do ativo diretamente e selecionar Editar no canto superior direito.
 
-image:UserDataEdit-Slideout.png["Editar dados do usuário no painel deslizante, ícone de lápis, largura=400"]
+image:user_data_edit_slideout.png["Painel deslizante com detalhes do ativo, mostrando os dados do usuário em modo somente leitura, com o ícone de lápis usado para entrar no modo de edição, largura=400"]
 
-image:UserDataEdit-LP.png["Modo de edição da página inicial, largura=200"]
+image:user_data_edit_lp.png["Página inicial do ativo com User Data aberto no modo de edição e pronto para salvar as alterações, largura=200"]
 
 '''
 

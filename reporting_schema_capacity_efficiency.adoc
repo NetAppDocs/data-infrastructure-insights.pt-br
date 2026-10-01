@@ -13,6 +13,9 @@ keywords: dwh, data warehouse, schema, reporting, capacity efficiency
 :imagesdir: ./media/
 
 
+[role="lead"]
+O esquema de eficiência de capacidade fornece métricas sobre eficiência de storage, incluindo taxas de redução de dados e oportunidades de otimização. Use este esquema para monitorar e analisar a eficácia de tecnologias de storage, como deduplicação e compressão.
+
 Fonte: endpoint OData *dwh_capacity_efficiency* — Data Infrastructure Insights
 
 Tabelas encontradas: *3* | Associações: *2*

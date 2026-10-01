@@ -13,6 +13,9 @@ keywords: dwh, data warehouse, schema, reporting, file system, fs util
 :imagesdir: ./media/
 
 
+[role="lead"]
+O esquema de Utilização do Sistema de Arquivos rastreia o consumo de armazenamento e os padrões de uso em sistemas de arquivos, hosts e recursos de computação. Use este esquema para identificar pontos críticos de capacidade e otimizar a alocação de storage no nível do sistema de arquivos.
+
 Fonte: endpoint OData *dwh_fs_util* — Data Infrastructure Insights
 
 Tabelas encontradas: *8* | Associações: *7*

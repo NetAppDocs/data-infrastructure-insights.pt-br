@@ -13,6 +13,9 @@ keywords: dwh, data warehouse, schema, reporting, ports
 :imagesdir: ./media/
 
 
+[role="lead"]
+O esquema Ports contém dados de portas de rede e switches, incluindo a conectividade das portas, o status e as relações com dispositivos conectados. Use este esquema para analisar a topologia de rede e a integridade da malha na sua infraestrutura de storage.
+
 Fonte: endpoint OData *dwh_ports* — Data Infrastructure Insights
 
 Tabelas encontradas: *7* | Associações: *4*

@@ -13,6 +13,9 @@ keywords: dwh, data warehouse, schema, reporting, performance
 :imagesdir: ./media/
 
 
+[role="lead"]
+O esquema de desempenho fornece métricas de série temporal sobre E/S, latência, taxa de transferência e outros indicadores de desempenho em storage, hosts, volumes e aplicativos. Use este esquema para analisar tendências de desempenho, identificar gargalos e otimizar o posicionamento da carga de trabalho.
+
 Fonte: endpoint OData *dwh_performance* — Data Infrastructure Insights
 
 Tabelas encontradas: *74* | Associações: *167*
