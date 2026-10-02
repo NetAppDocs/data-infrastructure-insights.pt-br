@@ -29,6 +29,18 @@ No topo de uma landing page está a seção Resumo expansível, que inclui vári
 
 A seção Resumo também exibe e permite que você altere as anotações atribuídas ao ativo.
 
+Você pode clicar em qualquer um dos links de ativos para visualizar suas páginas de ativos.  Por exemplo, se você estiver visualizando um nó de armazenamento, poderá clicar em um link para visualizar a página de ativos do armazenamento ao qual ele está associado.
+
+
+NOTE: Você pode notar que a capacidade de volume pode ser maior que 100% em alguns ativos de armazenamento.  Isso ocorre porque os metadados relacionados à capacidade do volume fazem parte dos dados de capacidade consumida relatados pelo ativo.
+
+
+NOTE: Você também pode notar que os números de capacidade dos FlexGroups podem mostrar "0", enquanto os constituintes mostram valores. No DII, os próprios FlexGroups zeram a maioria das métricas de capacidade, enquanto os constituintes as incluem. O problema é a dupla contagem: se ambas as entidades reportassem métricas completas de capacidade, o DII reportaria a mesma capacidade duas vezes (uma vez no flexgroup e outra no constituinte). Priorizar o relatório no nível do constituinte atende a casos de uso importantes e evita essa duplicação.
+
+Neste caso, para informar a capacidade de um FlexGroup em uma consulta, painel ou monitor, use a referência do constituinte ao FlexGroup pai. Em seguida, você pode agrupar os constituintes por essa referência e agregar os valores de capacidade deles.
+
++ O DII define intencionalmente a capacidade do pai do FlexGroup como zero; o próprio ONTAP ainda informa a capacidade. Isso se aplica às métricas de capacidade/eficiência, não às métricas de desempenho. Recomenda-se agrupar os constituintes por ID do grupo, já que o Nome do grupo pode não ser globalmente exclusivo.
+
 
 
 [[performance-section]]
