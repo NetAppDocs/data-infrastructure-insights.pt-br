@@ -110,8 +110,8 @@ ____
 
 *Erros exatos abordados*
 
-* Falha ao determinar o tipo do ONTAP para ++[++host++]++. Motivo: erro de conexão com o sistema de armazenamento: host inacessível
-* ++[++IP++]++ é identificado como um cluster/nó e não pode ser adicionado neste modo
+* Falha ao determinar o tipo de ONTAP para [host]. Motivo: erro de conexão com o sistema de armazenamento: o host está inacessível
+* [IP] é identificado como um cluster/nó e não pode ser adicionado neste modo
 * Nenhuma interface de dados válida encontrada na SVM...
 * Permissão ausente: vserver fpolicy
 * Funções atribuídas no nível do grupo em vez do nível do usuário para este usuário do Active Directory
@@ -177,7 +177,7 @@ O que isso significa: o ONTAP não consegue manter a conexão que envia arquivos
 
 *Resolvido quando*
 
-* A política cloudsecure++_++ FPolicy está ativada e o coletor permanece em execução.
+* A política cloudsecure_ FPolicy está ativada e o coletor permanece em execução.
 
 
 
@@ -240,8 +240,8 @@ Um coletor degradado ainda está em execução, mas uma ou mais conexões de nó
 . Confirme se o protocolo do cliente está habilitado e, para SMB, se a SVM possui um servidor CIFS.
 . Revise os compartilhamentos e volumes incluídos e excluídos. Use nomes completos sem aspas.
 . Habilite o Monitoramento de Acesso a Pastas quando eventos gerais de acesso a pastas forem necessários. A criação, renomeação e exclusão de pastas são coletadas sem essa opção.
-. Se apenas as atividades .ini e .DS++_++Store estiverem faltando, nenhuma ação será necessária; essas extensões são excluídas da coleta de eventos do FPolicy.
-. Caso a atividade continue ausente, utilize o diagnóstico avançado para verificar a política cloudsecure++_++ e o log de eventos do ONTAP FPolicy.
+. Se apenas as atividades .ini e .DS_Store estiverem faltando, nenhuma ação é necessária; essas extensões são excluídas da coleta de eventos do FPolicy.
+. Se a atividade ainda estiver ausente, use os diagnósticos avançados para verificar a política cloudsecure_ e o log de eventos do ONTAP FPolicy.
 
 
 *Resolvido quando*
@@ -309,7 +309,7 @@ A auditoria do ONTAP está funcionando; a resolução de identidade é um proble
 . Confirme se o coletor está em execução e não pausado.
 . Para bloquear usuários, utilize credenciais de nível de cluster. Um usuário personalizado também precisa de acesso SSH na porta TCP 22 e dos privilégios de bloqueio documentados.
 . Confirme se o usuário personalizado possui os privilégios de Snapshot necessários.
-. Se o ONTAP Multi-Admin Verify estiver ativado, adicione as exclusões documentadas para snapshots cloudsecure++_++ e a operação set usada pelo bloqueio de usuário.
+. Se o ONTAP Multi-Admin Verify estiver ativado, adicione as exclusões documentadas para snapshots cloudsecure_ e a operação set usada pelo bloqueio de usuário.
 . Execute o Teste de Conexão no modo Cluster e analise os resultados dos recursos de Snapshot e Bloqueio de Usuário.
 
 
@@ -334,7 +334,7 @@ A auditoria do ONTAP está funcionando; a resolução de identidade é um proble
 | Degradado lista um nó sem LIF de dados locais | O ONTAP não pode estabelecer um canal FPolicy a partir de um nó que não atende à SVM localmente. | O nó listado possui um LIF de dados SVM operacional. 
 
 
-| Nenhum evento para .ini ou .DS++_++Store | Essas extensões estão excluídas do escopo da FPolicy. | Outras atividades de arquivo esperadas também estão ausentes. 
+| Não há eventos para .ini ou .DS_Store | Essas extensões estão excluídas do escopo da FPolicy. | Outras atividades de arquivo esperadas também estão ausentes. 
 
 
 | Breve estado de inicialização, parado ou degradado | Reiniciar, atualizar, migração, failover e retomar exigem reconexão. | O estado persiste além da operação ou se repete. 
@@ -374,7 +374,7 @@ O comando cria o arquivo cloudsecure-agent-symptoms.zip. Instale o zip se o scri
 
 
 | Registro do coletor  a| 
-/opt/netapp/cloudsecure/data-collectors/++<++collector-uuid++>++/logs/dsc.log
+/opt/netapp/cloudsecure/data-collectors/{lt}collector-uuid{gt}/logs/dsc.log
 
 Contém toda a atividade do coletor, incluindo erros. Use este registro para investigar problemas do coletor.
 
@@ -384,9 +384,9 @@ Contém toda a atividade do coletor, incluindo erros. Use este registro para inv
 
 
 | Instalação e atualização do agente  a| 
-/opt/netapp/cloudsecure/agent/logs/cloudsecure++_++agent++_++install.log
+/opt/netapp/cloudsecure/agent/logs/cloudsecure_agent_install.log
 
-/opt/netapp/cloudsecure/agent/logs/cloudsecure++_++agent++_++upgrade.log
+/opt/netapp/cloudsecure/agent/logs/cloudsecure_agent_upgrade.log
 
 
 
@@ -419,7 +419,7 @@ event log show -source fpolicy -fields event,action,description
 fpolicy show
 fpolicy show-engine
 ----
-Procure por uma política de Workload Security com o prefixo cloudsecure++_++. A política deve estar habilitada e cada nó de serviço de dados deve exibir um mecanismo externo conectado. Preserve o motivo do evento e o nome do nó quando um canal for desconectado.
+Procure uma política do Workload Security com o prefixo cloudsecure_. A política deve estar habilitada, e cada nó que fornece dados deve exibir um mecanismo externo conectado. Preserve o motivo do evento e o nome do nó quando um canal for desconectado.
 
 
 
@@ -455,7 +455,7 @@ ____
 
 [listing]
 ----
-curl -kv https://++<++management-ip++>++:443
+curl -kv https://<management-ip>:443
 ----
 Uma resposta TLS comprova o caminho TCP. Um tempo limite indica bloqueio de roteamento ou firewall. Uma resposta de autenticação comprova a acessibilidade, mas não que as credenciais ou funções estejam corretas.
 
@@ -468,7 +468,7 @@ A partir do ONTAP, teste o roteamento de cada LIF de dados SVM relevante:
 
 [listing]
 ----
-network ping -vserver ++<++svm++>++ -lif ++<++data-lif++>++ -destination ++<++agent-ip++>++ -show-detail
+network ping -vserver <svm> -lif <data-lif> -destination <agent-ip> -show-detail
 ----
 No agente, inspecione o firewall do host:
 
@@ -486,17 +486,10 @@ Confirme se as portas de retorno de chamada reservadas estão liberadas para ent
 
 A partir do ONTAP 9.8 e versões posteriores, um LIF de dados SVM operacional deve incluir data-fpolicy-client com data-nfs e/ou data-cifs.
 
-[listing]
-----
-network interface show -vserver ++<++svm++>++ -fields service-policy,status-admin,status-oper
-----
+ network interface show -vserver <svm> -fields service-policy,status-admin,status-oper
 Caso não exista uma política adequada, crie ou modifique uma de acordo com o design da sua rede ONTAP. Por exemplo:
 
-[listing]
-----
-net int service-policy create -policy only++_++data++_++fpolicy -vserver ++<++svm++>++ ++\++ \
--allowed-addresses 0.0.0.0/0 -services data-cifs,data-nfs,data,-core,data-fpolicy-client
-----
+ net int service-policy create -policy only_data_fpolicy -vserver <svm> \
 *Nota:* Em versões do ONTAP anteriores à 9.8, o data-fpolicy-client não é necessário. O LIF deve ter função de dados, estar operacional e suportar NFS e/ou CIFS.
 
 
@@ -509,7 +502,7 @@ Utilize o rastreamento de pacotes somente após o Test Connection e se as verifi
 . Inicie um rastreamento de pacotes no ONTAP para a LIF de dados relevante e o IP do agente.
 . Tente testar a conexão ou reiniciar o coletor.
 . Aguarde a falha e, em seguida, pare o rastreamento.
-. Recupere o rastreamento de  https://++<++cluster-management-ip++>++/spi/++<++cluster-name++>++/etc/log/packet++_++traces/[].
+. Recupere o rastreamento de  https://<cluster-management-ip>/spi/<cluster-name>/etc/log/packet_traces/[].
 . Procure por um SYN do ONTAP para a porta de retorno de chamada do Agente. A ausência de um SYN indica um problema de caminho ou de política no lado do ONTAP. Um SYN sem um handshake completo indica um problema de firewall ou de roteamento entre o ONTAP e o Agente.
 
 
@@ -539,7 +532,7 @@ Dois coletores não podem monitorar a mesma SVM, mesmo que pertençam a ambiente
 
 [quote]
 ____
-*Nota:* Não exclua objetos cloudsecure++_++ de um coletor ativo. O coletor possui e atualiza esses objetos.
+*Nota:* não exclua objetos cloudsecure_ de um coletor ativo. O coletor é o proprietário e responsável pelas atualizações desses objetos.
 
 ____
 
@@ -553,11 +546,11 @@ Para uma política não utilizada, remova seus objetos na ordem de dependência:
 
 [listing]
 ----
-fpolicy disable -vserver ++<++svm++>++ -policy-name ++<++policy-name++>++
-fpolicy policy scope delete -vserver ++<++svm++>++ -policy-name ++<++policy-name++>++
-fpolicy policy delete -vserver ++<++svm++>++ -policy-name ++<++policy-name++>++
-fpolicy policy event delete -vserver ++<++svm++>++ -event-name ++<++event-name++>++
-fpolicy policy external-engine delete -vserver ++<++svm++>++ -engine-name ++<++engine-name++>++
+fpolicy disable -vserver <svm> -policy-name <policy-name>
+fpolicy policy scope delete -vserver <svm> -policy-name <policy-name>
+fpolicy policy delete -vserver <svm> -policy-name <policy-name>
+fpolicy policy event delete -vserver <svm> -event-name <event-name>
+fpolicy policy external-engine delete -vserver <svm> -engine-name <engine-name>
 ----
 Reinicie o coletor de Workload Security após a limpeza dos slots de sequência ou objetos conflitantes.
 
@@ -583,7 +576,7 @@ Reinicie o coletor de Workload Security após a limpeza dos slots de sequência 
 | AGENT009 | Confirme se o coletor ainda existe no agente e ambiente selecionados e se uma exclusão ou migração simultânea não o removeu. 
 
 
-| Agente NÃO++_++CONECTADO | Verifique systemctl e journalctl, o SaaS egressando na porta TCP 443, configuração de proxy, inspeção SSL e a conta cssys. 
+| Agente NOT_CONNECTED | Verifique systemctl e journalctl, o SaaS egressando na porta TCP 443, configuração de proxy, inspeção SSL e a conta cssys. 
 |===
 Use a ferramenta de verificação de taxa de eventos para dimensionar o agente. Não confie apenas na contagem de coletores; o volume de eventos e os recursos ativados afetam a carga.
 
@@ -593,7 +586,7 @@ Use a ferramenta de verificação de taxa de eventos para dimensionar o agente. 
 == *Investigue a ausência de atividade após as verificações básicas*
 
 . Execute o comando event log show -source fpolicy e salve quaisquer erros.
-. Execute o comando fpolicy show e confirme se a política cloudsecure++_++ está habilitada.
+. Execute o comando `fpolicy show` e confirme se a política `cloudsecure_` está habilitada.
 . Confirme se o protocolo que gera operações do cliente está habilitado no coletor e permitido na SVM.
 . Confirme se o compartilhamento ou o volume não estão excluídos.
 . Confirme se o coletor não estava pausado quando a operação ocorreu.
@@ -640,7 +633,7 @@ A verificação de múltiplos administradores pode bloquear os comandos do ONTAP
 
 [quote]
 ____
-multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !++*++cloudsecure++_*++" + multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !++*++cloudsecure++_*++" + multi-admin-verify rule delete -operation set
+multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !\*cloudsecure\_*" + multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !\*cloudsecure\_*" + multi-admin-verify rule delete -operation set
 
 *Nota:* A exclusão da regra definida altera a proteção Multi-Admin Verify para essa operação. Analise a alteração com o administrador de segurança do ONTAP.
 
@@ -655,7 +648,7 @@ Contate o suporte quando um erro persistir após as verificações programadas, 
 
 *Incluir*
 
-* A mensagem completa do Status ++>++ Mais detalhes e o horário da falha.
+* A mensagem completa em Status > More detail, e o horário da falha.
 * Resultados do teste de conexão, incluindo verificações ignoradas.
 * Versões de agente e de coletor e seus respectivos estados atuais.
 * Versão do ONTAP, nome do cluster e da SVM, modo de conexão e alterações recentes na topologia.
@@ -666,4 +659,4 @@ Contate o suporte quando um erro persistir após as verificações programadas, 
 * Para capacidade: utilização antes e depois da assinatura e a capacidade bruta relatada por cada coletor.
 
 
-Use a opção Ajuda ++>++ Suporte no Data Infrastructure Insights para abrir um caso.
+Use a opção Ajuda > Suporte no Data Infrastructure Insights para abrir um chamado.
