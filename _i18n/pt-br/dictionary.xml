@@ -16290,4 +16290,14 @@
   <block id="d822a0d21d568ecd22e518ef5dc10ebb" category="paragraph">multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !\*cloudsecure\_*" + multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !\*cloudsecure\_*" + multi-admin-verify rule delete -operation set</block>
   <block id="4ff2cea234868624331b11228fa5ab0d" category="list-text">A mensagem completa em Status &gt; More detail, e o horário da falha.</block>
   <block id="9277538c12d62b57cf00dc1681c9a5af" category="paragraph">Use a opção Ajuda &gt; Suporte no Data Infrastructure Insights para abrir um chamado.</block>
+  <block id="8a7cd4d03da68ae214bddbe265b1ad26" category="section-title">Administração de Relatórios</block>
+  <block id="7fa5390f038fb69139796793bf763a3a" category="paragraph">O console de administração de relatórios anterior não está mais disponível. Use Manage para a administração de relatórios.</block>
+  <block id="8ea7ade9ab3cfad9bd6b2431dd43a772" category="list-text">Em Data Infrastructure Insights, abra *Reports*.</block>
+  <block id="4239c0dba928cec50e8c21b945c051eb" category="list-text">Selecione *Menu &gt; Manage*.</block>
+  <block id="76dabad1c4a80c549d100374a19b0969" category="paragraph">No Manage, um administrador de relatórios pode configurar relatórios e trabalhar com atividades de geração de relatórios atuais, passadas e futuras.</block>
+  <block id="ff48e2ee0f646866bbc62bcb29402a4e" category="paragraph">Para abrir os detalhes da execução de uma atividade concluída:</block>
+  <block id="2330f73a0085aaa309ecf31b2c395bb6" category="list-text">Selecione *Menu &gt; Gerenciar &gt; Atividades &gt; Passadas*.</block>
+  <block id="151bb4dbf64e2b3fe12dc4b50a276810" category="list-text">Na atividade, abra o menu de três pontos.</block>
+  <block id="2bdb567b68e888c0bd681c966627b9d5" category="list-text">Selecione *Run Details*.</block>
+  <block id="04b3e949af7d6de572fc2375a3dd80b8" category="paragraph">Para obter mais informações, consulte este <block ref="e796b480a0964a566b0ed92c3ef65e64" category="inline-link-macro-rx"></block>.</block>
 </blocks>

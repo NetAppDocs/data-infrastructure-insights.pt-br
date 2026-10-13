@@ -76,6 +76,28 @@ A tabela a seguir mostra as funções disponíveis para cada função de Relató
 |===
 
 
+[[reporting-administration]]
+== Administração de Relatórios
+
+O console de administração de relatórios anterior não está mais disponível. Use Manage para a administração de relatórios.
+
+. Em Data Infrastructure Insights, abra *Reports*.
+. Selecione *Menu > Manage*.
+
+
+No Manage, um administrador de relatórios pode configurar relatórios e trabalhar com atividades de geração de relatórios atuais, passadas e futuras.
+
+Para abrir os detalhes da execução de uma atividade concluída:
+
+. Selecione *Menu > Gerenciar > Atividades > Passadas*.
+. Na atividade, abra o menu de três pontos.
+. Selecione *Run Details*.
+
+
+Para obter mais informações, consulte este link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/IBM_Cognos_Administration_Console_Does_Not_Load_for_DII_Reporting_Scheduled_Reports["Artigo da KB"^].
+
+
+
 [[setting-reporting-cognos-email-preferences]]
 == Definindo preferências de e-mail de relatórios (Cognos)
 
