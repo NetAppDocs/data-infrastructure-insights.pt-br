@@ -1,0 +1,238 @@
+---
+sidebar: sidebar 
+permalink: task_dc_nvidia_bcm_rest.html 
+keywords: data collector, NVIDIA, Base Command Manager, BCM, GPU, REST 
+summary: Configure o coletor de dados REST do NVIDIA Base Command Manager para coletar métricas de inventário, desempenho do host e carga de trabalho da GPU. 
+---
+= Coletor de dados REST do NVIDIA Base Command Manager
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O coletor de dados do NVIDIA Base Command Manager (BCM) coleta métricas de inventário, desempenho do host e carga de trabalho da GPU de um nó principal do BCM por meio de suas APIs HTTPS REST e JSON (CMDaemon, porta padrão *8081*). O modo *HYBRID* também pode coletar métricas de GPU do exportador DCGM por meio de `/exporter`. Configure uma fonte de dados por cluster. Este coletor está em *Preview*; use uma conta de serviço dedicada do BCM em vez de `root` ou do perfil BCM `admin`.
+
+
+
+[[terminology]]
+== Terminologia
+
+Para cada tipo de ativo adquirido pelo Data Infrastructure Insights, a terminologia mais comum usada para o ativo é mostrada.  Ao visualizar ou solucionar problemas neste coletor de dados, tenha em mente a seguinte terminologia:
+
+[cols="1,1"]
+|===
+| Termo de Fornecedor/Modelo | Termo de Data Infrastructure Insights 
+
+
+| Cluster BCM | Métricas específicas do fornecedor — `nvidia_bcm.cluster` 
+
+
+| Nó de computação / nó principal | Host (inventário) 
+
+
+| Trabalho do Slurm ou linha de chargeback | Métricas específicas do fornecedor — `nvidia_bcm.workload` 
+
+
+| Métricas de GPU (amostrador e criação de perfil de GPU BCM, fallback com nvidia-smi, exportador DCGM opcional) | Métricas específicas do fornecedor: `nvidia_bcm.gpu` 
+
+
+| Estado do nó | Métricas específicas do fornecedor: `nvidia_bcm.host` 
+|===
+
+NOTE: Esses são apenas mapeamentos de terminologia comum e podem não representar todos os casos deste coletor de dados.
+
+
+
+[[configuration]]
+== Configuração
+
+[cols="1,2"]
+|===
+| Campo | Descrição 
+
+
+| Endereço IP/nome do host do nó principal do BCM | Endereço IP ou FQDN do nó principal do BCM 
+
+
+| Porta HTTPS | Porta do CMDaemon. O padrão é *8081* 
+
+
+| Nome de usuário | Conta de serviço BCM para autenticação Basic 
+
+
+| Senha | Senha da conta de serviço 
+|===
+Antes de salvar a fonte de dados, confirme se a unidade de aquisição consegue alcançar `https://<head>:8081` e se esses endpoints retornam HTTP *200* com dados:
+
+[source, bash]
+----
+curl -sk -u user:pass https://<head>:8081/rest/v1/device
+curl -sk -u user:pass "https://<head>:8081/rest/v1/monitoring/latest?measurable=CPUUsage"
+----
+As métricas específicas do fornecedor usam o inventário de hosts da pesquisa de inventário mais recente, portanto, um nó recém-adicionado aparece lá após a próxima pesquisa de inventário (até 60 minutos por padrão).
+
+
+
+[[advanced-configuration]]
+== Configuração avançada
+
+A tela *Avançado* da interface do usuário lista as configurações de todos os pacotes do coletor. Os intervalos de pesquisa são campos *obrigatórios* separados para cada pacote (não ocultos); normalmente, você verá os três abaixo, juntamente com propriedades opcionais especializadas.
+
+[cols="1,2"]
+|===
+| Campo | Descrição 
+
+
+| Intervalo de pesquisa de inventário (min) | Pacote básico / de inventário. O padrão é de *60* minutos 
+
+
+| Intervalo de pesquisa de desempenho (seg) | Pacote de desempenho do host. O padrão é *300* segundos 
+
+
+| Intervalo de sondagem de integração (seg) | Pacote *Métricas Específicas do Fornecedor*. O padrão é *300* segundos 
+
+
+| Modo de coleta | *REST_ONLY* (padrão) usa apenas as APIs REST e JSON. *HYBRID* também lê `/exporter` para métricas de GPU do exportador DCGM; veja *Habilitando /exporter para o modo HYBRID*. Se `/exporter` falhar, a sondagem continua e exibe um aviso com a correção 
+
+
+| Lista de permissões de métricas do exportador | Somente HÍBRIDO. Nomes de métricas opcionais separados por vírgula `/exporter`. Vazio (padrão) coleta todas as séries DCGM. 
+
+
+| Caminho do certificado do cliente | Somente HYBRID. Caminho na unidade de aquisição para o certificado de cliente BCM (`.pem`) 
+
+
+| Caminho da chave do cliente | Somente HYBRID. Caminho na unidade de aquisição até a chave do certificado (`.key`) 
+
+
+| Integração REST do NVIDIA SMI | Fonte de GPU alternativa. Chama `/rest/v1/nvidia-smi` para `smi_*` os campos somente quando `/monitoring/latest` não retorna linhas do amostrador de GPU. O padrão é *true*. Requer `RUN_NVIDIA_SMI_TOKEN` (consulte *nvidia-smi token (optional)*); sem ele, um aviso é exibido e a sondagem continua. As chamadas são espaçadas pelo intervalo (15 minutos por padrão). Defina como *false* para nunca chamá-lo 
+|===
+
+
+[[service-account-bcm-head-node]]
+== Conta de serviço (nó principal do BCM)
+
+Assim `root` como no nó principal, crie um usuário somente leitura para coleta com o perfil `readonly` incorporado:
+
+[source, bash]
+----
+cmsh -c "user; add dii-monitor; set password '<password>'; set profile readonly; commit"
+----
+Use o token `dii-monitor` e sua senha na fonte de dados. O perfil incorporado `readonly` abrange o inventário, a API JSON `/rest/v1/monitoring/latest` (incluindo as métricas do amostrador de GPU) e os dados de criação de perfil da GPU. Nenhum token é necessário para esta configuração padrão. O chargeback do Slurm e o fallback do nvidia-smi precisam de tokens adicionais; consulte *token de chargeback (opcional)* e *token do nvidia-smi (opcional)*.
+
+Nenhuma outra alteração no nó principal é necessária para o modo *REST_ONLY* padrão.
+
+
+
+[[chargeback-token-optional]]
+== Token de chargeback (opcional)
+
+Ignore esta seção se você não precisar dos dados de chargeback do Slurm. Sem o token, `/chargeback` retorna *401*. O coletor registra um aviso, e o restante da coleta continua.
+
+O Chargeback (`/chargeback`, requer `CHARGE_BACK_TOKEN`) adiciona linhas de tarefas do Slurm e de chargeback a `nvidia_bcm.workload`. Como `root` no nó principal, clone `readonly` em um perfil que contenha o token e mova a conta de serviço para esse perfil:
+
+[source, bash]
+----
+cmsh -c "profile; clone readonly dii-readonly; append tokens CHARGE_BACK_TOKEN; commit"
+cmsh -c "user; use dii-monitor; set profile dii-readonly; commit"
+----
+Mantenha o nome de usuário e a senha da fonte de dados inalterados. O perfil `readonly` padrão não é alterado. O token nvidia-smi e as etapas HYBRID abaixo adicionam seus tokens a este mesmo perfil `dii-readonly`.
+
+
+
+[[nvidia-smi-token-optional]]
+== token nvidia-smi (opcional)
+
+Ignore esta seção, a menos que você queira usar o fallback nvidia-smi. `/nvidia-smi` (requer `RUN_NVIDIA_SMI_TOKEN`) é uma fonte alternativa de GPU. O coletor a chama somente quando `/monitoring/latest` não retorna nenhuma linha de amostragem de GPU. Sem o token, ele retorna *401*, o coletor registra um aviso, e o restante da coleta continua.
+
+Assim como `root` no nó principal, adicione o token ao `dii-readonly` perfil da seção anterior. Se você pulou essa seção, execute primeiro o comando de clonagem:
+
+[source, bash]
+----
+cmsh -c "profile; use dii-readonly; append tokens RUN_NVIDIA_SMI_TOKEN; commit"
+----
+
+
+[[enabling-gpu-profiling-metrics-optional]]
+== Ativar métricas de profiling de GPU (opcional)
+
+O BCM coleta métricas de criação de perfil de GPU (como atividade de SM e de tensor) somente depois que você as ativa. Depois que elas são ativadas, o coletor as informa em `nvidia_bcm.gpu` como `gpu_profiling_*`. Como `root` no nó principal:
+
+[source, bash]
+----
+cmsh -c "device; gpuprofiling watch -c <gpu-category> 1001 1002 1003 1004 1005 1006 1007 1008 1009 1010"
+----
+Não é necessário reiniciar, e o BCM começa a coletar dados em poucos minutos. Se o comando retornar `not initialized yet`, execute-o novamente um minuto depois. A configuração não persiste após a reinicialização de um nó de GPU; execute o comando novamente após os nós reiniciarem. Para desativar a criação de perfis, execute o mesmo comando sem os números.
+
+
+
+[[enabling-exporter-for-hybrid-mode]]
+== Habilitando /exporter para o modo HYBRID
+
+Necessário apenas se o *Modo de Coleta* for *HÍBRIDO*. Deixe `PrometheusExporterRequireCertificate` no padrão; o coletor faz login em `/exporter` com um certificado de cliente BCM. Como `root` no nó principal:
+
+. Certifique-se de que o dcgm-exporter esteja em execução em cada nó da GPU (porta 9400) e registre-o para que seus dados cheguem `/exporter`:
++
+[source, bash]
+----
+cmsh -c "device; use <node>; prometheusmetricforwarders; add dcgm-<node>; set urls http://127.0.0.1:9400/metrics; commit"
+----
+. Em `/cm/local/apps/cmd/etc/cmd.conf`, defina `EnablePrometheusExporterService = true`, depois execute `systemctl restart cmd`.
+. Atribua o token do exportador ao perfil de serviço e crie um certificado para ele. O perfil de serviço é `dii-readonly` de *Token de chargeback (opcional)*; crie-o lá primeiro, caso você tenha pulado essa seção:
++
+[source, bash]
+----
+cmsh -c "profile; use dii-readonly; append tokens PROMETHEUS_EXPORTER_TOKEN; commit"
+cmsh -c "cert; createcertificate 2048 dii-monitor <org> <unit> <city> <state> <country> dii-readonly dii-monitor 365 /root/dii-monitor.key /root/dii-monitor.pem"
+----
+. Copie `dii-monitor.pem` e `dii-monitor.key` para a unidade de aquisição e insira os respectivos caminhos em *Caminho do Certificado do Cliente* e *Caminho da Chave do Cliente*.
+
+
+Para verificar na unidade de aquisição (um número acima de 0 significa que está funcionando):
+
+[source, bash]
+----
+curl -sk --cert dii-monitor.pem --key dii-monitor.key https://<head>:8081/exporter | grep -ci '^dcgm_'
+----
+O certificado é válido por 365 dias; crie um novo antes que expire.
+
+
+
+[[troubleshooting]]
+== Solução de problemas
+
+[cols="1,2"]
+|===
+| Problema | Experimente isto 
+
+
+| HTTP *401* | Verifique o nome de usuário e a senha. Se apenas `/chargeback` retornar *401*, adicione `CHARGE_BACK_TOKEN` conforme mostrado em *Chargeback token (optional)*. 
+
+
+| Aviso `BCM /exporter refused with HTTP 401` ou `403` | Defina *Client Certificate Path* e *Client Key Path* e verifique se o perfil do certificado tem `PROMETHEUS_EXPORTER_TOKEN` (consulte *Enabling /exporter for HYBRID mode*). Ou defina *Collection Mode* como *REST_ONLY*. 
+
+
+| Aviso `BCM /exporter not called: the client certificate cannot be used` | Corrija o arquivo mencionado no aviso. Ambos os arquivos devem ser legíveis na unidade de aquisição, a chave deve pertencer ao certificado e o certificado não deve estar expirado. 
+
+
+| Aviso `BCM /nvidia-smi refused with HTTP 401` ou `403`, ou `BCM /nvidia-smi failed` | O amostrador de GPU não retornou nenhuma linha, então o coletor usou o fallback nvidia-smi, e isso falhou. Para um 401 ou 403, o perfil de serviço não possui `RUN_NVIDIA_SMI_TOKEN`: corrija o amostrador de GPU (consulte *No GPU metrics*) ou adicione o token conforme mostrado em *nvidia-smi token (optional)*. A sondagem continua sem `smi_*` campos. 
+
+
+| Aviso `BCM /exporter not found (HTTP 404)` | Defina `EnablePrometheusExporterService = true` em `cmd.conf` e reinicie o CMDaemon ou defina *Collection Mode* como *REST_ONLY*. 
+
+
+| Sem dados de desempenho | Verifique se `/rest/v1/monitoring/latest?measurable=CPUUsage` retorna linhas. Se estiver vazio para um nó, verifique `cmsh -c "device; use <node>; latestmonitoringdata"` no nó principal. Se o nó não relatar nenhuma métrica, o BCM não está executando amostradores nele; reinstalar o nó (para nós na nuvem: desligar, encerrar e ligar novamente) os restaura. 
+
+
+| Sem métricas de GPU | Verifique se  `/rest/v1/monitoring/latest?measurable=gpu_utilization:gpu0` retorna linhas. O  `GPUSampler` do BCM precisa do pacote  `cuda-dcgm` e do driver de GPU na imagem do nó, e deve estar habilitado:  `cmsh -c "monitoring setup; use GPUSampler; get disabled"` imprime  `no`. Linhas que são apenas  `gpu_recovery_*` não significam que o sampler está em execução. 
+
+
+| Nenhum `gpu_profiling_*` campo | Execute o `gpuprofiling watch` comando em *Habilitando as métricas de criação de perfil da GPU* e execute-o novamente após a reinicialização de um nó de GPU. Os `dcgm_fi_prof_*` campos vêm apenas do dcgm-exporter no modo *HÍBRIDO*. 
+
+
+| Sem carga de trabalho / chargeback na interface do usuário | Confirme se os jobs do Slurm foram executados e o chargeback está habilitado; clusters ociosos geralmente têm APIs vazias. Certifique-se `CHARGE_BACK_TOKEN` de que o token de chargeback (opcional) esteja configurado corretamente e de que os metadados do servidor `nvidia_bcm` estejam disponíveis. 
+|===
+Você pode encontrar informações adicionais sobre este coletor de dados na página de Suporte ou na Matriz de Suporte do Coletor de Dados.
